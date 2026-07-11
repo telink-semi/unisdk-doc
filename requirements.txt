@@ -1,0 +1,11 @@
+# UniSDK Documentation — Python dependencies
+# Install with: pip install -r requirements.txt
+
+sphinx>=7.0
+sphinx-book-theme>=1.0
+myst-parser>=2.0
+breathe>=4.35
+sphinx-copybutton>=0.5
+sphinx-design>=0.5
+sphinxcontrib-mermaid>=0.9
+mike>=2.0

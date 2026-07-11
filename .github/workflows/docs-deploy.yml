@@ -1,0 +1,80 @@
+# UniSDK Documentation — Deploy to GitHub Pages
+#
+# Triggered by:
+#   - Push to main branch          → deploys as "latest"
+#   - Push a tag matching v*       → deploys as the tag name + updates "latest"
+#
+# Version naming convention:
+#   v0.2.0          → SDK v0.2.0 release
+#   v0.2.0-doc.1    → Doc-only fix after SDK v0.2.0
+#
+name: Docs Deploy
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    concurrency: ci-${{ github.ref }}
+
+    steps:
+      - name: Checkout unisdk-doc
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # needed for mike versioning
+
+      - name: Checkout main SDK repo (for API headers)
+        uses: actions/checkout@v4
+        with:
+          repository: telink-semi/unisdk
+          path: _sdk_src
+          ref: main
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq doxygen
+
+      - name: Generate Doxygen XML (API reference)
+        run: |
+          mkdir -p _doxygen
+          doxygen Doxyfile.in
+
+      - name: Determine version tag
+        id: version
+        run: |
+          TAG=$(git describe --tags --exact-match 2>/dev/null || echo "")
+          if [ -n "$TAG" ]; then
+            echo "version=$TAG" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=latest" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Configure Git for mike
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Build and deploy with mike
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          if [ "$VERSION" = "latest" ]; then
+            mike deploy --push --update-aliases latest
+          else
+            mike deploy --push --update-aliases "$VERSION" latest
+          fi

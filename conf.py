@@ -1,0 +1,167 @@
+"""
+UniSDK Sphinx configuration (standalone version).
+
+This file configures Sphinx to build the UniSDK developer documentation
+for the standalone unisdk-doc repository. It uses sphinx_book_theme,
+myst-parser for Markdown compatibility, and Breathe+Doxygen for API
+reference generation from C header files (pulled from the main SDK
+repo during CI builds).
+"""
+
+import os
+import sys
+
+# -- Project information -----------------------------------------------------
+
+project = 'UniSDK'
+copyright = 'Telink Semiconductor'
+author = 'Telink Semiconductor'
+
+# The full version, including alpha/beta/rc tags
+release = '1.0'
+version = '1.0'
+
+# -- General configuration ---------------------------------------------------
+
+extensions = [
+    # Built-in extensions
+    'sphinx.ext.autodoc',
+    'sphinx.ext.todo',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.extlinks',
+    'sphinx.ext.viewcode',
+
+    # Markdown support via MyST
+    'myst_parser',
+
+    # Doxygen integration via Breathe
+    'breathe',
+
+    # UI enhancements
+    'sphinx_copybutton',
+    'sphinx_design',
+    'sphinxcontrib.mermaid',
+
+    # API navigation auto-discovery
+    'sphinx.ext.autosummary',
+]
+
+# Source file suffixes: support both RST and MD
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
+
+# The master toctree document
+master_doc = 'en/index'
+
+# Files/directories to exclude from processing
+exclude_patterns = [
+    '_build/**',
+    '_doxygen/**',
+    '_doxyfile_*',
+    'doxygen.log',
+    'Thumbs.db',
+    '.DS_Store',
+    'README.md',
+]
+
+# Suppress known warnings
+suppress_warnings = [
+    'myst.header',
+    'myst.xref_missing',
+    'misc.highlighting_failure',
+    'ref.duplicate',
+    'toc.not_included',
+    'docutils',
+    # Breathe C parser warnings for enum return types (e.g. "enum tlk_i2c_status")
+    # and anonymous enums. These are non-fatal — affected functions still render
+    # in the HTML, just without a fully parsed declaration signature.
+    'breathe',
+]
+
+# The name of the Pygments (syntax highlighting) style to use
+pygments_style = 'sphinx'
+
+# -- MyST (Markdown) configuration -------------------------------------------
+
+myst_enable_extensions = [
+    'colon_fence',
+    'deflist',
+    'tasklist',
+    'attrs_inline',
+    'attrs_block',
+    'html_image',
+]
+myst_heading_anchors = 3
+
+# -- Breathe (Doxygen) configuration -----------------------------------------
+
+# During CI builds, the SDK source is checked out to ../_sdk_src/
+# and Doxygen XML is generated there and copied/linked to _doxygen/
+# If _doxygen doesn't exist (e.g. local builds without SDK headers),
+# Breathe will gracefully skip API doc generation.
+_doxygen_dir = os.path.join(os.path.dirname(__file__), '_doxygen')
+
+if os.path.isdir(_doxygen_dir):
+    breathe_projects = {
+        'public_api': os.path.join(_doxygen_dir, 'public_api', 'xml'),
+        'core_drivers': os.path.join(_doxygen_dir, 'core_drivers', 'xml'),
+        'TL321X': os.path.join(_doxygen_dir, 'soc_TL321X', 'xml'),
+        'TL721X': os.path.join(_doxygen_dir, 'soc_TL721X', 'xml'),
+        'TLSR922X': os.path.join(_doxygen_dir, 'soc_TLSR922X', 'xml'),
+        'TLSR952X': os.path.join(_doxygen_dir, 'soc_TLSR952X', 'xml'),
+    }
+    breathe_default_project = 'core_drivers'
+else:
+    # No Doxygen output available — Breathe will produce warnings
+    # but Sphinx will still build the pure-documentation pages.
+    breathe_projects = {}
+    breathe_default_project = None
+
+breathe_domain_by_extension = {'h': 'c'}
+
+# -- HTML theme configuration -------------------------------------------------
+
+html_theme = 'sphinx_book_theme'
+html_static_path = ['_static']
+html_css_files = []
+
+html_theme_options = {
+    'repository_url': 'https://github.com/telink-semi/unisdk-doc',
+    'use_repository_button': True,
+    'use_edit_page_button': True,
+    'use_issues_button': True,
+    'home_page_in_toc': True,
+    'toc_title': 'Contents',
+    'show_navbar_depth': 2,
+    'show_toc_level': 2,
+}
+
+# The name of an image file (relative to conf.py) to use as a favicon
+html_favicon = ''
+
+# The name of an image file (relative to conf.py) to place at the top of
+# the sidebar (sidebar logo)
+html_logo = ''
+
+# -- mike versioning ----------------------------------------------------------
+
+# mike sets the version via environment variable or config file.
+# If not set, default to "latest" for local development.
+mike_version = os.environ.get('MIKE_VERSION', 'latest')
+
+# -- Internationalization (future) -------------------------------------------
+# To enable multi-language support, uncomment the following:
+# locale_dirs = ['locale/']
+# gettext_compact = False
+
+# -- Intersphinx configuration ------------------------------------------------
+
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+}
+
+# -- Todo configuration -------------------------------------------------------
+
+todo_include_todos = True

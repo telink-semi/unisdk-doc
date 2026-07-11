@@ -1,0 +1,74 @@
+# UniSDK Doxygen Configuration
+# Used by Breathe (Sphinx extension) to generate API reference documentation.
+#
+# Usage:
+#   cd docs && doxygen Doxyfile.in
+#
+# This file mirrors the SOURCE_GROUPS from the old gen_api_docs.py.
+
+#---------------------------------------------------------------------------
+# Project
+#---------------------------------------------------------------------------
+PROJECT_NAME           = "UniSDK"
+PROJECT_BRIEF          = "Telink Unified Software Development Kit"
+OUTPUT_DIRECTORY       = .
+CREATE_SUBDIRS         = NO
+FULL_PATH_NAMES        = NO
+
+#---------------------------------------------------------------------------
+# Input: mirror the three SOURCE_GROUPS from gen_api_docs.py
+# During CI, the SDK source is checked out to _sdk_src/ at the workspace root.
+#---------------------------------------------------------------------------
+INPUT                  = _sdk_src/api/include \
+                         _sdk_src/core/include \
+                         _sdk_src/core/common/include \
+                         _sdk_src/soc
+
+# Recursively scan soc/ sub-directories for per-SoC driver headers
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h
+EXCLUDE_PATTERNS       = *_internal.h
+
+#---------------------------------------------------------------------------
+# Output: XML for Breathe consumption
+#---------------------------------------------------------------------------
+GENERATE_HTML          = NO
+GENERATE_LATEX         = NO
+GENERATE_XML           = YES
+XML_OUTPUT             = _doxygen/xml
+XML_PROGRAMLISTING     = NO
+
+#---------------------------------------------------------------------------
+# Parsing options
+#---------------------------------------------------------------------------
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+INCLUDE_PATH           = _sdk_src/api/include \
+                         _sdk_src/core/include \
+                         _sdk_src/soc
+INCLUDE_FILE_PATTERNS  = *.h
+PREDEFINED             = __DOXYGEN__=1 \
+                         __attribute__(x)= \
+                         _tlk_always_inline=
+
+# Only document entities that have Doxygen comments
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+SORT_MEMBER_DOCS       = YES
+
+#---------------------------------------------------------------------------
+# Warnings
+#---------------------------------------------------------------------------
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = NO
+WARN_FORMAT            = "$file:$line: $text"
+WARN_LOGFILE           = _doxygen/doxygen.log
+
+#---------------------------------------------------------------------------
+# Diagrams (disable for speed; can be enabled for richer output)
+#---------------------------------------------------------------------------
+HAVE_DOT               = NO
