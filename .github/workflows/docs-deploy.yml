@@ -1,4 +1,4 @@
-# UniSDK Documentation — Build with sphinx-multiversion & Deploy to GitHub Pages
+# UniSDK Documentation — Build & Deploy to GitHub Pages
 #
 # Triggered by:
 #   - Push to main branch          → builds "main" (latest)
@@ -32,10 +32,10 @@ jobs:
     concurrency: ci-${{ github.ref }}
 
     steps:
-      - name: Checkout unisdk-doc (with tags for versioning)
+      - name: Checkout unisdk-doc (full history for versioning)
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # fetch all history + tags for sphinx-multiversion
+          fetch-depth: 0
 
       - name: Checkout main SDK repo (for API headers)
         uses: actions/checkout@v4
@@ -61,13 +61,31 @@ jobs:
           mkdir -p _doxygen
           doxygen Doxyfile.in
 
-      - name: Build all versions with sphinx-multiversion
+      - name: Build all versions
         run: |
-          sphinx-multiversion . _build/versions
+          OUTPUT_DIR="_build/versions"
+          mkdir -p "$OUTPUT_DIR"
 
-      - name: Create root index.html (redirect to latest)
-        run: |
-          cat > _build/versions/index.html << 'EOF'
+          # ---- 1. Build main branch (latest) ----
+          echo "=== Building main (latest) ==="
+          git checkout main
+          sphinx-build -b html . "$OUTPUT_DIR/main"
+
+          # ---- 2. Build all v* tags ----
+          for tag in $(git tag -l 'v*' --sort=-v:refname); do
+            echo "=== Building $tag ==="
+            git checkout "$tag"
+            # Re-generate Doxygen for this version (API may differ)
+            mkdir -p _doxygen
+            doxygen Doxyfile.in 2>/dev/null || true
+            sphinx-build -b html . "$OUTPUT_DIR/$tag"
+          done
+
+          # ---- 3. Restore main branch ----
+          git checkout main
+
+          # ---- 4. Create root redirect ----
+          cat > "$OUTPUT_DIR/index.html" << 'EOF'
           <!DOCTYPE html>
           <html>
           <head>
@@ -79,6 +97,9 @@ jobs:
           </body>
           </html>
           EOF
+
+          echo "=== All versions built ==="
+          ls -la "$OUTPUT_DIR/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

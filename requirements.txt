@@ -8,4 +8,3 @@ breathe>=4.35
 sphinx-copybutton>=0.5
 sphinx-design>=0.5
 sphinxcontrib-mermaid>=0.9
-sphinx-multiversion>=0.2.4

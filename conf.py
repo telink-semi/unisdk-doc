@@ -44,9 +44,6 @@ extensions = [
 
     # API navigation auto-discovery
     'sphinx.ext.autosummary',
-
-    # Multi-version support
-    'sphinx_multiversion',
 ]
 
 # Source file suffixes: support both RST and MD
@@ -147,23 +144,6 @@ html_favicon = ''
 # The name of an image file (relative to conf.py) to place at the top of
 # the sidebar (sidebar logo)
 html_logo = ''
-
-# -- Multi-version (sphinx-multiversion) configuration ------------------------
-
-# Whitelist patterns for versions to include
-smv_tag_whitelist = r'^v\d+\.\d+\.\d+.*$'   # e.g. v0.2.0, v0.2.0-doc.1
-smv_branch_whitelist = r'^main$'              # only build "main" branch
-smv_latest_version = 'main'                   # which version is "latest"
-smv_released_pattern = r'^tags/.*$'           # tags are released versions
-smv_output_dir_format = '{ref.name}'           # use tag/branch name as dir
-
-# Templates for version selector UI
-templates_path = ['_templates']
-html_sidebars = {
-    '**': [
-        'versioning.html',
-    ],
-}
 
 # -- Internationalization (future) -------------------------------------------
 # To enable multi-language support, uncomment the following:
