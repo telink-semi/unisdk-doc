@@ -1,12 +1,18 @@
-# UniSDK Documentation — Deploy to GitHub Pages
+# UniSDK Documentation — Build with sphinx-multiversion & Deploy to GitHub Pages
 #
 # Triggered by:
-#   - Push to main branch          → deploys as "latest"
-#   - Push a tag matching v*       → deploys as the tag name + updates "latest"
+#   - Push to main branch          → builds "main" (latest)
+#   - Push a tag matching v*       → builds the tag version + "main" (latest)
 #
 # Version naming convention:
 #   v0.2.0          → SDK v0.2.0 release
 #   v0.2.0-doc.1    → Doc-only fix after SDK v0.2.0
+#
+# Output structure on gh-pages:
+#   /main/          ← latest docs (from main branch)
+#   /v0.2.0/        ← frozen docs for SDK v0.2.0
+#   /v0.2.0-doc.1/  ← doc-only fix for SDK v0.2.0
+#   /index.html     ← redirects to /main/
 #
 name: Docs Deploy
 
@@ -26,10 +32,10 @@ jobs:
     concurrency: ci-${{ github.ref }}
 
     steps:
-      - name: Checkout unisdk-doc
+      - name: Checkout unisdk-doc (with tags for versioning)
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # needed for mike versioning
+          fetch-depth: 0  # fetch all history + tags for sphinx-multiversion
 
       - name: Checkout main SDK repo (for API headers)
         uses: actions/checkout@v4
@@ -55,26 +61,28 @@ jobs:
           mkdir -p _doxygen
           doxygen Doxyfile.in
 
-      - name: Determine version tag
-        id: version
+      - name: Build all versions with sphinx-multiversion
         run: |
-          TAG=$(git describe --tags --exact-match 2>/dev/null || echo "")
-          if [ -n "$TAG" ]; then
-            echo "version=$TAG" >> "$GITHUB_OUTPUT"
-          else
-            echo "version=latest" >> "$GITHUB_OUTPUT"
-          fi
+          sphinx-multiversion . _build/versions
 
-      - name: Configure Git for mike
+      - name: Create root index.html (redirect to latest)
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cat > _build/versions/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta http-equiv="refresh" content="0; url=./main/" />
+            <title>UniSDK Documentation</title>
+          </head>
+          <body>
+            <p>Redirecting to <a href="./main/">latest documentation</a>...</p>
+          </body>
+          </html>
+          EOF
 
-      - name: Build and deploy with mike
-        run: |
-          VERSION="${{ steps.version.outputs.version }}"
-          if [ "$VERSION" = "latest" ]; then
-            mike deploy --push --update-aliases latest
-          else
-            mike deploy --push --update-aliases "$VERSION" latest
-          fi
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_build/versions
+          force_orphan: true
