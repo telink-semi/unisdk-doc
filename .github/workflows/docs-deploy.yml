@@ -89,11 +89,11 @@ jobs:
           <!DOCTYPE html>
           <html>
           <head>
-            <meta http-equiv="refresh" content="0; url=./main/" />
+            <meta http-equiv="refresh" content="0; url=./main/en/" />
             <title>UniSDK Documentation</title>
           </head>
           <body>
-            <p>Redirecting to <a href="./main/">latest documentation</a>...</p>
+            <p>Redirecting to <a href="./main/en/">latest documentation</a>...</p>
           </body>
           </html>
           EOF
