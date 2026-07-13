@@ -124,6 +124,9 @@ jobs:
           # ---- 3. Generate version metadata and landing page ----
           python scripts/generate_landing.py "$OUTPUT_DIR" "$OUTPUT_DIR"
 
+          # Copy static assets (logo) to output root for landing page
+          cp -r _static "$OUTPUT_DIR/_static"
+
           echo "=== All versions built ==="
           find "$OUTPUT_DIR" -maxdepth 3 -type d | head -30
 
