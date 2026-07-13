@@ -1,0 +1,31 @@
+{% extends "sphinx_book_theme/layout.html" %}
+
+{% block extrahead %}
+{{ super() }}
+<link rel="stylesheet" href="{{ pathto('_static/extra.css', 1) }}" />
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+{% endblock %}
+
+{% block footer %}
+{% include "telink-footer.html" %}
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% if current_version and current_version != "main" %}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var versionBadge = document.createElement("span");
+    versionBadge.className = "version-badge";
+    versionBadge.textContent = "{{ current_version }}";
+    var footer = document.querySelector(".telink-footer .footer-copyright");
+    if (footer) {
+      footer.appendChild(versionBadge);
+    }
+  });
+</script>
+{% endif %}
+{% endblock %}

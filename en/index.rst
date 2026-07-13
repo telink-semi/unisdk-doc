@@ -180,6 +180,7 @@ UniSDK — Telink Unified Software Development Kit
    contribute/index
    support/index
    terminology
+   about/index
 
 .. only:: builder_html
 

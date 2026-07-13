@@ -1,18 +1,22 @@
 # UniSDK Documentation — Build & Deploy to GitHub Pages
 #
+# Supports multi-language (en/zh) and multi-version (main + v* tags) builds.
+#
 # Triggered by:
-#   - Push to main branch          → builds "main" (latest)
-#   - Push a tag matching v*       → builds the tag version + "main" (latest)
+#   - Push to main branch          → builds "main" (latest) for both languages
+#   - Push a tag matching v*       → builds the tag version + "main" (latest) for both languages
 #
 # Version naming convention:
 #   v0.2.0          → SDK v0.2.0 release
 #   v0.2.0-doc.1    → Doc-only fix after SDK v0.2.0
 #
 # Output structure on gh-pages:
-#   /main/          ← latest docs (from main branch)
-#   /v0.2.0/        ← frozen docs for SDK v0.2.0
-#   /v0.2.0-doc.1/  ← doc-only fix for SDK v0.2.0
-#   /index.html     ← redirects to /main/
+#   /index.html       ← Landing page (language + version selector)
+#   /versions.json    ← Version metadata for version switcher JS
+#   /en/main/         ← Latest English docs
+#   /en/v0.2.0/       ← Frozen English docs for SDK v0.2.0
+#   /zh/main/         ← Latest Chinese docs
+#   /zh/v0.2.0/       ← Frozen Chinese docs for SDK v0.2.0
 #
 name: Docs Deploy
 
@@ -26,6 +30,11 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  SDK_REPO: telink-semi/unisdk
+  SDK_PATH: _sdk_src
+  LANGUAGES: "en zh"
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -37,11 +46,21 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Cache SDK checkout
+        id: cache-sdk
+        uses: actions/cache@v4
+        with:
+          path: _sdk_src
+          key: sdk-${{ env.SDK_REPO }}-main-${{ github.sha }}
+          restore-keys: |
+            sdk-${{ env.SDK_REPO }}-main-
+
       - name: Checkout main SDK repo (for API headers)
+        if: steps.cache-sdk.outputs.cache-hit != 'true'
         uses: actions/checkout@v4
         with:
-          repository: telink-semi/unisdk
-          path: _sdk_src
+          repository: ${{ env.SDK_REPO }}
+          path: ${{ env.SDK_PATH }}
           ref: main
 
       - name: Setup Python
@@ -66,40 +85,47 @@ jobs:
           OUTPUT_DIR="_build/versions"
           mkdir -p "$OUTPUT_DIR"
 
-          # ---- 1. Build main branch (latest) ----
-          echo "=== Building main (latest) ==="
-          git checkout main
-          sphinx-build -b html . "$OUTPUT_DIR/main"
+          # ---- Helper: build a single version for a single language ----
+          build_version() {
+            local lang="$1"
+            local version="$2"
+            local version_label="$3"
 
-          # ---- 2. Build all v* tags ----
-          for tag in $(git tag -l 'v*' --sort=-v:refname); do
-            echo "=== Building $tag ==="
-            git checkout "$tag"
+            echo "=== Building $version ($lang) ==="
+            git checkout "$version"
+
             # Re-generate Doxygen for this version (API may differ)
             mkdir -p _doxygen
             doxygen Doxyfile.in 2>/dev/null || true
-            sphinx-build -b html . "$OUTPUT_DIR/$tag"
+
+            UNISDK_DOC_LANG="$lang" \
+            UNISDK_DOC_VERSION="$version_label" \
+            UNISDK_DOC_RELEASE="$version_label" \
+            sphinx-build -b html . "$OUTPUT_DIR/$lang/$version_label"
+
+            # Restore main branch state
+            git checkout main
+          }
+
+          # ---- 1. Build main branch for all languages ----
+          for lang in $LANGUAGES; do
+            build_version "$lang" "main" "main"
           done
 
-          # ---- 3. Restore main branch ----
-          git checkout main
+          # ---- 2. Build all v* tags for all languages ----
+          for tag in $(git tag -l 'v*' --sort=-v:refname); do
+            # Strip leading 'v' for display label
+            label="${tag#v}"
+            for lang in $LANGUAGES; do
+              build_version "$lang" "$tag" "$tag"
+            done
+          done
 
-          # ---- 4. Create root redirect ----
-          cat > "$OUTPUT_DIR/index.html" << 'EOF'
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <meta http-equiv="refresh" content="0; url=./main/en/" />
-            <title>UniSDK Documentation</title>
-          </head>
-          <body>
-            <p>Redirecting to <a href="./main/en/">latest documentation</a>...</p>
-          </body>
-          </html>
-          EOF
+          # ---- 3. Generate version metadata and landing page ----
+          python scripts/generate_landing.py "$OUTPUT_DIR" "$OUTPUT_DIR"
 
           echo "=== All versions built ==="
-          ls -la "$OUTPUT_DIR/"
+          find "$OUTPUT_DIR" -maxdepth 3 -type d | head -30
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

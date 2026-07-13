@@ -6,10 +6,20 @@ for the standalone unisdk-doc repository. It uses sphinx_book_theme,
 myst-parser for Markdown compatibility, and Breathe+Doxygen for API
 reference generation from C header files (pulled from the main SDK
 repo during CI builds).
+
+Supports multi-language (en/zh) and multi-version builds.
 """
 
 import os
 import sys
+
+# -- Language / Version context (set via -D on CLI during CI) -----------------
+# Default to English; CI passes -D language=zh for Chinese builds.
+language = os.environ.get('UNISDK_DOC_LANG', 'en')
+
+# Version from environment (set during CI builds), defaults to 'main'
+_version = os.environ.get('UNISDK_DOC_VERSION', 'main')
+_release = os.environ.get('UNISDK_DOC_RELEASE', _version)
 
 # -- Project information -----------------------------------------------------
 
@@ -18,8 +28,8 @@ copyright = 'Telink Semiconductor'
 author = 'Telink Semiconductor'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0'
-version = '1.0'
+release = _release
+version = _version
 
 # -- General configuration ---------------------------------------------------
 
@@ -30,6 +40,9 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.extlinks',
     'sphinx.ext.viewcode',
+
+    # Internationalization
+    'sphinx.ext.intl',
 
     # Markdown support via MyST
     'myst_parser',
@@ -46,14 +59,20 @@ extensions = [
     'sphinx.ext.autosummary',
 ]
 
+# -- Internationalization -----------------------------------------------------
+locale_dirs = ['locale/']
+gettext_compact = False
+
+# -- Language-specific master doc ---------------------------------------------
+# English docs live under en/; Chinese docs under zh/.
+# The master_doc is set to '<lang>/index' automatically.
+master_doc = f'{language}/index'
+
 # Source file suffixes: support both RST and MD
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
 }
-
-# The master toctree document
-master_doc = 'en/index'
 
 # Files/directories to exclude from processing
 exclude_patterns = [
@@ -64,6 +83,8 @@ exclude_patterns = [
     'Thumbs.db',
     '.DS_Store',
     'README.md',
+    'scripts/**',
+    '.trae/**',
 ]
 
 # Suppress known warnings
@@ -124,8 +145,8 @@ breathe_domain_by_extension = {'h': 'c'}
 # -- HTML theme configuration -------------------------------------------------
 
 html_theme = 'sphinx_book_theme'
-html_static_path = ['_static']
-html_css_files = []
+html_static_path = ['_static', 'stylesheets']
+html_css_files = ['extra.css']
 
 html_theme_options = {
     'repository_url': 'https://github.com/telink-semi/unisdk-doc',
@@ -136,19 +157,23 @@ html_theme_options = {
     'toc_title': 'Contents',
     'show_navbar_depth': 2,
     'show_toc_level': 2,
+    # Version info displayed in the footer
+    'version': version,
+    'version_selector': True,
 }
 
 # The name of an image file (relative to conf.py) to use as a favicon
-html_favicon = ''
+html_favicon = '_static/favicon.svg'
 
 # The name of an image file (relative to conf.py) to place at the top of
 # the sidebar (sidebar logo)
-html_logo = ''
+html_logo = '_static/logo.svg'
 
-# -- Internationalization (future) -------------------------------------------
-# To enable multi-language support, uncomment the following:
-# locale_dirs = ['locale/']
-# gettext_compact = False
+# Pass version and language info to HTML templates
+html_context = {
+    'current_version': version,
+    'current_language': language,
+}
 
 # -- Intersphinx configuration ------------------------------------------------
 

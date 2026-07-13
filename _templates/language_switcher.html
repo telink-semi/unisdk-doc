@@ -1,0 +1,18 @@
+<div class="language-selector">
+  <label for="language-select" style="font-size: 0.85rem; margin-right: 0.3rem;">Language:</label>
+  <select id="language-select" onchange="switchLanguage(this.value)">
+    <option value="en" {% if current_language == 'en' %}selected{% endif %}>English</option>
+    <option value="zh" {% if current_language == 'zh' %}selected{% endif %}>中文</option>
+  </select>
+</div>
+
+<script>
+function switchLanguage(lang) {
+  var currentPath = window.location.pathname;
+  // Replace /en/ or /zh/ in the path
+  var newPath = currentPath.replace(/\/[a-z]{2}\//, '/' + lang + '/');
+  if (newPath !== currentPath) {
+    window.location.href = newPath;
+  }
+}
+</script>

@@ -1,6 +1,157 @@
-/* UniSDK Documentation Extra Styles */
+/* ============================================================
+   UniSDK Documentation — Telink Brand Styles
+   ============================================================ */
 
-/* DocStatus badges */
+/* -- Telink Brand Colors ----------------------------------- */
+:root {
+  --telink-primary: #0a2d72;
+  --telink-secondary: #0052A5;
+  --telink-accent: #0099D8;
+  --telink-green: #00A651;
+  --telink-bg-light: #F5F7FA;
+  --telink-text: #333333;
+  --telink-link: #0052A5;
+  --telink-white: #ffffff;
+}
+
+/* -- Sidebar logo styling ---------------------------------- */
+.sidebar-logo {
+  max-width: 160px;
+}
+
+.sidebar-logo-container {
+  text-align: left;
+  padding: 0.5rem 0;
+}
+
+/* -- Link colors ------------------------------------------- */
+a {
+  color: var(--telink-link);
+}
+a:hover {
+  color: var(--telink-secondary);
+}
+
+/* -- Navigation highlight ----------------------------------- */
+.bd-sidebar .nav .active > a,
+.bd-sidebar .nav .active > a:hover {
+  color: var(--telink-primary);
+  font-weight: 600;
+}
+
+/* -- Header / navbar styling ------------------------------- */
+.bd-header {
+  background-color: var(--telink-white);
+  border-bottom: 2px solid var(--telink-primary);
+}
+
+/* -- Footer styling ---------------------------------------- */
+.bd-footer {
+  background-color: var(--telink-primary);
+  color: var(--telink-white);
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+.bd-footer a {
+  color: var(--telink-accent);
+}
+
+/* -- Telink custom footer ---------------------------------- */
+.telink-footer {
+  background-color: var(--telink-primary);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+.telink-footer h5 {
+  color: var(--telink-white);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.telink-footer a {
+  color: var(--telink-accent);
+  text-decoration: none;
+}
+
+.telink-footer a:hover {
+  color: var(--telink-white);
+  text-decoration: underline;
+}
+
+.telink-footer .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.telink-footer .footer-links li {
+  margin-bottom: 0.4rem;
+}
+
+.telink-footer .footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1.2rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* -- Version selector styling ------------------------------ */
+.version-selector {
+  display: inline-block;
+  position: relative;
+  margin-left: 1rem;
+}
+
+.version-selector select {
+  appearance: auto;
+  background-color: var(--telink-bg-light);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  color: var(--telink-text);
+  cursor: pointer;
+}
+
+/* -- Language switcher styling ----------------------------- */
+.language-selector {
+  display: inline-block;
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+.language-selector select {
+  appearance: auto;
+  background-color: var(--telink-bg-light);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  color: var(--telink-text);
+  cursor: pointer;
+}
+
+/* -- Version badge in footer ------------------------------- */
+.version-badge {
+  display: inline-block;
+  background-color: var(--telink-primary);
+  color: var(--telink-white);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* -- DocStatus badges (Sphinx compatible) ------------------ */
 .doc-status-stable {
   color: #fff;
   background-color: #2e7d32;
@@ -37,23 +188,23 @@
   font-weight: bold;
 }
 
-/* Code block enhancements */
+/* -- Code block enhancements ------------------------------- */
 .highlighttable .linenos {
   color: #999;
 }
 
-/* Admonition style tweaks */
-.md-typeset .admonition.tip {
-  border-left-color: #00bfa5;
-}
-
-/* Make tables more readable */
-.md-typeset table:not([class]) {
+/* -- Make tables more readable ----------------------------- */
+table:not([class]) {
   font-size: 0.85rem;
 }
 
-/* Responsive images */
-.md-typeset img {
+/* -- Responsive images ------------------------------------- */
+img {
   max-width: 100%;
   height: auto;
+}
+
+/* -- Callout / admonition tweaks --------------------------- */
+.admonition.tip {
+  border-left-color: var(--telink-accent);
 }
