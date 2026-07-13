@@ -3,7 +3,7 @@
 ### Version
 * SDK Version: unified_sdk V0.2.0
 * Chip Version
-  - TLSR952x(B92)
+  - TLSR952x
   - TL721x A2
   - TL321x A0/A1
 * Hardware EVK Version
@@ -12,7 +12,8 @@
   - TL321x: C1T331A20/C1T335A20
 
 * Toolchain Version
-  - TLSR952x(B92)/TL721x/TL321x: TL32 ELF MCULIB V5 GCC12.2 ( IDE: [Telink IoT Studio](https://www.telink-semi.com/development-tools) )
+  - TLSR952x/TL721x: TL32 ELF MCULIB V5F GCC14.2 
+  - TL321x: TL32 ELF MCULIB V5 GCC14.2 
 
 
 #### Features
@@ -32,28 +33,35 @@
 - DMA API - Expanded DMA driver with unified dynamic configuration
 - PLIC API - Unified Interrupt controller with common API for all supported SOCs
 - ADC API - Unified ADC API for all supported SOCs
-- UART API - Unified UART API for al supported SOCs and 3 priority levels of message processing
+- mbedTLS module - PSA Crypto API integration with hardware TRNG acceleration
 - Logger subsystem - Debug Log for simplifying the user experience with formatting and sending the debug messages
 - Multi-level init system - Support for different system init levels
 - Task planner and loops - Simple multi-task queue with multi-threading or serial execution
 - Software timer - Mtimer based multi-instance software timer
-- NVS - non-volatile storage module
-- YAML SoC descriptor
+- Storage system - Abstract storage device layer with SOC flash driver support
+- Debug system - Assert handling and GPIO debug support
+- Dynamic memory management - Configurable heap allocation with retention memory support
+- Pinmux configuration tool - Interactive Python TUI for visual pin multiplexing configuration
+- Toolchain auto-discovery - Automatic RISC-V GCC toolchain path detection and validation
+- Zephyr module integration - UniSDK as a standard Zephyr RTOS module (`module.yml`) with CMake/Kconfig bridge
+- Zephyr Kconfig bridge - SoC/Core/Board mapping from Zephyr to UniSDK (`CONFIG_SOC_SERIES_TELINK_*` → `CONFIG_TLK_CORE/SOC/BOARD`)
+- Subsystem
+  - BLE Controller - Complete BLE Link Layer with HCI, LL, ACL, Advertising, and Scanning support
 
 ### Notes
 
-A full English documentation set was added under `docs/en/`, covering:
+A full English documentation set was added in [Unified SDK Documentation](https://telink-semi.github.io/unisdk-doc/), covering:
 
 - **Getting Started** — Linux, Windows, macOS setup; first-build walkthrough; troubleshooting
 - **Introduction** — SDK positioning, architecture overview, chip family table
 - **Chips & Boards** — Per-chip specs (TL321X, TL721X, TLSR922X, TLSR952X) and EVK board docs
 - **Peripheral Drivers** — GPIO, UART, PM, PLIC, Analog, I2C, SPI, ADC, DMA, WDT, Timer, USB
-- **Samples** — gpio, uart, pm, adc, dma, i2c, spi, BLE, IRQ nesting, timer, watchdog, USB CDC
-- **Build System** — CMake flow, Kconfig system, West commands, Make support, extensions
+- **Samples** — gpio, uart, pm, adc, dma, i2c, spi, BLE advertising, BLE HCI controller, IRQ nesting, timer, watchdog, USB CDC, RF multi-mode, NV storage, task planner, mbedTLS, system log
+- **Build System** — CMake flow, Kconfig system, West workspace, Zephyr module integration, Make support, extensions
 - **Tools** — Menuconfig, Pinmux visual tool, BDT flash/debug utility
 - **Development Guide** — Directory structure, public API design, core architecture, IDE integration, debugging
 - **API Reference, Kconfig Reference, YAML Reference** — Scaffolding with index files
-- **Connectivity** — BLE controller documentation stub
+- **Connectivity** — BLE controller documentation
 - **Terminology** — SDK-wide glossary
 
 ### CodeSize
