@@ -41,8 +41,8 @@ extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.viewcode',
 
-    # Internationalization
-    'sphinx.ext.intl',
+    # Internationalization (sphinx-intl for Sphinx 9.0+)
+    'sphinx_intl',
 
     # Markdown support via MyST
     'myst_parser',
