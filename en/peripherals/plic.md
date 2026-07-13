@@ -136,6 +136,17 @@ void tlk_plic_irqs_postprocess_for_wfi(void);
 | `tlk_plic_sw_set_pending()` | Manually triggers a software interrupt |
 | `tlk_plic_sw_interrupt_enable()` | Enables the software interrupt source |
 | `tlk_plic_sw_interrupt_disable()` | Disables the software interrupt source |
+| `tlk_plic_sw_interrupt_claim()` | Claims the software interrupt source (typically used inside the ISR) |
+| `tlk_plic_sw_interrupt_complete()` | Completes the software interrupt, allowing new requests to be processed |
+
+## PLIC Configuration
+
+This section describes the PLIC configuration options available in Kconfig.
+
+| Config | Default | Description |
+|---|------|------|
+| `TLK_PLIC_VECTOR_MODE` | `y` | Selects the global interrupt handling mode. If enabled, Vector Mode is used (interrupts jump directly to their vector address). If disabled, General Mode is used (all interrupts share a common handler). |
+| `PLIC_SW` (or `CONFIG_TLK_PLIC_SW`) | `n` | Enables support for Software Interrupts. If enabled, APIs like `tlk_plic_sw_set_pending()` become available. |
 
 ## Interrupt Handling Modes
 

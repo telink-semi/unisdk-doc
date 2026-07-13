@@ -1,5 +1,9 @@
-# U-mode Driver Sample
+---
+title: U-mode Sample
+status: DRAFT
+---
 
+# U-mode Driver Sample
 
 ## Overview
 
@@ -7,7 +11,6 @@ A sample application demonstrating the TLK U-mode API. It switches the core from
 mode (M-mode) to User mode (U-mode), executes a task under reduced privilege, optionally
 dispatches a service request back to M-mode via `ecall`, and optionally returns to M-mode
 permanently through `tlk_core_mmode`.
-
 
 ## How It Works
 
@@ -39,7 +42,6 @@ On startup the sample:
    illegal-instruction exception in U-mode. If `CONFIG_TLK_UMODE_DEMO_ENABLE_MMODE` is
    not set, `ecall_handler` never calls `tlk_core_mmode()`, so execution returns to
    `main` still in U-mode and the read traps.
-
 
 ## Configuration
 

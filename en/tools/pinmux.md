@@ -115,21 +115,41 @@ This allows projects to have out-of-the-box pin settings while still allowing cu
 
 When the application starts, it combines multiple data sources:
 
-- `soc/<soc>/pinmux/pinmux.yaml` — The "Dictionary": lists every physical pin and its supported functions
-- `soc/<soc>/pinmux/pinmux_<case>.yaml` — The "Restriction": removes pins or ports for specific chip packages
-- `.config` — The "Requirements": tells the app which drivers are enabled
+- `soc/<soc>/pinmux/function.yaml` — The "Function Definitions": describes all available functions for the chip
+- `soc/<soc>/pinmux/pinmux.yaml` — The "Dictionary": lists every physical pin and its supported functions. Each port can have an `exclude` property, which describes what functions aren't supported by its pins. Individual pins can also use `exclude` and `include` properties. The restrictions are applied in the following order: port's exclude → pin's exclude → pin's include. For simplicity, the `all` keyword represents all functions. For groups of functions, you may use a group name (e.g., `uart0` represents `uart0_tx`, `uart0_rx`, `uart0_cts`, and `uart0_rts`; `uart` covers `uart0`, `uart1`, etc.). If a pin supports only one exact function, use `exclude: all` together with `include: your_function`.
+- `soc/<soc>/pinmux/pinmux_<case>.yaml` — The "Restriction": overrides `pinmux.yaml` to remove pins or ports for specific chip packages by assigning the `delete` keyword
+- `.config` — The "Requirements": tells the app which drivers are enabled (e.g., "UART0 is enabled, so we need pins for TX and RX")
 - `.pinmux` files — Previous user configurations (see overriding mechanism)
+
+**The Loading Sequence:**
+
+1. The `.config` file, which contains the current configuration and identifies the current chip.
+2. The function description from `function.yaml`, skipping functions disabled by configuration.
+3. The port and pin description from `pinmux.yaml` and `pinmux_<case>.yaml` for the selected chip.
+4. The `.pinmux` files in the order described in the [Overriding Mechanism](#overriding-mechanism) section.
 
 ### Changing a Pin Function
 
-When a new function is selected:
-- **Collision Check:** Scans all other pins for conflicting unique functions
-- **Observer Update:** The UI widget receives a notification and redraws itself
+When a new function is selected for a pin, the following happens instantly:
+
+- **Collision Check:** The system scans all other pins. If you try to assign a unique function (like `UART0_TX`) to PC0, but PB2 already has it, the system flags a **Conflict**.
+- **Observer Update:** The app uses an "Observer Pattern."
+  - The Pin data changes.
+  - The UI widget receives a notification and redraws itself (updating the text and color).
+  - The next `is_modified` property access in `PinmuxManager` will return `True`, until the save action is triggered.
 
 ### The Saving Process
 
-1. **Validation:** Checks for conflicts and missing required functions
-2. **Writing:** If valid, saves to `<identifier>.pinmux` file
+When you press Save (`s`), the app performs strict validation before writing to disk.
+
+**Step 1: Validation**
+
+- **Check Conflicts:** Are two pins assigned to the same non-repeatable function? If yes → Error.
+- **Check Requirements:** Are all functions required by the configuration assigned to valid pins? If no → Error.
+
+**Step 2: Writing**
+
+- If there are no errors, the pin mapping is saved to the `<identifier>.pinmux` file using the simple key-value format.
 
 ### Generating pinmux.h
 
@@ -163,3 +183,7 @@ Pinmux configuration is deeply integrated into the build system:
 - The `generate_pinmux` CMake target automatically executes before compilation
 - Pre-build checks automatically detect whether `pinmux.h` needs to be updated
 - The generated `pinmux.h` is placed in the `build/` directory and automatically added to the include path
+
+## CI
+
+The CI uses a single configuration across all samples. This is possible because unused assignments are skipped, so you just need to consider all pin usages in the samples within this file. Before the build, the CI copies this file to the build directory. Since the build's settings are applied last during overriding, the resulting configuration corresponds to what is described in the file — all previous settings are overridden.

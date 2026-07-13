@@ -114,3 +114,8 @@ bool usb_active(void) {
 
 TLK_REGISTER_PREVENT_SLEEP(usb_active);
 ```
+
+## Additional Notes
+
+The functions provided by this API **should not** be invoked by the user.
+They are called automatically on the corresponding lifecycle stages.

@@ -1,14 +1,18 @@
-```markdown
+---
+title: PMP Sample
+status: DRAFT
+---
+
 # PMP Driver Sample
 
-
 ## Overview
+
 A sample application demonstrating the usage of the TLK PMP API. It protects the upper half
 of a 16-element array against all access, then attempts to read or write the full array,
 triggering a PMP violation trap on the protected region.
 
-
 ## How It Works
+
 On startup the sample:
 
 1. *(Optional)* Configures PMP protection on `demo_array[8..15]` using the selected address
@@ -22,8 +26,8 @@ On startup the sample:
 Elements `[0..7]` complete successfully. On the first access to `demo_array[8]` a PMP
 violation trap is raised.
 
-
 ## Configuration
+
 All options are exposed via **Kconfig** under *PMP Demo Configuration*.
 
 | Symbol | Type | Default | Description |

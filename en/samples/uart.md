@@ -11,7 +11,8 @@ The `uart_demo` sample demonstrates the UART driver's echo functionality: receiv
 
 ## Features Demonstrated
 
-- Manual UART configuration (when `CONFIG_TLK_UART_AUTO_CONFIG` is disabled)
+- Manual UART configuration using `tlk_uart_configure` and `tlk_uart_configure_pinmux` (when `CONFIG_TLK_UART_USED_AUTO_CONFIG` is disabled)
+  - Manual UART flow control configuration using `tlk_uart_configure_flow_control` and `tlk_uart_configure_flow_control_pinmux` if `CONFIG_TLK_UART1_FLOW_CONTROL` is enabled
 - Callback-based data reception (`tlk_uart_receive_bytes`)
 - Data transmission (`tlk_uart_send_bytes`)
 - Power management and sleep prevention (optional)
@@ -20,7 +21,7 @@ The `uart_demo` sample demonstrates the UART driver's echo functionality: receiv
 
 ### Initialization
 
-1. **Manual Configuration** — If automatic configuration is not enabled, manually set UART1 parameters
+1. **Manual Configuration** — If `CONFIG_TLK_UART_USED_AUTO_CONFIG` is disabled, manually configure UART1 parameters using `tlk_uart_configure` and `tlk_uart_configure_pinmux`. If `CONFIG_TLK_UART1_FLOW_CONTROL` is enabled, also configure flow control using `tlk_uart_configure_flow_control` and `tlk_uart_configure_flow_control_pinmux`.
 2. **Power Management Test** — If `CONFIG_TLK_UART_DEMO_SLEEP` is enabled, first print "Before sleep", sleep for 2 seconds, then print "After sleep" upon wake-up
 3. **Interrupt Enable** — Call `tlk_core_interrupt_enable()` to enable asynchronous callbacks
 

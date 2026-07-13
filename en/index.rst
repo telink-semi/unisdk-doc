@@ -149,6 +149,8 @@ UniSDK — Telink Unified Software Development Kit
    samples/gpio
    samples/uart
    samples/pm
+   samples/pmp
+   samples/umode
    samples/adc
    samples/dma
    samples/i2c
@@ -164,6 +166,7 @@ UniSDK — Telink Unified Software Development Kit
    :caption: API Reference
 
    api_reference/index
+   api_reference/api
 
 .. toctree::
    :maxdepth: 2

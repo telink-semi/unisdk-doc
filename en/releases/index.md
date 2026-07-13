@@ -23,7 +23,7 @@ Current version information is defined in `common/include/tlk_sdk_version.h`.
 
 | SDK Version | TL321X | TL721X | TLSR922X | TLSR952X | Notes |
 |---------|--------|--------|----------|----------|------|
-| 0.x (current) | ✅ | ✅ | ✅ | ✅ | Initial version |
+| 0.2.0 | ✅ | ✅ | ✅ | ✅ | Initial version |
 
 ### Toolchain Versions
 
@@ -34,6 +34,12 @@ Current version information is defined in `common/include/tlk_sdk_version.h`.
 | Ninja | >= 1.10 |
 | West | >= 0.14.0 |
 | RISC-V GCC | V5.4.1+ |
+
+## Version History
+
+### v0.2.0
+
+- [v0.2.0 Release Notes](0.2.0/Unified_SDK_Release_Note.md)
 
 ## Upgrade Guide
 

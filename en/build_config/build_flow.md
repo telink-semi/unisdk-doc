@@ -243,7 +243,19 @@ west tl-build -k
 ```bash
 # Simple build (current directory)
 west tl-build
+```
 
+This command builds the application in the current directory. If it's the first build, it will automatically configure and build.
+
+**Pre-build Checks:**
+- Checks for existing `.config`, `build.config`, `chip.config`, `pinmux.h`, and `capabilities.h` files
+- Invokes CMake to generate the build system
+- Compiles source code using the selected toolchain
+- Generates firmware binaries in the `build/` directory
+
+### Common Build Command Examples
+
+```bash
 # Specify build directory
 west tl-build -d build_tl3218
 
@@ -286,9 +298,9 @@ When executing `west tl-build` (with `-k/--kconfig`), the flow is:
 
 ### Dependencies
 
-- `.config` depends on `chip.config` and `build.config`
+- `.config` depends on `chip.config` and `build.config` (when automatically generated)
 - The CMake build system depends on `.config` to determine compilation options
-- Changes to `.config` trigger CMake reconfiguration
+- CMake monitors changes to `.config` and reconfigures the project when the file is modified
 
 ## Build Results
 

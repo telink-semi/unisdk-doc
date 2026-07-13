@@ -50,19 +50,31 @@ python scripts/menuconfig.py Kconfig.build    # Build configuration
 | View help | `?` |
 | Save and exit | Select `< Save >` then `< Exit >` |
 
+![Chip configuration screen](pics/menuconfig_1.png)
+
+*Figure 1. Chip configuration screen — select target SoC and board*
+
+![Build configuration screen](pics/menuconfig_2.png)
+
+*Figure 2. Build configuration screen — configure software drivers and settings*
+
 ## Dual-Phase Configuration
 
 ### Phase 1: Chip Configuration (chip.config)
 
-- Select target SoC
-- Enable chip peripherals (GPIO ports, UART instances, etc.)
-- Configure chip-specific options
+When the tool opens for the first time, you are configuring the hardware.
+
+- **What you see:** Options related to SoC Series, SoC, and Board
+- **Action:** Select your target SoC and enable required chip peripherals (GPIO ports, UART instances, etc.)
+- **Exit:** Select `< Save >` and `< Exit >` to close the window
 
 ### Phase 2: Build Configuration (build.config)
 
-- Filter available options based on chip capabilities (`capabilities.h`)
-- Configure feature switches and parameters
-- Examples and debugging options
+Immediately after the first window closes, the tool opens again for software configuration.
+
+- **What you see:** Options filtered based on chip capabilities (`capabilities.h`), including API configurations, driver selections, and feature switches
+- **Action:** Configure feature switches, parameters, examples, and debugging options
+- **Exit:** Select `< Save >` and `< Exit >` to finish the process
 
 ## Results
 

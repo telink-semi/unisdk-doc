@@ -33,6 +33,8 @@ These functions form the low-level transport layer, primarily used internally by
 
 ### Type-Safe Macros
 
+>**Important**: to take the most advantage of this feature, you need to have the language server capable of expanding deep macros, such as clangd. Then you will be able to fully use autocomplete, type hints, highlight, and so on.
+
 To use these macros, include `registers/tlk_analog.h` with a complete analog register description. It contains named macros with corresponding addresses (e.g., `TLK_AREG_BG_CTRL0 -> 0x00`), which should be preferred over raw addresses.
 
 If a register contains bitfields, a union type is generated:
@@ -56,6 +58,8 @@ typedef union tlk_areg_bg_ctrl0 {
 | `TLK_ANALOG_MODIFY_RAW8(reg, statement)` | Modifies raw 8-bit register data using `uint8_t` |
 | `TLK_ANALOG_MODIFY_RAW16(reg, statement)` | Modifies raw 16-bit register data using `uint16_t` |
 | `TLK_ANALOG_MODIFY_RAW32(reg, statement)` | Modifies raw 32-bit register data using `uint32_t` |
+
+> Note: Internal helper macros in the header begin with underscores and are not intended for user code.
 
 ## Register Definitions
 

@@ -1,3 +1,8 @@
+---
+title: PMP Driver
+status: DRAFT
+---
+
 # PMP Driver
 
 Provides an API for configuring the Physical Memory Protection (PMP) unit on RISC-V cores.
