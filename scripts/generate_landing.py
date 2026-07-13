@@ -34,7 +34,7 @@ def generate_landing_page(build_dir, output_dir):
     }
     .container { max-width: 800px; width: 90%; text-align: center; padding: 2rem; }
     .logo { margin-bottom: 1.5rem; }
-    .logo svg { height: 48px; }
+    .logo img { height: 48px; }
     h1 { font-size: 2rem; font-weight: 700; color: #0a2d72; margin-bottom: 0.5rem; }
     .subtitle { font-size: 1.1rem; color: #666; margin-bottom: 2.5rem; }
     .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
@@ -56,14 +56,7 @@ def generate_landing_page(build_dir, output_dir):
 <body>
   <div class="container">
     <div class="logo">
-      <svg viewBox="0 0 180 40" width="180" height="40" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#0a2d72"/><stop offset="100%" style="stop-color:#0052A5"/></linearGradient></defs>
-        <rect x="0" y="0" width="8" height="36" rx="1" fill="url(#g)"/>
-        <rect x="0" y="0" width="32" height="8" rx="1" fill="url(#g)"/>
-        <rect x="12" y="14" width="20" height="8" rx="1" fill="url(#g)"/>
-        <text x="42" y="28" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#0a2d72" letter-spacing="1">Telink</text>
-        <text x="42" y="38" font-family="Arial,sans-serif" font-size="7" font-weight="400" fill="#0052A5" letter-spacing="2.5">SEMICONDUCTOR</text>
-      </svg>
+      <img src="_static/logo.svg" alt="Telink Logo">
     </div>
     <h1>UniSDK Documentation</h1>
     <p class="subtitle">Telink Unified Software Development Kit</p>
