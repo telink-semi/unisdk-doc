@@ -13,7 +13,7 @@ import sys
 
 # -- Language / Version context (set via -D on CLI during CI) -----------------
 # Default to English; CI passes -D language=zh for Chinese builds.
-# language = os.environ.get('UNISDK_DOC_LANG', 'en')
+language = os.environ.get('UNISDK_DOC_LANG', 'en')
 
 # Version from environment (set during CI builds), defaults to 'main'
 _version = os.environ.get('UNISDK_DOC_VERSION', 'main')
