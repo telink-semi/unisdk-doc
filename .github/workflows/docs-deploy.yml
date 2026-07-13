@@ -98,10 +98,12 @@ jobs:
             mkdir -p _doxygen
             doxygen Doxyfile.in 2>/dev/null || true
 
+            local final_dir="$OUTPUT_DIR/$lang/$version_label"
+
             UNISDK_DOC_LANG="$lang" \
             UNISDK_DOC_VERSION="$version_label" \
             UNISDK_DOC_RELEASE="$version_label" \
-            sphinx-build -b html . "$OUTPUT_DIR/$lang/$version_label"
+            sphinx-build -b html -D master_doc=index -c . "$lang" "$final_dir"
 
             # Restore main branch state
             git checkout main
