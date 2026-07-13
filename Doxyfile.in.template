@@ -1,0 +1,53 @@
+# UniSDK Doxygen Configuration (Template)
+# Used by gen_api_rst.py to generate per-group Doxygen configurations.
+#
+# Placeholders:
+#   @@INPUT_DIRS@@   - Space-separated list of input directories
+#   @@XML_OUTPUT@@   - Path to XML output directory (relative to OUTPUT_DIRECTORY)
+#   @@RECURSIVE@@    - YES or NO
+#   @@FULL_PATH_NAMES@@ - YES or NO
+
+PROJECT_NAME           = "UniSDK"
+PROJECT_BRIEF          = "Telink Unified Software Development Kit"
+OUTPUT_DIRECTORY       = .
+CREATE_SUBDIRS         = NO
+FULL_PATH_NAMES        = @@FULL_PATH_NAMES@@
+
+INPUT                  = @@INPUT_DIRS@@
+RECURSIVE              = @@RECURSIVE@@
+FILE_PATTERNS          = *.h
+EXCLUDE_PATTERNS       = *_internal.h
+
+GENERATE_HTML          = NO
+GENERATE_LATEX         = NO
+GENERATE_XML           = YES
+XML_OUTPUT             = @@XML_OUTPUT@@
+XML_PROGRAMLISTING     = NO
+
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+INCLUDE_PATH           = @@INPUT_DIRS@@
+INCLUDE_FILE_PATTERNS  = *.h
+PREDEFINED             = __DOXYGEN__=1 \
+                         __attribute__(x)= \
+                         _tlk_always_inline= \
+                         _tlk_attribute_ram_code_sec_= \
+                         _tlk_attribute_ram_code_sec_noinline_= \
+                         _tlk_attribute_text_sec_noinline_= \
+                         _tlk_attribute_data_retention_sec_= \
+                         _tlk_attribute_aes_data_sec_=
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+SORT_MEMBER_DOCS       = YES
+
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = NO
+WARN_FORMAT            = "$file:$line: $text"
+WARN_LOGFILE           = doxygen.log
+
+HAVE_DOT               = NO

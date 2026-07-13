@@ -77,30 +77,21 @@ jobs:
 
       - name: Generate API reference (Doxygen XML + RST files)
         run: |
-          # Run gen_api_rst.py from SDK to generate per-group Doxygen XML and per-header RST files.
+          # Run gen_api_rst.py to generate per-group Doxygen XML and per-header RST files.
           # This replaces the old single doxygen Doxyfile.in approach because conf.py's breathe_projects
           # expects per-group XML (_doxygen/public_api/xml, _doxygen/core_drivers/xml, etc.).
-          python _sdk_src/scripts/gen_api_rst.py
+          python scripts/gen_api_rst.py
 
-          # Copy per-group Doxygen XML to workspace root for Breathe
-          if [ -d "_sdk_src/docs/_doxygen" ]; then
-            rm -rf _doxygen
-            cp -r _sdk_src/docs/_doxygen .
-          fi
-
-          # Copy generated per-header RST subdirectories (public_api/, core_drivers/, soc_drivers/)
-          # to the doc source so that en/api_reference/index.rst can reference them.
-          # These subdirectories are not tracked in git, so they won't conflict with git checkout.
-          if [ -d "_sdk_src/docs/en/api_reference" ]; then
-            for subdir in _sdk_src/docs/en/api_reference/*/; do
-              if [ -d "$subdir" ]; then
-                cp -r "$subdir" en/api_reference/
-              fi
-            done
-            # Cache for multi-version builds (git checkout won't touch these, but be safe)
-            mkdir -p _api_rst_cache
-            cp -r _sdk_src/docs/en/api_reference/*/ _api_rst_cache/ 2>/dev/null || true
-          fi
+          # Cache generated RST subdirectories for multi-version builds.
+          # These subdirectories (public_api/, core_drivers/, soc_drivers/) are not tracked in git,
+          # but git checkout of different versions won't remove them since they're not tracked.
+          # The cache is a safety net just in case.
+          mkdir -p _api_rst_cache
+          for subdir in en/api_reference/*/; do
+            if [ -d "$subdir" ]; then
+              cp -r "$subdir" _api_rst_cache/
+            fi
+          done
 
       - name: Build all versions
         run: |
