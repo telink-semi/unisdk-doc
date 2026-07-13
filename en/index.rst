@@ -166,7 +166,6 @@ UniSDK — Telink Unified Software Development Kit
    :caption: API Reference
 
    api_reference/index
-   api_reference/api
 
 .. toctree::
    :maxdepth: 2
