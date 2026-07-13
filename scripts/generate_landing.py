@@ -73,11 +73,6 @@ def generate_landing_page(build_dir, output_dir):
         <p>Complete documentation including getting started guides, API references, peripheral drivers, and more.</p>
         <a class="btn" href="./en/main/">Browse English Docs</a>
       </div>
-      <div class="card">
-        <h2>中文文档</h2>
-        <p>完整的中文文档，包括入门指南、API 参考、外设驱动等内容。</p>
-        <a class="btn" href="./zh/main/">浏览中文文档</a>
-      </div>
     </div>
     <div class="version-section">
       <h3>All Versions</h3>
@@ -121,7 +116,7 @@ def generate_versions_json(build_dir, output_dir):
     versions = []
 
     # Scan for language directories
-    for lang in ['en', 'zh']:
+    for lang in ['en']:
         lang_dir = os.path.join(build_dir, lang)
         if not os.path.isdir(lang_dir):
             continue
@@ -146,7 +141,7 @@ def generate_versions_json(build_dir, output_dir):
             })
 
     # Also add language-specific main versions as top-level entries
-    for lang in ['en', 'zh']:
+    for lang in ['en']:
         main_dir = os.path.join(build_dir, lang, 'main')
         if os.path.isdir(main_dir):
             # Add a clean latest entry

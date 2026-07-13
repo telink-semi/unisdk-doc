@@ -2,7 +2,6 @@
   <label for="language-select" style="font-size: 0.85rem; margin-right: 0.3rem;">Language:</label>
   <select id="language-select" onchange="switchLanguage(this.value)">
     <option value="en" {% if current_language == 'en' %}selected{% endif %}>English</option>
-    <option value="zh" {% if current_language == 'zh' %}selected{% endif %}>中文</option>
   </select>
 </div>
 

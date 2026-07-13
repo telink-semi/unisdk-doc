@@ -100,7 +100,7 @@ unisdk/
 │   └── ...
 │
 └── docs/                       # Documentation
-    ├── zh/                     #   Chinese documentation
+    ├── en/                     #   English documentation
     ├── images/                 #   Image assets
     └── ...
 ```

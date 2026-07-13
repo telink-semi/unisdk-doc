@@ -6,8 +6,6 @@ for the standalone unisdk-doc repository. It uses sphinx_book_theme,
 myst-parser for Markdown compatibility, and Breathe+Doxygen for API
 reference generation from C header files (pulled from the main SDK
 repo during CI builds).
-
-Supports multi-language (en/zh) and multi-version builds.
 """
 
 import os
@@ -15,7 +13,7 @@ import sys
 
 # -- Language / Version context (set via -D on CLI during CI) -----------------
 # Default to English; CI passes -D language=zh for Chinese builds.
-language = os.environ.get('UNISDK_DOC_LANG', 'en')
+# language = os.environ.get('UNISDK_DOC_LANG', 'en')
 
 # Version from environment (set during CI builds), defaults to 'main'
 _version = os.environ.get('UNISDK_DOC_VERSION', 'main')
@@ -66,13 +64,16 @@ gettext_compact = False
 # -- Language-specific master doc ---------------------------------------------
 # English docs live under en/; Chinese docs under zh/.
 # The master_doc is set to '<lang>/index' automatically.
-master_doc = f'{language}/index'
+# master_doc = f'{language}/index'
 
 # Source file suffixes: support both RST and MD
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
 }
+
+# The master toctree document
+master_doc = 'en/index'
 
 # Files/directories to exclude from processing
 exclude_patterns = [
@@ -83,8 +84,6 @@ exclude_patterns = [
     'Thumbs.db',
     '.DS_Store',
     'README.md',
-    'scripts/**',
-    '.trae/**',
 ]
 
 # Suppress known warnings

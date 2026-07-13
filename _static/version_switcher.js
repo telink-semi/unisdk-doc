@@ -56,16 +56,15 @@
 
         // Group versions by language
         var enVersions = data.versions.filter(function(v) { return v.lang === 'en'; });
-        var zhVersions = data.versions.filter(function(v) { return v.lang === 'zh'; });
 
-        var currentLangVersions = CURRENT_LANG === 'zh' ? zhVersions : enVersions;
+        currentLangVersions = enVersions;
         if (currentLangVersions.length === 0) {
           currentLangVersions = data.versions;
         }
 
         // Add optgroup for current language
         if (currentLangVersions.length > 0) {
-          var label = CURRENT_LANG === 'zh' ? '中文版' : 'English';
+          var label = 'English';
           var group = document.createElement('optgroup');
           group.label = label;
 
