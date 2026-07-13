@@ -47,22 +47,19 @@
 - Zephyr Kconfig bridge - SoC/Core/Board mapping from Zephyr to UniSDK (`CONFIG_SOC_SERIES_TELINK_*` → `CONFIG_TLK_CORE/SOC/BOARD`)
 - Subsystem
   - BLE Controller - Complete BLE Link Layer with HCI, LL, ACL, Advertising, and Scanning support
-
-### Notes
-
-A full English documentation set was added in [Unified SDK Documentation](https://telink-semi.github.io/unisdk-doc/), covering:
-
-- **Getting Started** — Linux, Windows, macOS setup; first-build walkthrough; troubleshooting
-- **Introduction** — SDK positioning, architecture overview, chip family table
-- **Chips & Boards** — Per-chip specs (TL321X, TL721X, TLSR922X, TLSR952X) and EVK board docs
-- **Peripheral Drivers** — GPIO, UART, PM, PLIC, Analog, I2C, SPI, ADC, DMA, WDT, Timer, USB
-- **Samples** — gpio, uart, pm, adc, dma, i2c, spi, BLE advertising, BLE HCI controller, IRQ nesting, timer, watchdog, USB CDC, RF multi-mode, NV storage, task planner, mbedTLS, system log
-- **Build System** — CMake flow, Kconfig system, West workspace, Zephyr module integration, Make support, extensions
-- **Tools** — Menuconfig, Pinmux visual tool, BDT flash/debug utility
-- **Development Guide** — Directory structure, public API design, core architecture, IDE integration, debugging
-- **API Reference, Kconfig Reference, YAML Reference** — Scaffolding with index files
-- **Connectivity** — BLE controller documentation
-- **Terminology** — SDK-wide glossary
+- Doc
+  - A full English documentation set was added in [Unified SDK Documentation](https://telink-semi.github.io/unisdk-doc/), covering:
+    - **Getting Started** — Linux, Windows, macOS setup; first-build walkthrough; troubleshooting
+    - **Introduction** — SDK positioning, architecture overview, chip family table
+    - **Chips & Boards** — Per-chip specs (TL321X, TL721X, TLSR922X, TLSR952X) and EVK board docs
+    - **Peripheral Drivers** — GPIO, UART, PM, PLIC, Analog, I2C, SPI, ADC, DMA, WDT, Timer, USB
+    - **Samples** — gpio, uart, pm, adc, dma, i2c, spi, BLE advertising, BLE HCI controller, IRQ nesting, timer, watchdog, USB CDC, RF multi-mode, NV storage, task planner, mbedTLS, system log
+    - **Build System** — CMake flow, Kconfig system, West workspace, Zephyr module integration, Make support, extensions
+    - **Tools** — Menuconfig, Pinmux visual tool, BDT flash/debug utility
+    - **Development Guide** — Directory structure, public API design, core architecture, IDE integration, debugging
+    - **API Reference, Kconfig Reference, YAML Reference** — Scaffolding with index files
+    - **Connectivity** — BLE controller documentation
+    - **Terminology** — SDK-wide glossary
 
 ### CodeSize
 
