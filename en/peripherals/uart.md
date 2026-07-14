@@ -43,6 +43,34 @@ The UART driver provides an interface for configuring and using asynchronous ser
 | `TLK_UART_STOP_BIT_ONE_DOT_FIVE` | 1.5 stop bits |
 | `TLK_UART_STOP_BIT_TWO` | 2 stop bits |
 
+### RX Timeout Multiplier
+
+`enum tlk_uart_rx_timeout_mul`
+
+Multiplier for RX timeout duration. The total RX timeout = (one UART frame duration) × multiplier.
+
+| Value | Description |
+|---|------|
+| `TLK_UART_RX_TIMEOUT_MUL_1` | 1× frame duration |
+| `TLK_UART_RX_TIMEOUT_MUL_2` | 2× frame duration |
+| `TLK_UART_RX_TIMEOUT_MUL_3` | 3× frame duration |
+| `TLK_UART_RX_TIMEOUT_MUL_4` | 4× frame duration |
+
+### UART Configuration Structure
+
+`struct tlk_uart_config`
+
+A structure containing all configuration parameters for initializing a UART module. Used with `tlk_uart_configure` and `tlk_uart_configure_pinmux`.
+
+| Field | Type | Description |
+|---|------|------|
+| `baudrate` | `uint32_t` | Communication speed in baud |
+| `parity` | `enum tlk_uart_parity` | Parity check mode |
+| `stop_bit` | `enum tlk_uart_stop_bit` | Number of stop bits |
+| `rx_timeout_mul` | `enum tlk_uart_rx_timeout_mul` | RX timeout multiplier |
+| `tx_port_pin` | `struct tlk_gpio_port_pin` | TX port and pin |
+| `rx_port_pin` | `struct tlk_gpio_port_pin` | RX port and pin |
+
 ### Operation Status
 
 `enum tlk_uart_status`
@@ -81,6 +109,21 @@ Defines the active level logic for RTS and CTS signals.
 | `TLK_UART_ACTIVE_LOW` | **Active Low.** UART stops sending when CTS is low, and sets RTS low to stop receiving. |
 | `TLK_UART_ACTIVE_HIGH` | **Active High.** UART stops sending when CTS is high, and sets RTS high to stop receiving. |
 
+### Flow Control Configuration Structure
+
+!!! info "Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`"
+
+`struct tlk_uart_flow_control_config`
+
+A structure containing all configuration parameters for UART hardware flow control. Used with `tlk_uart_configure_flow_control` and `tlk_uart_configure_flow_control_pinmux`.
+
+| Field | Type | Description |
+|---|------|------|
+| `flow_control` | `enum tlk_uart_flow_control` | Flow control mode (RTS/CTS) |
+| `flow_polarity` | `enum tlk_uart_flow_polarity` | Active level for RTS/CTS signals |
+| `rts_port_pin` | `struct tlk_gpio_port_pin` | RTS port and pin |
+| `cts_port_pin` | `struct tlk_gpio_port_pin` | CTS port and pin |
+
 ### Transmit Handler Type
 
 `tlk_uart_tx_handler_t`
@@ -105,12 +148,21 @@ typedef void (*tlk_uart_rx_handler_t)(uint32_t rx_count);
 
 ### `tlk_uart_configure`
 
-Initializes the UART module.
+Initializes the UART module with the provided configuration.
 
 ```c
-void tlk_uart_configure(enum tlk_uart_module uart_num, uint32_t baudrate,
-                        enum tlk_uart_parity parity, enum tlk_uart_stop_bit stop_bit);
+void tlk_uart_configure(enum tlk_uart_module uart_num,
+                        struct tlk_uart_config *config);
 ```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `uart_num` | `enum tlk_uart_module` | UART module index. |
+| `config` | `struct tlk_uart_config *` | Pointer to the configuration structure containing baudrate, parity, stop bits, and pin assignments. |
+
+**Return value:** None
 
 ### `tlk_uart_configure_pinmux`
 
@@ -118,9 +170,17 @@ Configures UART TX/RX pin multiplexing.
 
 ```c
 void tlk_uart_configure_pinmux(enum tlk_uart_module uart_num,
-                               struct tlk_gpio_port_pin tx_port_pin,
-                               struct tlk_gpio_port_pin rx_port_pin);
+                               struct tlk_uart_config *config);
 ```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `uart_num` | `enum tlk_uart_module` | UART module index. |
+| `config` | `struct tlk_uart_config *` | Pointer to the configuration structure containing TX and RX pin assignments. |
+
+**Return value:** None
 
 ### `tlk_uart_send_bytes`
 
@@ -134,24 +194,24 @@ enum tlk_uart_status tlk_uart_send_bytes(enum tlk_uart_module uart_num,
 
 ### `tlk_uart_receive_bytes`
 
-Receives a data buffer.
+Receives a data buffer. The provided handler is called when reception is complete.
 
 ```c
 enum tlk_uart_status tlk_uart_receive_bytes(enum tlk_uart_module uart_num,
     uint8_t *buff, uint32_t buff_size,
-    tlk_uart_rx_handler_t rx_handler, uint32_t timeout_us);
+    tlk_uart_rx_handler_t rx_handler);
 ```
 
-### `tlk_uart_flow_configure`
+**Parameters:**
 
-!!! info "Requires `CONFIG_TLK_UART_FLOW_CONTROL`"
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `uart_num` | `enum tlk_uart_module` | UART module index. |
+| `buff` | `uint8_t *` | Pointer to the receive buffer. |
+| `buff_size` | `uint32_t` | Number of bytes to receive. |
+| `rx_handler` | `tlk_uart_rx_handler_t` | Callback function invoked after reception completes. |
 
-Configures hardware flow control.
-
-```c
-void tlk_uart_flow_configure(enum tlk_uart_module uart_num,
-    enum tlk_uart_flow_control flow_control, enum tlk_uart_flow_polarity flow_polarity);
-```
+**Return value:** `enum tlk_uart_status` — Returns `TLK_UART_OK`.
 
 ### `tlk_uart_configure_flow_control`
 
@@ -161,9 +221,17 @@ Configure the flow control for the specified UART module. Disabled by default. S
 
 ```c
 void tlk_uart_configure_flow_control(enum tlk_uart_module uart_num,
-                         enum tlk_uart_flow_control flow_control,
-                         enum tlk_uart_flow_polarity flow_polarity);
+                         struct tlk_uart_flow_control_config *config);
 ```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `uart_num` | `enum tlk_uart_module` | UART module index. |
+| `config` | `struct tlk_uart_flow_control_config *` | Pointer to the flow control configuration structure. |
+
+**Return value:** None
 
 ### `tlk_uart_configure_flow_control_pinmux`
 
@@ -173,9 +241,17 @@ Configure UART RTS and CTS pin multiplexing.
 
 ```c
 void tlk_uart_configure_flow_control_pinmux(enum tlk_uart_module uart_num,
-                                struct tlk_gpio_port_pin rts_port_pin,
-                                struct tlk_gpio_port_pin cts_port_pin);
+                                struct tlk_uart_flow_control_config *config);
 ```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `uart_num` | `enum tlk_uart_module` | UART module index. |
+| `config` | `struct tlk_uart_flow_control_config *` | Pointer to the flow control configuration structure containing RTS and CTS pin assignments. |
+
+**Return value:** None
 
 ## Transfer Modes
 

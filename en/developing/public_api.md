@@ -24,14 +24,14 @@ Returns the current system up-time in microseconds. This function utilizes the s
 **Prototype:**
 
 ```c
-unsigned int tlk_api_micros(void);
+uint32_t tlk_api_micros(void);
 ```
 
 **Parameters:**
 None
 
 **Return Value:**
-`unsigned int`: The number of microseconds passed since the system started.
+`uint32_t`: The number of microseconds passed since the system started.
 
 ### 2. `tlk_api_sleep`
 *This API is available only if `CONFIG_TLK_API_SLEEP` is enabled.*
@@ -43,14 +43,14 @@ If `CONFIG_TLK_PM` is disabled, or `tlk_pm_sleep` returned err, it programs the 
 **Prototype:**
 
 ```c
-void tlk_api_sleep(unsigned int duration_ms);
+void tlk_api_sleep(uint32_t duration_ms);
 ```
 
 **Parameters:**
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `duration_ms` | `unsigned int` | The duration to sleep in milliseconds. |
+| `duration_ms` | `uint32_t` | The duration to sleep in milliseconds. |
 
 **Return Value:**
 None
@@ -61,19 +61,19 @@ Blocking delay function
 **Prototype:**
 
 ```c
-void tlk_api_delay(unsigned int duration_us);
+void tlk_api_delay(uint32_t duration_us);
 ```
 
 **Parameters:**
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `duration_us` | `unsigned int` | The duration to wait in microseconds. |
+| `duration_us` | `uint32_t` | The duration to wait in microseconds. |
 
 **Return Value:**
 None
 
-### 4. `tlk_print`
+### 4. `tlk_api_print`
 *This API is available only if `CONFIG_TLK_DEBUG_PRINT` is enabled.*
 
 A formatted output function similar to the standard C `printf`. It formats the string and transmits it via the configured UART interface.
@@ -96,3 +96,4 @@ int tlk_api_print(const char *restrict format, ...);
 
 **Note:**
 This function uses an internal static buffer defined by `CONFIG_TLK_DEBUG_PRINT_BUFFER_SIZE`. Ensure your formatted message does not exceed this limit.
+This function is used internally by the SDK and may not have a public declaration in API headers.

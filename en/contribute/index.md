@@ -11,17 +11,17 @@ Community developers are welcome to contribute code, documentation, examples, an
 
 ### Submitting an Issue
 
-- Use GitLab Issues to report bugs or request new features
+- Use GitHub Issues to report bugs or request new features
 - Provide detailed reproduction steps and environment information
 - Attach error logs and configuration information
 
-### Submitting a Merge Request
+### Submitting a Pull Request
 
 1. Fork the repository
 2. Create a feature branch
 3. Write code and add tests
 4. Ensure CI checks pass
-5. Submit MR and describe the changes
+5. Submit a Pull Request and describe the changes
 
 ### Code Standards
 
