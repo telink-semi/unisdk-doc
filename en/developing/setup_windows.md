@@ -198,4 +198,4 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
 - [First Example: Blinky](blinky.md)
 - [Linux Environment Setup](setup_linux.md)
-- [Development Guide](../developing/index.md)
+- [Getting Started](../getting_started/index.md)

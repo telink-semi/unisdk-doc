@@ -108,4 +108,4 @@ west tl-build samples/gpio_demo
 ## Next Steps
 
 - [First Example: Blinky](blinky.md)
-- [Development Guide](../developing/index.md)
+- [Getting Started](../getting_started/index.md)

@@ -11,6 +11,8 @@ This chapter is aimed at developers who have started using UniSDK and introduces
 
 | Chapter | Description | Status |
 |------|------|------|
+| [Environment Setup](setup_linux.md) | Platform-specific setup guides (Linux / Windows / macOS) | STABLE |
+| [First Example: Blinky](blinky.md) | Detailed step-by-step breakdown of the gpio_demo example | STABLE |
 | [SDK Directory Structure](directory_structure.md) | Code organization conventions, responsibilities of each directory | STABLE |
 | [Project Creation & Management](project_management.md) | Creating new projects, CMakeLists.txt configuration | STABLE |
 | [Core Architecture](core_architecture.md) | Startup flow, exception handling, interrupt management, low-power mechanisms | STABLE |

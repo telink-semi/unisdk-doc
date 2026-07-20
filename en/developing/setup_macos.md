@@ -85,4 +85,4 @@ west tl-build samples/gpio_demo
 
 - [First Example: Blinky](blinky.md)
 - [Linux Environment Setup](setup_linux.md)
-- [Development Guide](../developing/index.md)
+- [Getting Started](../getting_started/index.md)

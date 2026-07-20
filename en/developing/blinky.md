@@ -9,7 +9,7 @@ This document details how to compile, flash, and run the first UniSDK example pr
 
 ## Prerequisites
 
-- [Environment setup](index.md) is complete
+- [Environment setup](../getting_started/index.md) is complete
 - Toolchain `TELINK_TOOLCHAIN_PATH` is configured
 - You have a Telink development board on hand (this example uses TLSR9528A_EVK)
 

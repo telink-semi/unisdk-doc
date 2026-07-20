@@ -92,16 +92,11 @@ unisdk/
 │   │   └── ...
 │   └── TelinkConfig.cmake      #   Telink package configuration
 │
-├── scripts/                    # Build scripts and tools
-│   ├── west_commands/          #   West command extensions
-│   ├── pinmux/                 #   Pinmux visual tool
-│   ├── kconfig.py              #   Kconfig processing
-│   ├── menuconfig.py           #   Interactive configuration
-│   └── ...
-│
-└── docs/                       # Documentation
-    ├── en/                     #   English documentation
-    ├── images/                 #   Image assets
+└── scripts/                    # Build scripts and tools
+    ├── west_commands/          #   West command extensions
+    ├── pinmux/                 #   Pinmux visual tool
+    ├── kconfig.py              #   Kconfig processing
+    ├── menuconfig.py           #   Interactive configuration
     └── ...
 ```
 

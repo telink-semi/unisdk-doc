@@ -40,10 +40,9 @@ UniSDK — Telink Unified Software Development Kit
 
    introduction/index
    getting_started/index
-   getting_started/setup_linux
-   getting_started/setup_windows
-   getting_started/setup_macos
-   getting_started/blinky
+   getting_started/environment_setup
+   getting_started/get_sdk
+   getting_started/first_example
    getting_started/troubleshooting
 
 .. toctree::
