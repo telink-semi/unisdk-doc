@@ -51,9 +51,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: _sdk_src
-          key: sdk-${{ env.SDK_REPO }}-develop-${{ github.sha }}
+          key: sdk-${{ env.SDK_REPO }}-release-v0.2.0-${{ github.sha }}
           restore-keys: |
-            sdk-${{ env.SDK_REPO }}-develop-
+            sdk-${{ env.SDK_REPO }}-release-v0.2.0-
 
       - name: Checkout SDK repo (for API headers)
         if: steps.cache-sdk.outputs.cache-hit != 'true'
@@ -61,7 +61,7 @@ jobs:
         with:
           repository: ${{ env.SDK_REPO }}
           path: ${{ env.SDK_PATH }}
-          ref: develop
+          ref: release-v0.2.0
 
       - name: Setup Python
         uses: actions/setup-python@v5
