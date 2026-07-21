@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,51 +20,53 @@ msgstr ""
 
 #: ../../source/peripherals/analog.md:6
 msgid "Analog Driver"
-msgstr ""
+msgstr "模拟驱动"
 
 #: ../../source/peripherals/analog.md:8
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/peripherals/analog.md:10
 msgid ""
 "The Analog driver provides raw access to chip analog registers and type-"
 "safe register field read/write macro definitions."
 msgstr ""
+"模拟驱动提供对芯片模拟寄存器的原始访问以及类型安全的寄存器字段读/写宏定义。"
 
 #: ../../source/peripherals/analog.md:12
 msgid "**Key Features:**"
-msgstr ""
+msgstr "**主要特性：**"
 
 #: ../../source/peripherals/analog.md:14
 msgid "Read/write analog registers by byte, half-word, and word"
-msgstr ""
+msgstr "按字节、半字和字读写模拟寄存器"
 
 #: ../../source/peripherals/analog.md:15
 msgid "YAML register descriptions converted to C type definitions"
-msgstr ""
+msgstr "YAML 寄存器描述转换为 C 类型定义"
 
 #: ../../source/peripherals/analog.md:16
 msgid "Type-safe register read/write/modify macros"
-msgstr ""
+msgstr "类型安全的寄存器读/写/修改宏"
 
 #: ../../source/peripherals/analog.md:18
 msgid "API Reference"
-msgstr ""
+msgstr "API 参考"
 
 #: ../../source/peripherals/analog.md:20
 msgid "C Functions"
-msgstr ""
+msgstr "C 函数"
 
 #: ../../source/peripherals/analog.md:32
 msgid ""
 "These functions form the low-level transport layer, primarily used "
 "internally by the type-safe macros."
 msgstr ""
+"这些函数构成底层传输层，主要由类型安全宏内部使用。"
 
 #: ../../source/peripherals/analog.md:34
 msgid "Type-Safe Macros"
-msgstr ""
+msgstr "类型安全宏"
 
 #: ../../source/peripherals/analog.md:36
 msgid ""
@@ -74,6 +75,8 @@ msgid ""
 "clangd. Then you will be able to fully use autocomplete, type hints, "
 "highlight, and so on."
 msgstr ""
+"**重要提示**：为充分利用此功能，您需要使用能够展开深层宏的语言服务器，例如 "
+"clangd。然后您将能够完整地使用自动补全、类型提示、高亮等功能。"
 
 #: ../../source/peripherals/analog.md:38
 msgid ""
@@ -82,96 +85,101 @@ msgid ""
 "addresses (e.g., `TLK_AREG_BG_CTRL0 -> 0x00`), which should be preferred "
 "over raw addresses."
 msgstr ""
+"要使用这些宏，请包含带有完整模拟寄存器描述的 `registers/tlk_analog.h`。"
+"其中包含带有相应地址的命名宏（例如 `TLK_AREG_BG_CTRL0 -> 0x00`），"
+"应优先使用这些宏而非原始地址。"
 
 #: ../../source/peripherals/analog.md:40
 msgid "If a register contains bitfields, a union type is generated:"
-msgstr ""
+msgstr "如果寄存器包含位字段，则会生成联合体类型："
 
 #: ../../source/peripherals/analog.md
 msgid "Macro"
-msgstr ""
+msgstr "宏"
 
 #: ../../source/peripherals/analog.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/peripherals/analog.md
 msgid "`TLK_AREG_TYPE(reg)`"
-msgstr ""
+msgstr "`TLK_AREG_TYPE(reg)`"
 
 #: ../../source/peripherals/analog.md
 msgid "Expands to the C type for the named analog register"
-msgstr ""
+msgstr "展开为指定模拟寄存器的 C 类型"
 
 #: ../../source/peripherals/analog.md
 msgid "`TLK_AREG_SIZE(reg)`"
-msgstr ""
+msgstr "`TLK_AREG_SIZE(reg)`"
 
 #: ../../source/peripherals/analog.md
 msgid "Expands to the generated size constant for the register (in bits)"
-msgstr ""
+msgstr "展开为生成的寄存器大小常量（以位为单位）"
 
 #: ../../source/peripherals/analog.md
 msgid "`TLK_ANALOG_READ(reg)`"
-msgstr ""
+msgstr "`TLK_ANALOG_READ(reg)`"
 
 #: ../../source/peripherals/analog.md
 msgid "Reads the register, casting the returned value to the register value type"
-msgstr ""
+msgstr "读取寄存器，并将返回值强制转换为寄存器值类型"
 
 #: ../../source/peripherals/analog.md
 msgid "`TLK_ANALOG_WRITE(reg, var)`"
-msgstr ""
+msgstr "`TLK_ANALOG_WRITE(reg, var)`"
 
 #: ../../source/peripherals/analog.md
 msgid "Writes a typed register value back to the register"
-msgstr ""
+msgstr "将类型化的寄存器值写回寄存器"
 
 #: ../../source/peripherals/analog.md
 msgid "`TLK_ANALOG_MODIFY(reg, statement)`"
-msgstr ""
+msgstr "`TLK_ANALOG_MODIFY(reg, statement)`"
 
 #: ../../source/peripherals/analog.md
 msgid "Reads, modifies, and writes back a typed register value"
-msgstr ""
+msgstr "读取、修改并写回类型化的寄存器值"
 
 #: ../../source/peripherals/analog.md
 msgid "`TLK_ANALOG_MODIFY_RAW8(reg, statement)`"
-msgstr ""
+msgstr "`TLK_ANALOG_MODIFY_RAW8(reg, statement)`"
 
 #: ../../source/peripherals/analog.md
 msgid "Modifies raw 8-bit register data using `uint8_t`"
-msgstr ""
+msgstr "使用 `uint8_t` 修改原始 8 位寄存器数据"
 
 #: ../../source/peripherals/analog.md
 msgid "`TLK_ANALOG_MODIFY_RAW16(reg, statement)`"
-msgstr ""
+msgstr "`TLK_ANALOG_MODIFY_RAW16(reg, statement)`"
 
 #: ../../source/peripherals/analog.md
 msgid "Modifies raw 16-bit register data using `uint16_t`"
-msgstr ""
+msgstr "使用 `uint16_t` 修改原始 16 位寄存器数据"
 
 #: ../../source/peripherals/analog.md
 msgid "`TLK_ANALOG_MODIFY_RAW32(reg, statement)`"
-msgstr ""
+msgstr "`TLK_ANALOG_MODIFY_RAW32(reg, statement)`"
 
 #: ../../source/peripherals/analog.md
 msgid "Modifies raw 32-bit register data using `uint32_t`"
-msgstr ""
+msgstr "使用 `uint32_t` 修改原始 32 位寄存器数据"
 
 #: ../../source/peripherals/analog.md:62
 msgid ""
 "Note: Internal helper macros in the header begin with underscores and are"
 " not intended for user code."
 msgstr ""
+"注意：头文件中的内部辅助宏以下划线开头，不应用于用户代码。"
 
 #: ../../source/peripherals/analog.md:64
 msgid "Register Definitions"
-msgstr ""
+msgstr "寄存器定义"
 
 #: ../../source/peripherals/analog.md:66
 msgid ""
 "Register definitions come from `core/*/registers/analog.yaml`, and type-"
 "safe C access macros are automatically generated via `registers_gen.py`."
 msgstr ""
-
+"寄存器定义来自 `core/*/registers/analog.yaml`，类型安全的 C 访问宏"
+"通过 `registers_gen.py` 自动生成。"

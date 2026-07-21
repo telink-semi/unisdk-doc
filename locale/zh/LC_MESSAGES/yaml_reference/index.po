@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,13 +20,14 @@ msgstr ""
 
 #: ../../source/yaml_reference/index.md:6
 msgid "YAML Description Reference"
-msgstr ""
+msgstr "YAML 描述参考"
 
 #: ../../source/yaml_reference/index.md:8
 msgid ""
 "!!! note \"Document Status: PLANNED — Automatic generation system under "
 "development\""
 msgstr ""
+"!!! note \"文档状态：PLANNED — 自动生成系统正在开发中\""
 
 #: ../../source/yaml_reference/index.md:10
 msgid ""
@@ -36,42 +36,45 @@ msgid ""
 "`soc/*/pinmux/`, providing a complete reference for device properties, "
 "register definitions, and pin multiplexing configurations."
 msgstr ""
+"YAML 参考将从 `core/*/properties/`、`core/*/registers/`、`soc/*/pinmux/` 等目录中的 YAML 文件中自动提取，提供设备属性、寄存器定义和引脚复用配置的完整参考。"
 
 #: ../../source/yaml_reference/index.md:12
 msgid "Planned Content"
-msgstr ""
+msgstr "计划内容"
 
 #: ../../source/yaml_reference/index.md:14
 msgid "Device Properties"
-msgstr ""
+msgstr "设备属性"
 
 #: ../../source/yaml_reference/index.md:15
 msgid ""
 "Configuration properties and capability descriptions for each peripheral "
 "(`core/*/properties/*.yaml`)"
 msgstr ""
+"每个外设的配置属性和能力描述（`core/*/properties/*.yaml`）"
 
 #: ../../source/yaml_reference/index.md:17
 msgid "Register Definitions"
-msgstr ""
+msgstr "寄存器定义"
 
 #: ../../source/yaml_reference/index.md:18
 msgid ""
 "Register layout and bit field descriptions for each peripheral "
 "(`core/*/registers/*.yaml`)"
 msgstr ""
+"每个外设的寄存器布局和位域描述（`core/*/registers/*.yaml`）"
 
 #: ../../source/yaml_reference/index.md:20
 msgid "Pin Multiplexing (Pinmux)"
-msgstr ""
+msgstr "引脚复用（Pinmux）"
 
 #: ../../source/yaml_reference/index.md:21
 msgid "Pin function assignments for each chip package (`soc/*/pinmux/*.yaml`)"
-msgstr ""
+msgstr "每个芯片封装的引脚功能分配（`soc/*/pinmux/*.yaml`）"
 
 #: ../../source/yaml_reference/index.md:23
 msgid "Implementation Plan"
-msgstr ""
+msgstr "实现计划"
 
 #: ../../source/yaml_reference/index.md:25
 msgid ""
@@ -79,8 +82,8 @@ msgid ""
 "and `registers_gen.py`, structured reference documentation will be "
 "automatically generated."
 msgstr ""
+"基于扩展现有的 `yaml_reader.py`、`properties_gen.py` 和 `registers_gen.py`，将自动生成结构化的参考文档。"
 
 #: ../../source/yaml_reference/index.md:27
 msgid "The automatic generation system will be added later."
-msgstr ""
-
+msgstr "自动生成系统将在后续添加。"

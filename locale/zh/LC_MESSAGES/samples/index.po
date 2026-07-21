@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,164 +20,163 @@ msgstr ""
 
 #: ../../source/samples/index.md:6
 msgid "Samples & Demos"
-msgstr ""
+msgstr "示例与演示"
 
 #: ../../source/samples/index.md:8
 msgid ""
 "UniSDK provides a rich set of ready-to-compile-and-run sample programs in"
 " the `samples/` directory. Each sample demonstrates the usage of one or "
 "more SDK features."
-msgstr ""
+msgstr "UniSDK 在 `samples/` 目录中提供了丰富的即编即用示例程序。每个示例演示了一个或多个 SDK 功能的使用方法。"
 
 #: ../../source/samples/index.md:10
 msgid "Sample List"
-msgstr ""
+msgstr "示例列表"
 
 #: ../../source/samples/index.md:12
 msgid "Basic Peripherals"
-msgstr ""
+msgstr "基本外设"
 
 #: ../../source/samples/index.md
 msgid "Sample"
-msgstr ""
+msgstr "示例"
 
 #: ../../source/samples/index.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/samples/index.md
 msgid "Status"
-msgstr ""
+msgstr "状态"
 
 #: ../../source/samples/index.md
 msgid "[GPIO Sample](gpio.md)"
-msgstr ""
+msgstr "[GPIO 示例](gpio.md)"
 
 #: ../../source/samples/index.md
 msgid "GPIO input/output, interrupt handling, sleep API"
-msgstr ""
+msgstr "GPIO 输入/输出、中断处理、睡眠 API"
 
 #: ../../source/samples/index.md
 msgid "STABLE"
-msgstr ""
+msgstr "稳定"
 
 #: ../../source/samples/index.md
 msgid "[UART Sample](uart.md)"
-msgstr ""
+msgstr "[UART 示例](uart.md)"
 
 #: ../../source/samples/index.md
 msgid "UART echo, sleep test, TX/RX protection"
-msgstr ""
+msgstr "UART 回显、睡眠测试、发送/接收保护"
 
 #: ../../source/samples/index.md
 msgid "[PM Power Management](pm.md)"
-msgstr ""
+msgstr "[PM 电源管理](pm.md)"
 
 #: ../../source/samples/index.md
 msgid "Low-power modes, GPIO wake-up, retention variables"
-msgstr ""
+msgstr "低功耗模式、GPIO 唤醒、保持变量"
 
 #: ../../source/samples/index.md:20
 msgid "Communication Interfaces"
-msgstr ""
+msgstr "通信接口"
 
 #: ../../source/samples/index.md
 msgid "[ADC Sample](adc.md)"
-msgstr ""
+msgstr "[ADC 示例](adc.md)"
 
 #: ../../source/samples/index.md
 msgid "ADC analog-to-digital conversion"
-msgstr ""
+msgstr "ADC 模数转换"
 
 #: ../../source/samples/index.md
 msgid "DRAFT"
-msgstr ""
+msgstr "草稿"
 
 #: ../../source/samples/index.md
 msgid "[DMA Sample](dma.md)"
-msgstr ""
+msgstr "[DMA 示例](dma.md)"
 
 #: ../../source/samples/index.md
 msgid "DMA direct memory access"
-msgstr ""
+msgstr "DMA 直接内存访问"
 
 #: ../../source/samples/index.md
 msgid "[I2C Sample](i2c.md)"
-msgstr ""
+msgstr "[I2C 示例](i2c.md)"
 
 #: ../../source/samples/index.md
 msgid "I2C master-slave communication (DS1307 / Ping-Pong)"
-msgstr ""
+msgstr "I2C 主从通信（DS1307 / Ping-Pong）"
 
 #: ../../source/samples/index.md
 msgid "[SPI Sample](spi.md)"
-msgstr ""
+msgstr "[SPI 示例](spi.md)"
 
 #: ../../source/samples/index.md
 msgid "SPI master-slave communication"
-msgstr ""
+msgstr "SPI 主从通信"
 
 #: ../../source/samples/index.md:29
 msgid "Wireless Connectivity"
-msgstr ""
+msgstr "无线连接"
 
 #: ../../source/samples/index.md
 msgid "[BLE Sample](ble.md)"
-msgstr ""
+msgstr "[BLE 示例](ble.md)"
 
 #: ../../source/samples/index.md
 msgid "BLE advertising and connection demo"
-msgstr ""
+msgstr "BLE 广播和连接演示"
 
 #: ../../source/samples/index.md:35
 msgid "System Features"
-msgstr ""
+msgstr "系统特性"
 
 #: ../../source/samples/index.md
 msgid "[IRQ Nesting](irq_nesting.md)"
-msgstr ""
+msgstr "[IRQ 嵌套](irq_nesting.md)"
 
 #: ../../source/samples/index.md
 msgid "Interrupt nesting demo"
-msgstr ""
+msgstr "中断嵌套演示"
 
 #: ../../source/samples/index.md
 msgid "[Timer Sample](stimer.md)"
-msgstr ""
+msgstr "[定时器示例](stimer.md)"
 
 #: ../../source/samples/index.md
 msgid "STIMER system timer demo"
-msgstr ""
+msgstr "STIMER 系统定时器演示"
 
 #: ../../source/samples/index.md
 msgid "[Watchdog Sample](wdt.md)"
-msgstr ""
+msgstr "[看门狗示例](wdt.md)"
 
 #: ../../source/samples/index.md
 msgid "Watchdog timer demo"
-msgstr ""
+msgstr "看门狗定时器演示"
 
 #: ../../source/samples/index.md
 msgid "[USB CDC Sample](usb_cdc.md)"
-msgstr ""
+msgstr "[USB CDC 示例](usb_cdc.md)"
 
 #: ../../source/samples/index.md
 msgid "TinyUSB CDC serial port demo"
-msgstr ""
+msgstr "TinyUSB CDC 串口演示"
 
 #: ../../source/samples/index.md:44
 msgid "Building Samples"
-msgstr ""
+msgstr "构建示例"
 
 #: ../../source/samples/index.md:46
 msgid "All samples use a unified build approach:"
-msgstr ""
+msgstr "所有示例使用统一的构建方法："
 
 #: ../../source/samples/index.md:56
 msgid "Each sample directory typically contains:"
-msgstr ""
+msgstr "每个示例目录通常包含："
 
 #: ../../source/samples/index.md
 msgid "Sample Directory Structure"
-msgstr ""
-
+msgstr "示例目录结构"

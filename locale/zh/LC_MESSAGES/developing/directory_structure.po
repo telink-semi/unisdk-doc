@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,29 +20,30 @@ msgstr ""
 
 #: ../../source/developing/directory_structure.md:6
 msgid "SDK Directory Structure"
-msgstr ""
+msgstr "SDK 目录结构"
 
 #: ../../source/developing/directory_structure.md:8
 msgid ""
 "This document details the directory organization of the UniSDK code "
 "repository to help developers quickly locate various resources."
 msgstr ""
+"本文档详细介绍 UniSDK 代码仓库的目录组织方式，帮助开发者快速定位各类资源。"
 
 #: ../../source/developing/directory_structure.md:10
 msgid "Overall Structure"
-msgstr ""
+msgstr "整体结构"
 
 #: ../../source/developing/directory_structure.md
 msgid "UniSDK Directory Tree"
-msgstr ""
+msgstr "UniSDK 目录树"
 
 #: ../../source/developing/directory_structure.md:88
 msgid "Key Directory Responsibilities"
-msgstr ""
+msgstr "关键目录职责"
 
 #: ../../source/developing/directory_structure.md:90
 msgid "`api/` — Public API Layer"
-msgstr ""
+msgstr "`api/` — 公共 API 层"
 
 #: ../../source/developing/directory_structure.md:92
 msgid ""
@@ -51,96 +51,102 @@ msgid ""
 "development. All example applications should be developed using the APIs "
 "in `api/`. Main contents include:"
 msgstr ""
+"提供应用程序开发中最常用的统一 API 接口。所有示例应用程序都应使用 `api/` 中的 API 进行开发。主要内容包括："
 
 #: ../../source/developing/directory_structure.md:94
 msgid "`tlk_sleep.h` / `tlk_time.h` — Sleep delay and time management"
-msgstr ""
+msgstr "`tlk_sleep.h` / `tlk_time.h` — 睡眠延时和时间管理"
 
 #: ../../source/developing/directory_structure.md:96
 msgid "`core/` — Core Driver Layer"
-msgstr ""
+msgstr "`core/` — 核心驱动层"
 
 #: ../../source/developing/directory_structure.md:98
 msgid "Organized by chip family, includes:"
-msgstr ""
+msgstr "按芯片系列组织，包括："
 
 #: ../../source/developing/directory_structure.md:100
 msgid ""
 "**drivers/** — Peripheral driver implementations (GPIO, UART, I2C, SPI, "
 "ADC, DMA, etc.)"
 msgstr ""
+"**drivers/** — 外设驱动实现（GPIO、UART、I2C、SPI、ADC、DMA 等）"
 
 #: ../../source/developing/directory_structure.md:101
 msgid "**properties/** — YAML-format device property descriptions"
-msgstr ""
+msgstr "**properties/** — YAML 格式的设备属性描述"
 
 #: ../../source/developing/directory_structure.md:102
 msgid "**registers/** — YAML-format register definitions"
-msgstr ""
+msgstr "**registers/** — YAML 格式的寄存器定义"
 
 #: ../../source/developing/directory_structure.md:103
 msgid "**configs/** — Kconfig configuration options"
-msgstr ""
+msgstr "**configs/** — Kconfig 配置选项"
 
 #: ../../source/developing/directory_structure.md:105
 msgid "`soc/` — SoC-Specific Layer"
-msgstr ""
+msgstr "`soc/` — SoC 特定层"
 
 #: ../../source/developing/directory_structure.md:107
 msgid "Contains chip-specific features:"
-msgstr ""
+msgstr "包含芯片特定的功能："
 
 #: ../../source/developing/directory_structure.md:109
 msgid "**drivers/** — Platform-specific drivers (MSPI, OTP, etc.)"
-msgstr ""
+msgstr "**drivers/** — 平台特定驱动（MSPI、OTP 等）"
 
 #: ../../source/developing/directory_structure.md:110
 msgid ""
 "**pinmux/** — Pin multiplexing definitions (yaml files for each package "
 "variant)"
 msgstr ""
+"**pinmux/** — 引脚复用定义（每个封装变体的 yaml 文件）"
 
 #: ../../source/developing/directory_structure.md:111
 msgid "**registers/** — Chip-specific register definitions"
-msgstr ""
+msgstr "**registers/** — 芯片特定的寄存器定义"
 
 #: ../../source/developing/directory_structure.md:113
 msgid "`boards/` — Development Board Configurations"
-msgstr ""
+msgstr "`boards/` — 开发板配置"
 
 #: ../../source/developing/directory_structure.md:115
 msgid ""
 "Contains only board-specific pin mapping configurations "
 "(`board_pinout.yaml`)."
 msgstr ""
+"仅包含开发板特定的引脚映射配置（`board_pinout.yaml`）。"
 
 #: ../../source/developing/directory_structure.md:117
 msgid "Code Organization Principles"
-msgstr ""
+msgstr "代码组织原则"
 
 #: ../../source/developing/directory_structure.md:119
 msgid "**Public APIs go in `api/`** — Interfaces shared by all chips"
-msgstr ""
+msgstr "**公共 API 放在 `api/`** — 所有芯片共享的接口"
 
 #: ../../source/developing/directory_structure.md:120
 msgid "**Core drivers go in `core/`** — Peripheral drivers for each chip family"
-msgstr ""
+msgstr "**核心驱动放在 `core/`** — 每个芯片系列的外设驱动"
 
 #: ../../source/developing/directory_structure.md:121
 msgid ""
 "**Chip-specific code goes in `soc/`** — Features unique to a particular "
 "chip"
 msgstr ""
+"**芯片特定代码放在 `soc/`** — 特定芯片独有的功能"
 
 #: ../../source/developing/directory_structure.md:122
 msgid ""
 "**Application code goes anywhere** — Not limited to the `samples/` "
 "directory"
 msgstr ""
+"**应用代码可放在任何位置** — 不限于 `samples/` 目录"
 
 #: ../../source/developing/directory_structure.md:123
 msgid ""
 "**Use Kconfig for configuration** — Manage compile-time options with "
 "Kconfig"
 msgstr ""
-
+"**使用 Kconfig 进行配置** — 通过 Kconfig 管理编译时选项"

@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,15 +20,15 @@ msgstr ""
 
 #: ../../source/peripherals/dma.md:6
 msgid "DMA Driver"
-msgstr ""
+msgstr "DMA 驱动"
 
 #: ../../source/peripherals/dma.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在最终确定中\""
 
 #: ../../source/peripherals/dma.md:10
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/peripherals/dma.md:12
 msgid ""
@@ -37,12 +36,12 @@ msgid ""
 "efficient data transfer from peripheral to memory and memory to "
 "peripheral."
 msgstr ""
+"DMA 驱动提供直接内存访问功能，支持从外设到内存以及从内存到外设的高效数据传输。"
 
 #: ../../source/peripherals/dma.md:14
 msgid "Samples"
-msgstr ""
+msgstr "示例"
 
 #: ../../source/peripherals/dma.md:16
 msgid "See [DMA Samples](../samples/dma.md)."
-msgstr ""
-
+msgstr "请参见 [DMA 示例](../samples/dma.md)。"

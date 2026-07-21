@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,151 +20,155 @@ msgstr ""
 
 #: ../../source/developing/setup_windows.md:6
 msgid "Windows Environment Setup"
-msgstr ""
+msgstr "Windows 环境搭建"
 
 #: ../../source/developing/setup_windows.md:8
 msgid ""
 "This document details the complete steps to set up the UniSDK development"
 " environment on Windows 10/11."
 msgstr ""
+"本文档详细介绍了在 Windows 10/11 上搭建 UniSDK 开发环境的完整步骤。"
 
 #: ../../source/developing/setup_windows.md:10
 msgid "System Requirements"
-msgstr ""
+msgstr "系统要求"
 
 #: ../../source/developing/setup_windows.md:12
 msgid "Windows 10 (1709+) or Windows 11"
-msgstr ""
+msgstr "Windows 10 (1709+) 或 Windows 11"
 
 #: ../../source/developing/setup_windows.md:13
 msgid "At least 4 GB RAM, 8 GB+ recommended"
-msgstr ""
+msgstr "至少 4 GB RAM，建议 8 GB 以上"
 
 #: ../../source/developing/setup_windows.md:14
 msgid "Administrator privileges (recommended)"
-msgstr ""
+msgstr "管理员权限（推荐）"
 
 #: ../../source/developing/setup_windows.md:16
 msgid "Installation Methods"
-msgstr ""
+msgstr "安装方法"
 
 #: ../../source/developing/setup_windows.md:18
 msgid "Method 1: One-Click Setup Script (Recommended)"
-msgstr ""
+msgstr "方法 1：一键安装脚本（推荐）"
 
 #: ../../source/developing/setup_windows.md:20
 msgid ""
 "UniSDK provides an automated deployment script (`windows_setup.ps1`) that"
 " simplifies the environment configuration process on Windows systems."
 msgstr ""
+"UniSDK 提供了一个自动化部署脚本（`windows_setup.ps1`），可简化 Windows 系统上的环境配置过程。"
 
 #: ../../source/developing/setup_windows.md:22
 msgid "Open PowerShell as Administrator"
-msgstr ""
+msgstr "以管理员身份打开 PowerShell"
 
 #: ../../source/developing/setup_windows.md:23
 msgid "Navigate to the scripts directory and run:"
-msgstr ""
+msgstr "导航至脚本目录并运行："
 
 #: ../../source/developing/setup_windows.md:30
 msgid "Script Features in Detail"
-msgstr ""
+msgstr "脚本功能详解"
 
 #: ../../source/developing/setup_windows.md:32
 msgid "The script automatically performs the following tasks:"
-msgstr ""
+msgstr "该脚本自动执行以下任务："
 
 #: ../../source/developing/setup_windows.md:34
 msgid "**PowerShell Execution Policy Configuration**"
-msgstr ""
+msgstr "**PowerShell 执行策略配置**"
 
 #: ../../source/developing/setup_windows.md:35
 msgid ""
 "Checks and sets the execution policy to `RemoteSigned` to allow running "
 "local scripts"
-msgstr ""
+msgstr "检查并将执行策略设置为 `RemoteSigned`，以允许运行本地脚本"
 
 #: ../../source/developing/setup_windows.md:37
 msgid "**Tool Installation**"
-msgstr ""
+msgstr "**工具安装**"
 
 #: ../../source/developing/setup_windows.md:38
 msgid "Detects if `winget` is installed"
-msgstr ""
+msgstr "检测是否安装了 `winget`"
 
 #: ../../source/developing/setup_windows.md:39
 msgid ""
 "If winget is available: automatically downloads and installs CMake, "
 "Ninja, Python, and Git"
 msgstr ""
+"如果 winget 可用：自动下载并安装 CMake、Ninja、Python 和 Git"
 
 #: ../../source/developing/setup_windows.md:40
 msgid ""
 "If winget is not available: provides official download links to guide "
 "manual installation"
 msgstr ""
+"如果 winget 不可用：提供官方下载链接以引导手动安装"
 
 #: ../../source/developing/setup_windows.md:42
 msgid "**Python Environment Configuration**"
-msgstr ""
+msgstr "**Python 环境配置**"
 
 #: ../../source/developing/setup_windows.md:43
 msgid "Creates `.venv` virtual environment in the UniSDK root directory"
-msgstr ""
+msgstr "在 UniSDK 根目录下创建 `.venv` 虚拟环境"
 
 #: ../../source/developing/setup_windows.md:44
 msgid "Upgrades pip to the latest version"
-msgstr ""
+msgstr "将 pip 升级到最新版本"
 
 #: ../../source/developing/setup_windows.md:45
 msgid "Installs all Python dependencies from `requirements.txt`"
-msgstr ""
+msgstr "从 `requirements.txt` 安装所有 Python 依赖"
 
 #: ../../source/developing/setup_windows.md:46
 msgid "Ensures west tool is properly installed"
-msgstr ""
+msgstr "确保 west 工具已正确安装"
 
 #: ../../source/developing/setup_windows.md:48
 msgid "**Environment Variable Settings**"
-msgstr ""
+msgstr "**环境变量设置**"
 
 #: ../../source/developing/setup_windows.md:49
 msgid "Sets `TELINK_TOOLCHAIN_PATH` pointing to the toolchain directory"
-msgstr ""
+msgstr "设置 `TELINK_TOOLCHAIN_PATH` 指向工具链目录"
 
 #: ../../source/developing/setup_windows.md:50
 msgid "Adds CMake and Ninja paths to the system PATH"
-msgstr ""
+msgstr "将 CMake 和 Ninja 路径添加到系统 PATH"
 
 #: ../../source/developing/setup_windows.md:52
 msgid "**Telink Toolchain Setup**"
-msgstr ""
+msgstr "**Telink 工具链设置**"
 
 #: ../../source/developing/setup_windows.md:53
 msgid "Creates the `toolchain` directory"
-msgstr ""
+msgstr "创建 `toolchain` 目录"
 
 #: ../../source/developing/setup_windows.md:54
 msgid "Sets `TELINK_TOOLCHAIN_PATH` environment variable"
-msgstr ""
+msgstr "设置 `TELINK_TOOLCHAIN_PATH` 环境变量"
 
 #: ../../source/developing/setup_windows.md:55
 msgid ""
 "Due to special permissions required for toolchain download, users need to"
 " manually download and extract the toolchain"
-msgstr ""
+msgstr "由于工具链下载需要特殊权限，用户需要手动下载并解压工具链"
 
 #: ../../source/developing/setup_windows.md:57
 msgid "**West Workspace Initialization**"
-msgstr ""
+msgstr "**West 工作空间初始化**"
 
 #: ../../source/developing/setup_windows.md:58
 msgid "Initializes the west workspace by executing `west init -l`"
-msgstr ""
+msgstr "通过执行 `west init -l` 初始化 west 工作空间"
 
 #: ../../source/developing/setup_windows.md:60
 msgid "Logging"
-msgstr ""
+msgstr "日志记录"
 
 #: ../../source/developing/setup_windows.md:62
 msgid ""
@@ -173,6 +176,7 @@ msgid ""
 "directory, recording detailed logs of the entire configuration process "
 "for troubleshooting purposes."
 msgstr ""
+"脚本会在脚本目录下自动生成 `setup_log.txt` 文件，记录整个配置过程的详细日志，以便故障排查。"
 
 #: ../../source/developing/setup_windows.md:64
 msgid ""
@@ -183,54 +187,57 @@ msgid ""
 "`<unisdk>\\toolchain` directory.     Download link: "
 "https://drive.weixin.qq.com/s?k=AKwA0AfNAA8Ox1r0ab"
 msgstr ""
+"!!! note \"工具链需要手动下载\"     由于工具链下载需要特殊权限，脚本仅创建 `toolchain` 目录并设置环境变量。     请手动下载工具链并将其解压到 `<unisdk>\\toolchain` 目录。     下载链接：https://drive.weixin.qq.com/s?k=AKwA0AfNAA8Ox1r0ab"
 
 #: ../../source/developing/setup_windows.md:69
 msgid "Method 2: Manual Installation"
-msgstr ""
+msgstr "方法 2：手动安装"
 
 #: ../../source/developing/setup_windows.md:71
 msgid "1. Install System Dependencies"
-msgstr ""
+msgstr "1. 安装系统依赖"
 
 #: ../../source/developing/setup_windows.md:73
 msgid "Use winget for one-click installation:"
-msgstr ""
+msgstr "使用 winget 一键安装："
 
 #: ../../source/developing/setup_windows.md:79
 msgid "Or manually download and install if winget is not supported:"
-msgstr ""
+msgstr "如果不支持 winget，请手动下载并安装："
 
 #: ../../source/developing/setup_windows.md:81
 msgid "[CMake](https://cmake.org/download/) — Check \"Add CMake to PATH\""
-msgstr ""
+msgstr "[CMake](https://cmake.org/download/) — 勾选 \"Add CMake to PATH\""
 
 #: ../../source/developing/setup_windows.md:82
 msgid ""
 "[Ninja](https://github.com/ninja-build/ninja/releases) — Manually add to "
 "PATH"
 msgstr ""
+"[Ninja](https://github.com/ninja-build/ninja/releases) — 手动添加到 PATH"
 
 #: ../../source/developing/setup_windows.md:83
 msgid ""
 "[Python](https://www.python.org/downloads/) — Check \"Add Python.exe to "
 "PATH\""
 msgstr ""
+"[Python](https://www.python.org/downloads/) — 勾选 \"Add Python.exe to PATH\""
 
 #: ../../source/developing/setup_windows.md:84
 msgid "[Git](https://git-scm.com/downloads)"
-msgstr ""
+msgstr "[Git](https://git-scm.com/downloads)"
 
 #: ../../source/developing/setup_windows.md:86
 msgid "Verify installation:"
-msgstr ""
+msgstr "验证安装："
 
 #: ../../source/developing/setup_windows.md:95
 msgid "2. Set Up Python Virtual Environment"
-msgstr ""
+msgstr "2. 搭建 Python 虚拟环境"
 
 #: ../../source/developing/setup_windows.md:114
 msgid "3. Initialize West"
-msgstr ""
+msgstr "3. 初始化 West"
 
 #: ../../source/developing/setup_windows.md:120
 #, python-brace-format
@@ -238,102 +245,105 @@ msgid ""
 "If you encounter the error `already initialized in {where}, aborting.`, "
 "temporarily unset `ZEPHYR_BASE`:"
 msgstr ""
+"如果遇到错误 `already initialized in {where}, aborting.`，请临时取消设置 `ZEPHYR_BASE`："
 
 #: ../../source/developing/setup_windows.md:126
 msgid "4. Configure Toolchain"
-msgstr ""
+msgstr "4. 配置工具链"
 
 #: ../../source/developing/setup_windows.md:136
 msgid "Configure BDT Tool (Optional)"
-msgstr ""
+msgstr "配置 BDT 工具（可选）"
 
 #: ../../source/developing/setup_windows.md:146
 msgid "Verify Environment"
-msgstr ""
+msgstr "验证环境"
 
 #: ../../source/developing/setup_windows.md:153
 msgid "Common Issues"
-msgstr ""
+msgstr "常见问题"
 
 #: ../../source/developing/setup_windows.md:155
 msgid "PowerShell Script Cannot Execute"
-msgstr ""
+msgstr "PowerShell 脚本无法执行"
 
 #: ../../source/developing/setup_windows.md:161
 msgid "Environment Variables Not Taking Effect"
-msgstr ""
+msgstr "环境变量未生效"
 
 #: ../../source/developing/setup_windows.md:163
 msgid "Restart the terminal, VS Code, or the system"
-msgstr ""
+msgstr "重启终端、VS Code 或系统"
 
 #: ../../source/developing/setup_windows.md:164
 msgid "Check system environment variable settings"
-msgstr ""
+msgstr "检查系统环境变量设置"
 
 #: ../../source/developing/setup_windows.md:165
 msgid ""
 "If the previous step doesn't solve the problem, manually check if the "
 "PATH contains the correct path and add it to the user's PATH"
 msgstr ""
+"如果上一步未解决问题，请手动检查 PATH 是否包含正确的路径，并将其添加到用户 PATH 中"
 
 #: ../../source/developing/setup_windows.md:167
 msgid "Arrow Keys Not Working in menuconfig Within VS Code"
-msgstr ""
+msgstr "在 VS Code 的 menuconfig 中方向键无法使用"
 
 #: ../../source/developing/setup_windows.md:169
 msgid "Use letter keys instead of arrow keys"
-msgstr ""
+msgstr "使用字母键代替方向键"
 
 #: ../../source/developing/setup_windows.md:170
 msgid "Use Windows 11"
-msgstr ""
+msgstr "使用 Windows 11"
 
 #: ../../source/developing/setup_windows.md:171
 msgid "Use CMD instead of PowerShell for menuconfig operations"
-msgstr ""
+msgstr "使用 CMD 代替 PowerShell 进行 menuconfig 操作"
 
 #: ../../source/developing/setup_windows.md:173
 msgid "winget Installation Failure"
-msgstr ""
+msgstr "winget 安装失败"
 
 #: ../../source/developing/setup_windows.md:175
 msgid "Check Windows version (requires Windows 10 1709 or higher)"
-msgstr ""
+msgstr "检查 Windows 版本（需要 Windows 10 1709 或更高版本）"
 
 #: ../../source/developing/setup_windows.md:176
 msgid "Try installing App Installer from Microsoft Store"
-msgstr ""
+msgstr "尝试从 Microsoft Store 安装 App Installer"
 
 #: ../../source/developing/setup_windows.md:178
 msgid "Python Dependencies Installation Failure"
-msgstr ""
+msgstr "Python 依赖安装失败"
 
 #: ../../source/developing/setup_windows.md:180
 msgid "Ensure network connection is working"
-msgstr ""
+msgstr "确保网络连接正常"
 
 #: ../../source/developing/setup_windows.md:181
 msgid "Proxy server settings might be needed"
-msgstr ""
+msgstr "可能需要配置代理服务器设置"
 
 #: ../../source/developing/setup_windows.md:183
 msgid "CMake or Ninja Not Found"
-msgstr ""
+msgstr "找不到 CMake 或 Ninja"
 
 #: ../../source/developing/setup_windows.md:185
 msgid "Manually check installation paths"
-msgstr ""
+msgstr "手动检查安装路径"
 
 #: ../../source/developing/setup_windows.md:186
 msgid ""
 "The script will attempt to automatically find common installation "
 "locations, but may require manual addition to PATH"
 msgstr ""
+"脚本会尝试自动查找常见的安装位置，但可能需要手动添加到 PATH"
 
 #: ../../source/developing/setup_windows.md:188
 msgid "Notes"
-msgstr ""
+msgstr "注意事项"
 
 #: ../../source/developing/setup_windows.md:190
 msgid ""
@@ -341,32 +351,34 @@ msgid ""
 "recommended to run the script as administrator to ensure proper "
 "environment variable settings"
 msgstr ""
+"**管理员权限**：虽然不是必须的，但建议以管理员身份运行脚本，以确保环境变量设置正确"
 
 #: ../../source/developing/setup_windows.md:191
 msgid ""
 "**Environment Variables Effectiveness**: After script completion, open a "
 "new PowerShell window to apply all environment variable changes"
 msgstr ""
+"**环境变量生效**：脚本完成后，打开一个新的 PowerShell 窗口以使所有环境变量更改生效"
 
 #: ../../source/developing/setup_windows.md:192
 msgid ""
 "**Virtual Environment Activation**: Use the following command to activate"
 " the virtual environment:"
 msgstr ""
+"**虚拟环境激活**：使用以下命令激活虚拟环境："
 
 #: ../../source/developing/setup_windows.md:197
 msgid "Next Steps"
-msgstr ""
+msgstr "下一步"
 
 #: ../../source/developing/setup_windows.md:199
 msgid "[First Example: Blinky](blinky.md)"
-msgstr ""
+msgstr "[首个示例：Blinky](blinky.md)"
 
 #: ../../source/developing/setup_windows.md:200
 msgid "[Linux Environment Setup](setup_linux.md)"
-msgstr ""
+msgstr "[Linux 环境搭建](setup_linux.md)"
 
 #: ../../source/developing/setup_windows.md:201
 msgid "[Getting Started](../getting_started/index.md)"
-msgstr ""
-
+msgstr "[入门指南](../getting_started/index.md)"

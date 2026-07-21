@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,27 +20,26 @@ msgstr ""
 
 #: ../../source/samples/ble.md:6
 msgid "BLE Sample"
-msgstr ""
+msgstr "BLE 示例"
 
 #: ../../source/samples/ble.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在完善中\""
 
 #: ../../source/samples/ble.md:10
 msgid ""
 "The BLE sample (`samples/adv_demo`) demonstrates BLE advertising "
 "functionality."
-msgstr ""
+msgstr "BLE 示例（`samples/adv_demo`）演示了 BLE 广播功能。"
 
 #: ../../source/samples/ble.md:12
 msgid "Build & Run"
-msgstr ""
+msgstr "构建与运行"
 
 #: ../../source/samples/ble.md:19
 msgid "Related Resources"
-msgstr ""
+msgstr "相关资源"
 
 #: ../../source/samples/ble.md:21
 msgid "[BLE Controller Documentation](../connectivity/ble/controller.md)"
-msgstr ""
-
+msgstr "[BLE 控制器文档](../connectivity/ble/controller.md)"

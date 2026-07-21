@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,202 +20,201 @@ msgstr ""
 
 #: ../../source/build_config/make_support.md:6
 msgid "Make Support"
-msgstr ""
+msgstr "Make 支持"
 
 #: ../../source/build_config/make_support.md:8
 msgid ""
 "The UniSDK `Makefile` provides a traditional make command interface, "
 "serving as a CMake frontend to simplify build commands. **Can only be "
 "used at the project root directory.**"
-msgstr ""
+msgstr "UniSDK 的 `Makefile` 提供了传统的 make 命令接口，作为 CMake 的前端来简化构建命令。**只能在项目根目录下使用。**"
 
 #: ../../source/build_config/make_support.md:10
 msgid "Makefile Targets"
-msgstr ""
+msgstr "Makefile 目标"
 
 #: ../../source/build_config/make_support.md
 msgid "Target"
-msgstr ""
+msgstr "目标"
 
 #: ../../source/build_config/make_support.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/build_config/make_support.md
 msgid "Command"
-msgstr ""
+msgstr "命令"
 
 #: ../../source/build_config/make_support.md
 msgid "`cmake`"
-msgstr ""
+msgstr "`cmake`"
 
 #: ../../source/build_config/make_support.md
 msgid "Run CMake configuration"
-msgstr ""
+msgstr "运行 CMake 配置"
 
 #: ../../source/build_config/make_support.md
 msgid "`make cmake`"
-msgstr ""
+msgstr "`make cmake`"
 
 #: ../../source/build_config/make_support.md
 msgid "`config`"
-msgstr ""
+msgstr "`config`"
 
 #: ../../source/build_config/make_support.md
 msgid "Generate project configuration"
-msgstr ""
+msgstr "生成项目配置"
 
 #: ../../source/build_config/make_support.md
 msgid "`make config`"
-msgstr ""
+msgstr "`make config`"
 
 #: ../../source/build_config/make_support.md
 msgid "`pinmux`"
-msgstr ""
+msgstr "`pinmux`"
 
 #: ../../source/build_config/make_support.md
 msgid "Run Pinmux configuration tool"
-msgstr ""
+msgstr "运行 Pinmux 配置工具"
 
 #: ../../source/build_config/make_support.md
 msgid "`make pinmux`"
-msgstr ""
+msgstr "`make pinmux`"
 
 #: ../../source/build_config/make_support.md
 msgid "`build`"
-msgstr ""
+msgstr "`build`"
 
 #: ../../source/build_config/make_support.md
 msgid "Full build (cmake + config + build)"
-msgstr ""
+msgstr "完整构建（cmake + config + build）"
 
 #: ../../source/build_config/make_support.md
 msgid "`make build`"
-msgstr ""
+msgstr "`make build`"
 
 #: ../../source/build_config/make_support.md
 msgid "`clean`"
-msgstr ""
+msgstr "`clean`"
 
 #: ../../source/build_config/make_support.md
 msgid "Clean build artifacts"
-msgstr ""
+msgstr "清理构建产物"
 
 #: ../../source/build_config/make_support.md
 msgid "`make clean`"
-msgstr ""
+msgstr "`make clean`"
 
 #: ../../source/build_config/make_support.md
 msgid "`cleanbuild`"
-msgstr ""
+msgstr "`cleanbuild`"
 
 #: ../../source/build_config/make_support.md
 msgid "Clean then rebuild"
-msgstr ""
+msgstr "清理后重新构建"
 
 #: ../../source/build_config/make_support.md
 msgid "`make cleanbuild`"
-msgstr ""
+msgstr "`make cleanbuild`"
 
 #: ../../source/build_config/make_support.md:21
 msgid "Makefile Variables"
-msgstr ""
+msgstr "Makefile 变量"
 
 #: ../../source/build_config/make_support.md
 msgid "Variable"
-msgstr ""
+msgstr "变量"
 
 #: ../../source/build_config/make_support.md
 msgid "Default"
-msgstr ""
+msgstr "默认值"
 
 #: ../../source/build_config/make_support.md
 msgid "`APP`"
-msgstr ""
+msgstr "`APP`"
 
 #: ../../source/build_config/make_support.md
 msgid "`samples/gpio_demo`"
-msgstr ""
+msgstr "`samples/gpio_demo`"
 
 #: ../../source/build_config/make_support.md
 msgid "Application path"
-msgstr ""
+msgstr "应用路径"
 
 #: ../../source/build_config/make_support.md
 msgid "`SOC`"
-msgstr ""
+msgstr "`SOC`"
 
 #: ../../source/build_config/make_support.md
 msgid "(empty)"
-msgstr ""
+msgstr "（空）"
 
 #: ../../source/build_config/make_support.md
 msgid "Target chip"
-msgstr ""
+msgstr "目标芯片"
 
 #: ../../source/build_config/make_support.md
 msgid "`BOARD`"
-msgstr ""
+msgstr "`BOARD`"
 
 #: ../../source/build_config/make_support.md
 msgid "Target development board"
-msgstr ""
+msgstr "目标开发板"
 
 #: ../../source/build_config/make_support.md
 msgid "`BUILD_DIR`"
-msgstr ""
+msgstr "`BUILD_DIR`"
 
 #: ../../source/build_config/make_support.md
 msgid "Build directory"
-msgstr ""
+msgstr "构建目录"
 
 #: ../../source/build_config/make_support.md:30
 msgid "Usage Examples"
-msgstr ""
+msgstr "使用示例"
 
 #: ../../source/build_config/make_support.md:53
 msgid "Build Flow (make build)"
-msgstr ""
+msgstr "构建流程（make build）"
 
 #: ../../source/build_config/make_support.md:55
 msgid ""
 "**`cmake`** — Initialize the CMake build system for the specified "
 "application"
-msgstr ""
+msgstr "**`cmake`** — 为指定应用初始化 CMake 构建系统"
 
 #: ../../source/build_config/make_support.md:56
 msgid "**`config`** — Generate configuration files (`.config`, etc.)"
-msgstr ""
+msgstr "**`config`** — 生成配置文件（`.config` 等）"
 
 #: ../../source/build_config/make_support.md:57
 msgid "**Pre-build checks** — 4 automatic check and recovery steps:"
-msgstr ""
+msgstr "**预构建检查** — 4 项自动检查和恢复步骤："
 
 #: ../../source/build_config/make_support.md:58
 msgid "Check if the build directory exists"
-msgstr ""
+msgstr "检查构建目录是否存在"
 
 #: ../../source/build_config/make_support.md:59
 msgid "Check if the `.config` file exists"
-msgstr ""
+msgstr "检查 `.config` 文件是否存在"
 
 #: ../../source/build_config/make_support.md:60
 msgid "Check if `pinmux.h` exists"
-msgstr ""
+msgstr "检查 `pinmux.h` 是否存在"
 
 #: ../../source/build_config/make_support.md:61
 msgid "Check if `pinmux.h` is up to date"
-msgstr ""
+msgstr "检查 `pinmux.h` 是否是最新的"
 
 #: ../../source/build_config/make_support.md:62
 msgid "**`cmake --build`** — Execute Ninja compilation"
-msgstr ""
+msgstr "**`cmake --build`** — 执行 Ninja 编译"
 
 #: ../../source/build_config/make_support.md:64
 msgid "SOC/BOARD Parameter Forwarding"
-msgstr ""
+msgstr "SOC/BOARD 参数转发"
 
 #: ../../source/build_config/make_support.md:66
 msgid "The Makefile automatically forwards SOC and BOARD variables to CMake:"
-msgstr ""
-
+msgstr "Makefile 自动将 SOC 和 BOARD 变量传递给 CMake："

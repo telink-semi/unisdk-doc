@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,19 +20,18 @@ msgstr ""
 
 #: ../../source/samples/stimer.md:6
 msgid "STIMER Sample"
-msgstr ""
+msgstr "STIMER 示例"
 
 #: ../../source/samples/stimer.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在完善中\""
 
 #: ../../source/samples/stimer.md:10
 msgid ""
 "The `stimer_demo` sample demonstrates the usage of the STIMER system "
 "timer."
-msgstr ""
+msgstr "`stimer_demo` 示例演示了 STIMER 系统定时器的使用方法。"
 
 #: ../../source/samples/stimer.md:12
 msgid "Build & Run"
-msgstr ""
-
+msgstr "构建与运行"

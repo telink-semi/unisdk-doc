@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,7 +20,7 @@ msgstr ""
 
 #: ../../source/peripherals/index.md:6
 msgid "Peripherals and Drivers"
-msgstr ""
+msgstr "外设与驱动"
 
 #: ../../source/peripherals/index.md:8
 msgid ""
@@ -29,240 +28,243 @@ msgid ""
 "chip family. All drivers follow a consistent programming model and naming"
 " convention."
 msgstr ""
+"UniSDK 为整个 Telink 芯片系列提供了统一的外设驱动 API。所有驱动都遵循一致的编程模型和命名约定。"
 
 #: ../../source/peripherals/index.md:10
 msgid "Driver Overview"
-msgstr ""
+msgstr "驱动概览"
 
 #: ../../source/peripherals/index.md
 msgid "Driver"
-msgstr ""
+msgstr "驱动"
 
 #: ../../source/peripherals/index.md
 msgid "API Prefix"
-msgstr ""
+msgstr "API 前缀"
 
 #: ../../source/peripherals/index.md
 msgid "Transfer Mode"
-msgstr ""
+msgstr "传输模式"
 
 #: ../../source/peripherals/index.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/peripherals/index.md
 msgid "[GPIO](gpio.md)"
-msgstr ""
+msgstr "[GPIO](gpio.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_gpio_*`"
-msgstr ""
+msgstr "`tlk_gpio_*`"
 
 #: ../../source/peripherals/index.md
 msgid "Direct Register"
-msgstr ""
+msgstr "直接寄存器"
 
 #: ../../source/peripherals/index.md
 msgid "General-purpose input/output, interrupt handling"
-msgstr ""
+msgstr "通用输入/输出，中断处理"
 
 #: ../../source/peripherals/index.md
 msgid "[UART](uart.md)"
-msgstr ""
+msgstr "[UART](uart.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_uart_*`"
-msgstr ""
+msgstr "`tlk_uart_*`"
 
 #: ../../source/peripherals/index.md
 msgid "Blocking / PLIC / DMA"
-msgstr ""
+msgstr "阻塞 / PLIC / DMA"
 
 #: ../../source/peripherals/index.md
 msgid "Universal asynchronous receiver/transmitter, flow control"
-msgstr ""
+msgstr "通用异步收发传输器，流控制"
 
 #: ../../source/peripherals/index.md
 msgid "[Power Management PM](pm.md)"
-msgstr ""
+msgstr "[电源管理 PM](pm.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_pm_*`"
-msgstr ""
+msgstr "`tlk_pm_*`"
 
 #: ../../source/peripherals/index.md
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: ../../source/peripherals/index.md
 msgid "Low-power mode management"
-msgstr ""
+msgstr "低功耗模式管理"
 
 #: ../../source/peripherals/index.md
 msgid "[Analog](analog.md)"
-msgstr ""
+msgstr "[模拟](analog.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_analog_*`"
-msgstr ""
+msgstr "`tlk_analog_*`"
 
 #: ../../source/peripherals/index.md
 msgid "Analog register access"
-msgstr ""
+msgstr "模拟寄存器访问"
 
 #: ../../source/peripherals/index.md
 msgid "[PLIC](plic.md)"
-msgstr ""
+msgstr "[PLIC](plic.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_plic_*`"
-msgstr ""
+msgstr "`tlk_plic_*`"
 
 #: ../../source/peripherals/index.md
 msgid "Platform-level interrupt controller"
-msgstr ""
+msgstr "平台级中断控制器"
 
 #: ../../source/peripherals/index.md
 msgid "[I2C](i2c.md)"
-msgstr ""
+msgstr "[I2C](i2c.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_i2c_*`"
-msgstr ""
+msgstr "`tlk_i2c_*`"
 
 #: ../../source/peripherals/index.md
 msgid "Blocking / DMA"
-msgstr ""
+msgstr "阻塞 / DMA"
 
 #: ../../source/peripherals/index.md
 msgid "I2C master/slave communication"
-msgstr ""
+msgstr "I2C 主/从通信"
 
 #: ../../source/peripherals/index.md
 msgid "[SPI](spi.md)"
-msgstr ""
+msgstr "[SPI](spi.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_spi_*`"
-msgstr ""
+msgstr "`tlk_spi_*`"
 
 #: ../../source/peripherals/index.md
 msgid "SPI master/slave communication"
-msgstr ""
+msgstr "SPI 主/从通信"
 
 #: ../../source/peripherals/index.md
 msgid "[ADC](adc.md)"
-msgstr ""
+msgstr "[ADC](adc.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_adc_*`"
-msgstr ""
+msgstr "`tlk_adc_*`"
 
 #: ../../source/peripherals/index.md
 msgid "Blocking"
-msgstr ""
+msgstr "阻塞"
 
 #: ../../source/peripherals/index.md
 msgid "Analog-to-digital conversion"
-msgstr ""
+msgstr "模数转换"
 
 #: ../../source/peripherals/index.md
 msgid "[DMA](dma.md)"
-msgstr ""
+msgstr "[DMA](dma.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_dma_*`"
-msgstr ""
+msgstr "`tlk_dma_*`"
 
 #: ../../source/peripherals/index.md
 msgid "DMA"
-msgstr ""
+msgstr "DMA"
 
 #: ../../source/peripherals/index.md
 msgid "Direct memory access"
-msgstr ""
+msgstr "直接内存访问"
 
 #: ../../source/peripherals/index.md
 msgid "[Watchdog](wdt.md)"
-msgstr ""
+msgstr "[看门狗](wdt.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_wdt_*`"
-msgstr ""
+msgstr "`tlk_wdt_*`"
 
 #: ../../source/peripherals/index.md
 msgid "Watchdog timer"
-msgstr ""
+msgstr "看门狗定时器"
 
 #: ../../source/peripherals/index.md
 msgid "[Timer](timer.md)"
-msgstr ""
+msgstr "[定时器](timer.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_stimer_*` / `tlk_mtimer_*`"
-msgstr ""
+msgstr "`tlk_stimer_*` / `tlk_mtimer_*`"
 
 #: ../../source/peripherals/index.md
 msgid "System/machine timer"
-msgstr ""
+msgstr "系统/机器定时器"
 
 #: ../../source/peripherals/index.md
 msgid "[USB](usb.md)"
-msgstr ""
+msgstr "[USB](usb.md)"
 
 #: ../../source/peripherals/index.md
 msgid "`tlk_usb_*` + TinyUSB"
-msgstr ""
+msgstr "`tlk_usb_*` + TinyUSB"
 
 #: ../../source/peripherals/index.md
 msgid "USB CDC, etc."
-msgstr ""
+msgstr "USB CDC 等"
 
 #: ../../source/peripherals/index.md:27
 msgid "Driver Programming Model"
-msgstr ""
+msgstr "驱动编程模型"
 
 #: ../../source/peripherals/index.md:29
 msgid "All UniSDK drivers follow a unified programming model:"
-msgstr ""
+msgstr "所有 UniSDK 驱动都遵循统一的编程模型："
 
 #: ../../source/peripherals/index.md:31
 msgid "Configure → Use → Deinitialize"
-msgstr ""
+msgstr "配置 → 使用 → 反初始化"
 
 #: ../../source/peripherals/index.md:44
 msgid "Transfer Modes"
-msgstr ""
+msgstr "传输模式"
 
 #: ../../source/peripherals/index.md:46
 msgid "Some communication peripherals support multiple transfer modes:"
-msgstr ""
+msgstr "某些通信外设支持多种传输模式："
 
 #: ../../source/peripherals/index.md:48
 msgid ""
 "**Blocking** — Synchronously waits for transfer completion, suitable for "
 "simple scenarios"
 msgstr ""
+"**阻塞模式** — 同步等待传输完成，适用于简单场景"
 
 #: ../../source/peripherals/index.md:49
 msgid ""
 "**PLIC (Interrupt)** — Non-blocking transfer based on interrupts, no CPU "
 "polling required"
 msgstr ""
+"**PLIC（中断）** — 基于中断的非阻塞传输，无需 CPU 轮询"
 
 #: ../../source/peripherals/index.md:50
 msgid "**DMA** — Most efficient bulk data transfer, zero CPU load"
-msgstr ""
+msgstr "**DMA** — 最高效的批量数据传输，CPU 零负载"
 
 #: ../../source/peripherals/index.md:52
 msgid ""
 "Configure transfer mode independently for each peripheral instance via "
 "Kconfig."
-msgstr ""
+msgstr "通过 Kconfig 为每个外设实例独立配置传输模式。"
 
 #: ../../source/peripherals/index.md:54
 msgid "Kconfig Configuration"
-msgstr ""
+msgstr "Kconfig 配置"
 
 #: ../../source/peripherals/index.md:56
 msgid ""
@@ -270,8 +272,9 @@ msgid ""
 "[Kconfig Reference](../kconfig_reference/index.md) for all configuration "
 "options."
 msgstr ""
+"所有外设驱动均在编译时通过 Kconfig 进行配置。所有配置选项请参见 "
+"[Kconfig 参考](../kconfig_reference/index.md)。"
 
 #: ../../source/peripherals/index.md:58
 msgid "Quick configuration entry:"
-msgstr ""
-
+msgstr "快速配置入口："

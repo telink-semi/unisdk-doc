@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,75 +20,75 @@ msgstr ""
 
 #: ../../source/tools/index.md:6
 msgid "Development Tools"
-msgstr ""
+msgstr "开发工具"
 
 #: ../../source/tools/index.md:8
 msgid ""
 "UniSDK provides a series of development tools to simplify chip "
 "configuration, flashing/debugging, and code editing workflows."
 msgstr ""
+"UniSDK 提供了一系列开发工具，以简化芯片配置、烧录/调试和代码编辑工作流程。"
 
 #: ../../source/tools/index.md
 msgid "Tool"
-msgstr ""
+msgstr "工具"
 
 #: ../../source/tools/index.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/tools/index.md
 msgid "Documentation"
-msgstr ""
+msgstr "文档"
 
 #: ../../source/tools/index.md
 msgid "**BDT**"
-msgstr ""
+msgstr "**BDT**"
 
 #: ../../source/tools/index.md
 msgid "Telink Burning and Debugging Tool"
-msgstr ""
+msgstr "Telink 烧录和调试工具"
 
 #: ../../source/tools/index.md
 msgid "[BDT Tool](bdt.md)"
-msgstr ""
+msgstr "[BDT 工具](bdt.md)"
 
 #: ../../source/tools/index.md
 msgid "**Pinmux**"
-msgstr ""
+msgstr "**Pinmux**"
 
 #: ../../source/tools/index.md
 msgid "Graphical pin multiplexing configuration tool"
-msgstr ""
+msgstr "图形化引脚复用配置工具"
 
 #: ../../source/tools/index.md
 msgid "[Pinmux Tool](pinmux.md)"
-msgstr ""
+msgstr "[Pinmux 工具](pinmux.md)"
 
 #: ../../source/tools/index.md
 msgid "**Menuconfig**"
-msgstr ""
+msgstr "**Menuconfig**"
 
 #: ../../source/tools/index.md
 msgid "Terminal interactive system configuration interface"
-msgstr ""
+msgstr "终端交互式系统配置界面"
 
 #: ../../source/tools/index.md
 msgid "[Menuconfig](menuconfig.md)"
-msgstr ""
+msgstr "[Menuconfig](menuconfig.md)"
 
 #: ../../source/tools/index.md
 msgid "**West**"
-msgstr ""
+msgstr "**West**"
 
 #: ../../source/tools/index.md
 msgid "Unified command-line entry point"
-msgstr ""
+msgstr "统一命令行入口"
 
 #: ../../source/tools/index.md
 msgid "[West Commands](../build_config/west_commands.md)"
-msgstr ""
+msgstr "[West 命令](../build_config/west_commands.md)"
 
 #: ../../source/tools/index.md:17
 msgid "Tool Overview"
-msgstr ""
-
+msgstr "工具概览"

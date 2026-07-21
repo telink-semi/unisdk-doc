@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,242 +20,241 @@ msgstr ""
 
 #: ../../source/chips_boards/chips/TL721X.md:6
 msgid "TL721X Chip Series"
-msgstr ""
+msgstr "TL721X 芯片系列"
 
 #: ../../source/chips_boards/chips/TL721X.md:8
 msgid ""
 "!!! note \"Document Status: DRAFT — Detailed specifications to be added. "
 "The information below is based on SDK metadata and is subject to "
 "update.\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 详细规格待补充。以下信息基于 SDK 元数据，可能会更新。\""
 
 #: ../../source/chips_boards/chips/TL721X.md:10
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/chips_boards/chips/TL721X.md:12
 msgid ""
 "The TL721X is a RISC-V microcontroller series from Telink, adding USB "
 "support on top of the TL321X."
-msgstr ""
+msgstr "TL721X 是 Telink 推出的 RISC-V 微控制器系列，在 TL321X 的基础上增加了 USB 支持。"
 
 #: ../../source/chips_boards/chips/TL721X.md:14
 msgid "Core Parameters"
-msgstr ""
+msgstr "核心参数"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "Parameter"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "Core"
-msgstr ""
+msgstr "内核"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "RISC-V (32-bit)"
-msgstr ""
+msgstr "RISC-V（32 位）"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "Supported Protocols"
-msgstr ""
+msgstr "支持的协议"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "BLE"
-msgstr ""
+msgstr "BLE"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "Toolchain"
-msgstr ""
+msgstr "工具链"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "`andes-riscv32-v5f-gcc14.2` (TL32 ELF MCULIB V5F GCC14.2)"
-msgstr ""
+msgstr "`andes-riscv32-v5f-gcc14.2`（TL32 ELF MCULIB V5F GCC14.2）"
 
 #: ../../source/chips_boards/chips/TL721X.md:22
 msgid "Memory"
-msgstr ""
+msgstr "存储器"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "Region"
-msgstr ""
+msgstr "区域"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "Start Address"
-msgstr ""
+msgstr "起始地址"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "ROM"
-msgstr ""
+msgstr "ROM"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "2048 KB"
-msgstr ""
+msgstr "2048 KB"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "0x20000000"
-msgstr ""
+msgstr "0x20000000"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "IRAM"
-msgstr ""
+msgstr "IRAM"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "256 KB"
-msgstr ""
+msgstr "256 KB"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "0x00040000"
-msgstr ""
+msgstr "0x00040000"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "DRAM"
-msgstr ""
+msgstr "DRAM"
 
 #: ../../source/chips_boards/chips/TL721X.md
 msgid "0x00080000"
-msgstr ""
+msgstr "0x00080000"
 
 #: ../../source/chips_boards/chips/TL721X.md:30
 msgid "Peripheral List"
-msgstr ""
+msgstr "外设列表"
 
 #: ../../source/chips_boards/chips/TL721X.md:32
 msgid "Standard Peripherals"
-msgstr ""
+msgstr "标准外设"
 
 #: ../../source/chips_boards/chips/TL721X.md:33
 msgid "GPIO"
-msgstr ""
+msgstr "GPIO"
 
 #: ../../source/chips_boards/chips/TL721X.md:34
 msgid "UART"
-msgstr ""
+msgstr "UART"
 
 #: ../../source/chips_boards/chips/TL721X.md:35
 msgid "I2C"
-msgstr ""
+msgstr "I2C"
 
 #: ../../source/chips_boards/chips/TL721X.md:36
 msgid "SPI"
-msgstr ""
+msgstr "SPI"
 
 #: ../../source/chips_boards/chips/TL721X.md:37
 msgid "ADC"
-msgstr ""
+msgstr "ADC"
 
 #: ../../source/chips_boards/chips/TL721X.md:38
 msgid "DMA"
-msgstr ""
+msgstr "DMA"
 
 #: ../../source/chips_boards/chips/TL721X.md:39
 msgid "USB"
-msgstr ""
+msgstr "USB"
 
 #: ../../source/chips_boards/chips/TL721X.md:41
 msgid "System & Control"
-msgstr ""
+msgstr "系统与控制"
 
 #: ../../source/chips_boards/chips/TL721X.md:42
 msgid "PLIC (Platform-Level Interrupt Controller)"
-msgstr ""
+msgstr "PLIC（平台级中断控制器）"
 
 #: ../../source/chips_boards/chips/TL721X.md:43
 msgid "PM (Power Management: Suspend, Deep Sleep, Deep Retention)"
-msgstr ""
+msgstr "PM（电源管理：挂起、深度睡眠、深度保持）"
 
 #: ../../source/chips_boards/chips/TL721X.md:44
 msgid "PMP (Physical Memory Protection)"
-msgstr ""
+msgstr "PMP（物理内存保护）"
 
 #: ../../source/chips_boards/chips/TL721X.md:45
 msgid "STIMER (System Timer)"
-msgstr ""
+msgstr "STIMER（系统定时器）"
 
 #: ../../source/chips_boards/chips/TL721X.md:46
 msgid "MTIMER (Machine Timer)"
-msgstr ""
+msgstr "MTIMER（机器定时器）"
 
 #: ../../source/chips_boards/chips/TL721X.md:47
 msgid "PWM"
-msgstr ""
+msgstr "PWM"
 
 #: ../../source/chips_boards/chips/TL721X.md:48
 msgid "QDEC (Quadrature Decoder)"
-msgstr ""
+msgstr "QDEC（正交解码器）"
 
 #: ../../source/chips_boards/chips/TL721X.md:49
 msgid "MSPI"
-msgstr ""
+msgstr "MSPI"
 
 #: ../../source/chips_boards/chips/TL721X.md:51
 msgid "Security & Crypto"
-msgstr ""
+msgstr "安全与加密"
 
 #: ../../source/chips_boards/chips/TL721X.md:52
 msgid "PKE (Public Key Engine)"
-msgstr ""
+msgstr "PKE（公钥引擎）"
 
 #: ../../source/chips_boards/chips/TL721X.md:53
 msgid "SKE (Symmetric Key Engine)"
-msgstr ""
+msgstr "SKE（对称密钥引擎）"
 
 #: ../../source/chips_boards/chips/TL721X.md:54
 msgid "HASH"
-msgstr ""
+msgstr "HASH"
 
 #: ../../source/chips_boards/chips/TL721X.md:55
 msgid "TRNG (True Random Number Generator)"
-msgstr ""
+msgstr "TRNG（真随机数生成器）"
 
 #: ../../source/chips_boards/chips/TL721X.md:56
 msgid "ChaCha20/Poly1305"
-msgstr ""
+msgstr "ChaCha20/Poly1305"
 
 #: ../../source/chips_boards/chips/TL721X.md:58
 msgid "Debug & Misc"
-msgstr ""
+msgstr "调试与杂项"
 
 #: ../../source/chips_boards/chips/TL721X.md:59
 msgid "SWIRE (Single Wire Interface)"
-msgstr ""
+msgstr "SWIRE（单线接口）"
 
 #: ../../source/chips_boards/chips/TL721X.md:60
 msgid "IR (Infrared)"
-msgstr ""
+msgstr "IR（红外）"
 
 #: ../../source/chips_boards/chips/TL721X.md:61
 msgid "OTP (One-Time Programmable)"
-msgstr ""
+msgstr "OTP（一次性可编程）"
 
 #: ../../source/chips_boards/chips/TL721X.md:62
 msgid "TRAP"
-msgstr ""
+msgstr "TRAP"
 
 #: ../../source/chips_boards/chips/TL721X.md:64
 msgid "Supported Package Options"
-msgstr ""
+msgstr "支持的封装选项"
 
 #: ../../source/chips_boards/chips/TL721X.md:66
 msgid "QFN38, QFN68, QFN88"
-msgstr ""
+msgstr "QFN38、QFN68、QFN88"
 
 #: ../../source/chips_boards/chips/TL721X.md:67
 msgid "BGA56, BGA94"
-msgstr ""
+msgstr "BGA56、BGA94"
 
 #: ../../source/chips_boards/chips/TL721X.md:69
 msgid "Supported Boards"
-msgstr ""
+msgstr "支持的开发板"
 
 #: ../../source/chips_boards/chips/TL721X.md:71
 msgid "[TL7218X_EVK](../boards/TL7218X_EVK.md)"
-msgstr ""
-
+msgstr "[TL7218X_EVK](../boards/TL7218X_EVK.md)"

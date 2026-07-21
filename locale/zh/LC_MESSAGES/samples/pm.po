@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,142 +20,141 @@ msgstr ""
 
 #: ../../source/samples/pm.md:6
 msgid "PM Power Management Sample"
-msgstr ""
+msgstr "PM 电源管理示例"
 
 #: ../../source/samples/pm.md:8
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/samples/pm.md:10
 msgid ""
 "The `pm_demo` sample demonstrates the usage of the Power Management (PM) "
 "subsystem. It shows how to enter low-power modes, configure GPIO wake-up,"
 " and preserve application state across low-power transitions."
-msgstr ""
+msgstr "`pm_demo` 示例演示了电源管理（PM）子系统的使用方法。它展示了如何进入低功耗模式、配置 GPIO 唤醒以及在低功耗转换过程中保持应用程序状态。"
 
 #: ../../source/samples/pm.md:12
 msgid "Features Demonstrated"
-msgstr ""
+msgstr "功能演示"
 
 #: ../../source/samples/pm.md:14
 msgid "Entering Deep/Suspend sleep using `tlk_api_sleep`"
-msgstr ""
+msgstr "使用 `tlk_api_sleep` 进入深度睡眠/挂起睡眠"
 
 #: ../../source/samples/pm.md:15
 msgid "GPIO wake-up configuration (optional)"
-msgstr ""
+msgstr "GPIO 唤醒配置（可选）"
 
 #: ../../source/samples/pm.md:16
 msgid "Before/After sleep hook functions"
-msgstr ""
+msgstr "睡眠前/后钩子函数"
 
 #: ../../source/samples/pm.md:17
 msgid "Variable retention across Deep Sleep Retention mode"
-msgstr ""
+msgstr "深度睡眠保持模式下的变量保持"
 
 #: ../../source/samples/pm.md:19
 msgid "How It Works"
-msgstr ""
+msgstr "工作原理"
 
 #: ../../source/samples/pm.md:21
 msgid "Initialization"
-msgstr ""
+msgstr "初始化"
 
 #: ../../source/samples/pm.md:23
 msgid ""
 "**LED State Initialization** — When `CONFIG_TLK_PM_DEMO_ENABLE_LED` is "
 "enabled:"
-msgstr ""
+msgstr "**LED 状态初始化** — 当启用 `CONFIG_TLK_PM_DEMO_ENABLE_LED` 时："
 
 #: ../../source/samples/pm.md:24
 msgid "LED state variables are stored in the **retention section**"
-msgstr ""
+msgstr "LED 状态变量存储在**保持区域**中"
 
 #: ../../source/samples/pm.md:25
 msgid "Initial state: LED0 ON, LED1 OFF"
-msgstr ""
+msgstr "初始状态：LED0 亮，LED1 灭"
 
 #: ../../source/samples/pm.md:27
 msgid "**Hook Registration** — Registers pre-sleep and post-sleep callbacks:"
-msgstr ""
+msgstr "**钩子注册** — 注册睡眠前和睡眠后回调："
 
 #: ../../source/samples/pm.md:28
 msgid "`flip_led()` → Flips LED state before sleep"
-msgstr ""
+msgstr "`flip_led()` → 在睡眠前翻转 LED 状态"
 
 #: ../../source/samples/pm.md:29
 msgid "`init_led()` → Re-initializes GPIO after wake-up"
-msgstr ""
+msgstr "`init_led()` → 唤醒后重新初始化 GPIO"
 
 #: ../../source/samples/pm.md:31
 msgid "Main Loop"
-msgstr ""
+msgstr "主循环"
 
 #: ../../source/samples/pm.md:33
 msgid "Delay 1 second"
-msgstr ""
+msgstr "延迟 1 秒"
 
 #: ../../source/samples/pm.md:34
 msgid "Optionally configure GPIO wake-up source"
-msgstr ""
+msgstr "可选配置 GPIO 唤醒源"
 
 #: ../../source/samples/pm.md:35
 msgid "Enter low-power mode for 1 second"
-msgstr ""
+msgstr "进入低功耗模式 1 秒"
 
 #: ../../source/samples/pm.md:37
 msgid "GPIO Wake-up (Optional)"
-msgstr ""
+msgstr "GPIO 唤醒（可选）"
 
 #: ../../source/samples/pm.md:39
 msgid "When `CONFIG_TLK_PM_DEMO_ENABLE_GPIO_INPUT` is enabled:"
-msgstr ""
+msgstr "当启用 `CONFIG_TLK_PM_DEMO_ENABLE_GPIO_INPUT` 时："
 
 #: ../../source/samples/pm.md:41
 msgid "GPIO C4 is configured as a wake-up source (high-level wake-up)"
-msgstr ""
+msgstr "GPIO C4 被配置为唤醒源（高电平唤醒）"
 
 #: ../../source/samples/pm.md:42
 msgid "Suspend mode is used instead of Deep Sleep when GPIO wake-up is enabled"
-msgstr ""
+msgstr "启用 GPIO 唤醒时使用挂起模式而非深度睡眠"
 
 #: ../../source/samples/pm.md:44
 msgid "Configuration Options"
-msgstr ""
+msgstr "配置选项"
 
 #: ../../source/samples/pm.md
 msgid "Option"
-msgstr ""
+msgstr "选项"
 
 #: ../../source/samples/pm.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/samples/pm.md
 msgid "`CONFIG_TLK_PM_DEMO_ENABLE_LED`"
-msgstr ""
+msgstr "`CONFIG_TLK_PM_DEMO_ENABLE_LED`"
 
 #: ../../source/samples/pm.md
 msgid "LED demo: state preserved in retention area"
-msgstr ""
+msgstr "LED 演示：状态保存在保持区域中"
 
 #: ../../source/samples/pm.md
 msgid "`CONFIG_TLK_PM_DEMO_ENABLE_GPIO_INPUT`"
-msgstr ""
+msgstr "`CONFIG_TLK_PM_DEMO_ENABLE_GPIO_INPUT`"
 
 #: ../../source/samples/pm.md
 msgid "GPIO wake-up demo"
-msgstr ""
+msgstr "GPIO 唤醒演示"
 
 #: ../../source/samples/pm.md
 msgid "`CONFIG_TLK_PM_DEMO_DISABLE_LED_BEFORE_SLEEP`"
-msgstr ""
+msgstr "`CONFIG_TLK_PM_DEMO_DISABLE_LED_BEFORE_SLEEP`"
 
 #: ../../source/samples/pm.md
 msgid "Turn off LED before sleep (visual sleep entry indicator)"
-msgstr ""
+msgstr "睡眠前关闭 LED（可视的睡眠进入指示）"
 
 #: ../../source/samples/pm.md:52
 msgid "Build & Run"
-msgstr ""
-
+msgstr "构建与运行"

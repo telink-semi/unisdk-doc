@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,41 +20,42 @@ msgstr ""
 
 #: ../../source/developing/setup_linux.md:6
 msgid "Linux Environment Setup"
-msgstr ""
+msgstr "Linux 环境搭建"
 
 #: ../../source/developing/setup_linux.md:8
 msgid ""
 "This document details the complete steps to set up the UniSDK development"
 " environment on a Linux system (using Ubuntu as an example)."
 msgstr ""
+"本文档详细介绍了在 Linux 系统（以 Ubuntu 为例）上搭建 UniSDK 开发环境的完整步骤。"
 
 #: ../../source/developing/setup_linux.md:10
 msgid "System Requirements"
-msgstr ""
+msgstr "系统要求"
 
 #: ../../source/developing/setup_linux.md:12
 msgid "Ubuntu 20.04 LTS or higher"
-msgstr ""
+msgstr "Ubuntu 20.04 LTS 或更高版本"
 
 #: ../../source/developing/setup_linux.md:13
 msgid "At least 4 GB RAM, 8 GB+ recommended"
-msgstr ""
+msgstr "至少 4 GB RAM，建议 8 GB 以上"
 
 #: ../../source/developing/setup_linux.md:14
 msgid "Sufficient disk space (SDK + toolchain requires approximately 2 GB)"
-msgstr ""
+msgstr "充足的磁盘空间（SDK + 工具链约需 2 GB）"
 
 #: ../../source/developing/setup_linux.md:16
 msgid "Install System Dependencies"
-msgstr ""
+msgstr "安装系统依赖"
 
 #: ../../source/developing/setup_linux.md:24
 msgid "Verify installation:"
-msgstr ""
+msgstr "验证安装："
 
 #: ../../source/developing/setup_linux.md:33
 msgid "Set Up Python Virtual Environment"
-msgstr ""
+msgstr "搭建 Python 虚拟环境"
 
 #: ../../source/developing/setup_linux.md:50
 msgid ""
@@ -63,10 +63,12 @@ msgid ""
 "environment before each development session:     ```bash     source "
 ".venv/bin/activate     ```"
 msgstr ""
+"!!! tip \"建议\"     每次开发前记得激活虚拟环境：     ```bash     source "
+".venv/bin/activate     ```"
 
 #: ../../source/developing/setup_linux.md:56
 msgid "Initialize West"
-msgstr ""
+msgstr "初始化 West"
 
 #: ../../source/developing/setup_linux.md:66
 #, python-brace-format
@@ -75,46 +77,48 @@ msgid ""
 "the `already initialized in {path}, aborting.` error:     ```bash     "
 "unset ZEPHYR_BASE     west init -l     ```"
 msgstr ""
+"!!! warning \"常见问题：already initialized\"     如果遇到 `already initialized in {path}, aborting.` 错误：     ```bash     "
+"unset ZEPHYR_BASE     west init -l     ```"
 
 #: ../../source/developing/setup_linux.md:73
 msgid "Configure Toolchain"
-msgstr ""
+msgstr "配置工具链"
 
 #: ../../source/developing/setup_linux.md:75
 msgid "Download the Telink RISC-V toolchain (contact the Telink team for access)"
-msgstr ""
+msgstr "下载 Telink RISC-V 工具链（请联系 Telink 团队获取）"
 
 #: ../../source/developing/setup_linux.md:76
 msgid "Extract the toolchain to a designated directory:"
-msgstr ""
+msgstr "将工具链解压到指定目录："
 
 #: ../../source/developing/setup_linux.md:81
 msgid ""
 "Set the environment variable (recommend adding to `~/.bashrc` or "
 "`~/.zshrc`):"
 msgstr ""
+"设置环境变量（建议添加到 `~/.bashrc` 或 `~/.zshrc`）："
 
 #: ../../source/developing/setup_linux.md:86
 msgid "Configure BDT Tool (Optional)"
-msgstr ""
+msgstr "配置 BDT 工具（可选）"
 
 #: ../../source/developing/setup_linux.md:88
 msgid "If you need to use the `west tl-bdt` command for flashing and debugging:"
-msgstr ""
+msgstr "如果需要使用 `west tl-bdt` 命令进行烧录和调试："
 
 #: ../../source/developing/setup_linux.md:98
 msgid "Verify Environment"
-msgstr ""
+msgstr "验证环境"
 
 #: ../../source/developing/setup_linux.md:108
 msgid "Next Steps"
-msgstr ""
+msgstr "下一步"
 
 #: ../../source/developing/setup_linux.md:110
 msgid "[First Example: Blinky](blinky.md)"
-msgstr ""
+msgstr "[首个示例：Blinky](blinky.md)"
 
 #: ../../source/developing/setup_linux.md:111
 msgid "[Getting Started](../getting_started/index.md)"
-msgstr ""
-
+msgstr "[入门指南](../getting_started/index.md)"

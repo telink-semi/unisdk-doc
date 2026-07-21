@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,19 +20,18 @@ msgstr ""
 
 #: ../../source/samples/adc.md:6
 msgid "ADC Sample"
-msgstr ""
+msgstr "ADC 示例"
 
 #: ../../source/samples/adc.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在完善中\""
 
 #: ../../source/samples/adc.md:10
 msgid ""
 "The ADC sample (`samples/adc_demo`) demonstrates the basic usage of the "
 "analog-to-digital converter."
-msgstr ""
+msgstr "ADC 示例（`samples/adc_demo`）演示了模数转换器的基本使用方法。"
 
 #: ../../source/samples/adc.md:12
 msgid "Build & Run"
-msgstr ""
-
+msgstr "构建与运行"

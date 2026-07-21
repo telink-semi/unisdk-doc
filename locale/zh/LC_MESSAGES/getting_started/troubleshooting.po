@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,19 +20,19 @@ msgstr ""
 
 #: ../../source/getting_started/troubleshooting.md:6
 msgid "Troubleshooting"
-msgstr ""
+msgstr "故障排除"
 
 #: ../../source/getting_started/troubleshooting.md:8
 msgid "Environment Issues"
-msgstr ""
+msgstr "环境问题"
 
 #: ../../source/getting_started/troubleshooting.md:10
 msgid "TELINK_TOOLCHAIN_PATH Not Found"
-msgstr ""
+msgstr "未找到 TELINK_TOOLCHAIN_PATH"
 
 #: ../../source/getting_started/troubleshooting.md:12
 msgid "**Error**: `Error: TELINK_TOOLCHAIN_PATH environment variable not set`"
-msgstr ""
+msgstr "**错误**：`错误：未设置 TELINK_TOOLCHAIN_PATH 环境变量`"
 
 #: ../../source/getting_started/troubleshooting.md:14
 #: ../../source/getting_started/troubleshooting.md:31
@@ -43,105 +42,106 @@ msgstr ""
 #: ../../source/getting_started/troubleshooting.md:78
 #: ../../source/getting_started/troubleshooting.md:91
 msgid "**Solution**:"
-msgstr ""
+msgstr "**解决方法**："
 
 #: ../../source/getting_started/troubleshooting.md:27
 msgid "west init -l Reports \"already initialized\""
-msgstr ""
+msgstr "west init -l 报告\"已初始化\""
 
 #: ../../source/getting_started/troubleshooting.md:29
 msgid ""
 "**Cause**: The `ZEPHYR_BASE` environment variable points to a Zephyr "
 "workspace containing a `.west` directory."
 msgstr ""
+"**原因**：`ZEPHYR_BASE` 环境变量指向包含 `.west` 目录的 Zephyr 工作区。"
 
 #: ../../source/getting_started/troubleshooting.md:41
 msgid "CMake Configuration Failed"
-msgstr ""
+msgstr "CMake 配置失败"
 
 #: ../../source/getting_started/troubleshooting.md:45
 msgid "Verify the CMake version (requires >= 3.20.0)."
-msgstr ""
+msgstr "验证 CMake 版本（需要 >= 3.20.0）。"
 
 #: ../../source/getting_started/troubleshooting.md:46
 msgid "Clear old build cache and retry:"
-msgstr ""
+msgstr "清除旧构建缓存并重试："
 
 #: ../../source/getting_started/troubleshooting.md:50
 msgid "Verify that all required dependencies are installed correctly."
-msgstr ""
+msgstr "验证所有必需的依赖项是否正确安装。"
 
 #: ../../source/getting_started/troubleshooting.md:52
 msgid "Python Dependency Installation Failed"
-msgstr ""
+msgstr "Python 依赖项安装失败"
 
 #: ../../source/getting_started/troubleshooting.md:56
 msgid "Check your network connection."
-msgstr ""
+msgstr "检查您的网络连接。"
 
 #: ../../source/getting_started/troubleshooting.md:57
 msgid ""
 "Verify that the virtual environment is activated (the terminal prompt "
 "should have a `(.venv)` prefix)."
 msgstr ""
+"验证虚拟环境是否已激活（终端提示符应有 `(.venv)` 前缀）。"
 
 #: ../../source/getting_started/troubleshooting.md:58
 msgid "If required, configure a proxy:"
-msgstr ""
+msgstr "如有需要，配置代理："
 
 #: ../../source/getting_started/troubleshooting.md:63
 msgid "Build Issues"
-msgstr ""
+msgstr "构建问题"
 
 #: ../../source/getting_started/troubleshooting.md:65
 msgid "Compilation Error"
-msgstr ""
+msgstr "编译错误"
 
 #: ../../source/getting_started/troubleshooting.md:69
 msgid "Check the source code for syntax errors."
-msgstr ""
+msgstr "检查源代码中是否存在语法错误。"
 
 #: ../../source/getting_started/troubleshooting.md:70
 msgid "Verify that the chip and board are configured correctly."
-msgstr ""
+msgstr "验证芯片和开发板的配置是否正确。"
 
 #: ../../source/getting_started/troubleshooting.md:71
 msgid "Perform a full clean and retry:"
-msgstr ""
+msgstr "执行完全清理并重试："
 
 #: ../../source/getting_started/troubleshooting.md:76
 msgid "Cannot Find pinmux.h"
-msgstr ""
+msgstr "找不到 pinmux.h"
 
 #: ../../source/getting_started/troubleshooting.md:87
 msgid "Menuconfig Issues"
-msgstr ""
+msgstr "Menuconfig 问题"
 
 #: ../../source/getting_started/troubleshooting.md:89
 msgid "Arrow Keys Not Working in menuconfig Within VS Code (Windows)"
-msgstr ""
+msgstr "在 VS Code 中 menuconfig 方向键无法使用（Windows）"
 
 #: ../../source/getting_started/troubleshooting.md:93
 msgid "Use the letter keys instead of the arrow keys."
-msgstr ""
+msgstr "使用字母键代替方向键。"
 
 #: ../../source/getting_started/troubleshooting.md:94
 msgid "Use Windows 11."
-msgstr ""
+msgstr "使用 Windows 11。"
 
 #: ../../source/getting_started/troubleshooting.md:95
 msgid "Use Command Prompt (CMD) instead of PowerShell for menuconfig operations."
-msgstr ""
+msgstr "使用命令提示符（CMD）代替 PowerShell 进行 menuconfig 操作。"
 
 #: ../../source/getting_started/troubleshooting.md:97
 msgid "Getting Help"
-msgstr ""
+msgstr "获取帮助"
 
 #: ../../source/getting_started/troubleshooting.md:99
 msgid "[Technical Support](../support/index.md)"
-msgstr ""
+msgstr "[技术支持](../support/index.md)"
 
 #: ../../source/getting_started/troubleshooting.md:100
 msgid "[Submit an Issue](../contribute/index.md)"
-msgstr ""
-
+msgstr "[提交问题](../contribute/index.md)"

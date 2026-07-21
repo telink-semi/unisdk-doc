@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,19 +20,18 @@ msgstr ""
 
 #: ../../source/samples/usb_cdc.md:6
 msgid "USB CDC Sample"
-msgstr ""
+msgstr "USB CDC 示例"
 
 #: ../../source/samples/usb_cdc.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在完善中\""
 
 #: ../../source/samples/usb_cdc.md:10
 msgid ""
 "The `usb_cdc_demo` sample is based on the TinyUSB framework and "
 "demonstrates USB CDC serial port functionality."
-msgstr ""
+msgstr "`usb_cdc_demo` 示例基于 TinyUSB 框架，演示了 USB CDC 串口功能。"
 
 #: ../../source/samples/usb_cdc.md:12
 msgid "Build & Run"
-msgstr ""
-
+msgstr "构建与运行"

@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,153 +20,152 @@ msgstr ""
 
 #: ../../source/releases/index.md:6
 msgid "Releases"
-msgstr ""
+msgstr "发布版本"
 
 #: ../../source/releases/index.md:8
 msgid "Version Naming Convention"
-msgstr ""
+msgstr "版本命名规范"
 
 #: ../../source/releases/index.md:10
 msgid "UniSDK follows the **MAJOR.MINOR.PATCH** format (e.g., `1.2.3`):"
-msgstr ""
+msgstr "UniSDK 遵循 **MAJOR.MINOR.PATCH** 格式（例如 `1.2.3`）："
 
 #: ../../source/releases/index.md:12
 msgid "**MAJOR**: Incompatible API changes"
-msgstr ""
+msgstr "**MAJOR**：不兼容的 API 变更"
 
 #: ../../source/releases/index.md:13
 msgid "**MINOR**: Backward-compatible feature additions"
-msgstr ""
+msgstr "**MINOR**：向后兼容的功能新增"
 
 #: ../../source/releases/index.md:14
 msgid "**PATCH**: Backward-compatible bug fixes"
-msgstr ""
+msgstr "**PATCH**：向后兼容的缺陷修复"
 
 #: ../../source/releases/index.md:16
 msgid "Current Version"
-msgstr ""
+msgstr "当前版本"
 
 #: ../../source/releases/index.md:18
 msgid ""
 "Current version information is defined in "
 "`common/include/tlk_sdk_version.h`."
-msgstr ""
+msgstr "当前版本信息定义在 `common/include/tlk_sdk_version.h` 中。"
 
 #: ../../source/releases/index.md:20
 msgid "Version Compatibility"
-msgstr ""
+msgstr "版本兼容性"
 
 #: ../../source/releases/index.md:22
 msgid "Chip Support Matrix"
-msgstr ""
+msgstr "芯片支持矩阵"
 
 #: ../../source/releases/index.md
 msgid "SDK Version"
-msgstr ""
+msgstr "SDK 版本"
 
 #: ../../source/releases/index.md
 msgid "TL321X"
-msgstr ""
+msgstr "TL321X"
 
 #: ../../source/releases/index.md
 msgid "TL721X"
-msgstr ""
+msgstr "TL721X"
 
 #: ../../source/releases/index.md
 msgid "TLSR922X"
-msgstr ""
+msgstr "TLSR922X"
 
 #: ../../source/releases/index.md
 msgid "TLSR952X"
-msgstr ""
+msgstr "TLSR952X"
 
 #: ../../source/releases/index.md
 msgid "Notes"
-msgstr ""
+msgstr "说明"
 
 #: ../../source/releases/index.md
 msgid "0.2.0"
-msgstr ""
+msgstr "0.2.0"
 
 #: ../../source/releases/index.md
 msgid "✅"
-msgstr ""
+msgstr "✅"
 
 #: ../../source/releases/index.md
 msgid "Initial version"
-msgstr ""
+msgstr "初始版本"
 
 #: ../../source/releases/index.md:28
 msgid "Toolchain Versions"
-msgstr ""
+msgstr "工具链版本"
 
 #: ../../source/releases/index.md
 msgid "Component"
-msgstr ""
+msgstr "组件"
 
 #: ../../source/releases/index.md
 msgid "Version Requirement"
-msgstr ""
+msgstr "版本要求"
 
 #: ../../source/releases/index.md
 msgid "CMake"
-msgstr ""
+msgstr "CMake"
 
 #: ../../source/releases/index.md
 msgid ">= 3.20.0"
-msgstr ""
+msgstr ">= 3.20.0"
 
 #: ../../source/releases/index.md
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: ../../source/releases/index.md
 msgid ">= 3.10"
-msgstr ""
+msgstr ">= 3.10"
 
 #: ../../source/releases/index.md
 msgid "Ninja"
-msgstr ""
+msgstr "Ninja"
 
 #: ../../source/releases/index.md
 msgid ">= 1.10"
-msgstr ""
+msgstr ">= 1.10"
 
 #: ../../source/releases/index.md
 msgid "West"
-msgstr ""
+msgstr "West"
 
 #: ../../source/releases/index.md
 msgid ">= 0.14.0"
-msgstr ""
+msgstr ">= 0.14.0"
 
 #: ../../source/releases/index.md
 msgid "RISC-V GCC"
-msgstr ""
+msgstr "RISC-V GCC"
 
 #: ../../source/releases/index.md
 msgid "V5.4.1+"
-msgstr ""
+msgstr "V5.4.1+"
 
 #: ../../source/releases/index.md:38
 msgid "Version History"
-msgstr ""
+msgstr "版本历史"
 
 #: ../../source/releases/index.md:40
 msgid "v0.2.0"
-msgstr ""
+msgstr "v0.2.0"
 
 #: ../../source/releases/index.md:42
 msgid "[v0.2.0 Release Notes](0.2.0/Unified_SDK_Release_Note.md)"
-msgstr ""
+msgstr "[v0.2.0 发布说明](0.2.0/Unified_SDK_Release_Note.md)"
 
 #: ../../source/releases/index.md:44
 msgid "Upgrade Guide"
-msgstr ""
+msgstr "升级指南"
 
 #: ../../source/releases/index.md:46
 msgid ""
 "Detailed upgrade guides and migration instructions will be provided with "
 "future version releases."
-msgstr ""
-
+msgstr "详细的升级指南和迁移说明将随着未来版本的发布提供。"

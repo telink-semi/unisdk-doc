@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,202 +20,201 @@ msgstr ""
 
 #: ../../source/build_config/west_commands.md:6
 msgid "West Commands"
-msgstr ""
+msgstr "West 命令"
 
 #: ../../source/build_config/west_commands.md:8
 msgid ""
 "West is the unified command-line entry point for UniSDK. UniSDK registers"
 " multiple custom command extensions through `scripts/west-commands.yml`."
-msgstr ""
+msgstr "West 是 UniSDK 的统一命令行入口。UniSDK 通过 `scripts/west-commands.yml` 注册了多个自定义命令扩展。"
 
 #: ../../source/build_config/west_commands.md:10
 msgid "Command Registration"
-msgstr ""
+msgstr "命令注册"
 
 #: ../../source/build_config/west_commands.md:41
 msgid "`west tl-build` — Build"
-msgstr ""
+msgstr "`west tl-build` — 构建"
 
 #: ../../source/build_config/west_commands.md:43
 msgid ""
 "Build a Telink application. The build directory defaults to `build/` in "
 "the current working directory."
-msgstr ""
+msgstr "构建 Telink 应用。构建目录默认为当前工作目录下的 `build/`。"
 
 #: ../../source/build_config/west_commands.md:81
 msgid "Execution Flow"
-msgstr ""
+msgstr "执行流程"
 
 #: ../../source/build_config/west_commands.md:83
 msgid "Check the `TELINK_TOOLCHAIN_PATH` environment variable"
-msgstr ""
+msgstr "检查 `TELINK_TOOLCHAIN_PATH` 环境变量"
 
 #: ../../source/build_config/west_commands.md:84
 msgid "Validate the SOC/BOARD combination"
-msgstr ""
+msgstr "验证 SOC/BOARD 组合"
 
 #: ../../source/build_config/west_commands.md:85
 msgid "Set source and build directories"
-msgstr ""
+msgstr "设置源代码和构建目录"
 
 #: ../../source/build_config/west_commands.md:86
 msgid "Run Kconfig configuration if needed"
-msgstr ""
+msgstr "如需则运行 Kconfig 配置"
 
 #: ../../source/build_config/west_commands.md:87
 msgid "Invoke CMake to generate the build system"
-msgstr ""
+msgstr "调用 CMake 生成构建系统"
 
 #: ../../source/build_config/west_commands.md:88
 msgid "Execute compilation and linking"
-msgstr ""
+msgstr "执行编译和链接"
 
 #: ../../source/build_config/west_commands.md:89
 msgid "Output build results"
-msgstr ""
+msgstr "输出构建结果"
 
 #: ../../source/build_config/west_commands.md:91
 msgid "`west tl-config` — Configuration"
-msgstr ""
+msgstr "`west tl-config` — 配置"
 
 #: ../../source/build_config/west_commands.md:93
 msgid "Independently configure a Telink application."
-msgstr ""
+msgstr "独立配置 Telink 应用。"
 
 #: ../../source/build_config/west_commands.md:112
 msgid "`west tl-bdt` — Burning & Debugging"
-msgstr ""
+msgstr "`west tl-bdt` — 烧录与调试"
 
 #: ../../source/build_config/west_commands.md:114
 msgid "BDT (Burning and Debugging Tool) command interface."
-msgstr ""
+msgstr "BDT（烧录与调试工具）命令接口。"
 
 #: ../../source/build_config/west_commands.md:116
 msgid "Subcommands"
-msgstr ""
+msgstr "子命令"
 
 #: ../../source/build_config/west_commands.md
 msgid "Subcommand"
-msgstr ""
+msgstr "子命令"
 
 #: ../../source/build_config/west_commands.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/build_config/west_commands.md
 msgid "`download`"
-msgstr ""
+msgstr "`download`"
 
 #: ../../source/build_config/west_commands.md
 msgid "Download firmware to Flash"
-msgstr ""
+msgstr "下载固件到 Flash"
 
 #: ../../source/build_config/west_commands.md
 msgid "`read`"
-msgstr ""
+msgstr "`read`"
 
 #: ../../source/build_config/west_commands.md
 msgid "Read Flash data"
-msgstr ""
+msgstr "读取 Flash 数据"
 
 #: ../../source/build_config/west_commands.md
 msgid "`write`"
-msgstr ""
+msgstr "`write`"
 
 #: ../../source/build_config/west_commands.md
 msgid "Write Flash data"
-msgstr ""
+msgstr "写入 Flash 数据"
 
 #: ../../source/build_config/west_commands.md
 msgid "`erase`"
-msgstr ""
+msgstr "`erase`"
 
 #: ../../source/build_config/west_commands.md
 msgid "Erase Flash"
-msgstr ""
+msgstr "擦除 Flash"
 
 #: ../../source/build_config/west_commands.md
 msgid "`lock`"
-msgstr ""
+msgstr "`lock`"
 
 #: ../../source/build_config/west_commands.md
 msgid "Lock Flash region"
-msgstr ""
+msgstr "锁定 Flash 区域"
 
 #: ../../source/build_config/west_commands.md
 msgid "`unlock`"
-msgstr ""
+msgstr "`unlock`"
 
 #: ../../source/build_config/west_commands.md
 msgid "Unlock Flash"
-msgstr ""
+msgstr "解锁 Flash"
 
 #: ../../source/build_config/west_commands.md
 msgid "`reset`"
-msgstr ""
+msgstr "`reset`"
 
 #: ../../source/build_config/west_commands.md
 msgid "Reset device"
-msgstr ""
+msgstr "复位设备"
 
 #: ../../source/build_config/west_commands.md:128
 msgid "Common Examples"
-msgstr ""
+msgstr "常见示例"
 
 #: ../../source/build_config/west_commands.md:150
 msgid "BDT Path Configuration (Priority from high to low)"
-msgstr ""
+msgstr "BDT 路径配置（优先级从高到低）"
 
 #: ../../source/build_config/west_commands.md:152
 msgid "Command line: `--bdt-path /path/to/bdt`"
-msgstr ""
+msgstr "命令行：`--bdt-path /path/to/bdt`"
 
 #: ../../source/build_config/west_commands.md:153
 msgid "Environment variable: `BDT_PATH=/path/to/bdt`"
-msgstr ""
+msgstr "环境变量：`BDT_PATH=/path/to/bdt`"
 
 #: ../../source/build_config/west_commands.md:154
 msgid "System PATH"
-msgstr ""
+msgstr "系统 PATH"
 
 #: ../../source/build_config/west_commands.md:155
 #, python-brace-format
 msgid "SDK directory: `${TELINK_BASE}/tools/`"
-msgstr ""
+msgstr "SDK 目录：`${TELINK_BASE}/tools/`"
 
 #: ../../source/build_config/west_commands.md:157
 msgid "Cross-Platform"
-msgstr ""
+msgstr "跨平台"
 
 #: ../../source/build_config/west_commands.md
 msgid "Platform"
-msgstr ""
+msgstr "平台"
 
 #: ../../source/build_config/west_commands.md
 msgid "Executable"
-msgstr ""
+msgstr "可执行文件"
 
 #: ../../source/build_config/west_commands.md
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../source/build_config/west_commands.md
 msgid "`Cmd_download_tool.exe`"
-msgstr ""
+msgstr "`Cmd_download_tool.exe`"
 
 #: ../../source/build_config/west_commands.md
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: ../../source/build_config/west_commands.md
 msgid "`bdt`"
-msgstr ""
+msgstr "`bdt`"
 
 #: ../../source/build_config/west_commands.md:164
 msgid "`west tl-boards` — Board Information"
-msgstr ""
+msgstr "`west tl-boards` — 板卡信息"
 
 #: ../../source/build_config/west_commands.md:172
 msgid "`west tl-socs` — Chip Information"
-msgstr ""
-
+msgstr "`west tl-socs` — 芯片信息"

@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,31 +20,31 @@ msgstr ""
 
 #: ../../source/peripherals/spi.md:6
 msgid "SPI Driver"
-msgstr ""
+msgstr "SPI 驱动"
 
 #: ../../source/peripherals/spi.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在最终确定中\""
 
 #: ../../source/peripherals/spi.md:10
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/peripherals/spi.md:12
 msgid ""
 "The SPI driver supports master/slave mode communication, providing "
 "blocking and DMA transfer modes."
 msgstr ""
+"SPI 驱动支持主/从模式通信，提供阻塞和 DMA 传输模式。"
 
 #: ../../source/peripherals/spi.md:14
 msgid "API Reference"
-msgstr ""
+msgstr "API 参考"
 
 #: ../../source/peripherals/spi.md:25
 msgid "Samples"
-msgstr ""
+msgstr "示例"
 
 #: ../../source/peripherals/spi.md:27
 msgid "See [SPI Samples](../samples/spi.md)."
-msgstr ""
-
+msgstr "请参见 [SPI 示例](../samples/spi.md)。"

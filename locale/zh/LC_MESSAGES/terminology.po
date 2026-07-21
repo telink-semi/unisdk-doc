@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,315 +20,315 @@ msgstr ""
 
 #: ../../source/terminology.md:6
 msgid "UniSDK Glossary"
-msgstr ""
+msgstr "UniSDK 术语表"
 
 #: ../../source/terminology.md:8
 msgid ""
 "This document defines the core terminology used in UniSDK to ensure "
 "consistency across documentation and community communication."
 msgstr ""
+"本文档定义了 UniSDK 中使用的核心术语，以确保文档和社区交流的一致性。"
 
 #: ../../source/terminology.md ../../source/terminology.md:10
 msgid "Build System"
-msgstr ""
+msgstr "构建系统"
 
 #: ../../source/terminology.md
 msgid "Term"
-msgstr ""
+msgstr "术语"
 
 #: ../../source/terminology.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/terminology.md
 msgid "CMake + Ninja based compilation framework"
-msgstr ""
+msgstr "基于 CMake + Ninja 的编译框架"
 
 #: ../../source/terminology.md
 msgid "Configuration System"
-msgstr ""
+msgstr "配置系统"
 
 #: ../../source/terminology.md
 msgid "Kconfig-based compile-time configuration management"
-msgstr ""
+msgstr "基于 Kconfig 的编译时配置管理"
 
 #: ../../source/terminology.md
 msgid "Target"
-msgstr ""
+msgstr "目标"
 
 #: ../../source/terminology.md
 msgid "CMake build target, can be an executable or library"
-msgstr ""
+msgstr "CMake 构建目标，可以是可执行文件或库"
 
 #: ../../source/terminology.md
 msgid "Generator"
-msgstr ""
+msgstr "生成器"
 
 #: ../../source/terminology.md
 msgid "CMake build backend; UniSDK uses Ninja"
-msgstr ""
+msgstr "CMake 构建后端；UniSDK 使用 Ninja"
 
 #: ../../source/terminology.md
 msgid "Pre-build Check"
-msgstr ""
+msgstr "预构建检查"
 
 #: ../../source/terminology.md
 msgid "Validation scripts that run automatically before compilation"
-msgstr ""
+msgstr "在编译前自动运行的验证脚本"
 
 #: ../../source/terminology.md:20
 msgid "West Tool"
-msgstr ""
+msgstr "West 工具"
 
 #: ../../source/terminology.md
 msgid "West"
-msgstr ""
+msgstr "West"
 
 #: ../../source/terminology.md
 msgid "Zephyr project management tool, the unified build entry point in UniSDK"
-msgstr ""
+msgstr "Zephyr 项目管理工具，UniSDK 的统一构建入口"
 
 #: ../../source/terminology.md
 msgid "Workspace"
-msgstr ""
+msgstr "工作空间"
 
 #: ../../source/terminology.md
 msgid "The project directory managed by West, containing `.west` configuration"
-msgstr ""
+msgstr "由 West 管理的项目目录，包含 `.west` 配置"
 
 #: ../../source/terminology.md
 msgid "tl-build"
-msgstr ""
+msgstr "tl-build"
 
 #: ../../source/terminology.md
 msgid "UniSDK custom West command for building projects"
-msgstr ""
+msgstr "UniSDK 自定义 West 命令，用于构建项目"
 
 #: ../../source/terminology.md
 msgid "tl-config"
-msgstr ""
+msgstr "tl-config"
 
 #: ../../source/terminology.md
 msgid "UniSDK custom West command for configuring projects"
-msgstr ""
+msgstr "UniSDK 自定义 West 命令，用于配置项目"
 
 #: ../../source/terminology.md
 msgid "tl-bdt"
-msgstr ""
+msgstr "tl-bdt"
 
 #: ../../source/terminology.md
 msgid "UniSDK custom West command for flashing and debugging"
-msgstr ""
+msgstr "UniSDK 自定义 West 命令，用于烧录和调试"
 
 #: ../../source/terminology.md:30
 msgid "Hardware Abstraction"
-msgstr ""
+msgstr "硬件抽象"
 
 #: ../../source/terminology.md
 msgid "Chip / SoC"
-msgstr ""
+msgstr "芯片 / SoC"
 
 #: ../../source/terminology.md
 msgid "Telink System-on-Chip"
-msgstr ""
+msgstr "Telink 片上系统"
 
 #: ../../source/terminology.md
 msgid "Board / EVK"
-msgstr ""
+msgstr "开发板 / EVK"
 
 #: ../../source/terminology.md
 msgid "Telink official Evaluation Kit"
-msgstr ""
+msgstr "Telink 官方评估套件"
 
 #: ../../source/terminology.md
 msgid "Pinmux"
-msgstr ""
+msgstr "Pinmux"
 
 #: ../../source/terminology.md
 msgid "Programmable chip pin function configuration"
-msgstr ""
+msgstr "可编程芯片引脚功能配置"
 
 #: ../../source/terminology.md
 msgid "Core Layer"
-msgstr ""
+msgstr "Core 层"
 
 #: ../../source/terminology.md
 msgid "Chip core driver code (`core/`)"
-msgstr ""
+msgstr "芯片核心驱动代码（`core/`）"
 
 #: ../../source/terminology.md
 msgid "SoC Layer"
-msgstr ""
+msgstr "SoC 层"
 
 #: ../../source/terminology.md
 msgid "Chip-specific functionality code (`soc/`)"
-msgstr ""
+msgstr "芯片特定功能代码（`soc/`）"
 
 #: ../../source/terminology.md:40
 msgid "Kconfig Configuration"
-msgstr ""
+msgstr "Kconfig 配置"
 
 #: ../../source/terminology.md
 msgid "Kconfig"
-msgstr ""
+msgstr "Kconfig"
 
 #: ../../source/terminology.md
 msgid "Linux kernel configuration system"
-msgstr ""
+msgstr "Linux 内核配置系统"
 
 #: ../../source/terminology.md
 msgid "chip.config"
-msgstr ""
+msgstr "chip.config"
 
 #: ../../source/terminology.md
 msgid "Chip-specific configuration"
-msgstr ""
+msgstr "芯片特定配置"
 
 #: ../../source/terminology.md
 msgid "build.config"
-msgstr ""
+msgstr "build.config"
 
 #: ../../source/terminology.md
 msgid "Build option configuration"
-msgstr ""
+msgstr "构建选项配置"
 
 #: ../../source/terminology.md
 msgid ".config"
-msgstr ""
+msgstr ".config"
 
 #: ../../source/terminology.md
 msgid "Final merged configuration"
-msgstr ""
+msgstr "最终合并配置"
 
 #: ../../source/terminology.md
 msgid "autoconf.h"
-msgstr ""
+msgstr "autoconf.h"
 
 #: ../../source/terminology.md
 msgid "C language configuration macro definition header file"
-msgstr ""
+msgstr "C 语言配置宏定义头文件"
 
 #: ../../source/terminology.md
 msgid "capabilities.h"
-msgstr ""
+msgstr "capabilities.h"
 
 #: ../../source/terminology.md
 msgid "Chip capability declaration header file"
-msgstr ""
+msgstr "芯片能力声明头文件"
 
 #: ../../source/terminology.md
 msgid "Menuconfig"
-msgstr ""
+msgstr "Menuconfig"
 
 #: ../../source/terminology.md
 msgid "Terminal-based interactive configuration interface"
-msgstr ""
+msgstr "基于终端的交互式配置界面"
 
 #: ../../source/terminology.md:52
 msgid "Peripherals & Drivers"
-msgstr ""
+msgstr "外设与驱动"
 
 #: ../../source/terminology.md
 msgid "GPIO"
-msgstr ""
+msgstr "GPIO"
 
 #: ../../source/terminology.md
 msgid "General Purpose Input/Output"
-msgstr ""
+msgstr "通用输入/输出"
 
 #: ../../source/terminology.md
 msgid "UART"
-msgstr ""
+msgstr "UART"
 
 #: ../../source/terminology.md
 msgid "Universal Asynchronous Receiver/Transmitter"
-msgstr ""
+msgstr "通用异步收发器"
 
 #: ../../source/terminology.md
 msgid "I2C"
-msgstr ""
+msgstr "I2C"
 
 #: ../../source/terminology.md
 msgid "Inter-Integrated Circuit"
-msgstr ""
+msgstr "集成电路互连总线"
 
 #: ../../source/terminology.md
 msgid "SPI"
-msgstr ""
+msgstr "SPI"
 
 #: ../../source/terminology.md
 msgid "Serial Peripheral Interface"
-msgstr ""
+msgstr "串行外设接口"
 
 #: ../../source/terminology.md
 msgid "ADC"
-msgstr ""
+msgstr "ADC"
 
 #: ../../source/terminology.md
 msgid "Analog-to-Digital Converter"
-msgstr ""
+msgstr "模数转换器"
 
 #: ../../source/terminology.md
 msgid "DMA"
-msgstr ""
+msgstr "DMA"
 
 #: ../../source/terminology.md
 msgid "Direct Memory Access"
-msgstr ""
+msgstr "直接存储器访问"
 
 #: ../../source/terminology.md
 msgid "PM"
-msgstr ""
+msgstr "PM"
 
 #: ../../source/terminology.md
 msgid "Power Management"
-msgstr ""
+msgstr "电源管理"
 
 #: ../../source/terminology.md
 msgid "PLIC"
-msgstr ""
+msgstr "PLIC"
 
 #: ../../source/terminology.md
 msgid "Platform-Level Interrupt Controller"
-msgstr ""
+msgstr "平台级中断控制器"
 
 #: ../../source/terminology.md:65
 msgid "Document Status Markers"
-msgstr ""
+msgstr "文档状态标记"
 
 #: ../../source/terminology.md
 msgid "Marker"
-msgstr ""
+msgstr "标记"
 
 #: ../../source/terminology.md
 msgid "STABLE"
-msgstr ""
+msgstr "STABLE"
 
 #: ../../source/terminology.md
 msgid "Content is complete and ready to use"
-msgstr ""
+msgstr "内容已完成，可直接使用"
 
 #: ../../source/terminology.md
 msgid "DRAFT"
-msgstr ""
+msgstr "DRAFT"
 
 #: ../../source/terminology.md
 msgid "Content is being written, may be incomplete"
-msgstr ""
+msgstr "内容正在编写中，可能不完整"
 
 #: ../../source/terminology.md
 msgid "DEPRECATED"
-msgstr ""
+msgstr "DEPRECATED"
 
 #: ../../source/terminology.md
 msgid "Will be deprecated soon; migration to new solution is recommended"
-msgstr ""
+msgstr "即将弃用；建议迁移到新的解决方案"
 
 #: ../../source/terminology.md
 msgid "PLANNED"
-msgstr ""
+msgstr "PLANNED"
 
 #: ../../source/terminology.md
 msgid "Planned but not yet started"
-msgstr ""
-
+msgstr "已计划但尚未开始"

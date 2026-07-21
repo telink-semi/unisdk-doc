@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,77 +20,77 @@ msgstr ""
 
 #: ../../source/samples/gpio.md:6
 msgid "GPIO Sample"
-msgstr ""
+msgstr "GPIO 示例"
 
 #: ../../source/samples/gpio.md:8
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/samples/gpio.md:10
 msgid ""
 "The `gpio_demo` sample demonstrates the basic usage of the GPIO driver, "
 "including input/output operations, interrupt handling, and sleep APIs."
-msgstr ""
+msgstr "`gpio_demo` 示例演示了 GPIO 驱动的基本用法，包括输入/输出操作、中断处理和睡眠 API。"
 
 #: ../../source/samples/gpio.md:12
 msgid "Features Demonstrated"
-msgstr ""
+msgstr "功能演示"
 
 #: ../../source/samples/gpio.md:14
 msgid ""
 "Basic GPIO configuration and pin control (`tlk_gpio_configure`, "
 "`tlk_gpio_pin_write`, `tlk_gpio_pin_toggle`)"
-msgstr ""
+msgstr "基本 GPIO 配置和引脚控制（`tlk_gpio_configure`、`tlk_gpio_pin_write`、`tlk_gpio_pin_toggle`）"
 
 #: ../../source/samples/gpio.md:15
 msgid ""
 "GPIO interrupt usage and callback registration (requires "
 "`CONFIG_TLK_GPIO_DEMO_INTERRUPT` enabled)"
-msgstr ""
+msgstr "GPIO 中断使用和回调注册（需要启用 `CONFIG_TLK_GPIO_DEMO_INTERRUPT`）"
 
 #: ../../source/samples/gpio.md:17
 msgid "How It Works"
-msgstr ""
+msgstr "工作原理"
 
 #: ../../source/samples/gpio.md:19
 msgid "Initialization"
-msgstr ""
+msgstr "初始化"
 
 #: ../../source/samples/gpio.md:21
 msgid ""
 "**LED0 Configuration** — Configured as output mode, toggled every 2 "
 "seconds in the main loop"
-msgstr ""
+msgstr "**LED0 配置** — 配置为输出模式，在主循环中每 2 秒翻转一次"
 
 #: ../../source/samples/gpio.md:22
 msgid ""
 "**Interrupt Configuration (optional)** — When "
 "`CONFIG_TLK_GPIO_DEMO_INTERRUPT` is enabled:"
-msgstr ""
+msgstr "**中断配置（可选）** — 当启用 `CONFIG_TLK_GPIO_DEMO_INTERRUPT` 时："
 
 #: ../../source/samples/gpio.md:23
 msgid "LED1 is configured as output (toggled in the interrupt callback)"
-msgstr ""
+msgstr "LED1 配置为输出（在中断回调中翻转）"
 
 #: ../../source/samples/gpio.md:24
 msgid "KEY0 is configured as input with pull-down"
-msgstr ""
+msgstr "KEY0 配置为下拉输入"
 
 #: ../../source/samples/gpio.md:25
 msgid "Registers a GPIO interrupt callback (`gpio_cb`)"
-msgstr ""
+msgstr "注册 GPIO 中断回调（`gpio_cb`）"
 
 #: ../../source/samples/gpio.md:26
 msgid "Sets rising-edge trigger"
-msgstr ""
+msgstr "设置上升沿触发"
 
 #: ../../source/samples/gpio.md:27
 msgid "Enables global interrupts"
-msgstr ""
+msgstr "启用全局中断"
 
 #: ../../source/samples/gpio.md:29
 msgid "Main Loop"
-msgstr ""
+msgstr "主循环"
 
 #: ../../source/samples/gpio.md:40
 msgid ""
@@ -100,32 +99,32 @@ msgid ""
 "`tlk_board_pinout.h` header. These resolve to the correct port and pin "
 "for the target board's LED."
 msgstr ""
+"!!! note \"板级宏定义\"     `UNISDK_BOARD_LED_0_PORT` 和 `UNISDK_BOARD_LED_0_PIN` 宏定义在板级特定的 `tlk_board_pinout.h` 头文件中。这些宏会解析为目标板上 LED 对应的正确端口和引脚。"
 
 #: ../../source/samples/gpio.md:43
 msgid "Configuration Options"
-msgstr ""
+msgstr "配置选项"
 
 #: ../../source/samples/gpio.md
 msgid "Option"
-msgstr ""
+msgstr "选项"
 
 #: ../../source/samples/gpio.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/samples/gpio.md
 msgid "`CONFIG_TLK_GPIO_DEMO_INTERRUPT`"
-msgstr ""
+msgstr "`CONFIG_TLK_GPIO_DEMO_INTERRUPT`"
 
 #: ../../source/samples/gpio.md
 msgid "Enable interrupt demo: KEY0 rising-edge trigger, LED1 toggled in callback"
-msgstr ""
+msgstr "启用中断演示：KEY0 上升沿触发，LED1 在回调中翻转"
 
 #: ../../source/samples/gpio.md:49
 msgid "Build & Run"
-msgstr ""
+msgstr "构建与运行"
 
 #: ../../source/samples/gpio.md:56
 msgid "Source code: `samples/gpio_demo/main.c`"
-msgstr ""
-
+msgstr "源代码：`samples/gpio_demo/main.c`"

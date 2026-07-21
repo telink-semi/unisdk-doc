@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,17 +20,16 @@ msgstr ""
 
 #: ../../source/samples/wdt.md:6
 msgid "Watchdog Sample"
-msgstr ""
+msgstr "看门狗示例"
 
 #: ../../source/samples/wdt.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在完善中\""
 
 #: ../../source/samples/wdt.md:10
 msgid "The `wdt_demo` sample demonstrates the usage of the watchdog timer."
-msgstr ""
+msgstr "`wdt_demo` 示例演示了看门狗定时器的使用方法。"
 
 #: ../../source/samples/wdt.md:12
 msgid "Build & Run"
-msgstr ""
-
+msgstr "构建与运行"

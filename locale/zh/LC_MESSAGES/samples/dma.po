@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,19 +20,18 @@ msgstr ""
 
 #: ../../source/samples/dma.md:6
 msgid "DMA Sample"
-msgstr ""
+msgstr "DMA 示例"
 
 #: ../../source/samples/dma.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在完善中\""
 
 #: ../../source/samples/dma.md:10
 msgid ""
 "The DMA sample (`samples/dma_demo`) demonstrates the usage of direct "
 "memory access."
-msgstr ""
+msgstr "DMA 示例（`samples/dma_demo`）演示了直接内存访问的使用方法。"
 
 #: ../../source/samples/dma.md:12
 msgid "Build & Run"
-msgstr ""
-
+msgstr "构建与运行"

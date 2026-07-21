@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,43 +20,45 @@ msgstr ""
 
 #: ../../source/getting_started/get_sdk.md:6
 msgid "Get and Import the SDK"
-msgstr ""
+msgstr "获取和导入 SDK"
 
 #: ../../source/getting_started/get_sdk.md:8
 msgid "Get the SDK"
-msgstr ""
+msgstr "获取 SDK"
 
 #: ../../source/getting_started/get_sdk.md:10
 msgid "Use Git to obtain the UniSDK:"
-msgstr ""
+msgstr "使用 Git 获取 UniSDK："
 
 #: ../../source/getting_started/get_sdk.md:17
 msgid "SDK Directory Structure"
-msgstr ""
+msgstr "SDK 目录结构"
 
 #: ../../source/getting_started/get_sdk.md:19
 msgid ""
 "After obtaining the SDK, the top-level directory structure is organized "
 "as follows:"
 msgstr ""
+"获取 SDK 后，顶层目录结构如下所示："
 
 #: ../../source/getting_started/get_sdk.md
 msgid "SDK Top-Level Directory Structure"
-msgstr ""
+msgstr "SDK 顶层目录结构"
 
 #: ../../source/getting_started/get_sdk.md:39
 msgid ""
 "For a detailed explanation of each directory, see [SDK Directory "
 "Structure](../developing/directory_structure.md)."
 msgstr ""
+"有关每个目录的详细说明，请参阅 [SDK 目录结构](../developing/directory_structure.md)。"
 
 #: ../../source/getting_started/get_sdk.md:41
 msgid "Next Steps"
-msgstr ""
+msgstr "下一步"
 
 #: ../../source/getting_started/get_sdk.md:43
 msgid ""
 "After obtaining the SDK, proceed to [Compile, Flash and Run Your First "
 "Example](first_example.md)."
 msgstr ""
-
+"获取 SDK 后，请继续执行[编译、烧录和运行第一个示例](first_example.md)。"

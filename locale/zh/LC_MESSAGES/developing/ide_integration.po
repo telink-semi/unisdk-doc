@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,53 +20,54 @@ msgstr ""
 
 #: ../../source/developing/ide_integration.md:6
 msgid "IDE Integration"
-msgstr ""
+msgstr "IDE 集成"
 
 #: ../../source/developing/ide_integration.md:8
 msgid "VS Code Configuration (Recommended)"
-msgstr ""
+msgstr "VS Code 配置（推荐）"
 
 #: ../../source/developing/ide_integration.md:10
 msgid "clangd Language Server"
-msgstr ""
+msgstr "clangd 语言服务器"
 
 #: ../../source/developing/ide_integration.md:12
 msgid ""
 "clangd is an LLVM/Clang-based C/C++ language server that understands "
 "UniSDK's complex macro definitions and configuration system, providing:"
 msgstr ""
+"clangd 是一个基于 LLVM/Clang 的 C/C++ 语言服务器，能够理解 UniSDK 的复杂宏定义和配置系统，提供："
 
 #: ../../source/developing/ide_integration.md:14
 msgid "Intelligent code completion"
-msgstr ""
+msgstr "智能代码补全"
 
 #: ../../source/developing/ide_integration.md:15
 msgid "Go to definition"
-msgstr ""
+msgstr "跳转到定义"
 
 #: ../../source/developing/ide_integration.md:16
 msgid "Find references"
-msgstr ""
+msgstr "查找引用"
 
 #: ../../source/developing/ide_integration.md:17
 msgid "Semantic highlighting"
-msgstr ""
+msgstr "语义高亮"
 
 #: ../../source/developing/ide_integration.md:18
 msgid "Code navigation"
-msgstr ""
+msgstr "代码导航"
 
 #: ../../source/developing/ide_integration.md:19
 msgid "Inline diagnostics"
-msgstr ""
+msgstr "内联诊断"
 
 #: ../../source/developing/ide_integration.md:20
 msgid "Rename refactoring"
-msgstr ""
+msgstr "重命名重构"
 
 #: ../../source/developing/ide_integration.md:22
 msgid "Why Choose clangd?"
-msgstr ""
+msgstr "为什么选择 clangd？"
 
 #: ../../source/developing/ide_integration.md:24
 msgid ""
@@ -77,38 +77,40 @@ msgid ""
 "reports and navigation failures. clangd solves this problem by reading "
 "`compile_commands.json`."
 msgstr ""
+"UniSDK 大量使用 Kconfig 生成的配置宏（`autoconf.h`、`capabilities.h`）和交叉编译。普通语法高亮无法正确解析这些宏，会导致错误误报和导航失败。clangd 通过读取 `compile_commands.json` 解决了这个问题。"
 
 #: ../../source/developing/ide_integration.md:26
 msgid "Installation Steps"
-msgstr ""
+msgstr "安装步骤"
 
 #: ../../source/developing/ide_integration.md:28
 msgid ""
 "Install **clangd** (publisher: LLVM) from the VS Code extension "
 "marketplace"
-msgstr ""
+msgstr "从 VS Code 扩展市场安装 **clangd**（发布者：LLVM）"
 
 #: ../../source/developing/ide_integration.md:29
 msgid "Disable the Microsoft C/C++ IntelliSense engine to avoid conflicts:"
-msgstr ""
+msgstr "禁用 Microsoft C/C++ IntelliSense 引擎以避免冲突："
 
 #: ../../source/developing/ide_integration.md:30
 msgid ""
 "`Ctrl+Shift+P` → `Preferences: Open Settings (UI)` → Extensions → C/C++ →"
 " IntelliSense"
 msgstr ""
+"`Ctrl+Shift+P` → `Preferences: Open Settings (UI)` → Extensions → C/C++ → IntelliSense"
 
 #: ../../source/developing/ide_integration.md:31
 msgid "Set `IntelliSenseEngine` to `disabled`"
-msgstr ""
+msgstr "将 `IntelliSenseEngine` 设置为 `disabled`"
 
 #: ../../source/developing/ide_integration.md:33
 msgid "Key Files"
-msgstr ""
+msgstr "关键文件"
 
 #: ../../source/developing/ide_integration.md:35
 msgid "**`compile_commands.json`**"
-msgstr ""
+msgstr "**`compile_commands.json`**"
 
 #: ../../source/developing/ide_integration.md:37
 msgid ""
@@ -116,18 +118,19 @@ msgid ""
 "build. clangd reads this file to understand the project's compilation "
 "options."
 msgstr ""
+"由 CMake 在构建过程中自动生成在 `build/` 目录中。clangd 读取此文件以了解项目的编译选项。"
 
 #: ../../source/developing/ide_integration.md:49
 msgid "**`.clangd`** (Optional configuration at project root)"
-msgstr ""
+msgstr "**`.clangd`**（项目根目录的可选配置文件）"
 
 #: ../../source/developing/ide_integration.md:62
 msgid "Common Issues"
-msgstr ""
+msgstr "常见问题"
 
 #: ../../source/developing/ide_integration.md:64
 msgid "**Files Display Incorrectly After Switching to a Different Chip**"
-msgstr ""
+msgstr "**切换到不同芯片后文件显示错误**"
 
 #: ../../source/developing/ide_integration.md:66
 msgid ""
@@ -135,118 +138,119 @@ msgid ""
 "`compile_commands.json`. If the project was previously built for TL321X, "
 "files for TL721X will not be correctly parsed."
 msgstr ""
+"clangd 基于当前构建的 `compile_commands.json` 提供语义分析。如果项目之前是为 TL321X 构建的，则 TL721X 的文件将无法被正确解析。"
 
 #: ../../source/developing/ide_integration.md:68
 msgid "**Solution**: Rebuild the project with the target chip."
-msgstr ""
+msgstr "**解决方法**：使用目标芯片重新构建项目。"
 
 #: ../../source/developing/ide_integration.md:70
 msgid "**Warnings Still Present After a Recent Rebuild**"
-msgstr ""
+msgstr "**重新构建后仍显示警告**"
 
 #: ../../source/developing/ide_integration.md:72
 msgid "File indexing happens lazily and needs a manual trigger to update."
-msgstr ""
+msgstr "文件索引是延迟执行的，需要手动触发更新。"
 
 #: ../../source/developing/ide_integration.md:74
 msgid "**Solution**: Edit and save the target file to force an update."
-msgstr ""
+msgstr "**解决方法**：编辑并保存目标文件以强制更新。"
 
 #: ../../source/developing/ide_integration.md:76
 msgid "Recommended Extensions"
-msgstr ""
+msgstr "推荐扩展"
 
 #: ../../source/developing/ide_integration.md
 msgid "Extension"
-msgstr ""
+msgstr "扩展"
 
 #: ../../source/developing/ide_integration.md
 msgid "Purpose"
-msgstr ""
+msgstr "用途"
 
 #: ../../source/developing/ide_integration.md
 msgid "clangd"
-msgstr ""
+msgstr "clangd"
 
 #: ../../source/developing/ide_integration.md
 msgid "C/C++ language server"
-msgstr ""
+msgstr "C/C++ 语言服务器"
 
 #: ../../source/developing/ide_integration.md
 msgid "CMake Tools"
-msgstr ""
+msgstr "CMake Tools"
 
 #: ../../source/developing/ide_integration.md
 msgid "CMake project support"
-msgstr ""
+msgstr "CMake 项目支持"
 
 #: ../../source/developing/ide_integration.md
 msgid "Cortex-Debug"
-msgstr ""
+msgstr "Cortex-Debug"
 
 #: ../../source/developing/ide_integration.md
 msgid "ARM/RISC-V debugging"
-msgstr ""
+msgstr "ARM/RISC-V 调试"
 
 #: ../../source/developing/ide_integration.md
 msgid "GitLens"
-msgstr ""
+msgstr "GitLens"
 
 #: ../../source/developing/ide_integration.md
 msgid "Git enhancements"
-msgstr ""
+msgstr "Git 增强"
 
 #: ../../source/developing/ide_integration.md
 msgid "Error Lens"
-msgstr ""
+msgstr "Error Lens"
 
 #: ../../source/developing/ide_integration.md
 msgid "Inline error display"
-msgstr ""
+msgstr "内联错误显示"
 
 #: ../../source/developing/ide_integration.md:86
 msgid "Eclipse Configuration"
-msgstr ""
+msgstr "Eclipse 配置"
 
 #: ../../source/developing/ide_integration.md:88
 msgid "Install Eclipse CDT and the RISC-V GCC plugin"
-msgstr ""
+msgstr "安装 Eclipse CDT 和 RISC-V GCC 插件"
 
 #: ../../source/developing/ide_integration.md:89
 msgid "Import the project as \"Existing CMake Project\""
-msgstr ""
+msgstr "以 \"Existing CMake Project\" 方式导入项目"
 
 #: ../../source/developing/ide_integration.md:90
 msgid "Configure the cross-compilation toolchain path"
-msgstr ""
+msgstr "配置交叉编译工具链路径"
 
 #: ../../source/developing/ide_integration.md:92
 msgid "Segger Embedded Studio"
-msgstr ""
+msgstr "Segger Embedded Studio"
 
 #: ../../source/developing/ide_integration.md:94
 msgid "Import the project via File → Open Solution"
-msgstr ""
+msgstr "通过 File → Open Solution 导入项目"
 
 #: ../../source/developing/ide_integration.md:95
 msgid "Configure the debugger as J-Link"
-msgstr ""
+msgstr "将调试器配置为 J-Link"
 
 #: ../../source/developing/ide_integration.md:96
 msgid "Set the target device to Telink RISC-V chip"
-msgstr ""
+msgstr "将目标设备设置为 Telink RISC-V 芯片"
 
 #: ../../source/developing/ide_integration.md:98
 msgid "Next Steps"
-msgstr ""
+msgstr "下一步"
 
 #: ../../source/developing/ide_integration.md:100
 msgid ""
 "[Project Creation & Management](project_management.md) — Create new "
 "projects"
 msgstr ""
+"[项目创建与管理](project_management.md) — 创建新项目"
 
 #: ../../source/developing/ide_integration.md:101
 msgid "[Debugging & Testing](debugging.md) — Debugging tips"
-msgstr ""
-
+msgstr "[调试与测试](debugging.md) — 调试技巧"

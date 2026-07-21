@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,11 +20,11 @@ msgstr ""
 
 #: ../../source/peripherals/uart.md:6
 msgid "UART Driver"
-msgstr ""
+msgstr "UART 驱动"
 
 #: ../../source/peripherals/uart.md:8
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/peripherals/uart.md:10
 msgid ""
@@ -36,38 +35,39 @@ msgid ""
 "blocking interrupt modes). It also supports hardware flow control "
 "(RTS/CTS)."
 msgstr ""
+"UART 驱动提供了配置和使用异步串口的接口。它支持通信参数配置（波特率、校验位、停止位），引脚复用（Pinmux），数据发送（阻塞模式）和数据接收（阻塞和非阻塞中断模式）。它还支持硬件流控制（RTS/CTS）。"
 
 #: ../../source/peripherals/uart.md:12
 msgid "**Key Features:**"
-msgstr ""
+msgstr "**主要特性：**"
 
 #: ../../source/peripherals/uart.md:14
 msgid "UART parameter configuration (baud rate, parity, stop bits)"
-msgstr ""
+msgstr "UART 参数配置（波特率、校验位、停止位）"
 
 #: ../../source/peripherals/uart.md:15
 msgid "TX/RX and RTS/CTS pin multiplexing"
-msgstr ""
+msgstr "TX/RX 和 RTS/CTS 引脚复用"
 
 #: ../../source/peripherals/uart.md:16
 msgid "Data transmission (Blocking / PLIC / DMA modes)"
-msgstr ""
+msgstr "数据发送（阻塞 / PLIC / DMA 模式）"
 
 #: ../../source/peripherals/uart.md:17
 msgid "Data reception (Blocking / PLIC / DMA modes + callback)"
-msgstr ""
+msgstr "数据接收（阻塞 / PLIC / DMA 模式 + 回调）"
 
 #: ../../source/peripherals/uart.md:18
 msgid "Hardware flow control (RTS/CTS)"
-msgstr ""
+msgstr "硬件流控制（RTS/CTS）"
 
 #: ../../source/peripherals/uart.md:20
 msgid "Data Types and Enums"
-msgstr ""
+msgstr "数据类型与枚举"
 
 #: ../../source/peripherals/uart.md:22
 msgid "UART Module Identifiers"
-msgstr ""
+msgstr "UART 模块标识符"
 
 #: ../../source/peripherals/uart.md:24
 msgid ""
@@ -75,132 +75,134 @@ msgid ""
 "`UNISDK_UART_COUNT` and enabled instances. Values include `UART0`, "
 "`UART1`, etc."
 msgstr ""
+"`enum tlk_uart_module` — 根据 `UNISDK_UART_COUNT` 和已启用的实例自动生成。值包括 `UART0`、`UART1` 等。"
 
 #: ../../source/peripherals/uart.md:26
 msgid "Parity"
-msgstr ""
+msgstr "校验位"
 
 #: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:28
 msgid "`enum tlk_uart_parity`"
-msgstr ""
+msgstr "`enum tlk_uart_parity`"
 
 #: ../../source/peripherals/uart.md
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 #: ../../source/peripherals/uart.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_PARITY_NONE`"
-msgstr ""
+msgstr "`TLK_UART_PARITY_NONE`"
 
 #: ../../source/peripherals/uart.md
 msgid "No parity"
-msgstr ""
+msgstr "无校验"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_PARITY_EVEN`"
-msgstr ""
+msgstr "`TLK_UART_PARITY_EVEN`"
 
 #: ../../source/peripherals/uart.md
 msgid "Even parity"
-msgstr ""
+msgstr "偶校验"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_PARITY_ODD`"
-msgstr ""
+msgstr "`TLK_UART_PARITY_ODD`"
 
 #: ../../source/peripherals/uart.md
 msgid "Odd parity"
-msgstr ""
+msgstr "奇校验"
 
 #: ../../source/peripherals/uart.md:36
 msgid "Stop Bits"
-msgstr ""
+msgstr "停止位"
 
 #: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:38
 msgid "`enum tlk_uart_stop_bit`"
-msgstr ""
+msgstr "`enum tlk_uart_stop_bit`"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_STOP_BIT_ONE`"
-msgstr ""
+msgstr "`TLK_UART_STOP_BIT_ONE`"
 
 #: ../../source/peripherals/uart.md
 msgid "1 stop bit"
-msgstr ""
+msgstr "1 个停止位"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_STOP_BIT_ONE_DOT_FIVE`"
-msgstr ""
+msgstr "`TLK_UART_STOP_BIT_ONE_DOT_FIVE`"
 
 #: ../../source/peripherals/uart.md
 msgid "1.5 stop bits"
-msgstr ""
+msgstr "1.5 个停止位"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_STOP_BIT_TWO`"
-msgstr ""
+msgstr "`TLK_UART_STOP_BIT_TWO`"
 
 #: ../../source/peripherals/uart.md
 msgid "2 stop bits"
-msgstr ""
+msgstr "2 个停止位"
 
 #: ../../source/peripherals/uart.md:46
 msgid "RX Timeout Multiplier"
-msgstr ""
+msgstr "RX 超时倍数"
 
 #: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:48
 msgid "`enum tlk_uart_rx_timeout_mul`"
-msgstr ""
+msgstr "`enum tlk_uart_rx_timeout_mul`"
 
 #: ../../source/peripherals/uart.md:50
 msgid ""
 "Multiplier for RX timeout duration. The total RX timeout = (one UART "
 "frame duration) × multiplier."
 msgstr ""
+"RX 超时时长的倍数。总 RX 超时时间 =（一个 UART 帧时长）× 倍数。"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_RX_TIMEOUT_MUL_1`"
-msgstr ""
+msgstr "`TLK_UART_RX_TIMEOUT_MUL_1`"
 
 #: ../../source/peripherals/uart.md
 msgid "1× frame duration"
-msgstr ""
+msgstr "1 倍帧时长"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_RX_TIMEOUT_MUL_2`"
-msgstr ""
+msgstr "`TLK_UART_RX_TIMEOUT_MUL_2`"
 
 #: ../../source/peripherals/uart.md
 msgid "2× frame duration"
-msgstr ""
+msgstr "2 倍帧时长"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_RX_TIMEOUT_MUL_3`"
-msgstr ""
+msgstr "`TLK_UART_RX_TIMEOUT_MUL_3`"
 
 #: ../../source/peripherals/uart.md
 msgid "3× frame duration"
-msgstr ""
+msgstr "3 倍帧时长"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_RX_TIMEOUT_MUL_4`"
-msgstr ""
+msgstr "`TLK_UART_RX_TIMEOUT_MUL_4`"
 
 #: ../../source/peripherals/uart.md
 msgid "4× frame duration"
-msgstr ""
+msgstr "4 倍帧时长"
 
 #: ../../source/peripherals/uart.md:59
 msgid "UART Configuration Structure"
-msgstr ""
+msgstr "UART 配置结构体"
 
 #: ../../source/peripherals/uart.md:61
 msgid "`struct tlk_uart_config`"
-msgstr ""
+msgstr "`struct tlk_uart_config`"
 
 #: ../../source/peripherals/uart.md:63
 msgid ""
@@ -208,194 +210,197 @@ msgid ""
 "UART module. Used with `tlk_uart_configure` and "
 "`tlk_uart_configure_pinmux`."
 msgstr ""
+"包含初始化 UART 模块所需所有配置参数的结构体。与 `tlk_uart_configure` 和 `tlk_uart_configure_pinmux` 配合使用。"
 
 #: ../../source/peripherals/uart.md
 msgid "Field"
-msgstr ""
+msgstr "字段"
 
 #: ../../source/peripherals/uart.md
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 #: ../../source/peripherals/uart.md
 msgid "`baudrate`"
-msgstr ""
+msgstr "`baudrate`"
 
 #: ../../source/peripherals/uart.md
 msgid "`uint32_t`"
-msgstr ""
+msgstr "`uint32_t`"
 
 #: ../../source/peripherals/uart.md
 msgid "Communication speed in baud"
-msgstr ""
+msgstr "通信速率，单位为波特"
 
 #: ../../source/peripherals/uart.md
 msgid "`parity`"
-msgstr ""
+msgstr "`parity`"
 
 #: ../../source/peripherals/uart.md
 msgid "Parity check mode"
-msgstr ""
+msgstr "校验模式"
 
 #: ../../source/peripherals/uart.md
 msgid "`stop_bit`"
-msgstr ""
+msgstr "`stop_bit`"
 
 #: ../../source/peripherals/uart.md
 msgid "Number of stop bits"
-msgstr ""
+msgstr "停止位数"
 
 #: ../../source/peripherals/uart.md
 msgid "`rx_timeout_mul`"
-msgstr ""
+msgstr "`rx_timeout_mul`"
 
 #: ../../source/peripherals/uart.md
 msgid "RX timeout multiplier"
-msgstr ""
+msgstr "RX 超时倍数"
 
 #: ../../source/peripherals/uart.md
 msgid "`tx_port_pin`"
-msgstr ""
+msgstr "`tx_port_pin`"
 
 #: ../../source/peripherals/uart.md
 msgid "`struct tlk_gpio_port_pin`"
-msgstr ""
+msgstr "`struct tlk_gpio_port_pin`"
 
 #: ../../source/peripherals/uart.md
 msgid "TX port and pin"
-msgstr ""
+msgstr "TX 端口和引脚"
 
 #: ../../source/peripherals/uart.md
 msgid "`rx_port_pin`"
-msgstr ""
+msgstr "`rx_port_pin`"
 
 #: ../../source/peripherals/uart.md
 msgid "RX port and pin"
-msgstr ""
+msgstr "RX 端口和引脚"
 
 #: ../../source/peripherals/uart.md:74
 msgid "Operation Status"
-msgstr ""
+msgstr "操作状态"
 
 #: ../../source/peripherals/uart.md:76
 msgid "`enum tlk_uart_status`"
-msgstr ""
+msgstr "`enum tlk_uart_status`"
 
 #: ../../source/peripherals/uart.md:78
 msgid ""
 "Return codes used by driver functions to indicate the result of an "
 "operation."
-msgstr ""
+msgstr "驱动函数用于指示操作结果的返回码。"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_OK`"
-msgstr ""
+msgstr "`TLK_UART_OK`"
 
 #: ../../source/peripherals/uart.md
 msgid "Operation completed successfully."
-msgstr ""
+msgstr "操作成功完成。"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_TIMEOUT`"
-msgstr ""
+msgstr "`TLK_UART_TIMEOUT`"
 
 #: ../../source/peripherals/uart.md
 msgid "Operation timed out."
-msgstr ""
+msgstr "操作超时。"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_ERROR`"
-msgstr ""
+msgstr "`TLK_UART_ERROR`"
 
 #: ../../source/peripherals/uart.md
 msgid "General execution error."
-msgstr ""
+msgstr "常规执行错误。"
 
 #: ../../source/peripherals/uart.md:86
 msgid "Flow Control Modes"
-msgstr ""
+msgstr "流控制模式"
 
 #: ../../source/peripherals/uart.md:88 ../../source/peripherals/uart.md:101
 #: ../../source/peripherals/uart.md:114 ../../source/peripherals/uart.md:218
 #: ../../source/peripherals/uart.md:238
 msgid "!!! info \"Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`\""
-msgstr ""
+msgstr "!!! info \"需要启用 `CONFIG_TLK_UART_USED_FLOW_CONTROL`\""
 
 #: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:90
 msgid "`enum tlk_uart_flow_control`"
-msgstr ""
+msgstr "`enum tlk_uart_flow_control`"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_FLOW_NONE`"
-msgstr ""
+msgstr "`TLK_UART_FLOW_NONE`"
 
 #: ../../source/peripherals/uart.md
 msgid "Flow control disabled."
-msgstr ""
+msgstr "流控制已禁用。"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_FLOW_RTS`"
-msgstr ""
+msgstr "`TLK_UART_FLOW_RTS`"
 
 #: ../../source/peripherals/uart.md
 msgid "RTS signal only."
-msgstr ""
+msgstr "仅 RTS 信号。"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_FLOW_CTS`"
-msgstr ""
+msgstr "`TLK_UART_FLOW_CTS`"
 
 #: ../../source/peripherals/uart.md
 msgid "CTS signal only."
-msgstr ""
+msgstr "仅 CTS 信号。"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_FLOW_RTS_CTS`"
-msgstr ""
+msgstr "`TLK_UART_FLOW_RTS_CTS`"
 
 #: ../../source/peripherals/uart.md
 msgid "Full RTS/CTS flow control."
-msgstr ""
+msgstr "完整 RTS/CTS 流控制。"
 
 #: ../../source/peripherals/uart.md:99
 msgid "Flow Control Polarity"
-msgstr ""
+msgstr "流控制极性"
 
 #: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:103
 msgid "`enum tlk_uart_flow_polarity`"
-msgstr ""
+msgstr "`enum tlk_uart_flow_polarity`"
 
 #: ../../source/peripherals/uart.md:105
 msgid "Defines the active level logic for RTS and CTS signals."
-msgstr ""
+msgstr "定义 RTS 和 CTS 信号的有效电平逻辑。"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_ACTIVE_LOW`"
-msgstr ""
+msgstr "`TLK_UART_ACTIVE_LOW`"
 
 #: ../../source/peripherals/uart.md
 msgid ""
 "**Active Low.** UART stops sending when CTS is low, and sets RTS low to "
 "stop receiving."
 msgstr ""
+"**低电平有效。** 当 CTS 为低电平时 UART 停止发送，并将 RTS 置为低电平以停止接收。"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_ACTIVE_HIGH`"
-msgstr ""
+msgstr "`TLK_UART_ACTIVE_HIGH`"
 
 #: ../../source/peripherals/uart.md
 msgid ""
 "**Active High.** UART stops sending when CTS is high, and sets RTS high "
 "to stop receiving."
 msgstr ""
+"**高电平有效。** 当 CTS 为高电平时 UART 停止发送，并将 RTS 置为高电平以停止接收。"
 
 #: ../../source/peripherals/uart.md:112
 msgid "Flow Control Configuration Structure"
-msgstr ""
+msgstr "流控制配置结构体"
 
 #: ../../source/peripherals/uart.md:116
 msgid "`struct tlk_uart_flow_control_config`"
-msgstr ""
+msgstr "`struct tlk_uart_flow_control_config`"
 
 #: ../../source/peripherals/uart.md:118
 msgid ""
@@ -403,275 +408,283 @@ msgid ""
 "flow control. Used with `tlk_uart_configure_flow_control` and "
 "`tlk_uart_configure_flow_control_pinmux`."
 msgstr ""
+"包含 UART 硬件流控制所有配置参数的结构体。与 `tlk_uart_configure_flow_control` 和 `tlk_uart_configure_flow_control_pinmux` 配合使用。"
 
 #: ../../source/peripherals/uart.md
 msgid "`flow_control`"
-msgstr ""
+msgstr "`flow_control`"
 
 #: ../../source/peripherals/uart.md
 msgid "Flow control mode (RTS/CTS)"
-msgstr ""
+msgstr "流控制模式（RTS/CTS）"
 
 #: ../../source/peripherals/uart.md
 msgid "`flow_polarity`"
-msgstr ""
+msgstr "`flow_polarity`"
 
 #: ../../source/peripherals/uart.md
 msgid "Active level for RTS/CTS signals"
-msgstr ""
+msgstr "RTS/CTS 信号的有效电平"
 
 #: ../../source/peripherals/uart.md
 msgid "`rts_port_pin`"
-msgstr ""
+msgstr "`rts_port_pin`"
 
 #: ../../source/peripherals/uart.md
 msgid "RTS port and pin"
-msgstr ""
+msgstr "RTS 端口和引脚"
 
 #: ../../source/peripherals/uart.md
 msgid "`cts_port_pin`"
-msgstr ""
+msgstr "`cts_port_pin`"
 
 #: ../../source/peripherals/uart.md
 msgid "CTS port and pin"
-msgstr ""
+msgstr "CTS 端口和引脚"
 
 #: ../../source/peripherals/uart.md:127
 msgid "Transmit Handler Type"
-msgstr ""
+msgstr "发送处理函数类型"
 
 #: ../../source/peripherals/uart.md:129
 msgid "`tlk_uart_tx_handler_t`"
-msgstr ""
+msgstr "`tlk_uart_tx_handler_t`"
 
 #: ../../source/peripherals/uart.md:131
 msgid ""
 "A function pointer type for the callback invoked when data transmission "
 "is complete in interrupt and DMA modes."
 msgstr ""
+"函数指针类型，用于中断和 DMA 模式下数据发送完成时调用的回调函数。"
 
 #: ../../source/peripherals/uart.md:137
 msgid "Receive Handler Type"
-msgstr ""
+msgstr "接收处理函数类型"
 
 #: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:139
 msgid "`tlk_uart_rx_handler_t`"
-msgstr ""
+msgstr "`tlk_uart_rx_handler_t`"
 
 #: ../../source/peripherals/uart.md:141
 msgid ""
 "A function pointer type for the callback invoked when data reception is "
 "complete in interrupt and DMA modes."
 msgstr ""
+"函数指针类型，用于中断和 DMA 模式下数据接收完成时调用的回调函数。"
 
 #: ../../source/peripherals/uart.md:147
 msgid "Driver API"
-msgstr ""
+msgstr "驱动 API"
 
 #: ../../source/peripherals/uart.md:149
 msgid "`tlk_uart_configure`"
-msgstr ""
+msgstr "`tlk_uart_configure`"
 
 #: ../../source/peripherals/uart.md:151
 msgid "Initializes the UART module with the provided configuration."
-msgstr ""
+msgstr "使用提供的配置初始化 UART 模块。"
 
 #: ../../source/peripherals/uart.md:158 ../../source/peripherals/uart.md:176
 #: ../../source/peripherals/uart.md:205 ../../source/peripherals/uart.md:227
 #: ../../source/peripherals/uart.md:247
 msgid "**Parameters:**"
-msgstr ""
+msgstr "**参数：**"
 
 #: ../../source/peripherals/uart.md
 msgid "Parameter"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/peripherals/uart.md
 msgid "`uart_num`"
-msgstr ""
+msgstr "`uart_num`"
 
 #: ../../source/peripherals/uart.md
 msgid "`enum tlk_uart_module`"
-msgstr ""
+msgstr "`enum tlk_uart_module`"
 
 #: ../../source/peripherals/uart.md
 msgid "UART module index."
-msgstr ""
+msgstr "UART 模块索引。"
 
 #: ../../source/peripherals/uart.md
 msgid "`config`"
-msgstr ""
+msgstr "`config`"
 
 #: ../../source/peripherals/uart.md
 msgid "`struct tlk_uart_config *`"
-msgstr ""
+msgstr "`struct tlk_uart_config *`"
 
 #: ../../source/peripherals/uart.md
 msgid ""
 "Pointer to the configuration structure containing baudrate, parity, stop "
 "bits, and pin assignments."
 msgstr ""
+"指向包含波特率、校验位、停止位和引脚分配的配置结构体的指针。"
 
 #: ../../source/peripherals/uart.md:165 ../../source/peripherals/uart.md:183
 #: ../../source/peripherals/uart.md:234 ../../source/peripherals/uart.md:254
 msgid "**Return value:** None"
-msgstr ""
+msgstr "**返回值：** 无"
 
 #: ../../source/peripherals/uart.md:167
 msgid "`tlk_uart_configure_pinmux`"
-msgstr ""
+msgstr "`tlk_uart_configure_pinmux`"
 
 #: ../../source/peripherals/uart.md:169
 msgid "Configures UART TX/RX pin multiplexing."
-msgstr ""
+msgstr "配置 UART TX/RX 引脚复用。"
 
 #: ../../source/peripherals/uart.md
 msgid ""
 "Pointer to the configuration structure containing TX and RX pin "
 "assignments."
 msgstr ""
+"指向包含 TX 和 RX 引脚分配的配置结构体的指针。"
 
 #: ../../source/peripherals/uart.md:185
 msgid "`tlk_uart_send_bytes`"
-msgstr ""
+msgstr "`tlk_uart_send_bytes`"
 
 #: ../../source/peripherals/uart.md:187
 msgid "Sends a data buffer."
-msgstr ""
+msgstr "发送数据缓冲区。"
 
 #: ../../source/peripherals/uart.md:195
 msgid "`tlk_uart_receive_bytes`"
-msgstr ""
+msgstr "`tlk_uart_receive_bytes`"
 
 #: ../../source/peripherals/uart.md:197
 msgid ""
 "Receives a data buffer. The provided handler is called when reception is "
 "complete."
 msgstr ""
+"接收数据缓冲区。接收完成时会调用提供的处理函数。"
 
 #: ../../source/peripherals/uart.md
 msgid "`buff`"
-msgstr ""
+msgstr "`buff`"
 
 #: ../../source/peripherals/uart.md
 msgid "`uint8_t *`"
-msgstr ""
+msgstr "`uint8_t *`"
 
 #: ../../source/peripherals/uart.md
 msgid "Pointer to the receive buffer."
-msgstr ""
+msgstr "指向接收缓冲区的指针。"
 
 #: ../../source/peripherals/uart.md
 msgid "`buff_size`"
-msgstr ""
+msgstr "`buff_size`"
 
 #: ../../source/peripherals/uart.md
 msgid "Number of bytes to receive."
-msgstr ""
+msgstr "要接收的字节数。"
 
 #: ../../source/peripherals/uart.md
 msgid "`rx_handler`"
-msgstr ""
+msgstr "`rx_handler`"
 
 #: ../../source/peripherals/uart.md
 msgid "Callback function invoked after reception completes."
-msgstr ""
+msgstr "接收完成后调用的回调函数。"
 
 #: ../../source/peripherals/uart.md:214
 msgid "**Return value:** `enum tlk_uart_status` — Returns `TLK_UART_OK`."
-msgstr ""
+msgstr "**返回值：** `enum tlk_uart_status` — 返回 `TLK_UART_OK`。"
 
 #: ../../source/peripherals/uart.md:216
 msgid "`tlk_uart_configure_flow_control`"
-msgstr ""
+msgstr "`tlk_uart_configure_flow_control`"
 
 #: ../../source/peripherals/uart.md:220
 msgid ""
 "Configure the flow control for the specified UART module. Disabled by "
 "default. Should be called after `tlk_uart_configure`."
 msgstr ""
+"配置指定 UART 模块的流控制。默认禁用。应在 `tlk_uart_configure` 之后调用。"
 
 #: ../../source/peripherals/uart.md
 msgid "`struct tlk_uart_flow_control_config *`"
-msgstr ""
+msgstr "`struct tlk_uart_flow_control_config *`"
 
 #: ../../source/peripherals/uart.md
 msgid "Pointer to the flow control configuration structure."
-msgstr ""
+msgstr "指向流控制配置结构体的指针。"
 
 #: ../../source/peripherals/uart.md:236
 msgid "`tlk_uart_configure_flow_control_pinmux`"
-msgstr ""
+msgstr "`tlk_uart_configure_flow_control_pinmux`"
 
 #: ../../source/peripherals/uart.md:240
 msgid "Configure UART RTS and CTS pin multiplexing."
-msgstr ""
+msgstr "配置 UART RTS 和 CTS 引脚复用。"
 
 #: ../../source/peripherals/uart.md
 msgid ""
 "Pointer to the flow control configuration structure containing RTS and "
 "CTS pin assignments."
 msgstr ""
+"指向包含 RTS 和 CTS 引脚分配的流控制配置结构体的指针。"
 
 #: ../../source/peripherals/uart.md:256
 msgid "Transfer Modes"
-msgstr ""
+msgstr "传输模式"
 
 #: ../../source/peripherals/uart.md:258
 msgid "Each UART instance can independently configure its transfer mode:"
-msgstr ""
+msgstr "每个 UART 实例可以独立配置其传输模式："
 
 #: ../../source/peripherals/uart.md
 msgid "Mode"
-msgstr ""
+msgstr "模式"
 
 #: ../../source/peripherals/uart.md
 msgid "Kconfig Value"
-msgstr ""
+msgstr "Kconfig 值"
 
 #: ../../source/peripherals/uart.md
 msgid "Blocking"
-msgstr ""
+msgstr "阻塞"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_XFER_BLOCKING`"
-msgstr ""
+msgstr "`TLK_UART_XFER_BLOCKING`"
 
 #: ../../source/peripherals/uart.md
 msgid "Synchronous wait, with timeout"
-msgstr ""
+msgstr "同步等待，带超时"
 
 #: ../../source/peripherals/uart.md
 msgid "Interrupt"
-msgstr ""
+msgstr "中断"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_XFER_PLIC`"
-msgstr ""
+msgstr "`TLK_UART_XFER_PLIC`"
 
 #: ../../source/peripherals/uart.md
 msgid "Interrupt-driven, auto-fill FIFO"
-msgstr ""
+msgstr "中断驱动，自动填充 FIFO"
 
 #: ../../source/peripherals/uart.md
 msgid "DMA"
-msgstr ""
+msgstr "DMA"
 
 #: ../../source/peripherals/uart.md
 msgid "`TLK_UART_XFER_DMA`"
-msgstr ""
+msgstr "`TLK_UART_XFER_DMA`"
 
 #: ../../source/peripherals/uart.md
 msgid "DMA driven, zero CPU load"
-msgstr ""
+msgstr "DMA 驱动，CPU 零负载"
 
 #: ../../source/peripherals/uart.md:266
 msgid "Kconfig Configuration"
-msgstr ""
+msgstr "Kconfig 配置"
 
 #: ../../source/peripherals/uart.md:268
 msgid "Global options"
-msgstr ""
+msgstr "全局选项"
 
 #: ../../source/peripherals/uart.md:270
 #, python-brace-format
@@ -680,6 +693,7 @@ msgid ""
 "enabled in the system. This option is automatically selected when any "
 "`UART{i}_ENABLED` option is enabled."
 msgstr ""
+"**`TLK_UART_SELECTED**   表示系统中至少启用了一个 UART 实例。当任何 `UART{i}_ENABLED` 选项启用时，此选项会自动被选中。"
 
 #: ../../source/peripherals/uart.md:273
 #, python-brace-format
@@ -688,6 +702,7 @@ msgid ""
 "configuration is enabled in the system. This option is automatically "
 "selected when `UART{i}_AUTO_CONFIG` is enabled for any UART instance."
 msgstr ""
+"**`TLK_UART_USED_AUTO_CONFIG`**   表示系统中启用了自动 UART 配置。当任何 UART 实例启用了 `UART{i}_AUTO_CONFIG` 时，此选项会自动被选中。"
 
 #: ../../source/peripherals/uart.md:276
 #, python-brace-format
@@ -697,6 +712,7 @@ msgid ""
 "`UART{i}_USED_IRQ` or `UART{i}_USED_DMA` are enabled for any UART "
 "instance."
 msgstr ""
+"**`TLK_UART_USED_IRQ`**   表示至少一个 UART 实例需要 PLIC 功能。当任何 UART 实例启用了 `UART{i}_USED_IRQ` 或 `UART{i}_USED_DMA` 时，此选项会自动被选中。"
 
 #: ../../source/peripherals/uart.md:279
 #, python-brace-format
@@ -705,6 +721,7 @@ msgid ""
 " a DMA functionality. This option is automatically selected when "
 "`UART{i}_USED_DMA` is enabled for any UART instance."
 msgstr ""
+"**`TLK_UART_USED_DMA`**   表示至少一个 UART 实例需要 DMA 功能。当任何 UART 实例启用了 `UART{i}_USED_DMA` 时，此选项会自动被选中。"
 
 #: ../../source/peripherals/uart.md:282
 #, python-brace-format
@@ -713,6 +730,7 @@ msgid ""
 "support is enabled in the system. This option is automatically selected "
 "when `UART{i}_PM_DEVICE` is enabled for any UART instance."
 msgstr ""
+"**`TLK_UART_USED_PM_DEVICE`**   表示系统中启用了 UART 电源管理支持。当任何 UART 实例启用了 `UART{i}_PM_DEVICE` 时，此选项会自动被选中。"
 
 #: ../../source/peripherals/uart.md:285
 #, python-brace-format
@@ -721,47 +739,48 @@ msgid ""
 "(RTS/CTS) is enabled in the system. This option is automatically selected"
 " when `UART{i}_FLOW_CONTROL` is enabled for any UART instance."
 msgstr ""
+"**`TLK_UART_USED_FLOW_CONTROL`**   表示系统中启用了硬件流控制（RTS/CTS）。当任何 UART 实例启用了 `UART{i}_FLOW_CONTROL` 时，此选项会自动被选中。"
 
 #: ../../source/peripherals/uart.md:288
 msgid "Per-instance Configuration"
-msgstr ""
+msgstr "逐实例配置"
 
 #: ../../source/peripherals/uart.md:290
 msgid ""
 "Each UART instance (i = 0, 1, 2...) supports the following hierarchical "
 "configuration:"
 msgstr ""
+"每个 UART 实例（i = 0, 1, 2...）支持以下分层配置："
 
 #: ../../source/peripherals/uart.md:335
 msgid "View in the menuconfig"
-msgstr ""
+msgstr "在 menuconfig 中查看"
 
 #: ../../source/peripherals/uart.md:337
 msgid "![alt text](pics/uart_1.png) *Figure 1. UART driver configurations*"
-msgstr ""
+msgstr "![替代文本](pics/uart_1.png) *图 1. UART 驱动配置*"
 
 #: ../../source/peripherals/uart.md:337 ../../source/peripherals/uart.md:340
 #: ../../source/peripherals/uart.md:343 ../../source/peripherals/uart.md:346
 msgid "alt text"
-msgstr ""
+msgstr "替代文本"
 
 #: ../../source/peripherals/uart.md:340
 msgid "![alt text](pics/uart_2.png) *Figure 2. UART instance configurations*"
-msgstr ""
+msgstr "![替代文本](pics/uart_2.png) *图 2. UART 实例配置*"
 
 #: ../../source/peripherals/uart.md:343
 msgid "![alt text](pics/uart_3.png) *Figure 3. UART instance auto-config options*"
-msgstr ""
+msgstr "![替代文本](pics/uart_3.png) *图 3. UART 实例自动配置选项*"
 
 #: ../../source/peripherals/uart.md:346
 msgid "![alt text](pics/uart_4.png) *Figure 4. UART debug configurations*"
-msgstr ""
+msgstr "![替代文本](pics/uart_4.png) *图 4. UART 调试配置*"
 
 #: ../../source/peripherals/uart.md:349
 msgid "Related Resources"
-msgstr ""
+msgstr "相关资源"
 
 #: ../../source/peripherals/uart.md:351
 msgid "[UART Samples](../samples/uart.md)"
-msgstr ""
-
+msgstr "[UART 示例](../samples/uart.md)"

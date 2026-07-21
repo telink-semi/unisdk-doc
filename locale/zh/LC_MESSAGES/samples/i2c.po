@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,25 +20,24 @@ msgstr ""
 
 #: ../../source/samples/i2c.md:6
 msgid "I2C Sample"
-msgstr ""
+msgstr "I2C 示例"
 
 #: ../../source/samples/i2c.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在完善中\""
 
 #: ../../source/samples/i2c.md:10
 msgid "The I2C sample (`samples/i2c_demo`) includes two sub-samples:"
-msgstr ""
+msgstr "I2C 示例（`samples/i2c_demo`）包含两个子示例："
 
 #: ../../source/samples/i2c.md:12
 msgid "**DS1307** — I2C communication with the DS1307 RTC chip"
-msgstr ""
+msgstr "**DS1307** — 与 DS1307 RTC 芯片进行 I2C 通信"
 
 #: ../../source/samples/i2c.md:13
 msgid "**Ping-Pong** — I2C master-slave bidirectional communication demo"
-msgstr ""
+msgstr "**Ping-Pong** — I2C 主从双向通信演示"
 
 #: ../../source/samples/i2c.md:15
 msgid "Build & Run"
-msgstr ""
-
+msgstr "构建与运行"

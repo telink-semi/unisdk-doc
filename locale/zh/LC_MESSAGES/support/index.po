@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,123 +20,130 @@ msgstr ""
 
 #: ../../source/support/index.md:6
 msgid "Technical Support"
-msgstr ""
+msgstr "技术支持"
 
 #: ../../source/support/index.md:8
 msgid "Contact Us"
-msgstr ""
+msgstr "联系我们"
 
 #: ../../source/support/index.md:10
 msgid ""
 "**Sales Inquiry**: [telinksales@telink-semi.com](mailto:telinksales"
 "@telink-semi.com)"
 msgstr ""
+"**销售咨询**：[telinksales@telink-semi.com](mailto:telinksales@telink-semi.com)"
 
 #: ../../source/support/index.md:11
 msgid ""
 "**Technical Forum**: [https://forum.telink-semi.cn/](https://forum"
 ".telink-semi.cn/)"
 msgstr ""
+"**技术论坛**：[https://forum.telink-semi.cn/](https://forum.telink-semi.cn/)"
 
 #: ../../source/support/index.md:12
 msgid ""
 "**Official Website**: [https://www.telink-semi.cn/](https://www.telink-"
 "semi.cn/)"
 msgstr ""
+"**官方网站**：[https://www.telink-semi.cn/](https://www.telink-semi.cn/)"
 
 #: ../../source/support/index.md:13
 msgid ""
 "**Documentation Center**: [https://doc.telink-semi.cn/](https://doc"
 ".telink-semi.cn/)"
 msgstr ""
+"**文档中心**：[https://doc.telink-semi.cn/](https://doc.telink-semi.cn/)"
 
 #: ../../source/support/index.md:15
 msgid "Submitting Issues"
-msgstr ""
+msgstr "提交问题"
 
 #: ../../source/support/index.md:17
 msgid ""
 "When submitting technical issues, please provide the following "
 "information:"
-msgstr ""
+msgstr "提交技术问题时，请提供以下信息："
 
 #: ../../source/support/index.md:19
 msgid "UniSDK version"
-msgstr ""
+msgstr "UniSDK 版本"
 
 #: ../../source/support/index.md:20
 msgid "Target chip model and board"
-msgstr ""
+msgstr "目标芯片型号和开发板"
 
 #: ../../source/support/index.md:21
 msgid "Operating system version"
-msgstr ""
+msgstr "操作系统版本"
 
 #: ../../source/support/index.md:22
 msgid "Toolchain version"
-msgstr ""
+msgstr "工具链版本"
 
 #: ../../source/support/index.md:23
 msgid "Reproduction steps"
-msgstr ""
+msgstr "复现步骤"
 
 #: ../../source/support/index.md:24
 msgid "Error logs or screenshots"
-msgstr ""
+msgstr "错误日志或截图"
 
 #: ../../source/support/index.md:26
 msgid "Community Resources"
-msgstr ""
+msgstr "社区资源"
 
 #: ../../source/support/index.md:28
 msgid ""
 "**GitHub Issues**: [https://github.com/telink-semi/unisdk-"
 "doc/issues](https://github.com/telink-semi/unisdk-doc/issues)"
 msgstr ""
+"**GitHub Issues**：[https://github.com/telink-semi/unisdk-doc/issues](https://github.com/telink-semi/unisdk-doc/issues)"
 
 #: ../../source/support/index.md:29
 msgid ""
 "**Gitee Repository**: [https://gitee.com/telink-semi](https://gitee.com"
 "/telink-semi)"
 msgstr ""
+"**Gitee 仓库**：[https://gitee.com/telink-semi](https://gitee.com/telink-semi)"
 
 #: ../../source/support/index.md:30
 msgid ""
 "**Product Selector**: [https://products.telink-semi.cn/](https://products"
 ".telink-semi.cn/)"
 msgstr ""
+"**产品选型**：[https://products.telink-semi.cn/](https://products.telink-semi.cn/)"
 
 #: ../../source/support/index.md:31
 msgid ""
 "**Development Tools**: [https://www.telink-semi.cn/development-"
 "tools](https://www.telink-semi.cn/development-tools)"
 msgstr ""
+"**开发工具**：[https://www.telink-semi.cn/development-tools](https://www.telink-semi.cn/development-tools)"
 
 #: ../../source/support/index.md:33
 msgid "FAQ"
-msgstr ""
+msgstr "常见问题"
 
 #: ../../source/support/index.md:35
 msgid "See [Troubleshooting](../getting_started/troubleshooting.md)."
-msgstr ""
+msgstr "请参阅[故障排除](../getting_started/troubleshooting.md)。"
 
 #: ../../source/support/index.md:37
 msgid "Resource Links"
-msgstr ""
+msgstr "资源链接"
 
 #: ../../source/support/index.md:39
 msgid "[Getting Started](../getting_started/index.md)"
-msgstr ""
+msgstr "[入门指南](../getting_started/index.md)"
 
 #: ../../source/support/index.md:40
 msgid "[Development Guide](../developing/index.md)"
-msgstr ""
+msgstr "[开发指南](../developing/index.md)"
 
 #: ../../source/support/index.md:41
 msgid "[Samples and Demos](../samples/index.md)"
-msgstr ""
+msgstr "[示例与演示](../samples/index.md)"
 
 #: ../../source/support/index.md:42
 msgid "[About Telink](../about/index.md)"
-msgstr ""
-
+msgstr "[关于 Telink](../about/index.md)"

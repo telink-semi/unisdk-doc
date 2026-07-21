@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,27 +20,28 @@ msgstr ""
 
 #: ../../source/peripherals/timer.md:6
 msgid "Timer Driver"
-msgstr ""
+msgstr "定时器驱动"
 
 #: ../../source/peripherals/timer.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在最终确定中\""
 
 #: ../../source/peripherals/timer.md:10
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/peripherals/timer.md:12
 msgid ""
 "The Timer driver includes STIMER (System Timer) and MTIMER (Machine "
 "Timer), providing high-precision timing and scheduling functionality."
 msgstr ""
+"定时器驱动包括 STIMER（系统定时器）和 MTIMER（机器定时器），"
+"提供高精度计时和调度功能。"
 
 #: ../../source/peripherals/timer.md:14
 msgid "Samples"
-msgstr ""
+msgstr "示例"
 
 #: ../../source/peripherals/timer.md:16
 msgid "See [Timer Samples](../samples/stimer.md)."
-msgstr ""
-
+msgstr "请参见[定时器示例](../samples/stimer.md)。"

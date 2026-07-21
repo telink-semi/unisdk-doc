@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,7 +20,7 @@ msgstr ""
 
 #: ../../source/getting_started/environment_setup.md:6
 msgid "Development Environment Setup"
-msgstr ""
+msgstr "搭建开发环境"
 
 #: ../../source/getting_started/environment_setup.md:8
 msgid ""
@@ -31,10 +30,12 @@ msgid ""
 "dependencies. Alternatively, you can set up the environment from the "
 "command line."
 msgstr ""
+"本章介绍如何安装和配置 UniSDK 开发环境。推荐使用 Telink VS Code 扩展，"
+"它提供了图形界面来管理依赖项。另外，您也可以通过命令行来搭建环境。"
 
 #: ../../source/getting_started/environment_setup.md:10
 msgid "VS Code Extension (Recommended)"
-msgstr ""
+msgstr "VS Code 扩展（推荐）"
 
 #: ../../source/getting_started/environment_setup.md:12
 msgid ""
@@ -42,58 +43,65 @@ msgid ""
 "interface for installing dependencies, managing the toolchain, and "
 "initializing the workspace with a single click."
 msgstr ""
+"**Telink Development Tool** VS Code 扩展提供图形界面，可一键安装依赖项、"
+"管理工具链和初始化工作区。"
 
 #: ../../source/getting_started/environment_setup.md:14
 msgid "Prerequisites"
-msgstr ""
+msgstr "前提条件"
 
 #: ../../source/getting_started/environment_setup.md:16
 msgid ""
 "**VS Code**: Install the latest version of [Visual Studio "
 "Code](https://code.visualstudio.com/)."
 msgstr ""
+"**VS Code**：安装最新版本的 [Visual Studio Code](https://code.visualstudio.com/)。"
 
 #: ../../source/getting_started/environment_setup.md:18
 msgid ""
 "If your VS Code version is not the latest, the extension may not work "
 "properly or some features may not function as expected."
 msgstr ""
+"如果您的 VS Code 不是最新版本，扩展可能无法正常工作，或者某些功能可能"
+"不符合预期。"
 
 #: ../../source/getting_started/environment_setup.md:20
 msgid "Step 1: Install the Telink VS Code Extension"
-msgstr ""
+msgstr "第 1 步：安装 Telink VS Code 扩展"
 
 #: ../../source/getting_started/environment_setup.md:22
 msgid "Launch VS Code."
-msgstr ""
+msgstr "启动 VS Code。"
 
 #: ../../source/getting_started/environment_setup.md:23
 msgid ""
 "Click the **Extensions** icon in the left activity bar (or press "
 "**Ctrl+Shift+X**)."
 msgstr ""
+"单击左侧活动栏中的**Extensions**图标（或按 **Ctrl+Shift+X**）。"
 
 #: ../../source/getting_started/environment_setup.md:24
 msgid "Search for **Telink**."
-msgstr ""
+msgstr "搜索 **Telink**。"
 
 #: ../../source/getting_started/environment_setup.md:25
 msgid "Find **Telink Development Tool** in the results and click **Install**."
-msgstr ""
+msgstr "在结果中找到 **Telink Development Tool**，然后单击 **Install**。"
 
 #: ../../source/getting_started/environment_setup.md:27
 msgid "![Telink DEVELOPMENT Icon](pics/telink_development_icon.png)"
-msgstr ""
+msgstr "![Telink DEVELOPMENT 图标](pics/telink_development_icon.png)"
 
 #: ../../source/getting_started/environment_setup.md:27
 msgid "Telink DEVELOPMENT Icon"
-msgstr ""
+msgstr "Telink DEVELOPMENT 图标"
 
 #: ../../source/getting_started/environment_setup.md:29
 msgid ""
 "After installation, a **Telink DEVELOPMENT** icon will appear on the left"
 " sidebar."
 msgstr ""
+"安装完成后，左侧边栏将出现 **Telink DEVELOPMENT** 图标。"
 
 #: ../../source/getting_started/environment_setup.md:31
 msgid ""
@@ -101,104 +109,113 @@ msgid ""
 "tools, open the Unified SDK folder in VS Code after completing the "
 "installation."
 msgstr ""
+"为方便后续工具自动识别 Unified SDK，请在安装完成后在 VS Code 中打开"
+"Unified SDK 文件夹。"
 
 #: ../../source/getting_started/environment_setup.md:33
 msgid "Step 2: Install Dependencies via the Extension"
-msgstr ""
+msgstr "第 2 步：通过扩展安装依赖项"
 
 #: ../../source/getting_started/environment_setup.md:35
 msgid "Click the **Telink DEVELOPMENT** button in the left sidebar."
-msgstr ""
+msgstr "单击左侧边栏中的 **Telink DEVELOPMENT** 按钮。"
 
 #: ../../source/getting_started/environment_setup.md:36
 msgid ""
 "In the **DEVELOPMENT TOOLS** tree, you will see the required components: "
 "**Toolchain**, **West**, **CMake**, and **Ninja**."
 msgstr ""
+"在 **DEVELOPMENT TOOLS** 树中，您将看到所需的组件：**Toolchain**、"
+"**West**、**CMake** 和 **Ninja**。"
 
 #: ../../source/getting_started/environment_setup.md:37
 msgid "Install each component:"
-msgstr ""
+msgstr "安装每个组件："
 
 #: ../../source/getting_started/environment_setup.md:38
 msgid "**Toolchain**: Click the toolchain entry and select **Install Toolchain**."
-msgstr ""
+msgstr "**Toolchain**：单击工具链条目并选择 **Install Toolchain**。"
 
 #: ../../source/getting_started/environment_setup.md:39
 msgid ""
 "**West**: Right-click **West** and select **Install**. We recommend using"
 " a Python virtual environment for West."
 msgstr ""
+"**West**：右键单击 **West** 并选择 **Install**。建议为 West 使用 Python "
+"虚拟环境。"
 
 #: ../../source/getting_started/environment_setup.md:40
 msgid "**CMake**: Right-click **CMake** and select **Install**."
-msgstr ""
+msgstr "**CMake**：右键单击 **CMake** 并选择 **Install**。"
 
 #: ../../source/getting_started/environment_setup.md:41
 msgid "**Ninja**: Right-click **Ninja** and select **Install**."
-msgstr ""
+msgstr "**Ninja**：右键单击 **Ninja** 并选择 **Install**。"
 
 #: ../../source/getting_started/environment_setup.md:43
 msgid ""
 "![Dependency Installation](pics/dependency_installation.png) ![Dependency"
 " Installation Success](pics/dependency_installation_success.png)"
 msgstr ""
+"![依赖安装](pics/dependency_installation.png) ![依赖安装成功](pics/dependency_installation_success.png)"
 
 #: ../../source/getting_started/environment_setup.md:43
 msgid "Dependency Installation"
-msgstr ""
+msgstr "依赖安装"
 
 #: ../../source/getting_started/environment_setup.md:43
 msgid "Dependency Installation Success"
-msgstr ""
+msgstr "依赖安装成功"
 
 #: ../../source/getting_started/environment_setup.md:46
 msgid ""
 "Wait for each component to finish installing. A notification appears in "
 "the bottom-right corner when installation is complete."
 msgstr ""
+"等待每个组件安装完成。安装完成后，右下角会出现通知提示。"
 
 #: ../../source/getting_started/environment_setup.md:48
 msgid "Step 3: Initialize the West Workspace"
-msgstr ""
+msgstr "第 3 步：初始化 West 工作区"
 
 #: ../../source/getting_started/environment_setup.md:50
 msgid "In the **Telink DEVELOPMENT** view, locate the **West Command** section."
-msgstr ""
+msgstr "在 **Telink DEVELOPMENT** 视图中，找到 **West Command** 部分。"
 
 #: ../../source/getting_started/environment_setup.md:51
 msgid "Click the **init** button."
-msgstr ""
+msgstr "单击 **init** 按钮。"
 
 #: ../../source/getting_started/environment_setup.md:53
 msgid "![West Init](pics/west_init.png)"
-msgstr ""
+msgstr "![West 初始化](pics/west_init.png)"
 
 #: ../../source/getting_started/environment_setup.md:53
 msgid "West Init"
-msgstr ""
+msgstr "West 初始化"
 
 #: ../../source/getting_started/environment_setup.md:55
 msgid ""
 "Check the **OUTPUT** terminal panel. A confirmation message appears when "
 "initialization completes successfully."
 msgstr ""
+"查看 **OUTPUT** 终端面板。初始化成功完成后将显示确认消息。"
 
 #: ../../source/getting_started/environment_setup.md:57
 msgid "![West Init Success](pics/west_init_success.png)"
-msgstr ""
+msgstr "![West 初始化成功](pics/west_init_success.png)"
 
 #: ../../source/getting_started/environment_setup.md:57
 msgid "West Init Success"
-msgstr ""
+msgstr "West 初始化成功"
 
 #: ../../source/getting_started/environment_setup.md:59
 msgid "Step 4: Verify the Environment"
-msgstr ""
+msgstr "第 4 步：验证环境"
 
 #: ../../source/getting_started/environment_setup.md:61
 msgid "In the **West Command** section, click the **tl-build** button."
-msgstr ""
+msgstr "在 **West Command** 部分，单击 **tl-build** 按钮。"
 
 #: ../../source/getting_started/environment_setup.md:62
 msgid ""
@@ -206,44 +223,47 @@ msgid ""
 "configured yet. This indicates that the toolchain, build system, and West"
 " environment are configured correctly."
 msgstr ""
+"出现链接器错误是预期的行为，因为尚未配置源目录。这表示工具链、构建系统和"
+"West 环境已正确配置。"
 
 #: ../../source/getting_started/environment_setup.md:64
 msgid "![Expected Linker Error](pics/expected_linker_error.png)"
-msgstr ""
+msgstr "![预期的链接器错误](pics/expected_linker_error.png)"
 
 #: ../../source/getting_started/environment_setup.md:64
 msgid "Expected Linker Error"
-msgstr ""
+msgstr "预期的链接器错误"
 
 #: ../../source/getting_started/environment_setup.md:67
 msgid "CLI Setup (Alternative)"
-msgstr ""
+msgstr "CLI 方式搭建（备选）"
 
 #: ../../source/getting_started/environment_setup.md:69
 msgid ""
 "If you prefer to set up the development environment from the command "
 "line, refer to the platform-specific guides:"
 msgstr ""
+"如果您更倾向于通过命令行搭建开发环境，请参阅各平台指南："
 
 #: ../../source/getting_started/environment_setup.md:71
 msgid "[Linux Environment Setup](../developing/setup_linux.md)"
-msgstr ""
+msgstr "[Linux 环境搭建](../developing/setup_linux.md)"
 
 #: ../../source/getting_started/environment_setup.md:72
 msgid "[Windows Environment Setup](../developing/setup_windows.md)"
-msgstr ""
+msgstr "[Windows 环境搭建](../developing/setup_windows.md)"
 
 #: ../../source/getting_started/environment_setup.md:73
 msgid "[macOS Environment Setup](../developing/setup_macos.md)"
-msgstr ""
+msgstr "[macOS 环境搭建](../developing/setup_macos.md)"
 
 #: ../../source/getting_started/environment_setup.md:75
 msgid "Next Steps"
-msgstr ""
+msgstr "下一步"
 
 #: ../../source/getting_started/environment_setup.md:77
 msgid ""
 "After completing the environment setup, proceed to [Get and Import the "
 "SDK](get_sdk.md)."
 msgstr ""
-
+"完成环境搭建后，请继续[获取和导入 SDK](get_sdk.md)。"

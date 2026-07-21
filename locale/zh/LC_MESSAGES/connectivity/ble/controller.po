@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,87 +20,86 @@ msgstr ""
 
 #: ../../source/connectivity/ble/controller.md:6
 msgid "BLE Controller Coding Standards"
-msgstr ""
+msgstr "BLE 控制器编码规范"
 
 #: ../../source/connectivity/ble/controller.md:8
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/connectivity/ble/controller.md:10
 msgid ""
 "This document describes the coding standards for the BLE Controller ROM, "
 "applicable to all code under `subsystem/ble/controller/`."
-msgstr ""
+msgstr "本文档描述了 BLE 控制器 ROM 的编码规范，适用于 `subsystem/ble/controller/` 下的所有代码。"
 
 #: ../../source/connectivity/ble/controller.md:12
 msgid "File Naming"
-msgstr ""
+msgstr "文件命名"
 
 #: ../../source/connectivity/ble/controller.md:14
 msgid "Source files use lowercase letters separated by underscores"
-msgstr ""
+msgstr "源文件使用小写字母，以下划线分隔"
 
 #: ../../source/connectivity/ble/controller.md:15
 msgid "Example: `tlk_ble_ll_acl.c`"
-msgstr ""
+msgstr "示例：`tlk_ble_ll_acl.c`"
 
 #: ../../source/connectivity/ble/controller.md:17
 msgid "Function Naming"
-msgstr ""
+msgstr "函数命名"
 
 #: ../../source/connectivity/ble/controller.md:19
 msgid "Public Functions"
-msgstr ""
+msgstr "公共函数"
 
 #: ../../source/connectivity/ble/controller.md:21
 msgid "Use the `tlk_ble_` prefix:"
-msgstr ""
+msgstr "使用 `tlk_ble_` 前缀："
 
 #: ../../source/connectivity/ble/controller.md:28
 msgid "Internal Functions"
-msgstr ""
+msgstr "内部函数"
 
 #: ../../source/connectivity/ble/controller.md:30
 msgid "Use the `_` prefix to mark module-internal functions:"
-msgstr ""
+msgstr "使用 `_` 前缀标记模块内部函数："
 
 #: ../../source/connectivity/ble/controller.md:36
 msgid "Variable Naming"
-msgstr ""
+msgstr "变量命名"
 
 #: ../../source/connectivity/ble/controller.md:38
 msgid "Global variables use the `g_` prefix"
-msgstr ""
+msgstr "全局变量使用 `g_` 前缀"
 
 #: ../../source/connectivity/ble/controller.md:39
 msgid "Static variables use the `s_` prefix"
-msgstr ""
+msgstr "静态变量使用 `s_` 前缀"
 
 #: ../../source/connectivity/ble/controller.md:40
 msgid "Local variables use lowercase underscore style"
-msgstr ""
+msgstr "局部变量使用小写加下划线风格"
 
 #: ../../source/connectivity/ble/controller.md:42
 msgid "Interrupt Functions"
-msgstr ""
+msgstr "中断函数"
 
 #: ../../source/connectivity/ble/controller.md:44
 msgid "Interrupt handler functions should meet the following requirements:"
-msgstr ""
+msgstr "中断处理函数应满足以下要求："
 
 #: ../../source/connectivity/ble/controller.md:46
 msgid "Names must include the `_irq_` or `_isr_` identifier"
-msgstr ""
+msgstr "名称必须包含 `_irq_` 或 `_isr_` 标识符"
 
 #: ../../source/connectivity/ble/controller.md:47
 msgid "Use specific modifiers to ensure correct calling conventions"
-msgstr ""
+msgstr "使用特定的修饰符以确保正确的调用约定"
 
 #: ../../source/connectivity/ble/controller.md:48
 msgid "Avoid complex operations and blocking calls within interrupt functions"
-msgstr ""
+msgstr "避免在中断函数中进行复杂操作和阻塞调用"
 
 #: ../../source/connectivity/ble/controller.md:49
 msgid "Prefer the flag + main loop processing pattern whenever possible"
-msgstr ""
-
+msgstr "尽可能使用标志位加主循环处理的模式"

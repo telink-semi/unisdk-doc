@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,95 +20,97 @@ msgstr ""
 
 #: ../../source/developing/setup_macos.md:6
 msgid "macOS Environment Setup"
-msgstr ""
+msgstr "macOS 环境搭建"
 
 #: ../../source/developing/setup_macos.md:8
 msgid ""
 "This document details the complete steps to set up the UniSDK development"
 " environment on macOS."
 msgstr ""
+"本文档详细介绍了在 macOS 上搭建 UniSDK 开发环境的完整步骤。"
 
 #: ../../source/developing/setup_macos.md:10
 msgid "System Requirements"
-msgstr ""
+msgstr "系统要求"
 
 #: ../../source/developing/setup_macos.md:12
 msgid "macOS 12 (Monterey) or higher"
-msgstr ""
+msgstr "macOS 12 (Monterey) 或更高版本"
 
 #: ../../source/developing/setup_macos.md:13
 msgid "Apple Silicon (M1/M2/M3) or Intel processor"
-msgstr ""
+msgstr "Apple Silicon (M1/M2/M3) 或 Intel 处理器"
 
 #: ../../source/developing/setup_macos.md:14
 msgid "At least 4 GB RAM"
-msgstr ""
+msgstr "至少 4 GB RAM"
 
 #: ../../source/developing/setup_macos.md:16
 msgid "Install System Dependencies"
-msgstr ""
+msgstr "安装系统依赖"
 
 #: ../../source/developing/setup_macos.md:18
 msgid "We recommend using the [Homebrew](https://brew.sh) package manager:"
-msgstr ""
+msgstr "我们推荐使用 [Homebrew](https://brew.sh) 包管理器："
 
 #: ../../source/developing/setup_macos.md:28
 msgid "Verify installation:"
-msgstr ""
+msgstr "验证安装："
 
 #: ../../source/developing/setup_macos.md:37
 msgid "Set Up Python Virtual Environment"
-msgstr ""
+msgstr "搭建 Python 虚拟环境"
 
 #: ../../source/developing/setup_macos.md:54
 msgid "Initialize West"
-msgstr ""
+msgstr "初始化 West"
 
 #: ../../source/developing/setup_macos.md:61
 msgid "Configure Toolchain"
-msgstr ""
+msgstr "配置工具链"
 
 #: ../../source/developing/setup_macos.md:63
 msgid ""
 "Since UniSDK uses the RISC-V cross-compilation toolchain, you need to "
 "obtain the corresponding macOS version of the toolchain from Telink."
 msgstr ""
+"由于 UniSDK 使用 RISC-V 交叉编译工具链，您需要从 Telink 获取对应 macOS 版本的工具链。"
 
 #: ../../source/developing/setup_macos.md:65
 msgid "Contact Telink to obtain the macOS toolchain"
-msgstr ""
+msgstr "联系 Telink 获取 macOS 工具链"
 
 #: ../../source/developing/setup_macos.md:66
 msgid "Extract to a designated directory:"
-msgstr ""
+msgstr "解压到指定目录："
 
 #: ../../source/developing/setup_macos.md:71
 msgid "Set the environment variable:"
-msgstr ""
+msgstr "设置环境变量："
 
 #: ../../source/developing/setup_macos.md:75
 msgid ""
 "It is recommended to add the above command to `~/.zshrc` (the default "
 "shell on macOS)."
 msgstr ""
+"建议将上述命令添加到 `~/.zshrc`（macOS 的默认 shell）。"
 
 #: ../../source/developing/setup_macos.md:77
 msgid "Verify Environment"
-msgstr ""
+msgstr "验证环境"
 
 #: ../../source/developing/setup_macos.md:84
 msgid "Next Steps"
-msgstr ""
+msgstr "下一步"
 
 #: ../../source/developing/setup_macos.md:86
 msgid "[First Example: Blinky](blinky.md)"
-msgstr ""
+msgstr "[首个示例：Blinky](blinky.md)"
 
 #: ../../source/developing/setup_macos.md:87
 msgid "[Linux Environment Setup](setup_linux.md)"
-msgstr ""
+msgstr "[Linux 环境搭建](setup_linux.md)"
 
 #: ../../source/developing/setup_macos.md:88
 msgid "[Getting Started](../getting_started/index.md)"
-msgstr ""
-
+msgstr "[入门指南](../getting_started/index.md)"

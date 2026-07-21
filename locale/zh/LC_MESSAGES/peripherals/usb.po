@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,27 +20,27 @@ msgstr ""
 
 #: ../../source/peripherals/usb.md:6
 msgid "USB Driver"
-msgstr ""
+msgstr "USB 驱动"
 
 #: ../../source/peripherals/usb.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在最终确定中\""
 
 #: ../../source/peripherals/usb.md:10
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/peripherals/usb.md:12
 msgid ""
 "The USB driver is based on the TinyUSB framework, providing USB CDC and "
 "other device class support."
 msgstr ""
+"USB 驱动基于 TinyUSB 框架，提供 USB CDC 和其他设备类支持。"
 
 #: ../../source/peripherals/usb.md:14
 msgid "Samples"
-msgstr ""
+msgstr "示例"
 
 #: ../../source/peripherals/usb.md:16
 msgid "See [USB CDC Samples](../samples/usb_cdc.md)."
-msgstr ""
-
+msgstr "请参见 [USB CDC 示例](../samples/usb_cdc.md)。"

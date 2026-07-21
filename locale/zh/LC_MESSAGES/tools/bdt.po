@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,7 +20,7 @@ msgstr ""
 
 #: ../../source/tools/bdt.md:6
 msgid "BDT Burning and Debugging Tool"
-msgstr ""
+msgstr "BDT 烧录和调试工具"
 
 #: ../../source/tools/bdt.md:8
 msgid ""
@@ -29,203 +28,203 @@ msgid ""
 "Telink chips, providing a unified cross-platform interface via the `west "
 "tl-bdt` command."
 msgstr ""
+"BDT（烧录和调试工具）是 Telink 芯片的烧录和调试工具，通过 `west tl-bdt` 命令提供统一的跨平台接口。"
 
 #: ../../source/tools/bdt.md:10
 msgid "Supported Operations"
-msgstr ""
+msgstr "支持的操作"
 
 #: ../../source/tools/bdt.md
 msgid "Operation"
-msgstr ""
+msgstr "操作"
 
 #: ../../source/tools/bdt.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/tools/bdt.md
 msgid "`download`"
-msgstr ""
+msgstr "`download`"
 
 #: ../../source/tools/bdt.md
 msgid "Download firmware to Flash"
-msgstr ""
+msgstr "下载固件到 Flash"
 
 #: ../../source/tools/bdt.md
 msgid "`read`"
-msgstr ""
+msgstr "`read`"
 
 #: ../../source/tools/bdt.md
 msgid "Read data from Flash"
-msgstr ""
+msgstr "从 Flash 读取数据"
 
 #: ../../source/tools/bdt.md
 msgid "`write`"
-msgstr ""
+msgstr "`write`"
 
 #: ../../source/tools/bdt.md
 msgid "Write data to Flash"
-msgstr ""
+msgstr "向 Flash 写入数据"
 
 #: ../../source/tools/bdt.md
 msgid "`erase`"
-msgstr ""
+msgstr "`erase`"
 
 #: ../../source/tools/bdt.md ../../source/tools/bdt.md:63
 msgid "Erase Flash"
-msgstr ""
+msgstr "擦除 Flash"
 
 #: ../../source/tools/bdt.md
 msgid "`lock`"
-msgstr ""
+msgstr "`lock`"
 
 #: ../../source/tools/bdt.md
 msgid "Lock Flash region"
-msgstr ""
+msgstr "锁定 Flash 区域"
 
 #: ../../source/tools/bdt.md
 msgid "`unlock`"
-msgstr ""
+msgstr "`unlock`"
 
 #: ../../source/tools/bdt.md
 msgid "Unlock Flash region"
-msgstr ""
+msgstr "解锁 Flash 区域"
 
 #: ../../source/tools/bdt.md
 msgid "`reset`"
-msgstr ""
+msgstr "`reset`"
 
 #: ../../source/tools/bdt.md
 msgid "Reset device"
-msgstr ""
+msgstr "复位设备"
 
 #: ../../source/tools/bdt.md:22
 msgid "Quick Start"
-msgstr ""
+msgstr "快速开始"
 
 #: ../../source/tools/bdt.md:38
 msgid "Flash Operations"
-msgstr ""
+msgstr "Flash 操作"
 
 #: ../../source/tools/bdt.md:40
 msgid "Read Flash"
-msgstr ""
+msgstr "读取 Flash"
 
 #: ../../source/tools/bdt.md:50
 msgid "Write Flash"
-msgstr ""
+msgstr "写入 Flash"
 
 #: ../../source/tools/bdt.md:70
 msgid "Flash Lock Operations"
-msgstr ""
+msgstr "Flash 锁定操作"
 
 #: ../../source/tools/bdt.md:80
 msgid "Reset"
-msgstr ""
+msgstr "复位"
 
 #: ../../source/tools/bdt.md:90
 msgid "BDT Path Configuration"
-msgstr ""
+msgstr "BDT 路径配置"
 
 #: ../../source/tools/bdt.md:92
 msgid "Priority from high to low:"
-msgstr ""
+msgstr "优先级从高到低："
 
 #: ../../source/tools/bdt.md:94
 msgid "Command line: `--bdt-path /path/to/bdt`"
-msgstr ""
+msgstr "命令行：`--bdt-path /path/to/bdt`"
 
 #: ../../source/tools/bdt.md:95
 msgid "Environment variable: `export BDT_PATH=/path/to/BDT`"
-msgstr ""
+msgstr "环境变量：`export BDT_PATH=/path/to/BDT`"
 
 #: ../../source/tools/bdt.md:96
 msgid "System PATH"
-msgstr ""
+msgstr "系统 PATH"
 
 #: ../../source/tools/bdt.md:97
 #, python-brace-format
 msgid "SDK directory: `${TELINK_BASE}/tools/`"
-msgstr ""
+msgstr "SDK 目录：`${TELINK_BASE}/tools/`"
 
 #: ../../source/tools/bdt.md:109
 msgid "Cross-Platform Notes"
-msgstr ""
+msgstr "跨平台说明"
 
 #: ../../source/tools/bdt.md
 msgid "Platform"
-msgstr ""
+msgstr "平台"
 
 #: ../../source/tools/bdt.md
 msgid "Executable"
-msgstr ""
+msgstr "可执行文件"
 
 #: ../../source/tools/bdt.md
 msgid "Notes"
-msgstr ""
+msgstr "说明"
 
 #: ../../source/tools/bdt.md
 msgid "**Windows**"
-msgstr ""
+msgstr "**Windows**"
 
 #: ../../source/tools/bdt.md
 msgid "`Cmd_download_tool.exe`"
-msgstr ""
+msgstr "`Cmd_download_tool.exe`"
 
 #: ../../source/tools/bdt.md
 msgid "Automatically handles path separator conversion"
-msgstr ""
+msgstr "自动处理路径分隔符转换"
 
 #: ../../source/tools/bdt.md
 msgid "**Linux**"
-msgstr ""
+msgstr "**Linux**"
 
 #: ../../source/tools/bdt.md
 msgid "`bdt`"
-msgstr ""
+msgstr "`bdt`"
 
 #: ../../source/tools/bdt.md
 msgid "Standard Linux command"
-msgstr ""
+msgstr "标准 Linux 命令"
 
 #: ../../source/tools/bdt.md:116
 msgid "FAQ"
-msgstr ""
+msgstr "常见问题"
 
 #: ../../source/tools/bdt.md:118
 msgid "BDT Tool Not Found"
-msgstr ""
+msgstr "未找到 BDT 工具"
 
 #: ../../source/tools/bdt.md:124
 msgid "**Solution**: Configure the BDT path using the methods described above."
-msgstr ""
+msgstr "**解决方案**：使用上述方法配置 BDT 路径。"
 
 #: ../../source/tools/bdt.md:126
 msgid "Chip Type Not Specified"
-msgstr ""
+msgstr "未指定芯片类型"
 
 #: ../../source/tools/bdt.md:132
 msgid ""
 "**Solution**: Use the `--chip` argument to specify the chip, or ensure "
 "the build configuration includes chip information."
-msgstr ""
+msgstr "**解决方案**：使用 `--chip` 参数指定芯片，或确保构建配置中包含芯片信息。"
 
 #: ../../source/tools/bdt.md:134
 msgid "BDT Command Failed"
-msgstr ""
+msgstr "BDT 命令失败"
 
 #: ../../source/tools/bdt.md:136
 msgid "Check common causes:"
-msgstr ""
+msgstr "检查常见原因："
 
 #: ../../source/tools/bdt.md:137
 msgid "Incorrect chip type"
-msgstr ""
+msgstr "芯片类型不正确"
 
 #: ../../source/tools/bdt.md:138
 msgid "Invalid address or size"
-msgstr ""
+msgstr "地址或大小无效"
 
 #: ../../source/tools/bdt.md:139
 msgid "Device not connected"
-msgstr ""
-
+msgstr "设备未连接"

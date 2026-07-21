@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,11 +20,11 @@ msgstr ""
 
 #: ../../source/peripherals/gpio.md:6
 msgid "GPIO Driver"
-msgstr ""
+msgstr "GPIO 驱动"
 
 #: ../../source/peripherals/gpio.md:8
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/peripherals/gpio.md:10
 msgid ""
@@ -36,458 +35,462 @@ msgid ""
 "toggle). It also supports interrupt handling with configurable trigger "
 "conditions and callback registration."
 msgstr ""
+"GPIO（通用输入/输出）驱动提供了配置和使用通用微控制器引脚的接口。它支持引脚模式配置（输入、输出、上拉、下拉），引脚复用（Pinmux），以及直接引脚状态操作（写、读、翻转）。它还支持可配置触发条件和回调注册的中断处理。"
 
 #: ../../source/peripherals/gpio.md:12
 msgid "**Key Features:**"
-msgstr ""
+msgstr "**主要特性：**"
 
 #: ../../source/peripherals/gpio.md:14
 msgid "GPIO mode configuration (input, output, pull-up, pull-down)"
-msgstr ""
+msgstr "GPIO 模式配置（输入、输出、上拉、下拉）"
 
 #: ../../source/peripherals/gpio.md:15
 msgid "Pin multiplexing (Mux)"
-msgstr ""
+msgstr "引脚复用（Mux）"
 
 #: ../../source/peripherals/gpio.md:16
 msgid "Direct pin control (write, read, toggle)"
-msgstr ""
+msgstr "直接引脚控制（写、读、翻转）"
 
 #: ../../source/peripherals/gpio.md:17
 msgid "Interrupt handling (edge/level trigger + callback)"
-msgstr ""
+msgstr "中断处理（边沿/电平触发 + 回调）"
 
 #: ../../source/peripherals/gpio.md:18
 msgid "Ability to disable pin functionality"
-msgstr ""
+msgstr "禁用引脚功能的能力"
 
 #: ../../source/peripherals/gpio.md:20
 msgid "Data Types and Enums"
-msgstr ""
+msgstr "数据类型与枚举"
 
 #: ../../source/peripherals/gpio.md:22
 msgid "Port Identifiers"
-msgstr ""
+msgstr "端口标识符"
 
 #: ../../source/peripherals/gpio.md:24
 msgid ""
 "`enum tlk_gpio_port` — Generated at compile time based on "
 "`UNISDK_GPIO_PORT_COUNT` and `CONFIG_TLK_GPIO_PORT_##num##_ENABLED`."
 msgstr ""
+"`enum tlk_gpio_port` — 在编译时根据 `UNISDK_GPIO_PORT_COUNT` 和 `CONFIG_TLK_GPIO_PORT_##num##_ENABLED` 生成。"
 
 #: ../../source/peripherals/gpio.md
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 #: ../../source/peripherals/gpio.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/peripherals/gpio.md
 msgid "`GPIO_PORT_x`"
-msgstr ""
+msgstr "`GPIO_PORT_x`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Generated identifier for each enabled port"
-msgstr ""
+msgstr "每个已启用端口的生成标识符"
 
 #: ../../source/peripherals/gpio.md:30
 msgid "Pin Definitions"
-msgstr ""
+msgstr "引脚定义"
 
 #: ../../source/peripherals/gpio.md:32
 msgid "`enum tlk_gpio_pin` — Defines bitmasks for pins within a port."
-msgstr ""
+msgstr "`enum tlk_gpio_pin` — 定义端口内引脚的位掩码。"
 
 #: ../../source/peripherals/gpio.md
 msgid "`TLK_GPIO_PIN_NONE`"
-msgstr ""
+msgstr "`TLK_GPIO_PIN_NONE`"
 
 #: ../../source/peripherals/gpio.md
 msgid "No pin selected (value is 0)"
-msgstr ""
+msgstr "未选择引脚（值为 0）"
 
 #: ../../source/peripherals/gpio.md
 msgid "`GPIO_PIN_x`"
-msgstr ""
+msgstr "`GPIO_PIN_x`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Pin index bitmask (x is 0-7), defined as `TLK_BIT(x)`"
-msgstr ""
+msgstr "引脚索引位掩码（x 为 0-7），定义为 `TLK_BIT(x)`"
 
 #: ../../source/peripherals/gpio.md:39
 msgid "Pin Modes"
-msgstr ""
+msgstr "引脚模式"
 
 #: ../../source/peripherals/gpio.md ../../source/peripherals/gpio.md:41
 msgid "`enum tlk_gpio_mode`"
-msgstr ""
+msgstr "`enum tlk_gpio_mode`"
 
 #: ../../source/peripherals/gpio.md
 msgid "`TLK_GPIO_OUTPUT`"
-msgstr ""
+msgstr "`TLK_GPIO_OUTPUT`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Digital output (value is -1)"
-msgstr ""
+msgstr "数字输出（值为 -1）"
 
 #: ../../source/peripherals/gpio.md
 msgid "`TLK_GPIO_INPUT_NO_PULL`"
-msgstr ""
+msgstr "`TLK_GPIO_INPUT_NO_PULL`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Floating digital input"
-msgstr ""
+msgstr "浮空数字输入"
 
 #: ../../source/peripherals/gpio.md
 msgid "`TLK_GPIO_INPUT_PULL_UP`"
-msgstr ""
+msgstr "`TLK_GPIO_INPUT_PULL_UP`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Digital input with pull-up resistor"
-msgstr ""
+msgstr "带上拉电阻的数字输入"
 
 #: ../../source/peripherals/gpio.md
 msgid "`TLK_GPIO_INPUT_PULL_DOWN`"
-msgstr ""
+msgstr "`TLK_GPIO_INPUT_PULL_DOWN`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Digital input with pull-down resistor"
-msgstr ""
+msgstr "带下拉电阻的数字输入"
 
 #: ../../source/peripherals/gpio.md
 #, python-brace-format
 msgid "`TLK_GPIO_INPUT_PULL_UP_{name}`"
-msgstr ""
+msgstr "`TLK_GPIO_INPUT_PULL_UP_{name}`"
 
 #: ../../source/peripherals/gpio.md
 msgid ""
 "*Generated based on config `UNISDK_GPIO_PULL_DOWN_OPTIONS_COUNT`* Input "
 "with a specific pull-up value."
 msgstr ""
+"*基于配置 `UNISDK_GPIO_PULL_DOWN_OPTIONS_COUNT` 生成* 具有特定上拉值的输入。"
 
 #: ../../source/peripherals/gpio.md
 #, python-brace-format
 msgid "`TLK_GPIO_INPUT_PULL_DOWN_{name}`"
-msgstr ""
+msgstr "`TLK_GPIO_INPUT_PULL_DOWN_{name}`"
 
 #: ../../source/peripherals/gpio.md
 msgid ""
 "*Generated based on config `UNISDK_GPIO_PULL_DOWN_OPTIONS_COUNT`* Input "
 "with a specific pull-down value."
 msgstr ""
+"*基于配置 `UNISDK_GPIO_PULL_DOWN_OPTIONS_COUNT` 生成* 具有特定下拉值的输入。"
 
 #: ../../source/peripherals/gpio.md:52
 msgid "Interrupt Trigger Types"
-msgstr ""
+msgstr "中断触发类型"
 
 #: ../../source/peripherals/gpio.md ../../source/peripherals/gpio.md:54
 msgid "`enum tlk_gpio_intr_trigger`"
-msgstr ""
+msgstr "`enum tlk_gpio_intr_trigger`"
 
 #: ../../source/peripherals/gpio.md
 msgid "`TLK_GPIO_INTR_RISING_EDGE`"
-msgstr ""
+msgstr "`TLK_GPIO_INTR_RISING_EDGE`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Rising edge trigger"
-msgstr ""
+msgstr "上升沿触发"
 
 #: ../../source/peripherals/gpio.md
 msgid "`TLK_GPIO_INTR_FALLING_EDGE`"
-msgstr ""
+msgstr "`TLK_GPIO_INTR_FALLING_EDGE`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Falling edge trigger"
-msgstr ""
+msgstr "下降沿触发"
 
 #: ../../source/peripherals/gpio.md
 msgid "`TLK_GPIO_INTR_HIGH_LEVEL`"
-msgstr ""
+msgstr "`TLK_GPIO_INTR_HIGH_LEVEL`"
 
 #: ../../source/peripherals/gpio.md
 msgid "High level trigger"
-msgstr ""
+msgstr "高电平触发"
 
 #: ../../source/peripherals/gpio.md
 msgid "`TLK_GPIO_INTR_LOW_LEVEL`"
-msgstr ""
+msgstr "`TLK_GPIO_INTR_LOW_LEVEL`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Low level trigger"
-msgstr ""
+msgstr "低电平触发"
 
 #: ../../source/peripherals/gpio.md
 msgid "`TLK_GPIO_INTR_BOTH_EDGE`"
-msgstr ""
+msgstr "`TLK_GPIO_INTR_BOTH_EDGE`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Both edges trigger"
-msgstr ""
+msgstr "双沿触发"
 
 #: ../../source/peripherals/gpio.md:64
 msgid "Interrupt Callback Types"
-msgstr ""
+msgstr "中断回调类型"
 
 #: ../../source/peripherals/gpio.md:66
 msgid "Types used for handling GPIO interrupts via user-registered callbacks."
-msgstr ""
+msgstr "用于通过用户注册的回调处理 GPIO 中断的类型。"
 
 #: ../../source/peripherals/gpio.md:68
 msgid "**Callback Handler Type**"
-msgstr ""
+msgstr "**回调处理函数类型**"
 
 #: ../../source/peripherals/gpio.md:70
 msgid "Function pointer type for a GPIO interrupt callback."
-msgstr ""
+msgstr "GPIO 中断回调的函数指针类型。"
 
 #: ../../source/peripherals/gpio.md
 msgid "Parameter"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/peripherals/gpio.md
 msgid "`port`"
-msgstr ""
+msgstr "`port`"
 
 #: ../../source/peripherals/gpio.md
 msgid "GPIO port on which the interrupt occurred."
-msgstr ""
+msgstr "发生中断的 GPIO 端口。"
 
 #: ../../source/peripherals/gpio.md
 msgid "`pin`"
-msgstr ""
+msgstr "`pin`"
 
 #: ../../source/peripherals/gpio.md
 msgid "GPIO pin that triggered the interrupt."
-msgstr ""
+msgstr "触发中断的 GPIO 引脚。"
 
 #: ../../source/peripherals/gpio.md:82
 msgid "**Callback Registration Structure**"
-msgstr ""
+msgstr "**回调注册结构体**"
 
 #: ../../source/peripherals/gpio.md:84
 msgid ""
 "Structure used to register a GPIO interrupt callback in the internal "
 "callback list."
-msgstr ""
+msgstr "用于在内部回调列表中注册 GPIO 中断回调的结构体。"
 
 #: ../../source/peripherals/gpio.md
 msgid "Field"
-msgstr ""
+msgstr "字段"
 
 #: ../../source/peripherals/gpio.md
 msgid "`node`"
-msgstr ""
+msgstr "`node`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Internal list node used to link callbacks."
-msgstr ""
+msgstr "用于链接回调的内部列表节点。"
 
 #: ../../source/peripherals/gpio.md
 msgid "`handler`"
-msgstr ""
+msgstr "`handler`"
 
 #: ../../source/peripherals/gpio.md
 msgid "User-defined interrupt callback function."
-msgstr ""
+msgstr "用户定义的中断回调函数。"
 
 #: ../../source/peripherals/gpio.md
 msgid "GPIO pin associated with this callback."
-msgstr ""
+msgstr "与此回调关联的 GPIO 引脚。"
 
 #: ../../source/peripherals/gpio.md:100
 msgid "Port Pin Struct"
-msgstr ""
+msgstr "端口引脚结构体"
 
 #: ../../source/peripherals/gpio.md:109
 msgid "Driver API"
-msgstr ""
+msgstr "驱动 API"
 
 #: ../../source/peripherals/gpio.md:111
 msgid "`tlk_gpio_disable`"
-msgstr ""
+msgstr "`tlk_gpio_disable`"
 
 #: ../../source/peripherals/gpio.md:113
 msgid "Disables the pin function and resets configuration."
-msgstr ""
+msgstr "禁用引脚功能并重置配置。"
 
 #: ../../source/peripherals/gpio.md:119 ../../source/peripherals/gpio.md:137
 #: ../../source/peripherals/gpio.md:155 ../../source/peripherals/gpio.md:173
 #: ../../source/peripherals/gpio.md:190 ../../source/peripherals/gpio.md:207
 #: ../../source/peripherals/gpio.md:228 ../../source/peripherals/gpio.md:249
 msgid "**Parameters:**"
-msgstr ""
+msgstr "**参数：**"
 
 #: ../../source/peripherals/gpio.md
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 #: ../../source/peripherals/gpio.md
 msgid "`enum tlk_gpio_port`"
-msgstr ""
+msgstr "`enum tlk_gpio_port`"
 
 #: ../../source/peripherals/gpio.md
 msgid "GPIO port."
-msgstr ""
+msgstr "GPIO 端口。"
 
 #: ../../source/peripherals/gpio.md
 msgid "`enum tlk_gpio_pin`"
-msgstr ""
+msgstr "`enum tlk_gpio_pin`"
 
 #: ../../source/peripherals/gpio.md
 msgid "GPIO pin."
-msgstr ""
+msgstr "GPIO 引脚。"
 
 #: ../../source/peripherals/gpio.md:126 ../../source/peripherals/gpio.md:145
 #: ../../source/peripherals/gpio.md:163 ../../source/peripherals/gpio.md:180
 #: ../../source/peripherals/gpio.md:215 ../../source/peripherals/gpio.md:236
 #: ../../source/peripherals/gpio.md:256
 msgid "**Return value:** None"
-msgstr ""
+msgstr "**返回值：** 无"
 
 #: ../../source/peripherals/gpio.md:128
 msgid "`tlk_gpio_configure`"
-msgstr ""
+msgstr "`tlk_gpio_configure`"
 
 #: ../../source/peripherals/gpio.md:130
 msgid "Sets the GPIO pin mode (input/output, optional pull-up/pull-down)."
-msgstr ""
+msgstr "设置 GPIO 引脚模式（输入/输出，可选上拉/下拉）。"
 
 #: ../../source/peripherals/gpio.md
 msgid "`mode`"
-msgstr ""
+msgstr "`mode`"
 
 #: ../../source/peripherals/gpio.md
 msgid "GPIO mode (output / input pull-up / pull-down)."
-msgstr ""
+msgstr "GPIO 模式（输出/输入上拉/下拉）。"
 
 #: ../../source/peripherals/gpio.md:147
 msgid "`tlk_gpio_pin_write`"
-msgstr ""
+msgstr "`tlk_gpio_pin_write`"
 
 #: ../../source/peripherals/gpio.md:149
 msgid "Sets the pin output level."
-msgstr ""
+msgstr "设置引脚输出电平。"
 
 #: ../../source/peripherals/gpio.md
 msgid "`value`"
-msgstr ""
+msgstr "`value`"
 
 #: ../../source/peripherals/gpio.md
 msgid "`bool`"
-msgstr ""
+msgstr "`bool`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Logic level (`true` = high, `false` = low)."
-msgstr ""
+msgstr "逻辑电平（`true` = 高，`false` = 低）。"
 
 #: ../../source/peripherals/gpio.md:165
 msgid "`tlk_gpio_pin_toggle`"
-msgstr ""
+msgstr "`tlk_gpio_pin_toggle`"
 
 #: ../../source/peripherals/gpio.md:167
 msgid "Toggles the current output value of the pin."
-msgstr ""
+msgstr "翻转引脚的当前输出值。"
 
 #: ../../source/peripherals/gpio.md:182
 msgid "`tlk_gpio_pin_read`"
-msgstr ""
+msgstr "`tlk_gpio_pin_read`"
 
 #: ../../source/peripherals/gpio.md:184
 msgid "Reads the current logic level of the pin."
-msgstr ""
+msgstr "读取引脚的当前逻辑电平。"
 
 #: ../../source/peripherals/gpio.md:197
 msgid ""
 "**Return value:** Returns `true` if the pin level is high, and `false` if"
 " low."
 msgstr ""
+"**返回值：** 如果引脚电平为高则返回 `true`，为低则返回 `false`。"
 
 #: ../../source/peripherals/gpio.md:199
 msgid "`tlk_gpio_set_mux`"
-msgstr ""
+msgstr "`tlk_gpio_set_mux`"
 
 #: ../../source/peripherals/gpio.md:201
 msgid "Configures the pin multiplexing function."
-msgstr ""
+msgstr "配置引脚复用功能。"
 
 #: ../../source/peripherals/gpio.md
 msgid "`mux`"
-msgstr ""
+msgstr "`mux`"
 
 #: ../../source/peripherals/gpio.md
 msgid "`uint8_t`"
-msgstr ""
+msgstr "`uint8_t`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Multiplexer index for the selected function."
-msgstr ""
+msgstr "所选功能的复用器索引。"
 
 #: ../../source/peripherals/gpio.md:217
 msgid "`tlk_gpio_irq_configure`"
-msgstr ""
+msgstr "`tlk_gpio_irq_configure`"
 
 #: ../../source/peripherals/gpio.md:219 ../../source/peripherals/gpio.md:240
 msgid "!!! info \"Requires `CONFIG_TLK_PLIC` enabled\""
-msgstr ""
+msgstr "!!! info \"需要启用 `CONFIG_TLK_PLIC`\""
 
 #: ../../source/peripherals/gpio.md:221
 msgid "Sets the interrupt trigger type."
-msgstr ""
+msgstr "设置中断触发类型。"
 
 #: ../../source/peripherals/gpio.md
 msgid "`trigger`"
-msgstr ""
+msgstr "`trigger`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Interrupt trigger mode (edge or level)."
-msgstr ""
+msgstr "中断触发模式（边沿或电平）。"
 
 #: ../../source/peripherals/gpio.md:238
 msgid "`tlk_gpio_irq_add_callback`"
-msgstr ""
+msgstr "`tlk_gpio_irq_add_callback`"
 
 #: ../../source/peripherals/gpio.md:242
 msgid "Registers an interrupt callback function."
-msgstr ""
+msgstr "注册中断回调函数。"
 
 #: ../../source/peripherals/gpio.md
 msgid "`callback`"
-msgstr ""
+msgstr "`callback`"
 
 #: ../../source/peripherals/gpio.md
 msgid "`struct tlk_gpio_irq_callback *`"
-msgstr ""
+msgstr "`struct tlk_gpio_irq_callback *`"
 
 #: ../../source/peripherals/gpio.md
 msgid "Pointer to GPIO interrupt callback structure."
-msgstr ""
+msgstr "指向 GPIO 中断回调结构体的指针。"
 
 #: ../../source/peripherals/gpio.md:258
 msgid "Kconfig Configuration"
-msgstr ""
+msgstr "Kconfig 配置"
 
 #: ../../source/peripherals/gpio.md:275
 msgid "View in the menuconfig"
-msgstr ""
+msgstr "在 menuconfig 中查看"
 
 #: ../../source/peripherals/gpio.md:277
 msgid "![alt text](pics/gpio_1.png) *Figure 1. GPIO driver configurations*"
-msgstr ""
+msgstr "![替代文本](pics/gpio_1.png) *图 1. GPIO 驱动配置*"
 
 #: ../../source/peripherals/gpio.md:277 ../../source/peripherals/gpio.md:280
 msgid "alt text"
-msgstr ""
+msgstr "替代文本"
 
 #: ../../source/peripherals/gpio.md:280
 msgid "![alt text](pics/gpio_2.png) *Figure 2. GPIO driver ports configurations*"
-msgstr ""
+msgstr "![替代文本](pics/gpio_2.png) *图 2. GPIO 驱动端口配置*"
 
 #: ../../source/peripherals/gpio.md:283
 msgid "Related Resources"
-msgstr ""
+msgstr "相关资源"
 
 #: ../../source/peripherals/gpio.md:285
 msgid "[GPIO Samples](../samples/gpio.md) — Ready-to-run GPIO sample code"
-msgstr ""
-
+msgstr "[GPIO 示例](../samples/gpio.md) — 可直接运行的 GPIO 示例代码"

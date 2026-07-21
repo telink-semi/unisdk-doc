@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,130 +20,130 @@ msgstr ""
 
 #: ../../source/build_config/build_flow.md:6
 msgid "Build Flow"
-msgstr ""
+msgstr "构建流程"
 
 #: ../../source/build_config/build_flow.md:8
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/build_config/build_flow.md:10
 msgid ""
 "This document details the complete build process flow from configuration "
 "to firmware generation."
-msgstr ""
+msgstr "本文档详细介绍了从配置到固件生成的完整构建流程。"
 
 #: ../../source/build_config/build_flow.md:12
 msgid "Complete Build Flow"
-msgstr ""
+msgstr "完整构建流程"
 
 #: ../../source/build_config/build_flow.md:53
 msgid "Getting Started Guide"
-msgstr ""
+msgstr "入门指南"
 
 #: ../../source/build_config/build_flow.md:55
 msgid "Install Dependencies"
-msgstr ""
+msgstr "安装依赖"
 
 #: ../../source/build_config/build_flow.md:57
 msgid "You'll install some host dependencies using your package manager."
-msgstr ""
+msgstr "您需要使用包管理器安装一些主机依赖。"
 
 #: ../../source/build_config/build_flow.md:59
 msgid "Ubuntu"
-msgstr ""
+msgstr "Ubuntu"
 
 #: ../../source/build_config/build_flow.md:61
 msgid "Use apt to install the required dependencies:"
-msgstr ""
+msgstr "使用 apt 安装所需依赖："
 
 #: ../../source/build_config/build_flow.md:67
 #: ../../source/build_config/build_flow.md:86
 msgid "Verify the versions:"
-msgstr ""
+msgstr "验证版本："
 
 #: ../../source/build_config/build_flow.md:76
 msgid ""
 "If \"command not found\" is displayed, the corresponding tool is not "
 "installed."
-msgstr ""
+msgstr "如果显示\"command not found\"，则表示相应工具未安装。"
 
 #: ../../source/build_config/build_flow.md:78
 msgid "MacOS"
-msgstr ""
+msgstr "MacOS"
 
 #: ../../source/build_config/build_flow.md:80
 msgid "Use Homebrew to install the required dependencies:"
-msgstr ""
+msgstr "使用 Homebrew 安装所需依赖："
 
 #: ../../source/build_config/build_flow.md:95
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../source/build_config/build_flow.md:97
 msgid "You can install using the following two methods:"
-msgstr ""
+msgstr "您可以通过以下两种方式安装："
 
 #: ../../source/build_config/build_flow.md:99
 msgid "For systems that support winget:"
-msgstr ""
+msgstr "对于支持 winget 的系统："
 
 #: ../../source/build_config/build_flow.md:105
 msgid ""
 "For systems that don't support winget, download and install from official"
 " websites:"
-msgstr ""
+msgstr "对于不支持 winget 的系统，请从官方网站下载并安装："
 
 #: ../../source/build_config/build_flow.md:106
 msgid "[CMake](https://cmake.org/download/) (check \"Add CMake to the PATH\")"
-msgstr ""
+msgstr "[CMake](https://cmake.org/download/)（勾选\"Add CMake to the PATH\"）"
 
 #: ../../source/build_config/build_flow.md:107
 msgid ""
 "[Ninja](https://github.com/ninja-build/ninja/releases) (manually add to "
 "PATH)"
-msgstr ""
+msgstr "[Ninja](https://github.com/ninja-build/ninja/releases)（手动添加到 PATH）"
 
 #: ../../source/build_config/build_flow.md:108
 msgid ""
 "[Python](https://www.python.org/downloads/) (check \"Add Python.exe to "
 "PATH\")"
-msgstr ""
+msgstr "[Python](https://www.python.org/downloads/)（勾选\"Add Python.exe to PATH\"）"
 
 #: ../../source/build_config/build_flow.md:109
 msgid "[Git](https://git-scm.com/downloads)"
-msgstr ""
+msgstr "[Git](https://git-scm.com/downloads)"
 
 #: ../../source/build_config/build_flow.md:111
 msgid "After installation, verify:"
-msgstr ""
+msgstr "安装后验证："
 
 #: ../../source/build_config/build_flow.md:120
 msgid "Install Python Dependencies"
-msgstr ""
+msgstr "安装 Python 依赖"
 
 #: ../../source/build_config/build_flow.md:122
 msgid "Python Virtual Environment"
-msgstr ""
+msgstr "Python 虚拟环境"
 
 #: ../../source/build_config/build_flow.md:137
 msgid "When using PowerShell, you might encounter:"
-msgstr ""
+msgstr "使用 PowerShell 时，可能会遇到："
 
 #: ../../source/build_config/build_flow.md:143
 msgid "Resolve by:"
-msgstr ""
+msgstr "解决方法："
 
 #: ../../source/build_config/build_flow.md:149
 msgid "Then install Python dependencies:"
-msgstr ""
+msgstr "然后安装 Python 依赖："
 
 #: ../../source/build_config/build_flow.md:155
 msgid "West Tool Setup"
-msgstr ""
+msgstr "West 工具设置"
 
 #: ../../source/build_config/build_flow.md:165
 msgid "**Potential Issue with west init -l:**"
-msgstr ""
+msgstr "**west init -l 的潜在问题：**"
 
 #: ../../source/build_config/build_flow.md:167
 #, python-brace-format
@@ -152,449 +151,448 @@ msgid ""
 "If you encounter the error `already initialized in {where}, aborting.`, "
 "this is likely due to the `ZEPHYR_BASE` environment variable being set to"
 " a Zephyr workspace with an existing `.west` directory."
-msgstr ""
+msgstr "如果遇到错误 `already initialized in {where}, aborting.`，这很可能是由于 `ZEPHYR_BASE` 环境变量指向了已存在 `.west` 目录的 Zephyr 工作空间。"
 
 #: ../../source/build_config/build_flow.md:169
 msgid "**Solution:** Temporarily unset `ZEPHYR_BASE`:"
-msgstr ""
+msgstr "**解决方法：** 临时取消设置 `ZEPHYR_BASE`："
 
 #: ../../source/build_config/build_flow.md:171
 msgid "**Windows (PowerShell):**"
-msgstr ""
+msgstr "**Windows (PowerShell)：**"
 
 #: ../../source/build_config/build_flow.md:176
 msgid "**Linux/macOS:**"
-msgstr ""
+msgstr "**Linux/macOS：**"
 
 #: ../../source/build_config/build_flow.md:181
 msgid "Toolchain Configuration"
-msgstr ""
+msgstr "工具链配置"
 
 #: ../../source/build_config/build_flow.md:183
 msgid ""
 "Download and extract the toolchain (only available for Telink): "
 "[Toolchain_V5.4.1](https://drive.weixin.qq.com/s?k=AKwA0AfNAA8Ox1r0ab)"
-msgstr ""
+msgstr "下载并解压工具链（仅 Telink 可用）：[Toolchain_V5.4.1](https://drive.weixin.qq.com/s?k=AKwA0AfNAA8Ox1r0ab)"
 
 #: ../../source/build_config/build_flow.md:186
 msgid ""
 "Set the `TELINK_TOOLCHAIN_PATH` environment variable and ensure toolchain"
 " binaries are accessible in PATH."
-msgstr ""
+msgstr "设置 `TELINK_TOOLCHAIN_PATH` 环境变量，并确保工具链可执行文件可在 PATH 中访问。"
 
 #: ../../source/build_config/build_flow.md:188
 msgid "Six Phases"
-msgstr ""
+msgstr "六个阶段"
 
 #: ../../source/build_config/build_flow.md:190
 msgid "1. Environment Validation"
-msgstr ""
+msgstr "1. 环境验证"
 
 #: ../../source/build_config/build_flow.md:192
 msgid "Verify that the Python virtual environment is activated"
-msgstr ""
+msgstr "验证 Python 虚拟环境已激活"
 
 #: ../../source/build_config/build_flow.md:193
 msgid "Verify that West is available and version >= 0.14.0"
-msgstr ""
+msgstr "验证 West 可用且版本 >= 0.14.0"
 
 #: ../../source/build_config/build_flow.md:194
 msgid "Verify that `TELINK_TOOLCHAIN_PATH` is set"
-msgstr ""
+msgstr "验证 `TELINK_TOOLCHAIN_PATH` 已设置"
 
 #: ../../source/build_config/build_flow.md:195
 msgid "Verify that the toolchain executables are accessible"
-msgstr ""
+msgstr "验证工具链可执行文件可访问"
 
 #: ../../source/build_config/build_flow.md:197
 msgid "2. CMake Configuration"
-msgstr ""
+msgstr "2. CMake 配置"
 
 #: ../../source/build_config/build_flow.md:203
 msgid ""
 "Load and execute all CMake modules (python -> extensions -> west -> "
 "compiler -> kconfig -> pinmux -> linker)."
-msgstr ""
+msgstr "加载并执行所有 CMake 模块（python -> extensions -> west -> compiler -> kconfig -> pinmux -> linker）。"
 
 #: ../../source/build_config/build_flow.md:205
 msgid "3. Configuration Generation (Config Target)"
-msgstr ""
+msgstr "3. 配置生成（Config 目标）"
 
 #: ../../source/build_config/build_flow.md:211
 msgid "Executed in order:"
-msgstr ""
+msgstr "按顺序执行："
 
 #: ../../source/build_config/build_flow.md:212
 msgid ""
 "Clean old config -> 2. Generate `chip.config` -> 3. Generate "
 "`capabilities.h` -> 4. Generate `build.config` -> 5. Merge `.config` -> "
 "6. Generate pinmux configuration"
-msgstr ""
+msgstr "清理旧配置 -> 2. 生成 `chip.config` -> 3. 生成 `capabilities.h` -> 4. 生成 `build.config` -> 5. 合并 `.config` -> 6. 生成 pinmux 配置"
 
 #: ../../source/build_config/build_flow.md:214
 msgid "4. Source File Compilation"
-msgstr ""
+msgstr "4. 源文件编译"
 
 #: ../../source/build_config/build_flow.md:216
 msgid ""
 "Ninja compiles all source files concurrently according to `build.ninja` "
 "rules."
-msgstr ""
+msgstr "Ninja 根据 `build.ninja` 规则并发编译所有源文件。"
 
 #: ../../source/build_config/build_flow.md:218
 msgid "5. Linking"
-msgstr ""
+msgstr "5. 链接"
 
 #: ../../source/build_config/build_flow.md:220
 msgid ""
 "Link object files into an ELF executable, outputting `.elf`, `.bin`, "
 "`.map`."
-msgstr ""
+msgstr "将目标文件链接为 ELF 可执行文件，输出 `.elf`、`.bin`、`.map`。"
 
 #: ../../source/build_config/build_flow.md:222
 msgid "6. Firmware Generation"
-msgstr ""
+msgstr "6. 固件生成"
 
 #: ../../source/build_config/build_flow.md:224
 msgid "Use `objcopy` to convert ELF to binary `.bin` file"
-msgstr ""
+msgstr "使用 `objcopy` 将 ELF 转换为二进制 `.bin` 文件"
 
 #: ../../source/build_config/build_flow.md:225
 msgid "Use `objdump` to generate disassembly for debugging"
-msgstr ""
+msgstr "使用 `objdump` 生成反汇编代码用于调试"
 
 #: ../../source/build_config/build_flow.md:226
 msgid "Run `tl_check_fw.sh` to verify firmware"
-msgstr ""
+msgstr "运行 `tl_check_fw.sh` 验证固件"
 
 #: ../../source/build_config/build_flow.md:228
 msgid "Configuration Commands"
-msgstr ""
+msgstr "配置命令"
 
 #: ../../source/build_config/build_flow.md:230
 msgid "Basic Configuration"
-msgstr ""
+msgstr "基本配置"
 
 #: ../../source/build_config/build_flow.md:236
 msgid ""
 "This command configures the application in the current directory using "
 "default settings."
-msgstr ""
+msgstr "此命令使用默认设置配置当前目录中的应用。"
 
 #: ../../source/build_config/build_flow.md:238
 msgid "**Process:**"
-msgstr ""
+msgstr "**流程：**"
 
 #: ../../source/build_config/build_flow.md:239
 msgid "Sets up environment variables (TELINK_BASE)"
-msgstr ""
+msgstr "设置环境变量（TELINK_BASE）"
 
 #: ../../source/build_config/build_flow.md:240
 msgid "Creates build directory if needed"
-msgstr ""
+msgstr "按需创建构建目录"
 
 #: ../../source/build_config/build_flow.md:241
 msgid "Runs initial CMake configuration if required"
-msgstr ""
+msgstr "按需运行初始 CMake 配置"
 
 #: ../../source/build_config/build_flow.md:242
 msgid "Executes the unified `config` target which:"
-msgstr ""
+msgstr "执行统一的 `config` 目标，该目标："
 
 #: ../../source/build_config/build_flow.md:243
 msgid "Generates `chip.config` from `Kconfig.chip`"
-msgstr ""
+msgstr "从 `Kconfig.chip` 生成 `chip.config`"
 
 #: ../../source/build_config/build_flow.md:244
 msgid "Generates `capabilities.h` from chip configuration"
-msgstr ""
+msgstr "从芯片配置生成 `capabilities.h`"
 
 #: ../../source/build_config/build_flow.md:245
 msgid "Generates `build.config` from `Kconfig.build`"
-msgstr ""
+msgstr "从 `Kconfig.build` 生成 `build.config`"
 
 #: ../../source/build_config/build_flow.md:246
 msgid "Merges configurations into final `.config`"
-msgstr ""
+msgstr "将配置合并为最终的 `.config`"
 
 #: ../../source/build_config/build_flow.md:247
 msgid "Generates pinmux configuration files"
-msgstr ""
+msgstr "生成 pinmux 配置文件"
 
 #: ../../source/build_config/build_flow.md:249
 msgid "Common Configuration Examples"
-msgstr ""
+msgstr "常见配置示例"
 
 #: ../../source/build_config/build_flow.md:262
 msgid "Basic Build Commands"
-msgstr ""
+msgstr "基本构建命令"
 
 #: ../../source/build_config/build_flow.md:269
 msgid ""
 "This command builds the application in the current directory. If it's the"
 " first build, it will automatically configure and build."
-msgstr ""
+msgstr "此命令构建当前目录中的应用。如果是首次构建，将自动进行配置和构建。"
 
 #: ../../source/build_config/build_flow.md:271
 msgid "**Pre-build Checks:**"
-msgstr ""
+msgstr "**预构建检查：**"
 
 #: ../../source/build_config/build_flow.md:272
 msgid ""
 "Checks for existing `.config`, `build.config`, `chip.config`, `pinmux.h`,"
 " and `capabilities.h` files"
-msgstr ""
+msgstr "检查是否存在 `.config`、`build.config`、`chip.config`、`pinmux.h` 和 `capabilities.h` 文件"
 
 #: ../../source/build_config/build_flow.md:273
 msgid "Invokes CMake to generate the build system"
-msgstr ""
+msgstr "调用 CMake 生成构建系统"
 
 #: ../../source/build_config/build_flow.md:274
 msgid "Compiles source code using the selected toolchain"
-msgstr ""
+msgstr "使用选定的工具链编译源代码"
 
 #: ../../source/build_config/build_flow.md:275
 msgid "Generates firmware binaries in the `build/` directory"
-msgstr ""
+msgstr "在 `build/` 目录中生成固件二进制文件"
 
 #: ../../source/build_config/build_flow.md:277
 msgid "Common Build Command Examples"
-msgstr ""
+msgstr "常见构建命令示例"
 
 #: ../../source/build_config/build_flow.md:296
 msgid "Configuration File Generation Logic"
-msgstr ""
+msgstr "配置文件生成逻辑"
 
 #: ../../source/build_config/build_flow.md:298
 msgid "File Hierarchy"
-msgstr ""
+msgstr "文件层次结构"
 
 #: ../../source/build_config/build_flow.md:300
 msgid "Configuration files are loaded in order of increasing priority:"
-msgstr ""
+msgstr "配置文件按优先级递增的顺序加载："
 
 #: ../../source/build_config/build_flow.md:302
 msgid "**chip.config** -- Chip default configuration (lowest priority)"
-msgstr ""
+msgstr "**chip.config** -- 芯片默认配置（最低优先级）"
 
 #: ../../source/build_config/build_flow.md:303
 msgid "**build.config** -- User-defined build options"
-msgstr ""
+msgstr "**build.config** -- 用户定义的构建选项"
 
 #: ../../source/build_config/build_flow.md:304
 msgid "**.config** -- Final merged configuration (highest priority)"
-msgstr ""
+msgstr "**.config** -- 最终合并配置（最高优先级）"
 
 #: ../../source/build_config/build_flow.md:306
 msgid "Configuration Generation Flow"
-msgstr ""
+msgstr "配置生成流程"
 
 #: ../../source/build_config/build_flow.md:308
 msgid "When executing `west tl-config`, the flow is:"
-msgstr ""
+msgstr "执行 `west tl-config` 时，流程如下："
 
 #: ../../source/build_config/build_flow.md:310
 msgid ""
 "**Parameter Processing Phase**: Parses source directory and build "
 "directory options"
-msgstr ""
+msgstr "**参数处理阶段**：解析源目录和构建目录选项"
 
 #: ../../source/build_config/build_flow.md:311
 msgid ""
 "**CMake Configuration Phase**: Checks for existing `CMakeCache.txt`, runs"
 " CMake configuration with Ninja generator"
-msgstr ""
+msgstr "**CMake 配置阶段**：检查现有的 `CMakeCache.txt`，使用 Ninja 生成器运行 CMake 配置"
 
 #: ../../source/build_config/build_flow.md:312
 msgid ""
 "**Configuration Target Execution**: Executes `cmake --build <build_dir> "
 "--target config`"
-msgstr ""
+msgstr "**配置目标执行**：执行 `cmake --build <build_dir> --target config`"
 
 #: ../../source/build_config/build_flow.md:314
 msgid "When executing `west tl-build` (with `-k/--kconfig`), the flow is:"
-msgstr ""
+msgstr "执行 `west tl-build`（带 `-k/--kconfig`）时，流程如下："
 
 #: ../../source/build_config/build_flow.md:316
 msgid "**Parameter Processing**: Checks for `--board` or `--soc` parameters"
-msgstr ""
+msgstr "**参数处理**：检查 `--board` 或 `--soc` 参数"
 
 #: ../../source/build_config/build_flow.md:317
 msgid ""
 "**Default Configuration Generation**: Runs `scripts/kconfig.py` to "
 "generate `chip.config` and `build.config`, merges into `.config`"
-msgstr ""
+msgstr "**默认配置生成**：运行 `scripts/kconfig.py` 生成 `chip.config` 和 `build.config`，合并为 `.config`"
 
 #: ../../source/build_config/build_flow.md:318
 msgid "**CMake Configuration**: Passes `BOARD` and `SOC` parameters to CMake"
-msgstr ""
+msgstr "**CMake 配置**：将 `BOARD` 和 `SOC` 参数传递给 CMake"
 
 #: ../../source/build_config/build_flow.md:320
 msgid "Dependencies"
-msgstr ""
+msgstr "依赖关系"
 
 #: ../../source/build_config/build_flow.md:322
 msgid ""
 "`.config` depends on `chip.config` and `build.config` (when automatically"
 " generated)"
-msgstr ""
+msgstr "`.config` 依赖于 `chip.config` 和 `build.config`（自动生成时）"
 
 #: ../../source/build_config/build_flow.md:323
 msgid ""
 "The CMake build system depends on `.config` to determine compilation "
 "options"
-msgstr ""
+msgstr "CMake 构建系统依赖 `.config` 来确定编译选项"
 
 #: ../../source/build_config/build_flow.md:324
 msgid ""
 "CMake monitors changes to `.config` and reconfigures the project when the"
 " file is modified"
-msgstr ""
+msgstr "CMake 监视 `.config` 的变化，并在文件被修改时重新配置项目"
 
 #: ../../source/build_config/build_flow.md
 #: ../../source/build_config/build_flow.md:326
 msgid "Build Results"
-msgstr ""
+msgstr "构建结果"
 
 #: ../../source/build_config/build_flow.md:340
 msgid "Building Without West"
-msgstr ""
+msgstr "不使用 West 构建"
 
 #: ../../source/build_config/build_flow.md:342
 msgid "This section explains how to build without using the west tool."
-msgstr ""
+msgstr "本节说明如何在不使用 west 工具的情况下进行构建。"
 
 #: ../../source/build_config/build_flow.md:344
 msgid "CMake Configuration"
-msgstr ""
+msgstr "CMake 配置"
 
 #: ../../source/build_config/build_flow.md:350
 msgid "Parameters:"
-msgstr ""
+msgstr "参数："
 
 #: ../../source/build_config/build_flow.md:351
 msgid "**`-B path/to/build`**: Specifies the build directory"
-msgstr ""
+msgstr "**`-B path/to/build`**：指定构建目录"
 
 #: ../../source/build_config/build_flow.md:352
 msgid "**`-G Ninja`**: Specifies Ninja as the generator"
-msgstr ""
+msgstr "**`-G Ninja`**：指定 Ninja 作为生成器"
 
 #: ../../source/build_config/build_flow.md:353
 msgid ""
 "**`-DTelink_DIR='path/to/telink-package'`**: Points to the "
 "TelinkConfig.cmake file (not needed if `TELINK_BASE` is set)"
-msgstr ""
+msgstr "**`-DTelink_DIR='path/to/telink-package'`**：指向 TelinkConfig.cmake 文件（如果已设置 `TELINK_BASE` 则无需指定）"
 
 #: ../../source/build_config/build_flow.md:354
 msgid "**`-S path/to/source`**: Specifies the source code directory"
-msgstr ""
+msgstr "**`-S path/to/source`**：指定源代码目录"
 
 #: ../../source/build_config/build_flow.md:356
 msgid "CMake Build"
-msgstr ""
+msgstr "CMake 构建"
 
 #: ../../source/build_config/build_flow.md:369
 msgid "Troubleshooting"
-msgstr ""
+msgstr "故障排除"
 
 #: ../../source/build_config/build_flow.md:371
 msgid "Environment Issues"
-msgstr ""
+msgstr "环境问题"
 
 #: ../../source/build_config/build_flow.md:373
 msgid "**Problem: TELINK_TOOLCHAIN_PATH not found**"
-msgstr ""
+msgstr "**问题：未找到 TELINK_TOOLCHAIN_PATH**"
 
 #: ../../source/build_config/build_flow.md:384
 msgid "**Problem: CMake configuration fails**"
-msgstr ""
+msgstr "**问题：CMake 配置失败**"
 
 #: ../../source/build_config/build_flow.md:386
 msgid "Ensure all dependencies are installed"
-msgstr ""
+msgstr "确保所有依赖已安装"
 
 #: ../../source/build_config/build_flow.md:387
 msgid "Check CMake version compatibility"
-msgstr ""
+msgstr "检查 CMake 版本兼容性"
 
 #: ../../source/build_config/build_flow.md:388
 msgid "Clear old build cache with `--clean`"
-msgstr ""
+msgstr "使用 `--clean` 清除旧的构建缓存"
 
 #: ../../source/build_config/build_flow.md:390
 msgid "Build Issues"
-msgstr ""
+msgstr "构建问题"
 
 #: ../../source/build_config/build_flow.md:392
 msgid "**Problem: Compilation errors**"
-msgstr ""
+msgstr "**问题：编译错误**"
 
 #: ../../source/build_config/build_flow.md:394
 msgid "Check application code for syntax errors"
-msgstr ""
+msgstr "检查应用代码是否存在语法错误"
 
 #: ../../source/build_config/build_flow.md:395
 msgid "Ensure correct board and chip configurations are used"
-msgstr ""
+msgstr "确保使用了正确的板卡和芯片配置"
 
 #: ../../source/build_config/build_flow.md:396
 msgid "Try a clean build with `--pristine=always`"
-msgstr ""
+msgstr "尝试使用 `--pristine=always` 进行干净构建"
 
 #: ../../source/build_config/build_flow.md:398
 msgid "menuconfig Issues"
-msgstr ""
+msgstr "menuconfig 问题"
 
 #: ../../source/build_config/build_flow.md:400
 msgid "**Problem: Arrow icons not working in VSCode PowerShell**"
-msgstr ""
+msgstr "**问题：VSCode PowerShell 中箭头图标无法使用**"
 
 #: ../../source/build_config/build_flow.md:402
 msgid "Roll back to an earlier VSCode version or use the test ConPty library"
-msgstr ""
+msgstr "回滚到较早的 VSCode 版本或使用测试版 ConPty 库"
 
 #: ../../source/build_config/build_flow.md:403
 msgid "Use Windows 11"
-msgstr ""
+msgstr "使用 Windows 11"
 
 #: ../../source/build_config/build_flow.md:404
 msgid "Use letter keys instead of arrow icons"
-msgstr ""
+msgstr "使用字母键代替箭头图标"
 
 #: ../../source/build_config/build_flow.md:405
 msgid "Use Command Prompt instead of PowerShell"
-msgstr ""
+msgstr "使用命令提示符代替 PowerShell"
 
 #: ../../source/build_config/build_flow.md:407
 msgid "Environment Variable Issues"
-msgstr ""
+msgstr "环境变量问题"
 
 #: ../../source/build_config/build_flow.md:409
 msgid "**Problem: Environment variables not taking effect**"
-msgstr ""
+msgstr "**问题：环境变量未生效**"
 
 #: ../../source/build_config/build_flow.md:411
 msgid "Restart the terminal, VS Code, or the system"
-msgstr ""
+msgstr "重启终端、VS Code 或系统"
 
 #: ../../source/build_config/build_flow.md:412
 msgid "Manually check if PATH contains the correct path and add to user PATH"
-msgstr ""
+msgstr "手动检查 PATH 是否包含正确的路径并添加到用户 PATH 中"
 
 #: ../../source/build_config/build_flow.md:414
 msgid "Other Issues"
-msgstr ""
+msgstr "其他问题"
 
 #: ../../source/build_config/build_flow.md:416
 msgid "Ensure you're using the latest version of UniSDK"
-msgstr ""
+msgstr "确保您使用的是最新版本的 UniSDK"
 
 #: ../../source/build_config/build_flow.md:417
 msgid "Clear the build directory and rebuild:"
-msgstr ""
+msgstr "清除构建目录并重新构建："
 
 #: ../../source/build_config/build_flow.md:421
 msgid "Check system logs for more detailed error information"
-msgstr ""
-
+msgstr "检查系统日志以获取更详细的错误信息"

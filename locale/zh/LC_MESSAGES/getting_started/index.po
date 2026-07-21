@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,11 +20,11 @@ msgstr ""
 
 #: ../../source/getting_started/index.md:6
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/getting_started/index.md:8
 msgid "About This Document"
-msgstr ""
+msgstr "关于本文档"
 
 #: ../../source/getting_started/index.md:10
 msgid ""
@@ -37,228 +36,247 @@ msgid ""
 "the UniSDK and have a basic understanding of the C programming language "
 "and embedded development fundamentals."
 msgstr ""
+"本文档将引导您完成 Telink UniSDK（统一软件开发套件）的完整入门流程——"
+"从搭建开发环境、获取 SDK、编译和烧录第一个项目，到成功运行第一个示例。"
+"本指南面向 UniSDK 的新手嵌入式软件开发人员，要求具备 C 语言编程基础"
+"和嵌入式开发的基本知识。"
 
 #: ../../source/getting_started/index.md:12
 msgid "Scope"
-msgstr ""
+msgstr "适用范围"
 
 #: ../../source/getting_started/index.md:14
 msgid ""
 "Telink UniSDK supports the Bluetooth® Low Energy (BLE) protocol stack. It"
 " is applicable to the following chip series:"
 msgstr ""
+"Telink UniSDK 支持低功耗蓝牙（BLE）协议栈，适用于以下芯片系列："
 
 #: ../../source/getting_started/index.md
 msgid "Chip Series"
-msgstr ""
+msgstr "芯片系列"
 
 #: ../../source/getting_started/index.md
 msgid "Core"
-msgstr ""
+msgstr "内核"
 
 #: ../../source/getting_started/index.md
 msgid ""
 "[TL321X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TL3218X-"
 "E_TL3218X_Development_Board_User_Manual.pdf)"
 msgstr ""
+"[TL321X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TL3218X-"
+"E_TL3218X_Development_Board_User_Manual.pdf)"
 
 #: ../../source/getting_started/index.md
 msgid "RISC-V"
-msgstr ""
+msgstr "RISC-V"
 
 #: ../../source/getting_started/index.md
 msgid ""
 "[TL721X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TL7218X-"
 "E_TL7218X_Development_Board_User_Manual.pdf)"
 msgstr ""
+"[TL721X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TL7218X-"
+"E_TL7218X_Development_Board_User_Manual.pdf)"
 
 #: ../../source/getting_started/index.md
 msgid ""
 "[TLSR922X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TLSR9528A-"
 "E_TLSR9528A_Development_Board_User_Manual.pdf)"
 msgstr ""
+"[TLSR922X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TLSR9528A-"
+"E_TLSR9528A_Development_Board_User_Manual.pdf)"
 
 #: ../../source/getting_started/index.md
 msgid ""
 "[TLSR952X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TLSR9528A-"
 "E_TLSR9528A_Development_Board_User_Manual.pdf)"
 msgstr ""
+"[TLSR952X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TLSR9528A-"
+"E_TLSR9528A_Development_Board_User_Manual.pdf)"
 
 #: ../../source/getting_started/index.md:23
 msgid ""
 "See the [Release Notes](../releases/index.md) for details on supported "
 "chips and development boards."
 msgstr ""
+"有关支持的芯片和开发板的详细信息，请参阅[发布说明](../releases/index.md)。"
 
 #: ../../source/getting_started/index.md:25
 msgid "Hardware and Software Requirements"
-msgstr ""
+msgstr "硬件和软件要求"
 
 #: ../../source/getting_started/index.md:27
 msgid "Hardware Requirements"
-msgstr ""
+msgstr "硬件要求"
 
 #: ../../source/getting_started/index.md:29
 msgid "A Telink official evaluation kit (choose one):"
-msgstr ""
+msgstr "一块泰凌官方评估套件（任选其一）："
 
 #: ../../source/getting_started/index.md:30
 msgid "TL3218X_EVK"
-msgstr ""
+msgstr "TL3218X_EVK"
 
 #: ../../source/getting_started/index.md:31
 msgid "TL7218X_EVK"
-msgstr ""
+msgstr "TL7218X_EVK"
 
 #: ../../source/getting_started/index.md:32
 msgid "TLSR9528A_EVK"
-msgstr ""
+msgstr "TLSR9528A_EVK"
 
 #: ../../source/getting_started/index.md:33
 msgid "TLSR9228A_EVK"
-msgstr ""
+msgstr "TLSR9228A_EVK"
 
 #: ../../source/getting_started/index.md:34
 msgid "TLSR9528A_DONGLE"
-msgstr ""
+msgstr "TLSR9528A_DONGLE"
 
 #: ../../source/getting_started/index.md:35
 msgid "A Telink programmer for flashing firmware (choose one):"
-msgstr ""
+msgstr "一个用于烧录固件的泰凌编程器（任选其一）："
 
 #: ../../source/getting_started/index.md:36
 msgid "Programmer V1.0 ~ V3.0"
-msgstr ""
+msgstr "编程器 V1.0 ~ V3.0"
 
 #: ../../source/getting_started/index.md:37
 msgid "Programmer V5.0"
-msgstr ""
+msgstr "编程器 V5.0"
 
 #: ../../source/getting_started/index.md:39
 msgid "Software Requirements"
-msgstr ""
+msgstr "软件要求"
 
 #: ../../source/getting_started/index.md
 msgid "Component"
-msgstr ""
+msgstr "组件"
 
 #: ../../source/getting_started/index.md
 msgid "Description"
-msgstr ""
+msgstr "说明"
 
 #: ../../source/getting_started/index.md
 msgid "Operating System"
-msgstr ""
+msgstr "操作系统"
 
 #: ../../source/getting_started/index.md
 msgid "Linux (Ubuntu 20.04+), Windows 10/11, macOS 12+"
-msgstr ""
+msgstr "Linux（Ubuntu 20.04+）、Windows 10/11、macOS 12+"
 
 #: ../../source/getting_started/index.md
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: ../../source/getting_started/index.md
 msgid "Version control system"
-msgstr ""
+msgstr "版本控制系统"
 
 #: ../../source/getting_started/index.md
 msgid "CMake"
-msgstr ""
+msgstr "CMake"
 
 #: ../../source/getting_started/index.md
 msgid "Build system generator (>= 3.20.0)"
-msgstr ""
+msgstr "构建系统生成器（>= 3.20.0）"
 
 #: ../../source/getting_started/index.md
 msgid "Ninja"
-msgstr ""
+msgstr "Ninja"
 
 #: ../../source/getting_started/index.md
 msgid "Build system runner (>= 1.10)"
-msgstr ""
+msgstr "构建系统执行器（>= 1.10）"
 
 #: ../../source/getting_started/index.md
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: ../../source/getting_started/index.md
 msgid "Scripting and west tool runtime (>= 3.10)"
-msgstr ""
+msgstr "脚本和 west 工具运行时（>= 3.10）"
 
 #: ../../source/getting_started/index.md
 msgid "West"
-msgstr ""
+msgstr "West"
 
 #: ../../source/getting_started/index.md
 msgid "Zephyr project management tool (>= 0.14.0)"
-msgstr ""
+msgstr "Zephyr 项目管理工具（>= 0.14.0）"
 
 #: ../../source/getting_started/index.md
 msgid "Telink RISC-V Toolchain"
-msgstr ""
+msgstr "Telink RISC-V 工具链"
 
 #: ../../source/getting_started/index.md
 msgid "Cross-compilation toolchain (RISC-V GCC V5.4.1+)"
-msgstr ""
+msgstr "交叉编译工具链（RISC-V GCC V5.4.1+）"
 
 #: ../../source/getting_started/index.md
 msgid "BDT"
-msgstr ""
+msgstr "BDT"
 
 #: ../../source/getting_started/index.md
 msgid "Telink Burning and Debugging Tool (for flashing)"
-msgstr ""
+msgstr "泰凌烧录与调试工具（用于固件烧录）"
 
 #: ../../source/getting_started/index.md:52
 msgid "Quick Start Flow"
-msgstr ""
+msgstr "快速入门流程"
 
 #: ../../source/getting_started/index.md:54
 msgid "Follow these steps in order:"
-msgstr ""
+msgstr "请按顺序执行以下步骤："
 
 #: ../../source/getting_started/index.md:56
 msgid ""
 "**[Set Up the Development Environment](environment_setup.md)** — Install "
 "VS Code Extension and dependencies"
 msgstr ""
+"**[搭建开发环境](environment_setup.md)** — 安装 VS Code 扩展和依赖项"
 
 #: ../../source/getting_started/index.md:57
 msgid ""
 "**[Get and Import the SDK](get_sdk.md)** — Clone the repository and "
 "understand the directory layout"
 msgstr ""
+"**[获取和导入 SDK](get_sdk.md)** — 克隆仓库并了解目录结构"
 
 #: ../../source/getting_started/index.md:58
 msgid ""
 "**[Compile, Flash and Run Your First Example](first_example.md)** — Build"
 " and run the gpio_demo"
 msgstr ""
+"**[编译、烧录和运行第一个示例](first_example.md)** — 构建并运行 gpio_demo"
 
 #: ../../source/getting_started/index.md:60
 msgid "Next Steps"
-msgstr ""
+msgstr "下一步"
 
 #: ../../source/getting_started/index.md:62
 msgid ""
 "[Development Guide](../developing/index.md) — Deep dive into the SDK "
 "development workflow"
 msgstr ""
+"[开发指南](../developing/index.md) — 深入了解 SDK 开发工作流"
 
 #: ../../source/getting_started/index.md:63
 msgid ""
 "[Build & Configuration](../build_config/index.md) — Learn the CMake and "
 "Kconfig build system"
 msgstr ""
+"[构建和配置](../build_config/index.md) — 了解 CMake 和 Kconfig 构建系统"
 
 #: ../../source/getting_started/index.md:64
 msgid "[Samples & Demos](../samples/index.md) — Explore more example projects"
-msgstr ""
+msgstr "[示例和演示](../samples/index.md) — 探索更多示例项目"
 
 #: ../../source/getting_started/index.md:65
 msgid ""
 "[Peripherals & Drivers](../peripherals/index.md) — Learn to use GPIO, "
 "UART, I2C and other peripheral drivers"
 msgstr ""
-
+"[外设和驱动](../peripherals/index.md) — 学习使用 GPIO、UART、I2C 等外设驱动"

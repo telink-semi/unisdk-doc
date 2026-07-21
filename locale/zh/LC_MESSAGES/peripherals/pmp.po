@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,7 +20,7 @@ msgstr ""
 
 #: ../../source/peripherals/pmp.md:6
 msgid "PMP Driver"
-msgstr ""
+msgstr "PMP 驱动"
 
 #: ../../source/peripherals/pmp.md:8
 msgid ""
@@ -30,64 +29,72 @@ msgid ""
 "access privileges (read, write, execute) for each defined region, "
 "enforced in hardware for U-mode and optionally for M-mode when locked."
 msgstr ""
+"提供用于配置 RISC-V 内核上物理内存保护（PMP）单元的 API。PMP 允许 M 模式软件"
+"限制每个已定义区域的物理内存访问权限（读、写、执行），在硬件上对 U 模式强制执行，"
+"并且在锁定时可选择对 M 模式强制执行。"
 
 #: ../../source/peripherals/pmp.md:13
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/peripherals/pmp.md:15
 msgid ""
 "The PMP unit supports up to **8 entries**. Each entry defines one "
 "protected memory region and a set of access permissions."
 msgstr ""
+"PMP 单元支持最多 **8 个条目**。每个条目定义一个受保护的内存区域和一组访问权限。"
 
 #: ../../source/peripherals/pmp.md:18
 msgid ""
 "Any violation is trapped precisely at the processor. The trap cause can "
 "be inspected via `mcause`, `mdcause`, and `mtval` CSRs."
 msgstr ""
+"任何违规都会在处理器处精确捕获。可以通过 `mcause`、`mdcause` 和 `mtval` CSR "
+"检查异常原因。"
 
 #: ../../source/peripherals/pmp.md:22
 msgid "Address Matching Modes"
-msgstr ""
+msgstr "地址匹配模式"
 
 #: ../../source/peripherals/pmp.md:24
 msgid "Each entry operates in one of two address matching modes:"
-msgstr ""
+msgstr "每个条目在以下两种地址匹配模式之一中运行："
 
 #: ../../source/peripherals/pmp.md
 msgid "Mode"
-msgstr ""
+msgstr "模式"
 
 #: ../../source/peripherals/pmp.md ../../source/peripherals/pmp.md:60
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: ../../source/peripherals/pmp.md
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/peripherals/pmp.md
 msgid "`TOR`"
-msgstr ""
+msgstr "`TOR`"
 
 #: ../../source/peripherals/pmp.md
 msgid "`tlk_pmp_tor_config`"
-msgstr ""
+msgstr "`tlk_pmp_tor_config`"
 
 #: ../../source/peripherals/pmp.md
 msgid ""
 "Top Of Range. The protected region is `[pmpaddr[entry-1], address)`. For "
 "entry 0, the lower bound is implicitly `0x00000000`."
 msgstr ""
+"范围顶部。保护区域为 `[pmpaddr[entry-1], address)`。"
+"对于条目 0，下限隐式为 `0x00000000`。"
 
 #: ../../source/peripherals/pmp.md
 msgid "`NAPOT`"
-msgstr ""
+msgstr "`NAPOT`"
 
 #: ../../source/peripherals/pmp.md
 msgid "`tlk_pmp_napot_config`"
-msgstr ""
+msgstr "`tlk_pmp_napot_config`"
 
 #: ../../source/peripherals/pmp.md
 msgid ""
@@ -95,6 +102,8 @@ msgid ""
 "size)`. Base must be aligned to `size`; `size` must be a power of two, at"
 " minimum 8 bytes."
 msgstr ""
+"自然对齐的 2 的幂。区域为 `[address, address + size)`。"
+"基地址必须与 `size` 对齐；`size` 必须是 2 的幂，最小为 8 字节。"
 
 #: ../../source/peripherals/pmp.md:31
 msgid ""
@@ -102,72 +111,76 @@ msgid ""
 "`entry - 1` with the desired lower bound address. This writes the address"
 " into `pmpaddr[entry-1]` without activating protection on that entry."
 msgstr ""
+"要使用带有显式下限的 TOR，请使用所需的下限地址在 `entry - 1` 上调用 "
+"`tlk_pmp_entry_disable`。这会将地址写入 `pmpaddr[entry-1]`，"
+"而不会在该条目上激活保护。"
 
 #: ../../source/peripherals/pmp.md:36
 msgid "Permissions"
-msgstr ""
+msgstr "权限"
 
 #: ../../source/peripherals/pmp.md:38
 msgid "Permissions are defined per entry via `struct tlk_pmp_config`:"
-msgstr ""
+msgstr "每个条目的权限通过 `struct tlk_pmp_config` 定义："
 
 #: ../../source/peripherals/pmp.md
 msgid "Field"
-msgstr ""
+msgstr "字段"
 
 #: ../../source/peripherals/pmp.md
 msgid "`r`"
-msgstr ""
+msgstr "`r`"
 
 #: ../../source/peripherals/pmp.md
 msgid "Allow read access."
-msgstr ""
+msgstr "允许读取访问。"
 
 #: ../../source/peripherals/pmp.md
 msgid "`w`"
-msgstr ""
+msgstr "`w`"
 
 #: ../../source/peripherals/pmp.md
 msgid "Allow write access."
-msgstr ""
+msgstr "允许写入访问。"
 
 #: ../../source/peripherals/pmp.md
 msgid "`x`"
-msgstr ""
+msgstr "`x`"
 
 #: ../../source/peripherals/pmp.md
 msgid "Allow instruction execution."
-msgstr ""
+msgstr "允许指令执行。"
 
 #: ../../source/peripherals/pmp.md
 msgid "`l`"
-msgstr ""
+msgstr "`l`"
 
 #: ../../source/peripherals/pmp.md
 msgid "Lock the entry. See [Lock](#lock) below."
-msgstr ""
+msgstr "锁定条目。请参见下面的[锁定](#lock)。"
 
 #: ../../source/peripherals/pmp.md:48
 msgid "Lock"
-msgstr ""
+msgstr "锁定"
 
 #: ../../source/peripherals/pmp.md:50
 msgid "When `l = 1` is set on an entry:"
-msgstr ""
+msgstr "当在条目上设置 `l = 1` 时："
 
 #: ../../source/peripherals/pmp.md:52
 msgid ""
 "Writes to `PMPiCFG` and `PMPADDRi` are **ignored** by hardware until "
 "system reset."
 msgstr ""
+"对 `PMPiCFG` 和 `PMPADDRi` 的写入在系统复位前将被硬件**忽略**。"
 
 #: ../../source/peripherals/pmp.md:53
 msgid "For TOR entries, `pmpaddr[entry-1]` is also frozen."
-msgstr ""
+msgstr "对于 TOR 条目，`pmpaddr[entry-1]` 也会被冻结。"
 
 #: ../../source/peripherals/pmp.md:54
 msgid "Permissions apply to **all privilege modes**, including M-mode."
-msgstr ""
+msgstr "权限适用于**所有特权模式**，包括 M 模式。"
 
 #: ../../source/peripherals/pmp.md:56
 msgid ""
@@ -175,18 +188,23 @@ msgid ""
 "when the protection must survive any software fault, including bugs in "
 "M-mode code."
 msgstr ""
+"锁定的条目只能通过系统复位清除。仅在保护必须承受任何软件故障"
+"（包括 M 模式代码中的错误）时设置 `l = 1`。"
 
 #: ../../source/peripherals/pmp.md:67
 msgid ""
 "Configures `entry` in TOR mode. `address` is the exclusive upper bound of"
 " the protected region."
 msgstr ""
+"在 TOR 模式下配置 `entry`。`address` 是保护区域的独占上限。"
 
 #: ../../source/peripherals/pmp.md:74
 msgid ""
 "Configures `entry` in NAPOT mode. `address` must be aligned to `size`. "
 "`size` must be a power of two and at least 8 bytes."
 msgstr ""
+"在 NAPOT 模式下配置 `entry`。`address` 必须与 `size` 对齐。"
+"`size` 必须是 2 的幂且至少为 8 字节。"
 
 #: ../../source/peripherals/pmp.md:81
 msgid ""
@@ -195,34 +213,37 @@ msgid ""
 "bound for a subsequent TOR entry. Pass `NULL` if the address is not "
 "relevant. Has no effect if the entry is locked (`l = 1`)."
 msgstr ""
+"将条目设置为 OFF 模式，移除任何活动的保护。`address` 的值保留在 "
+"`pmpaddr[entry]` 中，可作为后续 TOR 条目的下限。如果地址不相关，请传递 "
+"`NULL`。如果条目已锁定（`l = 1`），则无效果。"
 
 #: ../../source/peripherals/pmp.md:86
 msgid "Configuration"
-msgstr ""
+msgstr "配置"
 
 #: ../../source/peripherals/pmp.md:88
 msgid "All options are available under `PMP` in Kconfig."
-msgstr ""
+msgstr "所有选项均在 Kconfig 的 `PMP` 下可用。"
 
 #: ../../source/peripherals/pmp.md
 msgid "Symbol"
-msgstr ""
+msgstr "符号"
 
 #: ../../source/peripherals/pmp.md
 msgid "Default"
-msgstr ""
+msgstr "默认值"
 
 #: ../../source/peripherals/pmp.md
 msgid "`TLK_PMP_PM_DEVICE`"
-msgstr ""
+msgstr "`TLK_PMP_PM_DEVICE`"
 
 #: ../../source/peripherals/pmp.md
 msgid "`n`"
-msgstr ""
+msgstr "`n`"
 
 #: ../../source/peripherals/pmp.md
 msgid ""
 "Enable Power Management support. When enabled, all PMP entry registers "
 "are saved before sleep and restored after wakeup."
 msgstr ""
-
+"启用电源管理支持。启用后，所有 PMP 条目寄存器在休眠前保存，在唤醒后恢复。"

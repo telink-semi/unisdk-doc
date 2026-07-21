@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,147 +20,149 @@ msgstr ""
 
 #: ../../source/developing/debugging.md:6
 msgid "Debugging & Testing"
-msgstr ""
+msgstr "调试与测试"
 
 #: ../../source/developing/debugging.md:8
 msgid "Hardware Debugging"
-msgstr ""
+msgstr "硬件调试"
 
 #: ../../source/developing/debugging.md:10
 msgid "Debugger Support"
-msgstr ""
+msgstr "调试器支持"
 
 #: ../../source/developing/debugging.md:12
 msgid "UniSDK supports the following debug interfaces:"
-msgstr ""
+msgstr "UniSDK 支持以下调试接口："
 
 #: ../../source/developing/debugging.md
 msgid "Debugger"
-msgstr ""
+msgstr "调试器"
 
 #: ../../source/developing/debugging.md
 msgid "Interface"
-msgstr ""
+msgstr "接口"
 
 #: ../../source/developing/debugging.md
 msgid "Supported Platforms"
-msgstr ""
+msgstr "支持平台"
 
 #: ../../source/developing/debugging.md
 msgid "**J-Link**"
-msgstr ""
+msgstr "**J-Link**"
 
 #: ../../source/developing/debugging.md
 msgid "JTAG/SWD"
-msgstr ""
+msgstr "JTAG/SWD"
 
 #: ../../source/developing/debugging.md
 msgid "All platforms"
-msgstr ""
+msgstr "所有平台"
 
 #: ../../source/developing/debugging.md
 msgid "**Telink Debugger**"
-msgstr ""
+msgstr "**Telink 调试器**"
 
 #: ../../source/developing/debugging.md
 msgid "SWS (Single Wire)"
-msgstr ""
+msgstr "SWS（单线）"
 
 #: ../../source/developing/debugging.md
 msgid "**BDT**"
-msgstr ""
+msgstr "**BDT**"
 
 #: ../../source/developing/debugging.md
 msgid "Flashing/Debugging"
-msgstr ""
+msgstr "烧录/调试"
 
 #: ../../source/developing/debugging.md:20
 msgid "Debugging Connection"
-msgstr ""
+msgstr "调试连接"
 
 #: ../../source/developing/debugging.md:22
 msgid "Connect the debugger to the JTAG/SWS interface on the development board"
-msgstr ""
+msgstr "将调试器连接到开发板的 JTAG/SWS 接口"
 
 #: ../../source/developing/debugging.md:23
 msgid "Use GDB or an IDE for source-level debugging"
-msgstr ""
+msgstr "使用 GDB 或 IDE 进行源码级调试"
 
 #: ../../source/developing/debugging.md:25
 msgid "Software Debugging"
-msgstr ""
+msgstr "软件调试"
 
 #: ../../source/developing/debugging.md:27
 msgid "Logging System (Debug Print)"
-msgstr ""
+msgstr "日志系统（调试打印）"
 
 #: ../../source/developing/debugging.md:29
 msgid ""
 "UniSDK has a built-in debug logging system that can be enabled via "
 "Kconfig:"
 msgstr ""
+"UniSDK 内置了调试日志系统，可通过 Kconfig 启用："
 
 #: ../../source/developing/debugging.md:38
 msgid "Logs are output via UART and can be viewed in a serial terminal."
-msgstr ""
+msgstr "日志通过 UART 输出，可在串口终端中查看。"
 
 #: ../../source/developing/debugging.md:40
 msgid "Firmware Verification Script"
-msgstr ""
+msgstr "固件验证脚本"
 
 #: ../../source/developing/debugging.md:47
 msgid "Performance Analysis"
-msgstr ""
+msgstr "性能分析"
 
 #: ../../source/developing/debugging.md:49
 msgid "Memory Usage Report"
-msgstr ""
+msgstr "内存使用报告"
 
 #: ../../source/developing/debugging.md:51
 msgid "A memory usage summary is automatically output after compilation:"
-msgstr ""
+msgstr "编译后会自动输出内存使用概况："
 
 #: ../../source/developing/debugging.md:59
 msgid "ELF Analysis"
-msgstr ""
+msgstr "ELF 分析"
 
 #: ../../source/developing/debugging.md:69
 msgid "Debugging with GDB"
-msgstr ""
+msgstr "使用 GDB 调试"
 
 #: ../../source/developing/debugging.md:81
 msgid "Common Debugging Tips"
-msgstr ""
+msgstr "常用调试技巧"
 
 #: ../../source/developing/debugging.md:83
 msgid "**LED Debugging** — Toggle LED state in critical code paths"
-msgstr ""
+msgstr "**LED 调试** — 在关键代码路径中切换 LED 状态"
 
 #: ../../source/developing/debugging.md:84
 msgid "**UART Output** — Output variable values via `TLK_DEBUG_PRINT`"
-msgstr ""
+msgstr "**UART 输出** — 通过 `TLK_DEBUG_PRINT` 输出变量值"
 
 #: ../../source/developing/debugging.md:85
 msgid "**Assertion Checks** — Use assertions to catch abnormal states"
-msgstr ""
+msgstr "**断言检查** — 使用断言捕获异常状态"
 
 #: ../../source/developing/debugging.md:86
 msgid "**Memory Inspection** — Check the `.map` file to verify memory layout"
-msgstr ""
+msgstr "**内存检查** — 查看 `.map` 文件以验证内存布局"
 
 #: ../../source/developing/debugging.md:88
 msgid "Next Steps"
-msgstr ""
+msgstr "下一步"
 
 #: ../../source/developing/debugging.md:90
 msgid ""
 "[IDE Integration](ide_integration.md) — VS Code development environment "
 "configuration"
 msgstr ""
+"[IDE 集成](ide_integration.md) — VS Code 开发环境配置"
 
 #: ../../source/developing/debugging.md:91
 msgid ""
 "[Build & Configuration](../build_config/index.md) — Detailed build system"
 " documentation"
 msgstr ""
-
+"[构建与配置](../build_config/index.md) — 详细的构建系统文档"

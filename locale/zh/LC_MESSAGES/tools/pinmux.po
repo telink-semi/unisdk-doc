@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,11 +20,11 @@ msgstr ""
 
 #: ../../source/tools/pinmux.md:6
 msgid "Pinmux Pin Configuration Tool"
-msgstr ""
+msgstr "Pinmux 引脚配置工具"
 
 #: ../../source/tools/pinmux.md:8
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/tools/pinmux.md:10
 msgid ""
@@ -33,167 +32,170 @@ msgid ""
 "provided by UniSDK to help developers visually configure chip pin "
 "multiplexing functions in the terminal."
 msgstr ""
+"Pinmux（引脚复用）工具是 UniSDK 提供的图形化引脚配置工具，帮助开发者在终端中可视化配置芯片引脚复用功能。"
 
 #: ../../source/tools/pinmux.md:12
 msgid "**Key Features:**"
-msgstr ""
+msgstr "**主要特性：**"
 
 #: ../../source/tools/pinmux.md:14
 msgid "Graphical terminal interface (based on the Textual framework)"
-msgstr ""
+msgstr "图形化终端界面（基于 Textual 框架）"
 
 #: ../../source/tools/pinmux.md:15
 msgid "Visual selection of pin functions with interactive popup menus"
-msgstr ""
+msgstr "通过交互式弹出菜单可视化选择引脚功能"
 
 #: ../../source/tools/pinmux.md:16
 msgid "Pin configuration conflict detection"
-msgstr ""
+msgstr "引脚配置冲突检测"
 
 #: ../../source/tools/pinmux.md:17
 msgid "Requirement validation (ensures all required functions are assigned)"
-msgstr ""
+msgstr "需求验证（确保所有必需功能已分配）"
 
 #: ../../source/tools/pinmux.md:18
 msgid "Support for multiple chip package variants"
-msgstr ""
+msgstr "支持多种芯片封装变体"
 
 #: ../../source/tools/pinmux.md:19
 msgid "Integration with the Kconfig configuration system"
-msgstr ""
+msgstr "与 Kconfig 配置系统集成"
 
 #: ../../source/tools/pinmux.md:20
 msgid "Automatic generation of the `pinmux.h` header file"
-msgstr ""
+msgstr "自动生成 `pinmux.h` 头文件"
 
 #: ../../source/tools/pinmux.md:22
 msgid "Launch Methods"
-msgstr ""
+msgstr "启动方式"
 
 #: ../../source/tools/pinmux.md:35
 msgid "Main View"
-msgstr ""
+msgstr "主视图"
 
 #: ../../source/tools/pinmux.md:37
 msgid "Once opened, you will see the main dashboard:"
-msgstr ""
+msgstr "打开后，您将看到主仪表板："
 
 #: ../../source/tools/pinmux.md:39
 msgid ""
 "**Ports:** A scrollable vertical list of all GPIO ports (e.g., PORT A, "
 "PORT B)"
-msgstr ""
+msgstr "**端口：** 所有 GPIO 口的可滚动垂直列表（例如 PORT A、PORT B）"
 
 #: ../../source/tools/pinmux.md:40
 msgid ""
 "**Pins:** Inside each port section, individual pins are displayed as "
 "interactive buttons showing the pin's name and its currently assigned "
 "function"
-msgstr ""
+msgstr "**引脚：** 在每个端口部分内，各个引脚显示为交互式按钮，显示引脚名称及其当前分配的功能"
 
 #: ../../source/tools/pinmux.md:42
 msgid ""
 "![Pinmux Interface overview](pics/pinmux_1.png) *Figure 1. Pinmux "
 "Interface overview showing GPIO ports, pins, and assigned functions.*"
 msgstr ""
+"![Pinmux 界面概览](pics/pinmux_1.png) *图 1. Pinmux 界面概览，显示 GPIO 端口、引脚和已分配的功能。*"
 
 #: ../../source/tools/pinmux.md:42
 msgid "Pinmux Interface overview"
-msgstr ""
+msgstr "Pinmux 界面概览"
 
 #: ../../source/tools/pinmux.md:45
 msgid "Selecting a Function"
-msgstr ""
+msgstr "选择功能"
 
 #: ../../source/tools/pinmux.md:47
 msgid "Click on a pin (or navigate to it and press **Enter**)"
-msgstr ""
+msgstr "点击引脚（或导航到该引脚并按 **Enter**）"
 
 #: ../../source/tools/pinmux.md:48
 msgid "A popup window titled **Function Select** will appear"
-msgstr ""
+msgstr "将弹出一个标题为 **Function Select** 的窗口"
 
 #: ../../source/tools/pinmux.md:49
 msgid "The list shows all supported hardware functions for that specific pin"
-msgstr ""
+msgstr "列表显示该特定引脚支持的所有硬件功能"
 
 #: ../../source/tools/pinmux.md:50
 msgid ""
 "Select the desired function (e.g., `UART0_RX`) or select **NONE** to "
 "disable the pin"
-msgstr ""
+msgstr "选择所需功能（例如 `UART0_RX`）或选择 **NONE** 禁用引脚"
 
 #: ../../source/tools/pinmux.md:51
 msgid "Press **Enter** to confirm"
-msgstr ""
+msgstr "按 **Enter** 确认"
 
 #: ../../source/tools/pinmux.md:53
 msgid ""
 "![Function select screen](pics/pinmux_2.png) *Figure 2. Function select "
 "screen for a GPIO pin.*"
 msgstr ""
+"![功能选择界面](pics/pinmux_2.png) *图 2. GPIO 引脚的功能选择界面。*"
 
 #: ../../source/tools/pinmux.md:53
 msgid "Function select screen"
-msgstr ""
+msgstr "功能选择界面"
 
 #: ../../source/tools/pinmux.md:56
 msgid "Shortcuts"
-msgstr ""
+msgstr "快捷键"
 
 #: ../../source/tools/pinmux.md
 msgid "Key"
-msgstr ""
+msgstr "按键"
 
 #: ../../source/tools/pinmux.md
 msgid "Action"
-msgstr ""
+msgstr "操作"
 
 #: ../../source/tools/pinmux.md
 msgid "**s** (Save)"
-msgstr ""
+msgstr "**s**（保存）"
 
 #: ../../source/tools/pinmux.md
 msgid ""
 "Validates configuration — checks for conflicts and missing functions. If "
 "valid, saves and exits. If invalid, shows an error notification"
-msgstr ""
+msgstr "验证配置 — 检查冲突和缺失功能。如果有效，保存并退出。如果无效，显示错误通知"
 
 #: ../../source/tools/pinmux.md
 msgid "**q** (Quit)"
-msgstr ""
+msgstr "**q**（退出）"
 
 #: ../../source/tools/pinmux.md
 msgid ""
 "Exits the application. A confirmation dialog appears if there are unsaved"
 " modifications"
-msgstr ""
+msgstr "退出应用程序。如果有未保存的修改，将显示确认对话框"
 
 #: ../../source/tools/pinmux.md:63
 msgid "Validation errors occur when:"
-msgstr ""
+msgstr "验证错误发生在以下情况："
 
 #: ../../source/tools/pinmux.md:64
 msgid ""
 "Necessary functions are not assigned to pins (e.g., UART0 is enabled but "
 "UART0_TX is not assigned)"
-msgstr ""
+msgstr "必需功能未分配给引脚（例如 UART0 已启用但 UART0_TX 未分配）"
 
 #: ../../source/tools/pinmux.md:65
 msgid "Conflicting pins exist (e.g., UART0_TX assigned to both PC3 and PC4)"
-msgstr ""
+msgstr "存在引脚冲突（例如 UART0_TX 同时分配给 PC3 和 PC4）"
 
 #: ../../source/tools/pinmux.md:67
 msgid "![Exit Screen](pics/pinmux_3.png) *Figure 3. Exit Screen.*"
-msgstr ""
+msgstr "![退出界面](pics/pinmux_3.png) *图 3. 退出界面。*"
 
 #: ../../source/tools/pinmux.md:67
 msgid "Exit Screen"
-msgstr ""
+msgstr "退出界面"
 
 #: ../../source/tools/pinmux.md:70
 msgid "Saving"
-msgstr ""
+msgstr "保存"
 
 #: ../../source/tools/pinmux.md:72
 msgid ""
@@ -201,6 +203,7 @@ msgid ""
 "board>.pinmux`. For example, building for TL3218X_EVK generates "
 "`TL3218X_EVK.board.pinmux`."
 msgstr ""
+"配置将保存到名为 `<SoC or board name>.<soc or board>.pinmux` 的文件中。例如，为 TL3218X_EVK 构建将生成 `TL3218X_EVK.board.pinmux`。"
 
 #: ../../source/tools/pinmux.md:74
 msgid ""
@@ -208,6 +211,7 @@ msgid ""
 " format and is used to restore previous pin settings when the tool is "
 "invoked again."
 msgstr ""
+"此 `.pinmux` 文件包含人类可读格式的引脚到功能映射，并在再次调用工具时用于恢复先前的引脚设置。"
 
 #: ../../source/tools/pinmux.md:76
 msgid ""
@@ -215,114 +219,116 @@ msgid ""
 "saved settings, containing C preprocessor definitions usable by firmware "
 "code."
 msgstr ""
+"此外，根据保存的设置，在构建文件夹中生成 `pinmux.h`，其中包含固件代码可用的 C 预处理器定义。"
 
 #: ../../source/tools/pinmux.md:78
 msgid ""
 "The `.pinmux` files persist until the project switches, allowing previous"
 " pin settings to be restored when switching between chips."
-msgstr ""
+msgstr "`.pinmux` 文件会持续存在直到项目切换，允许在切换芯片时恢复先前的引脚设置。"
 
 #: ../../source/tools/pinmux.md:80
 msgid "File Format"
-msgstr ""
+msgstr "文件格式"
 
 #: ../../source/tools/pinmux.md:82
 msgid "The `.pinmux` files use a simple key-value format:"
-msgstr ""
+msgstr "`.pinmux` 文件使用简单的键值格式："
 
 #: ../../source/tools/pinmux.md:90
 msgid "Each line represents a single pin assignment"
-msgstr ""
+msgstr "每行代表一个引脚分配"
 
 #: ../../source/tools/pinmux.md:91
 msgid "All letters are upper-case"
-msgstr ""
+msgstr "所有字母均为大写"
 
 #: ../../source/tools/pinmux.md:92
 msgid "Format: `<pin name>=<function name>`"
-msgstr ""
+msgstr "格式：`<引脚名称>=<功能名称>`"
 
 #: ../../source/tools/pinmux.md:93
 msgid "Pin name consists of letter **P**, port letter, and pin number"
-msgstr ""
+msgstr "引脚名称由字母 **P**、端口字母和引脚编号组成"
 
 #: ../../source/tools/pinmux.md:95
 msgid "During parsing, the following lines are ignored:"
-msgstr ""
+msgstr "解析过程中，以下行将被忽略："
 
 #: ../../source/tools/pinmux.md:96
 msgid "Invalid data that doesn't match the pattern"
-msgstr ""
+msgstr "不符合格式的无效数据"
 
 #: ../../source/tools/pinmux.md:97
 msgid "Valid data referencing non-existent pins or functions"
-msgstr ""
+msgstr "引用不存在的引脚或功能的有效数据"
 
 #: ../../source/tools/pinmux.md:98
 msgid "Assignments to pins on ports disabled in the current configuration"
-msgstr ""
+msgstr "分配给当前配置中禁用的端口上的引脚"
 
 #: ../../source/tools/pinmux.md:99
 msgid "Assignments to functions not enabled in the current configuration"
-msgstr ""
+msgstr "分配给当前配置中未启用的功能"
 
 #: ../../source/tools/pinmux.md:101
 msgid "Overriding Mechanism"
-msgstr ""
+msgstr "覆盖机制"
 
 #: ../../source/tools/pinmux.md:103
 msgid ""
 "Each time pinmux is invoked, data is loaded in the following sequence "
 "(each overrides the previous):"
-msgstr ""
+msgstr "每次调用 pinmux 时，数据按以下顺序加载（每个覆盖前一个）："
 
 #: ../../source/tools/pinmux.md:105
 msgid ""
 "**SoC defaults** — from `soc/<soc>/pinmux/function.yaml` (used for "
 "development)"
-msgstr ""
+msgstr "**SoC 默认值** — 来自 `soc/<soc>/pinmux/function.yaml`（用于开发）"
 
 #: ../../source/tools/pinmux.md:106
 msgid ""
 "**Project `.pinmux`** — in the project directory (sets custom defaults "
 "for any chip)"
-msgstr ""
+msgstr "**项目 `.pinmux`** — 在项目目录中（为任意芯片设置自定义默认值）"
 
 #: ../../source/tools/pinmux.md:107
 msgid ""
 "**`<identifier>.pinmux`** — in the project directory (chip-specific "
 "overrides)"
-msgstr ""
+msgstr "**`<identifier>.pinmux`** — 在项目目录中（芯片特定覆盖）"
 
 #: ../../source/tools/pinmux.md:108
 msgid ""
 "**`<identifier>.pinmux`** — in the build directory (last actual user pin "
 "settings)"
-msgstr ""
+msgstr "**`<identifier>.pinmux`** — 在构建目录中（上次实际用户引脚设置）"
 
 #: ../../source/tools/pinmux.md:110
 msgid ""
 "This allows projects to have out-of-the-box pin settings while still "
 "allowing customization."
-msgstr ""
+msgstr "这使得项目可以拥有开箱即用的引脚设置，同时仍允许自定义。"
 
 #: ../../source/tools/pinmux.md:112
 msgid "Internal Execution Flow"
-msgstr ""
+msgstr "内部执行流程"
 
 #: ../../source/tools/pinmux.md:114
 msgid "Data Loading & Synchronization"
-msgstr ""
+msgstr "数据加载与同步"
 
 #: ../../source/tools/pinmux.md:116
 msgid "When the application starts, it combines multiple data sources:"
-msgstr ""
+msgstr "当应用程序启动时，它会合并多个数据源："
 
 #: ../../source/tools/pinmux.md:118
 msgid ""
 "`soc/<soc>/pinmux/function.yaml` — The \"Function Definitions\": "
 "describes all available functions for the chip"
 msgstr ""
+"`soc/<soc>/pinmux/function.yaml` — \"功能定义\"：描述芯片的所有可用功能"
 
 #: ../../source/tools/pinmux.md:119
 msgid ""
@@ -337,6 +343,7 @@ msgid ""
 "`uart` covers `uart0`, `uart1`, etc.). If a pin supports only one exact "
 "function, use `exclude: all` together with `include: your_function`."
 msgstr ""
+"`soc/<soc>/pinmux/pinmux.yaml` — \"字典\"：列出每个物理引脚及其支持的功能。每个端口可以有一个 `exclude` 属性，描述其引脚不支持哪些功能。单个引脚也可以使用 `exclude` 和 `include` 属性。限制按以下顺序应用：端口的 exclude → 引脚的 exclude → 引脚的 include。为简化起见，`all` 关键字表示所有功能。对于功能组，可以使用组名称（例如 `uart0` 代表 `uart0_tx`、`uart0_rx`、`uart0_cts` 和 `uart0_rts`；`uart` 涵盖 `uart0`、`uart1` 等）。如果某个引脚仅支持一个确切功能，请使用 `exclude: all` 配合 `include: your_function`。"
 
 #: ../../source/tools/pinmux.md:120
 msgid ""
@@ -344,54 +351,56 @@ msgid ""
 "`pinmux.yaml` to remove pins or ports for specific chip packages by "
 "assigning the `delete` keyword"
 msgstr ""
+"`soc/<soc>/pinmux/pinmux_<case>.yaml` — \"限制\"：通过分配 `delete` 关键字覆盖 `pinmux.yaml`，以移除特定芯片封装的引脚或端口"
 
 #: ../../source/tools/pinmux.md:121
 msgid ""
 "`.config` — The \"Requirements\": tells the app which drivers are enabled"
 " (e.g., \"UART0 is enabled, so we need pins for TX and RX\")"
 msgstr ""
+"`.config` — \"需求\"：告知应用程序哪些驱动已启用（例如 \"UART0 已启用，因此我们需要 TX 和 RX 的引脚\"）"
 
 #: ../../source/tools/pinmux.md:122
 msgid "`.pinmux` files — Previous user configurations (see overriding mechanism)"
-msgstr ""
+msgstr "`.pinmux` 文件 — 之前的用户配置（参见覆盖机制）"
 
 #: ../../source/tools/pinmux.md:124
 msgid "**The Loading Sequence:**"
-msgstr ""
+msgstr "**加载顺序：**"
 
 #: ../../source/tools/pinmux.md:126
 msgid ""
 "The `.config` file, which contains the current configuration and "
 "identifies the current chip."
-msgstr ""
+msgstr "`.config` 文件，包含当前配置并标识当前芯片。"
 
 #: ../../source/tools/pinmux.md:127
 msgid ""
 "The function description from `function.yaml`, skipping functions "
 "disabled by configuration."
-msgstr ""
+msgstr "来自 `function.yaml` 的功能描述，跳过配置中禁用的功能。"
 
 #: ../../source/tools/pinmux.md:128
 msgid ""
 "The port and pin description from `pinmux.yaml` and `pinmux_<case>.yaml` "
 "for the selected chip."
-msgstr ""
+msgstr "来自选定芯片的 `pinmux.yaml` 和 `pinmux_<case>.yaml` 的端口和引脚描述。"
 
 #: ../../source/tools/pinmux.md:129
 msgid ""
 "The `.pinmux` files in the order described in the [Overriding Mechanism"
 "](#overriding-mechanism) section."
-msgstr ""
+msgstr "按照[覆盖机制](#overriding-mechanism)部分描述的顺序加载 `.pinmux` 文件。"
 
 #: ../../source/tools/pinmux.md:131
 msgid "Changing a Pin Function"
-msgstr ""
+msgstr "更改引脚功能"
 
 #: ../../source/tools/pinmux.md:133
 msgid ""
 "When a new function is selected for a pin, the following happens "
 "instantly:"
-msgstr ""
+msgstr "当一个引脚选择新功能时，将立即发生以下操作："
 
 #: ../../source/tools/pinmux.md:135
 msgid ""
@@ -399,110 +408,112 @@ msgid ""
 "assign a unique function (like `UART0_TX`) to PC0, but PB2 already has "
 "it, the system flags a **Conflict**."
 msgstr ""
+"**冲突检查：** 系统扫描所有其他引脚。如果您尝试将唯一功能（如 `UART0_TX`）分配给 PC0，但 PB2 已拥有该功能，系统会标记 **冲突**。"
 
 #: ../../source/tools/pinmux.md:136
 msgid "**Observer Update:** The app uses an \"Observer Pattern.\""
-msgstr ""
+msgstr "**观察者更新：** 应用程序使用\"观察者模式\"。"
 
 #: ../../source/tools/pinmux.md:137
 msgid "The Pin data changes."
-msgstr ""
+msgstr "引脚数据发生更改。"
 
 #: ../../source/tools/pinmux.md:138
 msgid ""
 "The UI widget receives a notification and redraws itself (updating the "
 "text and color)."
-msgstr ""
+msgstr "UI 小部件收到通知并重新绘制自身（更新文本和颜色）。"
 
 #: ../../source/tools/pinmux.md:139
 msgid ""
 "The next `is_modified` property access in `PinmuxManager` will return "
 "`True`, until the save action is triggered."
-msgstr ""
+msgstr "下一次在 `PinmuxManager` 中访问 `is_modified` 属性将返回 `True`，直到触发保存操作。"
 
 #: ../../source/tools/pinmux.md:141
 msgid "The Saving Process"
-msgstr ""
+msgstr "保存过程"
 
 #: ../../source/tools/pinmux.md:143
 msgid ""
 "When you press Save (`s`), the app performs strict validation before "
 "writing to disk."
-msgstr ""
+msgstr "当您按下保存（`s`）时，应用程序在写入磁盘前执行严格验证。"
 
 #: ../../source/tools/pinmux.md:145
 msgid "**Step 1: Validation**"
-msgstr ""
+msgstr "**第 1 步：验证**"
 
 #: ../../source/tools/pinmux.md:147
 msgid ""
 "**Check Conflicts:** Are two pins assigned to the same non-repeatable "
 "function? If yes → Error."
-msgstr ""
+msgstr "**检查冲突：** 是否有两个引脚分配到同一个不可重复的功能？如果是 → 报错。"
 
 #: ../../source/tools/pinmux.md:148
 msgid ""
 "**Check Requirements:** Are all functions required by the configuration "
 "assigned to valid pins? If no → Error."
-msgstr ""
+msgstr "**检查需求：** 配置所需的所有功能是否已分配给有效的引脚？如果否 → 报错。"
 
 #: ../../source/tools/pinmux.md:150
 msgid "**Step 2: Writing**"
-msgstr ""
+msgstr "**第 2 步：写入**"
 
 #: ../../source/tools/pinmux.md:152
 msgid ""
 "If there are no errors, the pin mapping is saved to the "
 "`<identifier>.pinmux` file using the simple key-value format."
 msgstr ""
+"如果没有错误，引脚映射将使用简单的键值格式保存到 `<identifier>.pinmux` 文件中。"
 
 #: ../../source/tools/pinmux.md:154
 msgid "Generating pinmux.h"
-msgstr ""
+msgstr "生成 pinmux.h"
 
 #: ../../source/tools/pinmux.md:156
 msgid ""
 "After saving, `pinmux.h` is automatically generated with C preprocessor "
 "definitions:"
-msgstr ""
+msgstr "保存后，`pinmux.h` 将自动生成 C 预处理器定义："
 
 #: ../../source/tools/pinmux.md:168
 msgid "Configuration File Locations"
-msgstr ""
+msgstr "配置文件位置"
 
 #: ../../source/tools/pinmux.md
 msgid "Pinmux Configuration Files"
-msgstr ""
+msgstr "Pinmux 配置文件"
 
 #: ../../source/tools/pinmux.md:183
 msgid "Build Integration"
-msgstr ""
+msgstr "构建集成"
 
 #: ../../source/tools/pinmux.md:185
 msgid "Pinmux configuration is deeply integrated into the build system:"
-msgstr ""
+msgstr "Pinmux 配置深度集成到构建系统中："
 
 #: ../../source/tools/pinmux.md:187
 msgid ""
 "The `generate_pinmux` CMake target automatically executes before "
 "compilation"
-msgstr ""
+msgstr "`generate_pinmux` CMake 目标在编译前自动执行"
 
 #: ../../source/tools/pinmux.md:188
 msgid ""
 "Pre-build checks automatically detect whether `pinmux.h` needs to be "
 "updated"
-msgstr ""
+msgstr "预构建检查自动检测 `pinmux.h` 是否需要更新"
 
 #: ../../source/tools/pinmux.md:189
 msgid ""
 "The generated `pinmux.h` is placed in the `build/` directory and "
 "automatically added to the include path"
-msgstr ""
+msgstr "生成的 `pinmux.h` 放置在 `build/` 目录中，并自动添加到包含路径"
 
 #: ../../source/tools/pinmux.md:191
 msgid "CI"
-msgstr ""
+msgstr "CI"
 
 #: ../../source/tools/pinmux.md:193
 msgid ""
@@ -513,4 +524,4 @@ msgid ""
 "applied last during overriding, the resulting configuration corresponds "
 "to what is described in the file — all previous settings are overridden."
 msgstr ""
-
+"CI 在所有示例中使用单一配置。这是可行的，因为未使用的分配会被跳过，因此您只需考虑此文件中所有示例的引脚使用情况。在构建之前，CI 将此文件复制到构建目录。由于构建设置会在覆盖过程中最后应用，因此最终配置与文件中描述的配置一致 — 所有先前的设置均被覆盖。"

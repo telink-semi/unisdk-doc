@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the UniSDK package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UniSDK main\n"
@@ -21,25 +20,24 @@ msgstr ""
 
 #: ../../source/peripherals/adc.md:6
 msgid "ADC Driver"
-msgstr ""
+msgstr "ADC 驱动"
 
 #: ../../source/peripherals/adc.md:8
 msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
-msgstr ""
+msgstr "!!! note \"文档状态：草稿 — 内容正在最终确定中\""
 
 #: ../../source/peripherals/adc.md:10
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/peripherals/adc.md:12
 msgid "The ADC driver provides analog-to-digital conversion functionality."
-msgstr ""
+msgstr "ADC 驱动提供模数转换功能。"
 
 #: ../../source/peripherals/adc.md:14
 msgid "Samples"
-msgstr ""
+msgstr "示例"
 
 #: ../../source/peripherals/adc.md:16
 msgid "See [ADC Samples](../samples/adc.md)."
-msgstr ""
-
+msgstr "请参见 [ADC 示例](../samples/adc.md)。"
