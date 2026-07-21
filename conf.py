@@ -39,8 +39,8 @@ extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.viewcode',
 
-    # Internationalization (locale dir exists for future translations)
-    # 'sphinx_intl',  # commented out - no locale files yet
+    # Internationalization (locale dir exists for translations)
+    'sphinx_intl',
 
     # Markdown support via MyST
     'myst_parser',
@@ -61,19 +61,14 @@ extensions = [
 locale_dirs = ['locale/']
 gettext_compact = False
 
-# -- Language-specific master doc ---------------------------------------------
-# English docs live under en/; Chinese docs under zh/.
-# The master_doc is set to '<lang>/index' automatically.
-# master_doc = f'{language}/index'
-
 # Source file suffixes: support both RST and MD
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
 }
 
-# The master toctree document
-master_doc = 'en/index'
+# The master toctree document (relative to source directory)
+master_doc = 'index'
 
 # Files/directories to exclude from processing
 exclude_patterns = [

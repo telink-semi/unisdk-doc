@@ -112,7 +112,7 @@ jobs:
             UNISDK_DOC_LANG="$lang" \
             UNISDK_DOC_VERSION="$version_label" \
             UNISDK_DOC_RELEASE="$version_label" \
-            sphinx-build -b html -D master_doc=index -c . "$lang" "$final_dir"
+            sphinx-build -b html -D master_doc=index -c . source "$final_dir"
           }
 
           # ---- Determine source ref and version label ----

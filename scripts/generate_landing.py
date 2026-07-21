@@ -64,7 +64,7 @@ def generate_landing_page(build_dir, output_dir):
       <div class="card">
         <h2>English</h2>
         <p>Complete documentation including getting started guides, API references, peripheral drivers, and more.</p>
-        <a class="btn" href="./en/main/">Browse English Docs</a>
+        <a class="btn" href="./en/latest/">Browse English Docs</a>
       </div>
     </div>
     <div class="version-section">
