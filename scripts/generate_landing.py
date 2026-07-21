@@ -18,88 +18,29 @@ import json
 
 
 def generate_landing_page(build_dir, output_dir):
-    """Generate index.html landing page."""
+    """Generate a minimal index.html that auto-redirects to English docs."""
     landing_html = r"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UniSDK Documentation</title>
+  <meta http-equiv="refresh" content="0; url=./en/latest/">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #F5F7FA; color: #333; min-height: 100vh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-    }
-    .container { max-width: 800px; width: 90%; text-align: center; padding: 2rem; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F5F7FA; color: #333; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+    .container { text-align: center; padding: 2rem; }
     .logo { margin-bottom: 1.5rem; }
     .logo img { height: 48px; }
-    h1 { font-size: 2rem; font-weight: 700; color: #0a2d72; margin-bottom: 0.5rem; }
-    .subtitle { font-size: 1.1rem; color: #666; margin-bottom: 2.5rem; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
-    .card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
-    .card h2 { font-size: 1.3rem; color: #0a2d72; margin-bottom: 1rem; }
-    .card p { font-size: 0.9rem; color: #666; margin-bottom: 1.2rem; line-height: 1.5; }
-    .card .btn { display: inline-block; padding: 0.6rem 1.5rem; background: #0a2d72; color: #fff; text-decoration: none; border-radius: 6px; font-size: 0.9rem; font-weight: 500; transition: background 0.2s; }
-    .card .btn:hover { background: #0052A5; }
-    .version-section { margin-top: 2rem; padding: 1.5rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-    .version-section h3 { font-size: 1rem; color: #0a2d72; margin-bottom: 1rem; }
-    .version-list { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
-    .version-list a { display: inline-block; padding: 0.4rem 1rem; background: #e8edf5; color: #0a2d72; text-decoration: none; border-radius: 20px; font-size: 0.85rem; transition: background 0.2s; }
-    .version-list a:hover { background: #0a2d72; color: #fff; }
-    .footer { margin-top: 3rem; font-size: 0.8rem; color: #999; }
-    .footer a { color: #0052A5; text-decoration: none; }
+    h1 { font-size: 1.5rem; color: #0a2d72; }
+    a { color: #0052A5; }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="logo">
-      <img src="_static/logo.svg" alt="Telink Logo">
-    </div>
+    <div class="logo"><img src="_static/logo.svg" alt="Telink Logo"></div>
     <h1>UniSDK Documentation</h1>
-    <p class="subtitle">Telink Unified Software Development Kit</p>
-    <div class="card-grid">
-      <div class="card">
-        <h2>English</h2>
-        <p>Complete documentation including getting started guides, API references, peripheral drivers, and more.</p>
-        <a class="btn" href="./en/latest/">Browse English Docs</a>
-      </div>
-      <div class="card">
-        <h2>中文</h2>
-        <p>完整的 UniSDK 文档，涵盖入门指南、API 参考、外设驱动、开发环境搭建等内容。</p>
-        <a class="btn" href="./zh/latest/">浏览中文文档</a>
-      </div>
-    </div>
-    <div class="version-section">
-      <h3>All Versions</h3>
-      <div class="version-list" id="version-list">
-        <span style="color:#999;">Loading...</span>
-      </div>
-    </div>
-    <div class="footer">
-      &copy; Telink Semiconductor. All rights reserved.
-      &middot; <a href="https://www.telink-semi.cn/">Official Website</a>
-      &middot; <a href="https://github.com/telink-semi/unisdk-doc">Docs Repository</a>
-      &middot; <a href="https://forum.telink-semi.cn/">Technical Forum</a>
-    </div>
+    <p>Redirecting to <a href="./en/latest/">English docs</a> or <a href="./zh/latest/">中文文档</a>...</p>
   </div>
-  <script>
-    (function() {
-      var vl = document.getElementById('version-list');
-      fetch('./versions.json').then(function(r) { return r.json(); }).then(function(d) {
-        if (!d.versions || !d.versions.length) { vl.innerHTML = '<span style="color:#999;">No other versions.</span>'; return; }
-        vl.innerHTML = '';
-        var seen = {};
-        d.versions.forEach(function(v) {
-          var key = v.lang + '-' + v.name;
-          if (seen[key]) return; seen[key] = true;
-          var a = document.createElement('a'); a.href = v.url; a.textContent = v.label; vl.appendChild(a);
-        });
-      }).catch(function() { vl.innerHTML = '<span style="color:#999;">Unable to load versions.</span>'; });
-    })();
-  </script>
 </body>
 </html>"""
 

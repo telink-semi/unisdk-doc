@@ -73,7 +73,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           sudo apt-get update -qq
-          sudo apt-get install -y -qq doxygen
+          sudo apt-get install -y -qq doxygen texlive-latex-base texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk
 
       - name: Generate API reference (Doxygen XML + RST files)
         run: |
@@ -160,6 +160,21 @@ jobs:
 
           echo "=== All versions built ==="
           find "$OUTPUT_DIR" -maxdepth 3 -type d | head -30
+
+      - name: Build PDF documentation
+        run: |
+          # Build English PDF
+          UNISDK_DOC_LANG=en sphinx-build -b latex -c . source/ _build/latex/en
+          make -C _build/latex/en all-pdf 2>/dev/null || latexmk -pdf -cd _build/latex/en/*.tex
+
+          # Build Chinese PDF
+          UNISDK_DOC_LANG=zh sphinx-build -b latex -c . source/ _build/latex/zh
+          make -C _build/latex/zh all-pdf 2>/dev/null || latexmk -pdf -cd _build/latex/zh/*.tex
+
+          # Copy PDFs to output
+          mkdir -p _build/versions/en/_downloads _build/versions/zh/_downloads
+          cp _build/latex/en/*.pdf _build/versions/en/_downloads/unisdk-doc.pdf 2>/dev/null || true
+          cp _build/latex/zh/*.pdf _build/versions/zh/_downloads/unisdk-doc.pdf 2>/dev/null || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
