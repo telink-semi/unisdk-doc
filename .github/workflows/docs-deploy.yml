@@ -3,20 +3,20 @@
 # Supports multi-language (en/zh) and multi-version (main + develop + v* tags) builds.
 #
 # Triggered by:
-#   - Push to main branch          → builds "latest" (stable snapshot from develop)
-#   - Push to develop branch       → builds "dev" (active development)
-#   - Push a tag matching v*       → builds the tag version
+#   - Push to main branch          -> builds "latest" (stable snapshot from develop)
+#   - Push to develop branch       -> builds "dev" (active development)
+#   - Push a tag matching v*       -> builds the tag version
 #
 # Version naming convention:
-#   v0.2.0          → SDK v0.2.0 release
-#   v0.2.0-doc.1    → Doc-only fix after SDK v0.2.0
+#   v0.2.0          -> SDK v0.2.0 release
+#   v0.2.0-doc.1    -> Doc-only fix after SDK v0.2.0
 #
 # Output structure on gh-pages:
-#   /index.html       ← Landing page (language + version selector)
-#   /versions.json    ← Version metadata for version switcher JS
-#   /en/latest/       ← Latest stable English docs (built from develop, promoted via main)
-#   /en/dev/          ← Active development English docs
-#   /en/v0.2.0/       ← Frozen English docs for SDK v0.2.0
+#   /index.html       <- Landing page (language + version selector)
+#   /versions.json    <- Version metadata for version switcher JS
+#   /en/latest/       <- Latest stable English docs (built from develop, promoted via main)
+#   /en/dev/          <- Active development English docs
+#   /en/v0.2.0/       <- Frozen English docs for SDK v0.2.0
 #
 name: Docs Deploy
 
@@ -45,26 +45,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Determine version label from git ref
-        id: version-label
-        run: |
-          case "${{ github.ref }}" in
-            refs/heads/main)
-              echo "label=latest" >> "$GITHUB_OUTPUT"
-              echo "source_ref=develop"
-              ;;
-            refs/heads/develop)
-              echo "label=dev" >> "$GITHUB_OUTPUT"
-              echo "source_ref=develop"
-              ;;
-            refs/tags/v*)
-              TAG="${GITHUB_REF#refs/tags/}"
-              LABEL="${TAG#v}"
-              echo "label=$LABEL" >> "$GITHUB_OUTPUT"
-              echo "source_ref=$TAG"
-              ;;
-          esac
 
       - name: Cache SDK checkout
         id: cache-sdk
@@ -135,12 +115,35 @@ jobs:
             sphinx-build -b html -D master_doc=index -c . "$lang" "$final_dir"
           }
 
-          VERSION_LABEL="${{ steps.version-label.outputs.label }}"
-          SOURCE_REF="${{ steps.version-label.outputs.source_ref }}"
+          # ---- Determine source ref and version label ----
+          case "${{ github.ref_type }}" in
+            branch)
+              case "${{ github.ref_name }}" in
+                main)
+                  SOURCE_REF="develop"
+                  VERSION_LABEL="latest"
+                  ;;
+                develop)
+                  SOURCE_REF="develop"
+                  VERSION_LABEL="dev"
+                  ;;
+              esac
+              ;;
+            tag)
+              TAG="${{ github.ref_name }}"
+              SOURCE_REF="$TAG"
+              VERSION_LABEL="${TAG#v}"
+              ;;
+          esac
+
+          echo "SOURCE_REF=$SOURCE_REF VERSION_LABEL=$VERSION_LABEL"
+
+          # ---- Build the source branch/ref ----
           for lang in $LANGUAGES; do
             build_version "$lang" "$SOURCE_REF" "$VERSION_LABEL"
           done
 
+          # ---- Build all v* tags ----
           for tag in $(git tag -l 'v*' --sort=-v:refname); do
             label="${tag#v}"
             [ "$label" = "$VERSION_LABEL" ] && continue
