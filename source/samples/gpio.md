@@ -51,7 +51,7 @@ The `UNISDK_BOARD_LED_0_PORT` and `UNISDK_BOARD_LED_0_PIN` macros are defined in
 
 ```bash
 west tl-build samples/gpio_demo --board TLSR9528A_EVK
-west tl-bdt download --chip TLSR9528A -i build/gpio_demo.bin
+west tl-bdt download --chip TLSR9528A -i build/Telink.bin
 ```
 
 Source code: `samples/gpio_demo/main.c`

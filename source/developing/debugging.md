@@ -41,7 +41,7 @@ Logs are output via UART and can be viewed in a serial terminal.
 
 ```bash
 # Verify firmware integrity
-bash scripts/tl_check_fw.sh build/gpio_demo.elf
+bash scripts/tl_check_fw.sh build/Telink.elf
 ```
 
 ## Performance Analysis
@@ -60,10 +60,10 @@ Memory region         Used Size  Region Size  %age Used
 
 ```bash
 # Generate disassembly for analysis
-riscv32-elf-objdump -d build/gpio_demo.elf > disasm.txt
+riscv32-elf-objdump -d build/Telink.elf > disasm.txt
 
 # View section sizes
-riscv32-elf-size build/gpio_demo.elf
+riscv32-elf-size build/Telink.elf
 ```
 
 ## Debugging with GDB
@@ -72,7 +72,7 @@ riscv32-elf-size build/gpio_demo.elf
 # Start GDB server (using J-Link or Telink Debugger)
 # Then connect the GDB client
 
-riscv32-elf-gdb build/gpio_demo.elf
+riscv32-elf-gdb build/Telink.elf
 (gdb) target remote :2331
 (gdb) break main
 (gdb) continue

@@ -330,10 +330,10 @@ When executing `west tl-build` (with `-k/--kconfig`), the flow is:
 
 ```text
 build/
-├── gpio_demo.bin         # Firmware binary (for flashing)
-├── gpio_demo.elf         # ELF executable (for debugging)
-├── gpio_demo.map         # Memory map file
-└── gpio_demo.lst         # Disassembly file
+├── Telink.bin         # Firmware binary (for flashing)
+├── Telink.elf         # ELF executable (for debugging)
+├── Telink.map         # Memory map file
+└── Telink.lst         # Disassembly file
 ```
 :::
 

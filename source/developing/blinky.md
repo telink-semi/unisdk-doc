@@ -58,9 +58,9 @@ After a successful build, the output files are located in the `build/` directory
 
 ```text
 build/
-├── gpio_demo.bin     # Firmware binary file
-├── gpio_demo.elf     # ELF executable (contains debug information)
-└── gpio_demo.map     # Memory map file
+├── Telink.bin     # Firmware binary file
+├── Telink.elf     # ELF executable (contains debug information)
+└── Telink.map     # Memory map file
 ```
 :::
 
@@ -68,10 +68,10 @@ build/
 
 ```bash
 # Flash using BDT tool
-west tl-bdt download --chip TLSR9528A -i build/gpio_demo.bin
+west tl-bdt download --chip TLSR9528A -i build/Telink.bin
 
 # Specify flash address
-west tl-bdt download --chip TLSR9528A -i build/gpio_demo.bin -a 0x00
+west tl-bdt download --chip TLSR9528A -i build/Telink.bin -a 0x00
 ```
 
 ## Step 4: Verification
@@ -91,7 +91,7 @@ After making changes, recompile and flash:
 
 ```bash
 west tl-build samples/gpio_demo --board TLSR9528A_EVK
-west tl-bdt download --chip TLSR9528A -i build/gpio_demo.bin
+west tl-bdt download --chip TLSR9528A -i build/Telink.bin
 ```
 
 ## Next Steps

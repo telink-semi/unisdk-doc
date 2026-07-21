@@ -26,13 +26,13 @@ BDT (Burning and Debugging Tool) is the flashing and debugging tool for Telink c
 west tl-bdt download --chip TLSR9528A
 
 # Specify firmware file
-west tl-bdt download --chip TLSR9528A -i build/gpio_demo.bin
+west tl-bdt download --chip TLSR9528A -i build/Telink.bin
 
 # Specify flash address
-west tl-bdt download --chip TLSR9528A -i build/gpio_demo.bin -a 0x1000
+west tl-bdt download --chip TLSR9528A -i build/Telink.bin -a 0x1000
 
 # Use USB mode
-west tl-bdt download --chip TLSR9528A --usb -i build/gpio_demo.bin
+west tl-bdt download --chip TLSR9528A --usb -i build/Telink.bin
 ```
 
 ## Flash Operations

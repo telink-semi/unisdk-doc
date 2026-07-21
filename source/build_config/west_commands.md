@@ -129,7 +129,7 @@ BDT (Burning and Debugging Tool) command interface.
 
 ```bash
 # Download firmware
-west tl-bdt download --chip TLSR9528A -i build/gpio_demo.bin
+west tl-bdt download --chip TLSR9528A -i build/Telink.bin
 
 # Read 16 bytes from Flash
 west tl-bdt read --chip TLSR9528A -a 0x00 -s 16
