@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/getting_started/get_sdk.md:6
+msgid "Get and Import the SDK"
+msgstr ""
+
+#: ../../source/getting_started/get_sdk.md:8
+msgid "Get the SDK"
+msgstr ""
+
+#: ../../source/getting_started/get_sdk.md:10
+msgid "Use Git to obtain the UniSDK:"
+msgstr ""
+
+#: ../../source/getting_started/get_sdk.md:17
+msgid "SDK Directory Structure"
+msgstr ""
+
+#: ../../source/getting_started/get_sdk.md:19
+msgid ""
+"After obtaining the SDK, the top-level directory structure is organized "
+"as follows:"
+msgstr ""
+
+#: ../../source/getting_started/get_sdk.md
+msgid "SDK Top-Level Directory Structure"
+msgstr ""
+
+#: ../../source/getting_started/get_sdk.md:39
+msgid ""
+"For a detailed explanation of each directory, see [SDK Directory "
+"Structure](../developing/directory_structure.md)."
+msgstr ""
+
+#: ../../source/getting_started/get_sdk.md:41
+msgid "Next Steps"
+msgstr ""
+
+#: ../../source/getting_started/get_sdk.md:43
+msgid ""
+"After obtaining the SDK, proceed to [Compile, Flash and Run Your First "
+"Example](first_example.md)."
+msgstr ""
+

@@ -1,0 +1,271 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/introduction/index.md:6
+msgid "UniSDK Introduction"
+msgstr ""
+
+#: ../../source/introduction/index.md:8
+msgid "Telink Semiconductor"
+msgstr ""
+
+#: ../../source/introduction/index.md:10
+msgid ""
+"Telink Semiconductor is a company focused on designing low-power wireless"
+" connectivity chips, providing complete chip solutions covering protocols"
+" such as BLE, Zigbee, Thread, and Matter. Telink chips are widely used in"
+" smart homes, wearable devices, IoT sensors, and other scenarios."
+msgstr ""
+
+#: ../../source/introduction/index.md:12
+msgid "UniSDK Core Features and Advantages"
+msgstr ""
+
+#: ../../source/introduction/index.md:14
+msgid ""
+"UniSDK (Unified Software Development Kit) provides a unified software "
+"development platform for the full range of Telink chips. The core "
+"advantages include:"
+msgstr ""
+
+#: ../../source/introduction/index.md:16
+msgid "Unified Development Experience"
+msgstr ""
+
+#: ../../source/introduction/index.md:18
+msgid ""
+"**One Codebase, Multi-Chip Adaptation**: Based on a unified API layer and"
+" HAL abstraction, application code can seamlessly migrate between "
+"different Telink chips"
+msgstr ""
+
+#: ../../source/introduction/index.md:19
+msgid ""
+"**Unified Build System**: All chip families share the same CMake + "
+"Kconfig build infrastructure"
+msgstr ""
+
+#: ../../source/introduction/index.md:21
+msgid "Modern Build System"
+msgstr ""
+
+#: ../../source/introduction/index.md:23
+msgid "UniSDK integrates industry-proven build toolchains:"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Component"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Purpose"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "**CMake**"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Build system core"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Project configuration, dependency management, build rule generation"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "**Ninja**"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Build execution engine"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "High-performance parallel compilation"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "**West**"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Project management tool"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Zephyr community-standard project management workflow"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "**Kconfig**"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Configuration management system"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Hierarchical management of compile-time configuration options"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "**Make**"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Legacy interface"
+msgstr ""
+
+#: ../../source/introduction/index.md
+msgid "Frontend interface compatible with traditional Make usage habits"
+msgstr ""
+
+#: ../../source/introduction/index.md:33
+msgid "Rich Peripheral Drivers"
+msgstr ""
+
+#: ../../source/introduction/index.md:35
+msgid ""
+"Provides GPIO, UART, I2C, SPI, ADC, DMA, Watchdog, Timer, and other full-"
+"range peripheral drivers, encapsulating underlying hardware differences "
+"with a unified API."
+msgstr ""
+
+#: ../../source/introduction/index.md:37
+msgid "Low-Power Design"
+msgstr ""
+
+#: ../../source/introduction/index.md:39
+msgid ""
+"A comprehensive power management framework supporting multiple low-power "
+"modes, delivering excellent energy efficiency for battery-powered "
+"devices."
+msgstr ""
+
+#: ../../source/introduction/index.md:41
+msgid "Architecture Overview"
+msgstr ""
+
+#: ../../source/introduction/index.md:73
+msgid "Supported Chip Families"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "Chip Family"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "Core"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "Key Features"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "Typical Applications"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "**TL321X**"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "RISC-V"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "BLE, GPIO, UART, I2C, SPI, ADC, DMA"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "General IoT"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "**TL721X**"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "BLE, GPIO, UART, I2C, SPI, ADC, DMA, USB"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "**TLSR922X**"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "BLE, GPIO, UART, I2C, SPI, ADC"
+msgstr ""
+
+#: ../../source/introduction/index.md:43
+msgid "**TLSR952X**"
+msgstr ""
+
+#: ../../source/introduction/index.md:82
+msgid "License"
+msgstr ""
+
+#: ../../source/introduction/index.md:84
+msgid ""
+"UniSDK is licensed under the [Apache License "
+"2.0](https://www.apache.org/licenses/LICENSE-2.0)."
+msgstr ""
+
+#: ../../source/introduction/index.md:86
+msgid "Community Resources"
+msgstr ""
+
+#: ../../source/introduction/index.md:88
+msgid ""
+"Official Website: [https://www.telink-semi.com](https://www.telink-"
+"semi.com)"
+msgstr ""
+
+#: ../../source/introduction/index.md:89
+msgid "Technical Forum: [Telink Developer Forum](https://forum.telink-semi.cn)"
+msgstr ""
+
+#: ../../source/introduction/index.md:91
+msgid "Next Steps"
+msgstr ""
+
+#: ../../source/introduction/index.md:93
+msgid ""
+"[Getting Started](../getting_started/index.md) — Set up the development "
+"environment"
+msgstr ""
+
+#: ../../source/introduction/index.md:94
+msgid ""
+"[Development Guide](../developing/index.md) — Deep dive into the SDK "
+"development workflow"
+msgstr ""
+
+#: ../../source/introduction/index.md:95
+msgid "[Samples & Demos](../samples/index.md) — Run code examples directly"
+msgstr ""
+

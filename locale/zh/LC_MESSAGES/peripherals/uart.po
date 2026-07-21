@@ -1,0 +1,767 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/peripherals/uart.md:6
+msgid "UART Driver"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:8
+msgid "Overview"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:10
+msgid ""
+"The UART driver provides an interface for configuring and using "
+"asynchronous serial ports. It supports communication parameter "
+"configuration (baud rate, parity, stop bits), pin multiplexing (Pinmux), "
+"data transmission (blocking mode), and data reception (blocking and non-"
+"blocking interrupt modes). It also supports hardware flow control "
+"(RTS/CTS)."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:12
+msgid "**Key Features:**"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:14
+msgid "UART parameter configuration (baud rate, parity, stop bits)"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:15
+msgid "TX/RX and RTS/CTS pin multiplexing"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:16
+msgid "Data transmission (Blocking / PLIC / DMA modes)"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:17
+msgid "Data reception (Blocking / PLIC / DMA modes + callback)"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:18
+msgid "Hardware flow control (RTS/CTS)"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:20
+msgid "Data Types and Enums"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:22
+msgid "UART Module Identifiers"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:24
+msgid ""
+"`enum tlk_uart_module` — Automatically generated based on "
+"`UNISDK_UART_COUNT` and enabled instances. Values include `UART0`, "
+"`UART1`, etc."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:26
+msgid "Parity"
+msgstr ""
+
+#: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:28
+msgid "`enum tlk_uart_parity`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Value"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_PARITY_NONE`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "No parity"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_PARITY_EVEN`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Even parity"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_PARITY_ODD`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Odd parity"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:36
+msgid "Stop Bits"
+msgstr ""
+
+#: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:38
+msgid "`enum tlk_uart_stop_bit`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_STOP_BIT_ONE`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "1 stop bit"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_STOP_BIT_ONE_DOT_FIVE`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "1.5 stop bits"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_STOP_BIT_TWO`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "2 stop bits"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:46
+msgid "RX Timeout Multiplier"
+msgstr ""
+
+#: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:48
+msgid "`enum tlk_uart_rx_timeout_mul`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:50
+msgid ""
+"Multiplier for RX timeout duration. The total RX timeout = (one UART "
+"frame duration) × multiplier."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_RX_TIMEOUT_MUL_1`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "1× frame duration"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_RX_TIMEOUT_MUL_2`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "2× frame duration"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_RX_TIMEOUT_MUL_3`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "3× frame duration"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_RX_TIMEOUT_MUL_4`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "4× frame duration"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:59
+msgid "UART Configuration Structure"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:61
+msgid "`struct tlk_uart_config`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:63
+msgid ""
+"A structure containing all configuration parameters for initializing a "
+"UART module. Used with `tlk_uart_configure` and "
+"`tlk_uart_configure_pinmux`."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Field"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Type"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`baudrate`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`uint32_t`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Communication speed in baud"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`parity`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Parity check mode"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`stop_bit`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Number of stop bits"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`rx_timeout_mul`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "RX timeout multiplier"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`tx_port_pin`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`struct tlk_gpio_port_pin`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "TX port and pin"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`rx_port_pin`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "RX port and pin"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:74
+msgid "Operation Status"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:76
+msgid "`enum tlk_uart_status`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:78
+msgid ""
+"Return codes used by driver functions to indicate the result of an "
+"operation."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_OK`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Operation completed successfully."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_TIMEOUT`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Operation timed out."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_ERROR`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "General execution error."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:86
+msgid "Flow Control Modes"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:88 ../../source/peripherals/uart.md:101
+#: ../../source/peripherals/uart.md:114 ../../source/peripherals/uart.md:218
+#: ../../source/peripherals/uart.md:238
+msgid "!!! info \"Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`\""
+msgstr ""
+
+#: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:90
+msgid "`enum tlk_uart_flow_control`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_FLOW_NONE`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Flow control disabled."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_FLOW_RTS`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "RTS signal only."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_FLOW_CTS`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "CTS signal only."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_FLOW_RTS_CTS`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Full RTS/CTS flow control."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:99
+msgid "Flow Control Polarity"
+msgstr ""
+
+#: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:103
+msgid "`enum tlk_uart_flow_polarity`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:105
+msgid "Defines the active level logic for RTS and CTS signals."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_ACTIVE_LOW`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid ""
+"**Active Low.** UART stops sending when CTS is low, and sets RTS low to "
+"stop receiving."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_ACTIVE_HIGH`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid ""
+"**Active High.** UART stops sending when CTS is high, and sets RTS high "
+"to stop receiving."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:112
+msgid "Flow Control Configuration Structure"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:116
+msgid "`struct tlk_uart_flow_control_config`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:118
+msgid ""
+"A structure containing all configuration parameters for UART hardware "
+"flow control. Used with `tlk_uart_configure_flow_control` and "
+"`tlk_uart_configure_flow_control_pinmux`."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`flow_control`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Flow control mode (RTS/CTS)"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`flow_polarity`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Active level for RTS/CTS signals"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`rts_port_pin`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "RTS port and pin"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`cts_port_pin`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "CTS port and pin"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:127
+msgid "Transmit Handler Type"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:129
+msgid "`tlk_uart_tx_handler_t`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:131
+msgid ""
+"A function pointer type for the callback invoked when data transmission "
+"is complete in interrupt and DMA modes."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:137
+msgid "Receive Handler Type"
+msgstr ""
+
+#: ../../source/peripherals/uart.md ../../source/peripherals/uart.md:139
+msgid "`tlk_uart_rx_handler_t`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:141
+msgid ""
+"A function pointer type for the callback invoked when data reception is "
+"complete in interrupt and DMA modes."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:147
+msgid "Driver API"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:149
+msgid "`tlk_uart_configure`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:151
+msgid "Initializes the UART module with the provided configuration."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:158 ../../source/peripherals/uart.md:176
+#: ../../source/peripherals/uart.md:205 ../../source/peripherals/uart.md:227
+#: ../../source/peripherals/uart.md:247
+msgid "**Parameters:**"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Parameter"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`uart_num`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`enum tlk_uart_module`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "UART module index."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`config`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`struct tlk_uart_config *`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid ""
+"Pointer to the configuration structure containing baudrate, parity, stop "
+"bits, and pin assignments."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:165 ../../source/peripherals/uart.md:183
+#: ../../source/peripherals/uart.md:234 ../../source/peripherals/uart.md:254
+msgid "**Return value:** None"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:167
+msgid "`tlk_uart_configure_pinmux`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:169
+msgid "Configures UART TX/RX pin multiplexing."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid ""
+"Pointer to the configuration structure containing TX and RX pin "
+"assignments."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:185
+msgid "`tlk_uart_send_bytes`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:187
+msgid "Sends a data buffer."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:195
+msgid "`tlk_uart_receive_bytes`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:197
+msgid ""
+"Receives a data buffer. The provided handler is called when reception is "
+"complete."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`buff`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`uint8_t *`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Pointer to the receive buffer."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`buff_size`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Number of bytes to receive."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`rx_handler`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Callback function invoked after reception completes."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:214
+msgid "**Return value:** `enum tlk_uart_status` — Returns `TLK_UART_OK`."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:216
+msgid "`tlk_uart_configure_flow_control`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:220
+msgid ""
+"Configure the flow control for the specified UART module. Disabled by "
+"default. Should be called after `tlk_uart_configure`."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`struct tlk_uart_flow_control_config *`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Pointer to the flow control configuration structure."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:236
+msgid "`tlk_uart_configure_flow_control_pinmux`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:240
+msgid "Configure UART RTS and CTS pin multiplexing."
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid ""
+"Pointer to the flow control configuration structure containing RTS and "
+"CTS pin assignments."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:256
+msgid "Transfer Modes"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:258
+msgid "Each UART instance can independently configure its transfer mode:"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Mode"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Kconfig Value"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Blocking"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_XFER_BLOCKING`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Synchronous wait, with timeout"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Interrupt"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_XFER_PLIC`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "Interrupt-driven, auto-fill FIFO"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "DMA"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "`TLK_UART_XFER_DMA`"
+msgstr ""
+
+#: ../../source/peripherals/uart.md
+msgid "DMA driven, zero CPU load"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:266
+msgid "Kconfig Configuration"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:268
+msgid "Global options"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:270
+#, python-brace-format
+msgid ""
+"**`TLK_UART_SELECTED**   Indicates that at least one UART instance is "
+"enabled in the system. This option is automatically selected when any "
+"`UART{i}_ENABLED` option is enabled."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:273
+#, python-brace-format
+msgid ""
+"**`TLK_UART_USED_AUTO_CONFIG`**   Indicates that automatic UART "
+"configuration is enabled in the system. This option is automatically "
+"selected when `UART{i}_AUTO_CONFIG` is enabled for any UART instance."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:276
+#, python-brace-format
+msgid ""
+"**`TLK_UART_USED_IRQ`**   Indicates that at least one UART instance needs"
+" a PLIC functionality. This option is automatically selected when "
+"`UART{i}_USED_IRQ` or `UART{i}_USED_DMA` are enabled for any UART "
+"instance."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:279
+#, python-brace-format
+msgid ""
+"**`TLK_UART_USED_DMA`**   Indicates that at least one UART instance needs"
+" a DMA functionality. This option is automatically selected when "
+"`UART{i}_USED_DMA` is enabled for any UART instance."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:282
+#, python-brace-format
+msgid ""
+"**`TLK_UART_USED_PM_DEVICE`**   Indicates that UART power management "
+"support is enabled in the system. This option is automatically selected "
+"when `UART{i}_PM_DEVICE` is enabled for any UART instance."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:285
+#, python-brace-format
+msgid ""
+"**`TLK_UART_USED_FLOW_CONTROL`**   Indicates that hardware flow control "
+"(RTS/CTS) is enabled in the system. This option is automatically selected"
+" when `UART{i}_FLOW_CONTROL` is enabled for any UART instance."
+msgstr ""
+
+#: ../../source/peripherals/uart.md:288
+msgid "Per-instance Configuration"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:290
+msgid ""
+"Each UART instance (i = 0, 1, 2...) supports the following hierarchical "
+"configuration:"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:335
+msgid "View in the menuconfig"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:337
+msgid "![alt text](pics/uart_1.png) *Figure 1. UART driver configurations*"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:337 ../../source/peripherals/uart.md:340
+#: ../../source/peripherals/uart.md:343 ../../source/peripherals/uart.md:346
+msgid "alt text"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:340
+msgid "![alt text](pics/uart_2.png) *Figure 2. UART instance configurations*"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:343
+msgid "![alt text](pics/uart_3.png) *Figure 3. UART instance auto-config options*"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:346
+msgid "![alt text](pics/uart_4.png) *Figure 4. UART debug configurations*"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:349
+msgid "Related Resources"
+msgstr ""
+
+#: ../../source/peripherals/uart.md:351
+msgid "[UART Samples](../samples/uart.md)"
+msgstr ""
+

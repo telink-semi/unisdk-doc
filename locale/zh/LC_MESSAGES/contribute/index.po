@@ -1,0 +1,709 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/contribute/index.md:6
+msgid "Contribution Guide"
+msgstr ""
+
+#: ../../source/contribute/index.md:8
+msgid ""
+"Community developers and contributors are welcome to contribute code, "
+"documentation, examples, and issue reports to the UniSDK project."
+msgstr ""
+
+#: ../../source/contribute/index.md:10
+msgid ""
+"**Note on SDK code contributions**: This guide focuses on the **unisdk-"
+"doc** documentation repository. For SDK code contributions (unisdk), "
+"please refer to the [unisdk repository](https://github.com/telink-"
+"semi/unisdk)."
+msgstr ""
+
+#: ../../source/contribute/index.md:14
+msgid "Documentation Repository: unisdk-doc"
+msgstr ""
+
+#: ../../source/contribute/index.md:16
+msgid ""
+"The documentation repository ([unisdk-doc](https://github.com/telink-semi"
+"/unisdk-doc)) follows the same branch model as the SDK code repository."
+msgstr ""
+
+#: ../../source/contribute/index.md:18
+msgid "Branch Model"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Branch"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Purpose"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "CI/CD Deployment"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`main`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Stable branch. Only updated when a release is finalized."
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Pushes deploy to `/en/latest/`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`develop`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Active development branch. All documentation changes land here first."
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Pushes deploy to `/en/dev/`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`release-v*.*.*`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Release preparation branch. Created from `develop` before tagging."
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Tag pushes deploy to `/en/v*.*.*/`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`doc/*`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Feature branches for documentation changes."
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "No deployment"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`fix/*`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Feature branches for documentation fixes."
+msgstr ""
+
+#: ../../source/contribute/index.md:38
+msgid "Lifecycle"
+msgstr ""
+
+#: ../../source/contribute/index.md:40
+msgid ""
+"**Development**: Create a feature branch from `develop` -> make changes "
+"-> open PR -> merge into `develop`"
+msgstr ""
+
+#: ../../source/contribute/index.md:41
+msgid ""
+"**Release**: When ready, create `release-v*.*.*` from `develop` -> "
+"finalize -> tag -> CI builds the tag"
+msgstr ""
+
+#: ../../source/contribute/index.md:42
+msgid ""
+"**Stable**: Merge the release branch into `main`, updating the stable "
+"documentation"
+msgstr ""
+
+#: ../../source/contribute/index.md:46
+msgid "Document Version vs SDK Version"
+msgstr ""
+
+#: ../../source/contribute/index.md:48
+msgid ""
+"Document versions are **aligned with SDK versions without extra tags** "
+"for doc-only fixes:"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Scenario"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Doc Tag"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "SDK release"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`v<SDK version>` (e.g. `v0.2.0`)"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "One-to-one mapping, doc and SDK released together"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Doc-only fix"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "**No tag**"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Merge directly to `main`, `latest` auto-updates"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Dev preview"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "No tag (develop -> `dev`)"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "CI deploys to `/en/dev/`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Stable placeholder"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "No tag (main -> `latest`)"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "CI deploys to `/en/latest/`"
+msgstr ""
+
+#: ../../source/contribute/index.md:57
+msgid "**Core principles**:"
+msgstr ""
+
+#: ../../source/contribute/index.md:58
+msgid "Doc tags are one-to-one with SDK tags: at most one doc tag per SDK release"
+msgstr ""
+
+#: ../../source/contribute/index.md:59
+msgid "Doc-only fixes do not create new tags; merge to `main` updates `latest`"
+msgstr ""
+
+#: ../../source/contribute/index.md:60
+msgid ""
+"Published historical versions (e.g. `v0.2.0`) are not retroactively "
+"updated"
+msgstr ""
+
+#: ../../source/contribute/index.md:64
+msgid "Release Process"
+msgstr ""
+
+#: ../../source/contribute/index.md:77
+msgid "**Create a release branch** from `develop`:"
+msgstr ""
+
+#: ../../source/contribute/index.md:83
+msgid "**Finalize**: Make last-minute fixes on the release branch, run QA."
+msgstr ""
+
+#: ../../source/contribute/index.md:85
+msgid "**Tag the release**:"
+msgstr ""
+
+#: ../../source/contribute/index.md:90
+msgid "CI builds and deploys the tag to `/en/v0.x.x/`."
+msgstr ""
+
+#: ../../source/contribute/index.md:92
+msgid "**Merge to main**:"
+msgstr ""
+
+#: ../../source/contribute/index.md:98
+msgid "CI builds and deploys to `/en/latest/`."
+msgstr ""
+
+#: ../../source/contribute/index.md:102
+msgid "Multi-Version Maintenance"
+msgstr ""
+
+#: ../../source/contribute/index.md:117
+msgid "Only the **latest minor version** receives regular maintenance"
+msgstr ""
+
+#: ../../source/contribute/index.md:118
+msgid ""
+"The **previous minor version** accepts only security fixes and critical "
+"bug fixes (via cherry-pick)"
+msgstr ""
+
+#: ../../source/contribute/index.md:119
+msgid "**Older versions** are not maintained; mark as `DEPRECATED` in docs"
+msgstr ""
+
+#: ../../source/contribute/index.md:120
+msgid "Each minor version gets a `release-v*.*.x` maintenance branch"
+msgstr ""
+
+#: ../../source/contribute/index.md:124
+msgid "CI/CD Behavior"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Trigger"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Source Checked Out"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Deploy Path"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Push to `develop`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`develop` branch"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`/en/dev/`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Push to `main`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`develop` branch (snapshot)"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`/en/latest/`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Push tag `v*.*.*`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Tagged commit"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`/en/v*.*.*/`"
+msgstr ""
+
+#: ../../source/contribute/index.md:132
+msgid ""
+"All versions are built and deployed to the `gh-pages` branch, which "
+"serves the documentation via GitHub Pages."
+msgstr ""
+
+#: ../../source/contribute/index.md:136
+msgid "Document Structure Standards"
+msgstr ""
+
+#: ../../source/contribute/index.md:138
+msgid "Directory Naming"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Rule"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Example"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Snake case"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Lowercase letters + underscores"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`getting_started/`, `chips_boards/`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Singular form"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Directory names use singular"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`peripherals/` (already singular)"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Index entry"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Every directory must have `index.md` or `index.rst`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "—"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Images"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Place images in `_images/` subdirectory"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`peripherals/_images/gpio_1.png`"
+msgstr ""
+
+#: ../../source/contribute/index.md:147
+msgid "Images currently in `pics/` should be migrated to `_images/` over time."
+msgstr ""
+
+#: ../../source/contribute/index.md:149
+msgid "Frontmatter Metadata"
+msgstr ""
+
+#: ../../source/contribute/index.md:151
+msgid "Every documentation page must include a frontmatter block:"
+msgstr ""
+
+#: ../../source/contribute/index.md:164
+msgid "**Status values**:"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Status"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Meaning"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`STABLE`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Content is complete, reviewed, and ready for production use"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`DRAFT`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Content is under development, may be incomplete or unreviewed"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`DEPRECATED`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Content is outdated and should not be used for new designs"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`PLANNED`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Content is planned but not yet written"
+msgstr ""
+
+#: ../../source/contribute/index.md:173
+msgid "Version Difference Markers"
+msgstr ""
+
+#: ../../source/contribute/index.md:175
+msgid "Use frontmatter fields to track version history:"
+msgstr ""
+
+#: ../../source/contribute/index.md:186
+msgid "In document body, use Sphinx directives for per-element version tracking:"
+msgstr ""
+
+#: ../../source/contribute/index.md:196
+msgid "File Format Guidelines"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Recommended Format"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Reason"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "TOC files"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`.rst`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Needs toctree directive"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Content pages"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`.md` (MyST)"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Easier to read and write"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "API reference"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`.rst` (auto-generated)"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Produced by `gen_api_rst.py`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Table-heavy pages"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "RST table syntax is more powerful"
+msgstr ""
+
+#: ../../source/contribute/index.md:205
+msgid "**Markdown conventions**:"
+msgstr ""
+
+#: ../../source/contribute/index.md:206
+msgid "Heading levels: `#` -> `##` -> `###` -> `####` (max 4 levels)"
+msgstr ""
+
+#: ../../source/contribute/index.md:207
+msgid "Code blocks: annotate language (`` ```c `` , `` ```bash ``)"
+msgstr ""
+
+#: ../../source/contribute/index.md:208
+msgid "Images: use `![alt](path)` with optional `:width:` directive"
+msgstr ""
+
+#: ../../source/contribute/index.md:209
+#, python-brace-format
+msgid ""
+"Admonitions: use MyST directives like ````{note}`, ````{warning}`, "
+"````{tip}`"
+msgstr ""
+
+#: ../../source/contribute/index.md:210
+#, python-brace-format
+msgid "Links: use MyST `{ref}` and `{doc}` for cross-references"
+msgstr ""
+
+#: ../../source/contribute/index.md:212
+msgid "**RST conventions**:"
+msgstr ""
+
+#: ../../source/contribute/index.md:213
+msgid "Use `.. code-block:: c` instead of `::` + indentation"
+msgstr ""
+
+#: ../../source/contribute/index.md:214
+msgid "Use `:ref:` and `:doc:` for cross-references"
+msgstr ""
+
+#: ../../source/contribute/index.md:215
+msgid "Use `.. versionadded::` / `.. deprecated::` for version tracking"
+msgstr ""
+
+#: ../../source/contribute/index.md:217
+msgid "Cross-Reference Conventions"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Reference Type"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Syntax"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Document link"
+msgstr ""
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`{doc}` / `:doc:`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`` {doc}`getting_started/index` ``"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Section link"
+msgstr ""
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`{ref}` / `:ref:`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`` {ref}`my-section-label` ``"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "External link"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Markdown link"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "`[text](url)`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "API function"
+msgstr ""
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`{c:func}` / `:c:func:`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`` {c:func}`tlk_gpio_init` ``"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "API type"
+msgstr ""
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`{c:type}` / `:c:type:`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`` {c:type}`tlk_gpio_config_t` ``"
+msgstr ""
+
+#: ../../source/contribute/index.md
+msgid "Term reference"
+msgstr ""
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`{term}` / `:term:`"
+msgstr ""
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`` {term}`GPIO` ``"
+msgstr ""
+
+#: ../../source/contribute/index.md:228
+msgid "**Label naming convention**:"
+msgstr ""
+
+#: ../../source/contribute/index.md:235
+msgid "Submitting Issues"
+msgstr ""
+
+#: ../../source/contribute/index.md:237
+msgid ""
+"Use [GitHub Issues](https://github.com/telink-semi/unisdk-doc/issues) to "
+"report documentation bugs or request improvements"
+msgstr ""
+
+#: ../../source/contribute/index.md:238
+msgid "Provide the page URL and describe what is incorrect or missing"
+msgstr ""
+
+#: ../../source/contribute/index.md:239
+msgid "Attach screenshots or error logs if applicable"
+msgstr ""
+
+#: ../../source/contribute/index.md:243
+msgid "Code Standards (SDK Contributions)"
+msgstr ""
+
+#: ../../source/contribute/index.md:245
+msgid "For contributions to the SDK codebase (unisdk):"
+msgstr ""
+
+#: ../../source/contribute/index.md:247
+msgid "C code should follow the format defined in `.clang-format`"
+msgstr ""
+
+#: ../../source/contribute/index.md:248
+msgid "Run `pre-commit` checks before submitting"
+msgstr ""
+
+#: ../../source/contribute/index.md:249
+msgid ""
+"See the [unisdk repository](https://github.com/telink-semi/unisdk) for "
+"detailed guidelines"
+msgstr ""
+

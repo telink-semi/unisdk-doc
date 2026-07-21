@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/chips_boards/boards/TLSR9528A_EVK.md:6
+msgid "TLSR9528A_EVK Board"
+msgstr ""
+
+#: ../../source/chips_boards/boards/TLSR9528A_EVK.md:8
+msgid "!!! note \"Document Status: DRAFT — Detailed specifications to be added\""
+msgstr ""
+
+#: ../../source/chips_boards/boards/TLSR9528A_EVK.md:10
+msgid "Overview"
+msgstr ""
+
+#: ../../source/chips_boards/boards/TLSR9528A_EVK.md:12
+msgid ""
+"The TLSR9528A_EVK is the official evaluation kit for the TLSR952X chip "
+"series."
+msgstr ""
+
+#: ../../source/chips_boards/boards/TLSR9528A_EVK.md:14
+msgid "Building"
+msgstr ""
+

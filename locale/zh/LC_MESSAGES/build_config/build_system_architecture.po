@@ -1,0 +1,4791 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/build_system_architecture.md:1
+msgid "UniSDK Build System Architecture Documentation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:3
+msgid "1. Overall Architecture Overview"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:5
+msgid ""
+"The UniSDK build system adopts a modular, extensible architecture design "
+"that integrates multiple tools such as Make, CMake, Ninja, West, and "
+"Kconfig to form a complete compilation and build workflow. The system "
+"supports multiple compilation methods, including West commands, direct "
+"CMake calls, and Make commands, providing developers with flexible build "
+"options."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:7
+msgid "1.1 Core Components"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:9
+msgid ""
+"**CMake**: The main build system responsible for project configuration, "
+"dependency management, and build process definition"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:10
+msgid ""
+"**Ninja**: A high-performance build tool that executes actual compilation"
+" tasks as CMake's backend"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:11
+msgid ""
+"**West**: Zephyr project management tool extended in UniSDK to manage "
+"project and simplify build workflows"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:12
+msgid ""
+"**Kconfig**: Configuration management system for handling compile-time "
+"configuration options"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:13
+msgid ""
+"**Make**: Provides a traditional make command interface as a frontend to "
+"CMake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:15
+msgid "1.2 Directory Structure"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:17
+msgid ""
+"Build system-related files are mainly distributed in the following "
+"directories:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md
+msgid "SDK Directory Structure (Build System)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:51
+msgid "1.3 Build System"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:53
+msgid ""
+"The UniSDK build system is a comprehensive framework that combines "
+"multiple tools to provide a seamless development experience. The "
+"following diagram illustrates the overall architecture and toolchain "
+"relationships:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:55
+msgid "![Build System Architecture](pics/image.png)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:55
+msgid "Build System Architecture"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:57
+msgid "The build system is designed around the following key components:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:59
+msgid ""
+"**West**: The command-line interface for developers, providing a unified "
+"entry point for various build operations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:60
+msgid "**Make**: Handles high-level build orchestration and pre-build checks"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:61
+msgid ""
+"**CMake**: Core build system responsible for project configuration, "
+"dependency management, and build rule generation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:62
+msgid ""
+"**Kconfig**: Configuration management system for handling compile-time "
+"options"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:63
+msgid ""
+"**YAML**: Configuration format used for various system configurations, "
+"including pin multiplexing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:65
+msgid ""
+"This architecture enables a flexible and modular build process, allowing "
+"developers to easily configure, build, and manage their projects while "
+"maintaining consistency across different target platforms."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:68
+msgid "2. CMake Build System"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:70
+msgid "2.1 CMake Core Process"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:72
+msgid ""
+"The CMake build system is the core of the UniSDK compilation process, "
+"responsible for project configuration, dependency resolution, and build "
+"rule generation."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:74
+msgid "2.1.1 Initialization Phase"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:76
+msgid "**Entry Point**: The build system supports **two entry point modes**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:77
+msgid ""
+"**Root Directory Entry**: Uses the root directory's `CMakeLists.txt` as "
+"the entry point to build the entire SDK"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:78
+msgid ""
+"**Application Entry**: Uses an application-level `CMakeLists.txt` "
+"(typically located in the `samples/` directory) as the entry point to "
+"build a specific application"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:79
+msgid "**Version Requirements**: Sets the minimum CMake version (3.20.0)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:80
+#, python-brace-format
+msgid ""
+"**SDK Integration**: Locates and loads the Telink package configuration "
+"through `find_package(Telink REQUIRED HINTS $ENV{TELINK_BASE})`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:81
+msgid ""
+"**Project Setup**: Configures project-specific settings, including "
+"project name, supported languages, and target creation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:83
+msgid ""
+"**Key Include Guards:** The build system uses two important include "
+"guards to manage inclusion and prevent redundant processing:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:86
+msgid "**TELINK_ROOT_INCLUDED**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:87
+msgid "Set to `TRUE` in the root directory's `CMakeLists.txt`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:88
+msgid ""
+"Used by `telink_default.cmake` to determine if the root directory has "
+"already been included"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:89
+msgid ""
+"If not defined, `telink_default.cmake` will include the root directory's "
+"`CMakeLists.txt`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:90
+msgid ""
+"It will be removed in future versions when the application-level "
+"CMakeLists.txt is supported as the entry point."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:92
+msgid "**TELINK_PACKAGE_INCLUDED**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:93
+msgid "Set to `TRUE` in `TelinkConfig.cmake` when the Telink package is loaded"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:94
+msgid "Prevents multiple loading of the Telink package configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:95
+msgid ""
+"Checked in the root directory's `CMakeLists.txt` to avoid redundant "
+"package loading"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:97
+msgid "**Entry Point Modes Comparison:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Mode"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Entry Point"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Usage"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Output"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Root Directory Entry**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "`CMakeLists.txt` (root)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "`cmake -B build -G Ninja .`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Builds the entire SDK as a library"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Application Entry**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "`CMakeLists.txt` (samples/<AppName>)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "`cmake -B build -G Ninja samples/gpio_demo`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Builds a specific application executable"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:104
+msgid ""
+"**Application-Level Entry Point Implementation:** All applications in the"
+" `samples/` directory must provide their own `CMakeLists.txt` file, which"
+" serves as the entry point for the build process when building a specific"
+" application. This file should:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:107
+msgid "Set the minimum CMake version"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:108
+msgid "Define the project name and default language (C)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:109
+msgid "Add C sources using wildcards"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:110
+msgid "Create an executable target"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:111
+msgid "Conditionally add C++ support if CONFIG_TLK_ALLOW_CPP_WRAPPERS is enabled"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:113
+msgid ""
+"The application-level CMakeLists.txt is automatically processed by the "
+"build system (via Make or West commands), which handles the integration "
+"with the core SDK components."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:115
+msgid "2.1.2 Module Loading Phase"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:117
+msgid ""
+"`telink_default.cmake` loads all necessary CMake modules in a specific "
+"order:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:129
+msgid ""
+"Each module is responsible for the configuration and implementation of "
+"specific functionality, together forming a complete build system."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:131
+msgid "2.2 Core CMake Modules"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:133
+msgid "2.2.1 python.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:135
+#: ../../source/build_config/build_system_architecture.md:311
+msgid "This module is from the Zephyr project."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:137
+msgid ""
+"The `python.cmake` module is responsible for configuring and validating "
+"the Python environment required by the UniSDK build system. As the first "
+"module loaded in the build process, it ensures that all Python-dependent "
+"components have a consistent and compatible Python environment."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:139
+msgid "**Key Features and Functionality:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:141
+msgid "**UTF-8 Encoding Configuration**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:142
+msgid "Sets `PYTHONIOENCODING` to \"utf-8\" on Windows systems"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:143
+msgid ""
+"Ensures consistent output encoding when Python scripts are executed by "
+"CMake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:144
+msgid ""
+"Prevents encoding issues that could occur when Python isn't connected to "
+"a terminal"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:146
+msgid "**Python Version Management**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:147
+msgid "Defines a minimum required Python version (3.10)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:148
+msgid "Implements a robust Python executable discovery mechanism"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:149
+msgid "Prioritizes using the same Python interpreter as West when available"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:151
+msgid "**Python Discovery Process**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:152
+msgid "Checks for an existing `Python3_EXECUTABLE` variable first"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:153
+msgid "Falls back to using `WEST_PYTHON` if available"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:154
+msgid ""
+"Searches for \"python\" and \"python3\" executables in the system path "
+"and virtual environments"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:155
+msgid "Verifies discovered Python versions meet the minimum requirements"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:156
+msgid "Rejects Python 2.x installations explicitly"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:158
+msgid "**Integration with CMake**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:159
+msgid "Uses `find_package(Python3)` to finalize Python configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:160
+msgid ""
+"Sets the legacy `PYTHON_EXECUTABLE` variable for compatibility with "
+"scripts expecting this variable"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:161
+msgid "Uses `include_guard(GLOBAL)` to prevent multiple inclusions"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:163
+msgid ""
+"This module ensures that all Python scripts used throughout the build "
+"process (such as Kconfig processing, pinmux generation, and build "
+"utilities) have access to a compatible Python interpreter, providing a "
+"consistent build environment across different platforms."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:165
+msgid "2.2.2 compiler.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:167
+msgid ""
+"The `compiler.cmake` module is one of the core modules of the UniSDK "
+"build system, responsible for configuring the compiler toolchain, "
+"compiler options, and compilation flags. This module provides a complete "
+"RISC-V compiler configuration and management mechanism."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:169
+msgid "**Key features include:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:171
+msgid "**Compiler Environment Detection and Configuration**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:172
+msgid ""
+"Automatically detects the TELINK_TOOLCHAIN_PATH environment variable "
+"setting"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:173
+msgid "Supports cross-platform path handling"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:174
+msgid "Verifies the existence and validity of the RISC-V GCC compiler"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:175
+msgid ""
+"Provides clear error messages and configuration guidance when the "
+"compiler is not found"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:177
+msgid "**Toolchain Component Setup**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:178
+msgid "Configures primary compilation tools: C/C++ compiler, assembler"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:179
+msgid "Sets up auxiliary tools: objdump, objcopy, etc."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:180
+msgid "Uniformly configures RISC-V target architecture and processor type"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:181
+msgid "Sets the system name to Generic (for bare-metal development)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:183
+msgid "**Compiler Options Application Function**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:184
+msgid ""
+"Provides the `telink_apply_compiler_options()` function to apply "
+"compilation options to targets"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:185
+msgid ""
+"Automatically applies preprocessor macro definitions (autoconf.h, "
+"capabilities.h, pinmux.h)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:186
+msgid ""
+"Supports dynamically loading compilation options from JSON configuration "
+"files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:187
+msgid ""
+"Applies specific compilation flags based on different languages (ASM, C, "
+"C++)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:189
+msgid ""
+"This module ensures compilation consistency across different platforms "
+"for the entire project through a unified compiler configuration "
+"mechanism, while providing a flexible option configuration method to "
+"support project customization requirements."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:191
+msgid "2.2.3 linker.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:193
+msgid ""
+"The `linker.cmake` module is responsible for configuring the linking "
+"process in the UniSDK build system. It handles linker scripts, link "
+"options, and post-build processing commands. The following are its key "
+"functionalities:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:195
+msgid "2.2.3.1 Basic Linker Configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:196
+msgid "Sets CMAKE_C_LINK_EXECUTABLE command template for RISC-V cross-compilation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:197
+msgid "Configures verbose makefile output for better build visibility"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:198
+msgid "Disables RPATH to ensure no runtime path dependencies are embedded"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:199
+msgid "Removes default library suffix to match embedded system requirements"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:201
+msgid "2.2.3.2 Linker Options Management"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:202
+msgid "Reads linker options from the `build_settings.json` configuration file"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:203
+msgid "Converts JSON-defined linker options into CMake-compatible list format"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:204
+msgid "Adds essential linker flags"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:206
+msgid ""
+"The `build_settings.json` file is a central configuration file used by "
+"the UniSDK build system to store various build-related settings. It "
+"follows a JSON format and contains platform-specific configuration "
+"options, including:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:221
+msgid ""
+"This file provides a flexible way to configure build settings across "
+"different platforms and projects, allowing for easy customization without"
+" modifying CMake scripts directly."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:223
+msgid "2.2.3.3 Linker Script Preprocessing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:224
+msgid "Implements preprocessing of linker scripts using the C compiler"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:225
+msgid ""
+"Supports conditional compilation in linker scripts using capabilities.h "
+"and autoconf.h macros"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:226
+msgid ""
+"Creates a custom target `preprocess_linker` that ensures the linker "
+"script is always up-to-date"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:227
+msgid ""
+"Automatically processes the base flash_boot.link script and outputs the "
+"final linker script to the build directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:229
+msgid "2.2.3.4 Post-Build Processing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:230
+msgid ""
+"Provides the `telink_apply_linker_options(target)` function to apply "
+"linker settings to a specific target"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:231
+msgid "Configures objcopy to generate binary firmware files from ELF executables"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:232
+msgid "Sets up objdump to create assembly listings for debugging and analysis"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:233
+msgid "Adds size reporting to monitor memory usage of the compiled firmware"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:234
+msgid "Integrates firmware validation through the tlk_check_fw.py script"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:236
+msgid "2.2.4 kconfig.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:238
+msgid ""
+"Kconfig integration module is responsible for managing the entire "
+"configuration system within the CMake build process:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:240
+msgid "**Configuration File Management**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:241
+msgid ""
+"Defines key configuration file paths (`.config`, `chip.config`, "
+"`build.config`, `autoconf.h`, `capabilities.h`)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:242
+msgid ""
+"Sets up build directory properties to ensure proper cleanup of "
+"configuration files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:243
+msgid "Manages configuration file regeneration and dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:245
+msgid "**Configuration Generation Flow**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:246
+msgid ""
+"Handles automatic generation of `chip.config` from `Kconfig.chip` when "
+"SOC and BOARD are not defined"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:247
+msgid ""
+"Generates `capabilities.h` using preprocessing script based on chip "
+"configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:248
+msgid ""
+"Creates `build.config` from `Kconfig.build` with dependencies on "
+"capabilities"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:249
+msgid "Merges `chip.config` and `build.config` into the final `.config` file"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:251
+msgid "**Preprocessor Integration**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:252
+msgid ""
+"Integrates Python scripts (`menuconfig.py`, `preprocess_kconfig.py`, "
+"`kconfig.py`)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:253
+msgid "Parses `.config` file to generate `autoconf.h` with appropriate C defines"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:254
+msgid "Handles different value types (boolean, string, numeric) in configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:256
+msgid "**Custom Targets**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:257
+msgid "**`parse_config`**: Ensures configuration parsing during build"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:258
+msgid ""
+"**`config`**: Unified target executing the entire configuration flow in "
+"sequence"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:259
+msgid ""
+"**`generate_chip_config`**: Generates `chip.config` using menuconfig or "
+"kconfig.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:260
+msgid ""
+"**`generate_capabilities`**: Generates `capabilities.h` from chip "
+"configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:261
+msgid ""
+"**`generate_build_config`**: Generates `build.config` using menuconfig or"
+" kconfig.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:262
+msgid ""
+"**`update_dotconfig`**: Merges `chip.config` and `build.config` into "
+"`.config`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:264
+msgid "**Dependency Tracking**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:265
+msgid ""
+"Sets up explicit target dependencies: `generate_chip_config` → "
+"`generate_capabilities` → `generate_build_config` → `update_dotconfig`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:266
+msgid "Creates cross-platform CMake commands for configuration file operations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:267
+msgid "Manages the configuration generation order with proper dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:269
+msgid "2.2.4.1 SOC and BOARD Parameter Processing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:271
+msgid ""
+"The `kconfig.cmake` module includes comprehensive SOC and BOARD parameter"
+" handling:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:273
+msgid "**Parameter Detection and Processing:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:291
+msgid "**SOC/BOARD Combination Validation:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:292
+msgid "Validates SOC and BOARD combinations using dynamic Kconfig parsing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:293
+msgid "Extracts SOC and BOARD names from command-line arguments"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:294
+msgid "Calls `kconfig_parser.py` with `--validate` option to verify compatibility"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:295
+msgid "Provides clear error messages for invalid combinations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:297
+msgid "**Automatic Configuration Application:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:298
+msgid "Applies SOC and BOARD configurations using `soc_board_setter.py` script"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:299
+msgid ""
+"Handles dependency resolution automatically (BOARD dependencies trigger "
+"SOC configuration)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:300
+msgid "Supports both individual SOC/BOARD setting and combined setting"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:301
+msgid "Integrates with the existing configuration generation flow"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:303
+msgid "**Integration Points:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:304
+msgid ""
+"**Command Line**: Parameters passed via `-DSOC=` and `-DBOARD=` CMake "
+"flags"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:305
+msgid ""
+"**Make Integration**: Makefile automatically forwards SOC and BOARD "
+"variables to CMake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:306
+msgid ""
+"**West Integration**: West commands can specify SOC/BOARD through "
+"command-line options"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:307
+msgid ""
+"**Validation**: Real-time validation prevents incompatible hardware "
+"configurations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:309
+msgid "2.2.5 west.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:313
+msgid ""
+"The `west.cmake` module is responsible for integrating the West build "
+"system tool with the UniSDK build infrastructure. West is the official "
+"meta-tool for Zephyr-based projects, and this module ensures proper "
+"configuration and version compatibility within the UniSDK environment."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:315
+msgid "2.2.5.1 West Installation Detection"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:316
+msgid ""
+"Checks for West installation by attempting to import the west.version "
+"module"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:317
+msgid ""
+"Verifies installation status through the presence of WEST_PYTHON "
+"environment variable"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:318
+msgid "Handles both installed and non-installed West scenarios gracefully"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:319
+msgid ""
+"Provides clear error messages with installation instructions when West is"
+" required but not found"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:321
+msgid "2.2.5.2 Python Environment Consistency"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:322
+msgid "Ensures the Python interpreter used by West matches the one used by CMake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:323
+msgid "Resolves symbolic links to identify the actual Python executable paths"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:324
+msgid "Detects and reports Python interpreter mismatches between West and CMake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:325
+msgid ""
+"Adds detailed diagnostic information when Python environments are out of "
+"sync"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:327
+msgid "2.2.5.3 Version Compatibility Validation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:328
+msgid "Enforces minimum required West version (0.14.0)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:329
+msgid "Compares detected version against minimum requirements"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:330
+msgid "Provides upgrade instructions when version requirements are not met"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:331
+msgid ""
+"Maintains version consistency with requirements specified in scripts"
+"/requirements-base.txt"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:333
+msgid "2.2.5.4 West Command Configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:334
+msgid "Sets up the WEST variable as a command prefix for invoking West"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:335
+msgid "Configures the WEST variable to be cached internally for IDE integration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:336
+#, python-brace-format
+msgid ""
+"Formats the command as `${PYTHON_EXECUTABLE} -m west` to ensure proper "
+"module execution"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:337
+msgid "Outputs status information about the detected West version"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:339
+msgid "2.2.5.5 Workspace Detection"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:340
+msgid ""
+"Determines the West workspace top-level directory using `west topdir` "
+"command"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:341
+msgid "Configures the WEST_TOPDIR variable for use in other build scripts"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:342
+msgid "Handles non-West projects gracefully by setting WEST to WEST-NOTFOUND"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:343
+msgid ""
+"Maintains compatibility with both West-managed and custom project "
+"structures"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:345
+msgid "2.2.6 pinmux.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:347
+msgid ""
+"Pin multiplexing configuration module responsible for generating and "
+"managing pin mapping configuration files for the project:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:349
+msgid "**Pinmux Configuration Files**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:350
+#, python-brace-format
+msgid ""
+"Defines the `PINMUX_H` variable for the generated pinmux header "
+"(${CMAKE_BINARY_DIR}/pinmux.h)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:351
+#, python-brace-format
+msgid ""
+"Defines the `DOTPINMUX` variable for the intermediate configuration file "
+"(${CMAKE_BINARY_DIR}/.pinmux)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:353
+msgid "**Custom Targets**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:354
+msgid ""
+"**`generate_dotpinmux`**: Generates `.pinmux` configuration file using "
+"`scripts.pinmux` Python module with optional `--skip-gui` parameter"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:355
+msgid ""
+"**`generate_pinmux_h`**: Converts `.pinmux` to `pinmux.h` using the "
+"`pinmux_gen.py` preprocessing script"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:356
+msgid ""
+"**`generate_pinmux`**: Main target that depends on `generate_pinmux_h` to"
+" ensure proper execution order"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:358
+msgid "**Build Target and Dependency Management**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:359
+msgid "`generate_dotpinmux` depends on `.config` file"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:360
+msgid "`generate_pinmux_h` depends on `.pinmux` file"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:361
+msgid ""
+"`generate_pinmux` depends only on `generate_pinmux_h` to avoid duplicate "
+"execution"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:362
+msgid "Uses `USES_TERMINAL` option for real-time output during generation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:364
+msgid "**Build Integration**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:365
+msgid ""
+"Adds the build directory to the include path to ensure `pinmux.h` can be "
+"properly included in source files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:366
+msgid ""
+"The main build target depends on `generate_pinmux` to ensure pin "
+"configuration is ready before compilation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:368
+msgid "**Python Script Enhancements**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:369
+msgid ""
+"The `scripts.pinmux` module now supports a `--skip-gui` parameter to "
+"generate default configuration without launching the interactive GUI"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:370
+msgid ""
+"The `pinmux_gen.py` preprocessing script converts `.pinmux` to `pinmux.h`"
+" during the build process"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:371
+msgid ""
+"Both scripts depend on the Python environment provided by the "
+"`python.cmake` module"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:373
+msgid "**Clean Target Integration**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:374
+msgid ""
+"Adds `pinmux.h` and `.pinmux` to the list of files cleaned by the "
+"project's clean target"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:376
+msgid "2.2.7 extensions.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:378
+msgid ""
+"The `extensions.cmake` module provides essential CMake utility functions "
+"that extend the core CMake functionality to support the UniSDK build "
+"system with conditional logic, source file management, and data "
+"processing capabilities."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:380
+msgid "**Key Functions and Features:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:382
+msgid "**Conditional Variable Management**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:383
+msgid ""
+"`set_ifndef(variable value [PARENT_SCOPE])`: Sets a variable to the "
+"specified value only if it is not already defined. This function helps "
+"establish default values while allowing them to be overridden. The "
+"optional `PARENT_SCOPE` parameter makes the variable available in the "
+"parent scope."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:385
+msgid "**Conditional Source File Management**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:386
+msgid ""
+"`add_sources_ifdef(config src)`: Adds source files to the target only "
+"when a specific configuration option is enabled. This enables feature-"
+"specific code inclusion based on build configurations."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:387
+#, python-brace-format
+msgid ""
+"`add_sources(src)`: A simplified wrapper for `target_sources()` that adds"
+" source files to the current target (`${TARGET_NAME}`) without "
+"conditions."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:389
+msgid "**JSON Array Processing**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:390
+msgid ""
+"`json_to_list(JSON_ARRAY_STRING OUTPUT_LIST [OUTPUT_STRING])`: Converts a"
+" JSON array string into a CMake list. This function performs type "
+"validation to ensure the input is a valid JSON array, processes each "
+"element, and handles space-separated values within elements. It can "
+"output both a CMake list and an optional space-joined string "
+"representation."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:392
+msgid "**Implementation Details**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:393
+msgid "The module uses `include_guard(GLOBAL)` to prevent multiple inclusions"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:394
+msgid "Functions are designed with parent scope propagation where appropriate"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:395
+msgid "Error handling is implemented for invalid JSON input"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:397
+msgid ""
+"This module serves as a foundational component of the build system, "
+"providing reusable functionality that simplifies conditional builds, "
+"feature toggling, and data processing within CMake scripts."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:399
+msgid "2.3 CMake Configuration System Flow"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:401
+msgid ""
+"The UniSDK CMake configuration system follows a structured flow that "
+"orchestrates the initialization, module loading, and integration of "
+"various build components. This section provides a detailed walkthrough of"
+" the configuration process from start to finish."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:403
+msgid "2.3.1 Initialization Phase"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:405
+msgid ""
+"The configuration process begins when CMake is invoked on the main "
+"`CMakeLists.txt` file. This phase sets up the fundamental environment for"
+" the build system by integrating with the UniSDK infrastructure."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:407
+msgid "2.3.1.1 CMakeLists.txt Entry Point"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:409
+msgid ""
+"The UniSDK build system supports two distinct entry point modes, each "
+"serving different purposes:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:411
+msgid "**1. Root Directory Entry Point**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:413
+msgid ""
+"The root directory's `CMakeLists.txt` file is primarily used for building"
+" the core SDK functionality or testing SDK components. It provides the "
+"foundation for the build system but **does not automatically include "
+"application code from the `samples` directory**. Key characteristics:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:415
+msgid "**Build System Initialization**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:416
+msgid ""
+"Sets up essential variables like `TELINK_BASE`, `AUTOCONF_H`, "
+"`CAPABILITIES_H`, and `PINMUX_H`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:417
+msgid "Adds `cmake/modules` to the CMake module path for custom module discovery"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:418
+msgid "Sets `TELINK_ROOT_INCLUDED` to `TRUE` to prevent redundant inclusion"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:419
+msgid ""
+"Loads the Telink package configuration if `TELINK_PACKAGE_INCLUDED` is "
+"not already defined"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:421
+msgid "**Project Configuration**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:422
+msgid "Defines the main project with the name \"Telink\""
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:423
+msgid "Configures supported languages (ASM, C, CXX)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:424
+msgid "Creates the main executable target with core startup files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:426
+msgid "**Component Integration**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:427
+msgid "Adds key SDK subdirectories (api, common, core, soc) to the build"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:428
+msgid "**Does NOT include the `samples` directory**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:429
+msgid ""
+"Sets up dependencies between targets (parse_config, generate_pinmux, "
+"preprocess_linker)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:430
+msgid "Applies compiler and linker options to the main target"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:432
+msgid "**Limitations**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:433
+msgid ""
+"Lacks a `main` function - will produce a linker error `undefined "
+"reference to 'main'`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:434
+msgid "Cannot compile complete applications from the `samples` directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:435
+msgid "Intended for SDK development/testing rather than application building"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:437
+msgid "**2. Application Entry Point**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:439
+msgid ""
+"The recommended way to build applications is to use application-level "
+"`CMakeLists.txt` files. Applications **can be located anywhere** on the "
+"filesystem, not just in the `samples/` directory. The build system uses "
+"the `TELINK_BASE` environment variable or path to locate the Telink SDK "
+"package. A typical application-level CMakeLists.txt includes:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:459
+msgid "**Key Differences Between Entry Points**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Feature"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Root Directory Entry Point"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Application Entry Point"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Primary Use**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "SDK development/testing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Building complete applications"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Application Location**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "N/A"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid ""
+"Anywhere on filesystem (not just `samples/` directory). When using west, "
+"must be in the same directory as `.west` file or its subdirectories"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Contains `main` function**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "❌ No"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "✅ Yes (in application code)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Build Command**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "`cmake -B build -G Ninja /path/to/application`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Output**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Core SDK components (will fail without `main`)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Complete executable firmware"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:469
+msgid "**Correct Usage Examples**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:481
+msgid ""
+"**Current Implementation Status and Limitations:** While the application-"
+"level CMakeLists.txt is designed as the entry point, there are currently "
+"some limitations in the implementation due to tight coupling between demo"
+" names, application layers, and the overall SDK Kconfig system:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:484
+msgid ""
+"**Kconfig System Coupling**: The demo applications' configuration options"
+" are deeply integrated with the SDK's global Kconfig system, making it "
+"challenging to completely isolate application-specific configurations."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:486
+msgid ""
+"**Demo Name Dependencies**: Some build system components rely on specific"
+" demo naming conventions, which creates dependencies between application "
+"names and internal SDK build logic."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:488
+msgid ""
+"**Application Layer Integration**: The application layer's interaction "
+"with core SDK components is not yet fully modularized, requiring careful "
+"management of include paths and configuration settings."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:490
+msgid ""
+"These limitations are being addressed in ongoing development efforts to "
+"create a more modular and flexible build system that fully realizes the "
+"application-level entry point design."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:494
+msgid "2.3.1.2 Package Loading: find_package(Telink)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:496
+msgid ""
+"If `TELINK_PACKAGE_INCLUDED` is not defined, the system loads the Telink "
+"package:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:505
+msgid ""
+"This triggers the loading of `TelinkConfig.cmake` from the `cmake` "
+"directory."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:507
+msgid "2.3.1.3 TelinkConfig.cmake Processing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:509
+msgid "The `TelinkConfig.cmake` file performs the following tasks:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:511
+msgid "Sets `TELINK_PACKAGE_INCLUDED` to `TRUE` to prevent reloading"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:512
+msgid "Defines the `include_boilerplate()` macro which:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:513
+msgid ""
+"Sets `TELINK_BASE` if not already set (using environment variable or "
+"relative path)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:514
+msgid "Configures `Telink_DIR` cache variable"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:515
+msgid "Adds the CMake modules directory to the module path"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:516
+msgid "Sets application source and binary directories if not defined"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:517
+msgid "Includes `telink_default.cmake`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:518
+msgid "Calls `include_boilerplate()` to execute the boilerplate code"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:520
+msgid "2.3.2 Module Loading Phase"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:522
+msgid ""
+"After the initial environment is set up, the configuration system loads "
+"the core CMake modules that implement the build system functionality."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:524
+msgid "2.3.2.1 telink_default.cmake Processing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:526
+msgid ""
+"The `telink_default.cmake` file is responsible for loading all necessary "
+"CMake modules in a specific order:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:528
+msgid "Sets minimum CMake version again (for validation)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:529
+msgid "Outputs application directory and CMake version information"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:530
+msgid "Performs a check for a known CMake bug in versions 3.22.1/3.22.2"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:531
+msgid "Defines the list of required modules in order:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:532
+msgid "`python` - Python interpreter detection and configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:533
+msgid "`extensions` - Custom CMake functions and macros"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:534
+msgid "`version` - Version information processing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:535
+msgid "`west` - West tool integration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:536
+msgid "`compiler` - Compiler configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:537
+msgid "`generated_file_directories` - Directories for generated files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:538
+msgid "`kconfig` - Kconfig integration (critical for configuration)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:539
+msgid "`pinmux` - Pin multiplexing configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:540
+msgid "`linker` - Linker script processing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:541
+msgid "Validates any requested sub-components against the available modules"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:542
+msgid "Includes each module in sequence"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:543
+msgid "Removes loaded modules from the `SUB_COMPONENTS` list"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:544
+msgid ""
+"If `TELINK_ROOT_INCLUDED` is not defined, it adds the root directory as a"
+" subdirectory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:559
+msgid ""
+"This sequential loading ensures that each module has access to the "
+"necessary infrastructure provided by previously loaded modules. The order"
+" is carefully maintained to manage dependencies between modules."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:561
+msgid "2.3.3 Kconfig Integration Phase"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:563
+msgid ""
+"The Kconfig system integration is a critical phase that manages the "
+"configuration options for the build system and target firmware."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:565
+msgid "2.3.3.1 kconfig.cmake Processing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:567
+msgid ""
+"The `kconfig.cmake` module is responsible for configuration file "
+"generation and processing:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:569
+msgid "Defines key file paths:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:570
+msgid "`CHIP_CONFIG_FILE` - Chip-specific configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:571
+msgid "`BUILD_CONFIG_FILE` - Build-specific configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:572
+msgid "`DOTCONFIG` - Merged configuration file (.config)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:573
+msgid "`CAPABILITIES_H` - Generated capabilities header"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:574
+msgid "`AUTOCONF_H` - Auto-generated configuration header"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:575
+msgid "`MENUCONFIG_SCRIPT` - Path to the interactive menuconfig script"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:576
+msgid "`PARSE_SCRIPT` - Path to the configuration parsing script"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:577
+msgid "`PREPROCESS_SCRIPT` - Path to the Kconfig preprocessing script"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:578
+msgid "`KCONFIG_BINARY_DIR` - Directory for Kconfig source includes"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:580
+msgid "Configures clean targets to remove generated files:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:581
+msgid ""
+"Sets `ADDITIONAL_CLEAN_FILES` properties for all generated configuration "
+"files including:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:582
+msgid "`CHIP_CONFIG_FILE`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:583
+msgid "`BUILD_CONFIG_FILE`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:584
+msgid "`DOTCONFIG`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:585
+msgid "`AUTOCONF_H`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:586
+msgid "`CAPABILITIES_H`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:587
+msgid "`PINMUX_H`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:588
+msgid "`KCONFIG_BINARY_DIR`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:590
+msgid "Chip Configuration Generation:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:591
+msgid ""
+"Creates a custom command to generate `chip.config` using `menuconfig.py` "
+"and `Kconfig.chip`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:592
+msgid ""
+"**When `chip.config` is missing**: The custom command triggers "
+"`menuconfig.py` with the Kconfig.chip file, which will:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:593
+#: ../../source/build_config/build_system_architecture.md:606
+msgid ""
+"Automatically launch the interactive menuconfig interface if no existing "
+"config exists"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:594
+msgid "Allow the user to select SoC and related configuration options"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:595
+msgid "Save the selections to `chip.config` after the user exits the menu"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:597
+msgid "Capabilities Header Generation:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:598
+msgid ""
+"Creates a custom command to generate `capabilities.h` using "
+"`preprocess_kconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:599
+msgid "Depends on `chip.config`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:600
+msgid ""
+"**When `capabilities.h` is missing**: The custom command will "
+"automatically execute when its dependencies (`chip.config`) are "
+"available, generating the header based on the selected chip's "
+"capabilities"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:602
+msgid "Build Configuration Generation:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:603
+msgid ""
+"Creates a custom command to generate `build.config` using `menuconfig.py`"
+" and `Kconfig.build`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:604
+msgid "Depends on `capabilities.h`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:605
+msgid ""
+"**When `build.config` is missing**: The custom command triggers "
+"`menuconfig.py` with the Kconfig.build file, which will:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:607
+msgid "Allow the user to select build-time options and features"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:608
+msgid ""
+"Take into account the capabilities defined in `capabilities.h` to filter "
+"available options"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:609
+msgid "Save the selections to `build.config` after the user exits the menu"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:611
+msgid ".config File Creation (During Configuration Phase):"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:612
+msgid ""
+"If `.config` doesn't exist during the CMake configuration phase, the "
+"system performs the following steps:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:613
+msgid ""
+"Checks if `chip.config` exists; if not, executes `kconfig.py` to generate"
+" it non-interactively"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:614
+msgid "Executes `preprocess_kconfig.py` to generate `capabilities.h`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:615
+msgid ""
+"Checks if `build.config` exists; if not, executes `kconfig.py` to "
+"generate it non-interactively"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:616
+msgid "Creates a new `.config` file with an auto-generated header comment"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:617
+msgid ""
+"Merges content from `chip.config` and `build.config` into the new "
+"`.config` file"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:619
+msgid "Configuration Dependency Tracking:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:620
+msgid ""
+"Sets `CMAKE_CONFIGURE_DEPENDS` to `.config` to trigger reconfiguration "
+"when it changes"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:622
+msgid "Merge Script Creation:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:623
+msgid ""
+"Writes a CMake script (`merge_config_files.cmake`) to merge configuration"
+" files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:624
+msgid ""
+"This script reads content from `build.config` and `chip.config` and "
+"appends it to `.config`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:626
+msgid ".config Update During Build:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:627
+msgid ""
+"Creates a custom command to update `.config` when dependencies "
+"(`build.config` or `chip.config`) change"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:628
+msgid ""
+"Removes the old `.config` file, touches a new one, and then runs the "
+"merge script"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:630
+msgid "Parse Configuration Target:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:631
+msgid "Creates a custom target `parse_config` that depends on `.config`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:632
+msgid ""
+"This target ensures that the configuration parsing happens before the "
+"main build"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:634
+msgid "Configuration Parsing (During Build):"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:635
+msgid "Reads lines from `.config`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:636
+msgid ""
+"Generates `autoconf.h` with `#define` statements for each configuration "
+"option"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:637
+msgid "Handles different value types (boolean, string, number)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:638
+msgid ""
+"**When `autoconf.h` is missing**: The file is automatically generated "
+"during the build process based on the contents of `.config`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:640
+msgid "2.3.3.2 Menuconfig Triggering Mechanism"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:642
+msgid "The menuconfig interface can be triggered in several ways:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:644
+msgid ""
+"**Automatic Trigger During Build (Interactive)**: When a configuration "
+"file (`chip.config` or `build.config`) is missing and a build is "
+"initiated, the system will automatically launch the interactive "
+"menuconfig interface through `menuconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:646
+msgid ""
+"**Manual Execution**: Users can manually invoke menuconfig for specific "
+"configuration types:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:647
+msgid "For chip configuration: `python scripts/menuconfig.py Kconfig.chip`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:648
+msgid "For build configuration: `python scripts/menuconfig.py Kconfig.build`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:650
+msgid ""
+"**Non-Interactive Generation**: During the CMake configuration phase, if "
+"`.config` is missing, the system uses `kconfig.py` to non-interactively "
+"generate `chip.config` and `build.config` with default values"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:652
+msgid ""
+"**Custom Command Execution**: The custom commands defined in "
+"`kconfig.cmake` will trigger menuconfig when their respective output "
+"files (e.g., `chip.config`, `build.config`) are required but missing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:654
+msgid "2.3.4 Pinmux Configuration Generation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:656
+msgid ""
+"The `pinmux.cmake` module is responsible for generating the `pinmux.h` "
+"header file that contains pin multiplexing configuration:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:658
+#, python-brace-format
+msgid ""
+"Sets the path for the generated `pinmux.h` file to "
+"`${CMAKE_BINARY_DIR}/pinmux.h`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:660
+msgid "Creates a custom command to generate `pinmux.h`:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:661
+msgid "Uses Python script `scripts.pinmux` module"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:662
+msgid "Takes `CMAKE_BINARY_DIR` as an argument"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:663
+msgid "Sets working directory to `TELINK_BASE`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:664
+msgid "Adds a descriptive comment for build output"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:665
+msgid "Uses terminal for command execution"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:666
+msgid "Depends on `.config` file"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:668
+msgid "Creates a custom target `generate_pinmux` that:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:669
+msgid "Is always built (ALL)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:670
+msgid "Depends on both `pinmux.h` and `.config`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:672
+msgid ""
+"The binary directory is added to the include path so that `pinmux.h` can "
+"be included in source files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:693
+msgid "2.3.5 Build Configuration Phase"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:695
+msgid ""
+"After all modules are loaded and the Kconfig system is integrated, the "
+"configuration system proceeds to set up the build environment for the "
+"specific target."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:697
+msgid "2.3.5.1 Target Configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:699
+msgid ""
+"The configuration system configures the main target with the appropriate "
+"settings:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:725
+msgid "2.3.5.2 Build Directory Structure"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:727
+msgid ""
+"The configuration system sets up a structured build directory to organize"
+" build outputs:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md
+msgid "Build Directory Structure"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:764
+msgid "2.3.6 Complete Configuration Flow Diagram"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:766
+msgid ""
+"The following diagram illustrates the complete configuration flow from "
+"start to finish:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:806
+msgid "2.3.7 Configuration System Integration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:808
+msgid "2.3.7.1 Python Integration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:810
+msgid ""
+"The configuration system heavily relies on Python scripts for Kconfig "
+"operations:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:812
+msgid "`menuconfig.py` - Interactive menuconfig interface"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:813
+msgid "`kconfig.py` - Non-interactive Kconfig processing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:814
+msgid "`preprocess_kconfig.py` - Preprocessing Kconfig files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:815
+msgid "`kconfig_parser.py` - Kconfig parsing and validation utilities"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:816
+msgid "`soc_board_setter.py` - SOC/BOARD configuration and validation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:818
+msgid ""
+"The `python.cmake` module ensures that a compatible Python interpreter is"
+" available."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:820
+msgid "2.3.8 CMake Config Target Execution Flow"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:848
+msgid "The `config` target executes a sequential flow of configuration tasks:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:850
+msgid ""
+"**Chip Configuration**: `generate_chip_config` generates `chip.config` "
+"using Kconfig"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:851
+msgid ""
+"**Capabilities Generation**: `generate_capabilities` creates "
+"`capabilities.h` based on the selected chip"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:852
+msgid ""
+"**Build Configuration**: `generate_build_config` generates `build.config`"
+" using Kconfig"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:853
+msgid ""
+"**Configuration Merge**: `update_dotconfig` merges `chip.config` and "
+"`build.config` into `.config`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:854
+msgid ""
+"**Pinmux Configuration**: `generate_pinmux` handles pin multiplexing "
+"configuration:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:855
+msgid ""
+"First `generate_dotpinmux` creates `.pinmux` from Kconfig using "
+"`scripts.pinmux` with `--skip-gui`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:856
+msgid ""
+"Then `generate_pinmux_h` converts `.pinmux` to `pinmux.h` using "
+"`pinmux_gen.py`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:858
+msgid ""
+"This target ensures that all configuration files are generated in the "
+"correct order with proper dependencies between tasks."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:860
+msgid "2.3.9 Key Configuration Files and Their Purpose"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:862
+msgid "**Kconfig.chip**: Defines available SoC options and their configurations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:863
+msgid "**Kconfig.build**: Defines build-time options and features"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:864
+msgid "**chip.config**: Generated SoC-specific configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:865
+msgid "**build.config**: Generated build-specific configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:866
+msgid "**.config**: Merged configuration file used for the build"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:867
+msgid ""
+"**capabilities.h**: Generated header with SoC capabilities based on "
+"selected chip"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:868
+msgid ""
+"**autoconf.h**: Generated header with all configuration options as C "
+"defines"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:869
+msgid "**pinmux.h**: Generated header with pin multiplexing configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:871
+msgid "2.3.10 Troubleshooting Configuration Issues"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:873
+msgid "Common issues and their solutions:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:875
+msgid ""
+"**Configuration not applying**: Ensure the `parse_config` target is "
+"properly built before the main target"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:876
+msgid ""
+"**Missing options in menuconfig**: Check if the Kconfig files are "
+"properly included and dependencies are met"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:877
+msgid ""
+"**Python script errors**: Verify that Python 3.10+ is installed and all "
+"dependencies are available"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:878
+msgid ""
+"**CMake module not found**: Ensure `TELINK_BASE` is correctly set and "
+"points to the SDK root"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:879
+msgid ""
+"**Generated files not cleaned**: The system is configured to clean "
+"generated files with `make clean`, but you can also manually remove the "
+"build directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:881
+msgid "3. Kconfig Configuration System"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:883
+msgid "3.1 Kconfig Architecture"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:885
+msgid ""
+"The Kconfig system adopts a hierarchical structure, organizing "
+"configuration files through the `rsource` directive:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:887
+msgid "3.1.1 Configuration File Hierarchy"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:889
+msgid ""
+"**Top-level Configuration**: `Kconfig.chip` and `Kconfig.build` as "
+"configuration entry points"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:890
+msgid ""
+"**Feature Configuration**: `Kconfig` files in subdirectories define "
+"specific feature configurations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:891
+msgid ""
+"**Configuration Tools**: `kconfig.py`, `menuconfig.py`, and "
+"`preprocess_kconfig.py` provide configuration processing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:893
+msgid "3.1.2 Kconfig File Organization"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:895
+msgid ""
+"The Kconfig files form a hierarchical structure where higher-level "
+"Kconfig files include lower-level ones using the `rsource` directive. The"
+" organization is as follows:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:927
+msgid "3.1.3 Application Layer Kconfig Integration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:929
+msgid ""
+"In addition to the SDK's built-in Kconfig files, the application layer "
+"can also provide its own Kconfig configuration. This is achieved through "
+"the `KCONFIG_APPLICATION_DIR` variable, which is defined in "
+"`kconfig.cmake`:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:935
+msgid ""
+"This variable is set to the current source directory where CMake is "
+"invoked. When running Kconfig commands (such as `menuconfig`), the system"
+" automatically looks for Kconfig files in this directory, allowing "
+"application-specific configurations to be seamlessly integrated with the "
+"SDK's built-in configurations."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:937
+msgid "The application layer Kconfig integration process:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:938
+msgid ""
+"`kconfig.cmake` sets `KCONFIG_APPLICATION_DIR` to the current CMake "
+"source directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:939
+msgid ""
+"This variable is passed to the Python scripts (menuconfig.py, kconfig.py,"
+" etc.) as an environment variable"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:940
+msgid ""
+"The scripts use this variable to find and include application-specific "
+"Kconfig files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:941
+msgid ""
+"Application configurations are merged with SDK configurations during the "
+"configuration generation process"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:943
+msgid ""
+"This design allows applications to define their own configuration options"
+" that are specific to their functionality, while still leveraging the "
+"SDK's core configuration system."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:945
+msgid "3.2 Configuration Processing Flow"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:947
+msgid ""
+"**Configuration Generation**: Merging configuration files through "
+"`kconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:948
+msgid ""
+"**Interactive Configuration**: Using `menuconfig.py` to provide a menu "
+"interface"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:949
+msgid ""
+"**Configuration Preprocessing**: `preprocess_kconfig.py` processes "
+"configuration macros and variables"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:950
+msgid ""
+"**Configuration Application**: The CMake system uses generated "
+"configuration files for build configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:952
+msgid "3.3 Key Configuration Scripts"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:954
+msgid "3.3.1 kconfig.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:956
+msgid "Main functions:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:957
+msgid "Merges multiple configuration files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:958
+msgid "Validates configuration validity"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:959
+msgid "Generates the final `.config` file"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:960
+msgid "Executes configuration checks and warnings"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:962
+msgid "3.3.2 menuconfig.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:964
+msgid "Interactive configuration interface implementation:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:965
+msgid "Curses-based text interface"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:966
+msgid "Supports menu navigation and option setting"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:967
+msgid "Provides help information display"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:968
+msgid "Supports configuration saving and loading"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:970
+msgid "3.3.3 preprocess_kconfig.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:972
+msgid "Configuration preprocessing tool:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:973
+msgid "Processes YAML configuration variables"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:974
+msgid "Supports configuration macro expansion"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:975
+msgid "Handles nested configuration structures"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:976
+msgid "Supports arrays and special format values"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:978
+msgid "4. West Compilation Support"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:980
+msgid "4.1 West Command Extensions"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:982
+msgid ""
+"UniSDK extends the West command set, registering custom commands through "
+"`west-commands.yml`:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1009
+msgid "4.2 west tl-build Command Details"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1011
+msgid "`build.py` implements the main build functionality:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1013
+msgid "4.2.1 Command Line Options"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1015
+#: ../../source/build_config/build_system_architecture.md:1084
+msgid "**Positional Arguments:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1016
+msgid "`source_dir`: Application source directory (default: current directory)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1018
+#: ../../source/build_config/build_system_architecture.md:1087
+msgid "**Optional Arguments:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1019
+msgid "`-d, --build-dir`: Specify build directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1020
+msgid "`-c, --cmake-only`: Run only CMake configuration, don't build"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1021
+msgid "`-k, --kconfig`: Run interactive configuration before building"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1022
+msgid "`-t, --target`: Build target (e.g., flash, debug, etc.)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1023
+msgid ""
+"`-p, --pristine`: Control pristine build directory usage (choices: auto, "
+"always, never)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1024
+msgid "`--clean`: Clean build directory before building"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1025
+msgid "`--flash`: Flash firmware after building"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1026
+msgid ""
+"`-o, --build-option`: Extra options to pass to the build system (can be "
+"used multiple times)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1027
+#: ../../source/build_config/build_system_architecture.md:1089
+msgid "`--soc SOC`: Specify SOC for configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1028
+#: ../../source/build_config/build_system_architecture.md:1090
+msgid "`--board BOARD`: Specify BOARD for configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1029
+msgid ""
+"`cmake_opt`: Extra options to pass to CMake (must come after \"--\" "
+"separator)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1031
+#: ../../source/build_config/build_system_architecture.md:1095
+#: ../../source/build_config/build_system_architecture.md:1643
+msgid "**Usage Examples:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1058
+msgid "4.2.2 Execution Flow"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1060
+msgid ""
+"**Environment Check**: Verify TELINK_TOOLCHAIN_PATH environment variable "
+"is set"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1061
+msgid ""
+"**SOC/BOARD Validation**: Validate SOC and BOARD combination if both are "
+"provided"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1062
+msgid "**Path Setting**: Configure source directory and build directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1063
+msgid ""
+"**TELINK_BASE Setup**: Set TELINK_BASE environment variable to SDK root "
+"directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1064
+msgid ""
+"**Cleanup Handling**: Clean build directory if --clean or --pristine "
+"options are used"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1065
+msgid "**Build Directory Creation**: Create build directory if it doesn't exist"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1066
+msgid ""
+"**Interactive Configuration**: Run menuconfig if --kconfig option is "
+"specified"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1067
+msgid ""
+"**CMake Configuration**: Call CMake with SOC/BOARD parameters and "
+"generate build system"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1068
+msgid ""
+"**Project Building**: Execute compilation and linking (skipped if "
+"--cmake-only)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1069
+msgid "**Result Output**: Display build status and results"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1071
+#: ../../source/build_config/build_system_architecture.md:1155
+#: ../../source/build_config/build_system_architecture.md:1655
+msgid "**Key Features:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1072
+msgid ""
+"**SOC/BOARD Support**: Directly specify SOC and BOARD via command-line "
+"options"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1073
+msgid ""
+"**Dependency Resolution**: Automatic SOC/BOARD dependency handling during"
+" CMake configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1074
+msgid ""
+"**Validation**: Real-time validation of SOC/BOARD combinations before "
+"build"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1075
+msgid ""
+"**Flexible Configuration**: Support for both interactive and non-"
+"interactive configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1076
+msgid "**Pristine Builds**: Options for clean and pristine build environments"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1078
+msgid "4.3 west tl-config Command Details"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1080
+msgid ""
+"`config.py` implements the Telink application configuration "
+"functionality, providing a unified configuration interface:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1082
+msgid "4.3.1 Command Line Options"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1085
+msgid ""
+"`source_dir`: Application source directory (optional, defaults to current"
+" directory)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1088
+msgid ""
+"`-d, --build-dir`: Specify the build directory (optional, defaults to "
+"`source_dir/build`)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1091
+msgid "`--list-socs`: List all available SOCs with their dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1092
+msgid "`--list-boards`: List all available boards with their dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1093
+msgid "`--validate SOC BOARD`: Validate SOC and BOARD combination"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1116
+msgid "4.3.2 Configuration Process"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1118
+msgid "The `tl-config` command supports multiple operation modes:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1120
+msgid "**List Operations:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1121
+msgid "`--list-socs`: Display all available SOCs with their dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1122
+msgid "`--list-boards`: Display all available boards with their dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1123
+msgid "`--validate`: Validate SOC/BOARD combination without configuring"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1125
+msgid "**Configuration Flow:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1126
+msgid "**SOC/BOARD Validation**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1127
+msgid "Validate SOC and BOARD combination if both are provided"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1128
+msgid "Use KconfigParser to check dependency compatibility"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1129
+msgid "Provide clear error messages for invalid combinations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1131
+msgid "**Environment Setup**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1132
+msgid "Set `TELINK_BASE` environment variable to SDK root directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1133
+msgid "Resolve source and build directory paths"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1134
+msgid "Create build directory if it doesn't exist"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1136
+msgid "**CMake Configuration** (if needed):"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1137
+msgid ""
+"Check for existing `CMakeCache.txt` to determine if configuration is "
+"needed"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1138
+msgid ""
+"Run initial CMake configuration with Ninja generator and Telink package "
+"path"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1139
+msgid "Apply SOC and BOARD settings if specified via command line"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1141
+msgid "**Configuration Target Execution**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1142
+msgid "Execute `cmake --build <build_dir> --target config`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1143
+msgid "This triggers the complete configuration sequence:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1144
+msgid "Clean existing configuration files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1145
+msgid "Generate `chip.config` from `Kconfig.chip`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1146
+msgid "Generate `capabilities.h` from chip configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1147
+msgid "Generate `build.config` from `Kconfig.build`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1148
+msgid "Merge configurations into final `.config`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1149
+msgid "Generate pinmux configuration files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1151
+msgid "**Result Handling**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1152
+msgid "Return appropriate exit codes (0 for success, non-zero for errors)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1153
+msgid "Provide informative status messages throughout the process"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1156
+msgid ""
+"**SOC/BOARD Discovery**: List available SOCs and boards with dependency "
+"information"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1157
+msgid "**Validation**: Pre-build validation of SOC/BOARD combinations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1158
+msgid "**Dependency Resolution**: Automatic handling of SOC/BOARD dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1159
+msgid "**Interactive Configuration**: Menuconfig-based configuration interface"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1161
+msgid "4.3.3 Code Reuse Integration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1163
+msgid ""
+"The `tl-config` command shares its core configuration logic with the `tl-"
+"build` command through the `run_config()` function. This function is "
+"extracted into a reusable module that:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1165
+msgid "Provides consistent configuration behavior across both commands"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1166
+msgid "Handles all configuration file generation and CMake target execution"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1167
+msgid "Ensures proper error handling and status reporting"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1168
+msgid "Maintains compatibility with existing build workflows"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1170
+msgid ""
+"The `tl-build` command's `-k/--kconfig` option internally calls the same "
+"configuration logic, ensuring consistency between standalone "
+"configuration and build-time configuration."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1172
+msgid "4.4 west tl-boards Command Details"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1174
+msgid "`boards.py` implements the board information display functionality:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1176
+msgid "4.4.1 Command Line Options"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1178
+msgid "`-v, --verbose`: Show detailed information about each board"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1179
+msgid "`--soc SOC`: Filter boards by supported SOC (e.g., TL3218X)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1181
+msgid "4.4.2 Command Features"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1183
+msgid ""
+"**Board Enumeration**: Lists all supported development boards from "
+"Kconfig.chip"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1184
+msgid "**SOC Filtering**: Allows filtering boards by specific SOC compatibility"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1185
+msgid "**Dependency Display**: Shows board dependencies and requirements"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1186
+msgid "**Verbose Information**: Provides detailed board specifications including:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1187
+msgid "Full board name and prompt"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1188
+#: ../../source/build_config/build_system_architecture.md:1222
+msgid "Type and dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1189
+msgid "Supported SOCs for each board"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1190
+#: ../../source/build_config/build_system_architecture.md:1223
+msgid "Help documentation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1192
+msgid "4.4.3 Usage Examples"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1208
+msgid "4.5 west tl-socs Command Details"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1210
+msgid "`socs.py` implements the SOC information display functionality:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1212
+msgid "4.5.1 Command Line Options"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1214
+msgid "`-v, --verbose`: Show detailed information about each SOC"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1216
+msgid "4.5.2 Command Features"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1218
+msgid ""
+"**SOC Enumeration**: Lists all supported System-on-Chip variants from "
+"Kconfig.chip"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1219
+msgid "**Dependency Display**: Shows SOC dependencies and requirements"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1220
+msgid "**Verbose Information**: Provides detailed SOC specifications including:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1221
+msgid "Full SOC name and prompt"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1225
+msgid "4.5.3 Usage Examples"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1235
+msgid "4.6 BDT Command Extension"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1237
+msgid ""
+"The `west tl-bdt` command is a West extension that provides an interface "
+"to the Telink Burning and Debugging Tool (BDT) for performing flash "
+"operations on Telink devices. This command simplifies the process of "
+"interacting with BDT by providing a unified, cross-platform interface."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1239
+msgid "4.6.1 Command Syntax"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1248
+msgid "4.6.2 Supported Operations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Operation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Description"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "download"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Download firmware to flash"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "read"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Read data from flash"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "write"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Write data to flash"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "erase"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Erase flash"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "lock"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Lock flash region"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "unlock"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Unlock flash region"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "reset"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Reset device"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1260
+msgid "4.6.3 BDT Tool Path Configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1262
+msgid "4.6.3.1 Setting BDT Path"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1264
+msgid ""
+"The BDT tool path can be set through the following methods (in order of "
+"priority):"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1266
+msgid "**Command line option**: `--bdt-path /path/to/bdt_executable`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1267
+msgid "**Environment variable**: `BDT_PATH=/path/to/bdt_executable`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1268
+msgid "**System PATH**: The command will search for BDT in the system PATH"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1269
+#, python-brace-format
+msgid ""
+"**Telink base directory**: If `TELINK_BASE` is set, it will look in "
+"`${TELINK_BASE}/tools/`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1271
+msgid "4.6.3.2 Important Notes"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1273
+msgid ""
+"**Parameter Order**: The `--bdt-path` parameter can be specified either "
+"before or after the subcommand (e.g., download, read, write) starting "
+"from version 5.9.0."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1280
+msgid "**Correct Path Format**: The `--bdt-path` parameter can accept either:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1281
+msgid "**Path to executable file**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1282
+msgid "**Windows**: `Cmd_download_tool.exe`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1283
+msgid "**Linux**: `bdt`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1284
+msgid "**Path to directory containing the executable**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1285
+msgid ""
+"The tool will automatically search for the appropriate executable in the "
+"directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1287
+msgid "Example:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1296
+msgid ""
+"**Path Format**: On Windows, you can use either forward slashes or "
+"backslashes in paths:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1303
+msgid "4.6.4 Global Parameters"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Parameter"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Default"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-h`, `--help`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Show help message and exit"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "-"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-d`, `--build-dir`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Build directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`build` in current directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-c`, `--core`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Operate on core instead of flash"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "False"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--usb`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Use USB mode (default: EVK mode)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--bdt-path`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Path to BDT tool executable"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--chip`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Chip type (e.g., B92, TL721X, TL321X)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Detected from build config"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--sws EVK_CLK EVK_RATE TARGET_CLK TARGET_RATE`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Set SWire clock values"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--bus`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "USB bus ID (required when multiple USB devices exist)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--devid`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "USB device ID (required when multiple USB devices exist)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1317
+msgid "4.6.5 Subcommands"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1319
+msgid "4.6.5.1 download"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1321
+msgid "Download firmware to flash."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-i`, `--input`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Path to firmware file"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+#, python-brace-format
+msgid "`build/${TLK_ARTIFACT_NAME}.bin`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-a`, `--addr`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Flash address to download to"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`0x00`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1332
+msgid "4.6.5.2 read"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1334
+msgid "Read data from flash."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Flash address to read from"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-s`, `--size`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Number of bytes to read (e.g., 16, 1k)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Required"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-o`, `--output`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Output file path"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`save<timestamp>.bin`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1346
+msgid "4.6.5.3 write"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1348
+msgid "Write data to flash."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Flash address to write to"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Number of bytes to write (required if writing raw data)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Path to input file (required if not writing raw data)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`data`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Raw data bytes to write (e.g., 01 02 03 04)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-e`, `--erase`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Erase before writing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1362
+msgid "4.6.5.4 erase"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1364
+msgid "Erase flash."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Flash address to erase from"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Number of bytes to erase (e.g., 1k, 4k)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1375
+msgid "4.6.5.5 lock"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1377
+msgid "Lock flash region."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Flash address to lock"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Size of region to lock (e.g., 512k)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1388
+msgid "4.6.5.6 unlock"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1390
+msgid "Unlock flash region."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1398
+msgid "4.6.5.7 reset"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1400
+msgid "Reset device."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Reset from core instead of flash"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1410
+msgid "4.6.6 Examples"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1412
+msgid "4.6.6.1 Download Firmware"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1428
+msgid "4.6.6.2 Read Flash"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1438
+msgid "4.6.6.3 Write Flash"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1451
+msgid "4.6.6.4 Erase Flash"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1461
+msgid "4.6.6.5 Lock/Unlock Flash"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1471
+msgid "4.6.6.6 Reset Device"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1481
+msgid "4.6.7 Advanced Usage"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1483
+msgid "4.6.7.1 Using Specific BDT Path"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1489
+msgid "4.6.7.2 Using SWire Clock Settings"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1495
+msgid "4.6.7.3 Multiple USB Devices"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1501
+msgid "4.6.8 Cross-Platform Considerations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1503
+msgid ""
+"The `west tl-bdt` command automatically handles differences between "
+"Windows and Linux environments:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1505
+msgid ""
+"**Windows**: Uses `Cmd_download_tool.exe` and automatically adds device "
+"ID and voltage information if needed"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1506
+msgid "**Linux**: Uses `bdt` with standard Linux command syntax"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1507
+msgid ""
+"**Path handling**: Automatically converts path separators (e.g., `/` → "
+"`\\` on Windows)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1509
+msgid "4.6.9 Troubleshooting"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1511
+msgid "4.6.9.1 BDT Tool Not Found"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1517
+msgid ""
+"**Solution**: Set the BDT path using one of the methods described in "
+"section 4."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1519
+msgid "4.6.9.2 Chip Type Not Specified"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1525
+msgid ""
+"**Solution**: Specify the chip type using `--chip` option, or ensure that"
+" the build configuration contains the chip type information."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1527
+msgid "4.6.9.3 BDT Command Failed"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1533
+msgid ""
+"**Solution**: Check the BDT output for detailed error information. Common"
+" issues include:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1534
+msgid "Incorrect chip type"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1535
+msgid "Invalid address or size"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1536
+msgid "Device not connected"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1539
+msgid "4.7 West Workspace Configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1541
+msgid "`west.yml` defines the West workspace configuration:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1543
+msgid "Remote repository settings"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1544
+msgid "Project path configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1545
+msgid "Command extension definitions"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1547
+msgid "5. Make Support"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1549
+msgid ""
+"The `Makefile` provides a traditional make command interface as a "
+"frontend to CMake, offering a simplified workflow for developers. This "
+"only can be used in root directory of the project."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1551
+msgid "5.1 Makefile Structure"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1553
+msgid ""
+"The `Makefile` in the project root directory provides a traditional make "
+"command interface as a frontend to CMake, offering a simplified workflow "
+"for developers. It has been recently refactored to improve "
+"maintainability and flexibility:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1610
+msgid "The refactored Makefile defines the following key components:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1612
+msgid ""
+"**Phony Targets**: All targets (`cmake`, `config`, `pinmux`, `build`, "
+"`clean`, `cleanbuild`) are marked as phony to avoid conflicts with actual"
+" files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1613
+msgid ""
+"**Configuration Variables**: Centralized configuration using variables "
+"for easier maintenance"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1614
+msgid ""
+"**Default Application**: Set default application to build (`gpio_demo`) "
+"with override capability"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1615
+msgid ""
+"**CMake Integration**: Uses CMake commands (`cmake -B`, `cmake --build`) "
+"for all build operations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1616
+msgid ""
+"**Pre-build Checks**: Implements automatic validation and recovery "
+"mechanisms"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1617
+msgid ""
+"**Automatic Dependency Resolution**: Ensures all required components are "
+"present before building"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1618
+msgid ""
+"**Pinmux Target**: Added explicit `pinmux` target for easier pin "
+"multiplexing configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1620
+msgid "5.1.1 SOC and BOARD Parameters"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1622
+msgid ""
+"The Makefile provides SOC and BOARD parameters to allow targeting "
+"specific hardware configurations:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1624
+msgid "**Parameter Definition:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1631
+msgid "**Parameter Integration:**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1656
+msgid ""
+"**Optional Parameters**: Both SOC and BOARD parameters are optional and "
+"can be used independently"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1657
+msgid ""
+"**CMake Integration**: Parameters are automatically passed to CMake as "
+"`-DSOC` and `-DBOARD` flags"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1658
+msgid ""
+"**Dependency Resolution**: When BOARD is specified, required SOC "
+"dependencies are automatically resolved"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1659
+msgid ""
+"**Validation**: The build system validates SOC/BOARD combinations during "
+"configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1661
+msgid "5.2 Make Command Flow"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1663
+msgid "5.2.1 cmake Target"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1670
+msgid ""
+"**Purpose**: Initializes the CMake build system for the specified "
+"application"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1671
+#: ../../source/build_config/build_system_architecture.md:1685
+#: ../../source/build_config/build_system_architecture.md:1715
+#: ../../source/build_config/build_system_architecture.md:1739
+msgid "**Parameters**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1672
+#: ../../source/build_config/build_system_architecture.md:1686
+#: ../../source/build_config/build_system_architecture.md:1716
+msgid "`$(CMAKE)`: Path to the CMake executable"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1673
+msgid ""
+"`$(CMAKE_FLAGS)`: Common CMake flags including build directory and "
+"generator"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1674
+msgid ""
+"`-S $(APP)`: Specifies the source directory as the selected application "
+"(default: `samples/gpio_demo`)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1676
+msgid "5.2.2 config Target"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1683
+msgid "**Purpose**: Generates the project configuration files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1684
+msgid ""
+"**Operation**: Calls CMake's config target to generate configuration "
+"files like `.config`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1687
+#: ../../source/build_config/build_system_architecture.md:1717
+msgid "`--build $(BUILD_DIR)`: Specifies the build directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1688
+msgid "`--target config`: CMake target to generate configuration files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1690
+msgid "5.2.3 build Target"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1698
+msgid ""
+"**Dependencies**: Automatically runs `cmake` and `config` targets if they"
+" haven't been executed"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1699
+msgid "**Pre-build Checks** (via `$(PRE_BUILD_CHECKS)`):"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1700
+msgid ""
+"**Build Folder Check**: Ensures the build directory exists, runs `config`"
+" if not"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1701
+msgid ""
+"**Config File Check**: Verifies `.config` file exists, runs `config` if "
+"not"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1702
+msgid "**Pinmux Check**: Confirms `pinmux.h` exists, runs pinmux tool if not"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1703
+msgid ""
+"**Pinmux Update Check**: Verifies `pinmux.h` is up-to-date, runs pinmux "
+"tool if not"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1704
+msgid ""
+"**Build Execution**: Calls `cmake --build $(BUILD_DIR)` to execute the "
+"actual build using Ninja"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1706
+msgid "5.2.4 clean Target"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1713
+msgid "**Purpose**: Removes build artifacts while preserving configuration files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1714
+msgid "**Operation**: Calls CMake's clean target to remove generated binary files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1718
+msgid "`--target clean`: CMake target to clean build artifacts"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1720
+msgid "5.2.5 cleanbuild Target"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1726
+msgid ""
+"**Purpose**: Cleans existing build artifacts and immediately rebuilds the"
+" project"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1727
+msgid "**Operation**: Combines the `clean` and `build` operations in sequence"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1728
+msgid ""
+"**Parameters**: Inherits all parameters from the `clean` and `build` "
+"targets"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1730
+msgid "5.2.6 pinmux Target"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1737
+msgid "**Purpose**: Configures pin multiplexing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1738
+msgid "**Operation**: Runs the pinmux configuration tool directly"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1740
+msgid "`$(PYTHON)`: Path to the Python executable"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1741
+msgid "`$(PINMUX_SCRIPT)`: Pinmux script module"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1743
+msgid "6. Compilation Generation Flow"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1745
+msgid "6.1 Complete Build Flow"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1747
+msgid ""
+"**Environment Validation**: Check toolchain, Python environment, and "
+"dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1748
+msgid ""
+"**CMake Configuration**: Generate build system and Makefiles, load CMake "
+"modules"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1749
+msgid ""
+"**Configuration Generation**: Generate configuration files through "
+"Kconfig as CMake targets"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1750
+msgid "**Source Compilation**: Compile C/C++ source code"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1751
+msgid "**Linking**: Link object files into executable files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1752
+msgid "**Firmware Generation**: Generate final firmware binary files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1754
+msgid "6.1.1 Complete Build Flow Diagram"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1756
+msgid ""
+"The following diagram illustrates the complete build flow from start to "
+"finish:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1801
+msgid "6.2 Configuration File Generation Flow"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1803
+msgid "**Default Configuration**: Load chip default configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1804
+msgid "**User Configuration**: Apply user-defined configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1805
+msgid "**Configuration Merging**: Merge configuration files through `kconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1806
+msgid "**Header File Generation**: Generate `autoconf.h` and `capabilities.h`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1808
+msgid "6.3 Build File Generation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1810
+msgid ""
+"**Compilation Commands**: Generate compilation commands for each source "
+"file"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1811
+msgid "**Dependency Information**: Generate source file dependency relationships"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1812
+msgid "**Linker Scripts**: Process and generate linker scripts"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1813
+msgid "**Firmware Files**: Generate final binary and flashing files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1815
+msgid "7. Files and Scripts Composition"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1817
+msgid "7.1 Core Configuration Files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "File"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Location"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Function"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "CMakeLists.txt"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Root directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Main CMake configuration entry"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Makefile"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Make command interface"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "west.yml"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "West workspace configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Kconfig.chip"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Defines available SoC options and their configurations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Kconfig.build"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Defines build-time options and features"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "chip.config"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generated SoC-specific configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "build.config"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generated build-specific configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid ".config"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Merged configuration file used for the build"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "capabilities.h"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generated header with SoC capabilities based on selected chip"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "autoconf.h"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generated header with all configuration options as C defines"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "pinmux.h"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generated header with pin multiplexing configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1833
+msgid "7.2 CMake Files and Modules"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1835
+msgid "7.2.1 Core CMake Files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Main Function"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid ""
+"Main CMake entry point, sets up project structure and includes "
+"subdirectories"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "TelinkConfig.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "cmake/"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid ""
+"Telink package configuration, provides include_boilerplate macro and "
+"loads default modules"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Application directories"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid ""
+"Application-specific CMake configuration, creates executable targets and "
+"adds sources"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1843
+msgid "7.2.2 CMake Module Files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Module"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "compiler.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "cmake/modules/"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Compiler configuration and compilation options"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "linker.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Linker configuration and linker scripts"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "kconfig.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Kconfig integration and configuration processing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "west.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "West tool integration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "pinmux.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Pin multiplexing configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "extensions.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "CMake extension functions"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "python.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Python environment configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "telink_default.cmake"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Module loading and default configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1857
+msgid "7.3 Build Scripts"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Script"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "build.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "scripts/west_commands/"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Implement west tl-build command"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "config.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Implement west tl-config command"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "boards.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Display supported development boards"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "socs.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Display supported chips"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "kconfig.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "scripts/"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Process Kconfig configuration files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "menuconfig.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Interactive configuration interface"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "preprocess_kconfig.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Kconfig preprocessing"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "kconfig_parser.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Kconfig parsing and validation utilities"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "soc_board_setter.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "SOC/BOARD configuration and validation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "pinmux_gen.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "scripts/preprocess/"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generate pinmux header from .pinmux file"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "config_parser.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "scripts/parsers/"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Configuration file parsing utilities"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "yaml_parser.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "YAML file parsing utilities"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "pinmux_update_check.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "scripts/checks/"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Check if pinmux needs updating"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "tlk_check_fw.py"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Firmware validation script"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1876
+msgid "7.3.1 SOC/BOARD Related Scripts"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1878
+msgid "**soc_board_setter.py**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1879
+msgid ""
+"**Purpose**: Handles SOC and BOARD configuration with proper dependency "
+"resolution"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1880
+#: ../../source/build_config/build_system_architecture.md:1899
+#: ../../source/build_config/build_system_architecture.md:1914
+#: ../../source/build_config/build_system_architecture.md:1923
+#: ../../source/build_config/build_system_architecture.md:1932
+#: ../../source/build_config/build_system_architecture.md:1943
+msgid "**Key Features**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1881
+msgid "Validates SOC/BOARD combinations using Kconfig dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1882
+msgid "Automatically resolves and sets required dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1883
+msgid "Supports individual SOC or BOARD setting, or combined setting"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1884
+msgid "Provides both programmatic API and command-line interface"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1885
+msgid "**Usage Examples**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1897
+msgid "**kconfig_parser.py**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1898
+msgid ""
+"**Purpose**: Provides Kconfig parsing and validation utilities for "
+"SOC/BOARD management"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1900
+msgid "Parses Kconfig.chip to extract available SOCs and boards"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1901
+msgid "Validates SOC/BOARD combinations based on dependencies"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1902
+msgid "Provides methods to query supported boards for each SOC and vice versa"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1903
+msgid "Used by both West commands and CMake configuration system"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1904
+msgid "**Integration Points**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1905
+msgid "Used by `boards.py` and `socs.py` West commands"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1906
+msgid "Called by `kconfig.cmake` for validation during configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1907
+msgid "Supports dependency resolution and compatibility checking"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1909
+msgid "7.3.2 Utility Scripts"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1911
+msgid "**pinmux_gen.py**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1912
+msgid "**Purpose**: Generate pinmux header file from .pinmux configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1913
+msgid "**Location**: `scripts/preprocess/`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1915
+msgid "Reads .pinmux file from build directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1916
+msgid "Converts CONFIG_ format definitions to C preprocessor macros"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1917
+msgid "Generates pinmux.h header for inclusion in source code"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1918
+msgid ""
+"**Integration**: Used by CMake build system during pinmux configuration "
+"generation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1920
+msgid "**config_parser.py**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1921
+msgid "**Purpose**: Configuration file parsing utilities"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1922
+#: ../../source/build_config/build_system_architecture.md:1931
+msgid "**Location**: `scripts/parsers/`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1924
+msgid "Parse .config files for specific configuration values"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1925
+msgid "Extract pinmux configurations from config files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1926
+msgid "Provides consistent interface for config file operations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1927
+msgid "**Usage**: Used by various scripts for config file access and validation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1929
+msgid "**yaml_parser.py**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1930
+msgid "**Purpose**: YAML file parsing utilities"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1933
+msgid "Load and parse YAML configuration files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1934
+msgid "Handle errors gracefully with informative messages"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1935
+msgid "Return dictionary structure for programmatic access"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1936
+msgid "**Usage**: Used for parsing pinmux YAML files and other configuration data"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1938
+msgid "7.3.3 Validation Scripts"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1940
+msgid "**pinmux_update_check.py**"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1941
+msgid "**Purpose**: Check if pinmux configuration needs updating"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1942
+msgid "**Location**: `scripts/checks/`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1944
+msgid "Validate existence of .config file"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1945
+msgid "Check GPIO driver enable status"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1946
+msgid "Compare TLK_SOC_SERIES between .config and .pinmux"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1947
+msgid "Validate required functions are present in .pinmux"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1948
+msgid "Check enabled ports consistency"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1949
+msgid "**Integration**: Used by pre-build checks to ensure pinmux is up-to-date"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1951
+msgid "| pre_build_check.py | scripts/ | Pre-build environment checks |"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1953
+msgid "7.4 Kconfig Files"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "core/Kconfig"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "core/"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Core feature configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "soc/Kconfig"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "soc/"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Chip series selection"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "boards/Kconfig"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "boards/"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Development board selection"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "api/Kconfig"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "api/"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "API feature configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1962
+msgid "8. Build System Working Principles"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1964
+msgid "8.1 Configuration and Build Separation"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1966
+msgid ""
+"The UniSDK build system clearly separates the configuration process from "
+"the build process:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1968
+msgid "**Configuration Phase**: Generate configuration files through Kconfig"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1969
+msgid ""
+"**Generation Phase**: CMake uses configuration files to generate the "
+"build system"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1970
+msgid "**Build Phase**: Ninja executes actual compilation and linking tasks"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1972
+msgid "8.2 Modular Design"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1974
+msgid ""
+"The system adopts a highly modular design, with each module responsible "
+"for specific functionality:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1976
+msgid "Modules interact through clear interfaces"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1977
+msgid "Configuration information is passed through variables and properties"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1978
+msgid "Supports conditional loading and replacement of modules"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1980
+msgid "8.3 Multiple Build Method Support"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1982
+msgid ""
+"The system simultaneously supports multiple build methods to meet "
+"different usage scenarios:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1984
+msgid "**West Commands**: Provide simplified command-line interfaces"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1985
+msgid "**Direct CMake Calls**: Provide complete configuration control"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1986
+msgid "**Make Commands**: Compatible with traditional build habits"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1988
+msgid "9. Extension and Customization"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1990
+msgid "9.1 West Extension Commands Behavior"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1992
+msgid "West Command Behavior in Different Directories"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1994
+msgid ""
+"The west tool's output varies depending on the current working directory "
+"due to its extension command mechanism:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1996
+msgid ""
+"**Extension Command Discovery**: West searches for `.west/config` "
+"configuration files in the current directory and its parent directories "
+"to locate the workspace."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:1998
+msgid ""
+"**Project Manifest Loading**: When a workspace is found, west loads the "
+"`west.yml` manifest file which defines project-specific extension "
+"commands through the `west-commands` field."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2000
+msgid "**Command Availability**:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2001
+msgid ""
+"Inside a configured workspace, west loads unisdk project extensions and "
+"displays custom commands like `tl-build`, `tl-boards`, and `tl-socs`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2002
+msgid ""
+"Outside any workspace, west only shows built-in commands since no "
+"project-specific extensions are available"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2004
+msgid ""
+"**UniSDK Extension Commands**: The unisdk project defines three custom "
+"extensions in `scripts/west-commands.yml`:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2005
+msgid "`tl-build`: Compile a Telink application"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2006
+msgid "`tl-boards`: Display information about supported Telink boards"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2007
+msgid "`tl-socs`: Display information about supported Telink SOCs"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2009
+msgid ""
+"This behavior allows west to provide context-aware tooling based on the "
+"current project workspace while maintaining consistency across different "
+"development environments."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2011
+msgid "9.2 Adding New Build Modules"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2013
+msgid "To add a new build module:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2015
+msgid "Create a new `.cmake` file in the `cmake/modules/` directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2016
+msgid "Add the module to the loading list in `telink_default.cmake`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2017
+msgid "Implement the module's configuration and functionality"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2019
+msgid "9.3 Extending West Commands"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2021
+msgid "To add a new West command:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2023
+msgid ""
+"Create a command implementation file in the `scripts/west_commands/` "
+"directory"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2024
+msgid "Register the command in `scripts/west-commands.yml`"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2025
+msgid "Implement the command's parameter parsing and execution logic"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2027
+msgid "9.4 Adding Kconfig Configuration"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2029
+msgid "To add new Kconfig configuration:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2031
+msgid "Create or modify Kconfig files in appropriate locations"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2032
+msgid ""
+"Use the `rsource` directive to integrate new configurations into the "
+"configuration tree"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2033
+msgid "Define configuration options, dependencies, and default values"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2035
+msgid "9.5 Adding new application"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2037
+msgid "To add a new application:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2039
+msgid "Create a new directory **anywhere** on your filesystem"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2040
+msgid ""
+"Add the application source files to the new directory (must include a "
+"`main` function)"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2041
+msgid ""
+"Create a `CMakeLists.txt` file in the new directory with the following "
+"structure:"
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2067
+msgid ""
+"This implementation fully realizes the application-level entry point "
+"design, providing a modular and flexible build system for Telink chip "
+"development."
+msgstr ""
+
+#: ../../source/build_config/build_system_architecture.md:2071
+msgid ""
+"This document provides a detailed introduction to the architecture, "
+"components, and working principles of the UniSDK build system, helping "
+"developers understand and use the build system. With modular design and "
+"support for multiple build methods, the UniSDK build system provides a "
+"flexible, powerful build toolchain for Telink chip development."
+msgstr ""
+

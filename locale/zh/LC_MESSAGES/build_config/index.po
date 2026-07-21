@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/index.md:6
+msgid "Build & Configuration"
+msgstr ""
+
+#: ../../source/build_config/index.md:8
+msgid ""
+"UniSDK adopts a modular and extensible build system architecture, "
+"integrating tools such as CMake, Ninja, West, Kconfig, and Make to form a"
+" complete compilation and build workflow."
+msgstr ""
+
+#: ../../source/build_config/index.md:10
+msgid "Core Components"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Component"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Purpose"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "**CMake**"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Build system core"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Project configuration, dependency management, build rule generation"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "**Ninja**"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Build execution engine"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "High-performance parallel compilation, CMake's default backend"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "**West**"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Project management tool"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Unified command-line entry point, simplified build workflow"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "**Kconfig**"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Configuration management system"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Hierarchical management of compile-time configuration options"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "**Make**"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Traditional interface"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Frontend interface compatible with traditional Make conventions"
+msgstr ""
+
+#: ../../source/build_config/index.md:20
+msgid "Three Build Methods"
+msgstr ""
+
+#: ../../source/build_config/index.md:22
+msgid "UniSDK supports three build entry points, adapting to different scenarios:"
+msgstr ""
+
+#: ../../source/build_config/index.md:36
+msgid "Documentation Navigation"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Section"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Status"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "[CMake Build System](cmake_system.md)"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "CMake core flow, module loading, configuration phase details"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "STABLE"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "[Kconfig Configuration System](kconfig_system.md)"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Configuration hierarchy, processing flow, key scripts"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "[West Commands](west_commands.md)"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "tl-build / tl-config / tl-bdt and other command details"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "[Make Support](make_support.md)"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Makefile frontend interface, targets and variable descriptions"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "[Build Flow](build_flow.md)"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Environment validation, config generation, compile & link full flow"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "[Extensions & Customization](extensions.md)"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Add new modules, extend West commands, Kconfig customization"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "[File & Script Reference](reference.md)"
+msgstr ""
+
+#: ../../source/build_config/index.md
+msgid "Config files, CMake modules, script inventory"
+msgstr ""
+
+#: ../../source/build_config/index.md:48
+msgid "Build System Architecture"
+msgstr ""
+

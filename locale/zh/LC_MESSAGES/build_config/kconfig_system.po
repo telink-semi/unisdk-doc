@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/kconfig_system.md:6
+msgid "Kconfig Configuration System"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:8
+msgid ""
+"Kconfig is the configuration management core of UniSDK, using a "
+"hierarchical structure to manage compile-time configuration options."
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:10
+msgid "Architecture"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:12
+msgid "Configuration Entry Points"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:14
+msgid "UniSDK uses a dual-entry Kconfig design:"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:21
+msgid "Hierarchy"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:52
+msgid "Application-Level Kconfig Integration"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:54
+msgid ""
+"Through the `KCONFIG_APPLICATION_DIR` variable, the application layer can"
+" define its own Kconfig options, seamlessly integrating with the SDK "
+"configuration."
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:56
+msgid "Configuration Generation Flow"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:86
+msgid "Key Configuration Files"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "File"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Source"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Description"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "`chip.config`"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Kconfig.chip"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Chip-related configuration (SoC, peripheral enabling)"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "`build.config`"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Kconfig.build"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Build option configuration"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "`.config`"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "chip.config + build.config"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Final merged configuration"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "`capabilities.h`"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "chip.config → preprocessing"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Chip capability declaration header"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "`autoconf.h`"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid ".config → parsing"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "C preprocessor macro definitions"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:96
+msgid "SOC/BOARD Parameter Handling"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:111
+msgid ""
+"The Kconfig system automatically validates the SOC/BOARD combination "
+"compatibility (via `kconfig_parser.py`)."
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:113
+msgid "Key Scripts"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Script"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Purpose"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "`kconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid ""
+"Non-interactive Kconfig processing, configuration merging, validity "
+"verification"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "`menuconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Interactive terminal configuration interface"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "`preprocess_kconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Configuration preprocessing, YAML variable expansion"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "`kconfig_parser.py`"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "Kconfig parsing and SOC/BOARD validation"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "`soc_board_setter.py`"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:58
+msgid "SOC/BOARD configuration and dependency resolution"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:123
+msgid "Menuconfig Trigger Methods"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:125
+msgid ""
+"**Auto-triggered during build** — Automatically opens the interactive "
+"interface when config files are missing"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:126
+msgid "**Manually triggered** — `python scripts/menuconfig.py Kconfig.chip`"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:127
+msgid ""
+"**Non-interactive generation** — CMake configuration phase uses "
+"`kconfig.py` to auto-generate defaults"
+msgstr ""
+
+#: ../../source/build_config/kconfig_system.md:129
+msgid "Configuration Option Examples"
+msgstr ""
+

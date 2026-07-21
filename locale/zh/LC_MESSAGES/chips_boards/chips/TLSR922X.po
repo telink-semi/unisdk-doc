@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/chips_boards/chips/TLSR922X.md:6
+msgid "TLSR922X Chip Series"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:8
+msgid ""
+"!!! note \"Document Status: DRAFT — Detailed specifications to be added. "
+"The information below is based on SDK metadata and is subject to "
+"update.\""
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:10
+msgid "Overview"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:12
+msgid ""
+"The TLSR922X is a RISC-V microcontroller series from Telink, designed for"
+" wireless audio application scenarios."
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:14
+msgid "Core Parameters"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "Parameter"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "Value"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "Core"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "RISC-V (32-bit)"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "Supported Protocols"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "BLE"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "Toolchain"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "`andes-riscv32-v5f-gcc14.2` (TL32 ELF MCULIB V5F GCC14.2)"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:22
+msgid "Memory"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "Region"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "Size"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "Start Address"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "ROM"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "—"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "IRAM"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "256 KB"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "0x00000000"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "DRAM"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md
+msgid "0x00080000"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:30
+msgid "Peripheral List"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:32
+msgid "Standard Peripherals"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:33
+msgid "GPIO"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:34
+msgid "UART"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:35
+msgid "I2C"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:36
+msgid "SPI"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:37
+msgid "ADC"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:38
+msgid "DMA"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:40
+msgid "Audio"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:41
+msgid "Audio Codec"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:43
+msgid "System & Control"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:44
+msgid "PLIC (Platform-Level Interrupt Controller)"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:45
+msgid "PM (Power Management: Suspend, Deep Sleep, Deep Retention)"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:46
+msgid "PMP (Physical Memory Protection)"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:47
+msgid "STIMER (System Timer)"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:48
+msgid "MTIMER (Machine Timer)"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:49
+msgid "MSPI"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:51
+msgid "Security & Crypto"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:52
+msgid "PKE (Public Key Engine)"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:53
+msgid "SKE (Symmetric Key Engine)"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:54
+msgid "HASH"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:55
+msgid "TRNG (True Random Number Generator)"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:57
+msgid "Supported Package Options"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:59
+msgid "QFN48, QFN88"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:61
+msgid "Supported Boards"
+msgstr ""
+
+#: ../../source/chips_boards/chips/TLSR922X.md:63
+msgid "[TLSR9228A_EVK](../boards/TLSR9228A_EVK.md)"
+msgstr ""
+

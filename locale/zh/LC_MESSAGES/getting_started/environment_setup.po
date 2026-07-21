@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/getting_started/environment_setup.md:6
+msgid "Development Environment Setup"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:8
+msgid ""
+"This chapter describes how to install and configure the UniSDK "
+"development environment. The recommended approach is to use the Telink VS"
+" Code Extension, which provides a graphical interface for managing "
+"dependencies. Alternatively, you can set up the environment from the "
+"command line."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:10
+msgid "VS Code Extension (Recommended)"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:12
+msgid ""
+"The **Telink Development Tool** VS Code Extension provides a graphical "
+"interface for installing dependencies, managing the toolchain, and "
+"initializing the workspace with a single click."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:14
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:16
+msgid ""
+"**VS Code**: Install the latest version of [Visual Studio "
+"Code](https://code.visualstudio.com/)."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:18
+msgid ""
+"If your VS Code version is not the latest, the extension may not work "
+"properly or some features may not function as expected."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:20
+msgid "Step 1: Install the Telink VS Code Extension"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:22
+msgid "Launch VS Code."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:23
+msgid ""
+"Click the **Extensions** icon in the left activity bar (or press "
+"**Ctrl+Shift+X**)."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:24
+msgid "Search for **Telink**."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:25
+msgid "Find **Telink Development Tool** in the results and click **Install**."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:27
+msgid "![Telink DEVELOPMENT Icon](pics/telink_development_icon.png)"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:27
+msgid "Telink DEVELOPMENT Icon"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:29
+msgid ""
+"After installation, a **Telink DEVELOPMENT** icon will appear on the left"
+" sidebar."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:31
+msgid ""
+"To facilitate automatic identification of the Unified SDK by subsequent "
+"tools, open the Unified SDK folder in VS Code after completing the "
+"installation."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:33
+msgid "Step 2: Install Dependencies via the Extension"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:35
+msgid "Click the **Telink DEVELOPMENT** button in the left sidebar."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:36
+msgid ""
+"In the **DEVELOPMENT TOOLS** tree, you will see the required components: "
+"**Toolchain**, **West**, **CMake**, and **Ninja**."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:37
+msgid "Install each component:"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:38
+msgid "**Toolchain**: Click the toolchain entry and select **Install Toolchain**."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:39
+msgid ""
+"**West**: Right-click **West** and select **Install**. We recommend using"
+" a Python virtual environment for West."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:40
+msgid "**CMake**: Right-click **CMake** and select **Install**."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:41
+msgid "**Ninja**: Right-click **Ninja** and select **Install**."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:43
+msgid ""
+"![Dependency Installation](pics/dependency_installation.png) ![Dependency"
+" Installation Success](pics/dependency_installation_success.png)"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:43
+msgid "Dependency Installation"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:43
+msgid "Dependency Installation Success"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:46
+msgid ""
+"Wait for each component to finish installing. A notification appears in "
+"the bottom-right corner when installation is complete."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:48
+msgid "Step 3: Initialize the West Workspace"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:50
+msgid "In the **Telink DEVELOPMENT** view, locate the **West Command** section."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:51
+msgid "Click the **init** button."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:53
+msgid "![West Init](pics/west_init.png)"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:53
+msgid "West Init"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:55
+msgid ""
+"Check the **OUTPUT** terminal panel. A confirmation message appears when "
+"initialization completes successfully."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:57
+msgid "![West Init Success](pics/west_init_success.png)"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:57
+msgid "West Init Success"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:59
+msgid "Step 4: Verify the Environment"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:61
+msgid "In the **West Command** section, click the **tl-build** button."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:62
+msgid ""
+"A linker error is expected because no source directory has been "
+"configured yet. This indicates that the toolchain, build system, and West"
+" environment are configured correctly."
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:64
+msgid "![Expected Linker Error](pics/expected_linker_error.png)"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:64
+msgid "Expected Linker Error"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:67
+msgid "CLI Setup (Alternative)"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:69
+msgid ""
+"If you prefer to set up the development environment from the command "
+"line, refer to the platform-specific guides:"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:71
+msgid "[Linux Environment Setup](../developing/setup_linux.md)"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:72
+msgid "[Windows Environment Setup](../developing/setup_windows.md)"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:73
+msgid "[macOS Environment Setup](../developing/setup_macos.md)"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:75
+msgid "Next Steps"
+msgstr ""
+
+#: ../../source/getting_started/environment_setup.md:77
+msgid ""
+"After completing the environment setup, proceed to [Get and Import the "
+"SDK](get_sdk.md)."
+msgstr ""
+

@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/connectivity/index.md:6
+msgid "Connectivity"
+msgstr ""
+
+#: ../../source/connectivity/index.md:8
+msgid "Overview"
+msgstr ""
+
+#: ../../source/connectivity/index.md:10
+msgid ""
+"UniSDK integrates BLE (Bluetooth Low Energy) Controller (Link Layer), "
+"providing fundamental wireless connectivity for BLE application "
+"development."
+msgstr ""
+
+#: ../../source/connectivity/index.md:12
+msgid "Code Location"
+msgstr ""
+
+#: ../../source/connectivity/index.md
+msgid "BLE Controller Directory"
+msgstr ""
+
+#: ../../source/connectivity/index.md:27
+msgid "Coding Standards"
+msgstr ""
+
+#: ../../source/connectivity/index.md:29
+msgid ""
+"The BLE Controller follows strict coding standards to ensure performance "
+"and reliability:"
+msgstr ""
+
+#: ../../source/connectivity/index.md:31
+msgid "File Naming"
+msgstr ""
+
+#: ../../source/connectivity/index.md:33
+msgid ""
+"Source files use lowercase letters and underscores, e.g., "
+"`tlk_ble_ll_acl.c`"
+msgstr ""
+
+#: ../../source/connectivity/index.md:35
+msgid "Function Naming"
+msgstr ""
+
+#: ../../source/connectivity/index.md:37
+msgid "Public functions use the `tlk_ble_` prefix"
+msgstr ""
+
+#: ../../source/connectivity/index.md:38
+msgid "Internal functions use the `_` prefix"
+msgstr ""
+
+#: ../../source/connectivity/index.md:40
+msgid "Interrupt Functions"
+msgstr ""
+
+#: ../../source/connectivity/index.md:42
+msgid "Interrupt handler functions have specific naming and modifier requirements"
+msgstr ""
+
+#: ../../source/connectivity/index.md:43
+msgid ""
+"Interrupt functions should be as short as possible, avoiding complex "
+"operations"
+msgstr ""
+
+#: ../../source/connectivity/index.md:45
+msgid "Kconfig Configuration"
+msgstr ""
+
+#: ../../source/connectivity/index.md:51
+msgid "Examples"
+msgstr ""
+
+#: ../../source/connectivity/index.md:53
+msgid "[BLE Example](../samples/ble.md) — BLE advertising and connection demo"
+msgstr ""
+
+#: ../../source/connectivity/index.md:55
+msgid "Planned"
+msgstr ""
+
+#: ../../source/connectivity/index.md:57
+msgid "The following protocol stack features are under planning:"
+msgstr ""
+
+#: ../../source/connectivity/index.md:59
+msgid "BLE Host Layer (GAP, GATT, SM)"
+msgstr ""
+
+#: ../../source/connectivity/index.md:60
+msgid "Zigbee"
+msgstr ""
+
+#: ../../source/connectivity/index.md:61
+msgid "Thread"
+msgstr ""
+
+#: ../../source/connectivity/index.md:62
+msgid "Matter"
+msgstr ""
+
+#: ../../source/connectivity/index.md:64
+msgid "For more details, please contact the Telink team for the latest updates."
+msgstr ""
+

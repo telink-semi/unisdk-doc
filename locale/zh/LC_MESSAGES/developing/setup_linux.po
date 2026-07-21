@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/setup_linux.md:6
+msgid "Linux Environment Setup"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:8
+msgid ""
+"This document details the complete steps to set up the UniSDK development"
+" environment on a Linux system (using Ubuntu as an example)."
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:10
+msgid "System Requirements"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:12
+msgid "Ubuntu 20.04 LTS or higher"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:13
+msgid "At least 4 GB RAM, 8 GB+ recommended"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:14
+msgid "Sufficient disk space (SDK + toolchain requires approximately 2 GB)"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:16
+msgid "Install System Dependencies"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:24
+msgid "Verify installation:"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:33
+msgid "Set Up Python Virtual Environment"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:50
+msgid ""
+"!!! tip \"Recommendation\"     Remember to activate the virtual "
+"environment before each development session:     ```bash     source "
+".venv/bin/activate     ```"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:56
+msgid "Initialize West"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:66
+#, python-brace-format
+msgid ""
+"!!! warning \"Common Issue: already initialized\"     If you encounter "
+"the `already initialized in {path}, aborting.` error:     ```bash     "
+"unset ZEPHYR_BASE     west init -l     ```"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:73
+msgid "Configure Toolchain"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:75
+msgid "Download the Telink RISC-V toolchain (contact the Telink team for access)"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:76
+msgid "Extract the toolchain to a designated directory:"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:81
+msgid ""
+"Set the environment variable (recommend adding to `~/.bashrc` or "
+"`~/.zshrc`):"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:86
+msgid "Configure BDT Tool (Optional)"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:88
+msgid "If you need to use the `west tl-bdt` command for flashing and debugging:"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:98
+msgid "Verify Environment"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:108
+msgid "Next Steps"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:110
+msgid "[First Example: Blinky](blinky.md)"
+msgstr ""
+
+#: ../../source/developing/setup_linux.md:111
+msgid "[Getting Started](../getting_started/index.md)"
+msgstr ""
+

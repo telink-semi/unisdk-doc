@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/getting_started/first_example.md:6
+msgid "Compile, Flash and Run Your First Example"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:8
+msgid ""
+"This guide walks you through compiling, flashing, and running the first "
+"UniSDK example program — the GPIO demo (Blinky LED blinking)."
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:10
+msgid "Select the First Example"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:12
+msgid ""
+"The recommended first example is **gpio_demo** (GPIO LED blinking). It "
+"has the simplest logic (only peripheral initialization and a basic loop),"
+" the fewest dependencies, and does not involve complex wireless protocol "
+"stacks. This provides the shortest path to verify that your toolchain, "
+"SDK configuration, and hardware connection (programmer to target board) "
+"are all functioning correctly."
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:14
+msgid "Source code location: `samples/gpio_demo/main.c`"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:16
+msgid "Build the Project"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:18
+msgid "VS Code Extension (Recommended)"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:20
+msgid "Step 1: Select the Source Directory"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:22
+msgid ""
+"In the **Telink DEVELOPMENT** view, click the **Source Directory** button"
+" (or the folder icon) and choose the `samples/gpio_demo` directory."
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:24
+msgid "![Select Source Directory](pics/select_source_directory.png)"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:24
+msgid "Select Source Directory"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:26
+msgid "Step 2: Configure the Chip and Board"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:28
+msgid ""
+"Click the **tl-config** button to open the configuration interface. ![tl-"
+"config](pics/tl_config.png)"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:28
+msgid "tl-config"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:30
+msgid ""
+"Select the target chip and board (for example, TLSR9528A / "
+"TLSR9528A_EVK). ![Select Chip and Board](pics/select_chip_and_board.png)"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:30
+msgid "Select Chip and Board"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:32
+msgid "Configure build options. ![Build Options](pics/build_options.png)"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:32
+msgid "Build Options"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:34
+msgid ""
+"Configure the pinmux (pin functions). Press **Q** to save and exit at "
+"each step. ![Pinmux](pics/pinmux.png)"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:34
+msgid "Pinmux"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:39
+msgid "Step 3: Build"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:41
+msgid ""
+"Click **tl-build** to start the build. The build output appears in the "
+"terminal panel."
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:43
+msgid ""
+"After a successful build, the output files are generated in the `build/` "
+"directory:"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md
+msgid "Build Output Files"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:56
+msgid "CLI Approach (Alternative)"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:67
+msgid "Flash the Firmware"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:69
+msgid "Prerequisite: Connect the Hardware"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:71
+msgid "Connect the PC to the Telink programmer using a USB cable."
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:72
+msgid "Connect the programmer to the target board using jumper wires:"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:73
+msgid "**Power**: VCC ↔ VCC, GND ↔ GND"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:74
+msgid "**Data**: SWM (Programmer) ↔ SWS (Target board)"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:76
+msgid "Flash via BDT (CLI)"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:82
+msgid "To specify a flash address:"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:88
+msgid ""
+"For GUI-based flashing instructions, refer to the [BDT Tool "
+"Guide](../tools/bdt.md)."
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:90
+msgid "Flash via JTAG"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:92
+msgid ""
+"JTAG flashing requires the ICEman backend service. For detailed "
+"instructions, refer to the [Development Guide](../developing/index.md)."
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:94
+msgid "Verify the Result"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:96
+msgid "After flashing is complete:"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:98
+msgid ""
+"The development board resets automatically (or press the **Reset** button"
+" manually)."
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:99
+msgid "Observe the on-board LED — it should blink at a fixed interval."
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:100
+msgid "(Optional) Connect a serial terminal to view debug log output."
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:102
+msgid ""
+"**Expected Result**: The on-board LED blinks periodically, indicating "
+"that the application is running successfully on the target chip."
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:104
+msgid "Next Steps"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:106
+msgid ""
+"Congratulations on successfully running your first UniSDK program! "
+"Continue exploring:"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:108
+msgid ""
+"[Development Guide](../developing/index.md) — Deep dive into the SDK "
+"development workflow"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:109
+msgid ""
+"[Detailed Blinky Guide](../developing/blinky.md) — Step-by-step breakdown"
+" of the example"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:110
+msgid "[Samples & Demos](../samples/index.md) — Explore more example projects"
+msgstr ""
+
+#: ../../source/getting_started/first_example.md:111
+msgid ""
+"[Peripherals & Drivers](../peripherals/index.md) — Learn to use GPIO, "
+"UART, I2C and more"
+msgstr ""
+

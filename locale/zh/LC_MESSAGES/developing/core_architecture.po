@@ -1,0 +1,308 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/core_architecture.md:6
+msgid "Core Architecture"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:8
+msgid ""
+"This document introduces the core operating mechanisms of UniSDK, "
+"including the startup flow, interrupt management, exception handling, and"
+" low-power framework."
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:10
+msgid "System Startup Flow"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:12
+msgid ""
+"The startup process of UniSDK begins from hardware reset and goes through"
+" the following stages:"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:25
+msgid "Stage Descriptions"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:27
+msgid ""
+"**`cstartup_flash.S`** — Assembly startup code, sets up the stack, copies"
+" the data segment, zeros BSS, jumps to the C entry point"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:28
+msgid ""
+"**`tlk_init()`** — SDK initialization function, initializes each "
+"subsystem in sequence"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:29
+msgid "**`tlk_loop()`** — Main event loop, handles BLE events, timers, etc."
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:31
+msgid "Initialization System"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:33
+msgid "init Framework"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:35
+msgid ""
+"UniSDK uses a modular initialization framework, implemented through "
+"macros defined in `tlk_init.h`:"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:42
+msgid "Initialization Priority Hierarchy:"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Priority"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Typical Modules"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Description"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Earliest"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Clock, Memory"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "System foundational capabilities"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Early"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "GPIO, PLIC"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Peripheral infrastructure"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Middle"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "UART, I2C, SPI"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Communication peripherals"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Late"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "BLE"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Protocol stack"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Latest"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Application Callback"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "User application initialization"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:52
+msgid "Interrupt Management"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:54
+msgid "PLIC (Platform-Level Interrupt Controller)"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:56
+msgid "RISC-V platforms use PLIC to manage peripheral interrupts:"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:58
+msgid ""
+"**Interrupt Sources** — Each peripheral (GPIO, UART, I2C, etc.) has a "
+"dedicated PLIC interrupt number"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:59
+msgid "**Priority** — PLIC supports multiple interrupt priority levels"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:60
+msgid "**Interrupt Nesting** — Supports interrupt nesting through preemption"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:70
+msgid "GPIO Interrupt Example"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:83
+msgid "Low-Power Management"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:85
+msgid "UniSDK supports multiple low-power modes:"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Mode"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Power Draw"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Wake-Up Speed"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Retained Content"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Use Case"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "**Suspend**"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Medium"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Fast (< 1ms)"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Most context"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Brief idle periods"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "**Deep Retention**"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Low"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Partial SRAM retention"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Long idle, state must be retained"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "**Deep Sleep**"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Very Low"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Slow"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "SRAM not retained"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Extended hibernation"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:93
+msgid "Typical Usage"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:111
+msgid "Context Switch (tl_context.S)"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:113
+msgid ""
+"`tl_context.S` implements light-weight context saving and restoring, used"
+" for:"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:115
+msgid "Register saving on interrupt entry/exit"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:116
+msgid "State restoration after waking from low-power modes"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:118
+msgid "Clock System"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:120
+msgid "**System Timer (STIMER)** — High-precision system timer"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:121
+msgid ""
+"**Machine Timer (MTIMER)** — RISC-V standard timer, used for scheduling "
+"and delays"
+msgstr ""
+
+#: ../../source/developing/core_architecture.md:122
+msgid ""
+"**Peripheral Clocks** — Independent clock source configuration for each "
+"peripheral"
+msgstr ""
+

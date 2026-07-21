@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/samples/gpio.md:6
+msgid "GPIO Sample"
+msgstr ""
+
+#: ../../source/samples/gpio.md:8
+msgid "Overview"
+msgstr ""
+
+#: ../../source/samples/gpio.md:10
+msgid ""
+"The `gpio_demo` sample demonstrates the basic usage of the GPIO driver, "
+"including input/output operations, interrupt handling, and sleep APIs."
+msgstr ""
+
+#: ../../source/samples/gpio.md:12
+msgid "Features Demonstrated"
+msgstr ""
+
+#: ../../source/samples/gpio.md:14
+msgid ""
+"Basic GPIO configuration and pin control (`tlk_gpio_configure`, "
+"`tlk_gpio_pin_write`, `tlk_gpio_pin_toggle`)"
+msgstr ""
+
+#: ../../source/samples/gpio.md:15
+msgid ""
+"GPIO interrupt usage and callback registration (requires "
+"`CONFIG_TLK_GPIO_DEMO_INTERRUPT` enabled)"
+msgstr ""
+
+#: ../../source/samples/gpio.md:17
+msgid "How It Works"
+msgstr ""
+
+#: ../../source/samples/gpio.md:19
+msgid "Initialization"
+msgstr ""
+
+#: ../../source/samples/gpio.md:21
+msgid ""
+"**LED0 Configuration** — Configured as output mode, toggled every 2 "
+"seconds in the main loop"
+msgstr ""
+
+#: ../../source/samples/gpio.md:22
+msgid ""
+"**Interrupt Configuration (optional)** — When "
+"`CONFIG_TLK_GPIO_DEMO_INTERRUPT` is enabled:"
+msgstr ""
+
+#: ../../source/samples/gpio.md:23
+msgid "LED1 is configured as output (toggled in the interrupt callback)"
+msgstr ""
+
+#: ../../source/samples/gpio.md:24
+msgid "KEY0 is configured as input with pull-down"
+msgstr ""
+
+#: ../../source/samples/gpio.md:25
+msgid "Registers a GPIO interrupt callback (`gpio_cb`)"
+msgstr ""
+
+#: ../../source/samples/gpio.md:26
+msgid "Sets rising-edge trigger"
+msgstr ""
+
+#: ../../source/samples/gpio.md:27
+msgid "Enables global interrupts"
+msgstr ""
+
+#: ../../source/samples/gpio.md:29
+msgid "Main Loop"
+msgstr ""
+
+#: ../../source/samples/gpio.md:40
+msgid ""
+"!!! note \"Board-Specific Macros\"     The `UNISDK_BOARD_LED_0_PORT` and "
+"`UNISDK_BOARD_LED_0_PIN` macros are defined in the board-specific "
+"`tlk_board_pinout.h` header. These resolve to the correct port and pin "
+"for the target board's LED."
+msgstr ""
+
+#: ../../source/samples/gpio.md:43
+msgid "Configuration Options"
+msgstr ""
+
+#: ../../source/samples/gpio.md
+msgid "Option"
+msgstr ""
+
+#: ../../source/samples/gpio.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/samples/gpio.md
+msgid "`CONFIG_TLK_GPIO_DEMO_INTERRUPT`"
+msgstr ""
+
+#: ../../source/samples/gpio.md
+msgid "Enable interrupt demo: KEY0 rising-edge trigger, LED1 toggled in callback"
+msgstr ""
+
+#: ../../source/samples/gpio.md:49
+msgid "Build & Run"
+msgstr ""
+
+#: ../../source/samples/gpio.md:56
+msgid "Source code: `samples/gpio_demo/main.c`"
+msgstr ""
+

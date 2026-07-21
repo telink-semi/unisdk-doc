@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/productization/index.md:6
+msgid "Production Guide"
+msgstr ""
+
+#: ../../source/productization/index.md:8
+msgid ""
+"!!! note \"Document Status: PLANNED — Content for this module has not yet"
+" been written\""
+msgstr ""
+
+#: ../../source/productization/index.md:10
+msgid ""
+"The Production Guide will help developers transition prototypes developed"
+" with UniSDK into mass production products, covering:"
+msgstr ""
+
+#: ../../source/productization/index.md:12
+msgid "Mass production flashing solutions"
+msgstr ""
+
+#: ../../source/productization/index.md:13
+msgid "OTA (Over-The-Air) firmware upgrades"
+msgstr ""
+
+#: ../../source/productization/index.md:14
+msgid "Production line testing and calibration"
+msgstr ""
+
+#: ../../source/productization/index.md:15
+msgid "Hardware design reference"
+msgstr ""
+
+#: ../../source/productization/index.md:16
+msgid "Certification and compliance"
+msgstr ""
+
+#: ../../source/productization/index.md:18
+msgid "Detailed documentation will be added later."
+msgstr ""
+

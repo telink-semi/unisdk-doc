@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/blinky.md:6
+msgid "First Example: Blinky (LED Blinking)"
+msgstr ""
+
+#: ../../source/developing/blinky.md:8
+msgid ""
+"This document details how to compile, flash, and run the first UniSDK "
+"example program — the GPIO demo (Blinky LED blinking)."
+msgstr ""
+
+#: ../../source/developing/blinky.md:10
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/developing/blinky.md:12
+msgid "[Environment setup](../getting_started/index.md) is complete"
+msgstr ""
+
+#: ../../source/developing/blinky.md:13
+msgid "Toolchain `TELINK_TOOLCHAIN_PATH` is configured"
+msgstr ""
+
+#: ../../source/developing/blinky.md:14
+msgid ""
+"You have a Telink development board on hand (this example uses "
+"TLSR9528A_EVK)"
+msgstr ""
+
+#: ../../source/developing/blinky.md:16
+msgid "Example Overview"
+msgstr ""
+
+#: ../../source/developing/blinky.md:18
+msgid ""
+"The `gpio_demo` example demonstrates basic GPIO input/output "
+"functionality and interrupt handling:"
+msgstr ""
+
+#: ../../source/developing/blinky.md:20
+msgid ""
+"Configures a GPIO pin as output mode, periodically toggling to achieve "
+"LED blinking"
+msgstr ""
+
+#: ../../source/developing/blinky.md:21
+msgid "Configures interrupt handling to respond to button input"
+msgstr ""
+
+#: ../../source/developing/blinky.md:22
+msgid "Demonstrates the use of sleep APIs"
+msgstr ""
+
+#: ../../source/developing/blinky.md:24
+msgid "Source code location: `samples/gpio_demo/main.c`"
+msgstr ""
+
+#: ../../source/developing/blinky.md:26
+msgid "Step 1: Configure Chip Type"
+msgstr ""
+
+#: ../../source/developing/blinky.md:36
+msgid ""
+"!!! tip \"Available Chips and Boards\"     List all supported options:"
+"     ```bash     west tl-socs      # View all chips     west tl-boards"
+"    # View all boards     ```"
+msgstr ""
+
+#: ../../source/developing/blinky.md:43
+msgid "Step 2: Compilation"
+msgstr ""
+
+#: ../../source/developing/blinky.md:53
+msgid ""
+"After a successful build, the output files are located in the `build/` "
+"directory:"
+msgstr ""
+
+#: ../../source/developing/blinky.md
+msgid "Build Output Files"
+msgstr ""
+
+#: ../../source/developing/blinky.md:66
+msgid "Step 3: Flashing"
+msgstr ""
+
+#: ../../source/developing/blinky.md:76
+msgid "Step 4: Verification"
+msgstr ""
+
+#: ../../source/developing/blinky.md:78
+msgid ""
+"After flashing is complete, the LED on the development board will blink "
+"at a fixed frequency, indicating that the program is running normally."
+msgstr ""
+
+#: ../../source/developing/blinky.md:80
+msgid "Custom Modifications"
+msgstr ""
+
+#: ../../source/developing/blinky.md:82
+msgid ""
+"Open `samples/gpio_demo/main.c` to modify parameters such as the LED "
+"blinking frequency:"
+msgstr ""
+
+#: ../../source/developing/blinky.md:89
+msgid "After making changes, recompile and flash:"
+msgstr ""
+
+#: ../../source/developing/blinky.md:96
+msgid "Next Steps"
+msgstr ""
+
+#: ../../source/developing/blinky.md:98
+msgid "[GPIO Driver Documentation](../peripherals/gpio.md)"
+msgstr ""
+
+#: ../../source/developing/blinky.md:99
+msgid "[Build System Details](../build_config/index.md)"
+msgstr ""
+
+#: ../../source/developing/blinky.md:100
+msgid "[More Examples](../samples/index.md)"
+msgstr ""
+

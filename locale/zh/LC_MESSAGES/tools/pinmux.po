@@ -1,0 +1,516 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tools/pinmux.md:6
+msgid "Pinmux Pin Configuration Tool"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:8
+msgid "Overview"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:10
+msgid ""
+"The Pinmux (Pin Multiplexing) tool is a graphical pin configuration tool "
+"provided by UniSDK to help developers visually configure chip pin "
+"multiplexing functions in the terminal."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:12
+msgid "**Key Features:**"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:14
+msgid "Graphical terminal interface (based on the Textual framework)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:15
+msgid "Visual selection of pin functions with interactive popup menus"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:16
+msgid "Pin configuration conflict detection"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:17
+msgid "Requirement validation (ensures all required functions are assigned)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:18
+msgid "Support for multiple chip package variants"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:19
+msgid "Integration with the Kconfig configuration system"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:20
+msgid "Automatic generation of the `pinmux.h` header file"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:22
+msgid "Launch Methods"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:35
+msgid "Main View"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:37
+msgid "Once opened, you will see the main dashboard:"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:39
+msgid ""
+"**Ports:** A scrollable vertical list of all GPIO ports (e.g., PORT A, "
+"PORT B)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:40
+msgid ""
+"**Pins:** Inside each port section, individual pins are displayed as "
+"interactive buttons showing the pin's name and its currently assigned "
+"function"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:42
+msgid ""
+"![Pinmux Interface overview](pics/pinmux_1.png) *Figure 1. Pinmux "
+"Interface overview showing GPIO ports, pins, and assigned functions.*"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:42
+msgid "Pinmux Interface overview"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:45
+msgid "Selecting a Function"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:47
+msgid "Click on a pin (or navigate to it and press **Enter**)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:48
+msgid "A popup window titled **Function Select** will appear"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:49
+msgid "The list shows all supported hardware functions for that specific pin"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:50
+msgid ""
+"Select the desired function (e.g., `UART0_RX`) or select **NONE** to "
+"disable the pin"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:51
+msgid "Press **Enter** to confirm"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:53
+msgid ""
+"![Function select screen](pics/pinmux_2.png) *Figure 2. Function select "
+"screen for a GPIO pin.*"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:53
+msgid "Function select screen"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:56
+msgid "Shortcuts"
+msgstr ""
+
+#: ../../source/tools/pinmux.md
+msgid "Key"
+msgstr ""
+
+#: ../../source/tools/pinmux.md
+msgid "Action"
+msgstr ""
+
+#: ../../source/tools/pinmux.md
+msgid "**s** (Save)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md
+msgid ""
+"Validates configuration — checks for conflicts and missing functions. If "
+"valid, saves and exits. If invalid, shows an error notification"
+msgstr ""
+
+#: ../../source/tools/pinmux.md
+msgid "**q** (Quit)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md
+msgid ""
+"Exits the application. A confirmation dialog appears if there are unsaved"
+" modifications"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:63
+msgid "Validation errors occur when:"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:64
+msgid ""
+"Necessary functions are not assigned to pins (e.g., UART0 is enabled but "
+"UART0_TX is not assigned)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:65
+msgid "Conflicting pins exist (e.g., UART0_TX assigned to both PC3 and PC4)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:67
+msgid "![Exit Screen](pics/pinmux_3.png) *Figure 3. Exit Screen.*"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:67
+msgid "Exit Screen"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:70
+msgid "Saving"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:72
+msgid ""
+"The configuration is saved to a file named `<SoC or board name>.<soc or "
+"board>.pinmux`. For example, building for TL3218X_EVK generates "
+"`TL3218X_EVK.board.pinmux`."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:74
+msgid ""
+"This `.pinmux` file contains pin-to-function mappings in a human-readable"
+" format and is used to restore previous pin settings when the tool is "
+"invoked again."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:76
+msgid ""
+"Additionally, `pinmux.h` is generated in the build folder based on the "
+"saved settings, containing C preprocessor definitions usable by firmware "
+"code."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:78
+msgid ""
+"The `.pinmux` files persist until the project switches, allowing previous"
+" pin settings to be restored when switching between chips."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:80
+msgid "File Format"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:82
+msgid "The `.pinmux` files use a simple key-value format:"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:90
+msgid "Each line represents a single pin assignment"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:91
+msgid "All letters are upper-case"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:92
+msgid "Format: `<pin name>=<function name>`"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:93
+msgid "Pin name consists of letter **P**, port letter, and pin number"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:95
+msgid "During parsing, the following lines are ignored:"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:96
+msgid "Invalid data that doesn't match the pattern"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:97
+msgid "Valid data referencing non-existent pins or functions"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:98
+msgid "Assignments to pins on ports disabled in the current configuration"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:99
+msgid "Assignments to functions not enabled in the current configuration"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:101
+msgid "Overriding Mechanism"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:103
+msgid ""
+"Each time pinmux is invoked, data is loaded in the following sequence "
+"(each overrides the previous):"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:105
+msgid ""
+"**SoC defaults** — from `soc/<soc>/pinmux/function.yaml` (used for "
+"development)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:106
+msgid ""
+"**Project `.pinmux`** — in the project directory (sets custom defaults "
+"for any chip)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:107
+msgid ""
+"**`<identifier>.pinmux`** — in the project directory (chip-specific "
+"overrides)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:108
+msgid ""
+"**`<identifier>.pinmux`** — in the build directory (last actual user pin "
+"settings)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:110
+msgid ""
+"This allows projects to have out-of-the-box pin settings while still "
+"allowing customization."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:112
+msgid "Internal Execution Flow"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:114
+msgid "Data Loading & Synchronization"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:116
+msgid "When the application starts, it combines multiple data sources:"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:118
+msgid ""
+"`soc/<soc>/pinmux/function.yaml` — The \"Function Definitions\": "
+"describes all available functions for the chip"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:119
+msgid ""
+"`soc/<soc>/pinmux/pinmux.yaml` — The \"Dictionary\": lists every physical"
+" pin and its supported functions. Each port can have an `exclude` "
+"property, which describes what functions aren't supported by its pins. "
+"Individual pins can also use `exclude` and `include` properties. The "
+"restrictions are applied in the following order: port's exclude → pin's "
+"exclude → pin's include. For simplicity, the `all` keyword represents all"
+" functions. For groups of functions, you may use a group name (e.g., "
+"`uart0` represents `uart0_tx`, `uart0_rx`, `uart0_cts`, and `uart0_rts`; "
+"`uart` covers `uart0`, `uart1`, etc.). If a pin supports only one exact "
+"function, use `exclude: all` together with `include: your_function`."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:120
+msgid ""
+"`soc/<soc>/pinmux/pinmux_<case>.yaml` — The \"Restriction\": overrides "
+"`pinmux.yaml` to remove pins or ports for specific chip packages by "
+"assigning the `delete` keyword"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:121
+msgid ""
+"`.config` — The \"Requirements\": tells the app which drivers are enabled"
+" (e.g., \"UART0 is enabled, so we need pins for TX and RX\")"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:122
+msgid "`.pinmux` files — Previous user configurations (see overriding mechanism)"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:124
+msgid "**The Loading Sequence:**"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:126
+msgid ""
+"The `.config` file, which contains the current configuration and "
+"identifies the current chip."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:127
+msgid ""
+"The function description from `function.yaml`, skipping functions "
+"disabled by configuration."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:128
+msgid ""
+"The port and pin description from `pinmux.yaml` and `pinmux_<case>.yaml` "
+"for the selected chip."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:129
+msgid ""
+"The `.pinmux` files in the order described in the [Overriding Mechanism"
+"](#overriding-mechanism) section."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:131
+msgid "Changing a Pin Function"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:133
+msgid ""
+"When a new function is selected for a pin, the following happens "
+"instantly:"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:135
+msgid ""
+"**Collision Check:** The system scans all other pins. If you try to "
+"assign a unique function (like `UART0_TX`) to PC0, but PB2 already has "
+"it, the system flags a **Conflict**."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:136
+msgid "**Observer Update:** The app uses an \"Observer Pattern.\""
+msgstr ""
+
+#: ../../source/tools/pinmux.md:137
+msgid "The Pin data changes."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:138
+msgid ""
+"The UI widget receives a notification and redraws itself (updating the "
+"text and color)."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:139
+msgid ""
+"The next `is_modified` property access in `PinmuxManager` will return "
+"`True`, until the save action is triggered."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:141
+msgid "The Saving Process"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:143
+msgid ""
+"When you press Save (`s`), the app performs strict validation before "
+"writing to disk."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:145
+msgid "**Step 1: Validation**"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:147
+msgid ""
+"**Check Conflicts:** Are two pins assigned to the same non-repeatable "
+"function? If yes → Error."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:148
+msgid ""
+"**Check Requirements:** Are all functions required by the configuration "
+"assigned to valid pins? If no → Error."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:150
+msgid "**Step 2: Writing**"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:152
+msgid ""
+"If there are no errors, the pin mapping is saved to the "
+"`<identifier>.pinmux` file using the simple key-value format."
+msgstr ""
+
+#: ../../source/tools/pinmux.md:154
+msgid "Generating pinmux.h"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:156
+msgid ""
+"After saving, `pinmux.h` is automatically generated with C preprocessor "
+"definitions:"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:168
+msgid "Configuration File Locations"
+msgstr ""
+
+#: ../../source/tools/pinmux.md
+msgid "Pinmux Configuration Files"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:183
+msgid "Build Integration"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:185
+msgid "Pinmux configuration is deeply integrated into the build system:"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:187
+msgid ""
+"The `generate_pinmux` CMake target automatically executes before "
+"compilation"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:188
+msgid ""
+"Pre-build checks automatically detect whether `pinmux.h` needs to be "
+"updated"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:189
+msgid ""
+"The generated `pinmux.h` is placed in the `build/` directory and "
+"automatically added to the include path"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:191
+msgid "CI"
+msgstr ""
+
+#: ../../source/tools/pinmux.md:193
+msgid ""
+"The CI uses a single configuration across all samples. This is possible "
+"because unused assignments are skipped, so you just need to consider all "
+"pin usages in the samples within this file. Before the build, the CI "
+"copies this file to the build directory. Since the build's settings are "
+"applied last during overriding, the resulting configuration corresponds "
+"to what is described in the file — all previous settings are overridden."
+msgstr ""
+

@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/index.md:6
+msgid "Development Guide"
+msgstr ""
+
+#: ../../source/developing/index.md:8
+msgid ""
+"This chapter is aimed at developers who have started using UniSDK and "
+"introduces the complete development workflow and best practices."
+msgstr ""
+
+#: ../../source/developing/index.md:10
+msgid "Content Navigation"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "Chapter"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "Status"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "[Environment Setup](setup_linux.md)"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "Platform-specific setup guides (Linux / Windows / macOS)"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "STABLE"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "[First Example: Blinky](blinky.md)"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "Detailed step-by-step breakdown of the gpio_demo example"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "[SDK Directory Structure](directory_structure.md)"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "Code organization conventions, responsibilities of each directory"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "[Project Creation & Management](project_management.md)"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "Creating new projects, CMakeLists.txt configuration"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "[Core Architecture](core_architecture.md)"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid ""
+"Startup flow, exception handling, interrupt management, low-power "
+"mechanisms"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "[Debugging & Testing](debugging.md)"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "Hardware debugging, logging system, shell interaction"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "[IDE Integration](ide_integration.md)"
+msgstr ""
+
+#: ../../source/developing/index.md
+msgid "VS Code clangd configuration, Eclipse, Segger Embedded Studio"
+msgstr ""
+
+#: ../../source/developing/index.md:22
+msgid "Quick Start for a New Project"
+msgstr ""
+
+#: ../../source/developing/index.md:53
+msgid "Development Workflow Overview"
+msgstr ""
+
+#: ../../source/developing/index.md:65
+msgid "Next Steps"
+msgstr ""
+
+#: ../../source/developing/index.md:67
+msgid ""
+"[Build & Configuration](../build_config/index.md) — Deep dive into the "
+"CMake and Kconfig build system"
+msgstr ""
+
+#: ../../source/developing/index.md:68
+msgid ""
+"[Peripherals & Drivers](../peripherals/index.md) — Use GPIO, UART, I2C "
+"and other peripheral drivers"
+msgstr ""
+
+#: ../../source/developing/index.md:69
+msgid ""
+"[Samples & Demos](../samples/index.md) — Reference ready-to-run example "
+"code"
+msgstr ""
+

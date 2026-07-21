@@ -1,0 +1,316 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tools/menuconfig.md:6
+msgid "Menuconfig Configuration Interface"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:8
+msgid "Overview"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:10
+msgid ""
+"Menuconfig is UniSDK's terminal-based interactive system configuration "
+"tool, providing visual menu navigation to set all Kconfig configuration "
+"options."
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:12
+msgid "**Key Features:**"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:14
+msgid ""
+"Dual-phase configuration: Chip configuration and Build configuration are "
+"separated"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:15
+msgid "Terminal graphical interface with arrow key navigation"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:16
+msgid "Search function (press `/` key)"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:17
+msgid "Help system (press `?` key to view option descriptions)"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:18
+msgid ""
+"Automatic dependency management (unavailable options are automatically "
+"hidden)"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:19
+msgid ""
+"Merged output: Automatically merges hardware and software configurations "
+"into `.config`"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:21
+msgid "Launch Methods"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:38
+msgid ""
+"!!! note \"First-time Use\"     `make config` will open the interface "
+"twice in sequence: first the chip configuration (Kconfig.chip), then the "
+"peripheral build configuration (Kconfig.build)."
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:41
+msgid "Navigation and Operations"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "Operation"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "Key"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "Move up/down"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "`↑` `↓` or `j` `k`"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "Enter submenu"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "`Enter` or `→`"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "Return to parent"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "`ESC` or `←`"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "Toggle option"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "`Space`"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "Search"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "`/`"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "View help"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "`?`"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "Save and exit"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "Select `< Save >` then `< Exit >`"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:53
+msgid "![Chip configuration screen](pics/menuconfig_1.png)"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:53
+msgid "Chip configuration screen"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:55
+msgid "*Figure 1. Chip configuration screen — select target SoC and board*"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:57
+msgid "![Build configuration screen](pics/menuconfig_2.png)"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:57
+msgid "Build configuration screen"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:59
+msgid ""
+"*Figure 2. Build configuration screen — configure software drivers and "
+"settings*"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:61
+msgid "Dual-Phase Configuration"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:63
+msgid "Phase 1: Chip Configuration (chip.config)"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:65
+msgid "When the tool opens for the first time, you are configuring the hardware."
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:67
+msgid "**What you see:** Options related to SoC Series, SoC, and Board"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:68
+msgid ""
+"**Action:** Select your target SoC and enable required chip peripherals "
+"(GPIO ports, UART instances, etc.)"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:69
+msgid "**Exit:** Select `< Save >` and `< Exit >` to close the window"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:71
+msgid "Phase 2: Build Configuration (build.config)"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:73
+msgid ""
+"Immediately after the first window closes, the tool opens again for "
+"software configuration."
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:75
+msgid ""
+"**What you see:** Options filtered based on chip capabilities "
+"(`capabilities.h`), including API configurations, driver selections, and "
+"feature switches"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:76
+msgid ""
+"**Action:** Configure feature switches, parameters, examples, and "
+"debugging options"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:77
+msgid "**Exit:** Select `< Save >` and `< Exit >` to finish the process"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:79
+msgid "Results"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:81
+msgid "After configuration completes, the following files are generated:"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md
+msgid "Generated Configuration Files"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:97
+msgid "Internal Execution Flow"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:99
+msgid "Stage 1: Chip Configuration"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:100
+msgid "The system reads `Kconfig.chip` — defines all hardware-related options"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:101 ../../source/tools/menuconfig.md:109
+msgid "The user selects settings in the UI"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:102
+msgid "Output is saved to a temporary `chip.config` file"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:104
+msgid "Stage 2: Pre-processing"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:105
+msgid ""
+"Between the two windows, `preprocess_kconfig.py` runs automatically to "
+"prepare the build configuration stage."
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:107
+msgid "Stage 3: Build Configuration"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:108
+msgid "The system reads `Kconfig.build` — defines software and project settings"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:110
+msgid "Output is saved to a temporary `build.config` file"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:112
+msgid "Stage 4: Merging"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:113
+msgid "Both stages are combined into the final `.config`:"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:119
+msgid ""
+"This merged file contains the complete system configuration (both "
+"hardware and software) and is used by the compiler and the Pinmux tool."
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:121
+msgid "FAQ"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:123
+msgid "Arrow Keys Not Working in Windows PowerShell / VS Code"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:125
+msgid "Use letter keys instead (`j`/`k` for up/down movement)"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:126
+msgid "Use Windows 11"
+msgstr ""
+
+#: ../../source/tools/menuconfig.md:127
+msgid "Use CMD instead of PowerShell"
+msgstr ""
+

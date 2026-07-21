@@ -1,0 +1,372 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/setup_windows.md:6
+msgid "Windows Environment Setup"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:8
+msgid ""
+"This document details the complete steps to set up the UniSDK development"
+" environment on Windows 10/11."
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:10
+msgid "System Requirements"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:12
+msgid "Windows 10 (1709+) or Windows 11"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:13
+msgid "At least 4 GB RAM, 8 GB+ recommended"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:14
+msgid "Administrator privileges (recommended)"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:16
+msgid "Installation Methods"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:18
+msgid "Method 1: One-Click Setup Script (Recommended)"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:20
+msgid ""
+"UniSDK provides an automated deployment script (`windows_setup.ps1`) that"
+" simplifies the environment configuration process on Windows systems."
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:22
+msgid "Open PowerShell as Administrator"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:23
+msgid "Navigate to the scripts directory and run:"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:30
+msgid "Script Features in Detail"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:32
+msgid "The script automatically performs the following tasks:"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:34
+msgid "**PowerShell Execution Policy Configuration**"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:35
+msgid ""
+"Checks and sets the execution policy to `RemoteSigned` to allow running "
+"local scripts"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:37
+msgid "**Tool Installation**"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:38
+msgid "Detects if `winget` is installed"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:39
+msgid ""
+"If winget is available: automatically downloads and installs CMake, "
+"Ninja, Python, and Git"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:40
+msgid ""
+"If winget is not available: provides official download links to guide "
+"manual installation"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:42
+msgid "**Python Environment Configuration**"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:43
+msgid "Creates `.venv` virtual environment in the UniSDK root directory"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:44
+msgid "Upgrades pip to the latest version"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:45
+msgid "Installs all Python dependencies from `requirements.txt`"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:46
+msgid "Ensures west tool is properly installed"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:48
+msgid "**Environment Variable Settings**"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:49
+msgid "Sets `TELINK_TOOLCHAIN_PATH` pointing to the toolchain directory"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:50
+msgid "Adds CMake and Ninja paths to the system PATH"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:52
+msgid "**Telink Toolchain Setup**"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:53
+msgid "Creates the `toolchain` directory"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:54
+msgid "Sets `TELINK_TOOLCHAIN_PATH` environment variable"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:55
+msgid ""
+"Due to special permissions required for toolchain download, users need to"
+" manually download and extract the toolchain"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:57
+msgid "**West Workspace Initialization**"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:58
+msgid "Initializes the west workspace by executing `west init -l`"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:60
+msgid "Logging"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:62
+msgid ""
+"The script automatically generates a `setup_log.txt` file in the script "
+"directory, recording detailed logs of the entire configuration process "
+"for troubleshooting purposes."
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:64
+msgid ""
+"!!! note \"Toolchain Requires Manual Download\"     Since toolchain "
+"download requires special permissions, the script only creates the "
+"`toolchain` directory and sets the environment variable.     Please "
+"manually download the toolchain and extract it to the "
+"`<unisdk>\\toolchain` directory.     Download link: "
+"https://drive.weixin.qq.com/s?k=AKwA0AfNAA8Ox1r0ab"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:69
+msgid "Method 2: Manual Installation"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:71
+msgid "1. Install System Dependencies"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:73
+msgid "Use winget for one-click installation:"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:79
+msgid "Or manually download and install if winget is not supported:"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:81
+msgid "[CMake](https://cmake.org/download/) — Check \"Add CMake to PATH\""
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:82
+msgid ""
+"[Ninja](https://github.com/ninja-build/ninja/releases) — Manually add to "
+"PATH"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:83
+msgid ""
+"[Python](https://www.python.org/downloads/) — Check \"Add Python.exe to "
+"PATH\""
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:84
+msgid "[Git](https://git-scm.com/downloads)"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:86
+msgid "Verify installation:"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:95
+msgid "2. Set Up Python Virtual Environment"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:114
+msgid "3. Initialize West"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:120
+#, python-brace-format
+msgid ""
+"If you encounter the error `already initialized in {where}, aborting.`, "
+"temporarily unset `ZEPHYR_BASE`:"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:126
+msgid "4. Configure Toolchain"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:136
+msgid "Configure BDT Tool (Optional)"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:146
+msgid "Verify Environment"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:153
+msgid "Common Issues"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:155
+msgid "PowerShell Script Cannot Execute"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:161
+msgid "Environment Variables Not Taking Effect"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:163
+msgid "Restart the terminal, VS Code, or the system"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:164
+msgid "Check system environment variable settings"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:165
+msgid ""
+"If the previous step doesn't solve the problem, manually check if the "
+"PATH contains the correct path and add it to the user's PATH"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:167
+msgid "Arrow Keys Not Working in menuconfig Within VS Code"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:169
+msgid "Use letter keys instead of arrow keys"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:170
+msgid "Use Windows 11"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:171
+msgid "Use CMD instead of PowerShell for menuconfig operations"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:173
+msgid "winget Installation Failure"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:175
+msgid "Check Windows version (requires Windows 10 1709 or higher)"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:176
+msgid "Try installing App Installer from Microsoft Store"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:178
+msgid "Python Dependencies Installation Failure"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:180
+msgid "Ensure network connection is working"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:181
+msgid "Proxy server settings might be needed"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:183
+msgid "CMake or Ninja Not Found"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:185
+msgid "Manually check installation paths"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:186
+msgid ""
+"The script will attempt to automatically find common installation "
+"locations, but may require manual addition to PATH"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:188
+msgid "Notes"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:190
+msgid ""
+"**Administrator Privileges**: While not strictly necessary, it's "
+"recommended to run the script as administrator to ensure proper "
+"environment variable settings"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:191
+msgid ""
+"**Environment Variables Effectiveness**: After script completion, open a "
+"new PowerShell window to apply all environment variable changes"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:192
+msgid ""
+"**Virtual Environment Activation**: Use the following command to activate"
+" the virtual environment:"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:197
+msgid "Next Steps"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:199
+msgid "[First Example: Blinky](blinky.md)"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:200
+msgid "[Linux Environment Setup](setup_linux.md)"
+msgstr ""
+
+#: ../../source/developing/setup_windows.md:201
+msgid "[Getting Started](../getting_started/index.md)"
+msgstr ""
+

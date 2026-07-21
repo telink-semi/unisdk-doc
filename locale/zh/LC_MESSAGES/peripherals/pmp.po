@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/peripherals/pmp.md:6
+msgid "PMP Driver"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:8
+msgid ""
+"Provides an API for configuring the Physical Memory Protection (PMP) unit"
+" on RISC-V cores. PMP allows M-mode software to restrict physical memory "
+"access privileges (read, write, execute) for each defined region, "
+"enforced in hardware for U-mode and optionally for M-mode when locked."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:13
+msgid "Overview"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:15
+msgid ""
+"The PMP unit supports up to **8 entries**. Each entry defines one "
+"protected memory region and a set of access permissions."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:18
+msgid ""
+"Any violation is trapped precisely at the processor. The trap cause can "
+"be inspected via `mcause`, `mdcause`, and `mtval` CSRs."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:22
+msgid "Address Matching Modes"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:24
+msgid "Each entry operates in one of two address matching modes:"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "Mode"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md ../../source/peripherals/pmp.md:60
+msgid "API"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "`TOR`"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "`tlk_pmp_tor_config`"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid ""
+"Top Of Range. The protected region is `[pmpaddr[entry-1], address)`. For "
+"entry 0, the lower bound is implicitly `0x00000000`."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "`NAPOT`"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "`tlk_pmp_napot_config`"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid ""
+"Naturally Aligned Power Of Two. The region is `[address, address + "
+"size)`. Base must be aligned to `size`; `size` must be a power of two, at"
+" minimum 8 bytes."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:31
+msgid ""
+"To use TOR with an explicit lower bound, call `tlk_pmp_entry_disable` on "
+"`entry - 1` with the desired lower bound address. This writes the address"
+" into `pmpaddr[entry-1]` without activating protection on that entry."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:36
+msgid "Permissions"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:38
+msgid "Permissions are defined per entry via `struct tlk_pmp_config`:"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "Field"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "`r`"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "Allow read access."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "`w`"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "Allow write access."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "`x`"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "Allow instruction execution."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "`l`"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "Lock the entry. See [Lock](#lock) below."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:48
+msgid "Lock"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:50
+msgid "When `l = 1` is set on an entry:"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:52
+msgid ""
+"Writes to `PMPiCFG` and `PMPADDRi` are **ignored** by hardware until "
+"system reset."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:53
+msgid "For TOR entries, `pmpaddr[entry-1]` is also frozen."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:54
+msgid "Permissions apply to **all privilege modes**, including M-mode."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:56
+msgid ""
+"A locked entry can only be cleared by a system reset. Set `l = 1` only "
+"when the protection must survive any software fault, including bugs in "
+"M-mode code."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:67
+msgid ""
+"Configures `entry` in TOR mode. `address` is the exclusive upper bound of"
+" the protected region."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:74
+msgid ""
+"Configures `entry` in NAPOT mode. `address` must be aligned to `size`. "
+"`size` must be a power of two and at least 8 bytes."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:81
+msgid ""
+"Sets the entry to OFF mode, removing any active protection. The value of "
+"`address` is retained in `pmpaddr[entry]` and can serve as the lower "
+"bound for a subsequent TOR entry. Pass `NULL` if the address is not "
+"relevant. Has no effect if the entry is locked (`l = 1`)."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:86
+msgid "Configuration"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md:88
+msgid "All options are available under `PMP` in Kconfig."
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "Symbol"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "Default"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "`TLK_PMP_PM_DEVICE`"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid "`n`"
+msgstr ""
+
+#: ../../source/peripherals/pmp.md
+msgid ""
+"Enable Power Management support. When enabled, all PMP entry registers "
+"are saved before sleep and restored after wakeup."
+msgstr ""
+

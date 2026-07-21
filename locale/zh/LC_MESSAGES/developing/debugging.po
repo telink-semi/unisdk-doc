@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/debugging.md:6
+msgid "Debugging & Testing"
+msgstr ""
+
+#: ../../source/developing/debugging.md:8
+msgid "Hardware Debugging"
+msgstr ""
+
+#: ../../source/developing/debugging.md:10
+msgid "Debugger Support"
+msgstr ""
+
+#: ../../source/developing/debugging.md:12
+msgid "UniSDK supports the following debug interfaces:"
+msgstr ""
+
+#: ../../source/developing/debugging.md
+msgid "Debugger"
+msgstr ""
+
+#: ../../source/developing/debugging.md
+msgid "Interface"
+msgstr ""
+
+#: ../../source/developing/debugging.md
+msgid "Supported Platforms"
+msgstr ""
+
+#: ../../source/developing/debugging.md
+msgid "**J-Link**"
+msgstr ""
+
+#: ../../source/developing/debugging.md
+msgid "JTAG/SWD"
+msgstr ""
+
+#: ../../source/developing/debugging.md
+msgid "All platforms"
+msgstr ""
+
+#: ../../source/developing/debugging.md
+msgid "**Telink Debugger**"
+msgstr ""
+
+#: ../../source/developing/debugging.md
+msgid "SWS (Single Wire)"
+msgstr ""
+
+#: ../../source/developing/debugging.md
+msgid "**BDT**"
+msgstr ""
+
+#: ../../source/developing/debugging.md
+msgid "Flashing/Debugging"
+msgstr ""
+
+#: ../../source/developing/debugging.md:20
+msgid "Debugging Connection"
+msgstr ""
+
+#: ../../source/developing/debugging.md:22
+msgid "Connect the debugger to the JTAG/SWS interface on the development board"
+msgstr ""
+
+#: ../../source/developing/debugging.md:23
+msgid "Use GDB or an IDE for source-level debugging"
+msgstr ""
+
+#: ../../source/developing/debugging.md:25
+msgid "Software Debugging"
+msgstr ""
+
+#: ../../source/developing/debugging.md:27
+msgid "Logging System (Debug Print)"
+msgstr ""
+
+#: ../../source/developing/debugging.md:29
+msgid ""
+"UniSDK has a built-in debug logging system that can be enabled via "
+"Kconfig:"
+msgstr ""
+
+#: ../../source/developing/debugging.md:38
+msgid "Logs are output via UART and can be viewed in a serial terminal."
+msgstr ""
+
+#: ../../source/developing/debugging.md:40
+msgid "Firmware Verification Script"
+msgstr ""
+
+#: ../../source/developing/debugging.md:47
+msgid "Performance Analysis"
+msgstr ""
+
+#: ../../source/developing/debugging.md:49
+msgid "Memory Usage Report"
+msgstr ""
+
+#: ../../source/developing/debugging.md:51
+msgid "A memory usage summary is automatically output after compilation:"
+msgstr ""
+
+#: ../../source/developing/debugging.md:59
+msgid "ELF Analysis"
+msgstr ""
+
+#: ../../source/developing/debugging.md:69
+msgid "Debugging with GDB"
+msgstr ""
+
+#: ../../source/developing/debugging.md:81
+msgid "Common Debugging Tips"
+msgstr ""
+
+#: ../../source/developing/debugging.md:83
+msgid "**LED Debugging** — Toggle LED state in critical code paths"
+msgstr ""
+
+#: ../../source/developing/debugging.md:84
+msgid "**UART Output** — Output variable values via `TLK_DEBUG_PRINT`"
+msgstr ""
+
+#: ../../source/developing/debugging.md:85
+msgid "**Assertion Checks** — Use assertions to catch abnormal states"
+msgstr ""
+
+#: ../../source/developing/debugging.md:86
+msgid "**Memory Inspection** — Check the `.map` file to verify memory layout"
+msgstr ""
+
+#: ../../source/developing/debugging.md:88
+msgid "Next Steps"
+msgstr ""
+
+#: ../../source/developing/debugging.md:90
+msgid ""
+"[IDE Integration](ide_integration.md) — VS Code development environment "
+"configuration"
+msgstr ""
+
+#: ../../source/developing/debugging.md:91
+msgid ""
+"[Build & Configuration](../build_config/index.md) — Detailed build system"
+" documentation"
+msgstr ""
+

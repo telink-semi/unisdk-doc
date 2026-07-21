@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/index.rst:37
+msgid "Getting Started"
+msgstr ""
+
+#: ../../source/index.rst:48
+msgid "Development Guide"
+msgstr ""
+
+#: ../../source/index.rst:62
+msgid "Chips & Boards"
+msgstr ""
+
+#: ../../source/index.rst:77
+msgid "Peripherals & Drivers"
+msgstr ""
+
+#: ../../source/index.rst:95
+msgid "Connectivity"
+msgstr ""
+
+#: ../../source/index.rst:102
+msgid "System Services"
+msgstr ""
+
+#: ../../source/index.rst:108
+msgid "Build & Configuration"
+msgstr ""
+
+#: ../../source/index.rst:122
+msgid "Development Tools"
+msgstr ""
+
+#: ../../source/index.rst:131
+msgid "Security"
+msgstr ""
+
+#: ../../source/index.rst:137
+msgid "Production Guide"
+msgstr ""
+
+#: ../../source/index.rst:143
+msgid "Samples & Demos"
+msgstr ""
+
+#: ../../source/index.rst:163
+msgid "API Reference"
+msgstr ""
+
+#: ../../source/index.rst:169
+msgid "Reference"
+msgstr ""
+
+#: ../../source/index.rst:176
+msgid "Community"
+msgstr ""
+
+#: ../../source/index.rst:5
+msgid "UniSDK — Telink Unified Software Development Kit"
+msgstr ""
+
+#: ../../source/index.rst:11
+msgid ""
+"UniSDK is Telink's unified software development platform, providing "
+"consistent development experience across all Telink chip series. SDK "
+"adopts modular, extensible architecture, integrating modern build tools "
+"like CMake, Ninja, West, and Kconfig, forming a complete compilation and "
+"build workflow. This documentation includes all user manuals, API "
+"references, and technical guides."
+msgstr ""
+
+#: ../../source/index.rst:16
+msgid ""
+"**Document Status**: ``STABLE`` indicates content is complete and ready "
+"for use; ``DRAFT`` indicates content is under development. Issues and PRs"
+" are welcome to help improve documentation."
+msgstr ""
+
+#: ../../source/index.rst:24
+msgid ""
+":octicon:`cpu` **Multi-Chip Unified Platform** — One codebase, one build "
+"system, covering TL321X / TL721X / TLSR922X / TLSR952X full chip series"
+msgstr ""
+
+#: ../../source/index.rst:25
+msgid ""
+":octicon:`gear` **Modular Build System** — Flexible configuration based "
+"on CMake + Kconfig, supporting three build entry points: West / Make / "
+"CMake"
+msgstr ""
+
+#: ../../source/index.rst:26
+msgid ""
+":octicon:`pulse` **Rich Peripheral Drivers** — Unified API layer "
+"providing full series peripheral drivers: GPIO, UART, I2C, SPI, ADC, DMA,"
+" USB, etc."
+msgstr ""
+
+#: ../../source/index.rst:27
+msgid ""
+":octicon:`broadcast` **BLE Protocol Stack** — Integrated BLE Controller, "
+"supporting flexible wireless connectivity applications"
+msgstr ""
+
+#: ../../source/index.rst:28
+msgid ""
+":octicon:`sun` **Low Power Management** — Comprehensive power management "
+"framework, supporting multiple low power modes: Suspend / Retention, etc."
+msgstr ""
+
+#: ../../source/index.rst:29
+msgid ""
+":octicon:`graph` **Pinmux Visualization Tool** — Graphical pin "
+"multiplexing configuration, simplifying hardware design"
+msgstr ""
+
+#: ../../source/index.rst:30
+msgid ""
+":octicon:`flame` **BDT Programming & Debugging** — One-click Flash "
+"programming, reading, erasing via ``west tl-bdt``"
+msgstr ""
+
+#: ../../source/index.rst:32
+msgid "</details> <br>"
+msgstr ""
+
+#: ../../source/index.rst:190
+msgid ""
+"This documentation was built with **Sphinx**. The previous MkDocs-based "
+"build system has been replaced. See :doc:`contribute/index` for "
+"documentation contribution guidelines."
+msgstr ""
+

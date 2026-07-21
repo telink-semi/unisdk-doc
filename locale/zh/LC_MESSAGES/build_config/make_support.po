@@ -1,0 +1,222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/make_support.md:6
+msgid "Make Support"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:8
+msgid ""
+"The UniSDK `Makefile` provides a traditional make command interface, "
+"serving as a CMake frontend to simplify build commands. **Can only be "
+"used at the project root directory.**"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:10
+msgid "Makefile Targets"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Target"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Command"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`cmake`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Run CMake configuration"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`make cmake`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`config`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Generate project configuration"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`make config`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`pinmux`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Run Pinmux configuration tool"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`make pinmux`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`build`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Full build (cmake + config + build)"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`make build`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`clean`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Clean build artifacts"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`make clean`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`cleanbuild`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Clean then rebuild"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`make cleanbuild`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:21
+msgid "Makefile Variables"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Variable"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Default"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`APP`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`samples/gpio_demo`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Application path"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`SOC`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "(empty)"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Target chip"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`BOARD`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Target development board"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "`BUILD_DIR`"
+msgstr ""
+
+#: ../../source/build_config/make_support.md
+msgid "Build directory"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:30
+msgid "Usage Examples"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:53
+msgid "Build Flow (make build)"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:55
+msgid ""
+"**`cmake`** — Initialize the CMake build system for the specified "
+"application"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:56
+msgid "**`config`** — Generate configuration files (`.config`, etc.)"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:57
+msgid "**Pre-build checks** — 4 automatic check and recovery steps:"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:58
+msgid "Check if the build directory exists"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:59
+msgid "Check if the `.config` file exists"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:60
+msgid "Check if `pinmux.h` exists"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:61
+msgid "Check if `pinmux.h` is up to date"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:62
+msgid "**`cmake --build`** — Execute Ninja compilation"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:64
+msgid "SOC/BOARD Parameter Forwarding"
+msgstr ""
+
+#: ../../source/build_config/make_support.md:66
+msgid "The Makefile automatically forwards SOC and BOARD variables to CMake:"
+msgstr ""
+

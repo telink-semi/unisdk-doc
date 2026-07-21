@@ -1,0 +1,565 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/reference.md:6
+msgid "File & Script Reference"
+msgstr ""
+
+#: ../../source/build_config/reference.md:8
+msgid "Core Configuration Files"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "File"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Location"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Function"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`CMakeLists.txt`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Repository root"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "CMake main entry point"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`Makefile`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Make command interface"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`west.yml`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "West workspace configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`Kconfig.chip`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Chip Kconfig entry point"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`Kconfig.build`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Build Kconfig entry point"
+msgstr ""
+
+#: ../../source/build_config/reference.md:18
+msgid "Build Artifacts (build/ Directory)"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`.config`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Final merged configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`chip.config`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Chip configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`build.config`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Build configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`autoconf.h`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "C configuration macro definitions"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`capabilities.h`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Chip capability declarations"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`pinmux.h`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Pin multiplexing configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md:29
+msgid "CMake Files"
+msgstr ""
+
+#: ../../source/build_config/reference.md:31
+msgid "Core Files"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`TelinkConfig.cmake`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`cmake/`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Telink package configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`telink_default.cmake`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`cmake/modules/`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Module loading and default configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md:39
+msgid "CMake Modules (cmake/modules/)"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Module"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`compiler.cmake`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "RISC-V compiler configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`extensions.cmake`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "CMake extension functions"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`kconfig.cmake`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Kconfig integration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`linker.cmake`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Linker configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`pinmux.cmake`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`python.cmake`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Python environment configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`west.cmake`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "West tool integration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`library.cmake`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Library build module"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`headers_gen.cmake`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Header file generation"
+msgstr ""
+
+#: ../../source/build_config/reference.md:53
+msgid "Build Scripts (scripts/)"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Script"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`kconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Non-interactive Kconfig processing"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`menuconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Interactive configuration interface"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`preprocess_kconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Kconfig preprocessing"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`kconfig_parser.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Kconfig parsing and validation"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`soc_board_setter.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "SOC/BOARD configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`tl_check_fw.sh`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Firmware verification"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`set_telink_base.sh`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Set TELINK_BASE (Linux/Mac)"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`set_telink_base.cmd`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Set TELINK_BASE (Windows CMD)"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`set_telink_base.ps1`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Set TELINK_BASE (Windows PowerShell)"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`windows_setup.ps1`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Windows automated environment setup"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`sdk_exporter.sh`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "SDK export script"
+msgstr ""
+
+#: ../../source/build_config/reference.md:69
+msgid "West Command Implementations (scripts/west_commands/)"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Corresponding Command"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`build.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`west tl-build`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`config.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`west tl-config`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`bdt.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`west tl-bdt`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`boards.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`west tl-boards`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`socs.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`west tl-socs`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`zcmake.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "CMake helper"
+msgstr ""
+
+#: ../../source/build_config/reference.md:80
+msgid "Pinmux Tools (scripts/pinmux/)"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`app.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Pinmux application core"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`__main__.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "CLI entry point"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`data/`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Data processing modules"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`ui/`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Terminal UI components"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`styles.tcss`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "UI stylesheet"
+msgstr ""
+
+#: ../../source/build_config/reference.md:90
+msgid "CI Scripts (scripts/ci/)"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`ci_build.sh`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Single project CI build"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`ci_build_all.sh`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "All projects CI build"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`ci_prepare.sh`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "CI preparation"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`defconfig_to_dotconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "defconfig to .config conversion"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`dotconfig_to_defconfig.py`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid ".config to defconfig conversion"
+msgstr ""
+
+#: ../../source/build_config/reference.md:100
+msgid "Kconfig Files"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`core/Kconfig`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`core/`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Core configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`core/configs/Kconfig`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`core/configs/`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Core feature configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`soc/Kconfig`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`soc/`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Chip series configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`boards/Kconfig`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`boards/`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Development board configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`api/Kconfig`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`api/`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "API configuration"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`samples/Kconfig`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "`samples/`"
+msgstr ""
+
+#: ../../source/build_config/reference.md
+msgid "Sample configuration"
+msgstr ""
+

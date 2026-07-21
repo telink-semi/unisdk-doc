@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/samples/pm.md:6
+msgid "PM Power Management Sample"
+msgstr ""
+
+#: ../../source/samples/pm.md:8
+msgid "Overview"
+msgstr ""
+
+#: ../../source/samples/pm.md:10
+msgid ""
+"The `pm_demo` sample demonstrates the usage of the Power Management (PM) "
+"subsystem. It shows how to enter low-power modes, configure GPIO wake-up,"
+" and preserve application state across low-power transitions."
+msgstr ""
+
+#: ../../source/samples/pm.md:12
+msgid "Features Demonstrated"
+msgstr ""
+
+#: ../../source/samples/pm.md:14
+msgid "Entering Deep/Suspend sleep using `tlk_api_sleep`"
+msgstr ""
+
+#: ../../source/samples/pm.md:15
+msgid "GPIO wake-up configuration (optional)"
+msgstr ""
+
+#: ../../source/samples/pm.md:16
+msgid "Before/After sleep hook functions"
+msgstr ""
+
+#: ../../source/samples/pm.md:17
+msgid "Variable retention across Deep Sleep Retention mode"
+msgstr ""
+
+#: ../../source/samples/pm.md:19
+msgid "How It Works"
+msgstr ""
+
+#: ../../source/samples/pm.md:21
+msgid "Initialization"
+msgstr ""
+
+#: ../../source/samples/pm.md:23
+msgid ""
+"**LED State Initialization** — When `CONFIG_TLK_PM_DEMO_ENABLE_LED` is "
+"enabled:"
+msgstr ""
+
+#: ../../source/samples/pm.md:24
+msgid "LED state variables are stored in the **retention section**"
+msgstr ""
+
+#: ../../source/samples/pm.md:25
+msgid "Initial state: LED0 ON, LED1 OFF"
+msgstr ""
+
+#: ../../source/samples/pm.md:27
+msgid "**Hook Registration** — Registers pre-sleep and post-sleep callbacks:"
+msgstr ""
+
+#: ../../source/samples/pm.md:28
+msgid "`flip_led()` → Flips LED state before sleep"
+msgstr ""
+
+#: ../../source/samples/pm.md:29
+msgid "`init_led()` → Re-initializes GPIO after wake-up"
+msgstr ""
+
+#: ../../source/samples/pm.md:31
+msgid "Main Loop"
+msgstr ""
+
+#: ../../source/samples/pm.md:33
+msgid "Delay 1 second"
+msgstr ""
+
+#: ../../source/samples/pm.md:34
+msgid "Optionally configure GPIO wake-up source"
+msgstr ""
+
+#: ../../source/samples/pm.md:35
+msgid "Enter low-power mode for 1 second"
+msgstr ""
+
+#: ../../source/samples/pm.md:37
+msgid "GPIO Wake-up (Optional)"
+msgstr ""
+
+#: ../../source/samples/pm.md:39
+msgid "When `CONFIG_TLK_PM_DEMO_ENABLE_GPIO_INPUT` is enabled:"
+msgstr ""
+
+#: ../../source/samples/pm.md:41
+msgid "GPIO C4 is configured as a wake-up source (high-level wake-up)"
+msgstr ""
+
+#: ../../source/samples/pm.md:42
+msgid "Suspend mode is used instead of Deep Sleep when GPIO wake-up is enabled"
+msgstr ""
+
+#: ../../source/samples/pm.md:44
+msgid "Configuration Options"
+msgstr ""
+
+#: ../../source/samples/pm.md
+msgid "Option"
+msgstr ""
+
+#: ../../source/samples/pm.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/samples/pm.md
+msgid "`CONFIG_TLK_PM_DEMO_ENABLE_LED`"
+msgstr ""
+
+#: ../../source/samples/pm.md
+msgid "LED demo: state preserved in retention area"
+msgstr ""
+
+#: ../../source/samples/pm.md
+msgid "`CONFIG_TLK_PM_DEMO_ENABLE_GPIO_INPUT`"
+msgstr ""
+
+#: ../../source/samples/pm.md
+msgid "GPIO wake-up demo"
+msgstr ""
+
+#: ../../source/samples/pm.md
+msgid "`CONFIG_TLK_PM_DEMO_DISABLE_LED_BEFORE_SLEEP`"
+msgstr ""
+
+#: ../../source/samples/pm.md
+msgid "Turn off LED before sleep (visual sleep entry indicator)"
+msgstr ""
+
+#: ../../source/samples/pm.md:52
+msgid "Build & Run"
+msgstr ""
+

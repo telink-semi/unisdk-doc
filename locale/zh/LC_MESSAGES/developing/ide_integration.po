@@ -1,0 +1,252 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/ide_integration.md:6
+msgid "IDE Integration"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:8
+msgid "VS Code Configuration (Recommended)"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:10
+msgid "clangd Language Server"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:12
+msgid ""
+"clangd is an LLVM/Clang-based C/C++ language server that understands "
+"UniSDK's complex macro definitions and configuration system, providing:"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:14
+msgid "Intelligent code completion"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:15
+msgid "Go to definition"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:16
+msgid "Find references"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:17
+msgid "Semantic highlighting"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:18
+msgid "Code navigation"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:19
+msgid "Inline diagnostics"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:20
+msgid "Rename refactoring"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:22
+msgid "Why Choose clangd?"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:24
+msgid ""
+"UniSDK makes extensive use of Kconfig-generated configuration macros "
+"(`autoconf.h`, `capabilities.h`) and cross-compilation. Ordinary syntax "
+"highlighting cannot correctly parse these macros, leading to false error "
+"reports and navigation failures. clangd solves this problem by reading "
+"`compile_commands.json`."
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:26
+msgid "Installation Steps"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:28
+msgid ""
+"Install **clangd** (publisher: LLVM) from the VS Code extension "
+"marketplace"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:29
+msgid "Disable the Microsoft C/C++ IntelliSense engine to avoid conflicts:"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:30
+msgid ""
+"`Ctrl+Shift+P` → `Preferences: Open Settings (UI)` → Extensions → C/C++ →"
+" IntelliSense"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:31
+msgid "Set `IntelliSenseEngine` to `disabled`"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:33
+msgid "Key Files"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:35
+msgid "**`compile_commands.json`**"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:37
+msgid ""
+"Automatically generated in the `build/` directory by CMake during the "
+"build. clangd reads this file to understand the project's compilation "
+"options."
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:49
+msgid "**`.clangd`** (Optional configuration at project root)"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:62
+msgid "Common Issues"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:64
+msgid "**Files Display Incorrectly After Switching to a Different Chip**"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:66
+msgid ""
+"clangd provides semantic analysis based on the current build's "
+"`compile_commands.json`. If the project was previously built for TL321X, "
+"files for TL721X will not be correctly parsed."
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:68
+msgid "**Solution**: Rebuild the project with the target chip."
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:70
+msgid "**Warnings Still Present After a Recent Rebuild**"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:72
+msgid "File indexing happens lazily and needs a manual trigger to update."
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:74
+msgid "**Solution**: Edit and save the target file to force an update."
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:76
+msgid "Recommended Extensions"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "Extension"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "Purpose"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "clangd"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "C/C++ language server"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "CMake Tools"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "CMake project support"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "Cortex-Debug"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "ARM/RISC-V debugging"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "GitLens"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "Git enhancements"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "Error Lens"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md
+msgid "Inline error display"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:86
+msgid "Eclipse Configuration"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:88
+msgid "Install Eclipse CDT and the RISC-V GCC plugin"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:89
+msgid "Import the project as \"Existing CMake Project\""
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:90
+msgid "Configure the cross-compilation toolchain path"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:92
+msgid "Segger Embedded Studio"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:94
+msgid "Import the project via File → Open Solution"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:95
+msgid "Configure the debugger as J-Link"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:96
+msgid "Set the target device to Telink RISC-V chip"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:98
+msgid "Next Steps"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:100
+msgid ""
+"[Project Creation & Management](project_management.md) — Create new "
+"projects"
+msgstr ""
+
+#: ../../source/developing/ide_integration.md:101
+msgid "[Debugging & Testing](debugging.md) — Debugging tips"
+msgstr ""
+

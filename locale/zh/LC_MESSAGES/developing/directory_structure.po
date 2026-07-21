@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/directory_structure.md:6
+msgid "SDK Directory Structure"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:8
+msgid ""
+"This document details the directory organization of the UniSDK code "
+"repository to help developers quickly locate various resources."
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:10
+msgid "Overall Structure"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md
+msgid "UniSDK Directory Tree"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:88
+msgid "Key Directory Responsibilities"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:90
+msgid "`api/` — Public API Layer"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:92
+msgid ""
+"Provides the most commonly used unified API interfaces for application "
+"development. All example applications should be developed using the APIs "
+"in `api/`. Main contents include:"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:94
+msgid "`tlk_sleep.h` / `tlk_time.h` — Sleep delay and time management"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:96
+msgid "`core/` — Core Driver Layer"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:98
+msgid "Organized by chip family, includes:"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:100
+msgid ""
+"**drivers/** — Peripheral driver implementations (GPIO, UART, I2C, SPI, "
+"ADC, DMA, etc.)"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:101
+msgid "**properties/** — YAML-format device property descriptions"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:102
+msgid "**registers/** — YAML-format register definitions"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:103
+msgid "**configs/** — Kconfig configuration options"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:105
+msgid "`soc/` — SoC-Specific Layer"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:107
+msgid "Contains chip-specific features:"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:109
+msgid "**drivers/** — Platform-specific drivers (MSPI, OTP, etc.)"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:110
+msgid ""
+"**pinmux/** — Pin multiplexing definitions (yaml files for each package "
+"variant)"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:111
+msgid "**registers/** — Chip-specific register definitions"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:113
+msgid "`boards/` — Development Board Configurations"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:115
+msgid ""
+"Contains only board-specific pin mapping configurations "
+"(`board_pinout.yaml`)."
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:117
+msgid "Code Organization Principles"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:119
+msgid "**Public APIs go in `api/`** — Interfaces shared by all chips"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:120
+msgid "**Core drivers go in `core/`** — Peripheral drivers for each chip family"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:121
+msgid ""
+"**Chip-specific code goes in `soc/`** — Features unique to a particular "
+"chip"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:122
+msgid ""
+"**Application code goes anywhere** — Not limited to the `samples/` "
+"directory"
+msgstr ""
+
+#: ../../source/developing/directory_structure.md:123
+msgid ""
+"**Use Kconfig for configuration** — Manage compile-time options with "
+"Kconfig"
+msgstr ""
+

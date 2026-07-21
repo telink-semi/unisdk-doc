@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/support/index.md:6
+msgid "Technical Support"
+msgstr ""
+
+#: ../../source/support/index.md:8
+msgid "Contact Us"
+msgstr ""
+
+#: ../../source/support/index.md:10
+msgid ""
+"**Sales Inquiry**: [telinksales@telink-semi.com](mailto:telinksales"
+"@telink-semi.com)"
+msgstr ""
+
+#: ../../source/support/index.md:11
+msgid ""
+"**Technical Forum**: [https://forum.telink-semi.cn/](https://forum"
+".telink-semi.cn/)"
+msgstr ""
+
+#: ../../source/support/index.md:12
+msgid ""
+"**Official Website**: [https://www.telink-semi.cn/](https://www.telink-"
+"semi.cn/)"
+msgstr ""
+
+#: ../../source/support/index.md:13
+msgid ""
+"**Documentation Center**: [https://doc.telink-semi.cn/](https://doc"
+".telink-semi.cn/)"
+msgstr ""
+
+#: ../../source/support/index.md:15
+msgid "Submitting Issues"
+msgstr ""
+
+#: ../../source/support/index.md:17
+msgid ""
+"When submitting technical issues, please provide the following "
+"information:"
+msgstr ""
+
+#: ../../source/support/index.md:19
+msgid "UniSDK version"
+msgstr ""
+
+#: ../../source/support/index.md:20
+msgid "Target chip model and board"
+msgstr ""
+
+#: ../../source/support/index.md:21
+msgid "Operating system version"
+msgstr ""
+
+#: ../../source/support/index.md:22
+msgid "Toolchain version"
+msgstr ""
+
+#: ../../source/support/index.md:23
+msgid "Reproduction steps"
+msgstr ""
+
+#: ../../source/support/index.md:24
+msgid "Error logs or screenshots"
+msgstr ""
+
+#: ../../source/support/index.md:26
+msgid "Community Resources"
+msgstr ""
+
+#: ../../source/support/index.md:28
+msgid ""
+"**GitHub Issues**: [https://github.com/telink-semi/unisdk-"
+"doc/issues](https://github.com/telink-semi/unisdk-doc/issues)"
+msgstr ""
+
+#: ../../source/support/index.md:29
+msgid ""
+"**Gitee Repository**: [https://gitee.com/telink-semi](https://gitee.com"
+"/telink-semi)"
+msgstr ""
+
+#: ../../source/support/index.md:30
+msgid ""
+"**Product Selector**: [https://products.telink-semi.cn/](https://products"
+".telink-semi.cn/)"
+msgstr ""
+
+#: ../../source/support/index.md:31
+msgid ""
+"**Development Tools**: [https://www.telink-semi.cn/development-"
+"tools](https://www.telink-semi.cn/development-tools)"
+msgstr ""
+
+#: ../../source/support/index.md:33
+msgid "FAQ"
+msgstr ""
+
+#: ../../source/support/index.md:35
+msgid "See [Troubleshooting](../getting_started/troubleshooting.md)."
+msgstr ""
+
+#: ../../source/support/index.md:37
+msgid "Resource Links"
+msgstr ""
+
+#: ../../source/support/index.md:39
+msgid "[Getting Started](../getting_started/index.md)"
+msgstr ""
+
+#: ../../source/support/index.md:40
+msgid "[Development Guide](../developing/index.md)"
+msgstr ""
+
+#: ../../source/support/index.md:41
+msgid "[Samples and Demos](../samples/index.md)"
+msgstr ""
+
+#: ../../source/support/index.md:42
+msgid "[About Telink](../about/index.md)"
+msgstr ""
+

@@ -1,0 +1,632 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:1
+msgid "V0.2.0(FR)"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:3
+msgid "Version"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:4
+msgid "SDK Version: unified_sdk V0.2.0"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:5
+msgid "Chip Version"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:6
+msgid "TLSR952x"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:7
+msgid "TL721x A2"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:8
+msgid "TL321x A0/A1"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:9
+msgid "Hardware EVK Version"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:10
+msgid "TLSR952x: C1T266A20"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:11
+msgid "TL721x: C1T314A20"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:12
+msgid "TL321x: C1T331A20/C1T335A20"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:14
+msgid "Toolchain Version"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:15
+msgid "TLSR952x/TL721x: TL32 ELF MCULIB V5F GCC14.2"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:16
+msgid "TL321x: TL32 ELF MCULIB V5 GCC14.2"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:19
+msgid "Features"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:21
+msgid ""
+"PMP driver - Physical Memory Protection driver for RISC-V privilege "
+"enforcement (`feat(pmp)`)"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:22
+msgid ""
+"User-mode framework - Infrastructure for running untrusted application "
+"code in RISC-V User Mode (`feat/user mode`)"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:23
+msgid ""
+"Cryptography — Hardware crypto acceleration: hash, PKE, SKE, TRNG "
+"(`feat(cryptography)`)"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:24
+msgid ""
+"RF fast-settle - Fast RF settling mode for improved RF wake-up latency "
+"(`feat(rf): Add the fast settle feature`)"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:25
+msgid ""
+"RF reset functions - New `tlk_rf_reset()` family of functions (`feat(rf):"
+" Add the rf reset functions`)"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:26
+msgid ""
+"RF mode-switching demo - Sample demonstrating dynamic RF mode changes "
+"(`feat(rf): Add the mode switching demo`)"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:27
+msgid ""
+"Legacy toolchain env var - `TELINK_BASE_SDK` environment variable alias "
+"for backward compatibility (`feat(toolchain)`)"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:28
+msgid ""
+"IRQ nesting - Updated interrupt controller code supporting interrupt "
+"preemption (`feat(IRQ code)`)"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:29
+msgid ""
+"USB Universal API - Comprehensive USB driver with unified access "
+"interface and TinyUSB integration layer"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:30
+msgid ""
+"I2C Universal API - Complete I2C driver with unified driver structure for"
+" all MCUs"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:31
+msgid ""
+"SPI Universal API - SPI driver with Master support and Unified APIs for "
+"all supported SOCs"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:32
+msgid "Power API - Power-rail control API (`tlk_power.h`)"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:33
+msgid "DMA API - Expanded DMA driver with unified dynamic configuration"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:34
+msgid ""
+"PLIC API - Unified Interrupt controller with common API for all supported"
+" SOCs"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:35
+msgid "ADC API - Unified ADC API for all supported SOCs"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:36
+msgid ""
+"mbedTLS module - PSA Crypto API integration with hardware TRNG "
+"acceleration"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:37
+msgid ""
+"Logger subsystem - Debug Log for simplifying the user experience with "
+"formatting and sending the debug messages"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:38
+msgid "Multi-level init system - Support for different system init levels"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:39
+msgid ""
+"Task planner and loops - Simple multi-task queue with multi-threading or "
+"serial execution"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:40
+msgid "Software timer - Mtimer based multi-instance software timer"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:41
+msgid ""
+"Storage system - Abstract storage device layer with SOC flash driver "
+"support"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:42
+msgid "Debug system - Assert handling and GPIO debug support"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:43
+msgid ""
+"Dynamic memory management - Configurable heap allocation with retention "
+"memory support"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:44
+msgid ""
+"Pinmux configuration tool - Interactive Python TUI for visual pin "
+"multiplexing configuration"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:45
+msgid ""
+"Toolchain auto-discovery - Automatic RISC-V GCC toolchain path detection "
+"and validation"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:46
+msgid ""
+"Zephyr module integration - UniSDK as a standard Zephyr RTOS module "
+"(`module.yml`) with CMake/Kconfig bridge"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:47
+msgid ""
+"Zephyr Kconfig bridge - SoC/Core/Board mapping from Zephyr to UniSDK "
+"(`CONFIG_SOC_SERIES_TELINK_*` → `CONFIG_TLK_CORE/SOC/BOARD`)"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:48
+msgid "Subsystem"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:49
+msgid ""
+"BLE Controller - Complete BLE Link Layer with HCI, LL, ACL, Advertising, "
+"and Scanning support"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:50
+msgid "Doc"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:51
+msgid ""
+"A full English documentation set was added in [Unified SDK "
+"Documentation](https://telink-semi.github.io/unisdk-doc/), covering:"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:52
+msgid ""
+"**Getting Started** — Linux, Windows, macOS setup; first-build "
+"walkthrough; troubleshooting"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:53
+msgid ""
+"**Introduction** — SDK positioning, architecture overview, chip family "
+"table"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:54
+msgid ""
+"**Chips & Boards** — Per-chip specs (TL321X, TL721X, TLSR922X, TLSR952X) "
+"and EVK board docs"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:55
+msgid ""
+"**Peripheral Drivers** — GPIO, UART, PM, PLIC, Analog, I2C, SPI, ADC, "
+"DMA, WDT, Timer, USB"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:56
+msgid ""
+"**Samples** — gpio, uart, pm, adc, dma, i2c, spi, BLE advertising, BLE "
+"HCI controller, IRQ nesting, timer, watchdog, USB CDC, RF multi-mode, NV "
+"storage, task planner, mbedTLS, system log"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:57
+msgid ""
+"**Build System** — CMake flow, Kconfig system, West workspace, Zephyr "
+"module integration, Make support, extensions"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:58
+msgid "**Tools** — Menuconfig, Pinmux visual tool, BDT flash/debug utility"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:59
+msgid ""
+"**Development Guide** — Directory structure, public API design, core "
+"architecture, IDE integration, debugging"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:60
+msgid ""
+"**API Reference, Kconfig Reference, YAML Reference** — Scaffolding with "
+"index files"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:61
+msgid "**Connectivity** — BLE controller documentation"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:62
+msgid "**Terminology** — SDK-wide glossary"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md:64
+msgid "CodeSize"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "SOC"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "Sample"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "Config"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "Flash"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "RAM"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "TL321X"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "gpio"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "min"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "7234"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4173"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "suspend"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "11280"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4300"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "retention"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "12140"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4816"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "max"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "11432"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4348"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "max_all"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "19812"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "5112"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "pm"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "6858"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "19320"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "uart"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "12546"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4199"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "17204"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4427"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "18688"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4943"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "21604"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4607"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "23732"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "5135"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "TL721X"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "10118"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "14202"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4284"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "15362"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4804"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "14334"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4364"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "23106"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "5132"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "9762"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "22618"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "15426"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "20118"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4443"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "21906"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4963"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "24490"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4623"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "26906"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "5155"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "TLSR952X"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "7530"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4180"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "12116"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4296"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "13400"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4812"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "12280"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4376"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "19160"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "5080"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "7174"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "18720"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "11854"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4203"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "17044"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4455"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4971"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "19848"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "4575"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "22140"
+msgstr ""
+
+#: ../../source/releases/0.2.0/Unified_SDK_Release_Note.md
+msgid "5103"
+msgstr ""
+

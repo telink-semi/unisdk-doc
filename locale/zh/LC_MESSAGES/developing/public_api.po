@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/public_api.md:6
+msgid "API Documentation"
+msgstr ""
+
+#: ../../source/developing/public_api.md:8
+msgid "Overview"
+msgstr ""
+
+#: ../../source/developing/public_api.md:9
+msgid ""
+"The API module provides a high-level abstraction layer for essential "
+"system utilities. It consolidates system timing, power management (sleep "
+"modes), and debug printing into a unified interface. The Print module "
+"acts as a lightweight, formatted output utility that directs debug "
+"messages to a configured UART instance."
+msgstr ""
+
+#: ../../source/developing/public_api.md:11
+msgid "**Key Features:**"
+msgstr ""
+
+#: ../../source/developing/public_api.md:13
+msgid "**System Timing:** Microsecond-precision timestamp generation."
+msgstr ""
+
+#: ../../source/developing/public_api.md:14
+msgid ""
+"**Power Management:** Unified sleep function with configurable power "
+"modes (Suspend, Deep Sleep, Retention)."
+msgstr ""
+
+#: ../../source/developing/public_api.md:15
+msgid "**Debug Output:** `printf`-like formatting capability."
+msgstr ""
+
+#: ../../source/developing/public_api.md:16
+msgid ""
+"**UART Integration:** Directs debug output to a specific, user-"
+"configurable UART hardware instance."
+msgstr ""
+
+#: ../../source/developing/public_api.md:18
+msgid "API Reference"
+msgstr ""
+
+#: ../../source/developing/public_api.md:19
+msgid ""
+"This section describes the functions available in the API and Print "
+"modules."
+msgstr ""
+
+#: ../../source/developing/public_api.md:21
+msgid "1. `tlk_api_micros`"
+msgstr ""
+
+#: ../../source/developing/public_api.md:22
+msgid ""
+"Returns the current system up-time in microseconds. This function "
+"utilizes the system timer (`stimer`) to calculate the tick count."
+msgstr ""
+
+#: ../../source/developing/public_api.md:24
+#: ../../source/developing/public_api.md:43
+#: ../../source/developing/public_api.md:61
+#: ../../source/developing/public_api.md:81
+msgid "**Prototype:**"
+msgstr ""
+
+#: ../../source/developing/public_api.md:30
+msgid "**Parameters:** None"
+msgstr ""
+
+#: ../../source/developing/public_api.md:33
+msgid ""
+"**Return Value:** `uint32_t`: The number of microseconds passed since the"
+" system started."
+msgstr ""
+
+#: ../../source/developing/public_api.md:36
+msgid "2. `tlk_api_sleep`"
+msgstr ""
+
+#: ../../source/developing/public_api.md:37
+msgid "*This API is available only if `CONFIG_TLK_API_SLEEP` is enabled.*"
+msgstr ""
+
+#: ../../source/developing/public_api.md:39
+msgid ""
+"Checks duration; if zero — returns. If `CONFIG_TLK_PM` is enabled, it "
+"calls `tlk_pm_sleep` with `TLK_PM_SLEEP_MAX_LEVEL-1` parameter. If "
+"`CONFIG_TLK_PM` is disabled, or `tlk_pm_sleep` returned err, it programs "
+"the timer for the requested delay, enables timer interrupt, and waits "
+"using WFI."
+msgstr ""
+
+#: ../../source/developing/public_api.md:49
+#: ../../source/developing/public_api.md:67
+#: ../../source/developing/public_api.md:87
+msgid "**Parameters:**"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "Parameter"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "Type"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "`duration_ms`"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "`uint32_t`"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "The duration to sleep in milliseconds."
+msgstr ""
+
+#: ../../source/developing/public_api.md:55
+#: ../../source/developing/public_api.md:73
+msgid "**Return Value:** None"
+msgstr ""
+
+#: ../../source/developing/public_api.md:58
+msgid "3. `tlk_api_delay`"
+msgstr ""
+
+#: ../../source/developing/public_api.md:59
+msgid "Blocking delay function"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "`duration_us`"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "The duration to wait in microseconds."
+msgstr ""
+
+#: ../../source/developing/public_api.md:76
+msgid "4. `tlk_api_print`"
+msgstr ""
+
+#: ../../source/developing/public_api.md:77
+msgid "*This API is available only if `CONFIG_TLK_DEBUG_PRINT` is enabled.*"
+msgstr ""
+
+#: ../../source/developing/public_api.md:79
+msgid ""
+"A formatted output function similar to the standard C `printf`. It "
+"formats the string and transmits it via the configured UART interface."
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "`format`"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "`const char *`"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+#, python-format
+msgid "The format string (e.g., \"Value: %d\\n\")."
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "`...`"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "`varargs`"
+msgstr ""
+
+#: ../../source/developing/public_api.md
+msgid "Variable arguments corresponding to the format specifiers."
+msgstr ""
+
+#: ../../source/developing/public_api.md:94
+msgid ""
+"**Return Value:** `int`: The number of characters written to the output "
+"buffer."
+msgstr ""
+
+#: ../../source/developing/public_api.md:97
+msgid ""
+"**Note:** This function uses an internal static buffer defined by "
+"`CONFIG_TLK_DEBUG_PRINT_BUFFER_SIZE`. Ensure your formatted message does "
+"not exceed this limit. This function is used internally by the SDK and "
+"may not have a public declaration in API headers."
+msgstr ""
+

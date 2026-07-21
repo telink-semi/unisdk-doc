@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/samples/spi.md:6
+msgid "SPI Sample"
+msgstr ""
+
+#: ../../source/samples/spi.md:8
+msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
+msgstr ""
+
+#: ../../source/samples/spi.md:10
+msgid ""
+"The SPI sample (`samples/spi_demo`) demonstrates the basic usage of SPI "
+"communication."
+msgstr ""
+
+#: ../../source/samples/spi.md:12
+msgid "Build & Run"
+msgstr ""
+

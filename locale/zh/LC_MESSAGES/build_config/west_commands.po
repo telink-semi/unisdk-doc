@@ -1,0 +1,222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/west_commands.md:6
+msgid "West Commands"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:8
+msgid ""
+"West is the unified command-line entry point for UniSDK. UniSDK registers"
+" multiple custom command extensions through `scripts/west-commands.yml`."
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:10
+msgid "Command Registration"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:41
+msgid "`west tl-build` — Build"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:43
+msgid ""
+"Build a Telink application. The build directory defaults to `build/` in "
+"the current working directory."
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:81
+msgid "Execution Flow"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:83
+msgid "Check the `TELINK_TOOLCHAIN_PATH` environment variable"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:84
+msgid "Validate the SOC/BOARD combination"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:85
+msgid "Set source and build directories"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:86
+msgid "Run Kconfig configuration if needed"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:87
+msgid "Invoke CMake to generate the build system"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:88
+msgid "Execute compilation and linking"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:89
+msgid "Output build results"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:91
+msgid "`west tl-config` — Configuration"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:93
+msgid "Independently configure a Telink application."
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:112
+msgid "`west tl-bdt` — Burning & Debugging"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:114
+msgid "BDT (Burning and Debugging Tool) command interface."
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:116
+msgid "Subcommands"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Subcommand"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "`download`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Download firmware to Flash"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "`read`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Read Flash data"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "`write`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Write Flash data"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "`erase`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Erase Flash"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "`lock`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Lock Flash region"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "`unlock`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Unlock Flash"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "`reset`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Reset device"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:128
+msgid "Common Examples"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:150
+msgid "BDT Path Configuration (Priority from high to low)"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:152
+msgid "Command line: `--bdt-path /path/to/bdt`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:153
+msgid "Environment variable: `BDT_PATH=/path/to/bdt`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:154
+msgid "System PATH"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:155
+#, python-brace-format
+msgid "SDK directory: `${TELINK_BASE}/tools/`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:157
+msgid "Cross-Platform"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Platform"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Executable"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Windows"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "`Cmd_download_tool.exe`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "Linux"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md
+msgid "`bdt`"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:164
+msgid "`west tl-boards` — Board Information"
+msgstr ""
+
+#: ../../source/build_config/west_commands.md:172
+msgid "`west tl-socs` — Chip Information"
+msgstr ""
+

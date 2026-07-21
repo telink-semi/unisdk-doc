@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/cmake_system.md:6
+msgid "CMake Build System"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:8
+msgid ""
+"CMake is the core of the UniSDK build system, responsible for project "
+"configuration, dependency resolution, and build rule generation."
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:10
+msgid "Entry Point Modes"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:12
+msgid "UniSDK supports two CMake entry point modes:"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+msgid "Mode"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+msgid "Entry"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+#: ../../source/build_config/cmake_system.md:92
+msgid "Purpose"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+msgid "Command Example"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+msgid "**Root entry**"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+msgid "`CMakeLists.txt` (repo root)"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+msgid "SDK development/testing"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+msgid "`cmake -B build -G Ninja .`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+msgid "**Application entry**"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+msgid "App's `CMakeLists.txt`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+msgid "Build specific application"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+msgid "`cmake -B build -G Ninja samples/gpio_demo`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:19
+msgid "Application-Level CMakeLists.txt"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:35
+msgid "Module Loading Order"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:37
+msgid "`telink_default.cmake` loads CMake modules in the following order:"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:39
+msgid "**`python.cmake`** — Python environment detection (Python 3.10+)"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:40
+msgid ""
+"**`extensions.cmake`** — CMake extension functions (conditional "
+"variables, JSON processing)"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:41
+msgid "**`version.cmake`** — Version information processing"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:42
+msgid "**`west.cmake`** — West tool integration (version >= 0.14.0)"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:43
+msgid "**`compiler.cmake`** — RISC-V compiler configuration"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:44
+msgid "**`kconfig.cmake`** — Kconfig configuration integration"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:45
+msgid "**`pinmux.cmake`** — Pin multiplexing configuration generation"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:46
+msgid "**`linker.cmake`** — Linker script processing"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:48
+msgid "Core Module Details"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:50
+msgid "compiler.cmake"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:52
+msgid "Detects the `TELINK_TOOLCHAIN_PATH` environment variable"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:53
+msgid "Configures the RISC-V GCC cross-compilation toolchain"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:54
+msgid "Provides the `telink_apply_compiler_options()` function"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:55
+msgid "Dynamically loads compilation options from `build_settings.json`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:57
+msgid "linker.cmake"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:59
+msgid "Sets the RISC-V link command template"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:60
+msgid "Reads linker options from `build_settings.json`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:61
+msgid "Preprocesses linker scripts (`flash_boot.link` → `flash_boot.ld`)"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:62
+msgid "Post-processing: generates `.bin` + `.map` + firmware verification"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:64
+msgid "kconfig.cmake"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:66
+msgid "Manages the generation flow of `chip.config` → `build.config` → `.config`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:67
+msgid "Generates `capabilities.h` and `autoconf.h`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:68
+msgid "Defines CMake targets such as `config` / `parse_config`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:69
+msgid "SOC/BOARD parameter processing and combination validation"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:71
+msgid "pinmux.cmake"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:73
+msgid "Generates `.pinmux` and `pinmux.h`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:74
+msgid "Depends on the `.config` file"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:75
+msgid "Build directory is automatically added to the include path"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:77
+msgid "extensions.cmake"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:90
+msgid "Configuration Flow"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:106
+msgid "Include Guard Mechanism"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "Guard"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "Set Location"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "`TELINK_ROOT_INCLUDED`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "Root `CMakeLists.txt`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "Prevent duplicate root inclusion"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "`TELINK_PACKAGE_INCLUDED`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "`TelinkConfig.cmake`"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "Prevent duplicate package loading"
+msgstr ""
+
+#: ../../source/build_config/cmake_system.md
+#: ../../source/build_config/cmake_system.md:113
+msgid "Build Directory Structure"
+msgstr ""
+

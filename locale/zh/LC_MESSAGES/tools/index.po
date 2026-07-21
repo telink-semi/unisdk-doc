@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tools/index.md:6
+msgid "Development Tools"
+msgstr ""
+
+#: ../../source/tools/index.md:8
+msgid ""
+"UniSDK provides a series of development tools to simplify chip "
+"configuration, flashing/debugging, and code editing workflows."
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "Tool"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "Documentation"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "**BDT**"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "Telink Burning and Debugging Tool"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "[BDT Tool](bdt.md)"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "**Pinmux**"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "Graphical pin multiplexing configuration tool"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "[Pinmux Tool](pinmux.md)"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "**Menuconfig**"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "Terminal interactive system configuration interface"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "[Menuconfig](menuconfig.md)"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "**West**"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "Unified command-line entry point"
+msgstr ""
+
+#: ../../source/tools/index.md
+msgid "[West Commands](../build_config/west_commands.md)"
+msgstr ""
+
+#: ../../source/tools/index.md:17
+msgid "Tool Overview"
+msgstr ""
+

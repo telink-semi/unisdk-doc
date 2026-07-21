@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/peripherals/pm.md:6
+msgid "Power Management (PM) Driver"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:8
+msgid "Overview"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:10
+msgid ""
+"The PM (Power Management) driver provides an interface for controlling "
+"microcontroller power states. It supports the system entering various "
+"low-power modes to save energy, and defines system wakeup mechanisms. The"
+" driver also manages retention memory and sleep duration validation."
+msgstr ""
+
+#: ../../source/peripherals/pm.md:12
+msgid "**Key Features:**"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:14
+msgid "Multiple sleep modes (Suspend, Deep Sleep, Deep Retention)"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:15
+msgid "Wakeup source management (GPIO Pad, Timer, Core, Comparator)"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:16
+msgid "Configurable sleep duration limits (minimum time)"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:17
+msgid "Retention memory size configuration"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:18
+msgid "Error handling for invalid sleep requests"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:20
+msgid "Sleep Modes"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:22
+msgid "`enum tlk_pm_sleep_mode`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Mode"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Power"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Wakeup Speed"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_SLEEP_MODE_SUSPEND`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Medium"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Fast"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "SRAM retained, peripherals partially powered"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_SLEEP_MODE_DEEP_SLEEP`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Very low"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Slow"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "SRAM not retained, most peripherals powered off"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_SLEEP_MODE_DEEP_RETENTION`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Low"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "SRAM partially retained"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:30
+msgid "Wakeup Sources"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:32
+msgid "`enum tlk_pm_wakeup_source` (bitmask)"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Value"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_WAKEUP_SOURCE_PAD`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "GPIO pin wakeup"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_WAKEUP_SOURCE_TIMER`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "System timer wakeup"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_WAKEUP_SOURCE_CORE`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Core event wakeup"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_WAKEUP_SOURCE_COMPARATOR`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Comparator wakeup"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:41
+msgid "GPIO Wakeup Level"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:43
+msgid "`enum tlk_pm_gpio_wakeup_level`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:45
+msgid "Defines the logic level required on a GPIO pin to trigger a wakeup."
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_GPIO_WAKEUP_LEVEL_LOW`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Wake up when the pin is Low (0)"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_GPIO_WAKEUP_LEVEL_HIGH`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Wake up when the pin is High (1)"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:52
+msgid "Driver API"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:54
+msgid "`tlk_pm_sleep`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:56
+msgid "Requests the system to enter a low-power mode."
+msgstr ""
+
+#: ../../source/peripherals/pm.md:63
+msgid "Return values:"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_SLEEP_OK`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Successfully entered and exited sleep"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_SLEEP_UNSUPPORTED`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "The requested sleep mode is not supported by the hardware"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_SLEEP_TOO_SHORT`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Requested duration is less than the configured minimum"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_SLEEP_TOO_LONG`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "The requested duration exceeded the hardware timer limits"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_SLEEP_NO_WAKEUP_SOURCES`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Sleep was aborted because no wakeup sources were configured"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "`TLK_PM_SLEEP_DENIED`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "Sleep denied (e.g., blocked by a peripheral)"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:74
+msgid "`tlk_pm_set_gpio_wakeup`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:76
+msgid "*This API is available only if `CONFIG_TLK_GPIO` is enabled.*"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:78
+msgid ""
+"Configures a GPIO pin as a wakeup source. The system will exit sleep mode"
+" when the selected pin detects the configured wakeup polarity."
+msgstr ""
+
+#: ../../source/peripherals/pm.md:86
+msgid "**Parameters:**"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:88
+msgid ""
+"| Parameter | Type | Description | |---|------| | `port` | `enum "
+"tlk_gpio_port` | GPIO port | | `pin` | `enum tlk_gpio_pin` | GPIO pin | |"
+" `polarity` | `enum tlk_pm_gpio_wakeup_level` | The logic level that "
+"triggers wakeup |"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:94
+msgid "**Return Value:**"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:96
+msgid ""
+"`enum tlk_pm_sleep_status`: `TLK_PM_SLEEP_OK` if successful, or "
+"`TLK_PM_SLEEP_UNSUPPORTED` if the pin cannot be used as a wakeup source."
+msgstr ""
+
+#: ../../source/peripherals/pm.md:98
+msgid "`tlk_pm_get_wakeup_reason`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:100
+msgid "Gets the last wakeup reason."
+msgstr ""
+
+#: ../../source/peripherals/pm.md:106
+msgid "`tlk_pm_clear_wakeup_sources`"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:108
+msgid "Clears wakeup source flags in preparation for the next sleep."
+msgstr ""
+
+#: ../../source/peripherals/pm.md:114
+msgid "Typical Usage"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:139
+msgid "Kconfig Configuration"
+msgstr ""
+
+#: ../../source/peripherals/pm.md
+msgid "PM Kconfig Options"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:164
+msgid "Menuconfig View"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:166
+msgid "![alt text](pics/pm_1.png)"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:166 ../../source/peripherals/pm.md:168
+msgid "alt text"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:168
+msgid "![alt text](pics/pm_2.png) *Figure 1-2. PM driver configurations*"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:171
+msgid "Related Resources"
+msgstr ""
+
+#: ../../source/peripherals/pm.md:173
+msgid "[PM Samples](../samples/pm.md)"
+msgstr ""
+

@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/project_management.md:6
+msgid "Project Creation & Management"
+msgstr ""
+
+#: ../../source/developing/project_management.md:8
+msgid "Application Project Location"
+msgstr ""
+
+#: ../../source/developing/project_management.md:10
+msgid ""
+"UniSDK application projects **can be located in any directory**, not "
+"limited to the `samples/` directory. Each application project needs to "
+"provide its own `CMakeLists.txt` and source code."
+msgstr ""
+
+#: ../../source/developing/project_management.md:12
+msgid "Creating a New Project"
+msgstr ""
+
+#: ../../source/developing/project_management.md
+#: ../../source/developing/project_management.md:14
+msgid "Minimum Project Structure"
+msgstr ""
+
+#: ../../source/developing/project_management.md:27
+msgid "CMakeLists.txt Template"
+msgstr ""
+
+#: ../../source/developing/project_management.md:51
+msgid "Key Notes"
+msgstr ""
+
+#: ../../source/developing/project_management.md:53
+msgid ""
+"**`find_package(Telink)`** — Locates the SDK path via the `TELINK_BASE` "
+"environment variable"
+msgstr ""
+
+#: ../../source/developing/project_management.md:54
+msgid ""
+"**`project()`** — The project name will be used as the output firmware "
+"name"
+msgstr ""
+
+#: ../../source/developing/project_management.md:55
+msgid ""
+"**`target_sources(Telink ...)`** — Application source files are added to "
+"the SDK's main target `Telink`"
+msgstr ""
+
+#: ../../source/developing/project_management.md:56
+msgid ""
+"**`CONFIG_TLK_ALLOW_CPP_WRAPPERS`** — Checks whether C++ wrappers are "
+"enabled"
+msgstr ""
+
+#: ../../source/developing/project_management.md:58
+msgid "Building the Project"
+msgstr ""
+
+#: ../../source/developing/project_management.md:60
+msgid "West Command (Recommended)"
+msgstr ""
+
+#: ../../source/developing/project_management.md:70
+msgid "CMake Command"
+msgstr ""
+
+#: ../../source/developing/project_management.md:80
+msgid "Make Command"
+msgstr ""
+
+#: ../../source/developing/project_management.md:86
+msgid "Configuration Management"
+msgstr ""
+
+#: ../../source/developing/project_management.md:88
+msgid "Using Project Kconfig"
+msgstr ""
+
+#: ../../source/developing/project_management.md:90
+msgid ""
+"Create a `Kconfig` file in the project directory to define project-"
+"specific configuration options:"
+msgstr ""
+
+#: ../../source/developing/project_management.md:104
+msgid ""
+"The `Kconfig` file is automatically integrated into the build system via "
+"`KCONFIG_APPLICATION_DIR` in `kconfig.cmake`."
+msgstr ""
+
+#: ../../source/developing/project_management.md:106
+msgid "Interactive Configuration"
+msgstr ""
+
+#: ../../source/developing/project_management.md:112
+msgid "Cleaning"
+msgstr ""
+
+#: ../../source/developing/project_management.md:122
+msgid "Development Workflow Recommendations"
+msgstr ""
+
+#: ../../source/developing/project_management.md:124
+msgid ""
+"**Start from a sample** — Copy the most similar `samples/` example as a "
+"starting point"
+msgstr ""
+
+#: ../../source/developing/project_management.md:125
+msgid ""
+"**Kconfig isolation** — Place project-specific configuration in the "
+"project-level `Kconfig`"
+msgstr ""
+
+#: ../../source/developing/project_management.md:126
+msgid ""
+"**Version management** — Manage application projects and the SDK "
+"separately, linking them via `TELINK_BASE`"
+msgstr ""
+

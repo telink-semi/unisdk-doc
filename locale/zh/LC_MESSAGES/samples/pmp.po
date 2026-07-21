@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/samples/pmp.md:6
+msgid "PMP Driver Sample"
+msgstr ""
+
+#: ../../source/samples/pmp.md:8
+msgid "Overview"
+msgstr ""
+
+#: ../../source/samples/pmp.md:10
+msgid ""
+"A sample application demonstrating the usage of the TLK PMP API. It "
+"protects the upper half of a 16-element array against all access, then "
+"attempts to read or write the full array, triggering a PMP violation trap"
+" on the protected region."
+msgstr ""
+
+#: ../../source/samples/pmp.md:14
+msgid "How It Works"
+msgstr ""
+
+#: ../../source/samples/pmp.md:16
+msgid "On startup the sample:"
+msgstr ""
+
+#: ../../source/samples/pmp.md:18
+msgid ""
+"*(Optional)* Configures PMP protection on `demo_array[8..15]` using the "
+"selected address matching scheme. All permissions are disabled and the "
+"entry is locked (`l = 1`)."
+msgstr ""
+
+#: ../../source/samples/pmp.md:20
+msgid ""
+"*(Optional)* If `CONFIG_TLK_PMP_DEMO_SLEEP` is set, enters sleep for 500 "
+"ms and wakes up, demonstrating that PMP state is correctly saved and "
+"restored across the sleep."
+msgstr ""
+
+#: ../../source/samples/pmp.md:22
+msgid "Iterates over all 16 elements of `demo_array`:"
+msgstr ""
+
+#: ../../source/samples/pmp.md:23
+msgid "With `CONFIG_TLK_PMP_DEMO_READ` — reads and logs each value."
+msgstr ""
+
+#: ../../source/samples/pmp.md:24
+msgid "With `CONFIG_TLK_PMP_DEMO_WRITE` — writes and logs each value."
+msgstr ""
+
+#: ../../source/samples/pmp.md:26
+msgid ""
+"Elements `[0..7]` complete successfully. On the first access to "
+"`demo_array[8]` a PMP violation trap is raised."
+msgstr ""
+
+#: ../../source/samples/pmp.md:29
+msgid "Configuration"
+msgstr ""
+
+#: ../../source/samples/pmp.md:31
+msgid "All options are exposed via **Kconfig** under *PMP Demo Configuration*."
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "Symbol"
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "Type"
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "Default"
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "`TLK_PMP_DEMO_TOR`"
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "`bool`"
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "`n`"
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid ""
+"Protect `demo_array[8..15]` using TOR address matching. Entry 0 holds the"
+" lower bound; Entry 1 holds the upper bound."
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "`TLK_PMP_DEMO_NAPOT`"
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "Protect `demo_array[8..15]` using NAPOT address matching."
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "`TLK_PMP_DEMO_READ`"
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "Access the array by reading."
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "`TLK_PMP_DEMO_WRITE`"
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "Access the array by writing."
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid "`TLK_PMP_DEMO_SLEEP`"
+msgstr ""
+
+#: ../../source/samples/pmp.md
+msgid ""
+"Enter the sleep between PMP configuration and array access. Demonstrates "
+"PMP state retention across sleep."
+msgstr ""
+
+#: ../../source/samples/pmp.md:41
+msgid ""
+"**Note:** If neither `TLK_PMP_DEMO_TOR` nor `TLK_PMP_DEMO_NAPOT` is set, "
+"no protection is configured and all 16 elements are accessible without a "
+"fault."
+msgstr ""
+

@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tools/bdt.md:6
+msgid "BDT Burning and Debugging Tool"
+msgstr ""
+
+#: ../../source/tools/bdt.md:8
+msgid ""
+"BDT (Burning and Debugging Tool) is the flashing and debugging tool for "
+"Telink chips, providing a unified cross-platform interface via the `west "
+"tl-bdt` command."
+msgstr ""
+
+#: ../../source/tools/bdt.md:10
+msgid "Supported Operations"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Operation"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "`download`"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Download firmware to Flash"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "`read`"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Read data from Flash"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "`write`"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Write data to Flash"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "`erase`"
+msgstr ""
+
+#: ../../source/tools/bdt.md ../../source/tools/bdt.md:63
+msgid "Erase Flash"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "`lock`"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Lock Flash region"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "`unlock`"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Unlock Flash region"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "`reset`"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Reset device"
+msgstr ""
+
+#: ../../source/tools/bdt.md:22
+msgid "Quick Start"
+msgstr ""
+
+#: ../../source/tools/bdt.md:38
+msgid "Flash Operations"
+msgstr ""
+
+#: ../../source/tools/bdt.md:40
+msgid "Read Flash"
+msgstr ""
+
+#: ../../source/tools/bdt.md:50
+msgid "Write Flash"
+msgstr ""
+
+#: ../../source/tools/bdt.md:70
+msgid "Flash Lock Operations"
+msgstr ""
+
+#: ../../source/tools/bdt.md:80
+msgid "Reset"
+msgstr ""
+
+#: ../../source/tools/bdt.md:90
+msgid "BDT Path Configuration"
+msgstr ""
+
+#: ../../source/tools/bdt.md:92
+msgid "Priority from high to low:"
+msgstr ""
+
+#: ../../source/tools/bdt.md:94
+msgid "Command line: `--bdt-path /path/to/bdt`"
+msgstr ""
+
+#: ../../source/tools/bdt.md:95
+msgid "Environment variable: `export BDT_PATH=/path/to/BDT`"
+msgstr ""
+
+#: ../../source/tools/bdt.md:96
+msgid "System PATH"
+msgstr ""
+
+#: ../../source/tools/bdt.md:97
+#, python-brace-format
+msgid "SDK directory: `${TELINK_BASE}/tools/`"
+msgstr ""
+
+#: ../../source/tools/bdt.md:109
+msgid "Cross-Platform Notes"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Platform"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Executable"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Notes"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "**Windows**"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "`Cmd_download_tool.exe`"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Automatically handles path separator conversion"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "**Linux**"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "`bdt`"
+msgstr ""
+
+#: ../../source/tools/bdt.md
+msgid "Standard Linux command"
+msgstr ""
+
+#: ../../source/tools/bdt.md:116
+msgid "FAQ"
+msgstr ""
+
+#: ../../source/tools/bdt.md:118
+msgid "BDT Tool Not Found"
+msgstr ""
+
+#: ../../source/tools/bdt.md:124
+msgid "**Solution**: Configure the BDT path using the methods described above."
+msgstr ""
+
+#: ../../source/tools/bdt.md:126
+msgid "Chip Type Not Specified"
+msgstr ""
+
+#: ../../source/tools/bdt.md:132
+msgid ""
+"**Solution**: Use the `--chip` argument to specify the chip, or ensure "
+"the build configuration includes chip information."
+msgstr ""
+
+#: ../../source/tools/bdt.md:134
+msgid "BDT Command Failed"
+msgstr ""
+
+#: ../../source/tools/bdt.md:136
+msgid "Check common causes:"
+msgstr ""
+
+#: ../../source/tools/bdt.md:137
+msgid "Incorrect chip type"
+msgstr ""
+
+#: ../../source/tools/bdt.md:138
+msgid "Invalid address or size"
+msgstr ""
+
+#: ../../source/tools/bdt.md:139
+msgid "Device not connected"
+msgstr ""
+

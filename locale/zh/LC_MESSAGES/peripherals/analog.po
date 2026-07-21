@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/peripherals/analog.md:6
+msgid "Analog Driver"
+msgstr ""
+
+#: ../../source/peripherals/analog.md:8
+msgid "Overview"
+msgstr ""
+
+#: ../../source/peripherals/analog.md:10
+msgid ""
+"The Analog driver provides raw access to chip analog registers and type-"
+"safe register field read/write macro definitions."
+msgstr ""
+
+#: ../../source/peripherals/analog.md:12
+msgid "**Key Features:**"
+msgstr ""
+
+#: ../../source/peripherals/analog.md:14
+msgid "Read/write analog registers by byte, half-word, and word"
+msgstr ""
+
+#: ../../source/peripherals/analog.md:15
+msgid "YAML register descriptions converted to C type definitions"
+msgstr ""
+
+#: ../../source/peripherals/analog.md:16
+msgid "Type-safe register read/write/modify macros"
+msgstr ""
+
+#: ../../source/peripherals/analog.md:18
+msgid "API Reference"
+msgstr ""
+
+#: ../../source/peripherals/analog.md:20
+msgid "C Functions"
+msgstr ""
+
+#: ../../source/peripherals/analog.md:32
+msgid ""
+"These functions form the low-level transport layer, primarily used "
+"internally by the type-safe macros."
+msgstr ""
+
+#: ../../source/peripherals/analog.md:34
+msgid "Type-Safe Macros"
+msgstr ""
+
+#: ../../source/peripherals/analog.md:36
+msgid ""
+"**Important**: to take the most advantage of this feature, you need to "
+"have the language server capable of expanding deep macros, such as "
+"clangd. Then you will be able to fully use autocomplete, type hints, "
+"highlight, and so on."
+msgstr ""
+
+#: ../../source/peripherals/analog.md:38
+msgid ""
+"To use these macros, include `registers/tlk_analog.h` with a complete "
+"analog register description. It contains named macros with corresponding "
+"addresses (e.g., `TLK_AREG_BG_CTRL0 -> 0x00`), which should be preferred "
+"over raw addresses."
+msgstr ""
+
+#: ../../source/peripherals/analog.md:40
+msgid "If a register contains bitfields, a union type is generated:"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "Macro"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "`TLK_AREG_TYPE(reg)`"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "Expands to the C type for the named analog register"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "`TLK_AREG_SIZE(reg)`"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "Expands to the generated size constant for the register (in bits)"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "`TLK_ANALOG_READ(reg)`"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "Reads the register, casting the returned value to the register value type"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "`TLK_ANALOG_WRITE(reg, var)`"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "Writes a typed register value back to the register"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "`TLK_ANALOG_MODIFY(reg, statement)`"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "Reads, modifies, and writes back a typed register value"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "`TLK_ANALOG_MODIFY_RAW8(reg, statement)`"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "Modifies raw 8-bit register data using `uint8_t`"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "`TLK_ANALOG_MODIFY_RAW16(reg, statement)`"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "Modifies raw 16-bit register data using `uint16_t`"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "`TLK_ANALOG_MODIFY_RAW32(reg, statement)`"
+msgstr ""
+
+#: ../../source/peripherals/analog.md
+msgid "Modifies raw 32-bit register data using `uint32_t`"
+msgstr ""
+
+#: ../../source/peripherals/analog.md:62
+msgid ""
+"Note: Internal helper macros in the header begin with underscores and are"
+" not intended for user code."
+msgstr ""
+
+#: ../../source/peripherals/analog.md:64
+msgid "Register Definitions"
+msgstr ""
+
+#: ../../source/peripherals/analog.md:66
+msgid ""
+"Register definitions come from `core/*/registers/analog.yaml`, and type-"
+"safe C access macros are automatically generated via `registers_gen.py`."
+msgstr ""
+

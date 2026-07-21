@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/security/index.md:6
+msgid "Security"
+msgstr ""
+
+#: ../../source/security/index.md:8
+msgid ""
+"!!! note \"Document Status: PLANNED — Content for this module has not yet"
+" been written\""
+msgstr ""
+
+#: ../../source/security/index.md:10
+msgid ""
+"The Security module will cover security-related features in UniSDK, "
+"including:"
+msgstr ""
+
+#: ../../source/security/index.md:12
+msgid "Secure Boot"
+msgstr ""
+
+#: ../../source/security/index.md:13
+msgid "Firmware signing and verification"
+msgstr ""
+
+#: ../../source/security/index.md:14
+msgid "Flash read/write protection"
+msgstr ""
+
+#: ../../source/security/index.md:15
+msgid "Debug interface security"
+msgstr ""
+
+#: ../../source/security/index.md:16
+msgid "Hardware cryptographic engine (AES / PKE / HASH / TRNG)"
+msgstr ""
+
+#: ../../source/security/index.md:18
+msgid "Detailed documentation will be added later."
+msgstr ""
+

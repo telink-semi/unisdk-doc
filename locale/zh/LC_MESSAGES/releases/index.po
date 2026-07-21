@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/releases/index.md:6
+msgid "Releases"
+msgstr ""
+
+#: ../../source/releases/index.md:8
+msgid "Version Naming Convention"
+msgstr ""
+
+#: ../../source/releases/index.md:10
+msgid "UniSDK follows the **MAJOR.MINOR.PATCH** format (e.g., `1.2.3`):"
+msgstr ""
+
+#: ../../source/releases/index.md:12
+msgid "**MAJOR**: Incompatible API changes"
+msgstr ""
+
+#: ../../source/releases/index.md:13
+msgid "**MINOR**: Backward-compatible feature additions"
+msgstr ""
+
+#: ../../source/releases/index.md:14
+msgid "**PATCH**: Backward-compatible bug fixes"
+msgstr ""
+
+#: ../../source/releases/index.md:16
+msgid "Current Version"
+msgstr ""
+
+#: ../../source/releases/index.md:18
+msgid ""
+"Current version information is defined in "
+"`common/include/tlk_sdk_version.h`."
+msgstr ""
+
+#: ../../source/releases/index.md:20
+msgid "Version Compatibility"
+msgstr ""
+
+#: ../../source/releases/index.md:22
+msgid "Chip Support Matrix"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "SDK Version"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "TL321X"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "TL721X"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "TLSR922X"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "TLSR952X"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "Notes"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "0.2.0"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "✅"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "Initial version"
+msgstr ""
+
+#: ../../source/releases/index.md:28
+msgid "Toolchain Versions"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "Component"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "Version Requirement"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "CMake"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid ">= 3.20.0"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "Python"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid ">= 3.10"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "Ninja"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid ">= 1.10"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "West"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid ">= 0.14.0"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "RISC-V GCC"
+msgstr ""
+
+#: ../../source/releases/index.md
+msgid "V5.4.1+"
+msgstr ""
+
+#: ../../source/releases/index.md:38
+msgid "Version History"
+msgstr ""
+
+#: ../../source/releases/index.md:40
+msgid "v0.2.0"
+msgstr ""
+
+#: ../../source/releases/index.md:42
+msgid "[v0.2.0 Release Notes](0.2.0/Unified_SDK_Release_Note.md)"
+msgstr ""
+
+#: ../../source/releases/index.md:44
+msgid "Upgrade Guide"
+msgstr ""
+
+#: ../../source/releases/index.md:46
+msgid ""
+"Detailed upgrade guides and migration instructions will be provided with "
+"future version releases."
+msgstr ""
+

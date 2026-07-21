@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/getting_started/index.md:6
+msgid "Overview"
+msgstr ""
+
+#: ../../source/getting_started/index.md:8
+msgid "About This Document"
+msgstr ""
+
+#: ../../source/getting_started/index.md:10
+msgid ""
+"This document guides you through the complete process of getting started "
+"with Telink UniSDK (Unified Software Development Kit)  - from setting up "
+"the development environment, obtaining the SDK, and compiling and "
+"flashing your first project, to successfully running the first example. "
+"This guide is designed for embedded software developers who are new to "
+"the UniSDK and have a basic understanding of the C programming language "
+"and embedded development fundamentals."
+msgstr ""
+
+#: ../../source/getting_started/index.md:12
+msgid "Scope"
+msgstr ""
+
+#: ../../source/getting_started/index.md:14
+msgid ""
+"Telink UniSDK supports the Bluetooth® Low Energy (BLE) protocol stack. It"
+" is applicable to the following chip series:"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Chip Series"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Core"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid ""
+"[TL321X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TL3218X-"
+"E_TL3218X_Development_Board_User_Manual.pdf)"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "RISC-V"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid ""
+"[TL721X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TL7218X-"
+"E_TL7218X_Development_Board_User_Manual.pdf)"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid ""
+"[TLSR922X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TLSR9528A-"
+"E_TLSR9528A_Development_Board_User_Manual.pdf)"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid ""
+"[TLSR952X](https://doc.telink-semi.cn/doc/hardware/devboard/UM-TLSR9528A-"
+"E_TLSR9528A_Development_Board_User_Manual.pdf)"
+msgstr ""
+
+#: ../../source/getting_started/index.md:23
+msgid ""
+"See the [Release Notes](../releases/index.md) for details on supported "
+"chips and development boards."
+msgstr ""
+
+#: ../../source/getting_started/index.md:25
+msgid "Hardware and Software Requirements"
+msgstr ""
+
+#: ../../source/getting_started/index.md:27
+msgid "Hardware Requirements"
+msgstr ""
+
+#: ../../source/getting_started/index.md:29
+msgid "A Telink official evaluation kit (choose one):"
+msgstr ""
+
+#: ../../source/getting_started/index.md:30
+msgid "TL3218X_EVK"
+msgstr ""
+
+#: ../../source/getting_started/index.md:31
+msgid "TL7218X_EVK"
+msgstr ""
+
+#: ../../source/getting_started/index.md:32
+msgid "TLSR9528A_EVK"
+msgstr ""
+
+#: ../../source/getting_started/index.md:33
+msgid "TLSR9228A_EVK"
+msgstr ""
+
+#: ../../source/getting_started/index.md:34
+msgid "TLSR9528A_DONGLE"
+msgstr ""
+
+#: ../../source/getting_started/index.md:35
+msgid "A Telink programmer for flashing firmware (choose one):"
+msgstr ""
+
+#: ../../source/getting_started/index.md:36
+msgid "Programmer V1.0 ~ V3.0"
+msgstr ""
+
+#: ../../source/getting_started/index.md:37
+msgid "Programmer V5.0"
+msgstr ""
+
+#: ../../source/getting_started/index.md:39
+msgid "Software Requirements"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Component"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Operating System"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Linux (Ubuntu 20.04+), Windows 10/11, macOS 12+"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Git"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Version control system"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "CMake"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Build system generator (>= 3.20.0)"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Ninja"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Build system runner (>= 1.10)"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Python"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Scripting and west tool runtime (>= 3.10)"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "West"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Zephyr project management tool (>= 0.14.0)"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Telink RISC-V Toolchain"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Cross-compilation toolchain (RISC-V GCC V5.4.1+)"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "BDT"
+msgstr ""
+
+#: ../../source/getting_started/index.md
+msgid "Telink Burning and Debugging Tool (for flashing)"
+msgstr ""
+
+#: ../../source/getting_started/index.md:52
+msgid "Quick Start Flow"
+msgstr ""
+
+#: ../../source/getting_started/index.md:54
+msgid "Follow these steps in order:"
+msgstr ""
+
+#: ../../source/getting_started/index.md:56
+msgid ""
+"**[Set Up the Development Environment](environment_setup.md)** — Install "
+"VS Code Extension and dependencies"
+msgstr ""
+
+#: ../../source/getting_started/index.md:57
+msgid ""
+"**[Get and Import the SDK](get_sdk.md)** — Clone the repository and "
+"understand the directory layout"
+msgstr ""
+
+#: ../../source/getting_started/index.md:58
+msgid ""
+"**[Compile, Flash and Run Your First Example](first_example.md)** — Build"
+" and run the gpio_demo"
+msgstr ""
+
+#: ../../source/getting_started/index.md:60
+msgid "Next Steps"
+msgstr ""
+
+#: ../../source/getting_started/index.md:62
+msgid ""
+"[Development Guide](../developing/index.md) — Deep dive into the SDK "
+"development workflow"
+msgstr ""
+
+#: ../../source/getting_started/index.md:63
+msgid ""
+"[Build & Configuration](../build_config/index.md) — Learn the CMake and "
+"Kconfig build system"
+msgstr ""
+
+#: ../../source/getting_started/index.md:64
+msgid "[Samples & Demos](../samples/index.md) — Explore more example projects"
+msgstr ""
+
+#: ../../source/getting_started/index.md:65
+msgid ""
+"[Peripherals & Drivers](../peripherals/index.md) — Learn to use GPIO, "
+"UART, I2C and other peripheral drivers"
+msgstr ""
+

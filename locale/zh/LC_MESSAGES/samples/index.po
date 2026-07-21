@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/samples/index.md:6
+msgid "Samples & Demos"
+msgstr ""
+
+#: ../../source/samples/index.md:8
+msgid ""
+"UniSDK provides a rich set of ready-to-compile-and-run sample programs in"
+" the `samples/` directory. Each sample demonstrates the usage of one or "
+"more SDK features."
+msgstr ""
+
+#: ../../source/samples/index.md:10
+msgid "Sample List"
+msgstr ""
+
+#: ../../source/samples/index.md:12
+msgid "Basic Peripherals"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "Sample"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "Status"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[GPIO Sample](gpio.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "GPIO input/output, interrupt handling, sleep API"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "STABLE"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[UART Sample](uart.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "UART echo, sleep test, TX/RX protection"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[PM Power Management](pm.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "Low-power modes, GPIO wake-up, retention variables"
+msgstr ""
+
+#: ../../source/samples/index.md:20
+msgid "Communication Interfaces"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[ADC Sample](adc.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "ADC analog-to-digital conversion"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "DRAFT"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[DMA Sample](dma.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "DMA direct memory access"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[I2C Sample](i2c.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "I2C master-slave communication (DS1307 / Ping-Pong)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[SPI Sample](spi.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "SPI master-slave communication"
+msgstr ""
+
+#: ../../source/samples/index.md:29
+msgid "Wireless Connectivity"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[BLE Sample](ble.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "BLE advertising and connection demo"
+msgstr ""
+
+#: ../../source/samples/index.md:35
+msgid "System Features"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[IRQ Nesting](irq_nesting.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "Interrupt nesting demo"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[Timer Sample](stimer.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "STIMER system timer demo"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[Watchdog Sample](wdt.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "Watchdog timer demo"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "[USB CDC Sample](usb_cdc.md)"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "TinyUSB CDC serial port demo"
+msgstr ""
+
+#: ../../source/samples/index.md:44
+msgid "Building Samples"
+msgstr ""
+
+#: ../../source/samples/index.md:46
+msgid "All samples use a unified build approach:"
+msgstr ""
+
+#: ../../source/samples/index.md:56
+msgid "Each sample directory typically contains:"
+msgstr ""
+
+#: ../../source/samples/index.md
+msgid "Sample Directory Structure"
+msgstr ""
+

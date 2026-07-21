@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/system_services/index.md:6
+msgid "System Services"
+msgstr ""
+
+#: ../../source/system_services/index.md:8
+msgid ""
+"!!! note \"Document Status: PLANNED — Content for this module has not yet"
+" been written\""
+msgstr ""
+
+#: ../../source/system_services/index.md:10
+msgid ""
+"The System Services module will cover the high-level system service "
+"components provided by UniSDK, including:"
+msgstr ""
+
+#: ../../source/system_services/index.md:12
+msgid "Task scheduling and event handling"
+msgstr ""
+
+#: ../../source/system_services/index.md:13
+msgid "Memory management"
+msgstr ""
+
+#: ../../source/system_services/index.md:14
+msgid "Logging system (Debug Print)"
+msgstr ""
+
+#: ../../source/system_services/index.md:15
+msgid "System initialization framework"
+msgstr ""
+
+#: ../../source/system_services/index.md:17
+msgid "Currently Available Components"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "Component"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "API"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "System Initialization"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "`tlk_init.h`"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "Modular initialization framework"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "Main Loop"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "`tlk_loop.h`"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "Event-driven main loop"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "Delay/Sleep"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "`tlk_sleep.h`"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "`tlk_sleep_ms()` / `tlk_sleep_us()`"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "Time Management"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "`tlk_time.h`"
+msgstr ""
+
+#: ../../source/system_services/index.md
+msgid "Timestamps and timers"
+msgstr ""
+
+#: ../../source/system_services/index.md:26
+msgid "Detailed documentation will be added later. PR contributions are welcome."
+msgstr ""
+

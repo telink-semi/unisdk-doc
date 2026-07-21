@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/terminology.md:6
+msgid "UniSDK Glossary"
+msgstr ""
+
+#: ../../source/terminology.md:8
+msgid ""
+"This document defines the core terminology used in UniSDK to ensure "
+"consistency across documentation and community communication."
+msgstr ""
+
+#: ../../source/terminology.md ../../source/terminology.md:10
+msgid "Build System"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Term"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "CMake + Ninja based compilation framework"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Configuration System"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Kconfig-based compile-time configuration management"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Target"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "CMake build target, can be an executable or library"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Generator"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "CMake build backend; UniSDK uses Ninja"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Pre-build Check"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Validation scripts that run automatically before compilation"
+msgstr ""
+
+#: ../../source/terminology.md:20
+msgid "West Tool"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "West"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Zephyr project management tool, the unified build entry point in UniSDK"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Workspace"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "The project directory managed by West, containing `.west` configuration"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "tl-build"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "UniSDK custom West command for building projects"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "tl-config"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "UniSDK custom West command for configuring projects"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "tl-bdt"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "UniSDK custom West command for flashing and debugging"
+msgstr ""
+
+#: ../../source/terminology.md:30
+msgid "Hardware Abstraction"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Chip / SoC"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Telink System-on-Chip"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Board / EVK"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Telink official Evaluation Kit"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Pinmux"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Programmable chip pin function configuration"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Core Layer"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Chip core driver code (`core/`)"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "SoC Layer"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Chip-specific functionality code (`soc/`)"
+msgstr ""
+
+#: ../../source/terminology.md:40
+msgid "Kconfig Configuration"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Kconfig"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Linux kernel configuration system"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "chip.config"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Chip-specific configuration"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "build.config"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Build option configuration"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid ".config"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Final merged configuration"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "autoconf.h"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "C language configuration macro definition header file"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "capabilities.h"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Chip capability declaration header file"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Menuconfig"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Terminal-based interactive configuration interface"
+msgstr ""
+
+#: ../../source/terminology.md:52
+msgid "Peripherals & Drivers"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "GPIO"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "General Purpose Input/Output"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "UART"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Universal Asynchronous Receiver/Transmitter"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "I2C"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Inter-Integrated Circuit"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "SPI"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Serial Peripheral Interface"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "ADC"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Analog-to-Digital Converter"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "DMA"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Direct Memory Access"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "PM"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Power Management"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "PLIC"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Platform-Level Interrupt Controller"
+msgstr ""
+
+#: ../../source/terminology.md:65
+msgid "Document Status Markers"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Marker"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "STABLE"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Content is complete and ready to use"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "DRAFT"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Content is being written, may be incomplete"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "DEPRECATED"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Will be deprecated soon; migration to new solution is recommended"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "PLANNED"
+msgstr ""
+
+#: ../../source/terminology.md
+msgid "Planned but not yet started"
+msgstr ""
+

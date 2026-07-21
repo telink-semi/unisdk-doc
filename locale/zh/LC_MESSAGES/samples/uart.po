@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/samples/uart.md:6
+msgid "UART Sample"
+msgstr ""
+
+#: ../../source/samples/uart.md:8
+msgid "Overview"
+msgstr ""
+
+#: ../../source/samples/uart.md:10
+msgid ""
+"The `uart_demo` sample demonstrates the UART driver's echo functionality:"
+" receiving data and sending it back as-is."
+msgstr ""
+
+#: ../../source/samples/uart.md:12
+msgid "Features Demonstrated"
+msgstr ""
+
+#: ../../source/samples/uart.md:14
+msgid ""
+"Manual UART configuration using `tlk_uart_configure` and "
+"`tlk_uart_configure_pinmux` (when `CONFIG_TLK_UART_USED_AUTO_CONFIG` is "
+"disabled)"
+msgstr ""
+
+#: ../../source/samples/uart.md:15
+msgid ""
+"Manual UART flow control configuration using "
+"`tlk_uart_configure_flow_control` and "
+"`tlk_uart_configure_flow_control_pinmux` if "
+"`CONFIG_TLK_UART1_FLOW_CONTROL` is enabled"
+msgstr ""
+
+#: ../../source/samples/uart.md:16
+msgid "Callback-based data reception (`tlk_uart_receive_bytes`)"
+msgstr ""
+
+#: ../../source/samples/uart.md:17
+msgid "Data transmission (`tlk_uart_send_bytes`)"
+msgstr ""
+
+#: ../../source/samples/uart.md:18
+msgid "Power management and sleep prevention (optional)"
+msgstr ""
+
+#: ../../source/samples/uart.md:20
+msgid "How It Works"
+msgstr ""
+
+#: ../../source/samples/uart.md:22
+msgid "Initialization"
+msgstr ""
+
+#: ../../source/samples/uart.md:24
+msgid ""
+"**Manual Configuration** — If `CONFIG_TLK_UART_USED_AUTO_CONFIG` is "
+"disabled, manually configure UART1 parameters using `tlk_uart_configure` "
+"and `tlk_uart_configure_pinmux`. If `CONFIG_TLK_UART1_FLOW_CONTROL` is "
+"enabled, also configure flow control using "
+"`tlk_uart_configure_flow_control` and "
+"`tlk_uart_configure_flow_control_pinmux`."
+msgstr ""
+
+#: ../../source/samples/uart.md:25
+msgid ""
+"**Power Management Test** — If `CONFIG_TLK_UART_DEMO_SLEEP` is enabled, "
+"first print \"Before sleep\", sleep for 2 seconds, then print \"After "
+"sleep\" upon wake-up"
+msgstr ""
+
+#: ../../source/samples/uart.md:26
+msgid ""
+"**Interrupt Enable** — Call `tlk_core_interrupt_enable()` to enable "
+"asynchronous callbacks"
+msgstr ""
+
+#: ../../source/samples/uart.md:28
+msgid "Main Loop (Echo Flow)"
+msgstr ""
+
+#: ../../source/samples/uart.md:30
+msgid "Call `tlk_uart_receive_bytes` to listen for data"
+msgstr ""
+
+#: ../../source/samples/uart.md:31
+msgid "Wait for the `rx_handler` callback to set the `rx_done` flag"
+msgstr ""
+
+#: ../../source/samples/uart.md:32
+msgid "Send received data back to the serial port (`tlk_uart_send_bytes`)"
+msgstr ""
+
+#: ../../source/samples/uart.md:33
+msgid "Reset the flag and repeat"
+msgstr ""
+
+#: ../../source/samples/uart.md:35
+msgid "Sleep Prevention Test"
+msgstr ""
+
+#: ../../source/samples/uart.md:37
+msgid ""
+"When `CONFIG_TLK_UART_DEMO_PREVENT` is enabled, the sample attempts to "
+"sleep during reception to verify that `tlk_pm_sleep` returns "
+"`TLK_PM_SLEEP_DENIED`."
+msgstr ""
+
+#: ../../source/samples/uart.md:39
+msgid "Configuration Options"
+msgstr ""
+
+#: ../../source/samples/uart.md
+msgid "Option"
+msgstr ""
+
+#: ../../source/samples/uart.md
+msgid "Description"
+msgstr ""
+
+#: ../../source/samples/uart.md
+msgid "`CONFIG_TLK_UART_DEMO_SLEEP`"
+msgstr ""
+
+#: ../../source/samples/uart.md
+msgid "Test whether UART works correctly after wake-up"
+msgstr ""
+
+#: ../../source/samples/uart.md
+msgid "`CONFIG_TLK_UART_DEMO_PREVENT`"
+msgstr ""
+
+#: ../../source/samples/uart.md
+msgid "Test whether sleep is correctly prevented during reception"
+msgstr ""
+
+#: ../../source/samples/uart.md:46
+msgid "Build & Run"
+msgstr ""
+
