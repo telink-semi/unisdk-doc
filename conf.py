@@ -139,6 +139,16 @@ else:
 
 breathe_domain_by_extension = {'h': 'c'}
 
+# -- LaTeX (PDF) output configuration ----------------------------------------
+# Used when building with xelatex (set via -D latex_engine=xelatex)
+latex_elements = {
+    'preamble': r'''
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+''',
+}
+
 # -- HTML theme configuration -------------------------------------------------
 
 html_theme = 'sphinx_book_theme'
