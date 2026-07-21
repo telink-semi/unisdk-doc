@@ -1,9 +1,11 @@
 ---
-title: First Example — Blinky
+title: First Example — Blinky (CLI)
 status: STABLE
 ---
 
-# First Example: Blinky (LED Blinking)
+# First Example: Blinky (CLI)
+
+> **Tip**: If you prefer using the VS Code Extension GUI, see the [VS Code quick-start guide](../getting_started/first_example.md) instead.
 
 This document details how to compile, flash, and run the first UniSDK example program — the GPIO demo (Blinky LED blinking).
 

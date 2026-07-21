@@ -1,11 +1,11 @@
 ---
-title: First Example — Blinky
+title: First Example — Blinky (VS Code)
 status: STABLE
 ---
 
-# Compile, Flash and Run Your First Example
+# Compile, Flash and Run Your First Example (VS Code)
 
-This guide walks you through compiling, flashing, and running the first UniSDK example program — the GPIO demo (Blinky LED blinking).
+This guide walks you through compiling, flashing, and running the first UniSDK example program using the **VS Code Extension GUI**. If you prefer the command-line interface, see the [CLI-based Blinky Guide](../developing/blinky.md).
 
 ## Select the First Example
 
@@ -55,14 +55,7 @@ build/
 
 ### CLI Approach (Alternative)
 
-```bash
-# Step 1: List available chips and boards
-west tl-socs        # View all supported chips
-west tl-boards      # View all supported boards
-
-# Step 2: Configure and build
-west tl-build samples/gpio_demo --board TLSR9528A_EVK
-```
+For command-line users, refer to the [CLI-based Blinky Guide](../developing/blinky.md) for detailed CLI build and flash instructions.
 
 ## Flash the Firmware
 
