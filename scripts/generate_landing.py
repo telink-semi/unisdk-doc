@@ -108,8 +108,8 @@ def generate_versions_json(build_dir, output_dir):
     """Scan build directory and generate versions.json."""
     versions = []
 
-    # Scan for language directories
-    for lang in ['en']:
+    # Scan for language directories (dynamically detect from build output)
+    for lang in sorted(os.listdir(build_dir)):
         lang_dir = os.path.join(build_dir, lang)
         if not os.path.isdir(lang_dir):
             continue
@@ -134,7 +134,7 @@ def generate_versions_json(build_dir, output_dir):
             })
 
     # Also add language-specific main versions as top-level entries
-    for lang in ['en']:
+    for lang in sorted(os.listdir(build_dir)):
         main_dir = os.path.join(build_dir, lang, 'main')
         if os.path.isdir(main_dir):
             # Add a clean latest entry

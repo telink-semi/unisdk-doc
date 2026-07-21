@@ -33,7 +33,7 @@ permissions:
 env:
   SDK_REPO: telink-semi/unisdk
   SDK_PATH: _sdk_src
-  LANGUAGES: "en"
+  LANGUAGES: "en zh"
 
 jobs:
   build-and-deploy:
