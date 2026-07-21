@@ -11,6 +11,9 @@ repo during CI builds).
 import os
 import sys
 
+# -- Path setup --------------------------------------------------------------
+_BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # -- Language / Version context (set via -D on CLI during CI) -----------------
 # Default to English; CI passes -D language=zh for Chinese builds.
 language = os.environ.get('UNISDK_DOC_LANG', 'en')
@@ -58,7 +61,7 @@ extensions = [
 ]
 
 # -- Internationalization -----------------------------------------------------
-locale_dirs = ['locale/']
+locale_dirs = [os.path.join(_BASE_DIR, 'locale')]
 gettext_compact = False
 
 # Source file suffixes: support both RST and MD

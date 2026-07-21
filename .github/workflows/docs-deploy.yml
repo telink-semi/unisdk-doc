@@ -79,11 +79,14 @@ jobs:
         run: |
           python scripts/gen_api_rst.py
           mkdir -p _api_rst_cache
-          for subdir in en/api_reference/*/; do
+          for subdir in source/api_reference/*/; do
             if [ -d "$subdir" ]; then
               cp -r "$subdir" _api_rst_cache/
             fi
           done
+
+      - name: Compile .po translations to .mo
+        run: sphinx-intl build -l zh
 
       - name: Build all versions
         run: |
@@ -101,8 +104,8 @@ jobs:
             if [ -d "_api_rst_cache" ]; then
               for subdir in _api_rst_cache/*/; do
                 if [ -d "$subdir" ]; then
-                  mkdir -p "en/api_reference/$(basename "$subdir")"
-                  cp -r "$subdir"/* "en/api_reference/$(basename "$subdir")/"
+                  mkdir -p "source/api_reference/$(basename "$subdir")"
+                  cp -r "$subdir"/* "source/api_reference/$(basename "$subdir")/"
                 fi
               done
             fi
