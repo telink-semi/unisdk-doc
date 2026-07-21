@@ -35,8 +35,9 @@ python scripts/menuconfig.py Kconfig.chip     # Chip configuration
 python scripts/menuconfig.py Kconfig.build    # Build configuration
 ```
 
-!!! note "First-time Use"
-    `make config` will open the interface twice in sequence: first the chip configuration (Kconfig.chip), then the peripheral build configuration (Kconfig.build).
+:::{note} First-time Use
+`make config` will open the interface twice in sequence: first the chip configuration (Kconfig.chip), then the peripheral build configuration (Kconfig.build).
+:::
 
 ## Navigation and Operations
 

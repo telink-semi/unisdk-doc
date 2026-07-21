@@ -5,7 +5,8 @@ status: DRAFT
 
 # TLSR952X Chip Series
 
-!!! note "Document Status: DRAFT — Detailed specifications to be added. The information below is based on SDK metadata and is subject to update."
+:::{note} Document Status: DRAFT — Detailed specifications to be added. The information below is based on SDK metadata and is subject to update.
+:::
 
 ## Overview
 

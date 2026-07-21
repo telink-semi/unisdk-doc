@@ -5,7 +5,8 @@ status: DRAFT
 
 # SPI Sample
 
-!!! note "Document Status: DRAFT — Content is being finalized"
+:::{note} Document Status: DRAFT — Content is being finalized
+:::
 
 The SPI sample (`samples/spi_demo`) demonstrates the basic usage of SPI communication.
 

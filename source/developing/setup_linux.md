@@ -47,11 +47,12 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-!!! tip "Recommendation"
-    Remember to activate the virtual environment before each development session:
-    ```bash
-    source .venv/bin/activate
-    ```
+:::{tip} Recommendation
+Remember to activate the virtual environment before each development session:
+```bash
+source .venv/bin/activate
+```
+:::
 
 ## Initialize West
 
@@ -63,12 +64,13 @@ west --version
 west init -l
 ```
 
-!!! warning "Common Issue: already initialized"
-    If you encounter the `already initialized in {path}, aborting.` error:
-    ```bash
-    unset ZEPHYR_BASE
-    west init -l
-    ```
+:::{warning} Common Issue: already initialized
+If you encounter the `already initialized in {path}, aborting.` error:
+```bash
+unset ZEPHYR_BASE
+west init -l
+```
+:::
 
 ## Configure Toolchain
 

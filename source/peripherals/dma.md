@@ -5,7 +5,8 @@ status: DRAFT
 
 # DMA Driver
 
-!!! note "Document Status: DRAFT — Content is being finalized"
+:::{note} Document Status: DRAFT — Content is being finalized
+:::
 
 ## Overview
 

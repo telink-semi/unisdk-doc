@@ -5,7 +5,8 @@ status: PLANNED
 
 # System Services
 
-!!! note "Document Status: PLANNED — Content for this module has not yet been written"
+:::{note} Document Status: PLANNED — Content for this module has not yet been written
+:::
 
 The System Services module will cover the high-level system service components provided by UniSDK, including:
 

@@ -5,7 +5,8 @@ status: DRAFT
 
 # DMA Sample
 
-!!! note "Document Status: DRAFT — Content is being finalized"
+:::{note} Document Status: DRAFT — Content is being finalized
+:::
 
 The DMA sample (`samples/dma_demo`) demonstrates the usage of direct memory access.
 

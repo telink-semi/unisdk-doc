@@ -216,7 +216,8 @@ void tlk_gpio_set_mux(enum tlk_gpio_port port, enum tlk_gpio_pin pin, uint8_t mu
 
 ### `tlk_gpio_irq_configure`
 
-!!! info "Requires `CONFIG_TLK_PLIC` enabled"
+:::{info} Requires `CONFIG_TLK_PLIC` enabled
+:::
 
 Sets the interrupt trigger type.
 
@@ -237,7 +238,8 @@ void tlk_gpio_irq_configure(enum tlk_gpio_port port, enum tlk_gpio_pin pin,
 
 ### `tlk_gpio_irq_add_callback`
 
-!!! info "Requires `CONFIG_TLK_PLIC` enabled"
+:::{info} Requires `CONFIG_TLK_PLIC` enabled
+:::
 
 Registers an interrupt callback function.
 

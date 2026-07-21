@@ -5,7 +5,8 @@ status: DRAFT
 
 # TL7218X_EVK Board
 
-!!! note "Document Status: DRAFT — Detailed specifications to be added"
+:::{note} Document Status: DRAFT — Detailed specifications to be added
+:::
 
 ## Overview
 

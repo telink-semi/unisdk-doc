@@ -5,7 +5,8 @@ status: PLANNED
 
 # YAML Description Reference
 
-!!! note "Document Status: PLANNED — Automatic generation system under development"
+:::{note} Document Status: PLANNED — Automatic generation system under development
+:::
 
 The YAML Reference will be automatically extracted from YAML files in directories such as `core/*/properties/`, `core/*/registers/`, `soc/*/pinmux/`, providing a complete reference for device properties, register definitions, and pin multiplexing configurations.
 

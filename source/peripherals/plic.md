@@ -129,7 +129,8 @@ void tlk_plic_irqs_postprocess_for_wfi(void);
 
 ### Software Interrupt APIs
 
-!!! info "Requires `CONFIG_TLK_PLIC_SW` enabled"
+:::{info} Requires `CONFIG_TLK_PLIC_SW` enabled
+:::
 
 | Function | Description |
 |---|------|

@@ -5,7 +5,8 @@ status: PLANNED
 
 # Production Guide
 
-!!! note "Document Status: PLANNED — Content for this module has not yet been written"
+:::{note} Document Status: PLANNED — Content for this module has not yet been written
+:::
 
 The Production Guide will help developers transition prototypes developed with UniSDK into mass production products, covering:
 

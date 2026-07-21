@@ -5,7 +5,8 @@ status: DRAFT
 
 # I2C Driver
 
-!!! note "Document Status: DRAFT — Content is being finalized"
+:::{note} Document Status: DRAFT — Content is being finalized
+:::
 
 ## Overview
 

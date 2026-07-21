@@ -33,12 +33,13 @@ west tl-config
 make config SOC=TLSR9528A BOARD=TLSR9528A_EVK
 ```
 
-!!! tip "Available Chips and Boards"
-    List all supported options:
-    ```bash
-    west tl-socs      # View all chips
-    west tl-boards    # View all boards
-    ```
+:::{tip} Available Chips and Boards
+List all supported options:
+```bash
+west tl-socs      # View all chips
+west tl-boards    # View all boards
+```
+:::
 
 ## Step 2: Compilation
 

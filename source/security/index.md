@@ -5,7 +5,8 @@ status: PLANNED
 
 # Security
 
-!!! note "Document Status: PLANNED — Content for this module has not yet been written"
+:::{note} Document Status: PLANNED — Content for this module has not yet been written
+:::
 
 The Security module will cover security-related features in UniSDK, including:
 

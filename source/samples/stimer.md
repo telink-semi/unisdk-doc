@@ -5,7 +5,8 @@ status: DRAFT
 
 # STIMER Sample
 
-!!! note "Document Status: DRAFT — Content is being finalized"
+:::{note} Document Status: DRAFT — Content is being finalized
+:::
 
 The `stimer_demo` sample demonstrates the usage of the STIMER system timer.
 

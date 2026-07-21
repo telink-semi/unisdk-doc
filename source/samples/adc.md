@@ -5,7 +5,8 @@ status: DRAFT
 
 # ADC Sample
 
-!!! note "Document Status: DRAFT — Content is being finalized"
+:::{note} Document Status: DRAFT — Content is being finalized
+:::
 
 The ADC sample (`samples/adc_demo`) demonstrates the basic usage of the analog-to-digital converter.
 

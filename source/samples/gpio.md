@@ -37,8 +37,9 @@ while (1)
 }
 ```
 
-!!! note "Board-Specific Macros"
-    The `UNISDK_BOARD_LED_0_PORT` and `UNISDK_BOARD_LED_0_PIN` macros are defined in the board-specific `tlk_board_pinout.h` header. These resolve to the correct port and pin for the target board's LED.
+:::{note} Board-Specific Macros
+The `UNISDK_BOARD_LED_0_PORT` and `UNISDK_BOARD_LED_0_PIN` macros are defined in the board-specific `tlk_board_pinout.h` header. These resolve to the correct port and pin for the target board's LED.
+:::
 
 ## Configuration Options
 

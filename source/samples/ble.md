@@ -5,7 +5,8 @@ status: DRAFT
 
 # BLE Sample
 
-!!! note "Document Status: DRAFT — Content is being finalized"
+:::{note} Document Status: DRAFT — Content is being finalized
+:::
 
 The BLE sample (`samples/adv_demo`) demonstrates BLE advertising functionality.
 

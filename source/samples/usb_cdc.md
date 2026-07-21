@@ -5,7 +5,8 @@ status: DRAFT
 
 # USB CDC Sample
 
-!!! note "Document Status: DRAFT — Content is being finalized"
+:::{note} Document Status: DRAFT — Content is being finalized
+:::
 
 The `usb_cdc_demo` sample is based on the TinyUSB framework and demonstrates USB CDC serial port functionality.
 

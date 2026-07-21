@@ -5,7 +5,8 @@ status: DRAFT
 
 # TLSR9528A_DONGLE
 
-!!! note "Document Status: DRAFT — Detailed specifications to be added"
+:::{note} Document Status: DRAFT — Detailed specifications to be added
+:::
 
 ## Overview
 

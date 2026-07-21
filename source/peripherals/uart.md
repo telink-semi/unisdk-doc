@@ -85,7 +85,8 @@ Return codes used by driver functions to indicate the result of an operation.
 
 ### Flow Control Modes
 
-!!! info "Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`"
+:::{info} Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`
+:::
 
 `enum tlk_uart_flow_control`
 
@@ -98,7 +99,8 @@ Return codes used by driver functions to indicate the result of an operation.
 
 ### Flow Control Polarity
 
-!!! info "Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`"
+:::{info} Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`
+:::
 
 `enum tlk_uart_flow_polarity`
 
@@ -111,7 +113,8 @@ Defines the active level logic for RTS and CTS signals.
 
 ### Flow Control Configuration Structure
 
-!!! info "Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`"
+:::{info} Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`
+:::
 
 `struct tlk_uart_flow_control_config`
 
@@ -215,7 +218,8 @@ enum tlk_uart_status tlk_uart_receive_bytes(enum tlk_uart_module uart_num,
 
 ### `tlk_uart_configure_flow_control`
 
-!!! info "Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`"
+:::{info} Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`
+:::
 
 Configure the flow control for the specified UART module. Disabled by default. Should be called after `tlk_uart_configure`.
 
@@ -235,7 +239,8 @@ void tlk_uart_configure_flow_control(enum tlk_uart_module uart_num,
 
 ### `tlk_uart_configure_flow_control_pinmux`
 
-!!! info "Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`"
+:::{info} Requires `CONFIG_TLK_UART_USED_FLOW_CONTROL`
+:::
 
 Configure UART RTS and CTS pin multiplexing.
 

@@ -61,10 +61,11 @@ The script automatically performs the following tasks:
 
 The script automatically generates a `setup_log.txt` file in the script directory, recording detailed logs of the entire configuration process for troubleshooting purposes.
 
-!!! note "Toolchain Requires Manual Download"
-    Since toolchain download requires special permissions, the script only creates the `toolchain` directory and sets the environment variable.
-    Please manually download the toolchain and extract it to the `<unisdk>\toolchain` directory.
-    Download link: https://drive.weixin.qq.com/s?k=AKwA0AfNAA8Ox1r0ab
+:::{note} Toolchain Requires Manual Download
+Since toolchain download requires special permissions, the script only creates the `toolchain` directory and sets the environment variable.
+Please manually download the toolchain and extract it to the `<unisdk>\toolchain` directory.
+Download link: https://drive.weixin.qq.com/s?k=AKwA0AfNAA8Ox1r0ab
+:::
 
 ### Method 2: Manual Installation
 

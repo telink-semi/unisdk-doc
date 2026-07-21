@@ -5,7 +5,8 @@ status: PLANNED
 
 # Kconfig Reference
 
-!!! note "Document Status: PLANNED — Automatic generation system under development"
+:::{note} Document Status: PLANNED — Automatic generation system under development
+:::
 
 The Kconfig Reference will be automatically extracted from `Kconfig.build`, `Kconfig.chip`, and all `rsource` sub-files, providing a complete list of Kconfig options.
 

@@ -5,7 +5,8 @@ status: DRAFT
 
 # I2C Sample
 
-!!! note "Document Status: DRAFT — Content is being finalized"
+:::{note} Document Status: DRAFT — Content is being finalized
+:::
 
 The I2C sample (`samples/i2c_demo`) includes two sub-samples:
 

@@ -5,7 +5,8 @@ status: DRAFT
 
 # IRQ Nesting Sample
 
-!!! note "Document Status: DRAFT — Content is being finalized"
+:::{note} Document Status: DRAFT — Content is being finalized
+:::
 
 The `irq_nesting_demo` sample demonstrates interrupt nesting functionality.
 

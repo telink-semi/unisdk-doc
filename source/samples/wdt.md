@@ -5,7 +5,8 @@ status: DRAFT
 
 # Watchdog Sample
 
-!!! note "Document Status: DRAFT — Content is being finalized"
+:::{note} Document Status: DRAFT — Content is being finalized
+:::
 
 The `wdt_demo` sample demonstrates the usage of the watchdog timer.
 
