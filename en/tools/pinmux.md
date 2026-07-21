@@ -167,7 +167,10 @@ After saving, `pinmux.h` is automatically generated with C preprocessor definiti
 
 ## Configuration File Locations
 
-```
+:::{dropdown} Pinmux Configuration Files
+:summary: Click to expand/collapse
+
+```text
 soc/<chip>/pinmux/
 ├── function.yaml          # Pin function definitions
 ├── pinmux.yaml            # Pin multiplexing configuration
@@ -175,6 +178,7 @@ soc/<chip>/pinmux/
 ├── pinmux_qfn88.yaml      # QFN88 package
 └── ...
 ```
+:::
 
 ## Build Integration
 

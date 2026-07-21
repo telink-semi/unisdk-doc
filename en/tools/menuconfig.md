@@ -80,7 +80,10 @@ Immediately after the first window closes, the tool opens again for software con
 
 After configuration completes, the following files are generated:
 
-```
+:::{dropdown} Generated Configuration Files
+:summary: Click to expand/collapse
+
+```text
 build/
 ├── chip.config       # Chip configuration
 ├── build.config      # Build configuration
@@ -89,6 +92,7 @@ build/
 ├── autoconf.h        # Configuration macro definitions
 └── pinmux.h          # Pin multiplexing configuration
 ```
+:::
 
 ## Internal Execution Flow
 

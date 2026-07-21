@@ -13,12 +13,16 @@ UniSDK application projects **can be located in any directory**, not limited to 
 
 ### Minimum Project Structure
 
-```
+:::{dropdown} Minimum Project Structure
+:summary: Click to expand/collapse
+
+```text
 my_project/
 ├── CMakeLists.txt    # Build entry point
 ├── main.c            # Main program
 └── Kconfig           # Optional: project-level Kconfig configuration
 ```
+:::
 
 ### CMakeLists.txt Template
 

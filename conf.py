@@ -39,8 +39,8 @@ extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.viewcode',
 
-    # Internationalization (sphinx-intl for Sphinx 9.0+)
-    'sphinx_intl',
+    # Internationalization (locale dir exists for future translations)
+    # 'sphinx_intl',  # commented out - no locale files yet
 
     # Markdown support via MyST
     'myst_parser',
@@ -137,7 +137,7 @@ else:
     # No Doxygen output available — Breathe will produce warnings
     # but Sphinx will still build the pure-documentation pages.
     breathe_projects = {}
-    breathe_default_project = None
+    breathe_default_project = ''
 
 breathe_domain_by_extension = {'h': 'c'}
 

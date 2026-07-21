@@ -16,15 +16,22 @@ UniSDK provides a series of development tools to simplify chip configuration, fl
 
 ## Tool Overview
 
-```
-Tool positions in the developer workflow:
-
-  [Configuration Phase]              [Build Phase]                  [Flash/Debug Phase]
-  ┌───────────────┐               ┌──────────────┐               ┌───────────────┐
-  │  Menuconfig   │  ──►          │    CMake     │   ──►         │     BDT       │
-  │   Pinmux      │               │    Ninja     │               │               │
-  └───────────────┘               └──────────────┘               └───────────────┘
-        │                                                                │
-        └──────────────── West (tl-build) ───────────────────────────────┘
-                     (Unified entry point)
+```{mermaid}
+graph LR
+    subgraph Config["Configuration Phase"]
+        A[Menuconfig]
+        B[Pinmux]
+    end
+    subgraph Build["Build Phase"]
+        C[CMake]
+        D[Ninja]
+    end
+    subgraph Flash["Flash / Debug Phase"]
+        E[BDT]
+    end
+    A --> C
+    B --> C
+    C --> D
+    D --> E
+    C -.->|"West tl-build<br/>(unified entry)"| D
 ```

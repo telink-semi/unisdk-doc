@@ -20,17 +20,33 @@ Kconfig.build    → Build-related configuration (feature options, parameter set
 
 ### Hierarchy
 
-```
-Kconfig.chip
-├── rsource "core/Kconfig"            # Core configuration
-├── rsource "soc/Kconfig"             # Chip series configuration
-└── rsource "boards/Kconfig"          # Development board configuration
+```{mermaid}
+graph TD
+    subgraph Entry["Configuration Entry Points"]
+        KC[Kconfig.chip<br/>Chip configuration]
+        KB[Kconfig.build<br/>Build configuration]
+    end
 
-Kconfig.build
-├── rsource "api/Kconfig"             # API configuration
-├── rsource "core/configs/Kconfig"    # Core feature configuration
-├── rsource "samples/Kconfig"         # Sample configuration
-└── rsource "system/Kconfig"          # System configuration
+    subgraph ChipInc["Included by Kconfig.chip"]
+        CORE[core/Kconfig<br/>Core configuration]
+        SOC[soc/Kconfig<br/>Chip series]
+        BRD[boards/Kconfig<br/>Boards]
+    end
+
+    subgraph BuildInc["Included by Kconfig.build"]
+        API[api/Kconfig<br/>API config]
+        CFG[core/configs/Kconfig<br/>Core features]
+        SMP[samples/Kconfig<br/>Samples]
+        SYS[system/Kconfig<br/>System]
+    end
+
+    KC --> CORE
+    KC --> SOC
+    KC --> BRD
+    KB --> API
+    KB --> CFG
+    KB --> SMP
+    KB --> SYS
 ```
 
 ### Application-Level Kconfig Integration
@@ -39,17 +55,32 @@ Through the `KCONFIG_APPLICATION_DIR` variable, the application layer can define
 
 ## Configuration Generation Flow
 
-```mermaid
+```{mermaid}
 graph LR
-    A[Kconfig.chip] --> B[chip.config]
+    subgraph Input["Kconfig Sources"]
+        A[Kconfig.chip]
+        A2[Kconfig.build]
+    end
+
+    subgraph Gen["Generated Configs"]
+        B[chip.config]
+        E[build.config]
+    end
+
+    subgraph Output["Final Outputs"]
+        D[capabilities.h]
+        I[autoconf.h]
+    end
+
+    A --> B
+    A2 --> E
     B --> C[preprocess_kconfig.py]
-    C --> D[capabilities.h]
-    A2[Kconfig.build] --> E[build.config]
+    C --> D
     E --> F[Merge]
     B --> F
     F --> G[.config]
     G --> H[kconfig.py parsing]
-    H --> I[autoconf.h]
+    H --> I
 ```
 
 ### Key Configuration Files

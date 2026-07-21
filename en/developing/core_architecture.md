@@ -11,7 +11,7 @@ This document introduces the core operating mechanisms of UniSDK, including the 
 
 The startup process of UniSDK begins from hardware reset and goes through the following stages:
 
-```mermaid
+```{mermaid}
 graph TD
     A[Hardware Reset] --> B[cstartup_flash.S]
     B --> C[Initialize Stack Pointer]

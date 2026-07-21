@@ -55,7 +55,10 @@ make build APP=samples/gpio_demo BOARD=TLSR9528A_EVK
 
 Each sample directory typically contains:
 
-```
+:::{dropdown} Sample Directory Structure
+:summary: Click to expand/collapse
+
+```text
 samples/gpio_demo/
 ├── CMakeLists.txt    # Build entry
 ├── Kconfig           # Sample-specific configuration options
@@ -63,3 +66,4 @@ samples/gpio_demo/
 ├── main.cpp          # C++ version (optional)
 └── README.md         # Sample description
 ```
+:::

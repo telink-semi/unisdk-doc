@@ -47,39 +47,24 @@ cmake --build build
 
 ## Build System Architecture
 
-```
-  West / Make / CMake
-        │
-        ▼
-  ┌─────────────┐
-  │ CMakeLists.txt │ (entry point)
-  └──────┬──────┘
-         │ find_package(Telink)
-         ▼
-  ┌──────────────────┐
-  │ TelinkConfig.cmake │
-  └──────┬───────────┘
-         │
-         ▼
-  ┌──────────────────────┐
-  │ telink_default.cmake  │──► python, extensions, version
-  │ (module loading)      │──► west, compiler, kconfig
-  └──────────────────────┘──► pinmux, linker
-         │
-         ▼
-  ┌──────────┐    ┌──────────────┐
-  │ Kconfig  │───►│ chip.config   │
-  │ (config) │───►│ build.config  │
-  └──────────┘───►│ → .config     │
-                  └──────────────┘
-         │
-         ▼
-  ┌──────────┐
-  │ Ninja    │ (compile)
-  └──────────┘
-         │
-         ▼
-  ┌──────────────┐
-  │ Firmware .bin │
-  └──────────────┘
+```{mermaid}
+graph TD
+    A["West / Make / CMake"] --> B["CMakeLists.txt<br/>(entry point)"]
+    B -->|find_package Telink| C["TelinkConfig.cmake"]
+    C --> D["telink_default.cmake<br/>(module loading)"]
+    D --> E1["python"]
+    D --> E2["extensions"]
+    D --> E3["west"]
+    D --> E4["compiler"]
+    D --> E5["kconfig"]
+    D --> E6["pinmux"]
+    D --> E7["linker"]
+    D -.->|"Includes"| E1 & E2 & E3 & E4 & E5 & E6 & E7
+    E5 --> F["Kconfig<br/>(config)"]
+    F --> G1["chip.config"]
+    F --> G2["build.config"]
+    F --> G3[".config"]
+    G1 & G2 --> G3
+    G3 --> H["Ninja<br/>(compile)"]
+    H --> I["Firmware .bin"]
 ```

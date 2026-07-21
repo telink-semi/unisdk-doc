@@ -138,6 +138,9 @@ void sleep_example(void) {
 
 ## Kconfig Configuration
 
+:::{dropdown} PM Kconfig Options
+:summary: Click to expand/collapse
+
 ```text
 TLK_PM_SUSPEND_MIN_DURATION_MS
 │   Defines the minimum allowed duration for Suspend mode (in milliseconds).
@@ -156,6 +159,7 @@ TLK_PM_RETENTION_MEMORY_SIZE
 │   Selects the size of the RAM to be retained during Deep Retention mode.
 │   The available options (e.g., 16K, 32K) depend on the specific SoC capabilities.
 ```
+:::
 
 ### Menuconfig View
 

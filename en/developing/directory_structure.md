@@ -9,7 +9,10 @@ This document details the directory organization of the UniSDK code repository t
 
 ## Overall Structure
 
-```
+:::{dropdown} UniSDK Directory Tree
+:summary: Click to expand/collapse the full SDK directory structure
+
+```text
 unisdk/
 ├── CMakeLists.txt              # CMake main entry point (root directory mode)
 ├── Makefile                    # Make command interface
@@ -20,85 +23,67 @@ unisdk/
 │
 ├── api/                        # Public API layer
 │   ├── include/                # API header files
-│   │   ├── tlk_sleep.h         #   Sleep/delay API
-│   │   └── tlk_time.h          #   Time-related API
 │   ├── src/                    # API implementations
 │   ├── CMakeLists.txt
 │   └── Kconfig
 │
-├── core/                       # Chip core drivers (organized by chip family)
-│   ├── B92/                    # B92 series (TLSR952X)
-│   │   ├── drivers/            #   Core driver implementations
-│   │   ├── properties/         #   YAML device property descriptions
-│   │   └── registers/          #   YAML register descriptions
-│   ├── TL321X/                 # TL321X series
-│   ├── TL721X/                 # TL721X series
-│   ├── common/                 # Core common code
-│   │   ├── startup/            #   Startup files
-│   │   │   ├── cstartup_flash.S #      Assembly startup code
-│   │   │   ├── flash_boot.link #      Linker script
-│   │   │   └── tl_context.S    #      Context switch
-│   │   └── src/
-│   ├── configs/                # Core Kconfig configuration
-│   ├── cpp_wrappers/           # C++ wrappers
-│   ├── include/                # Core common header files
+├── core/                       # Chip core drivers
+│   ├── B92/
+│   ├── TL321X/
+│   ├── TL721X/
+│   ├── common/
+│   ├── configs/
+│   ├── cpp_wrappers/
+│   ├── include/
 │   └── CMakeLists.txt
 │
-├── soc/                        # SoC layer (chip-specific features)
+├── soc/                        # SoC layer
 │   ├── TL321X/
-│   │   ├── drivers/            #   SoC-specific drivers
-│   │   ├── pinmux/             #   Pin multiplexing configuration (yaml)
-│   │   ├── properties/         #   SoC properties (yaml)
-│   │   └── registers/          #   Register definitions (yaml)
 │   ├── TL721X/
 │   ├── TLSR922X/
 │   └── TLSR952X/
 │
-├── boards/                     # Development board configurations
-│   ├── TL3218X_EVK/            # Pinmux configurations for each dev board
+├── boards/                     # Board configurations
+│   ├── TL3218X_EVK/
 │   ├── TL7218X_EVK/
 │   ├── TLSR9228A_EVK/
 │   ├── TLSR9528A_EVK/
 │   └── TLSR9528A_DONGLE/
 │
-├── common/                     # Common libraries
-│   ├── include/                #   Common headers (linked lists, bit operations, etc.)
+├── common/
+│   ├── include/
 │   └── src/
 │
-├── subsystem/                  # Functional subsystems
+├── subsystem/
 │   └── ble/
-│       └── controller/         #   BLE Controller
+│       └── controller/
 │
-├── modules/                    # Third-party modules
-│   └── tinyUSB/                #   TinyUSB integration
+├── modules/
+│   └── tinyUSB/
 │
-├── samples/                    # Example code
-│   ├── gpio_demo/              # GPIO example
-│   ├── uart_demo/              # UART example
-│   ├── pm_demo/                # Power management example
-│   ├── adc_demo/               # ADC example
-│   ├── dma_demo/               # DMA example
-│   ├── i2c_demo/               # I2C example
-│   ├── spi_demo/               # SPI example
-│   ├── adv_demo/               # BLE advertising example
-│   └── ...                     # More examples
+├── samples/
+│   ├── gpio_demo/
+│   ├── uart_demo/
+│   ├── pm_demo/
+│   ├── adc_demo/
+│   ├── dma_demo/
+│   ├── i2c_demo/
+│   ├── spi_demo/
+│   ├── adv_demo/
+│   └── ...
 │
-├── cmake/                      # CMake modules
-│   ├── modules/                #   Core CMake modules
-│   │   ├── compiler.cmake      #      Compiler configuration
-│   │   ├── kconfig.cmake       #      Kconfig integration
-│   │   ├── linker.cmake        #      Linker configuration
-│   │   ├── pinmux.cmake        #      Pin multiplexing
-│   │   └── ...
-│   └── TelinkConfig.cmake      #   Telink package configuration
+├── cmake/
+│   ├── modules/
+│   └── TelinkConfig.cmake
 │
-└── scripts/                    # Build scripts and tools
-    ├── west_commands/          #   West command extensions
-    ├── pinmux/                 #   Pinmux visual tool
-    ├── kconfig.py              #   Kconfig processing
-    ├── menuconfig.py           #   Interactive configuration
+└── scripts/
+    ├── west_commands/
+    ├── pinmux/
+    ├── kconfig.py
+    ├── menuconfig.py
     └── ...
 ```
+:::
 
 ## Key Directory Responsibilities
 

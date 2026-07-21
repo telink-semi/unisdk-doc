@@ -11,22 +11,43 @@ This document details the complete build process flow from configuration to firm
 
 ## Complete Build Flow
 
-```mermaid
+```{mermaid}
 graph TD
     A[Start Build] --> B{Environment Validation}
     B -->|Success| C[CMake Configuration]
     B -->|Failure| Z[Build Failed]
-    C --> D[Load CMake Modules]
-    D --> E[Generate chip.config]
-    E --> F[Generate capabilities.h]
-    F --> G[Generate build.config]
-    G --> H[Merge into .config]
-    H --> I[Generate autoconf.h]
-    I --> J[Generate pinmux.h]
-    J --> K[Source File Compilation]
-    K --> L[Linking]
-    L --> M[Generate Firmware .bin]
+
+    subgraph Modules["Module Loading"]
+        D[Load CMake Modules]
+    end
+
+    subgraph Config["Configuration Generation"]
+        E[Generate chip.config]
+        F[Generate capabilities.h]
+        G[Generate build.config]
+        H[Merge into .config]
+        I[Generate autoconf.h]
+        J[Generate pinmux.h]
+    end
+
+    subgraph Build["Compilation"]
+        K[Source File Compilation]
+        L[Linking]
+        M[Generate Firmware .bin]
+    end
+
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    J --> K
+    K --> L
+    L --> M
     M --> N[Build Complete]
+    Z --> N
 ```
 
 ## Getting Started Guide
@@ -304,13 +325,17 @@ When executing `west tl-build` (with `-k/--kconfig`), the flow is:
 
 ## Build Results
 
-```
+:::{dropdown} Build Results
+:summary: Click to expand/collapse
+
+```text
 build/
 ├── gpio_demo.bin         # Firmware binary (for flashing)
 ├── gpio_demo.elf         # ELF executable (for debugging)
 ├── gpio_demo.map         # Memory map file
 └── gpio_demo.lst         # Disassembly file
 ```
+:::
 
 ## Building Without West
 

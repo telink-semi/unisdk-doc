@@ -289,66 +289,47 @@ Indicates that hardware flow control (RTS/CTS) is enabled in the system. This op
 
 Each UART instance (i = 0, 1, 2...) supports the following hierarchical configuration:
 
-```text
-UART{i}_ENABLED
-│   Enables the specific UART module.
-│
-├── UART{i}_AUTO_CONFIG
-│   │   Enables automatic driver configuration using the values below.
-│   │
-│   ├── UART{i}_BAUDRATE
-│   │       Sets the communication speed in baud (Default: 115200).
-│   │
-│   ├── UART{i}_PARITY
-│   │   │   Configures the parity check mode for the UART frame.
-│   │   ├── TLK_UART_PARITY_NONE      (Default: No parity)
-│   │   ├── TLK_UART_PARITY_EVEN      (Even parity)
-│   │   └── TLK_UART_PARITY_ODD       (Odd parity)
-│   │
-│   ├── UART{i}_STOP_BIT
-│   │   │   Sets the number of stop bits in a frame.
-│   │   ├── TLK_UART_STOP_BIT_ONE           (Default: 1 bit)
-│   │   ├── TLK_UART_STOP_BIT_ONE_DOT_FIVE  (1.5 bits)
-│   │   └── TLK_UART_STOP_BIT_TWO           (2 bits)
-│   │
-│   ├── UART{i}_FLOW_CONTROL_TYPE
-│   │   │   Selects the hardware flow control mode.
-│   │   ├── TLK_UART_FLOW_NONE      (0) - Disabled
-│   │   ├── TLK_UART_FLOW_RTS       (1) - RTS only
-│   │   ├── TLK_UART_FLOW_CTS       (2) - CTS only
-│   │   └── TLK_UART_FLOW_RTS_CTS   (3) - Full RTS/CTS
-│   │
-│   └── UART{i}_FLOW_POLARITY
-│       │   Defines the active logic level for RTS/CTS signals.
-│       ├── TLK_UART_ACTIVE_LOW     (0) - Active Low (Default)
-│       └── TLK_UART_ACTIVE_HIGH    (1) - Active High
-│
-├── UART{i}_TX_MODE
-│   │   Sets the transmission mode.
-│   ├── TLK_UART_XFER_BLOCKING   Blocking mode, which will use the timeout
-│   ├── TLK_UART_XFER_IRQ        Interrupt mode, which will automatically replenish the TX FIFO on interrupts
-│   └── TLK_UART_XFER_DMA        DMA mode, which will automatically replenish the TX FIFO by DMA channel
-│
-├── UART{i}_RX_MODE
-│   │   Sets the reception mode.
-│   ├── TLK_UART_XFER_BLOCKING   Blocking mode, which will use the timeout
-│   ├── TLK_UART_XFER_IRQ        Interrupt mode, which will automatically read the RX FIFO on interrupts
-│   └── TLK_UART_XFER_DMA        DMA mode, which will automatically read the RX FIFO by DMA channel
-│
-├── UART{i}_PM_DEVICE
-│       Enables Power Management support for the device (saving and restoring data, before/after sleep).
-│
-└── UART{i}_PREVENT_SLEEP
-        Prevents system sleep mode while UART is actively receiving.
+```{mermaid}
+graph TD
+    UART["UART{i}_ENABLED<br/>Enables UART module"] --> AUTO["UART{i}_AUTO_CONFIG<br/>Auto configuration"]
+    UART --> TX["UART{i}_TX_MODE<br/>Transmission mode"]
+    UART --> RX["UART{i}_RX_MODE<br/>Reception mode"]
+    UART --> PM["UART{i}_PM_DEVICE<br/>Power management support"]
+    UART --> SLEEP["UART{i}_PREVENT_SLEEP<br/>Prevent sleep during RX"]
+    UART --> DEBUG["TLK_DEBUG_PRINT<br/>Debug output"]
 
-TLK_DEBUG_PRINT
-│   Enables debug output for UART communication.
-│
-├── TLK_DEBUG_PRINT_UART
-│       Selects which UART instance(s) will output debug messages.
-│
-└── TLK_DEBUG_PRINT_BUFFER_SIZE
-        Sets the buffer size for debug messages (Default: 256 bytes).
+    AUTO --> BAUD["UART{i}_BAUDRATE<br/>Default: 115200"]
+    AUTO --> PARITY["UART{i}_PARITY<br/>Parity mode"]
+    AUTO --> STOP["UART{i}_STOP_BIT<br/>Stop bits"]
+    AUTO --> FLOW["UART{i}_FLOW_CONTROL_TYPE<br/>Flow control"]
+    AUTO --> FPOL["UART{i}_FLOW_POLARITY<br/>Flow polarity"]
+
+    PARITY --> NONE["TLK_UART_PARITY_NONE"]
+    PARITY --> EVEN["TLK_UART_PARITY_EVEN"]
+    PARITY --> ODD["TLK_UART_PARITY_ODD"]
+
+    STOP --> SB1["TLK_UART_STOP_BIT_ONE"]
+    STOP --> SB15["TLK_UART_STOP_BIT_ONE_DOT_FIVE"]
+    STOP --> SB2["TLK_UART_STOP_BIT_TWO"]
+
+    FLOW --> FNONE["TLK_UART_FLOW_NONE"]
+    FLOW --> FRTS["TLK_UART_FLOW_RTS"]
+    FLOW --> FCTS["TLK_UART_FLOW_CTS"]
+    FLOW --> FRTSCTS["TLK_UART_FLOW_RTS_CTS"]
+
+    FPOL --> ALOW["TLK_UART_ACTIVE_LOW (Default)"]
+    FPOL --> AHIGH["TLK_UART_ACTIVE_HIGH"]
+
+    TX --> TXB["TLK_UART_XFER_BLOCKING"]
+    TX --> TXI["TLK_UART_XFER_IRQ"]
+    TX --> TXD["TLK_UART_XFER_DMA"]
+
+    RX --> RXB["TLK_UART_XFER_BLOCKING"]
+    RX --> RXI["TLK_UART_XFER_IRQ"]
+    RX --> RXD["TLK_UART_XFER_DMA"]
+
+    DEBUG --> DBG_UART["TLK_DEBUG_PRINT_UART<br/>Which UART instances"]
+    DEBUG --> DBG_BUF["TLK_DEBUG_PRINT_BUFFER_SIZE<br/>Default: 256 bytes"]
 ```
 
 ### View in the menuconfig

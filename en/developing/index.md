@@ -52,7 +52,7 @@ west tl-build . --board TLSR9528A_EVK
 
 ## Development Workflow Overview
 
-```mermaid
+```{mermaid}
 graph LR
     A[Create Project] --> B[Configure Kconfig]
     B --> C[Write Code]

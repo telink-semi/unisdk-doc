@@ -16,47 +16,38 @@ The UniSDK build system adopts a modular, extensible architecture design that in
 
 Build system-related files are mainly distributed in the following directories:
 
-```
+:::{dropdown} SDK Directory Structure (Build System)
+:summary: Click to expand/collapse
+
+```text
 unisdk/
 ├── CMakeLists.txt         # Main CMake configuration file
 ├── Makefile               # Make command interface
 ├── west.yml               # West workspace configuration
-├── Kconfig.chip           # Chip-related Kconfig configuration entry
-├── Kconfig.build          # Build-related Kconfig configuration entry
-├── cmake/                 # CMake modules and configurations
-│   ├── modules/           # Core CMake modules
-│   └── TelinkConfig.cmake # Telink CMake configuration
-├── scripts/               # Build-related scripts
-│   ├── ci/                # CI/CD related scripts
-│   │   ├── ci_build.sh    # CI build script for single project
-│   │   └── ci_build_all.sh # CI build script for all projects
-│   ├── pinmux/            # Pinmux configuration tools
-│   │   ├── __init__.py    # Pinmux module initialization
-│   │   ├── __main__.py    # Pinmux CLI entry point
-│   │   ├── app.py         # Pinmux application core
-│   │   ├── data/          # Pinmux data files
-│   │   ├── styles.tcss    # Pinmux UI styles
-│   │   └── ui/            # Pinmux UI components
-│   ├── pre_build/         # Pre-build check scripts
-│   │   ├── build_folder_check.py # Build folder validation
-│   │   ├── config_check.py # Configuration validation
-│   │   ├── pinmux_check.py # Pinmux configuration validation
-│   │   └── pre_build_check.py # Main pre-build check script
-│   ├── west_commands/     # West command implementations
-│   ├── kconfig.py         # Kconfig processing script
-│   ├── menuconfig.py      # Interactive configuration interface
-│   ├── preprocess_kconfig.py # Kconfig preprocessing script
-│   ├── set_telink_base.cmd # Set TELINK_BASE (Windows CMD)
-│   ├── set_telink_base.ps1 # Set TELINK_BASE (Windows PowerShell)
-│   ├── set_telink_base.sh # Set TELINK_BASE (Linux/Mac)
-│   ├── tlk_check_fw.py  # Firmware validation script
-│   ├── west-commands.yml  # West command configuration
-│   └── windows_setup.ps1  # Windows environment setup script
-├── core/                  # Core code
-├── soc/                   # Chip support code
-├── boards/                # Development board support
-└── docs/                  # Documentation
+├── Kconfig.chip           # Chip Kconfig entry
+├── Kconfig.build          # Build Kconfig entry
+├── cmake/                 # CMake modules
+│   ├── modules/
+│   └── TelinkConfig.cmake
+├── scripts/               # Build scripts
+│   ├── ci/
+│   ├── pinmux/
+│   ├── pre_build/
+│   ├── west_commands/
+│   ├── kconfig.py
+│   ├── menuconfig.py
+│   ├── preprocess_kconfig.py
+│   ├── set_telink_base.sh
+│   ├── tlk_check_fw.py
+│   ├── west-commands.yml
+│   └── windows_setup.ps1
+├── core/
+├── soc/
+├── boards/
+└── docs/
 ```
+:::
+
 ### 1.3 Build System
 
 The UniSDK build system is a comprehensive framework that combines multiple tools to provide a seamless development experience. The following diagram illustrates the overall architecture and toolchain relationships:
@@ -735,73 +726,81 @@ target_link_libraries(${TARGET_NAME} PRIVATE
 
 The configuration system sets up a structured build directory to organize build outputs:
 
-```
+:::{dropdown} Build Directory Structure
+:summary: Click to expand/collapse
+
+```text
 build/
 ├── .config              # Current configuration
 ├── ${APP_NAME}          # Final executable output
-├── autoconf.h           # Generated C header file
-├── build.config         # Build configuration file
+├── autoconf.h           # Generated C header
+├── build.config         # Build configuration
 ├── build.config.old     # Previous build configuration
 ├── build.ninja          # Ninja build file
-├── capabilities.h       # Generated SoC capabilities header
+├── capabilities.h       # SoC capabilities header
 ├── chip.config          # Chip-specific configuration
 ├── chip.config.old      # Previous chip configuration
-├── CMakeCache.txt       # CMake cache file
+├── CMakeCache.txt       # CMake cache
 ├── CMakeFiles/          # CMake build files
 ├── cmake_install.cmake  # CMake install script
 ├── flash_boot.ld        # Linker script
-├── Kconfig/             # Kconfig source files for specific chip configuration
-│   ├── Kconfig.dma      # DMA configuration options
-│   ├── Kconfig.gpio     # GPIO configuration options
-│   ├── Kconfig.pm       # Power management options
-│   ├── Kconfig.rf       # RF configuration options
-│   └── ...              # Other Kconfig files
-├── merge_config_files.cmake # Script to merge configuration files
+├── Kconfig/             # Chip-specific Kconfig files
+│   ├── Kconfig.dma
+│   ├── Kconfig.gpio
+│   ├── Kconfig.pm
+│   ├── Kconfig.rf
+│   └── ...
+├── merge_config_files.cmake
 ├── pinmux.h             # Generated pinmux configuration
-└── telink/              # Telink SDK build files
-    ├── api/             # API module build files
-    ├── common/          # Common module build files
-    ├── core/            # Core module build files
-    ├── samples/         # Samples build files
-    └── soc/             # SoC module build files
+└── telink/              # SDK build files
+    ├── api/
+    ├── common/
+    ├── core/
+    ├── samples/
+    └── soc/
 ```
+:::
 
 #### 2.3.6 Complete Configuration Flow Diagram
 
 The following diagram illustrates the complete configuration flow from start to finish:
 
-```mermaid
+```{mermaid}
 graph TD
     A[CMakeLists.txt] --> B[find_package Telink]
     B --> C[TelinkConfig.cmake]
     C --> D[telink_default.cmake]
 
-    D --> E1[python]
-    D --> E2[extensions]
-    D --> E5[compiler]
-    D --> F3[...]
-    D --> F4[kconfig]
-    D --> F5[pinmux]
-    D --> F6[linker]
+    subgraph Modules["Module Loading"]
+        D --> E1[python]
+        D --> E2[extensions]
+        D --> E5[compiler]
+        D --> F4[kconfig]
+        D --> F5[pinmux]
+        D --> F6[linker]
+    end
 
     F4 --> G[kconfig.cmake]
 
-    G --> H1[Generate chip.config]
-    H1 --> H2[Generate capabilities.h]
-    H2 --> I1[Generate build.config]
-    I1 --> I2[Merge into .config]
+    subgraph ConfigGen["Config Generation"]
+        G --> H1[Generate chip.config]
+        H1 --> H2[Generate capabilities.h]
+        H2 --> I1[Generate build.config]
+        I1 --> I2[Merge into .config]
 
+        F5 --> K1[Generate .pinmux]
+        K1 --> K2[Generate pinmux.h]
+    end
 
-    F5 --> K1[Generate .pinmux]
-    K1 --> K2[Generate pinmux.h]
-
-    I2 --> J1[Parse .config to autoconf.h]
+    I2 --> J1[Parse .config → autoconf.h]
     I2 --> K1
 
-    J1 --> L[Main Target Build]
-    K2 --> L
+    subgraph Build["Build"]
+        J1 --> L[Main Target Build]
+        K2 --> L
+    end
 
-    L --> M[Configuration complete Build can proceed]
+    L --> M[Configuration Complete<br/>Build Can Proceed]
 ```
 
 #### 2.3.7 Configuration System Integration
@@ -820,7 +819,7 @@ The `python.cmake` module ensures that a compatible Python interpreter is availa
 
 #### 2.3.8 CMake Config Target Execution Flow
 
-```mermaid
+```{mermaid}
 graph TD
     A[cmake --build build --target config] --> C[generate_chip_config]
     C --> D[chip.config generated]
@@ -832,16 +831,18 @@ graph TD
     G --> H[build.config generated]
 
     H --> I[update_dotconfig]
-    I --> J[.config merged from chip.config and build.config]
+    I --> J[.config merged from chip.config & build.config]
 
-    J --> K[generate_pinmux]
-    K --> L[generate_dotpinmux]
-    L --> M[Generate .pinmux from Kconfig using scripts.pinmux]
+    subgraph Pinmux["Pinmux Generation"]
+        J --> K[generate_pinmux]
+        K --> L[generate_dotpinmux]
+        L --> M[Generate .pinmux<br/>scripts.pinmux]
 
     M --> N[generate_pinmux_h]
-    N --> O[Generate pinmux.h from .pinmux using pinmux_gen.py]
+    N --> O[Generate pinmux.h<br/>pinmux_gen.py]
+    end
 
-    O --> P[Configuration process complete]
+    O --> P[Configuration Process Complete]
 ```
 
 The `config` target executes a sequential flow of configuration tasks:
@@ -893,23 +894,34 @@ The Kconfig system adopts a hierarchical structure, organizing configuration fil
 
 The Kconfig files form a hierarchical structure where higher-level Kconfig files include lower-level ones using the `rsource` directive. The organization is as follows:
 
-```
-# Root Kconfig files
-├── Kconfig.chip          # Chip-related configuration entry point
-└── Kconfig.build         # Build-related configuration entry point
+```{mermaid}
+graph TD
+    subgraph Root["Root Kconfig Files"]
+        KC[Kconfig.chip<br/>Chip configuration entry]
+        KB[Kconfig.build<br/>Build configuration entry]
+    end
 
-# Files included by Kconfig.chip
-Kconfig.chip
-├── rsource "core/Kconfig"       # Core configuration
-├── rsource "soc/Kconfig"        # Chip series configuration
-└── rsource "boards/Kconfig"     # Development board configuration
+    subgraph Chip["Included by Kconfig.chip"]
+        CORE[core/Kconfig<br/>Core configuration]
+        SOC[soc/Kconfig<br/>Chip series config]
+        BOARDS[boards/Kconfig<br/>Board config]
+    end
 
-# Files included by Kconfig.build
-Kconfig.build
-├── rsource "api/Kconfig"                # API configuration
-├── rsource "core/configs/Kconfig"       # Core feature configuration
-├── rsource "samples/Kconfig"            # Sample project configuration
-└── rsource "system/Kconfig"             # System configuration
+    subgraph Build["Included by Kconfig.build"]
+        API[api/Kconfig<br/>API configuration]
+        CFG[core/configs/Kconfig<br/>Core feature config]
+        SAMPLES[samples/Kconfig<br/>Sample config]
+        SYS[system/Kconfig<br/>System config]
+    end
+
+    KC --> CORE
+    KC --> SOC
+    KC --> BOARDS
+
+    KB --> API
+    KB --> CFG
+    KB --> SAMPLES
+    KB --> SYS
 ```
 
 #### 3.1.3 Application Layer Kconfig Integration
@@ -1743,7 +1755,7 @@ pinmux:
 
 The following diagram illustrates the complete build flow from start to finish:
 
-```mermaid
+```{mermaid}
 graph TD
     A[Start Build] --> B{Environment Validation}
     B -->|Success| C[CMake Configuration]
@@ -1758,12 +1770,15 @@ graph TD
     E -->|Failure| Z
     F -->|Failure| Z
 
-    G --> H[Generate chip.config]
-    H --> I[Generate capabilities.h]
-    I --> J[Generate build.config]
-    J --> K[Merge into .config]
-    K --> L[Generate autoconf.h]
-    L --> M[Generate pinmux.h]
+    subgraph ConfigGen["Configuration Generation"]
+        G --> H[Generate chip.config]
+        H --> I[Generate capabilities.h]
+        I --> J[Generate build.config]
+        J --> K[Merge into .config]
+        K --> L[Generate autoconf.h]
+        L --> M[Generate pinmux.h]
+    end
+
     M -->|Success| N[Source Compilation]
 
     N -->|Success| O[Linking]
@@ -1772,14 +1787,15 @@ graph TD
     O -->|Success| P[Firmware Generation]
     O -->|Failure| Z
 
-    P --> Q[Generate .bin file]
-    P --> R[Generate .elf file]
-    P --> S[Generate .map file]
-    Q --> T[Build Complete]
-    R --> T
-    S --> T
-    T --> U[End Build]
-    Z --> U
+    subgraph Output["Build Outputs"]
+        P --> Q[Generate .bin]
+        P --> R[Generate .elf]
+        P --> S[Generate .map]
+    end
+
+    Q & R & S --> T[Build Complete]
+    Z --> U[End Build]
+    T --> U
 ```
 
 ### 6.2 Configuration File Generation Flow

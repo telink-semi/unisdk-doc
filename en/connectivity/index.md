@@ -11,7 +11,10 @@ UniSDK integrates BLE (Bluetooth Low Energy) Controller (Link Layer), providing 
 
 ## Code Location
 
-```
+:::{dropdown} BLE Controller Directory
+:summary: Click to expand/collapse
+
+```text
 subsystem/ble/controller/
 ├── acl/                    # ACL Link Layer
 ├── CMakeLists.txt
@@ -19,6 +22,7 @@ subsystem/ble/controller/
 ├── README.md               # Coding standards
 └── README_zh.md
 ```
+:::
 
 ## Coding Standards
 

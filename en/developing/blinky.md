@@ -52,12 +52,16 @@ make build APP=samples/gpio_demo BOARD=TLSR9528A_EVK
 
 After a successful build, the output files are located in the `build/` directory:
 
-```
+:::{dropdown} Build Output Files
+:summary: Click to expand/collapse
+
+```text
 build/
 ├── gpio_demo.bin     # Firmware binary file
 ├── gpio_demo.elf     # ELF executable (contains debug information)
 └── gpio_demo.map     # Memory map file
 ```
+:::
 
 ## Step 3: Flashing
 

@@ -89,7 +89,7 @@ json_to_list(JSON_ARRAY_STRING OUTPUT_LIST)
 
 ## Configuration Flow
 
-```mermaid
+```{mermaid}
 graph TD
     A[CMakeLists.txt] --> B[find_package Telink]
     B --> C[TelinkConfig.cmake]
@@ -112,7 +112,10 @@ graph TD
 
 ## Build Directory Structure
 
-```
+:::{dropdown} Build Directory Structure
+:summary: Click to expand/collapse
+
+```text
 build/
 ├── .config              # Merged final configuration
 ├── chip.config          # Chip configuration
@@ -125,3 +128,4 @@ build/
 ├── CMakeCache.txt       # CMake cache
 └── Kconfig/             # Chip-specific Kconfig fragments
 ```
+:::

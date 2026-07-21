@@ -40,26 +40,34 @@ A comprehensive power management framework supporting multiple low-power modes, 
 
 ## Architecture Overview
 
-```
-┌──────────────────────────────────────────────┐
-│               Application Layer              │
-│        (User applications in samples/)       │
-├──────────────────────────────────────────────┤
-│                  API Layer                   │
-│   (api/ unified API interface, HW abstraction)│
-├──────────────────────────────────────────────┤
-│              Subsystem Layer                 │
-│    (subsystem/ BLE and other subsystems)     │
-├────────────┬────────────┬────────────────────┤
-│  Core B92  │ Core TL321X│  Core TL721X ...   │
-│  (core/)   │            │                    │
-├────────────┴────────────┴────────────────────┤
-│              SoC Layer (soc/)                │
-│  Chip-specific drivers, Pinmux, register defs│
-├──────────────────────────────────────────────┤
-│                Hardware                      │
-│       (Telink full chip family)              │
-└──────────────────────────────────────────────┘
+```{mermaid}
+graph BT
+    subgraph Hardware["Hardware Layer"]
+        H["Telink Chip Family"]
+    end
+    subgraph SoC["SoC Layer (soc/)"]
+        S["Chip-specific Drivers<br/>Pinmux / Register Defs"]
+    end
+    subgraph Core["Core Layer (core/)"]
+        C92["B92"]
+        C321["TL321X"]
+        C721["TL721X"]
+    end
+    subgraph Subsystem["Subsystem Layer (subsystem/)"]
+        SS["BLE & Other Protocols"]
+    end
+    subgraph API["API Layer (api/)"]
+        A["Unified API Interface<br/>HW Abstraction"]
+    end
+    subgraph App["Application Layer (samples/)"]
+        APP["User Applications"]
+    end
+
+    H --> S
+    S --> C92 & C321 & C721
+    C92 & C321 & C721 --> SS
+    SS --> A
+    A --> APP
 ```
 
 ## Supported Chip Families
