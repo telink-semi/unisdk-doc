@@ -9,7 +9,7 @@
 #
 # Version naming convention:
 #   v0.2.0          -> SDK v0.2.0 release
-#   v0.2.0-doc.1    -> Doc-only fix after SDK v0.2.0
+#   Doc-only fixes  -> merge to main, no tag needed (latest auto-updates)
 #
 # Output structure on gh-pages:
 #   /index.html       <- Landing page (language + version selector)
