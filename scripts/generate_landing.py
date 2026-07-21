@@ -66,6 +66,11 @@ def generate_landing_page(build_dir, output_dir):
         <p>Complete documentation including getting started guides, API references, peripheral drivers, and more.</p>
         <a class="btn" href="./en/latest/">Browse English Docs</a>
       </div>
+      <div class="card">
+        <h2>中文</h2>
+        <p>完整的 UniSDK 文档，涵盖入门指南、API 参考、外设驱动、开发环境搭建等内容。</p>
+        <a class="btn" href="./zh/latest/">浏览中文文档</a>
+      </div>
     </div>
     <div class="version-section">
       <h3>All Versions</h3>
@@ -88,7 +93,8 @@ def generate_landing_page(build_dir, output_dir):
         vl.innerHTML = '';
         var seen = {};
         d.versions.forEach(function(v) {
-          if (seen[v.name]) return; seen[v.name] = true;
+          var key = v.lang + '-' + v.name;
+          if (seen[key]) return; seen[key] = true;
           var a = document.createElement('a'); a.href = v.url; a.textContent = v.label; vl.appendChild(a);
         });
       }).catch(function() { vl.innerHTML = '<span style="color:#999;">Unable to load versions.</span>'; });
