@@ -128,7 +128,7 @@ def generate_versions_json(build_dir, output_dir):
 
             versions.append({
                 'name': version_name,
-                'url': f'/{lang}/{version_name}/',
+                'url': f'{lang}/{version_name}/',
                 'label': label,
                 'lang': lang,
             })

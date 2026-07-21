@@ -35,10 +35,8 @@
     if (!select) return;
 
     // Determine the base URL for fetching versions.json
-    // Walk up from the current page URL to find the root
-    var pathParts = window.location.pathname.split('/').filter(Boolean);
-    // The root is at the first level (e.g., /en/main/ -> root is /)
-    var versionsUrl = '/versions.json';
+    // Use the script's own src to find the site root (handles subpath deployment, e.g. /unisdk-doc/)
+    var versionsUrl = getBaseUrl() + '/versions.json';
 
     fetch(versionsUrl)
       .then(function(response) {
@@ -70,7 +68,7 @@
 
           currentLangVersions.forEach(function(v) {
             var opt = document.createElement('option');
-            opt.value = v.url;
+            opt.value = getBaseUrl() + '/' + v.url;
             opt.textContent = v.label;
             if (v.name === CURRENT_VERSION) {
               opt.selected = true;
