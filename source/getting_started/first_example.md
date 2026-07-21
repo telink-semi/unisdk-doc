@@ -63,8 +63,8 @@ For command-line users, refer to the [CLI-based Blinky Guide](../developing/blin
 
 1. Connect the PC to the Telink programmer using a USB cable.
 2. Connect the programmer to the target board using jumper wires:
-   - **Power**: VCC ↔ VCC, GND ↔ GND
-   - **Data**: SWM (Programmer) ↔ SWS (Target board)
+   - **Power**: VCC <-> VCC, GND <-> GND
+   - **Data**: SWM (Programmer) <-> SWS (Target board)
 
 ### Flash via BDT (CLI)
 
