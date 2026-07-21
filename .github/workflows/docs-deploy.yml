@@ -75,6 +75,9 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq doxygen texlive-xetex texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk
 
+      - name: Check toctree coverage (all .md/.rst files must be listed in index.rst)
+        run: bash scripts/check_doc_coverage.sh
+
       - name: Generate API reference (Doxygen XML + RST files)
         run: |
           python scripts/gen_api_rst.py

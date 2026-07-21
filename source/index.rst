@@ -37,114 +37,157 @@ UniSDK — Telink Unified Software Development Kit
 .. toctree::
    :maxdepth: 2
    :caption: Getting Started
-   :glob:
 
    introduction/index
-   getting_started/*
+   getting_started/index
+   getting_started/environment_setup
+   getting_started/get_sdk
+   getting_started/first_example
+   getting_started/troubleshooting
 
 .. toctree::
    :maxdepth: 2
    :caption: Development Guide
-   :glob:
 
    developing/index
-   developing/*
+   developing/setup_linux
+   developing/setup_macos
+   developing/setup_windows
+   developing/blinky
+   developing/directory_structure
+   developing/project_management
+   developing/core_architecture
+   developing/init_hooks
+   developing/public_api
+   developing/debugging
+   developing/ide_integration
+   developing/clangd
 
 .. toctree::
    :maxdepth: 2
    :caption: Chips & Boards
-   :glob:
 
    chips_boards/index
-   chips_boards/chips/*
-   chips_boards/boards/*
+   chips_boards/chips/TL321X
+   chips_boards/chips/TL721X
+   chips_boards/chips/TLSR922X
+   chips_boards/chips/TLSR952X
+   chips_boards/boards/TL3218X_EVK
+   chips_boards/boards/TL7218X_EVK
+   chips_boards/boards/TLSR9228A_EVK
+   chips_boards/boards/TLSR9528A_EVK
+   chips_boards/boards/TLSR9528A_DONGLE
 
 .. toctree::
    :maxdepth: 2
    :caption: Peripherals & Drivers
-   :glob:
 
    peripherals/index
-   peripherals/*
+   peripherals/gpio
+   peripherals/uart
+   peripherals/pm
+   peripherals/analog
+   peripherals/plic
+   peripherals/i2c
+   peripherals/spi
+   peripherals/adc
+   peripherals/dma
+   peripherals/wdt
+   peripherals/timer
+   peripherals/usb
+   peripherals/pmp
 
 .. toctree::
    :maxdepth: 2
    :caption: Connectivity
-   :glob:
 
    connectivity/index
-   connectivity/*
+   connectivity/ble/controller
 
 .. toctree::
    :maxdepth: 2
    :caption: System Services
-   :glob:
 
-   system_services/*
+   system_services/index
 
 .. toctree::
    :maxdepth: 2
    :caption: Build & Configuration
-   :glob:
 
    build_config/index
-   build_config/*
+   build_config/cmake_system
+   build_config/kconfig_system
+   build_config/west_commands
+   build_config/make_support
+   build_config/build_flow
+   build_config/build_system_architecture
+   build_config/extensions
+   build_config/reference
 
 .. toctree::
    :maxdepth: 2
    :caption: Development Tools
-   :glob:
 
    tools/index
-   tools/*
+   tools/bdt
+   tools/pinmux
+   tools/menuconfig
 
 .. toctree::
    :maxdepth: 2
    :caption: Security
-   :glob:
 
-   security/*
+   security/index
 
 .. toctree::
    :maxdepth: 2
    :caption: Production Guide
-   :glob:
 
-   productization/*
+   productization/index
 
 .. toctree::
    :maxdepth: 2
    :caption: Samples & Demos
-   :glob:
 
    samples/index
-   samples/*
+   samples/gpio
+   samples/uart
+   samples/pm
+   samples/pmp
+   samples/umode
+   samples/adc
+   samples/dma
+   samples/i2c
+   samples/spi
+   samples/ble
+   samples/irq_nesting
+   samples/stimer
+   samples/wdt
+   samples/usb_cdc
 
 .. toctree::
    :maxdepth: 2
    :caption: API Reference
-   :glob:
 
-   api_reference/*
+   api_reference/index
 
 .. toctree::
    :maxdepth: 2
    :caption: Reference
-   :glob:
 
-   kconfig_reference/*
-   yaml_reference/*
+   kconfig_reference/index
+   yaml_reference/index
 
 .. toctree::
    :maxdepth: 2
    :caption: Community
-   :glob:
 
-   releases/*
-   contribute/*
-   support/*
-   about/*
+   releases/index
+   releases/0.2.0/Unified_SDK_Release_Note
+   contribute/index
+   support/index
    terminology
+   about/index
 
 .. only:: builder_html
 
