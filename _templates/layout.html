@@ -12,14 +12,66 @@
     &#128196; Download PDF
   </a>
 </div>
-{% endblock %}
+<script>
+var currentVersion = "{{ current_version }}";
+var currentLang = "{{ current_language }}";
+</script>
+<script>
+(function() {
+  'use strict';
+  function injectSwitchers() {
+    var navbarEnd = document.querySelector(".navbar-header-items__end");
+    if (!navbarEnd) return;
 
-{% block footer %}
-{% include "telink-footer.html" %}
-{% endblock %}
+    var langHtml = [
+      '<div class="navbar-item">',
+      '  <div class="language-selector">',
+      '    <select id="language-select" onchange="switchLanguage(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="en"' + (currentLang === "en" ? " selected" : "") + '>English</option>',
+      '      <option value="zh"' + (currentLang === "zh" ? " selected" : "") + '>中文</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", langHtml);
 
-{% block scripts %}
-{{ super() }}
+    var verHtml = [
+      '<div class="navbar-item">',
+      '  <div class="version-selector">',
+      '    <select id="version-select" onchange="switchVersion(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="">Loading...</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", verHtml);
+
+    var script = document.createElement("script");
+    script.src = "{{ pathto('_static/version_switcher.js', 1) }}";
+    document.body.appendChild(script);
+  }
+
+  function switchLanguage(lang) {
+    var currentPath = window.location.pathname;
+    var newPath = currentPath.replace(/\/[a-z]{2}\//, "/" + lang + "/");
+    if (newPath !== currentPath) {
+      window.location.href = newPath;
+    }
+  }
+
+  window.switchVersion = function(url) {
+    if (url) {
+      window.location.href = url;
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", injectSwitchers);
+  } else {
+    injectSwitchers();
+  }
+})();
+</script>
 {% if current_version and current_version != "main" %}
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -33,4 +85,8 @@
   });
 </script>
 {% endif %}
+{% endblock %}
+
+{% block footer %}
+{% include "telink-footer.html" %}
 {% endblock %}
