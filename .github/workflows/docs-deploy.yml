@@ -9,7 +9,7 @@
 #
 # Version naming convention:
 #   v0.2.0          -> SDK v0.2.0 release
-#   v0.2.0-doc.1    -> Doc-only fix after SDK v0.2.0
+#   Doc-only fixes  -> merge to main, no tag needed (latest auto-updates)
 #
 # Output structure on gh-pages:
 #   /index.html       <- Landing page (language + version selector)
@@ -33,12 +33,14 @@ permissions:
 env:
   SDK_REPO: telink-semi/unisdk
   SDK_PATH: _sdk_src
-  LANGUAGES: "en"
+  LANGUAGES: "en zh"
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    concurrency: ci-${{ github.ref }}
+    concurrency:
+      group: deploy-gh-pages
+      cancel-in-progress: true
 
     steps:
       - name: Checkout unisdk-doc (full history for versioning)
@@ -73,17 +75,48 @@ jobs:
         run: |
           pip install -r requirements.txt
           sudo apt-get update -qq
-          sudo apt-get install -y -qq doxygen
+          sudo apt-get install -y -qq doxygen texlive-xetex texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-chinese fonts-noto-cjk-extra
+
+      - name: Determine version label from git ref
+        run: |
+          case "${{ github.ref_type }}" in
+            branch)
+              case "${{ github.ref_name }}" in
+                main)
+                  echo "SOURCE_REF=develop" >> $GITHUB_ENV
+                  echo "VERSION_LABEL=latest" >> $GITHUB_ENV
+                  ;;
+                develop)
+                  echo "SOURCE_REF=develop" >> $GITHUB_ENV
+                  echo "VERSION_LABEL=dev" >> $GITHUB_ENV
+                  ;;
+              esac
+              ;;
+            tag)
+              TAG="${{ github.ref_name }}"
+              echo "SOURCE_REF=$TAG" >> $GITHUB_ENV
+              echo "VERSION_LABEL=${TAG#v}" >> $GITHUB_ENV
+              ;;
+          esac
+
+      - name: Checkout source branch for checks and API generation
+        run: git checkout "$SOURCE_REF"
+
+      - name: Check toctree coverage (all .md/.rst files must be listed in index.rst)
+        run: bash scripts/check_doc_coverage.sh
 
       - name: Generate API reference (Doxygen XML + RST files)
         run: |
           python scripts/gen_api_rst.py
           mkdir -p _api_rst_cache
-          for subdir in en/api_reference/*/; do
+          for subdir in source/api_reference/*/; do
             if [ -d "$subdir" ]; then
               cp -r "$subdir" _api_rst_cache/
             fi
           done
+
+      - name: Compile .po translations to .mo
+        run: sphinx-intl build -l zh
 
       - name: Build all versions
         run: |
@@ -101,8 +134,8 @@ jobs:
             if [ -d "_api_rst_cache" ]; then
               for subdir in _api_rst_cache/*/; do
                 if [ -d "$subdir" ]; then
-                  mkdir -p "en/api_reference/$(basename "$subdir")"
-                  cp -r "$subdir"/* "en/api_reference/$(basename "$subdir")/"
+                  mkdir -p "source/api_reference/$(basename "$subdir")"
+                  cp -r "$subdir"/* "source/api_reference/$(basename "$subdir")/"
                 fi
               done
             fi
@@ -112,38 +145,17 @@ jobs:
             UNISDK_DOC_LANG="$lang" \
             UNISDK_DOC_VERSION="$version_label" \
             UNISDK_DOC_RELEASE="$version_label" \
-            sphinx-build -b html -D master_doc=index -c . "$lang" "$final_dir"
+            sphinx-build -b html -D master_doc=index -c . source "$final_dir"
           }
-
-          # ---- Determine source ref and version label ----
-          case "${{ github.ref_type }}" in
-            branch)
-              case "${{ github.ref_name }}" in
-                main)
-                  SOURCE_REF="develop"
-                  VERSION_LABEL="latest"
-                  ;;
-                develop)
-                  SOURCE_REF="develop"
-                  VERSION_LABEL="dev"
-                  ;;
-              esac
-              ;;
-            tag)
-              TAG="${{ github.ref_name }}"
-              SOURCE_REF="$TAG"
-              VERSION_LABEL="${TAG#v}"
-              ;;
-          esac
 
           echo "SOURCE_REF=$SOURCE_REF VERSION_LABEL=$VERSION_LABEL"
 
-          # ---- Build the source branch/ref ----
+          # Build the source branch/ref
           for lang in $LANGUAGES; do
             build_version "$lang" "$SOURCE_REF" "$VERSION_LABEL"
           done
 
-          # ---- Build all v* tags ----
+          # Build all v* tags
           for tag in $(git tag -l 'v*' --sort=-v:refname); do
             label="${tag#v}"
             [ "$label" = "$VERSION_LABEL" ] && continue
@@ -152,14 +164,32 @@ jobs:
             done
           done
 
+          # Switch back to SOURCE_REF for PDF and landing page generation
+          git checkout "$SOURCE_REF"
+
           python scripts/generate_landing.py "$OUTPUT_DIR" "$OUTPUT_DIR"
           cp -r _static "$OUTPUT_DIR/_static"
 
           echo "=== All versions built ==="
           find "$OUTPUT_DIR" -maxdepth 3 -type d | head -30
 
+      - name: Build PDF documentation
+        run: |
+          # Build English PDF
+          UNISDK_DOC_LANG=en sphinx-build -b latex -c . -D latex_engine=xelatex source/ _build/latex/en
+          make -C _build/latex/en all-pdf 2>/dev/null || latexmk -xelatex -cd _build/latex/en/*.tex
+
+          # Build Chinese PDF
+          UNISDK_DOC_LANG=zh sphinx-build -b latex -c . -D latex_engine=xelatex source/ _build/latex/zh
+          make -C _build/latex/zh all-pdf 2>/dev/null || latexmk -xelatex -cd _build/latex/zh/*.tex
+
+          # Copy PDFs to output
+          mkdir -p _build/versions/en/_downloads _build/versions/zh/_downloads
+          cp _build/latex/en/*.pdf _build/versions/en/_downloads/unisdk-doc.pdf 2>/dev/null || true
+          cp _build/latex/zh/*.pdf _build/versions/zh/_downloads/unisdk-doc.pdf 2>/dev/null || true
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build/versions
