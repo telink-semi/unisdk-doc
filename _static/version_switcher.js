@@ -52,17 +52,15 @@
           return;
         }
 
-        // Group versions by language
-        var enVersions = data.versions.filter(function(v) { return v.lang === 'en'; });
-
-        currentLangVersions = enVersions;
+        // Group versions by current language
+        var currentLangVersions = data.versions.filter(function(v) { return v.lang === CURRENT_LANG; });
         if (currentLangVersions.length === 0) {
           currentLangVersions = data.versions;
         }
 
         // Add optgroup for current language
         if (currentLangVersions.length > 0) {
-          var label = 'English';
+          var label = CURRENT_LANG === 'zh' ? '中文' : 'English';
           var group = document.createElement('optgroup');
           group.label = label;
 

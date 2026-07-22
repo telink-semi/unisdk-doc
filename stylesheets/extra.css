@@ -107,7 +107,6 @@ a:hover {
 .version-selector {
   display: inline-block;
   position: relative;
-  margin-left: 1rem;
 }
 
 .version-selector select {
@@ -125,7 +124,6 @@ a:hover {
 .language-selector {
   display: inline-block;
   position: relative;
-  margin-left: 0.5rem;
 }
 
 .language-selector select {

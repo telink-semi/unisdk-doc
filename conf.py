@@ -162,6 +162,7 @@ latex_elements = {
 html_theme = 'sphinx_book_theme'
 html_static_path = ['_static', 'stylesheets']
 html_css_files = ['extra.css']
+templates_path = ['_templates']
 
 html_theme_options = {
     'repository_url': 'https://github.com/telink-semi/unisdk-doc',
