@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/index.md:6
+msgid "Build & Configuration"
+msgstr "构建与配置"
+
+#: ../../source/build_config/index.md:8
+msgid ""
+"UniSDK adopts a modular and extensible build system architecture, "
+"integrating tools such as CMake, Ninja, West, Kconfig, and Make to form a"
+" complete compilation and build workflow."
+msgstr "UniSDK 采用模块化、可扩展的构建系统架构，集成了 CMake、Ninja、West、Kconfig 和 Make 等工具，形成了完整的编译构建流程。"
+
+#: ../../source/build_config/index.md:10
+msgid "Core Components"
+msgstr "核心组件"
+
+#: ../../source/build_config/index.md
+msgid "Component"
+msgstr "组件"
+
+#: ../../source/build_config/index.md
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/build_config/index.md
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/build_config/index.md
+msgid "**CMake**"
+msgstr "**CMake**"
+
+#: ../../source/build_config/index.md
+msgid "Build system core"
+msgstr "构建系统核心"
+
+#: ../../source/build_config/index.md
+msgid "Project configuration, dependency management, build rule generation"
+msgstr "项目配置、依赖管理、构建规则生成"
+
+#: ../../source/build_config/index.md
+msgid "**Ninja**"
+msgstr "**Ninja**"
+
+#: ../../source/build_config/index.md
+msgid "Build execution engine"
+msgstr "构建执行引擎"
+
+#: ../../source/build_config/index.md
+msgid "High-performance parallel compilation, CMake's default backend"
+msgstr "高性能并行编译，CMake 的默认后端"
+
+#: ../../source/build_config/index.md
+msgid "**West**"
+msgstr "**West**"
+
+#: ../../source/build_config/index.md
+msgid "Project management tool"
+msgstr "项目管理工具"
+
+#: ../../source/build_config/index.md
+msgid "Unified command-line entry point, simplified build workflow"
+msgstr "统一命令行入口，简化构建工作流"
+
+#: ../../source/build_config/index.md
+msgid "**Kconfig**"
+msgstr "**Kconfig**"
+
+#: ../../source/build_config/index.md
+msgid "Configuration management system"
+msgstr "配置管理系统"
+
+#: ../../source/build_config/index.md
+msgid "Hierarchical management of compile-time configuration options"
+msgstr "分层管理编译时配置选项"
+
+#: ../../source/build_config/index.md
+msgid "**Make**"
+msgstr "**Make**"
+
+#: ../../source/build_config/index.md
+msgid "Traditional interface"
+msgstr "传统接口"
+
+#: ../../source/build_config/index.md
+msgid "Frontend interface compatible with traditional Make conventions"
+msgstr "兼容传统 Make 习惯的前端接口"
+
+#: ../../source/build_config/index.md:20
+msgid "Three Build Methods"
+msgstr "三种构建方式"
+
+#: ../../source/build_config/index.md:22
+msgid "UniSDK supports three build entry points, adapting to different scenarios:"
+msgstr "UniSDK 支持三种构建入口，适应不同场景："
+
+#: ../../source/build_config/index.md:36
+msgid "Documentation Navigation"
+msgstr "文档导航"
+
+#: ../../source/build_config/index.md
+msgid "Section"
+msgstr "章节"
+
+#: ../../source/build_config/index.md
+msgid "Status"
+msgstr "状态"
+
+#: ../../source/build_config/index.md
+msgid "[CMake Build System](cmake_system.md)"
+msgstr "[CMake 构建系统](cmake_system.md)"
+
+#: ../../source/build_config/index.md
+msgid "CMake core flow, module loading, configuration phase details"
+msgstr "CMake 核心流程、模块加载、配置阶段详解"
+
+#: ../../source/build_config/index.md
+msgid "STABLE"
+msgstr "稳定"
+
+#: ../../source/build_config/index.md
+msgid "[Kconfig Configuration System](kconfig_system.md)"
+msgstr "[Kconfig 配置系统](kconfig_system.md)"
+
+#: ../../source/build_config/index.md
+msgid "Configuration hierarchy, processing flow, key scripts"
+msgstr "配置层次结构、处理流程、关键脚本"
+
+#: ../../source/build_config/index.md
+msgid "[West Commands](west_commands.md)"
+msgstr "[West 命令](west_commands.md)"
+
+#: ../../source/build_config/index.md
+msgid "tl-build / tl-config / tl-bdt and other command details"
+msgstr "tl-build / tl-config / tl-bdt 等命令详解"
+
+#: ../../source/build_config/index.md
+msgid "[Make Support](make_support.md)"
+msgstr "[Make 支持](make_support.md)"
+
+#: ../../source/build_config/index.md
+msgid "Makefile frontend interface, targets and variable descriptions"
+msgstr "Makefile 前端接口、目标和变量说明"
+
+#: ../../source/build_config/index.md
+msgid "[Build Flow](build_flow.md)"
+msgstr "[构建流程](build_flow.md)"
+
+#: ../../source/build_config/index.md
+msgid "Environment validation, config generation, compile & link full flow"
+msgstr "环境验证、配置生成、编译链接完整流程"
+
+#: ../../source/build_config/index.md
+msgid "[Extensions & Customization](extensions.md)"
+msgstr "[扩展与定制](extensions.md)"
+
+#: ../../source/build_config/index.md
+msgid "Add new modules, extend West commands, Kconfig customization"
+msgstr "添加新模块、扩展 West 命令、Kconfig 定制"
+
+#: ../../source/build_config/index.md
+msgid "[File & Script Reference](reference.md)"
+msgstr "[文件与脚本参考](reference.md)"
+
+#: ../../source/build_config/index.md
+msgid "Config files, CMake modules, script inventory"
+msgstr "配置文件、CMake 模块、脚本清单"
+
+#: ../../source/build_config/index.md:48
+msgid "Build System Architecture"
+msgstr "构建系统架构"

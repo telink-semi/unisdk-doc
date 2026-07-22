@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/extensions.md:6
+msgid "Extensions & Customization"
+msgstr "扩展与定制"
+
+#: ../../source/build_config/extensions.md:8
+msgid "Adding New CMake Modules"
+msgstr "添加新的 CMake 模块"
+
+#: ../../source/build_config/extensions.md:10
+msgid "Create a `.cmake` file in `cmake/modules/`"
+msgstr "在 `cmake/modules/` 中创建一个 `.cmake` 文件"
+
+#: ../../source/build_config/extensions.md:11
+msgid "Add it to the module loading list in `telink_default.cmake`"
+msgstr "将其添加到 `telink_default.cmake` 的模块加载列表中"
+
+#: ../../source/build_config/extensions.md:18
+msgid "Extending West Commands"
+msgstr "扩展 West 命令"
+
+#: ../../source/build_config/extensions.md:20
+msgid "Create a command implementation file in `scripts/west_commands/`"
+msgstr "在 `scripts/west_commands/` 中创建命令实现文件"
+
+#: ../../source/build_config/extensions.md:21
+msgid "Register the command in `scripts/west-commands.yml`"
+msgstr "在 `scripts/west-commands.yml` 中注册命令"
+
+#: ../../source/build_config/extensions.md:33
+msgid "Implement the command class:"
+msgstr "实现命令类："
+
+#: ../../source/build_config/extensions.md:50
+msgid "Adding Kconfig Configuration"
+msgstr "添加 Kconfig 配置"
+
+#: ../../source/build_config/extensions.md:52
+msgid "Create or modify a Kconfig file in the appropriate location"
+msgstr "在适当位置创建或修改 Kconfig 文件"
+
+#: ../../source/build_config/extensions.md:53
+msgid "Integrate into the configuration tree using the `rsource` directive"
+msgstr "使用 `rsource` 指令将其集成到配置树中"
+
+#: ../../source/build_config/extensions.md:68
+msgid "Then include it in the parent Kconfig:"
+msgstr "然后在父 Kconfig 中包含它："
+
+#: ../../source/build_config/extensions.md:75
+msgid "Adding New Applications"
+msgstr "添加新的应用"
+
+#: ../../source/build_config/extensions.md:77
+msgid "Create an application directory at any location"
+msgstr "在任何位置创建应用目录"
+
+#: ../../source/build_config/extensions.md:78
+msgid "Add `CMakeLists.txt` and source files"
+msgstr "添加 `CMakeLists.txt` 和源文件"
+
+#: ../../source/build_config/extensions.md:79
+msgid "Build:"
+msgstr "构建："
+
+#: ../../source/build_config/extensions.md:85
+msgid "CMakeLists.txt Template"
+msgstr "CMakeLists.txt 模板"
+
+#: ../../source/build_config/extensions.md:101
+msgid "West Command Behavior Notes"
+msgstr "West 命令行为说明"
+
+#: ../../source/build_config/extensions.md:103
+msgid "West command availability depends on the current working directory:"
+msgstr "West 命令的可用性取决于当前工作目录："
+
+#: ../../source/build_config/extensions.md:105
+msgid ""
+"**Inside a West workspace**: Loads UniSDK extension commands (`tl-build`,"
+" `tl-boards`, `tl-socs`, etc.)"
+msgstr "**在 West 工作空间内**：加载 UniSDK 扩展命令（`tl-build`、`tl-boards`、`tl-socs` 等）"
+
+#: ../../source/build_config/extensions.md:106
+msgid "**Outside a workspace**: Only shows West built-in commands"
+msgstr "**在工作空间外**：仅显示 West 内置命令"
+
+#: ../../source/build_config/extensions.md:108
+msgid "West discovers extensions through the following mechanism:"
+msgstr "West 通过以下机制发现扩展："
+
+#: ../../source/build_config/extensions.md:109
+msgid "Searches upward from the current directory for `.west/config`"
+msgstr "从当前目录向上搜索 `.west/config`"
+
+#: ../../source/build_config/extensions.md:110
+msgid "Loads `west-commands` declarations from `west.yml`"
+msgstr "从 `west.yml` 中加载 `west-commands` 声明"

@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/peripherals/i2c.md:6
+msgid "I2C Driver"
+msgstr "I2C 驱动"
+
+#: ../../source/peripherals/i2c.md:8
+msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
+msgstr "!!! note \"文档状态：草稿 — 内容正在最终确定中\""
+
+#: ../../source/peripherals/i2c.md:10
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/peripherals/i2c.md:12
+msgid ""
+"The I2C driver supports master/slave mode communication, providing "
+"blocking and DMA transfer modes."
+msgstr ""
+"I2C 驱动支持主/从模式通信，提供阻塞和 DMA 传输模式。"
+
+#: ../../source/peripherals/i2c.md:14
+msgid "API Reference"
+msgstr "API 参考"
+
+#: ../../source/peripherals/i2c.md:25
+msgid "Samples"
+msgstr "示例"
+
+#: ../../source/peripherals/i2c.md:27
+msgid "See [I2C Samples](../samples/i2c.md)."
+msgstr "请参见 [I2C 示例](../samples/i2c.md)。"

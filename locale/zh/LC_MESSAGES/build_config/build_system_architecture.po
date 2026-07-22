@@ -1,0 +1,4719 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/build_system_architecture.md:1
+msgid "UniSDK Build System Architecture Documentation"
+msgstr "UniSDK 构建系统架构文档"
+
+#: ../../source/build_config/build_system_architecture.md:3
+msgid "1. Overall Architecture Overview"
+msgstr "1. 总体架构概述"
+
+#: ../../source/build_config/build_system_architecture.md:5
+msgid ""
+"The UniSDK build system adopts a modular, extensible architecture design "
+"that integrates multiple tools such as Make, CMake, Ninja, West, and "
+"Kconfig to form a complete compilation and build workflow. The system "
+"supports multiple compilation methods, including West commands, direct "
+"CMake calls, and Make commands, providing developers with flexible build "
+"options."
+msgstr "UniSDK 构建系统采用模块化、可扩展的架构设计，集成了 Make、CMake、Ninja、West 和 Kconfig 等多种工具，形成了完整的编译构建工作流。系统支持多种编译方式，包括 West 命令、直接 CMake 调用和 Make 命令，为开发者提供灵活的构建选项。"
+
+#: ../../source/build_config/build_system_architecture.md:7
+msgid "1.1 Core Components"
+msgstr "1.1 核心组件"
+
+#: ../../source/build_config/build_system_architecture.md:9
+msgid ""
+"**CMake**: The main build system responsible for project configuration, "
+"dependency management, and build process definition"
+msgstr "**CMake**：主构建系统，负责项目配置、依赖管理和构建流程定义"
+
+#: ../../source/build_config/build_system_architecture.md:10
+msgid ""
+"**Ninja**: A high-performance build tool that executes actual compilation"
+" tasks as CMake's backend"
+msgstr "**Ninja**：高性能构建工具，作为 CMake 的后端执行实际的编译任务"
+
+#: ../../source/build_config/build_system_architecture.md:11
+msgid ""
+"**West**: Zephyr project management tool extended in UniSDK to manage "
+"project and simplify build workflows"
+msgstr "**West**：Zephyr 项目管理工具，在 UniSDK 中扩展用于管理项目和简化构建工作流"
+
+#: ../../source/build_config/build_system_architecture.md:12
+msgid ""
+"**Kconfig**: Configuration management system for handling compile-time "
+"configuration options"
+msgstr "**Kconfig**：配置管理系统，用于处理编译时配置选项"
+
+#: ../../source/build_config/build_system_architecture.md:13
+msgid ""
+"**Make**: Provides a traditional make command interface as a frontend to "
+"CMake"
+msgstr "**Make**：提供传统的 make 命令接口，作为 CMake 的前端"
+
+#: ../../source/build_config/build_system_architecture.md:15
+msgid "1.2 Directory Structure"
+msgstr "1.2 目录结构"
+
+#: ../../source/build_config/build_system_architecture.md:17
+msgid ""
+"Build system-related files are mainly distributed in the following "
+"directories:"
+msgstr "构建系统相关文件主要分布在以下目录："
+
+#: ../../source/build_config/build_system_architecture.md
+msgid "SDK Directory Structure (Build System)"
+msgstr "SDK 目录结构（构建系统）"
+
+#: ../../source/build_config/build_system_architecture.md:51
+msgid "1.3 Build System"
+msgstr "1.3 构建系统"
+
+#: ../../source/build_config/build_system_architecture.md:53
+msgid ""
+"The UniSDK build system is a comprehensive framework that combines "
+"multiple tools to provide a seamless development experience. The "
+"following diagram illustrates the overall architecture and toolchain "
+"relationships:"
+msgstr "UniSDK 构建系统是一个综合框架，结合了多种工具以提供无缝的开发体验。下图说明了整体架构和工具链关系："
+
+#: ../../source/build_config/build_system_architecture.md:55
+msgid "![Build System Architecture](pics/image.png)"
+msgstr "![构建系统架构](pics/image.png)"
+
+#: ../../source/build_config/build_system_architecture.md:55
+msgid "Build System Architecture"
+msgstr "构建系统架构"
+
+#: ../../source/build_config/build_system_architecture.md:57
+msgid "The build system is designed around the following key components:"
+msgstr "构建系统围绕以下关键组件设计："
+
+#: ../../source/build_config/build_system_architecture.md:59
+msgid ""
+"**West**: The command-line interface for developers, providing a unified "
+"entry point for various build operations"
+msgstr "**West**：面向开发者的命令行接口，为各种构建操作提供统一入口"
+
+#: ../../source/build_config/build_system_architecture.md:60
+msgid "**Make**: Handles high-level build orchestration and pre-build checks"
+msgstr "**Make**：处理高级构建编排和预构建检查"
+
+#: ../../source/build_config/build_system_architecture.md:61
+msgid ""
+"**CMake**: Core build system responsible for project configuration, "
+"dependency management, and build rule generation"
+msgstr "**CMake**：核心构建系统，负责项目配置、依赖管理和构建规则生成"
+
+#: ../../source/build_config/build_system_architecture.md:62
+msgid ""
+"**Kconfig**: Configuration management system for handling compile-time "
+"options"
+msgstr "**Kconfig**：配置管理系统，用于处理编译时选项"
+
+#: ../../source/build_config/build_system_architecture.md:63
+msgid ""
+"**YAML**: Configuration format used for various system configurations, "
+"including pin multiplexing"
+msgstr "**YAML**：用于各种系统配置（包括引脚复用）的配置格式"
+
+#: ../../source/build_config/build_system_architecture.md:65
+msgid ""
+"This architecture enables a flexible and modular build process, allowing "
+"developers to easily configure, build, and manage their projects while "
+"maintaining consistency across different target platforms."
+msgstr "该架构实现了灵活且模块化的构建过程，使开发者能够轻松配置、构建和管理项目，同时在不同目标平台之间保持一致性。"
+
+#: ../../source/build_config/build_system_architecture.md:68
+msgid "2. CMake Build System"
+msgstr "2. CMake 构建系统"
+
+#: ../../source/build_config/build_system_architecture.md:70
+msgid "2.1 CMake Core Process"
+msgstr "2.1 CMake 核心流程"
+
+#: ../../source/build_config/build_system_architecture.md:72
+msgid ""
+"The CMake build system is the core of the UniSDK compilation process, "
+"responsible for project configuration, dependency resolution, and build "
+"rule generation."
+msgstr "CMake 构建系统是 UniSDK 编译过程的核心，负责项目配置、依赖解析和构建规则生成。"
+
+#: ../../source/build_config/build_system_architecture.md:74
+msgid "2.1.1 Initialization Phase"
+msgstr "2.1.1 初始化阶段"
+
+#: ../../source/build_config/build_system_architecture.md:76
+msgid "**Entry Point**: The build system supports **two entry point modes**:"
+msgstr "**入口**：构建系统支持**两种入口模式**："
+
+#: ../../source/build_config/build_system_architecture.md:77
+msgid ""
+"**Root Directory Entry**: Uses the root directory's `CMakeLists.txt` as "
+"the entry point to build the entire SDK"
+msgstr "**根目录入口**：使用根目录的 `CMakeLists.txt` 作为入口来构建整个 SDK"
+
+#: ../../source/build_config/build_system_architecture.md:78
+msgid ""
+"**Application Entry**: Uses an application-level `CMakeLists.txt` "
+"(typically located in the `samples/` directory) as the entry point to "
+"build a specific application"
+msgstr "**应用入口**：使用应用级 `CMakeLists.txt`（通常位于 `samples/` 目录中）作为入口来构建特定应用"
+
+#: ../../source/build_config/build_system_architecture.md:79
+msgid "**Version Requirements**: Sets the minimum CMake version (3.20.0)"
+msgstr "**版本要求**：设置最低 CMake 版本（3.20.0）"
+
+#: ../../source/build_config/build_system_architecture.md:80
+#, python-brace-format
+msgid ""
+"**SDK Integration**: Locates and loads the Telink package configuration "
+"through `find_package(Telink REQUIRED HINTS $ENV{TELINK_BASE})`"
+msgstr "**SDK 集成**：通过 `find_package(Telink REQUIRED HINTS $ENV{TELINK_BASE})` 定位并加载 Telink 包配置"
+
+#: ../../source/build_config/build_system_architecture.md:81
+msgid ""
+"**Project Setup**: Configures project-specific settings, including "
+"project name, supported languages, and target creation"
+msgstr "**项目设置**：配置项目特定设置，包括项目名称、支持的语言和目标创建"
+
+#: ../../source/build_config/build_system_architecture.md:83
+msgid ""
+"**Key Include Guards:** The build system uses two important include "
+"guards to manage inclusion and prevent redundant processing:"
+msgstr "**关键包含保护**：构建系统使用两个重要的包含保护来管理包含并防止冗余处理："
+
+#: ../../source/build_config/build_system_architecture.md:86
+msgid "**TELINK_ROOT_INCLUDED**:"
+msgstr "**TELINK_ROOT_INCLUDED**："
+
+#: ../../source/build_config/build_system_architecture.md:87
+msgid "Set to `TRUE` in the root directory's `CMakeLists.txt`"
+msgstr "在根目录的 `CMakeLists.txt` 中设置为 `TRUE`"
+
+#: ../../source/build_config/build_system_architecture.md:88
+msgid ""
+"Used by `telink_default.cmake` to determine if the root directory has "
+"already been included"
+msgstr "由 `telink_default.cmake` 用于判断根目录是否已经被包含"
+
+#: ../../source/build_config/build_system_architecture.md:89
+msgid ""
+"If not defined, `telink_default.cmake` will include the root directory's "
+"`CMakeLists.txt`"
+msgstr "如果未定义，`telink_default.cmake` 将包含根目录的 `CMakeLists.txt`"
+
+#: ../../source/build_config/build_system_architecture.md:90
+msgid ""
+"It will be removed in future versions when the application-level "
+"CMakeLists.txt is supported as the entry point."
+msgstr "在未来的版本中，当应用级 CMakeLists.txt 作为入口得到支持时，此机制将被移除。"
+
+#: ../../source/build_config/build_system_architecture.md:92
+msgid "**TELINK_PACKAGE_INCLUDED**:"
+msgstr "**TELINK_PACKAGE_INCLUDED**："
+
+#: ../../source/build_config/build_system_architecture.md:93
+msgid "Set to `TRUE` in `TelinkConfig.cmake` when the Telink package is loaded"
+msgstr "在加载 Telink 包时，在 `TelinkConfig.cmake` 中设置为 `TRUE`"
+
+#: ../../source/build_config/build_system_architecture.md:94
+msgid "Prevents multiple loading of the Telink package configuration"
+msgstr "防止多次加载 Telink 包配置"
+
+#: ../../source/build_config/build_system_architecture.md:95
+msgid ""
+"Checked in the root directory's `CMakeLists.txt` to avoid redundant "
+"package loading"
+msgstr "在根目录的 `CMakeLists.txt` 中进行检查，以避免冗余的包加载"
+
+#: ../../source/build_config/build_system_architecture.md:97
+msgid "**Entry Point Modes Comparison:**"
+msgstr "**入口模式对比：**"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Mode"
+msgstr "模式"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Entry Point"
+msgstr "入口"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Usage"
+msgstr "用法"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Output"
+msgstr "输出"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Root Directory Entry**"
+msgstr "**根目录入口**"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "`CMakeLists.txt` (root)"
+msgstr "`CMakeLists.txt`（根目录）"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "`cmake -B build -G Ninja .`"
+msgstr "`cmake -B build -G Ninja .`"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Builds the entire SDK as a library"
+msgstr "将整个 SDK 构建为库"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Application Entry**"
+msgstr "**应用入口**"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "`CMakeLists.txt` (samples/<AppName>)"
+msgstr "`CMakeLists.txt`（samples/<AppName>）"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "`cmake -B build -G Ninja samples/gpio_demo`"
+msgstr "`cmake -B build -G Ninja samples/gpio_demo`"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Builds a specific application executable"
+msgstr "构建特定应用的可执行文件"
+
+#: ../../source/build_config/build_system_architecture.md:104
+msgid ""
+"**Application-Level Entry Point Implementation:** All applications in the"
+" `samples/` directory must provide their own `CMakeLists.txt` file, which"
+" serves as the entry point for the build process when building a specific"
+" application. This file should:"
+msgstr "**应用级入口实现：** `samples/` 目录中的所有应用都必须提供自己的 `CMakeLists.txt` 文件，该文件在构建特定应用时作为构建过程的入口。此文件应："
+
+#: ../../source/build_config/build_system_architecture.md:107
+msgid "Set the minimum CMake version"
+msgstr "设置最低 CMake 版本"
+
+#: ../../source/build_config/build_system_architecture.md:108
+msgid "Define the project name and default language (C)"
+msgstr "定义项目名称和默认语言（C）"
+
+#: ../../source/build_config/build_system_architecture.md:109
+msgid "Add C sources using wildcards"
+msgstr "使用通配符添加 C 源文件"
+
+#: ../../source/build_config/build_system_architecture.md:110
+msgid "Create an executable target"
+msgstr "创建可执行目标"
+
+#: ../../source/build_config/build_system_architecture.md:111
+msgid "Conditionally add C++ support if CONFIG_TLK_ALLOW_CPP_WRAPPERS is enabled"
+msgstr "如果启用了 CONFIG_TLK_ALLOW_CPP_WRAPPERS，则条件性地添加 C++ 支持"
+
+#: ../../source/build_config/build_system_architecture.md:113
+msgid ""
+"The application-level CMakeLists.txt is automatically processed by the "
+"build system (via Make or West commands), which handles the integration "
+"with the core SDK components."
+msgstr "应用级 CMakeLists.txt 由构建系统（通过 Make 或 West 命令）自动处理，该系统负责处理与核心 SDK 组件的集成。"
+
+#: ../../source/build_config/build_system_architecture.md:115
+msgid "2.1.2 Module Loading Phase"
+msgstr "2.1.2 模块加载阶段"
+
+#: ../../source/build_config/build_system_architecture.md:117
+msgid ""
+"`telink_default.cmake` loads all necessary CMake modules in a specific "
+"order:"
+msgstr "`telink_default.cmake` 按特定顺序加载所有必要的 CMake 模块："
+
+#: ../../source/build_config/build_system_architecture.md:129
+msgid ""
+"Each module is responsible for the configuration and implementation of "
+"specific functionality, together forming a complete build system."
+msgstr "每个模块负责特定功能的配置和实现，共同构成完整的构建系统。"
+
+#: ../../source/build_config/build_system_architecture.md:131
+msgid "2.2 Core CMake Modules"
+msgstr "2.2 核心 CMake 模块"
+
+#: ../../source/build_config/build_system_architecture.md:133
+msgid "2.2.1 python.cmake"
+msgstr "2.2.1 python.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:135
+#: ../../source/build_config/build_system_architecture.md:311
+msgid "This module is from the Zephyr project."
+msgstr "此模块来自 Zephyr 项目。"
+
+#: ../../source/build_config/build_system_architecture.md:137
+msgid ""
+"The `python.cmake` module is responsible for configuring and validating "
+"the Python environment required by the UniSDK build system. As the first "
+"module loaded in the build process, it ensures that all Python-dependent "
+"components have a consistent and compatible Python environment."
+msgstr "`python.cmake` 模块负责配置和验证 UniSDK 构建系统所需的 Python 环境。作为构建过程中加载的第一个模块，它确保所有依赖 Python 的组件都拥有一致且兼容的 Python 环境。"
+
+#: ../../source/build_config/build_system_architecture.md:139
+msgid "**Key Features and Functionality:**"
+msgstr "**主要特性和功能：**"
+
+#: ../../source/build_config/build_system_architecture.md:141
+msgid "**UTF-8 Encoding Configuration**"
+msgstr "**UTF-8 编码配置**"
+
+#: ../../source/build_config/build_system_architecture.md:142
+msgid "Sets `PYTHONIOENCODING` to \"utf-8\" on Windows systems"
+msgstr "在 Windows 系统上将 `PYTHONIOENCODING` 设置为 \"utf-8\""
+
+#: ../../source/build_config/build_system_architecture.md:143
+msgid ""
+"Ensures consistent output encoding when Python scripts are executed by "
+"CMake"
+msgstr "确保 Python 脚本由 CMake 执行时输出编码一致"
+
+#: ../../source/build_config/build_system_architecture.md:144
+msgid ""
+"Prevents encoding issues that could occur when Python isn't connected to "
+"a terminal"
+msgstr "防止 Python 未连接到终端时可能出现的编码问题"
+
+#: ../../source/build_config/build_system_architecture.md:146
+msgid "**Python Version Management**"
+msgstr "**Python 版本管理**"
+
+#: ../../source/build_config/build_system_architecture.md:147
+msgid "Defines a minimum required Python version (3.10)"
+msgstr "定义所需的最低 Python 版本（3.10）"
+
+#: ../../source/build_config/build_system_architecture.md:148
+msgid "Implements a robust Python executable discovery mechanism"
+msgstr "实现了健壮的 Python 可执行文件发现机制"
+
+#: ../../source/build_config/build_system_architecture.md:149
+msgid "Prioritizes using the same Python interpreter as West when available"
+msgstr "优先使用与 West 相同的 Python 解释器（如果可用）"
+
+#: ../../source/build_config/build_system_architecture.md:151
+msgid "**Python Discovery Process**"
+msgstr "**Python 发现流程**"
+
+#: ../../source/build_config/build_system_architecture.md:152
+msgid "Checks for an existing `Python3_EXECUTABLE` variable first"
+msgstr "首先检查现有的 `Python3_EXECUTABLE` 变量"
+
+#: ../../source/build_config/build_system_architecture.md:153
+msgid "Falls back to using `WEST_PYTHON` if available"
+msgstr "回退到使用 `WEST_PYTHON`（如果可用）"
+
+#: ../../source/build_config/build_system_architecture.md:154
+msgid ""
+"Searches for \"python\" and \"python3\" executables in the system path "
+"and virtual environments"
+msgstr "在系统路径和虚拟环境中搜索 \"python\" 和 \"python3\" 可执行文件"
+
+#: ../../source/build_config/build_system_architecture.md:155
+msgid "Verifies discovered Python versions meet the minimum requirements"
+msgstr "验证发现的 Python 版本满足最低要求"
+
+#: ../../source/build_config/build_system_architecture.md:156
+msgid "Rejects Python 2.x installations explicitly"
+msgstr "明确拒绝 Python 2.x 安装"
+
+#: ../../source/build_config/build_system_architecture.md:158
+msgid "**Integration with CMake**"
+msgstr "**与 CMake 的集成**"
+
+#: ../../source/build_config/build_system_architecture.md:159
+msgid "Uses `find_package(Python3)` to finalize Python configuration"
+msgstr "使用 `find_package(Python3)` 完成 Python 配置"
+
+#: ../../source/build_config/build_system_architecture.md:160
+msgid ""
+"Sets the legacy `PYTHON_EXECUTABLE` variable for compatibility with "
+"scripts expecting this variable"
+msgstr "设置旧版 `PYTHON_EXECUTABLE` 变量，以兼容期望此变量的脚本"
+
+#: ../../source/build_config/build_system_architecture.md:161
+msgid "Uses `include_guard(GLOBAL)` to prevent multiple inclusions"
+msgstr "使用 `include_guard(GLOBAL)` 防止多次包含"
+
+#: ../../source/build_config/build_system_architecture.md:163
+msgid ""
+"This module ensures that all Python scripts used throughout the build "
+"process (such as Kconfig processing, pinmux generation, and build "
+"utilities) have access to a compatible Python interpreter, providing a "
+"consistent build environment across different platforms."
+msgstr "此模块确保整个构建过程中使用的所有 Python 脚本（如 Kconfig 处理、pinmux 生成和构建工具）都能访问兼容的 Python 解释器，在不同平台上提供一致的构建环境。"
+
+#: ../../source/build_config/build_system_architecture.md:165
+msgid "2.2.2 compiler.cmake"
+msgstr "2.2.2 compiler.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:167
+msgid ""
+"The `compiler.cmake` module is one of the core modules of the UniSDK "
+"build system, responsible for configuring the compiler toolchain, "
+"compiler options, and compilation flags. This module provides a complete "
+"RISC-V compiler configuration and management mechanism."
+msgstr "`compiler.cmake` 模块是 UniSDK 构建系统的核心模块之一，负责配置编译器工具链、编译选项和编译标志。此模块提供了完整的 RISC-V 编译器配置和管理机制。"
+
+#: ../../source/build_config/build_system_architecture.md:169
+msgid "**Key features include:**"
+msgstr "**主要特性包括：**"
+
+#: ../../source/build_config/build_system_architecture.md:171
+msgid "**Compiler Environment Detection and Configuration**"
+msgstr "**编译器环境检测和配置**"
+
+#: ../../source/build_config/build_system_architecture.md:172
+msgid ""
+"Automatically detects the TELINK_TOOLCHAIN_PATH environment variable "
+"setting"
+msgstr "自动检测 TELINK_TOOLCHAIN_PATH 环境变量设置"
+
+#: ../../source/build_config/build_system_architecture.md:173
+msgid "Supports cross-platform path handling"
+msgstr "支持跨平台路径处理"
+
+#: ../../source/build_config/build_system_architecture.md:174
+msgid "Verifies the existence and validity of the RISC-V GCC compiler"
+msgstr "验证 RISC-V GCC 编译器的存在和有效性"
+
+#: ../../source/build_config/build_system_architecture.md:175
+msgid ""
+"Provides clear error messages and configuration guidance when the "
+"compiler is not found"
+msgstr "在未找到编译器时提供清晰的错误信息和配置指导"
+
+#: ../../source/build_config/build_system_architecture.md:177
+msgid "**Toolchain Component Setup**"
+msgstr "**工具链组件设置**"
+
+#: ../../source/build_config/build_system_architecture.md:178
+msgid "Configures primary compilation tools: C/C++ compiler, assembler"
+msgstr "配置主要编译工具：C/C++ 编译器、汇编器"
+
+#: ../../source/build_config/build_system_architecture.md:179
+msgid "Sets up auxiliary tools: objdump, objcopy, etc."
+msgstr "设置辅助工具：objdump、objcopy 等"
+
+#: ../../source/build_config/build_system_architecture.md:180
+msgid "Uniformly configures RISC-V target architecture and processor type"
+msgstr "统一配置 RISC-V 目标架构和处理器类型"
+
+#: ../../source/build_config/build_system_architecture.md:181
+msgid "Sets the system name to Generic (for bare-metal development)"
+msgstr "将系统名称设置为 Generic（用于裸机开发）"
+
+#: ../../source/build_config/build_system_architecture.md:183
+msgid "**Compiler Options Application Function**"
+msgstr "**编译选项应用函数**"
+
+#: ../../source/build_config/build_system_architecture.md:184
+msgid ""
+"Provides the `telink_apply_compiler_options()` function to apply "
+"compilation options to targets"
+msgstr "提供 `telink_apply_compiler_options()` 函数，将编译选项应用到目标"
+
+#: ../../source/build_config/build_system_architecture.md:185
+msgid ""
+"Automatically applies preprocessor macro definitions (autoconf.h, "
+"capabilities.h, pinmux.h)"
+msgstr "自动应用预处理器宏定义（autoconf.h、capabilities.h、pinmux.h）"
+
+#: ../../source/build_config/build_system_architecture.md:186
+msgid ""
+"Supports dynamically loading compilation options from JSON configuration "
+"files"
+msgstr "支持从 JSON 配置文件动态加载编译选项"
+
+#: ../../source/build_config/build_system_architecture.md:187
+msgid ""
+"Applies specific compilation flags based on different languages (ASM, C, "
+"C++)"
+msgstr "根据不同的语言（ASM、C、C++）应用特定的编译标志"
+
+#: ../../source/build_config/build_system_architecture.md:189
+msgid ""
+"This module ensures compilation consistency across different platforms "
+"for the entire project through a unified compiler configuration "
+"mechanism, while providing a flexible option configuration method to "
+"support project customization requirements."
+msgstr "此模块通过统一的编译器配置机制确保整个项目在不同平台上的编译一致性，同时提供灵活的选项配置方法以支持项目定制需求。"
+
+#: ../../source/build_config/build_system_architecture.md:191
+msgid "2.2.3 linker.cmake"
+msgstr "2.2.3 linker.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:193
+msgid ""
+"The `linker.cmake` module is responsible for configuring the linking "
+"process in the UniSDK build system. It handles linker scripts, link "
+"options, and post-build processing commands. The following are its key "
+"functionalities:"
+msgstr "`linker.cmake` 模块负责配置 UniSDK 构建系统中的链接过程。它处理链接脚本、链接选项和构建后处理命令。以下是其主要功能："
+
+#: ../../source/build_config/build_system_architecture.md:195
+msgid "2.2.3.1 Basic Linker Configuration"
+msgstr "2.2.3.1 基本链接器配置"
+
+#: ../../source/build_config/build_system_architecture.md:196
+msgid "Sets CMAKE_C_LINK_EXECUTABLE command template for RISC-V cross-compilation"
+msgstr "为 RISC-V 交叉编译设置 CMAKE_C_LINK_EXECUTABLE 命令模板"
+
+#: ../../source/build_config/build_system_architecture.md:197
+msgid "Configures verbose makefile output for better build visibility"
+msgstr "配置详细的 makefile 输出以获得更好的构建可见性"
+
+#: ../../source/build_config/build_system_architecture.md:198
+msgid "Disables RPATH to ensure no runtime path dependencies are embedded"
+msgstr "禁用 RPATH 以确保不嵌入运行时路径依赖"
+
+#: ../../source/build_config/build_system_architecture.md:199
+msgid "Removes default library suffix to match embedded system requirements"
+msgstr "移除默认库后缀以匹配嵌入式系统需求"
+
+#: ../../source/build_config/build_system_architecture.md:201
+msgid "2.2.3.2 Linker Options Management"
+msgstr "2.2.3.2 链接器选项管理"
+
+#: ../../source/build_config/build_system_architecture.md:202
+msgid "Reads linker options from the `build_settings.json` configuration file"
+msgstr "从 `build_settings.json` 配置文件中读取链接器选项"
+
+#: ../../source/build_config/build_system_architecture.md:203
+msgid "Converts JSON-defined linker options into CMake-compatible list format"
+msgstr "将 JSON 定义的链接器选项转换为 CMake 兼容的列表格式"
+
+#: ../../source/build_config/build_system_architecture.md:204
+msgid "Adds essential linker flags"
+msgstr "添加必要的链接器标志"
+
+#: ../../source/build_config/build_system_architecture.md:206
+msgid ""
+"The `build_settings.json` file is a central configuration file used by "
+"the UniSDK build system to store various build-related settings. It "
+"follows a JSON format and contains platform-specific configuration "
+"options, including:"
+msgstr "`build_settings.json` 文件是 UniSDK 构建系统使用的中心配置文件，用于存储各种构建相关设置。它采用 JSON 格式，包含特定于平台的配置选项，包括："
+
+#: ../../source/build_config/build_system_architecture.md:221
+msgid ""
+"This file provides a flexible way to configure build settings across "
+"different platforms and projects, allowing for easy customization without"
+" modifying CMake scripts directly."
+msgstr "此文件提供了一种灵活的方式来配置不同平台和项目的构建设置，允许轻松定制而无需直接修改 CMake 脚本。"
+
+#: ../../source/build_config/build_system_architecture.md:223
+msgid "2.2.3.3 Linker Script Preprocessing"
+msgstr "2.2.3.3 链接脚本预处理"
+
+#: ../../source/build_config/build_system_architecture.md:224
+msgid "Implements preprocessing of linker scripts using the C compiler"
+msgstr "使用 C 编译器实现链接脚本的预处理"
+
+#: ../../source/build_config/build_system_architecture.md:225
+msgid ""
+"Supports conditional compilation in linker scripts using capabilities.h "
+"and autoconf.h macros"
+msgstr "支持在链接脚本中使用 capabilities.h 和 autoconf.h 宏进行条件编译"
+
+#: ../../source/build_config/build_system_architecture.md:226
+msgid ""
+"Creates a custom target `preprocess_linker` that ensures the linker "
+"script is always up-to-date"
+msgstr "创建自定义目标 `preprocess_linker`，确保链接脚本始终是最新的"
+
+#: ../../source/build_config/build_system_architecture.md:227
+msgid ""
+"Automatically processes the base flash_boot.link script and outputs the "
+"final linker script to the build directory"
+msgstr "自动处理基础的 flash_boot.link 脚本，并将最终的链接脚本输出到构建目录"
+
+#: ../../source/build_config/build_system_architecture.md:229
+msgid "2.2.3.4 Post-Build Processing"
+msgstr "2.2.3.4 构建后处理"
+
+#: ../../source/build_config/build_system_architecture.md:230
+msgid ""
+"Provides the `telink_apply_linker_options(target)` function to apply "
+"linker settings to a specific target"
+msgstr "提供 `telink_apply_linker_options(target)` 函数，将链接器设置应用到特定目标"
+
+#: ../../source/build_config/build_system_architecture.md:231
+msgid "Configures objcopy to generate binary firmware files from ELF executables"
+msgstr "配置 objcopy 从 ELF 可执行文件生成二进制固件文件"
+
+#: ../../source/build_config/build_system_architecture.md:232
+msgid "Sets up objdump to create assembly listings for debugging and analysis"
+msgstr "设置 objdump 创建汇编清单用于调试和分析"
+
+#: ../../source/build_config/build_system_architecture.md:233
+msgid "Adds size reporting to monitor memory usage of the compiled firmware"
+msgstr "添加大小报告以监控编译固件的内存使用情况"
+
+#: ../../source/build_config/build_system_architecture.md:234
+msgid "Integrates firmware validation through the tlk_check_fw.py script"
+msgstr "通过 tlk_check_fw.py 脚本集成固件验证"
+
+#: ../../source/build_config/build_system_architecture.md:236
+msgid "2.2.4 kconfig.cmake"
+msgstr "2.2.4 kconfig.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:238
+msgid ""
+"Kconfig integration module is responsible for managing the entire "
+"configuration system within the CMake build process:"
+msgstr "Kconfig 集成模块负责在 CMake 构建过程中管理整个配置系统："
+
+#: ../../source/build_config/build_system_architecture.md:240
+msgid "**Configuration File Management**:"
+msgstr "**配置文件管理**："
+
+#: ../../source/build_config/build_system_architecture.md:241
+msgid ""
+"Defines key configuration file paths (`.config`, `chip.config`, "
+"`build.config`, `autoconf.h`, `capabilities.h`)"
+msgstr "定义关键配置文件路径（`.config`、`chip.config`、`build.config`、`autoconf.h`、`capabilities.h`）"
+
+#: ../../source/build_config/build_system_architecture.md:242
+msgid ""
+"Sets up build directory properties to ensure proper cleanup of "
+"configuration files"
+msgstr "设置构建目录属性以确保正确清理配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:243
+msgid "Manages configuration file regeneration and dependencies"
+msgstr "管理配置文件的重新生成和依赖关系"
+
+#: ../../source/build_config/build_system_architecture.md:245
+msgid "**Configuration Generation Flow**:"
+msgstr "**配置生成流程**："
+
+#: ../../source/build_config/build_system_architecture.md:246
+msgid ""
+"Handles automatic generation of `chip.config` from `Kconfig.chip` when "
+"SOC and BOARD are not defined"
+msgstr "当未定义 SOC 和 BOARD 时，处理从 `Kconfig.chip` 自动生成 `chip.config`"
+
+#: ../../source/build_config/build_system_architecture.md:247
+msgid ""
+"Generates `capabilities.h` using preprocessing script based on chip "
+"configuration"
+msgstr "根据芯片配置使用预处理脚本生成 `capabilities.h`"
+
+#: ../../source/build_config/build_system_architecture.md:248
+msgid ""
+"Creates `build.config` from `Kconfig.build` with dependencies on "
+"capabilities"
+msgstr "从 `Kconfig.build` 创建 `build.config`，依赖于 capabilities"
+
+#: ../../source/build_config/build_system_architecture.md:249
+msgid "Merges `chip.config` and `build.config` into the final `.config` file"
+msgstr "将 `chip.config` 和 `build.config` 合并为最终的 `.config` 文件"
+
+#: ../../source/build_config/build_system_architecture.md:251
+msgid "**Preprocessor Integration**:"
+msgstr "**预处理器集成**："
+
+#: ../../source/build_config/build_system_architecture.md:252
+msgid ""
+"Integrates Python scripts (`menuconfig.py`, `preprocess_kconfig.py`, "
+"`kconfig.py`)"
+msgstr "集成 Python 脚本（`menuconfig.py`、`preprocess_kconfig.py`、`kconfig.py`）"
+
+#: ../../source/build_config/build_system_architecture.md:253
+msgid "Parses `.config` file to generate `autoconf.h` with appropriate C defines"
+msgstr "解析 `.config` 文件以生成带有相应 C 定义的 `autoconf.h`"
+
+#: ../../source/build_config/build_system_architecture.md:254
+msgid "Handles different value types (boolean, string, numeric) in configuration"
+msgstr "处理配置中的不同值类型（布尔、字符串、数字）"
+
+#: ../../source/build_config/build_system_architecture.md:256
+msgid "**Custom Targets**:"
+msgstr "**自定义目标**："
+
+#: ../../source/build_config/build_system_architecture.md:257
+msgid "**`parse_config`**: Ensures configuration parsing during build"
+msgstr "**`parse_config`**：确保构建期间的配置解析"
+
+#: ../../source/build_config/build_system_architecture.md:258
+msgid ""
+"**`config`**: Unified target executing the entire configuration flow in "
+"sequence"
+msgstr "**`config`**：统一目标，按顺序执行整个配置流程"
+
+#: ../../source/build_config/build_system_architecture.md:259
+msgid ""
+"**`generate_chip_config`**: Generates `chip.config` using menuconfig or "
+"kconfig.py"
+msgstr "**`generate_chip_config`**：使用 menuconfig 或 kconfig.py 生成 `chip.config`"
+
+#: ../../source/build_config/build_system_architecture.md:260
+msgid ""
+"**`generate_capabilities`**: Generates `capabilities.h` from chip "
+"configuration"
+msgstr "**`generate_capabilities`**：从芯片配置生成 `capabilities.h`"
+
+#: ../../source/build_config/build_system_architecture.md:261
+msgid ""
+"**`generate_build_config`**: Generates `build.config` using menuconfig or"
+" kconfig.py"
+msgstr "**`generate_build_config`**：使用 menuconfig 或 kconfig.py 生成 `build.config`"
+
+#: ../../source/build_config/build_system_architecture.md:262
+msgid ""
+"**`update_dotconfig`**: Merges `chip.config` and `build.config` into "
+"`.config`"
+msgstr "**`update_dotconfig`**：将 `chip.config` 和 `build.config` 合并为 `.config`"
+
+#: ../../source/build_config/build_system_architecture.md:264
+msgid "**Dependency Tracking**:"
+msgstr "**依赖跟踪**："
+
+#: ../../source/build_config/build_system_architecture.md:265
+msgid ""
+"Sets up explicit target dependencies: `generate_chip_config` → "
+"`generate_capabilities` → `generate_build_config` → `update_dotconfig`"
+msgstr "设置显式目标依赖关系：`generate_chip_config` → `generate_capabilities` → `generate_build_config` → `update_dotconfig`"
+
+#: ../../source/build_config/build_system_architecture.md:266
+msgid "Creates cross-platform CMake commands for configuration file operations"
+msgstr "为配置文件操作创建跨平台的 CMake 命令"
+
+#: ../../source/build_config/build_system_architecture.md:267
+msgid "Manages the configuration generation order with proper dependencies"
+msgstr "通过正确的依赖关系管理配置生成顺序"
+
+#: ../../source/build_config/build_system_architecture.md:269
+msgid "2.2.4.1 SOC and BOARD Parameter Processing"
+msgstr "2.2.4.1 SOC 和 BOARD 参数处理"
+
+#: ../../source/build_config/build_system_architecture.md:271
+msgid ""
+"The `kconfig.cmake` module includes comprehensive SOC and BOARD parameter"
+" handling:"
+msgstr "`kconfig.cmake` 模块包含全面的 SOC 和 BOARD 参数处理："
+
+#: ../../source/build_config/build_system_architecture.md:273
+msgid "**Parameter Detection and Processing:**"
+msgstr "**参数检测和处理：**"
+
+#: ../../source/build_config/build_system_architecture.md:291
+msgid "**SOC/BOARD Combination Validation:**"
+msgstr "**SOC/BOARD 组合验证：**"
+
+#: ../../source/build_config/build_system_architecture.md:292
+msgid "Validates SOC and BOARD combinations using dynamic Kconfig parsing"
+msgstr "使用动态 Kconfig 解析验证 SOC 和 BOARD 组合"
+
+#: ../../source/build_config/build_system_architecture.md:293
+msgid "Extracts SOC and BOARD names from command-line arguments"
+msgstr "从命令行参数中提取 SOC 和 BOARD 名称"
+
+#: ../../source/build_config/build_system_architecture.md:294
+msgid "Calls `kconfig_parser.py` with `--validate` option to verify compatibility"
+msgstr "调用带 `--validate` 选项的 `kconfig_parser.py` 来验证兼容性"
+
+#: ../../source/build_config/build_system_architecture.md:295
+msgid "Provides clear error messages for invalid combinations"
+msgstr "为无效组合提供清晰的错误信息"
+
+#: ../../source/build_config/build_system_architecture.md:297
+msgid "**Automatic Configuration Application:**"
+msgstr "**自动配置应用：**"
+
+#: ../../source/build_config/build_system_architecture.md:298
+msgid "Applies SOC and BOARD configurations using `soc_board_setter.py` script"
+msgstr "使用 `soc_board_setter.py` 脚本应用 SOC 和 BOARD 配置"
+
+#: ../../source/build_config/build_system_architecture.md:299
+msgid ""
+"Handles dependency resolution automatically (BOARD dependencies trigger "
+"SOC configuration)"
+msgstr "自动处理依赖解析（BOARD 依赖触发 SOC 配置）"
+
+#: ../../source/build_config/build_system_architecture.md:300
+msgid "Supports both individual SOC/BOARD setting and combined setting"
+msgstr "支持单独的 SOC/BOARD 设置以及组合设置"
+
+#: ../../source/build_config/build_system_architecture.md:301
+msgid "Integrates with the existing configuration generation flow"
+msgstr "与现有的配置生成流程集成"
+
+#: ../../source/build_config/build_system_architecture.md:303
+msgid "**Integration Points:**"
+msgstr "**集成点：**"
+
+#: ../../source/build_config/build_system_architecture.md:304
+msgid ""
+"**Command Line**: Parameters passed via `-DSOC=` and `-DBOARD=` CMake "
+"flags"
+msgstr "**命令行**：通过 `-DSOC=` 和 `-DBOARD=` CMake 标志传递参数"
+
+#: ../../source/build_config/build_system_architecture.md:305
+msgid ""
+"**Make Integration**: Makefile automatically forwards SOC and BOARD "
+"variables to CMake"
+msgstr "**Make 集成**：Makefile 自动将 SOC 和 BOARD 变量传递给 CMake"
+
+#: ../../source/build_config/build_system_architecture.md:306
+msgid ""
+"**West Integration**: West commands can specify SOC/BOARD through "
+"command-line options"
+msgstr "**West 集成**：West 命令可以通过命令行选项指定 SOC/BOARD"
+
+#: ../../source/build_config/build_system_architecture.md:307
+msgid ""
+"**Validation**: Real-time validation prevents incompatible hardware "
+"configurations"
+msgstr "**验证**：实时验证防止不兼容的硬件配置"
+
+#: ../../source/build_config/build_system_architecture.md:309
+msgid "2.2.5 west.cmake"
+msgstr "2.2.5 west.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:313
+msgid ""
+"The `west.cmake` module is responsible for integrating the West build "
+"system tool with the UniSDK build infrastructure. West is the official "
+"meta-tool for Zephyr-based projects, and this module ensures proper "
+"configuration and version compatibility within the UniSDK environment."
+msgstr "`west.cmake` 模块负责将 West 构建系统工具与 UniSDK 构建基础设施集成。West 是基于 Zephyr 的项目的官方元工具，此模块确保在 UniSDK 环境中的正确配置和版本兼容性。"
+
+#: ../../source/build_config/build_system_architecture.md:315
+msgid "2.2.5.1 West Installation Detection"
+msgstr "2.2.5.1 West 安装检测"
+
+#: ../../source/build_config/build_system_architecture.md:316
+msgid ""
+"Checks for West installation by attempting to import the west.version "
+"module"
+msgstr "通过尝试导入 west.version 模块来检查 West 安装情况"
+
+#: ../../source/build_config/build_system_architecture.md:317
+msgid ""
+"Verifies installation status through the presence of WEST_PYTHON "
+"environment variable"
+msgstr "通过 WEST_PYTHON 环境变量的存在来验证安装状态"
+
+#: ../../source/build_config/build_system_architecture.md:318
+msgid "Handles both installed and non-installed West scenarios gracefully"
+msgstr "优雅地处理已安装和未安装 West 的场景"
+
+#: ../../source/build_config/build_system_architecture.md:319
+msgid ""
+"Provides clear error messages with installation instructions when West is"
+" required but not found"
+msgstr "在需要 West 但未找到时提供清晰的错误信息和安装说明"
+
+#: ../../source/build_config/build_system_architecture.md:321
+msgid "2.2.5.2 Python Environment Consistency"
+msgstr "2.2.5.2 Python 环境一致性"
+
+#: ../../source/build_config/build_system_architecture.md:322
+msgid "Ensures the Python interpreter used by West matches the one used by CMake"
+msgstr "确保 West 使用的 Python 解释器与 CMake 使用的匹配"
+
+#: ../../source/build_config/build_system_architecture.md:323
+msgid "Resolves symbolic links to identify the actual Python executable paths"
+msgstr "解析符号链接以识别实际的 Python 可执行文件路径"
+
+#: ../../source/build_config/build_system_architecture.md:324
+msgid "Detects and reports Python interpreter mismatches between West and CMake"
+msgstr "检测并报告 West 和 CMake 之间的 Python 解释器不匹配"
+
+#: ../../source/build_config/build_system_architecture.md:325
+msgid ""
+"Adds detailed diagnostic information when Python environments are out of "
+"sync"
+msgstr "在 Python 环境不同步时添加详细的诊断信息"
+
+#: ../../source/build_config/build_system_architecture.md:327
+msgid "2.2.5.3 Version Compatibility Validation"
+msgstr "2.2.5.3 版本兼容性验证"
+
+#: ../../source/build_config/build_system_architecture.md:328
+msgid "Enforces minimum required West version (0.14.0)"
+msgstr "强制要求最低 West 版本（0.14.0）"
+
+#: ../../source/build_config/build_system_architecture.md:329
+msgid "Compares detected version against minimum requirements"
+msgstr "将检测到的版本与最低要求进行比较"
+
+#: ../../source/build_config/build_system_architecture.md:330
+msgid "Provides upgrade instructions when version requirements are not met"
+msgstr "在版本要求不满足时提供升级说明"
+
+#: ../../source/build_config/build_system_architecture.md:331
+msgid ""
+"Maintains version consistency with requirements specified in scripts"
+"/requirements-base.txt"
+msgstr "与 scripts/requirements-base.txt 中指定的要求保持版本一致性"
+
+#: ../../source/build_config/build_system_architecture.md:333
+msgid "2.2.5.4 West Command Configuration"
+msgstr "2.2.5.4 West 命令配置"
+
+#: ../../source/build_config/build_system_architecture.md:334
+msgid "Sets up the WEST variable as a command prefix for invoking West"
+msgstr "将 WEST 变量设置为调用 West 的命令前缀"
+
+#: ../../source/build_config/build_system_architecture.md:335
+msgid "Configures the WEST variable to be cached internally for IDE integration"
+msgstr "配置 WEST 变量在内部缓存以便 IDE 集成"
+
+#: ../../source/build_config/build_system_architecture.md:336
+#, python-brace-format
+msgid ""
+"Formats the command as `${PYTHON_EXECUTABLE} -m west` to ensure proper "
+"module execution"
+msgstr "将命令格式化为 `${PYTHON_EXECUTABLE} -m west` 以确保正确的模块执行"
+
+#: ../../source/build_config/build_system_architecture.md:337
+msgid "Outputs status information about the detected West version"
+msgstr "输出有关检测到的 West 版本的状态信息"
+
+#: ../../source/build_config/build_system_architecture.md:339
+msgid "2.2.5.5 Workspace Detection"
+msgstr "2.2.5.5 工作空间检测"
+
+#: ../../source/build_config/build_system_architecture.md:340
+msgid ""
+"Determines the West workspace top-level directory using `west topdir` "
+"command"
+msgstr "使用 `west topdir` 命令确定 West 工作空间顶级目录"
+
+#: ../../source/build_config/build_system_architecture.md:341
+msgid "Configures the WEST_TOPDIR variable for use in other build scripts"
+msgstr "配置 WEST_TOPDIR 变量以供其他构建脚本使用"
+
+#: ../../source/build_config/build_system_architecture.md:342
+msgid "Handles non-West projects gracefully by setting WEST to WEST-NOTFOUND"
+msgstr "通过将 WEST 设置为 WEST-NOTFOUND 来优雅地处理非 West 项目"
+
+#: ../../source/build_config/build_system_architecture.md:343
+msgid ""
+"Maintains compatibility with both West-managed and custom project "
+"structures"
+msgstr "保持与 West 管理和自定义项目结构的兼容性"
+
+#: ../../source/build_config/build_system_architecture.md:345
+msgid "2.2.6 pinmux.cmake"
+msgstr "2.2.6 pinmux.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:347
+msgid ""
+"Pin multiplexing configuration module responsible for generating and "
+"managing pin mapping configuration files for the project:"
+msgstr "引脚复用配置模块，负责生成和管理项目的引脚映射配置文件："
+
+#: ../../source/build_config/build_system_architecture.md:349
+msgid "**Pinmux Configuration Files**"
+msgstr "**Pinmux 配置文件**"
+
+#: ../../source/build_config/build_system_architecture.md:350
+#, python-brace-format
+msgid ""
+"Defines the `PINMUX_H` variable for the generated pinmux header "
+"(${CMAKE_BINARY_DIR}/pinmux.h)"
+msgstr "定义生成的 pinmux 头文件的 `PINMUX_H` 变量（${CMAKE_BINARY_DIR}/pinmux.h）"
+
+#: ../../source/build_config/build_system_architecture.md:351
+#, python-brace-format
+msgid ""
+"Defines the `DOTPINMUX` variable for the intermediate configuration file "
+"(${CMAKE_BINARY_DIR}/.pinmux)"
+msgstr "定义中间配置文件的 `DOTPINMUX` 变量（${CMAKE_BINARY_DIR}/.pinmux）"
+
+#: ../../source/build_config/build_system_architecture.md:353
+msgid "**Custom Targets**"
+msgstr "**自定义目标**"
+
+#: ../../source/build_config/build_system_architecture.md:354
+msgid ""
+"**`generate_dotpinmux`**: Generates `.pinmux` configuration file using "
+"`scripts.pinmux` Python module with optional `--skip-gui` parameter"
+msgstr "**`generate_dotpinmux`**：使用 `scripts.pinmux` Python 模块生成 `.pinmux` 配置文件，可选的 `--skip-gui` 参数"
+
+#: ../../source/build_config/build_system_architecture.md:355
+msgid ""
+"**`generate_pinmux_h`**: Converts `.pinmux` to `pinmux.h` using the "
+"`pinmux_gen.py` preprocessing script"
+msgstr "**`generate_pinmux_h`**：使用 `pinmux_gen.py` 预处理脚本将 `.pinmux` 转换为 `pinmux.h`"
+
+#: ../../source/build_config/build_system_architecture.md:356
+msgid ""
+"**`generate_pinmux`**: Main target that depends on `generate_pinmux_h` to"
+" ensure proper execution order"
+msgstr "**`generate_pinmux`**：主目标，依赖于 `generate_pinmux_h` 以确保正确的执行顺序"
+
+#: ../../source/build_config/build_system_architecture.md:358
+msgid "**Build Target and Dependency Management**"
+msgstr "**构建目标和依赖管理**"
+
+#: ../../source/build_config/build_system_architecture.md:359
+msgid "`generate_dotpinmux` depends on `.config` file"
+msgstr "`generate_dotpinmux` 依赖于 `.config` 文件"
+
+#: ../../source/build_config/build_system_architecture.md:360
+msgid "`generate_pinmux_h` depends on `.pinmux` file"
+msgstr "`generate_pinmux_h` 依赖于 `.pinmux` 文件"
+
+#: ../../source/build_config/build_system_architecture.md:361
+msgid ""
+"`generate_pinmux` depends only on `generate_pinmux_h` to avoid duplicate "
+"execution"
+msgstr "`generate_pinmux` 仅依赖于 `generate_pinmux_h` 以避免重复执行"
+
+#: ../../source/build_config/build_system_architecture.md:362
+msgid "Uses `USES_TERMINAL` option for real-time output during generation"
+msgstr "使用 `USES_TERMINAL` 选项在生成期间获取实时输出"
+
+#: ../../source/build_config/build_system_architecture.md:364
+msgid "**Build Integration**"
+msgstr "**构建集成**"
+
+#: ../../source/build_config/build_system_architecture.md:365
+msgid ""
+"Adds the build directory to the include path to ensure `pinmux.h` can be "
+"properly included in source files"
+msgstr "将构建目录添加到包含路径，确保 `pinmux.h` 可以正确包含在源文件中"
+
+#: ../../source/build_config/build_system_architecture.md:366
+msgid ""
+"The main build target depends on `generate_pinmux` to ensure pin "
+"configuration is ready before compilation"
+msgstr "主构建目标依赖于 `generate_pinmux`，以确保引脚配置在编译前已就绪"
+
+#: ../../source/build_config/build_system_architecture.md:368
+msgid "**Python Script Enhancements**"
+msgstr "**Python 脚本增强**"
+
+#: ../../source/build_config/build_system_architecture.md:369
+msgid ""
+"The `scripts.pinmux` module now supports a `--skip-gui` parameter to "
+"generate default configuration without launching the interactive GUI"
+msgstr "`scripts.pinmux` 模块现在支持 `--skip-gui` 参数，可以在不启动交互式 GUI 的情况下生成默认配置"
+
+#: ../../source/build_config/build_system_architecture.md:370
+msgid ""
+"The `pinmux_gen.py` preprocessing script converts `.pinmux` to `pinmux.h`"
+" during the build process"
+msgstr "`pinmux_gen.py` 预处理脚本在构建过程中将 `.pinmux` 转换为 `pinmux.h`"
+
+#: ../../source/build_config/build_system_architecture.md:371
+msgid ""
+"Both scripts depend on the Python environment provided by the "
+"`python.cmake` module"
+msgstr "两个脚本都依赖于 `python.cmake` 模块提供的 Python 环境"
+
+#: ../../source/build_config/build_system_architecture.md:373
+msgid "**Clean Target Integration**"
+msgstr "**清理目标集成**"
+
+#: ../../source/build_config/build_system_architecture.md:374
+msgid ""
+"Adds `pinmux.h` and `.pinmux` to the list of files cleaned by the "
+"project's clean target"
+msgstr "将 `pinmux.h` 和 `.pinmux` 添加到项目清理目标要清理的文件列表中"
+
+#: ../../source/build_config/build_system_architecture.md:376
+msgid "2.2.7 extensions.cmake"
+msgstr "2.2.7 extensions.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:378
+msgid ""
+"The `extensions.cmake` module provides essential CMake utility functions "
+"that extend the core CMake functionality to support the UniSDK build "
+"system with conditional logic, source file management, and data "
+"processing capabilities."
+msgstr "`extensions.cmake` 模块提供了必要的 CMake 工具函数，通过条件逻辑、源文件管理和数据处理能力扩展了核心 CMake 功能以支持 UniSDK 构建系统。"
+
+#: ../../source/build_config/build_system_architecture.md:380
+msgid "**Key Functions and Features:**"
+msgstr "**主要函数和特性：**"
+
+#: ../../source/build_config/build_system_architecture.md:382
+msgid "**Conditional Variable Management**"
+msgstr "**条件变量管理**"
+
+#: ../../source/build_config/build_system_architecture.md:383
+msgid ""
+"`set_ifndef(variable value [PARENT_SCOPE])`: Sets a variable to the "
+"specified value only if it is not already defined. This function helps "
+"establish default values while allowing them to be overridden. The "
+"optional `PARENT_SCOPE` parameter makes the variable available in the "
+"parent scope."
+msgstr "`set_ifndef(variable value [PARENT_SCOPE])`：仅在变量未定义时将其设置为指定值。此函数有助于建立默认值，同时允许被覆盖。可选的 `PARENT_SCOPE` 参数使变量在父作用域中可用。"
+
+#: ../../source/build_config/build_system_architecture.md:385
+msgid "**Conditional Source File Management**"
+msgstr "**条件源文件管理**"
+
+#: ../../source/build_config/build_system_architecture.md:386
+msgid ""
+"`add_sources_ifdef(config src)`: Adds source files to the target only "
+"when a specific configuration option is enabled. This enables feature-"
+"specific code inclusion based on build configurations."
+msgstr "`add_sources_ifdef(config src)`：仅在特定配置选项启用时将源文件添加到目标。这允许基于构建配置实现特定功能的代码包含。"
+
+#: ../../source/build_config/build_system_architecture.md:387
+#, python-brace-format
+msgid ""
+"`add_sources(src)`: A simplified wrapper for `target_sources()` that adds"
+" source files to the current target (`${TARGET_NAME}`) without "
+"conditions."
+msgstr "`add_sources(src)`：`target_sources()` 的简化包装器，无条件地将源文件添加到当前目标（`${TARGET_NAME}`）。"
+
+#: ../../source/build_config/build_system_architecture.md:389
+msgid "**JSON Array Processing**"
+msgstr "**JSON 数组处理**"
+
+#: ../../source/build_config/build_system_architecture.md:390
+msgid ""
+"`json_to_list(JSON_ARRAY_STRING OUTPUT_LIST [OUTPUT_STRING])`: Converts a"
+" JSON array string into a CMake list. This function performs type "
+"validation to ensure the input is a valid JSON array, processes each "
+"element, and handles space-separated values within elements. It can "
+"output both a CMake list and an optional space-joined string "
+"representation."
+msgstr "`json_to_list(JSON_ARRAY_STRING OUTPUT_LIST [OUTPUT_STRING])`：将 JSON 数组字符串转换为 CMake 列表。此函数执行类型验证以确保输入是有效的 JSON 数组，处理每个元素，并处理元素内的空格分隔值。它可以输出 CMake 列表和可选的空格连接字符串表示。"
+
+#: ../../source/build_config/build_system_architecture.md:392
+msgid "**Implementation Details**"
+msgstr "**实现细节**"
+
+#: ../../source/build_config/build_system_architecture.md:393
+msgid "The module uses `include_guard(GLOBAL)` to prevent multiple inclusions"
+msgstr "该模块使用 `include_guard(GLOBAL)` 防止多次包含"
+
+#: ../../source/build_config/build_system_architecture.md:394
+msgid "Functions are designed with parent scope propagation where appropriate"
+msgstr "函数在适当的情况下设计了父作用域传播"
+
+#: ../../source/build_config/build_system_architecture.md:395
+msgid "Error handling is implemented for invalid JSON input"
+msgstr "对无效的 JSON 输入实现了错误处理"
+
+#: ../../source/build_config/build_system_architecture.md:397
+msgid ""
+"This module serves as a foundational component of the build system, "
+"providing reusable functionality that simplifies conditional builds, "
+"feature toggling, and data processing within CMake scripts."
+msgstr "此模块作为构建系统的基础组件，提供可重用的功能，简化了 CMake 脚本中的条件构建、功能切换和数据处理。"
+
+#: ../../source/build_config/build_system_architecture.md:399
+msgid "2.3 CMake Configuration System Flow"
+msgstr "2.3 CMake 配置系统流程"
+
+#: ../../source/build_config/build_system_architecture.md:401
+msgid ""
+"The UniSDK CMake configuration system follows a structured flow that "
+"orchestrates the initialization, module loading, and integration of "
+"various build components. This section provides a detailed walkthrough of"
+" the configuration process from start to finish."
+msgstr "UniSDK CMake 配置系统遵循结构化的流程，协调初始化、模块加载和各个构建组件的集成。本节从头到尾详细介绍了配置过程。"
+
+#: ../../source/build_config/build_system_architecture.md:403
+msgid "2.3.1 Initialization Phase"
+msgstr "2.3.1 初始化阶段"
+
+#: ../../source/build_config/build_system_architecture.md:405
+msgid ""
+"The configuration process begins when CMake is invoked on the main "
+"`CMakeLists.txt` file. This phase sets up the fundamental environment for"
+" the build system by integrating with the UniSDK infrastructure."
+msgstr "配置过程从在主 `CMakeLists.txt` 文件上调用 CMake 开始。此阶段通过与 UniSDK 基础设施集成来为构建系统建立基本环境。"
+
+#: ../../source/build_config/build_system_architecture.md:407
+msgid "2.3.1.1 CMakeLists.txt Entry Point"
+msgstr "2.3.1.1 CMakeLists.txt 入口"
+
+#: ../../source/build_config/build_system_architecture.md:409
+msgid ""
+"The UniSDK build system supports two distinct entry point modes, each "
+"serving different purposes:"
+msgstr "UniSDK 构建系统支持两种不同的入口模式，每种模式服务于不同的目的："
+
+#: ../../source/build_config/build_system_architecture.md:411
+msgid "**1. Root Directory Entry Point**"
+msgstr "**1. 根目录入口**"
+
+#: ../../source/build_config/build_system_architecture.md:413
+msgid ""
+"The root directory's `CMakeLists.txt` file is primarily used for building"
+" the core SDK functionality or testing SDK components. It provides the "
+"foundation for the build system but **does not automatically include "
+"application code from the `samples` directory**. Key characteristics:"
+msgstr "根目录的 `CMakeLists.txt` 文件主要用于构建核心 SDK 功能或测试 SDK 组件。它为构建系统提供了基础，但**不会自动包含 `samples` 目录中的应用代码**。主要特点："
+
+#: ../../source/build_config/build_system_architecture.md:415
+msgid "**Build System Initialization**:"
+msgstr "**构建系统初始化**："
+
+#: ../../source/build_config/build_system_architecture.md:416
+msgid ""
+"Sets up essential variables like `TELINK_BASE`, `AUTOCONF_H`, "
+"`CAPABILITIES_H`, and `PINMUX_H`"
+msgstr "设置基本变量，如 `TELINK_BASE`、`AUTOCONF_H`、`CAPABILITIES_H` 和 `PINMUX_H`"
+
+#: ../../source/build_config/build_system_architecture.md:417
+msgid "Adds `cmake/modules` to the CMake module path for custom module discovery"
+msgstr "将 `cmake/modules` 添加到 CMake 模块路径以发现自定义模块"
+
+#: ../../source/build_config/build_system_architecture.md:418
+msgid "Sets `TELINK_ROOT_INCLUDED` to `TRUE` to prevent redundant inclusion"
+msgstr "将 `TELINK_ROOT_INCLUDED` 设置为 `TRUE` 以防止冗余包含"
+
+#: ../../source/build_config/build_system_architecture.md:419
+msgid ""
+"Loads the Telink package configuration if `TELINK_PACKAGE_INCLUDED` is "
+"not already defined"
+msgstr "如果尚未定义 `TELINK_PACKAGE_INCLUDED`，则加载 Telink 包配置"
+
+#: ../../source/build_config/build_system_architecture.md:421
+msgid "**Project Configuration**:"
+msgstr "**项目配置**："
+
+#: ../../source/build_config/build_system_architecture.md:422
+msgid "Defines the main project with the name \"Telink\""
+msgstr "定义名称为 \"Telink\" 的主项目"
+
+#: ../../source/build_config/build_system_architecture.md:423
+msgid "Configures supported languages (ASM, C, CXX)"
+msgstr "配置支持的语言（ASM、C、CXX）"
+
+#: ../../source/build_config/build_system_architecture.md:424
+msgid "Creates the main executable target with core startup files"
+msgstr "使用核心启动文件创建主可执行目标"
+
+#: ../../source/build_config/build_system_architecture.md:426
+msgid "**Component Integration**:"
+msgstr "**组件集成**："
+
+#: ../../source/build_config/build_system_architecture.md:427
+msgid "Adds key SDK subdirectories (api, common, core, soc) to the build"
+msgstr "将关键的 SDK 子目录（api、common、core、soc）添加到构建中"
+
+#: ../../source/build_config/build_system_architecture.md:428
+msgid "**Does NOT include the `samples` directory**"
+msgstr "**不包含 `samples` 目录**"
+
+#: ../../source/build_config/build_system_architecture.md:429
+msgid ""
+"Sets up dependencies between targets (parse_config, generate_pinmux, "
+"preprocess_linker)"
+msgstr "设置目标之间的依赖关系（parse_config、generate_pinmux、preprocess_linker）"
+
+#: ../../source/build_config/build_system_architecture.md:430
+msgid "Applies compiler and linker options to the main target"
+msgstr "将编译器和链接器选项应用于主目标"
+
+#: ../../source/build_config/build_system_architecture.md:432
+msgid "**Limitations**:"
+msgstr "**限制**："
+
+#: ../../source/build_config/build_system_architecture.md:433
+msgid ""
+"Lacks a `main` function - will produce a linker error `undefined "
+"reference to 'main'`"
+msgstr "缺少 `main` 函数 - 会产生链接器错误 `undefined reference to 'main'`"
+
+#: ../../source/build_config/build_system_architecture.md:434
+msgid "Cannot compile complete applications from the `samples` directory"
+msgstr "无法从 `samples` 目录编译完整的应用"
+
+#: ../../source/build_config/build_system_architecture.md:435
+msgid "Intended for SDK development/testing rather than application building"
+msgstr "用于 SDK 开发/测试而非应用构建"
+
+#: ../../source/build_config/build_system_architecture.md:437
+msgid "**2. Application Entry Point**"
+msgstr "**2. 应用入口**"
+
+#: ../../source/build_config/build_system_architecture.md:439
+msgid ""
+"The recommended way to build applications is to use application-level "
+"`CMakeLists.txt` files. Applications **can be located anywhere** on the "
+"filesystem, not just in the `samples/` directory. The build system uses "
+"the `TELINK_BASE` environment variable or path to locate the Telink SDK "
+"package. A typical application-level CMakeLists.txt includes:"
+msgstr "推荐的应用构建方式是使用应用级 `CMakeLists.txt` 文件。应用**可以位于文件系统的任何位置**，不仅限于 `samples/` 目录。构建系统使用 `TELINK_BASE` 环境变量或路径来定位 Telink SDK 包。典型的应用级 CMakeLists.txt 包括："
+
+#: ../../source/build_config/build_system_architecture.md:459
+msgid "**Key Differences Between Entry Points**:"
+msgstr "**入口之间的主要区别**："
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Feature"
+msgstr "特性"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Root Directory Entry Point"
+msgstr "根目录入口"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Application Entry Point"
+msgstr "应用入口"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Primary Use**"
+msgstr "**主要用途**"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "SDK development/testing"
+msgstr "SDK 开发/测试"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Building complete applications"
+msgstr "构建完整应用"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Application Location**"
+msgstr "**应用位置**"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "N/A"
+msgstr "无"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid ""
+"Anywhere on filesystem (not just `samples/` directory). When using west, "
+"must be in the same directory as `.west` file or its subdirectories"
+msgstr "文件系统上的任何位置（不仅限于 `samples/` 目录）。使用 west 时，必须与 `.west` 文件位于同一目录或其子目录中"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Contains `main` function**"
+msgstr "**包含 `main` 函数**"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "❌ No"
+msgstr "❌ 否"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "✅ Yes (in application code)"
+msgstr "✅ 是（在应用代码中）"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Build Command**"
+msgstr "**构建命令**"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "`cmake -B build -G Ninja /path/to/application`"
+msgstr "`cmake -B build -G Ninja /path/to/application`"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "**Output**"
+msgstr "**输出**"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Core SDK components (will fail without `main`)"
+msgstr "核心 SDK 组件（没有 `main` 会失败）"
+
+#: ../../source/build_config/build_system_architecture.md:19
+msgid "Complete executable firmware"
+msgstr "完整的可执行固件"
+
+#: ../../source/build_config/build_system_architecture.md:469
+msgid "**Correct Usage Examples**:"
+msgstr "**正确使用示例**："
+
+#: ../../source/build_config/build_system_architecture.md:481
+msgid ""
+"**Current Implementation Status and Limitations:** While the application-"
+"level CMakeLists.txt is designed as the entry point, there are currently "
+"some limitations in the implementation due to tight coupling between demo"
+" names, application layers, and the overall SDK Kconfig system:"
+msgstr "**当前实现状态和限制：** 虽然应用级 CMakeLists.txt 被设计为入口，但由于演示名称、应用层和整体 SDK Kconfig 系统之间的紧密耦合，目前实现中存在一些限制："
+
+#: ../../source/build_config/build_system_architecture.md:484
+msgid ""
+"**Kconfig System Coupling**: The demo applications' configuration options"
+" are deeply integrated with the SDK's global Kconfig system, making it "
+"challenging to completely isolate application-specific configurations."
+msgstr "**Kconfig 系统耦合**：演示应用的配置选项与 SDK 的全局 Kconfig 系统深度集成，使得完全隔离应用特定配置变得具有挑战性。"
+
+#: ../../source/build_config/build_system_architecture.md:486
+msgid ""
+"**Demo Name Dependencies**: Some build system components rely on specific"
+" demo naming conventions, which creates dependencies between application "
+"names and internal SDK build logic."
+msgstr "**演示名称依赖**：一些构建系统组件依赖于特定的演示命名约定，这在应用名称和内部 SDK 构建逻辑之间创建了依赖关系。"
+
+#: ../../source/build_config/build_system_architecture.md:488
+msgid ""
+"**Application Layer Integration**: The application layer's interaction "
+"with core SDK components is not yet fully modularized, requiring careful "
+"management of include paths and configuration settings."
+msgstr "**应用层集成**：应用层与核心 SDK 组件的交互尚未完全模块化，需要仔细管理包含路径和配置设置。"
+
+#: ../../source/build_config/build_system_architecture.md:490
+msgid ""
+"These limitations are being addressed in ongoing development efforts to "
+"create a more modular and flexible build system that fully realizes the "
+"application-level entry point design."
+msgstr "这些限制正在通过持续的开发工作来解决，以创建一个更加模块化和灵活的构建系统，充分实现应用级入口设计。"
+
+#: ../../source/build_config/build_system_architecture.md:494
+msgid "2.3.1.2 Package Loading: find_package(Telink)"
+msgstr "2.3.1.2 包加载：find_package(Telink)"
+
+#: ../../source/build_config/build_system_architecture.md:496
+msgid ""
+"If `TELINK_PACKAGE_INCLUDED` is not defined, the system loads the Telink "
+"package:"
+msgstr "如果未定义 `TELINK_PACKAGE_INCLUDED`，系统将加载 Telink 包："
+
+#: ../../source/build_config/build_system_architecture.md:505
+msgid ""
+"This triggers the loading of `TelinkConfig.cmake` from the `cmake` "
+"directory."
+msgstr "这将触发从 `cmake` 目录加载 `TelinkConfig.cmake`。"
+
+#: ../../source/build_config/build_system_architecture.md:507
+msgid "2.3.1.3 TelinkConfig.cmake Processing"
+msgstr "2.3.1.3 TelinkConfig.cmake 处理"
+
+#: ../../source/build_config/build_system_architecture.md:509
+msgid "The `TelinkConfig.cmake` file performs the following tasks:"
+msgstr "`TelinkConfig.cmake` 文件执行以下任务："
+
+#: ../../source/build_config/build_system_architecture.md:511
+msgid "Sets `TELINK_PACKAGE_INCLUDED` to `TRUE` to prevent reloading"
+msgstr "将 `TELINK_PACKAGE_INCLUDED` 设置为 `TRUE` 以防止重新加载"
+
+#: ../../source/build_config/build_system_architecture.md:512
+msgid "Defines the `include_boilerplate()` macro which:"
+msgstr "定义 `include_boilerplate()` 宏，该宏："
+
+#: ../../source/build_config/build_system_architecture.md:513
+msgid ""
+"Sets `TELINK_BASE` if not already set (using environment variable or "
+"relative path)"
+msgstr "如果尚未设置 `TELINK_BASE`，则进行设置（使用环境变量或相对路径）"
+
+#: ../../source/build_config/build_system_architecture.md:514
+msgid "Configures `Telink_DIR` cache variable"
+msgstr "配置 `Telink_DIR` 缓存变量"
+
+#: ../../source/build_config/build_system_architecture.md:515
+msgid "Adds the CMake modules directory to the module path"
+msgstr "将 CMake 模块目录添加到模块路径"
+
+#: ../../source/build_config/build_system_architecture.md:516
+msgid "Sets application source and binary directories if not defined"
+msgstr "如果未定义，则设置应用源码和二进制目录"
+
+#: ../../source/build_config/build_system_architecture.md:517
+msgid "Includes `telink_default.cmake`"
+msgstr "包含 `telink_default.cmake`"
+
+#: ../../source/build_config/build_system_architecture.md:518
+msgid "Calls `include_boilerplate()` to execute the boilerplate code"
+msgstr "调用 `include_boilerplate()` 执行样板代码"
+
+#: ../../source/build_config/build_system_architecture.md:520
+msgid "2.3.2 Module Loading Phase"
+msgstr "2.3.2 模块加载阶段"
+
+#: ../../source/build_config/build_system_architecture.md:522
+msgid ""
+"After the initial environment is set up, the configuration system loads "
+"the core CMake modules that implement the build system functionality."
+msgstr "在初始环境设置完成后，配置系统会加载实现构建系统功能的核心 CMake 模块。"
+
+#: ../../source/build_config/build_system_architecture.md:524
+msgid "2.3.2.1 telink_default.cmake Processing"
+msgstr "2.3.2.1 telink_default.cmake 处理"
+
+#: ../../source/build_config/build_system_architecture.md:526
+msgid ""
+"The `telink_default.cmake` file is responsible for loading all necessary "
+"CMake modules in a specific order:"
+msgstr "`telink_default.cmake` 文件负责按特定顺序加载所有必要的 CMake 模块："
+
+#: ../../source/build_config/build_system_architecture.md:528
+msgid "Sets minimum CMake version again (for validation)"
+msgstr "再次设置最低 CMake 版本（用于验证）"
+
+#: ../../source/build_config/build_system_architecture.md:529
+msgid "Outputs application directory and CMake version information"
+msgstr "输出应用目录和 CMake 版本信息"
+
+#: ../../source/build_config/build_system_architecture.md:530
+msgid "Performs a check for a known CMake bug in versions 3.22.1/3.22.2"
+msgstr "对已知的 CMake 3.22.1/3.22.2 版本错误进行检查"
+
+#: ../../source/build_config/build_system_architecture.md:531
+msgid "Defines the list of required modules in order:"
+msgstr "按顺序定义所需的模块列表："
+
+#: ../../source/build_config/build_system_architecture.md:532
+msgid "`python` - Python interpreter detection and configuration"
+msgstr "`python` - Python 解释器检测和配置"
+
+#: ../../source/build_config/build_system_architecture.md:533
+msgid "`extensions` - Custom CMake functions and macros"
+msgstr "`extensions` - 自定义 CMake 函数和宏"
+
+#: ../../source/build_config/build_system_architecture.md:534
+msgid "`version` - Version information processing"
+msgstr "`version` - 版本信息处理"
+
+#: ../../source/build_config/build_system_architecture.md:535
+msgid "`west` - West tool integration"
+msgstr "`west` - West 工具集成"
+
+#: ../../source/build_config/build_system_architecture.md:536
+msgid "`compiler` - Compiler configuration"
+msgstr "`compiler` - 编译器配置"
+
+#: ../../source/build_config/build_system_architecture.md:537
+msgid "`generated_file_directories` - Directories for generated files"
+msgstr "`generated_file_directories` - 生成文件的目录"
+
+#: ../../source/build_config/build_system_architecture.md:538
+msgid "`kconfig` - Kconfig integration (critical for configuration)"
+msgstr "`kconfig` - Kconfig 集成（配置的关键）"
+
+#: ../../source/build_config/build_system_architecture.md:539
+msgid "`pinmux` - Pin multiplexing configuration"
+msgstr "`pinmux` - 引脚复用配置"
+
+#: ../../source/build_config/build_system_architecture.md:540
+msgid "`linker` - Linker script processing"
+msgstr "`linker` - 链接脚本处理"
+
+#: ../../source/build_config/build_system_architecture.md:541
+msgid "Validates any requested sub-components against the available modules"
+msgstr "根据可用模块验证任何请求的子组件"
+
+#: ../../source/build_config/build_system_architecture.md:542
+msgid "Includes each module in sequence"
+msgstr "按顺序包含每个模块"
+
+#: ../../source/build_config/build_system_architecture.md:543
+msgid "Removes loaded modules from the `SUB_COMPONENTS` list"
+msgstr "从 `SUB_COMPONENTS` 列表中移除已加载的模块"
+
+#: ../../source/build_config/build_system_architecture.md:544
+msgid ""
+"If `TELINK_ROOT_INCLUDED` is not defined, it adds the root directory as a"
+" subdirectory"
+msgstr "如果未定义 `TELINK_ROOT_INCLUDED`，则将根目录添加为子目录"
+
+#: ../../source/build_config/build_system_architecture.md:559
+msgid ""
+"This sequential loading ensures that each module has access to the "
+"necessary infrastructure provided by previously loaded modules. The order"
+" is carefully maintained to manage dependencies between modules."
+msgstr "这种顺序加载确保每个模块都能访问先前加载的模块提供的必要基础设施。顺序被精心维护以管理模块之间的依赖关系。"
+
+#: ../../source/build_config/build_system_architecture.md:561
+msgid "2.3.3 Kconfig Integration Phase"
+msgstr "2.3.3 Kconfig 集成阶段"
+
+#: ../../source/build_config/build_system_architecture.md:563
+msgid ""
+"The Kconfig system integration is a critical phase that manages the "
+"configuration options for the build system and target firmware."
+msgstr "Kconfig 系统集成是一个关键阶段，管理构建系统和目标固件的配置选项。"
+
+#: ../../source/build_config/build_system_architecture.md:565
+msgid "2.3.3.1 kconfig.cmake Processing"
+msgstr "2.3.3.1 kconfig.cmake 处理"
+
+#: ../../source/build_config/build_system_architecture.md:567
+msgid ""
+"The `kconfig.cmake` module is responsible for configuration file "
+"generation and processing:"
+msgstr "`kconfig.cmake` 模块负责配置文件的生成和处理："
+
+#: ../../source/build_config/build_system_architecture.md:569
+msgid "Defines key file paths:"
+msgstr "定义关键文件路径："
+
+#: ../../source/build_config/build_system_architecture.md:570
+msgid "`CHIP_CONFIG_FILE` - Chip-specific configuration"
+msgstr "`CHIP_CONFIG_FILE` - 芯片特定配置"
+
+#: ../../source/build_config/build_system_architecture.md:571
+msgid "`BUILD_CONFIG_FILE` - Build-specific configuration"
+msgstr "`BUILD_CONFIG_FILE` - 构建特定配置"
+
+#: ../../source/build_config/build_system_architecture.md:572
+msgid "`DOTCONFIG` - Merged configuration file (.config)"
+msgstr "`DOTCONFIG` - 合并的配置文件（.config）"
+
+#: ../../source/build_config/build_system_architecture.md:573
+msgid "`CAPABILITIES_H` - Generated capabilities header"
+msgstr "`CAPABILITIES_H` - 生成的能力头文件"
+
+#: ../../source/build_config/build_system_architecture.md:574
+msgid "`AUTOCONF_H` - Auto-generated configuration header"
+msgstr "`AUTOCONF_H` - 自动生成的配置头文件"
+
+#: ../../source/build_config/build_system_architecture.md:575
+msgid "`MENUCONFIG_SCRIPT` - Path to the interactive menuconfig script"
+msgstr "`MENUCONFIG_SCRIPT` - 交互式 menuconfig 脚本路径"
+
+#: ../../source/build_config/build_system_architecture.md:576
+msgid "`PARSE_SCRIPT` - Path to the configuration parsing script"
+msgstr "`PARSE_SCRIPT` - 配置解析脚本路径"
+
+#: ../../source/build_config/build_system_architecture.md:577
+msgid "`PREPROCESS_SCRIPT` - Path to the Kconfig preprocessing script"
+msgstr "`PREPROCESS_SCRIPT` - Kconfig 预处理脚本路径"
+
+#: ../../source/build_config/build_system_architecture.md:578
+msgid "`KCONFIG_BINARY_DIR` - Directory for Kconfig source includes"
+msgstr "`KCONFIG_BINARY_DIR` - Kconfig 源包含的目录"
+
+#: ../../source/build_config/build_system_architecture.md:580
+msgid "Configures clean targets to remove generated files:"
+msgstr "配置清理目标以移除生成的文件："
+
+#: ../../source/build_config/build_system_architecture.md:581
+msgid ""
+"Sets `ADDITIONAL_CLEAN_FILES` properties for all generated configuration "
+"files including:"
+msgstr "为所有生成的配置文件设置 `ADDITIONAL_CLEAN_FILES` 属性，包括："
+
+#: ../../source/build_config/build_system_architecture.md:582
+msgid "`CHIP_CONFIG_FILE`"
+msgstr "`CHIP_CONFIG_FILE`"
+
+#: ../../source/build_config/build_system_architecture.md:583
+msgid "`BUILD_CONFIG_FILE`"
+msgstr "`BUILD_CONFIG_FILE`"
+
+#: ../../source/build_config/build_system_architecture.md:584
+msgid "`DOTCONFIG`"
+msgstr "`DOTCONFIG`"
+
+#: ../../source/build_config/build_system_architecture.md:585
+msgid "`AUTOCONF_H`"
+msgstr "`AUTOCONF_H`"
+
+#: ../../source/build_config/build_system_architecture.md:586
+msgid "`CAPABILITIES_H`"
+msgstr "`CAPABILITIES_H`"
+
+#: ../../source/build_config/build_system_architecture.md:587
+msgid "`PINMUX_H`"
+msgstr "`PINMUX_H`"
+
+#: ../../source/build_config/build_system_architecture.md:588
+msgid "`KCONFIG_BINARY_DIR`"
+msgstr "`KCONFIG_BINARY_DIR`"
+
+#: ../../source/build_config/build_system_architecture.md:590
+msgid "Chip Configuration Generation:"
+msgstr "芯片配置生成："
+
+#: ../../source/build_config/build_system_architecture.md:591
+msgid ""
+"Creates a custom command to generate `chip.config` using `menuconfig.py` "
+"and `Kconfig.chip`"
+msgstr "创建自定义命令，使用 `menuconfig.py` 和 `Kconfig.chip` 生成 `chip.config`"
+
+#: ../../source/build_config/build_system_architecture.md:592
+msgid ""
+"**When `chip.config` is missing**: The custom command triggers "
+"`menuconfig.py` with the Kconfig.chip file, which will:"
+msgstr "**当 `chip.config` 缺失时**：自定义命令使用 Kconfig.chip 文件触发 `menuconfig.py`，该脚本将："
+
+#: ../../source/build_config/build_system_architecture.md:593
+#: ../../source/build_config/build_system_architecture.md:606
+msgid ""
+"Automatically launch the interactive menuconfig interface if no existing "
+"config exists"
+msgstr "如果没有现有配置，则自动启动交互式 menuconfig 界面"
+
+#: ../../source/build_config/build_system_architecture.md:594
+msgid "Allow the user to select SoC and related configuration options"
+msgstr "允许用户选择 SoC 和相关配置选项"
+
+#: ../../source/build_config/build_system_architecture.md:595
+msgid "Save the selections to `chip.config` after the user exits the menu"
+msgstr "在用户退出菜单后将选择保存到 `chip.config`"
+
+#: ../../source/build_config/build_system_architecture.md:597
+msgid "Capabilities Header Generation:"
+msgstr "能力头文件生成："
+
+#: ../../source/build_config/build_system_architecture.md:598
+msgid ""
+"Creates a custom command to generate `capabilities.h` using "
+"`preprocess_kconfig.py`"
+msgstr "创建自定义命令，使用 `preprocess_kconfig.py` 生成 `capabilities.h`"
+
+#: ../../source/build_config/build_system_architecture.md:599
+msgid "Depends on `chip.config`"
+msgstr "依赖于 `chip.config`"
+
+#: ../../source/build_config/build_system_architecture.md:600
+msgid ""
+"**When `capabilities.h` is missing**: The custom command will "
+"automatically execute when its dependencies (`chip.config`) are "
+"available, generating the header based on the selected chip's "
+"capabilities"
+msgstr "**当 `capabilities.h` 缺失时**：自定义命令将在其依赖项（`chip.config`）可用时自动执行，基于所选芯片的能力生成头文件"
+
+#: ../../source/build_config/build_system_architecture.md:602
+msgid "Build Configuration Generation:"
+msgstr "构建配置生成："
+
+#: ../../source/build_config/build_system_architecture.md:603
+msgid ""
+"Creates a custom command to generate `build.config` using `menuconfig.py`"
+" and `Kconfig.build`"
+msgstr "创建自定义命令，使用 `menuconfig.py` 和 `Kconfig.build` 生成 `build.config`"
+
+#: ../../source/build_config/build_system_architecture.md:604
+msgid "Depends on `capabilities.h`"
+msgstr "依赖于 `capabilities.h`"
+
+#: ../../source/build_config/build_system_architecture.md:605
+msgid ""
+"**When `build.config` is missing**: The custom command triggers "
+"`menuconfig.py` with the Kconfig.build file, which will:"
+msgstr "**当 `build.config` 缺失时**：自定义命令使用 Kconfig.build 文件触发 `menuconfig.py`，该脚本将："
+
+#: ../../source/build_config/build_system_architecture.md:607
+msgid "Allow the user to select build-time options and features"
+msgstr "允许用户选择构建时的选项和功能"
+
+#: ../../source/build_config/build_system_architecture.md:608
+msgid ""
+"Take into account the capabilities defined in `capabilities.h` to filter "
+"available options"
+msgstr "考虑 `capabilities.h` 中定义的能力，以过滤可用选项"
+
+#: ../../source/build_config/build_system_architecture.md:609
+msgid "Save the selections to `build.config` after the user exits the menu"
+msgstr "在用户退出菜单后将选择保存到 `build.config`"
+
+#: ../../source/build_config/build_system_architecture.md:611
+msgid ".config File Creation (During Configuration Phase):"
+msgstr ".config 文件创建（配置阶段）："
+
+#: ../../source/build_config/build_system_architecture.md:612
+msgid ""
+"If `.config` doesn't exist during the CMake configuration phase, the "
+"system performs the following steps:"
+msgstr "如果在 CMake 配置阶段 `.config` 不存在，系统执行以下步骤："
+
+#: ../../source/build_config/build_system_architecture.md:613
+msgid ""
+"Checks if `chip.config` exists; if not, executes `kconfig.py` to generate"
+" it non-interactively"
+msgstr "检查 `chip.config` 是否存在；如果不存在，则执行 `kconfig.py` 以非交互方式生成它"
+
+#: ../../source/build_config/build_system_architecture.md:614
+msgid "Executes `preprocess_kconfig.py` to generate `capabilities.h`"
+msgstr "执行 `preprocess_kconfig.py` 生成 `capabilities.h`"
+
+#: ../../source/build_config/build_system_architecture.md:615
+msgid ""
+"Checks if `build.config` exists; if not, executes `kconfig.py` to "
+"generate it non-interactively"
+msgstr "检查 `build.config` 是否存在；如果不存在，则执行 `kconfig.py` 以非交互方式生成它"
+
+#: ../../source/build_config/build_system_architecture.md:616
+msgid "Creates a new `.config` file with an auto-generated header comment"
+msgstr "创建一个带有自动生成头部注释的新 `.config` 文件"
+
+#: ../../source/build_config/build_system_architecture.md:617
+msgid ""
+"Merges content from `chip.config` and `build.config` into the new "
+"`.config` file"
+msgstr "将 `chip.config` 和 `build.config` 的内容合并到新的 `.config` 文件中"
+
+#: ../../source/build_config/build_system_architecture.md:619
+msgid "Configuration Dependency Tracking:"
+msgstr "配置依赖跟踪："
+
+#: ../../source/build_config/build_system_architecture.md:620
+msgid ""
+"Sets `CMAKE_CONFIGURE_DEPENDS` to `.config` to trigger reconfiguration "
+"when it changes"
+msgstr "将 `CMAKE_CONFIGURE_DEPENDS` 设置为 `.config`，以便在其更改时触发重新配置"
+
+#: ../../source/build_config/build_system_architecture.md:622
+msgid "Merge Script Creation:"
+msgstr "合并脚本创建："
+
+#: ../../source/build_config/build_system_architecture.md:623
+msgid ""
+"Writes a CMake script (`merge_config_files.cmake`) to merge configuration"
+" files"
+msgstr "写入 CMake 脚本（`merge_config_files.cmake`）以合并配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:624
+msgid ""
+"This script reads content from `build.config` and `chip.config` and "
+"appends it to `.config`"
+msgstr "此脚本从 `build.config` 和 `chip.config` 读取内容并将其追加到 `.config`"
+
+#: ../../source/build_config/build_system_architecture.md:626
+msgid ".config Update During Build:"
+msgstr "构建期间更新 .config："
+
+#: ../../source/build_config/build_system_architecture.md:627
+msgid ""
+"Creates a custom command to update `.config` when dependencies "
+"(`build.config` or `chip.config`) change"
+msgstr "创建自定义命令，在依赖项（`build.config` 或 `chip.config`）更改时更新 `.config`"
+
+#: ../../source/build_config/build_system_architecture.md:628
+msgid ""
+"Removes the old `.config` file, touches a new one, and then runs the "
+"merge script"
+msgstr "移除旧的 `.config` 文件，创建新的文件，然后运行合并脚本"
+
+#: ../../source/build_config/build_system_architecture.md:630
+msgid "Parse Configuration Target:"
+msgstr "解析配置目标："
+
+#: ../../source/build_config/build_system_architecture.md:631
+msgid "Creates a custom target `parse_config` that depends on `.config`"
+msgstr "创建依赖于 `.config` 的自定义目标 `parse_config`"
+
+#: ../../source/build_config/build_system_architecture.md:632
+msgid ""
+"This target ensures that the configuration parsing happens before the "
+"main build"
+msgstr "此目标确保配置解析在主构建之前发生"
+
+#: ../../source/build_config/build_system_architecture.md:634
+msgid "Configuration Parsing (During Build):"
+msgstr "配置解析（构建期间）："
+
+#: ../../source/build_config/build_system_architecture.md:635
+msgid "Reads lines from `.config`"
+msgstr "从 `.config` 读取行"
+
+#: ../../source/build_config/build_system_architecture.md:636
+msgid ""
+"Generates `autoconf.h` with `#define` statements for each configuration "
+"option"
+msgstr "为每个配置选项生成带有 `#define` 语句的 `autoconf.h`"
+
+#: ../../source/build_config/build_system_architecture.md:637
+msgid "Handles different value types (boolean, string, number)"
+msgstr "处理不同的值类型（布尔、字符串、数字）"
+
+#: ../../source/build_config/build_system_architecture.md:638
+msgid ""
+"**When `autoconf.h` is missing**: The file is automatically generated "
+"during the build process based on the contents of `.config`"
+msgstr "**当 `autoconf.h` 缺失时**：文件在构建过程中根据 `.config` 的内容自动生成"
+
+#: ../../source/build_config/build_system_architecture.md:640
+msgid "2.3.3.2 Menuconfig Triggering Mechanism"
+msgstr "2.3.3.2 Menuconfig 触发机制"
+
+#: ../../source/build_config/build_system_architecture.md:642
+msgid "The menuconfig interface can be triggered in several ways:"
+msgstr "menuconfig 界面可以通过以下几种方式触发："
+
+#: ../../source/build_config/build_system_architecture.md:644
+msgid ""
+"**Automatic Trigger During Build (Interactive)**: When a configuration "
+"file (`chip.config` or `build.config`) is missing and a build is "
+"initiated, the system will automatically launch the interactive "
+"menuconfig interface through `menuconfig.py`"
+msgstr "**构建期间自动触发（交互式）**：当配置文件（`chip.config` 或 `build.config`）缺失且启动构建时，系统将通过 `menuconfig.py` 自动启动交互式 menuconfig 界面"
+
+#: ../../source/build_config/build_system_architecture.md:646
+msgid ""
+"**Manual Execution**: Users can manually invoke menuconfig for specific "
+"configuration types:"
+msgstr "**手动执行**：用户可以针对特定的配置类型手动调用 menuconfig："
+
+#: ../../source/build_config/build_system_architecture.md:647
+msgid "For chip configuration: `python scripts/menuconfig.py Kconfig.chip`"
+msgstr "芯片配置：`python scripts/menuconfig.py Kconfig.chip`"
+
+#: ../../source/build_config/build_system_architecture.md:648
+msgid "For build configuration: `python scripts/menuconfig.py Kconfig.build`"
+msgstr "构建配置：`python scripts/menuconfig.py Kconfig.build`"
+
+#: ../../source/build_config/build_system_architecture.md:650
+msgid ""
+"**Non-Interactive Generation**: During the CMake configuration phase, if "
+"`.config` is missing, the system uses `kconfig.py` to non-interactively "
+"generate `chip.config` and `build.config` with default values"
+msgstr "**非交互式生成**：在 CMake 配置阶段，如果 `.config` 缺失，系统使用 `kconfig.py` 以非交互方式使用默认值生成 `chip.config` 和 `build.config`"
+
+#: ../../source/build_config/build_system_architecture.md:652
+msgid ""
+"**Custom Command Execution**: The custom commands defined in "
+"`kconfig.cmake` will trigger menuconfig when their respective output "
+"files (e.g., `chip.config`, `build.config`) are required but missing"
+msgstr "**自定义命令执行**：`kconfig.cmake` 中定义的自定义命令将在其各自的输出文件（如 `chip.config`、`build.config`）需要但缺失时触发 menuconfig"
+
+#: ../../source/build_config/build_system_architecture.md:654
+msgid "2.3.4 Pinmux Configuration Generation"
+msgstr "2.3.4 Pinmux 配置生成"
+
+#: ../../source/build_config/build_system_architecture.md:656
+msgid ""
+"The `pinmux.cmake` module is responsible for generating the `pinmux.h` "
+"header file that contains pin multiplexing configuration:"
+msgstr "`pinmux.cmake` 模块负责生成包含引脚复用配置的 `pinmux.h` 头文件："
+
+#: ../../source/build_config/build_system_architecture.md:658
+#, python-brace-format
+msgid ""
+"Sets the path for the generated `pinmux.h` file to "
+"`${CMAKE_BINARY_DIR}/pinmux.h`"
+msgstr "将生成的 `pinmux.h` 文件路径设置为 `${CMAKE_BINARY_DIR}/pinmux.h`"
+
+#: ../../source/build_config/build_system_architecture.md:660
+msgid "Creates a custom command to generate `pinmux.h`:"
+msgstr "创建自定义命令以生成 `pinmux.h`："
+
+#: ../../source/build_config/build_system_architecture.md:661
+msgid "Uses Python script `scripts.pinmux` module"
+msgstr "使用 Python 脚本 `scripts.pinmux` 模块"
+
+#: ../../source/build_config/build_system_architecture.md:662
+msgid "Takes `CMAKE_BINARY_DIR` as an argument"
+msgstr "将 `CMAKE_BINARY_DIR` 作为参数"
+
+#: ../../source/build_config/build_system_architecture.md:663
+msgid "Sets working directory to `TELINK_BASE`"
+msgstr "将工作目录设置为 `TELINK_BASE`"
+
+#: ../../source/build_config/build_system_architecture.md:664
+msgid "Adds a descriptive comment for build output"
+msgstr "为构建输出添加描述性注释"
+
+#: ../../source/build_config/build_system_architecture.md:665
+msgid "Uses terminal for command execution"
+msgstr "使用终端执行命令"
+
+#: ../../source/build_config/build_system_architecture.md:666
+msgid "Depends on `.config` file"
+msgstr "依赖于 `.config` 文件"
+
+#: ../../source/build_config/build_system_architecture.md:668
+msgid "Creates a custom target `generate_pinmux` that:"
+msgstr "创建自定义目标 `generate_pinmux`，该目标："
+
+#: ../../source/build_config/build_system_architecture.md:669
+msgid "Is always built (ALL)"
+msgstr "始终构建（ALL）"
+
+#: ../../source/build_config/build_system_architecture.md:670
+msgid "Depends on both `pinmux.h` and `.config`"
+msgstr "依赖于 `pinmux.h` 和 `.config`"
+
+#: ../../source/build_config/build_system_architecture.md:672
+msgid ""
+"The binary directory is added to the include path so that `pinmux.h` can "
+"be included in source files"
+msgstr "二进制目录被添加到包含路径，以便 `pinmux.h` 可以被包含在源文件中"
+
+#: ../../source/build_config/build_system_architecture.md:693
+msgid "2.3.5 Build Configuration Phase"
+msgstr "2.3.5 构建配置阶段"
+
+#: ../../source/build_config/build_system_architecture.md:695
+msgid ""
+"After all modules are loaded and the Kconfig system is integrated, the "
+"configuration system proceeds to set up the build environment for the "
+"specific target."
+msgstr "在加载所有模块并集成 Kconfig 系统后，配置系统继续为特定目标设置构建环境。"
+
+#: ../../source/build_config/build_system_architecture.md:697
+msgid "2.3.5.1 Target Configuration"
+msgstr "2.3.5.1 目标配置"
+
+#: ../../source/build_config/build_system_architecture.md:699
+msgid ""
+"The configuration system configures the main target with the appropriate "
+"settings:"
+msgstr "配置系统使用适当的设置配置主目标："
+
+#: ../../source/build_config/build_system_architecture.md:725
+msgid "2.3.5.2 Build Directory Structure"
+msgstr "2.3.5.2 构建目录结构"
+
+#: ../../source/build_config/build_system_architecture.md:727
+msgid ""
+"The configuration system sets up a structured build directory to organize"
+" build outputs:"
+msgstr "配置系统设置结构化的构建目录以组织构建输出："
+
+#: ../../source/build_config/build_system_architecture.md
+msgid "Build Directory Structure"
+msgstr "构建目录结构"
+
+#: ../../source/build_config/build_system_architecture.md:764
+msgid "2.3.6 Complete Configuration Flow Diagram"
+msgstr "2.3.6 完整配置流程图"
+
+#: ../../source/build_config/build_system_architecture.md:766
+msgid ""
+"The following diagram illustrates the complete configuration flow from "
+"start to finish:"
+msgstr "下图说明了从开始到结束的完整配置流程："
+
+#: ../../source/build_config/build_system_architecture.md:806
+msgid "2.3.7 Configuration System Integration"
+msgstr "2.3.7 配置系统集成"
+
+#: ../../source/build_config/build_system_architecture.md:808
+msgid "2.3.7.1 Python Integration"
+msgstr "2.3.7.1 Python 集成"
+
+#: ../../source/build_config/build_system_architecture.md:810
+msgid ""
+"The configuration system heavily relies on Python scripts for Kconfig "
+"operations:"
+msgstr "配置系统严重依赖 Python 脚本进行 Kconfig 操作："
+
+#: ../../source/build_config/build_system_architecture.md:812
+msgid "`menuconfig.py` - Interactive menuconfig interface"
+msgstr "`menuconfig.py` - 交互式 menuconfig 界面"
+
+#: ../../source/build_config/build_system_architecture.md:813
+msgid "`kconfig.py` - Non-interactive Kconfig processing"
+msgstr "`kconfig.py` - 非交互式 Kconfig 处理"
+
+#: ../../source/build_config/build_system_architecture.md:814
+msgid "`preprocess_kconfig.py` - Preprocessing Kconfig files"
+msgstr "`preprocess_kconfig.py` - 预处理 Kconfig 文件"
+
+#: ../../source/build_config/build_system_architecture.md:815
+msgid "`kconfig_parser.py` - Kconfig parsing and validation utilities"
+msgstr "`kconfig_parser.py` - Kconfig 解析和验证工具"
+
+#: ../../source/build_config/build_system_architecture.md:816
+msgid "`soc_board_setter.py` - SOC/BOARD configuration and validation"
+msgstr "`soc_board_setter.py` - SOC/BOARD 配置和验证"
+
+#: ../../source/build_config/build_system_architecture.md:818
+msgid ""
+"The `python.cmake` module ensures that a compatible Python interpreter is"
+" available."
+msgstr "`python.cmake` 模块确保兼容的 Python 解释器可用。"
+
+#: ../../source/build_config/build_system_architecture.md:820
+msgid "2.3.8 CMake Config Target Execution Flow"
+msgstr "2.3.8 CMake Config 目标执行流程"
+
+#: ../../source/build_config/build_system_architecture.md:848
+msgid "The `config` target executes a sequential flow of configuration tasks:"
+msgstr "`config` 目标按顺序执行一系列配置任务："
+
+#: ../../source/build_config/build_system_architecture.md:850
+msgid ""
+"**Chip Configuration**: `generate_chip_config` generates `chip.config` "
+"using Kconfig"
+msgstr "**芯片配置**：`generate_chip_config` 使用 Kconfig 生成 `chip.config`"
+
+#: ../../source/build_config/build_system_architecture.md:851
+msgid ""
+"**Capabilities Generation**: `generate_capabilities` creates "
+"`capabilities.h` based on the selected chip"
+msgstr "**能力生成**：`generate_capabilities` 根据所选芯片创建 `capabilities.h`"
+
+#: ../../source/build_config/build_system_architecture.md:852
+msgid ""
+"**Build Configuration**: `generate_build_config` generates `build.config`"
+" using Kconfig"
+msgstr "**构建配置**：`generate_build_config` 使用 Kconfig 生成 `build.config`"
+
+#: ../../source/build_config/build_system_architecture.md:853
+msgid ""
+"**Configuration Merge**: `update_dotconfig` merges `chip.config` and "
+"`build.config` into `.config`"
+msgstr "**配置合并**：`update_dotconfig` 将 `chip.config` 和 `build.config` 合并为 `.config`"
+
+#: ../../source/build_config/build_system_architecture.md:854
+msgid ""
+"**Pinmux Configuration**: `generate_pinmux` handles pin multiplexing "
+"configuration:"
+msgstr "**Pinmux 配置**：`generate_pinmux` 处理引脚复用配置："
+
+#: ../../source/build_config/build_system_architecture.md:855
+msgid ""
+"First `generate_dotpinmux` creates `.pinmux` from Kconfig using "
+"`scripts.pinmux` with `--skip-gui`"
+msgstr "首先 `generate_dotpinmux` 使用 `scripts.pinmux` 和 `--skip-gui` 从 Kconfig 创建 `.pinmux`"
+
+#: ../../source/build_config/build_system_architecture.md:856
+msgid ""
+"Then `generate_pinmux_h` converts `.pinmux` to `pinmux.h` using "
+"`pinmux_gen.py`"
+msgstr "然后 `generate_pinmux_h` 使用 `pinmux_gen.py` 将 `.pinmux` 转换为 `pinmux.h`"
+
+#: ../../source/build_config/build_system_architecture.md:858
+msgid ""
+"This target ensures that all configuration files are generated in the "
+"correct order with proper dependencies between tasks."
+msgstr "此目标确保所有配置文件按正确顺序生成，并在任务之间具有正确的依赖关系。"
+
+#: ../../source/build_config/build_system_architecture.md:860
+msgid "2.3.9 Key Configuration Files and Their Purpose"
+msgstr "2.3.9 关键配置文件及其用途"
+
+#: ../../source/build_config/build_system_architecture.md:862
+msgid "**Kconfig.chip**: Defines available SoC options and their configurations"
+msgstr "**Kconfig.chip**：定义可用的 SoC 选项及其配置"
+
+#: ../../source/build_config/build_system_architecture.md:863
+msgid "**Kconfig.build**: Defines build-time options and features"
+msgstr "**Kconfig.build**：定义构建时的选项和功能"
+
+#: ../../source/build_config/build_system_architecture.md:864
+msgid "**chip.config**: Generated SoC-specific configuration"
+msgstr "**chip.config**：生成的 SoC 特定配置"
+
+#: ../../source/build_config/build_system_architecture.md:865
+msgid "**build.config**: Generated build-specific configuration"
+msgstr "**build.config**：生成的构建特定配置"
+
+#: ../../source/build_config/build_system_architecture.md:866
+msgid "**.config**: Merged configuration file used for the build"
+msgstr "**.config**：用于构建的合并配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:867
+msgid ""
+"**capabilities.h**: Generated header with SoC capabilities based on "
+"selected chip"
+msgstr "**capabilities.h**：基于所选芯片生成的包含 SoC 能力的头文件"
+
+#: ../../source/build_config/build_system_architecture.md:868
+msgid ""
+"**autoconf.h**: Generated header with all configuration options as C "
+"defines"
+msgstr "**autoconf.h**：包含所有配置选项作为 C 定义的头文件"
+
+#: ../../source/build_config/build_system_architecture.md:869
+msgid "**pinmux.h**: Generated header with pin multiplexing configuration"
+msgstr "**pinmux.h**：包含引脚复用配置的生成头文件"
+
+#: ../../source/build_config/build_system_architecture.md:871
+msgid "2.3.10 Troubleshooting Configuration Issues"
+msgstr "2.3.10 配置问题故障排除"
+
+#: ../../source/build_config/build_system_architecture.md:873
+msgid "Common issues and their solutions:"
+msgstr "常见问题及其解决方案："
+
+#: ../../source/build_config/build_system_architecture.md:875
+msgid ""
+"**Configuration not applying**: Ensure the `parse_config` target is "
+"properly built before the main target"
+msgstr "**配置未生效**：确保 `parse_config` 目标在主目标之前正确构建"
+
+#: ../../source/build_config/build_system_architecture.md:876
+msgid ""
+"**Missing options in menuconfig**: Check if the Kconfig files are "
+"properly included and dependencies are met"
+msgstr "**menuconfig 中缺少选项**：检查 Kconfig 文件是否正确包含以及依赖是否满足"
+
+#: ../../source/build_config/build_system_architecture.md:877
+msgid ""
+"**Python script errors**: Verify that Python 3.10+ is installed and all "
+"dependencies are available"
+msgstr "**Python 脚本错误**：验证 Python 3.10+ 已安装且所有依赖可用"
+
+#: ../../source/build_config/build_system_architecture.md:878
+msgid ""
+"**CMake module not found**: Ensure `TELINK_BASE` is correctly set and "
+"points to the SDK root"
+msgstr "**未找到 CMake 模块**：确保 `TELINK_BASE` 正确设置并指向 SDK 根目录"
+
+#: ../../source/build_config/build_system_architecture.md:879
+msgid ""
+"**Generated files not cleaned**: The system is configured to clean "
+"generated files with `make clean`, but you can also manually remove the "
+"build directory"
+msgstr "**生成的文件未被清理**：系统配置为使用 `make clean` 清理生成的文件，但您也可以手动删除构建目录"
+
+#: ../../source/build_config/build_system_architecture.md:881
+msgid "3. Kconfig Configuration System"
+msgstr "3. Kconfig 配置系统"
+
+#: ../../source/build_config/build_system_architecture.md:883
+msgid "3.1 Kconfig Architecture"
+msgstr "3.1 Kconfig 架构"
+
+#: ../../source/build_config/build_system_architecture.md:885
+msgid ""
+"The Kconfig system adopts a hierarchical structure, organizing "
+"configuration files through the `rsource` directive:"
+msgstr "Kconfig 系统采用层次结构，通过 `rsource` 指令组织配置文件："
+
+#: ../../source/build_config/build_system_architecture.md:887
+msgid "3.1.1 Configuration File Hierarchy"
+msgstr "3.1.1 配置文件层次结构"
+
+#: ../../source/build_config/build_system_architecture.md:889
+msgid ""
+"**Top-level Configuration**: `Kconfig.chip` and `Kconfig.build` as "
+"configuration entry points"
+msgstr "**顶层配置**：`Kconfig.chip` 和 `Kconfig.build` 作为配置入口"
+
+#: ../../source/build_config/build_system_architecture.md:890
+msgid ""
+"**Feature Configuration**: `Kconfig` files in subdirectories define "
+"specific feature configurations"
+msgstr "**功能配置**：子目录中的 `Kconfig` 文件定义特定功能配置"
+
+#: ../../source/build_config/build_system_architecture.md:891
+msgid ""
+"**Configuration Tools**: `kconfig.py`, `menuconfig.py`, and "
+"`preprocess_kconfig.py` provide configuration processing"
+msgstr "**配置工具**：`kconfig.py`、`menuconfig.py` 和 `preprocess_kconfig.py` 提供配置处理"
+
+#: ../../source/build_config/build_system_architecture.md:893
+msgid "3.1.2 Kconfig File Organization"
+msgstr "3.1.2 Kconfig 文件组织"
+
+#: ../../source/build_config/build_system_architecture.md:895
+msgid ""
+"The Kconfig files form a hierarchical structure where higher-level "
+"Kconfig files include lower-level ones using the `rsource` directive. The"
+" organization is as follows:"
+msgstr "Kconfig 文件形成层次结构，其中高级别的 Kconfig 文件使用 `rsource` 指令包含低级别的文件。组织方式如下："
+
+#: ../../source/build_config/build_system_architecture.md:927
+msgid "3.1.3 Application Layer Kconfig Integration"
+msgstr "3.1.3 应用层 Kconfig 集成"
+
+#: ../../source/build_config/build_system_architecture.md:929
+msgid ""
+"In addition to the SDK's built-in Kconfig files, the application layer "
+"can also provide its own Kconfig configuration. This is achieved through "
+"the `KCONFIG_APPLICATION_DIR` variable, which is defined in "
+"`kconfig.cmake`:"
+msgstr "除了 SDK 内置的 Kconfig 文件外，应用层也可以提供自己的 Kconfig 配置。这是通过 `kconfig.cmake` 中定义的 `KCONFIG_APPLICATION_DIR` 变量实现的："
+
+#: ../../source/build_config/build_system_architecture.md:935
+msgid ""
+"This variable is set to the current source directory where CMake is "
+"invoked. When running Kconfig commands (such as `menuconfig`), the system"
+" automatically looks for Kconfig files in this directory, allowing "
+"application-specific configurations to be seamlessly integrated with the "
+"SDK's built-in configurations."
+msgstr "此变量被设置为调用 CMake 的当前源目录。当运行 Kconfig 命令（如 `menuconfig`）时，系统会自动在此目录中查找 Kconfig 文件，允许应用特定配置与 SDK 内置配置无缝集成。"
+
+#: ../../source/build_config/build_system_architecture.md:937
+msgid "The application layer Kconfig integration process:"
+msgstr "应用层 Kconfig 集成过程："
+
+#: ../../source/build_config/build_system_architecture.md:938
+msgid ""
+"`kconfig.cmake` sets `KCONFIG_APPLICATION_DIR` to the current CMake "
+"source directory"
+msgstr "`kconfig.cmake` 将 `KCONFIG_APPLICATION_DIR` 设置为当前 CMake 源目录"
+
+#: ../../source/build_config/build_system_architecture.md:939
+msgid ""
+"This variable is passed to the Python scripts (menuconfig.py, kconfig.py,"
+" etc.) as an environment variable"
+msgstr "此变量作为环境变量传递给 Python 脚本（menuconfig.py、kconfig.py 等）"
+
+#: ../../source/build_config/build_system_architecture.md:940
+msgid ""
+"The scripts use this variable to find and include application-specific "
+"Kconfig files"
+msgstr "脚本使用此变量查找并包含应用特定的 Kconfig 文件"
+
+#: ../../source/build_config/build_system_architecture.md:941
+msgid ""
+"Application configurations are merged with SDK configurations during the "
+"configuration generation process"
+msgstr "在配置生成过程中，应用配置与 SDK 配置合并"
+
+#: ../../source/build_config/build_system_architecture.md:943
+msgid ""
+"This design allows applications to define their own configuration options"
+" that are specific to their functionality, while still leveraging the "
+"SDK's core configuration system."
+msgstr "这种设计允许应用定义特定于其功能的配置选项，同时仍然利用 SDK 的核心配置系统。"
+
+#: ../../source/build_config/build_system_architecture.md:945
+msgid "3.2 Configuration Processing Flow"
+msgstr "3.2 配置处理流程"
+
+#: ../../source/build_config/build_system_architecture.md:947
+msgid ""
+"**Configuration Generation**: Merging configuration files through "
+"`kconfig.py`"
+msgstr "**配置生成**：通过 `kconfig.py` 合并配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:948
+msgid ""
+"**Interactive Configuration**: Using `menuconfig.py` to provide a menu "
+"interface"
+msgstr "**交互式配置**：使用 `menuconfig.py` 提供菜单界面"
+
+#: ../../source/build_config/build_system_architecture.md:949
+msgid ""
+"**Configuration Preprocessing**: `preprocess_kconfig.py` processes "
+"configuration macros and variables"
+msgstr "**配置预处理**：`preprocess_kconfig.py` 处理配置宏和变量"
+
+#: ../../source/build_config/build_system_architecture.md:950
+msgid ""
+"**Configuration Application**: The CMake system uses generated "
+"configuration files for build configuration"
+msgstr "**配置应用**：CMake 系统使用生成的配置文件进行构建配置"
+
+#: ../../source/build_config/build_system_architecture.md:952
+msgid "3.3 Key Configuration Scripts"
+msgstr "3.3 关键配置脚本"
+
+#: ../../source/build_config/build_system_architecture.md:954
+msgid "3.3.1 kconfig.py"
+msgstr "3.3.1 kconfig.py"
+
+#: ../../source/build_config/build_system_architecture.md:956
+msgid "Main functions:"
+msgstr "主要功能："
+
+#: ../../source/build_config/build_system_architecture.md:957
+msgid "Merges multiple configuration files"
+msgstr "合并多个配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:958
+msgid "Validates configuration validity"
+msgstr "验证配置有效性"
+
+#: ../../source/build_config/build_system_architecture.md:959
+msgid "Generates the final `.config` file"
+msgstr "生成最终的 `.config` 文件"
+
+#: ../../source/build_config/build_system_architecture.md:960
+msgid "Executes configuration checks and warnings"
+msgstr "执行配置检查和警告"
+
+#: ../../source/build_config/build_system_architecture.md:962
+msgid "3.3.2 menuconfig.py"
+msgstr "3.3.2 menuconfig.py"
+
+#: ../../source/build_config/build_system_architecture.md:964
+msgid "Interactive configuration interface implementation:"
+msgstr "交互式配置界面实现："
+
+#: ../../source/build_config/build_system_architecture.md:965
+msgid "Curses-based text interface"
+msgstr "基于 Curses 的文本界面"
+
+#: ../../source/build_config/build_system_architecture.md:966
+msgid "Supports menu navigation and option setting"
+msgstr "支持菜单导航和选项设置"
+
+#: ../../source/build_config/build_system_architecture.md:967
+msgid "Provides help information display"
+msgstr "提供帮助信息显示"
+
+#: ../../source/build_config/build_system_architecture.md:968
+msgid "Supports configuration saving and loading"
+msgstr "支持配置保存和加载"
+
+#: ../../source/build_config/build_system_architecture.md:970
+msgid "3.3.3 preprocess_kconfig.py"
+msgstr "3.3.3 preprocess_kconfig.py"
+
+#: ../../source/build_config/build_system_architecture.md:972
+msgid "Configuration preprocessing tool:"
+msgstr "配置预处理工具："
+
+#: ../../source/build_config/build_system_architecture.md:973
+msgid "Processes YAML configuration variables"
+msgstr "处理 YAML 配置变量"
+
+#: ../../source/build_config/build_system_architecture.md:974
+msgid "Supports configuration macro expansion"
+msgstr "支持配置宏展开"
+
+#: ../../source/build_config/build_system_architecture.md:975
+msgid "Handles nested configuration structures"
+msgstr "处理嵌套配置结构"
+
+#: ../../source/build_config/build_system_architecture.md:976
+msgid "Supports arrays and special format values"
+msgstr "支持数组和特殊格式值"
+
+#: ../../source/build_config/build_system_architecture.md:978
+msgid "4. West Compilation Support"
+msgstr "4. West 编译支持"
+
+#: ../../source/build_config/build_system_architecture.md:980
+msgid "4.1 West Command Extensions"
+msgstr "4.1 West 命令扩展"
+
+#: ../../source/build_config/build_system_architecture.md:982
+msgid ""
+"UniSDK extends the West command set, registering custom commands through "
+"`west-commands.yml`:"
+msgstr "UniSDK 扩展了 West 命令集，通过 `west-commands.yml` 注册自定义命令："
+
+#: ../../source/build_config/build_system_architecture.md:1009
+msgid "4.2 west tl-build Command Details"
+msgstr "4.2 west tl-build 命令详解"
+
+#: ../../source/build_config/build_system_architecture.md:1011
+msgid "`build.py` implements the main build functionality:"
+msgstr "`build.py` 实现了主要的构建功能："
+
+#: ../../source/build_config/build_system_architecture.md:1013
+msgid "4.2.1 Command Line Options"
+msgstr "4.2.1 命令行选项"
+
+#: ../../source/build_config/build_system_architecture.md:1015
+#: ../../source/build_config/build_system_architecture.md:1084
+msgid "**Positional Arguments:**"
+msgstr "**位置参数：**"
+
+#: ../../source/build_config/build_system_architecture.md:1016
+msgid "`source_dir`: Application source directory (default: current directory)"
+msgstr "`source_dir`：应用源目录（默认：当前目录）"
+
+#: ../../source/build_config/build_system_architecture.md:1018
+#: ../../source/build_config/build_system_architecture.md:1087
+msgid "**Optional Arguments:**"
+msgstr "**可选参数：**"
+
+#: ../../source/build_config/build_system_architecture.md:1019
+msgid "`-d, --build-dir`: Specify build directory"
+msgstr "`-d, --build-dir`：指定构建目录"
+
+#: ../../source/build_config/build_system_architecture.md:1020
+msgid "`-c, --cmake-only`: Run only CMake configuration, don't build"
+msgstr "`-c, --cmake-only`：仅运行 CMake 配置，不构建"
+
+#: ../../source/build_config/build_system_architecture.md:1021
+msgid "`-k, --kconfig`: Run interactive configuration before building"
+msgstr "`-k, --kconfig`：构建前运行交互式配置"
+
+#: ../../source/build_config/build_system_architecture.md:1022
+msgid "`-t, --target`: Build target (e.g., flash, debug, etc.)"
+msgstr "`-t, --target`：构建目标（例如 flash、debug 等）"
+
+#: ../../source/build_config/build_system_architecture.md:1023
+msgid ""
+"`-p, --pristine`: Control pristine build directory usage (choices: auto, "
+"always, never)"
+msgstr "`-p, --pristine`：控制是否使用干净的构建目录（选项：auto、always、never）"
+
+#: ../../source/build_config/build_system_architecture.md:1024
+msgid "`--clean`: Clean build directory before building"
+msgstr "`--clean`：构建前清理构建目录"
+
+#: ../../source/build_config/build_system_architecture.md:1025
+msgid "`--flash`: Flash firmware after building"
+msgstr "`--flash`：构建后烧录固件"
+
+#: ../../source/build_config/build_system_architecture.md:1026
+msgid ""
+"`-o, --build-option`: Extra options to pass to the build system (can be "
+"used multiple times)"
+msgstr "`-o, --build-option`：传递给构建系统的额外选项（可多次使用）"
+
+#: ../../source/build_config/build_system_architecture.md:1027
+#: ../../source/build_config/build_system_architecture.md:1089
+msgid "`--soc SOC`: Specify SOC for configuration"
+msgstr "`--soc SOC`：指定配置的 SOC"
+
+#: ../../source/build_config/build_system_architecture.md:1028
+#: ../../source/build_config/build_system_architecture.md:1090
+msgid "`--board BOARD`: Specify BOARD for configuration"
+msgstr "`--board BOARD`：指定配置的 BOARD"
+
+#: ../../source/build_config/build_system_architecture.md:1029
+msgid ""
+"`cmake_opt`: Extra options to pass to CMake (must come after \"--\" "
+"separator)"
+msgstr "`cmake_opt`：传递给 CMake 的额外选项（必须跟在 \"--\" 分隔符之后）"
+
+#: ../../source/build_config/build_system_architecture.md:1031
+#: ../../source/build_config/build_system_architecture.md:1095
+#: ../../source/build_config/build_system_architecture.md:1643
+msgid "**Usage Examples:**"
+msgstr "**使用示例：**"
+
+#: ../../source/build_config/build_system_architecture.md:1058
+msgid "4.2.2 Execution Flow"
+msgstr "4.2.2 执行流程"
+
+#: ../../source/build_config/build_system_architecture.md:1060
+msgid ""
+"**Environment Check**: Verify TELINK_TOOLCHAIN_PATH environment variable "
+"is set"
+msgstr "**环境检查**：验证 TELINK_TOOLCHAIN_PATH 环境变量已设置"
+
+#: ../../source/build_config/build_system_architecture.md:1061
+msgid ""
+"**SOC/BOARD Validation**: Validate SOC and BOARD combination if both are "
+"provided"
+msgstr "**SOC/BOARD 验证**：如果同时提供了 SOC 和 BOARD，则验证其组合"
+
+#: ../../source/build_config/build_system_architecture.md:1062
+msgid "**Path Setting**: Configure source directory and build directory"
+msgstr "**路径设置**：配置源目录和构建目录"
+
+#: ../../source/build_config/build_system_architecture.md:1063
+msgid ""
+"**TELINK_BASE Setup**: Set TELINK_BASE environment variable to SDK root "
+"directory"
+msgstr "**TELINK_BASE 设置**：将 TELINK_BASE 环境变量设置为 SDK 根目录"
+
+#: ../../source/build_config/build_system_architecture.md:1064
+msgid ""
+"**Cleanup Handling**: Clean build directory if --clean or --pristine "
+"options are used"
+msgstr "**清理处理**：如果使用了 --clean 或 --pristine 选项，则清理构建目录"
+
+#: ../../source/build_config/build_system_architecture.md:1065
+msgid "**Build Directory Creation**: Create build directory if it doesn't exist"
+msgstr "**构建目录创建**：如果构建目录不存在，则创建它"
+
+#: ../../source/build_config/build_system_architecture.md:1066
+msgid ""
+"**Interactive Configuration**: Run menuconfig if --kconfig option is "
+"specified"
+msgstr "**交互式配置**：如果指定了 --kconfig 选项，则运行 menuconfig"
+
+#: ../../source/build_config/build_system_architecture.md:1067
+msgid ""
+"**CMake Configuration**: Call CMake with SOC/BOARD parameters and "
+"generate build system"
+msgstr "**CMake 配置**：使用 SOC/BOARD 参数调用 CMake 并生成构建系统"
+
+#: ../../source/build_config/build_system_architecture.md:1068
+msgid ""
+"**Project Building**: Execute compilation and linking (skipped if "
+"--cmake-only)"
+msgstr "**项目构建**：执行编译和链接（如果指定了 --cmake-only 则跳过）"
+
+#: ../../source/build_config/build_system_architecture.md:1069
+msgid "**Result Output**: Display build status and results"
+msgstr "**结果输出**：显示构建状态和结果"
+
+#: ../../source/build_config/build_system_architecture.md:1071
+#: ../../source/build_config/build_system_architecture.md:1155
+#: ../../source/build_config/build_system_architecture.md:1655
+msgid "**Key Features:**"
+msgstr "**主要特性：**"
+
+#: ../../source/build_config/build_system_architecture.md:1072
+msgid ""
+"**SOC/BOARD Support**: Directly specify SOC and BOARD via command-line "
+"options"
+msgstr "**SOC/BOARD 支持**：通过命令行选项直接指定 SOC 和 BOARD"
+
+#: ../../source/build_config/build_system_architecture.md:1073
+msgid ""
+"**Dependency Resolution**: Automatic SOC/BOARD dependency handling during"
+" CMake configuration"
+msgstr "**依赖解析**：CMake 配置期间自动处理 SOC/BOARD 依赖"
+
+#: ../../source/build_config/build_system_architecture.md:1074
+msgid ""
+"**Validation**: Real-time validation of SOC/BOARD combinations before "
+"build"
+msgstr "**验证**：构建前实时验证 SOC/BOARD 组合"
+
+#: ../../source/build_config/build_system_architecture.md:1075
+msgid ""
+"**Flexible Configuration**: Support for both interactive and non-"
+"interactive configuration"
+msgstr "**灵活配置**：支持交互式和非交互式配置"
+
+#: ../../source/build_config/build_system_architecture.md:1076
+msgid "**Pristine Builds**: Options for clean and pristine build environments"
+msgstr "**干净构建**：提供干净和全新构建环境的选项"
+
+#: ../../source/build_config/build_system_architecture.md:1078
+msgid "4.3 west tl-config Command Details"
+msgstr "4.3 west tl-config 命令详解"
+
+#: ../../source/build_config/build_system_architecture.md:1080
+msgid ""
+"`config.py` implements the Telink application configuration "
+"functionality, providing a unified configuration interface:"
+msgstr "`config.py` 实现了 Telink 应用配置功能，提供统一的配置接口："
+
+#: ../../source/build_config/build_system_architecture.md:1082
+msgid "4.3.1 Command Line Options"
+msgstr "4.3.1 命令行选项"
+
+#: ../../source/build_config/build_system_architecture.md:1085
+msgid ""
+"`source_dir`: Application source directory (optional, defaults to current"
+" directory)"
+msgstr "`source_dir`：应用源目录（可选，默认为当前目录）"
+
+#: ../../source/build_config/build_system_architecture.md:1088
+msgid ""
+"`-d, --build-dir`: Specify the build directory (optional, defaults to "
+"`source_dir/build`)"
+msgstr "`-d, --build-dir`：指定构建目录（可选，默认为 `source_dir/build`）"
+
+#: ../../source/build_config/build_system_architecture.md:1091
+msgid "`--list-socs`: List all available SOCs with their dependencies"
+msgstr "`--list-socs`：列出所有可用的 SOC 及其依赖"
+
+#: ../../source/build_config/build_system_architecture.md:1092
+msgid "`--list-boards`: List all available boards with their dependencies"
+msgstr "`--list-boards`：列出所有可用的板卡及其依赖"
+
+#: ../../source/build_config/build_system_architecture.md:1093
+msgid "`--validate SOC BOARD`: Validate SOC and BOARD combination"
+msgstr "`--validate SOC BOARD`：验证 SOC 和 BOARD 组合"
+
+#: ../../source/build_config/build_system_architecture.md:1116
+msgid "4.3.2 Configuration Process"
+msgstr "4.3.2 配置过程"
+
+#: ../../source/build_config/build_system_architecture.md:1118
+msgid "The `tl-config` command supports multiple operation modes:"
+msgstr "`tl-config` 命令支持多种操作模式："
+
+#: ../../source/build_config/build_system_architecture.md:1120
+msgid "**List Operations:**"
+msgstr "**列表操作：**"
+
+#: ../../source/build_config/build_system_architecture.md:1121
+msgid "`--list-socs`: Display all available SOCs with their dependencies"
+msgstr "`--list-socs`：显示所有可用的 SOC 及其依赖"
+
+#: ../../source/build_config/build_system_architecture.md:1122
+msgid "`--list-boards`: Display all available boards with their dependencies"
+msgstr "`--list-boards`：显示所有可用的板卡及其依赖"
+
+#: ../../source/build_config/build_system_architecture.md:1123
+msgid "`--validate`: Validate SOC/BOARD combination without configuring"
+msgstr "`--validate`：验证 SOC/BOARD 组合而不进行配置"
+
+#: ../../source/build_config/build_system_architecture.md:1125
+msgid "**Configuration Flow:**"
+msgstr "**配置流程：**"
+
+#: ../../source/build_config/build_system_architecture.md:1126
+msgid "**SOC/BOARD Validation**:"
+msgstr "**SOC/BOARD 验证**："
+
+#: ../../source/build_config/build_system_architecture.md:1127
+msgid "Validate SOC and BOARD combination if both are provided"
+msgstr "如果同时提供了 SOC 和 BOARD，则验证其组合"
+
+#: ../../source/build_config/build_system_architecture.md:1128
+msgid "Use KconfigParser to check dependency compatibility"
+msgstr "使用 KconfigParser 检查依赖兼容性"
+
+#: ../../source/build_config/build_system_architecture.md:1129
+msgid "Provide clear error messages for invalid combinations"
+msgstr "为无效组合提供清晰的错误信息"
+
+#: ../../source/build_config/build_system_architecture.md:1131
+msgid "**Environment Setup**:"
+msgstr "**环境设置**："
+
+#: ../../source/build_config/build_system_architecture.md:1132
+msgid "Set `TELINK_BASE` environment variable to SDK root directory"
+msgstr "将 `TELINK_BASE` 环境变量设置为 SDK 根目录"
+
+#: ../../source/build_config/build_system_architecture.md:1133
+msgid "Resolve source and build directory paths"
+msgstr "解析源码和构建目录路径"
+
+#: ../../source/build_config/build_system_architecture.md:1134
+msgid "Create build directory if it doesn't exist"
+msgstr "如果构建目录不存在，则创建它"
+
+#: ../../source/build_config/build_system_architecture.md:1136
+msgid "**CMake Configuration** (if needed):"
+msgstr "**CMake 配置**（如需要）："
+
+#: ../../source/build_config/build_system_architecture.md:1137
+msgid ""
+"Check for existing `CMakeCache.txt` to determine if configuration is "
+"needed"
+msgstr "检查现有的 `CMakeCache.txt` 以确定是否需要配置"
+
+#: ../../source/build_config/build_system_architecture.md:1138
+msgid ""
+"Run initial CMake configuration with Ninja generator and Telink package "
+"path"
+msgstr "使用 Ninja 生成器和 Telink 包路径运行初始 CMake 配置"
+
+#: ../../source/build_config/build_system_architecture.md:1139
+msgid "Apply SOC and BOARD settings if specified via command line"
+msgstr "如果在命令行中指定，则应用 SOC 和 BOARD 设置"
+
+#: ../../source/build_config/build_system_architecture.md:1141
+msgid "**Configuration Target Execution**:"
+msgstr "**配置目标执行**："
+
+#: ../../source/build_config/build_system_architecture.md:1142
+msgid "Execute `cmake --build <build_dir> --target config`"
+msgstr "执行 `cmake --build <build_dir> --target config`"
+
+#: ../../source/build_config/build_system_architecture.md:1143
+msgid "This triggers the complete configuration sequence:"
+msgstr "这将触发完整的配置序列："
+
+#: ../../source/build_config/build_system_architecture.md:1144
+msgid "Clean existing configuration files"
+msgstr "清理现有配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1145
+msgid "Generate `chip.config` from `Kconfig.chip`"
+msgstr "从 `Kconfig.chip` 生成 `chip.config`"
+
+#: ../../source/build_config/build_system_architecture.md:1146
+msgid "Generate `capabilities.h` from chip configuration"
+msgstr "从芯片配置生成 `capabilities.h`"
+
+#: ../../source/build_config/build_system_architecture.md:1147
+msgid "Generate `build.config` from `Kconfig.build`"
+msgstr "从 `Kconfig.build` 生成 `build.config`"
+
+#: ../../source/build_config/build_system_architecture.md:1148
+msgid "Merge configurations into final `.config`"
+msgstr "将配置合并为最终的 `.config`"
+
+#: ../../source/build_config/build_system_architecture.md:1149
+msgid "Generate pinmux configuration files"
+msgstr "生成 pinmux 配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1151
+msgid "**Result Handling**:"
+msgstr "**结果处理**："
+
+#: ../../source/build_config/build_system_architecture.md:1152
+msgid "Return appropriate exit codes (0 for success, non-zero for errors)"
+msgstr "返回适当的退出码（0 表示成功，非零表示错误）"
+
+#: ../../source/build_config/build_system_architecture.md:1153
+msgid "Provide informative status messages throughout the process"
+msgstr "在整个过程中提供信息性状态消息"
+
+#: ../../source/build_config/build_system_architecture.md:1156
+msgid ""
+"**SOC/BOARD Discovery**: List available SOCs and boards with dependency "
+"information"
+msgstr "**SOC/BOARD 发现**：列出可用的 SOC 和板卡及其依赖信息"
+
+#: ../../source/build_config/build_system_architecture.md:1157
+msgid "**Validation**: Pre-build validation of SOC/BOARD combinations"
+msgstr "**验证**：构建前验证 SOC/BOARD 组合"
+
+#: ../../source/build_config/build_system_architecture.md:1158
+msgid "**Dependency Resolution**: Automatic handling of SOC/BOARD dependencies"
+msgstr "**依赖解析**：自动处理 SOC/BOARD 依赖"
+
+#: ../../source/build_config/build_system_architecture.md:1159
+msgid "**Interactive Configuration**: Menuconfig-based configuration interface"
+msgstr "**交互式配置**：基于 Menuconfig 的配置界面"
+
+#: ../../source/build_config/build_system_architecture.md:1161
+msgid "4.3.3 Code Reuse Integration"
+msgstr "4.3.3 代码复用集成"
+
+#: ../../source/build_config/build_system_architecture.md:1163
+msgid ""
+"The `tl-config` command shares its core configuration logic with the `tl-"
+"build` command through the `run_config()` function. This function is "
+"extracted into a reusable module that:"
+msgstr "`tl-config` 命令通过 `run_config()` 函数与 `tl-build` 命令共享其核心配置逻辑。此函数被提取到可复用的模块中，该模块："
+
+#: ../../source/build_config/build_system_architecture.md:1165
+msgid "Provides consistent configuration behavior across both commands"
+msgstr "在两个命令之间提供一致的配置行为"
+
+#: ../../source/build_config/build_system_architecture.md:1166
+msgid "Handles all configuration file generation and CMake target execution"
+msgstr "处理所有配置文件的生成和 CMake 目标执行"
+
+#: ../../source/build_config/build_system_architecture.md:1167
+msgid "Ensures proper error handling and status reporting"
+msgstr "确保正确的错误处理和状态报告"
+
+#: ../../source/build_config/build_system_architecture.md:1168
+msgid "Maintains compatibility with existing build workflows"
+msgstr "保持与现有构建工作流的兼容性"
+
+#: ../../source/build_config/build_system_architecture.md:1170
+msgid ""
+"The `tl-build` command's `-k/--kconfig` option internally calls the same "
+"configuration logic, ensuring consistency between standalone "
+"configuration and build-time configuration."
+msgstr "`tl-build` 命令的 `-k/--kconfig` 选项内部调用相同的配置逻辑，确保独立配置和构建时配置之间的一致性。"
+
+#: ../../source/build_config/build_system_architecture.md:1172
+msgid "4.4 west tl-boards Command Details"
+msgstr "4.4 west tl-boards 命令详解"
+
+#: ../../source/build_config/build_system_architecture.md:1174
+msgid "`boards.py` implements the board information display functionality:"
+msgstr "`boards.py` 实现了板卡信息显示功能："
+
+#: ../../source/build_config/build_system_architecture.md:1176
+msgid "4.4.1 Command Line Options"
+msgstr "4.4.1 命令行选项"
+
+#: ../../source/build_config/build_system_architecture.md:1178
+msgid "`-v, --verbose`: Show detailed information about each board"
+msgstr "`-v, --verbose`：显示每个板卡的详细信息"
+
+#: ../../source/build_config/build_system_architecture.md:1179
+msgid "`--soc SOC`: Filter boards by supported SOC (e.g., TL3218X)"
+msgstr "`--soc SOC`：按支持的 SOC 过滤板卡（例如 TL3218X）"
+
+#: ../../source/build_config/build_system_architecture.md:1181
+msgid "4.4.2 Command Features"
+msgstr "4.4.2 命令特性"
+
+#: ../../source/build_config/build_system_architecture.md:1183
+msgid ""
+"**Board Enumeration**: Lists all supported development boards from "
+"Kconfig.chip"
+msgstr "**板卡枚举**：从 Kconfig.chip 列出所有支持的开发板"
+
+#: ../../source/build_config/build_system_architecture.md:1184
+msgid "**SOC Filtering**: Allows filtering boards by specific SOC compatibility"
+msgstr "**SOC 过滤**：允许按特定 SOC 兼容性过滤板卡"
+
+#: ../../source/build_config/build_system_architecture.md:1185
+msgid "**Dependency Display**: Shows board dependencies and requirements"
+msgstr "**依赖显示**：显示板卡依赖和要求"
+
+#: ../../source/build_config/build_system_architecture.md:1186
+msgid "**Verbose Information**: Provides detailed board specifications including:"
+msgstr "**详细信息**：提供详细的板卡规格，包括："
+
+#: ../../source/build_config/build_system_architecture.md:1187
+msgid "Full board name and prompt"
+msgstr "完整的板卡名称和提示"
+
+#: ../../source/build_config/build_system_architecture.md:1188
+#: ../../source/build_config/build_system_architecture.md:1222
+msgid "Type and dependencies"
+msgstr "类型和依赖"
+
+#: ../../source/build_config/build_system_architecture.md:1189
+msgid "Supported SOCs for each board"
+msgstr "每个板卡支持的 SOC"
+
+#: ../../source/build_config/build_system_architecture.md:1190
+#: ../../source/build_config/build_system_architecture.md:1223
+msgid "Help documentation"
+msgstr "帮助文档"
+
+#: ../../source/build_config/build_system_architecture.md:1192
+msgid "4.4.3 Usage Examples"
+msgstr "4.4.3 使用示例"
+
+#: ../../source/build_config/build_system_architecture.md:1208
+msgid "4.5 west tl-socs Command Details"
+msgstr "4.5 west tl-socs 命令详解"
+
+#: ../../source/build_config/build_system_architecture.md:1210
+msgid "`socs.py` implements the SOC information display functionality:"
+msgstr "`socs.py` 实现了 SOC 信息显示功能："
+
+#: ../../source/build_config/build_system_architecture.md:1212
+msgid "4.5.1 Command Line Options"
+msgstr "4.5.1 命令行选项"
+
+#: ../../source/build_config/build_system_architecture.md:1214
+msgid "`-v, --verbose`: Show detailed information about each SOC"
+msgstr "`-v, --verbose`：显示每个 SOC 的详细信息"
+
+#: ../../source/build_config/build_system_architecture.md:1216
+msgid "4.5.2 Command Features"
+msgstr "4.5.2 命令特性"
+
+#: ../../source/build_config/build_system_architecture.md:1218
+msgid ""
+"**SOC Enumeration**: Lists all supported System-on-Chip variants from "
+"Kconfig.chip"
+msgstr "**SOC 枚举**：从 Kconfig.chip 列出所有支持的片上系统变体"
+
+#: ../../source/build_config/build_system_architecture.md:1219
+msgid "**Dependency Display**: Shows SOC dependencies and requirements"
+msgstr "**依赖显示**：显示 SOC 依赖和要求"
+
+#: ../../source/build_config/build_system_architecture.md:1220
+msgid "**Verbose Information**: Provides detailed SOC specifications including:"
+msgstr "**详细信息**：提供详细的 SOC 规格，包括："
+
+#: ../../source/build_config/build_system_architecture.md:1221
+msgid "Full SOC name and prompt"
+msgstr "完整的 SOC 名称和提示"
+
+#: ../../source/build_config/build_system_architecture.md:1225
+msgid "4.5.3 Usage Examples"
+msgstr "4.5.3 使用示例"
+
+#: ../../source/build_config/build_system_architecture.md:1235
+msgid "4.6 BDT Command Extension"
+msgstr "4.6 BDT 命令扩展"
+
+#: ../../source/build_config/build_system_architecture.md:1237
+msgid ""
+"The `west tl-bdt` command is a West extension that provides an interface "
+"to the Telink Burning and Debugging Tool (BDT) for performing flash "
+"operations on Telink devices. This command simplifies the process of "
+"interacting with BDT by providing a unified, cross-platform interface."
+msgstr "`west tl-bdt` 命令是 West 扩展，提供与 Telink 烧录调试工具（BDT）的接口，用于在 Telink 设备上执行 Flash 操作。此命令通过提供统一的跨平台接口简化了与 BDT 交互的过程。"
+
+#: ../../source/build_config/build_system_architecture.md:1239
+msgid "4.6.1 Command Syntax"
+msgstr "4.6.1 命令语法"
+
+#: ../../source/build_config/build_system_architecture.md:1248
+msgid "4.6.2 Supported Operations"
+msgstr "4.6.2 支持的操作"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Operation"
+msgstr "操作"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "download"
+msgstr "download"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Download firmware to flash"
+msgstr "下载固件到 Flash"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "read"
+msgstr "read"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Read data from flash"
+msgstr "从 Flash 读取数据"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "write"
+msgstr "write"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Write data to flash"
+msgstr "向 Flash 写入数据"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "erase"
+msgstr "erase"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Erase flash"
+msgstr "擦除 Flash"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "lock"
+msgstr "lock"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Lock flash region"
+msgstr "锁定 Flash 区域"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "unlock"
+msgstr "unlock"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Unlock flash region"
+msgstr "解锁 Flash 区域"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "reset"
+msgstr "reset"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Reset device"
+msgstr "复位设备"
+
+#: ../../source/build_config/build_system_architecture.md:1260
+msgid "4.6.3 BDT Tool Path Configuration"
+msgstr "4.6.3 BDT 工具路径配置"
+
+#: ../../source/build_config/build_system_architecture.md:1262
+msgid "4.6.3.1 Setting BDT Path"
+msgstr "4.6.3.1 设置 BDT 路径"
+
+#: ../../source/build_config/build_system_architecture.md:1264
+msgid ""
+"The BDT tool path can be set through the following methods (in order of "
+"priority):"
+msgstr "BDT 工具路径可以通过以下方式设置（按优先级顺序）："
+
+#: ../../source/build_config/build_system_architecture.md:1266
+msgid "**Command line option**: `--bdt-path /path/to/bdt_executable`"
+msgstr "**命令行选项**：`--bdt-path /path/to/bdt_executable`"
+
+#: ../../source/build_config/build_system_architecture.md:1267
+msgid "**Environment variable**: `BDT_PATH=/path/to/bdt_executable`"
+msgstr "**环境变量**：`BDT_PATH=/path/to/bdt_executable`"
+
+#: ../../source/build_config/build_system_architecture.md:1268
+msgid "**System PATH**: The command will search for BDT in the system PATH"
+msgstr "**系统 PATH**：命令将在系统 PATH 中搜索 BDT"
+
+#: ../../source/build_config/build_system_architecture.md:1269
+#, python-brace-format
+msgid ""
+"**Telink base directory**: If `TELINK_BASE` is set, it will look in "
+"`${TELINK_BASE}/tools/`"
+msgstr "**Telink 基础目录**：如果设置了 `TELINK_BASE`，将在 `${TELINK_BASE}/tools/` 中查找"
+
+#: ../../source/build_config/build_system_architecture.md:1271
+msgid "4.6.3.2 Important Notes"
+msgstr "4.6.3.2 重要说明"
+
+#: ../../source/build_config/build_system_architecture.md:1273
+msgid ""
+"**Parameter Order**: The `--bdt-path` parameter can be specified either "
+"before or after the subcommand (e.g., download, read, write) starting "
+"from version 5.9.0."
+msgstr "**参数顺序**：从版本 5.9.0 开始，`--bdt-path` 参数可以在子命令（如 download、read、write）之前或之后指定。"
+
+#: ../../source/build_config/build_system_architecture.md:1280
+msgid "**Correct Path Format**: The `--bdt-path` parameter can accept either:"
+msgstr "**正确的路径格式**：`--bdt-path` 参数可以接受以下两种格式之一："
+
+#: ../../source/build_config/build_system_architecture.md:1281
+msgid "**Path to executable file**:"
+msgstr "**可执行文件路径**："
+
+#: ../../source/build_config/build_system_architecture.md:1282
+msgid "**Windows**: `Cmd_download_tool.exe`"
+msgstr "**Windows**：`Cmd_download_tool.exe`"
+
+#: ../../source/build_config/build_system_architecture.md:1283
+msgid "**Linux**: `bdt`"
+msgstr "**Linux**：`bdt`"
+
+#: ../../source/build_config/build_system_architecture.md:1284
+msgid "**Path to directory containing the executable**:"
+msgstr "**包含可执行文件的目录路径**："
+
+#: ../../source/build_config/build_system_architecture.md:1285
+msgid ""
+"The tool will automatically search for the appropriate executable in the "
+"directory"
+msgstr "工具将自动在目录中搜索适当的可执行文件"
+
+#: ../../source/build_config/build_system_architecture.md:1287
+msgid "Example:"
+msgstr "示例："
+
+#: ../../source/build_config/build_system_architecture.md:1296
+msgid ""
+"**Path Format**: On Windows, you can use either forward slashes or "
+"backslashes in paths:"
+msgstr "**路径格式**：在 Windows 上，您可以在路径中使用正斜杠或反斜杠："
+
+#: ../../source/build_config/build_system_architecture.md:1303
+msgid "4.6.4 Global Parameters"
+msgstr "4.6.4 全局参数"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Default"
+msgstr "默认值"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-h`, `--help`"
+msgstr "`-h`、`--help`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Show help message and exit"
+msgstr "显示帮助信息并退出"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "-"
+msgstr "-"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-d`, `--build-dir`"
+msgstr "`-d`、`--build-dir`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Build directory"
+msgstr "构建目录"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`build` in current directory"
+msgstr "当前目录下的 `build`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-c`, `--core`"
+msgstr "`-c`、`--core`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Operate on core instead of flash"
+msgstr "在核心上操作而非 Flash"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "False"
+msgstr "False"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--usb`"
+msgstr "`--usb`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Use USB mode (default: EVK mode)"
+msgstr "使用 USB 模式（默认：EVK 模式）"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--bdt-path`"
+msgstr "`--bdt-path`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Path to BDT tool executable"
+msgstr "BDT 工具可执行文件路径"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--chip`"
+msgstr "`--chip`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Chip type (e.g., B92, TL721X, TL321X)"
+msgstr "芯片类型（例如 B92、TL721X、TL321X）"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Detected from build config"
+msgstr "从构建配置中检测"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--sws EVK_CLK EVK_RATE TARGET_CLK TARGET_RATE`"
+msgstr "`--sws EVK_CLK EVK_RATE TARGET_CLK TARGET_RATE`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Set SWire clock values"
+msgstr "设置 SWire 时钟值"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--bus`"
+msgstr "`--bus`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "USB bus ID (required when multiple USB devices exist)"
+msgstr "USB 总线 ID（存在多个 USB 设备时需要）"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`--devid`"
+msgstr "`--devid`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "USB device ID (required when multiple USB devices exist)"
+msgstr "USB 设备 ID（存在多个 USB 设备时需要）"
+
+#: ../../source/build_config/build_system_architecture.md:1317
+msgid "4.6.5 Subcommands"
+msgstr "4.6.5 子命令"
+
+#: ../../source/build_config/build_system_architecture.md:1319
+msgid "4.6.5.1 download"
+msgstr "4.6.5.1 download"
+
+#: ../../source/build_config/build_system_architecture.md:1321
+msgid "Download firmware to flash."
+msgstr "将固件下载到 Flash。"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-i`, `--input`"
+msgstr "`-i`、`--input`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Path to firmware file"
+msgstr "固件文件路径"
+
+#: ../../source/build_config/build_system_architecture.md:897
+#, python-brace-format
+msgid "`build/${TLK_ARTIFACT_NAME}.bin`"
+msgstr "`build/${TLK_ARTIFACT_NAME}.bin`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-a`, `--addr`"
+msgstr "`-a`、`--addr`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Flash address to download to"
+msgstr "要下载到的 Flash 地址"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`0x00`"
+msgstr "`0x00`"
+
+#: ../../source/build_config/build_system_architecture.md:1332
+msgid "4.6.5.2 read"
+msgstr "4.6.5.2 read"
+
+#: ../../source/build_config/build_system_architecture.md:1334
+msgid "Read data from flash."
+msgstr "从 Flash 读取数据。"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Flash address to read from"
+msgstr "要读取的 Flash 地址"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-s`, `--size`"
+msgstr "`-s`、`--size`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Number of bytes to read (e.g., 16, 1k)"
+msgstr "要读取的字节数（例如 16、1k）"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Required"
+msgstr "必需"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-o`, `--output`"
+msgstr "`-o`、`--output`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Output file path"
+msgstr "输出文件路径"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`save<timestamp>.bin`"
+msgstr "`save<timestamp>.bin`"
+
+#: ../../source/build_config/build_system_architecture.md:1346
+msgid "4.6.5.3 write"
+msgstr "4.6.5.3 write"
+
+#: ../../source/build_config/build_system_architecture.md:1348
+msgid "Write data to flash."
+msgstr "向 Flash 写入数据。"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Flash address to write to"
+msgstr "要写入的 Flash 地址"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Number of bytes to write (required if writing raw data)"
+msgstr "要写入的字节数（写入原始数据时需要）"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Path to input file (required if not writing raw data)"
+msgstr "输入文件路径（不写入原始数据时需要）"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`data`"
+msgstr "`data`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Raw data bytes to write (e.g., 01 02 03 04)"
+msgstr "要写入的原始数据字节（例如 01 02 03 04）"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "`-e`, `--erase`"
+msgstr "`-e`、`--erase`"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Erase before writing"
+msgstr "写入前擦除"
+
+#: ../../source/build_config/build_system_architecture.md:1362
+msgid "4.6.5.4 erase"
+msgstr "4.6.5.4 erase"
+
+#: ../../source/build_config/build_system_architecture.md:1364
+msgid "Erase flash."
+msgstr "擦除 Flash。"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Flash address to erase from"
+msgstr "要擦除的 Flash 起始地址"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Number of bytes to erase (e.g., 1k, 4k)"
+msgstr "要擦除的字节数（例如 1k、4k）"
+
+#: ../../source/build_config/build_system_architecture.md:1375
+msgid "4.6.5.5 lock"
+msgstr "4.6.5.5 lock"
+
+#: ../../source/build_config/build_system_architecture.md:1377
+msgid "Lock flash region."
+msgstr "锁定 Flash 区域。"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Flash address to lock"
+msgstr "要锁定的 Flash 地址"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Size of region to lock (e.g., 512k)"
+msgstr "要锁定的区域大小（例如 512k）"
+
+#: ../../source/build_config/build_system_architecture.md:1388
+msgid "4.6.5.6 unlock"
+msgstr "4.6.5.6 unlock"
+
+#: ../../source/build_config/build_system_architecture.md:1390
+msgid "Unlock flash region."
+msgstr "解锁 Flash 区域。"
+
+#: ../../source/build_config/build_system_architecture.md:1398
+msgid "4.6.5.7 reset"
+msgstr "4.6.5.7 reset"
+
+#: ../../source/build_config/build_system_architecture.md:1400
+msgid "Reset device."
+msgstr "复位设备。"
+
+#: ../../source/build_config/build_system_architecture.md:897
+msgid "Reset from core instead of flash"
+msgstr "从核心而非 Flash 复位"
+
+#: ../../source/build_config/build_system_architecture.md:1410
+msgid "4.6.6 Examples"
+msgstr "4.6.6 示例"
+
+#: ../../source/build_config/build_system_architecture.md:1412
+msgid "4.6.6.1 Download Firmware"
+msgstr "4.6.6.1 下载固件"
+
+#: ../../source/build_config/build_system_architecture.md:1428
+msgid "4.6.6.2 Read Flash"
+msgstr "4.6.6.2 读取 Flash"
+
+#: ../../source/build_config/build_system_architecture.md:1438
+msgid "4.6.6.3 Write Flash"
+msgstr "4.6.6.3 写入 Flash"
+
+#: ../../source/build_config/build_system_architecture.md:1451
+msgid "4.6.6.4 Erase Flash"
+msgstr "4.6.6.4 擦除 Flash"
+
+#: ../../source/build_config/build_system_architecture.md:1461
+msgid "4.6.6.5 Lock/Unlock Flash"
+msgstr "4.6.6.5 锁定/解锁 Flash"
+
+#: ../../source/build_config/build_system_architecture.md:1471
+msgid "4.6.6.6 Reset Device"
+msgstr "4.6.6.6 复位设备"
+
+#: ../../source/build_config/build_system_architecture.md:1481
+msgid "4.6.7 Advanced Usage"
+msgstr "4.6.7 高级用法"
+
+#: ../../source/build_config/build_system_architecture.md:1483
+msgid "4.6.7.1 Using Specific BDT Path"
+msgstr "4.6.7.1 使用特定 BDT 路径"
+
+#: ../../source/build_config/build_system_architecture.md:1489
+msgid "4.6.7.2 Using SWire Clock Settings"
+msgstr "4.6.7.2 使用 SWire 时钟设置"
+
+#: ../../source/build_config/build_system_architecture.md:1495
+msgid "4.6.7.3 Multiple USB Devices"
+msgstr "4.6.7.3 多个 USB 设备"
+
+#: ../../source/build_config/build_system_architecture.md:1501
+msgid "4.6.8 Cross-Platform Considerations"
+msgstr "4.6.8 跨平台注意事项"
+
+#: ../../source/build_config/build_system_architecture.md:1503
+msgid ""
+"The `west tl-bdt` command automatically handles differences between "
+"Windows and Linux environments:"
+msgstr "`west tl-bdt` 命令自动处理 Windows 和 Linux 环境之间的差异："
+
+#: ../../source/build_config/build_system_architecture.md:1505
+msgid ""
+"**Windows**: Uses `Cmd_download_tool.exe` and automatically adds device "
+"ID and voltage information if needed"
+msgstr "**Windows**：使用 `Cmd_download_tool.exe`，并根据需要自动添加设备 ID 和电压信息"
+
+#: ../../source/build_config/build_system_architecture.md:1506
+msgid "**Linux**: Uses `bdt` with standard Linux command syntax"
+msgstr "**Linux**：使用 `bdt` 和标准 Linux 命令语法"
+
+#: ../../source/build_config/build_system_architecture.md:1507
+msgid ""
+"**Path handling**: Automatically converts path separators (e.g., `/` → "
+"`\\` on Windows)"
+msgstr "**路径处理**：自动转换路径分隔符（例如在 Windows 上 `/` → `\\`）"
+
+#: ../../source/build_config/build_system_architecture.md:1509
+msgid "4.6.9 Troubleshooting"
+msgstr "4.6.9 故障排除"
+
+#: ../../source/build_config/build_system_architecture.md:1511
+msgid "4.6.9.1 BDT Tool Not Found"
+msgstr "4.6.9.1 未找到 BDT 工具"
+
+#: ../../source/build_config/build_system_architecture.md:1517
+msgid ""
+"**Solution**: Set the BDT path using one of the methods described in "
+"section 4."
+msgstr "**解决方案**：使用第 4 节中描述的方法之一设置 BDT 路径。"
+
+#: ../../source/build_config/build_system_architecture.md:1519
+msgid "4.6.9.2 Chip Type Not Specified"
+msgstr "4.6.9.2 未指定芯片类型"
+
+#: ../../source/build_config/build_system_architecture.md:1525
+msgid ""
+"**Solution**: Specify the chip type using `--chip` option, or ensure that"
+" the build configuration contains the chip type information."
+msgstr "**解决方案**：使用 `--chip` 选项指定芯片类型，或确保构建配置包含芯片类型信息。"
+
+#: ../../source/build_config/build_system_architecture.md:1527
+msgid "4.6.9.3 BDT Command Failed"
+msgstr "4.6.9.3 BDT 命令失败"
+
+#: ../../source/build_config/build_system_architecture.md:1533
+msgid ""
+"**Solution**: Check the BDT output for detailed error information. Common"
+" issues include:"
+msgstr "**解决方案**：检查 BDT 输出以获取详细的错误信息。常见问题包括："
+
+#: ../../source/build_config/build_system_architecture.md:1534
+msgid "Incorrect chip type"
+msgstr "芯片类型不正确"
+
+#: ../../source/build_config/build_system_architecture.md:1535
+msgid "Invalid address or size"
+msgstr "无效的地址或大小"
+
+#: ../../source/build_config/build_system_architecture.md:1536
+msgid "Device not connected"
+msgstr "设备未连接"
+
+#: ../../source/build_config/build_system_architecture.md:1539
+msgid "4.7 West Workspace Configuration"
+msgstr "4.7 West 工作空间配置"
+
+#: ../../source/build_config/build_system_architecture.md:1541
+msgid "`west.yml` defines the West workspace configuration:"
+msgstr "`west.yml` 定义了 West 工作空间配置："
+
+#: ../../source/build_config/build_system_architecture.md:1543
+msgid "Remote repository settings"
+msgstr "远程仓库设置"
+
+#: ../../source/build_config/build_system_architecture.md:1544
+msgid "Project path configuration"
+msgstr "项目路径配置"
+
+#: ../../source/build_config/build_system_architecture.md:1545
+msgid "Command extension definitions"
+msgstr "命令扩展定义"
+
+#: ../../source/build_config/build_system_architecture.md:1547
+msgid "5. Make Support"
+msgstr "5. Make 支持"
+
+#: ../../source/build_config/build_system_architecture.md:1549
+msgid ""
+"The `Makefile` provides a traditional make command interface as a "
+"frontend to CMake, offering a simplified workflow for developers. This "
+"only can be used in root directory of the project."
+msgstr "`Makefile` 提供传统的 make 命令接口作为 CMake 的前端，为开发者提供简化的工作流。这只能在项目的根目录中使用。"
+
+#: ../../source/build_config/build_system_architecture.md:1551
+msgid "5.1 Makefile Structure"
+msgstr "5.1 Makefile 结构"
+
+#: ../../source/build_config/build_system_architecture.md:1553
+msgid ""
+"The `Makefile` in the project root directory provides a traditional make "
+"command interface as a frontend to CMake, offering a simplified workflow "
+"for developers. It has been recently refactored to improve "
+"maintainability and flexibility:"
+msgstr "项目根目录中的 `Makefile` 提供传统的 make 命令接口作为 CMake 的前端，为开发者提供简化的工作流。它最近经过重构以提高可维护性和灵活性："
+
+#: ../../source/build_config/build_system_architecture.md:1610
+msgid "The refactored Makefile defines the following key components:"
+msgstr "重构后的 Makefile 定义了以下关键组件："
+
+#: ../../source/build_config/build_system_architecture.md:1612
+msgid ""
+"**Phony Targets**: All targets (`cmake`, `config`, `pinmux`, `build`, "
+"`clean`, `cleanbuild`) are marked as phony to avoid conflicts with actual"
+" files"
+msgstr "**伪目标**：所有目标（`cmake`、`config`、`pinmux`、`build`、`clean`、`cleanbuild`）都被标记为伪目标，以避免与实际文件冲突"
+
+#: ../../source/build_config/build_system_architecture.md:1613
+msgid ""
+"**Configuration Variables**: Centralized configuration using variables "
+"for easier maintenance"
+msgstr "**配置变量**：使用变量进行集中配置，便于维护"
+
+#: ../../source/build_config/build_system_architecture.md:1614
+msgid ""
+"**Default Application**: Set default application to build (`gpio_demo`) "
+"with override capability"
+msgstr "**默认应用**：设置默认构建的应用（`gpio_demo`），支持覆盖"
+
+#: ../../source/build_config/build_system_architecture.md:1615
+msgid ""
+"**CMake Integration**: Uses CMake commands (`cmake -B`, `cmake --build`) "
+"for all build operations"
+msgstr "**CMake 集成**：使用 CMake 命令（`cmake -B`、`cmake --build`）进行所有构建操作"
+
+#: ../../source/build_config/build_system_architecture.md:1616
+msgid ""
+"**Pre-build Checks**: Implements automatic validation and recovery "
+"mechanisms"
+msgstr "**预构建检查**：实现自动验证和恢复机制"
+
+#: ../../source/build_config/build_system_architecture.md:1617
+msgid ""
+"**Automatic Dependency Resolution**: Ensures all required components are "
+"present before building"
+msgstr "**自动依赖解析**：确保所有必需的组件在构建前已就绪"
+
+#: ../../source/build_config/build_system_architecture.md:1618
+msgid ""
+"**Pinmux Target**: Added explicit `pinmux` target for easier pin "
+"multiplexing configuration"
+msgstr "**Pinmux 目标**：添加了显式的 `pinmux` 目标，便于引脚复用配置"
+
+#: ../../source/build_config/build_system_architecture.md:1620
+msgid "5.1.1 SOC and BOARD Parameters"
+msgstr "5.1.1 SOC 和 BOARD 参数"
+
+#: ../../source/build_config/build_system_architecture.md:1622
+msgid ""
+"The Makefile provides SOC and BOARD parameters to allow targeting "
+"specific hardware configurations:"
+msgstr "Makefile 提供 SOC 和 BOARD 参数，允许定位特定的硬件配置："
+
+#: ../../source/build_config/build_system_architecture.md:1624
+msgid "**Parameter Definition:**"
+msgstr "**参数定义：**"
+
+#: ../../source/build_config/build_system_architecture.md:1631
+msgid "**Parameter Integration:**"
+msgstr "**参数集成：**"
+
+#: ../../source/build_config/build_system_architecture.md:1656
+msgid ""
+"**Optional Parameters**: Both SOC and BOARD parameters are optional and "
+"can be used independently"
+msgstr "**可选参数**：SOC 和 BOARD 参数都是可选的，可以独立使用"
+
+#: ../../source/build_config/build_system_architecture.md:1657
+msgid ""
+"**CMake Integration**: Parameters are automatically passed to CMake as "
+"`-DSOC` and `-DBOARD` flags"
+msgstr "**CMake 集成**：参数自动作为 `-DSOC` 和 `-DBOARD` 标志传递给 CMake"
+
+#: ../../source/build_config/build_system_architecture.md:1658
+msgid ""
+"**Dependency Resolution**: When BOARD is specified, required SOC "
+"dependencies are automatically resolved"
+msgstr "**依赖解析**：当指定 BOARD 时，所需的 SOC 依赖会自动解析"
+
+#: ../../source/build_config/build_system_architecture.md:1659
+msgid ""
+"**Validation**: The build system validates SOC/BOARD combinations during "
+"configuration"
+msgstr "**验证**：构建系统在配置期间验证 SOC/BOARD 组合"
+
+#: ../../source/build_config/build_system_architecture.md:1661
+msgid "5.2 Make Command Flow"
+msgstr "5.2 Make 命令流程"
+
+#: ../../source/build_config/build_system_architecture.md:1663
+msgid "5.2.1 cmake Target"
+msgstr "5.2.1 cmake 目标"
+
+#: ../../source/build_config/build_system_architecture.md:1670
+msgid ""
+"**Purpose**: Initializes the CMake build system for the specified "
+"application"
+msgstr "**用途**：为指定应用初始化 CMake 构建系统"
+
+#: ../../source/build_config/build_system_architecture.md:1671
+#: ../../source/build_config/build_system_architecture.md:1685
+#: ../../source/build_config/build_system_architecture.md:1715
+#: ../../source/build_config/build_system_architecture.md:1739
+msgid "**Parameters**:"
+msgstr "**参数**："
+
+#: ../../source/build_config/build_system_architecture.md:1672
+#: ../../source/build_config/build_system_architecture.md:1686
+#: ../../source/build_config/build_system_architecture.md:1716
+msgid "`$(CMAKE)`: Path to the CMake executable"
+msgstr "`$(CMAKE)`：CMake 可执行文件的路径"
+
+#: ../../source/build_config/build_system_architecture.md:1673
+msgid ""
+"`$(CMAKE_FLAGS)`: Common CMake flags including build directory and "
+"generator"
+msgstr "`$(CMAKE_FLAGS)`：通用 CMake 标志，包括构建目录和生成器"
+
+#: ../../source/build_config/build_system_architecture.md:1674
+msgid ""
+"`-S $(APP)`: Specifies the source directory as the selected application "
+"(default: `samples/gpio_demo`)"
+msgstr "`-S $(APP)`：将源目录指定为所选应用（默认：`samples/gpio_demo`）"
+
+#: ../../source/build_config/build_system_architecture.md:1676
+msgid "5.2.2 config Target"
+msgstr "5.2.2 config 目标"
+
+#: ../../source/build_config/build_system_architecture.md:1683
+msgid "**Purpose**: Generates the project configuration files"
+msgstr "**用途**：生成项目配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1684
+msgid ""
+"**Operation**: Calls CMake's config target to generate configuration "
+"files like `.config`"
+msgstr "**操作**：调用 CMake 的 config 目标生成像 `.config` 这样的配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1687
+#: ../../source/build_config/build_system_architecture.md:1717
+msgid "`--build $(BUILD_DIR)`: Specifies the build directory"
+msgstr "`--build $(BUILD_DIR)`：指定构建目录"
+
+#: ../../source/build_config/build_system_architecture.md:1688
+msgid "`--target config`: CMake target to generate configuration files"
+msgstr "`--target config`：用于生成配置文件的 CMake 目标"
+
+#: ../../source/build_config/build_system_architecture.md:1690
+msgid "5.2.3 build Target"
+msgstr "5.2.3 build 目标"
+
+#: ../../source/build_config/build_system_architecture.md:1698
+msgid ""
+"**Dependencies**: Automatically runs `cmake` and `config` targets if they"
+" haven't been executed"
+msgstr "**依赖**：如果尚未执行，则自动运行 `cmake` 和 `config` 目标"
+
+#: ../../source/build_config/build_system_architecture.md:1699
+msgid "**Pre-build Checks** (via `$(PRE_BUILD_CHECKS)`):"
+msgstr "**预构建检查**（通过 `$(PRE_BUILD_CHECKS)`）："
+
+#: ../../source/build_config/build_system_architecture.md:1700
+msgid ""
+"**Build Folder Check**: Ensures the build directory exists, runs `config`"
+" if not"
+msgstr "**构建文件夹检查**：确保构建目录存在，如果不存在则运行 `config`"
+
+#: ../../source/build_config/build_system_architecture.md:1701
+msgid ""
+"**Config File Check**: Verifies `.config` file exists, runs `config` if "
+"not"
+msgstr "**配置文件检查**：验证 `.config` 文件是否存在，如果不存在则运行 `config`"
+
+#: ../../source/build_config/build_system_architecture.md:1702
+msgid "**Pinmux Check**: Confirms `pinmux.h` exists, runs pinmux tool if not"
+msgstr "**Pinmux 检查**：确认 `pinmux.h` 是否存在，如果不存在则运行 pinmux 工具"
+
+#: ../../source/build_config/build_system_architecture.md:1703
+msgid ""
+"**Pinmux Update Check**: Verifies `pinmux.h` is up-to-date, runs pinmux "
+"tool if not"
+msgstr "**Pinmux 更新检查**：验证 `pinmux.h` 是否是最新的，如果不是则运行 pinmux 工具"
+
+#: ../../source/build_config/build_system_architecture.md:1704
+msgid ""
+"**Build Execution**: Calls `cmake --build $(BUILD_DIR)` to execute the "
+"actual build using Ninja"
+msgstr "**构建执行**：调用 `cmake --build $(BUILD_DIR)` 使用 Ninja 执行实际构建"
+
+#: ../../source/build_config/build_system_architecture.md:1706
+msgid "5.2.4 clean Target"
+msgstr "5.2.4 clean 目标"
+
+#: ../../source/build_config/build_system_architecture.md:1713
+msgid "**Purpose**: Removes build artifacts while preserving configuration files"
+msgstr "**用途**：移除构建产物，同时保留配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1714
+msgid "**Operation**: Calls CMake's clean target to remove generated binary files"
+msgstr "**操作**：调用 CMake 的 clean 目标移除生成的二进制文件"
+
+#: ../../source/build_config/build_system_architecture.md:1718
+msgid "`--target clean`: CMake target to clean build artifacts"
+msgstr "`--target clean`：用于清理构建产物的 CMake 目标"
+
+#: ../../source/build_config/build_system_architecture.md:1720
+msgid "5.2.5 cleanbuild Target"
+msgstr "5.2.5 cleanbuild 目标"
+
+#: ../../source/build_config/build_system_architecture.md:1726
+msgid ""
+"**Purpose**: Cleans existing build artifacts and immediately rebuilds the"
+" project"
+msgstr "**用途**：清理现有构建产物并立即重新构建项目"
+
+#: ../../source/build_config/build_system_architecture.md:1727
+msgid "**Operation**: Combines the `clean` and `build` operations in sequence"
+msgstr "**操作**：按顺序组合 `clean` 和 `build` 操作"
+
+#: ../../source/build_config/build_system_architecture.md:1728
+msgid ""
+"**Parameters**: Inherits all parameters from the `clean` and `build` "
+"targets"
+msgstr "**参数**：继承 `clean` 和 `build` 目标的所有参数"
+
+#: ../../source/build_config/build_system_architecture.md:1730
+msgid "5.2.6 pinmux Target"
+msgstr "5.2.6 pinmux 目标"
+
+#: ../../source/build_config/build_system_architecture.md:1737
+msgid "**Purpose**: Configures pin multiplexing"
+msgstr "**用途**：配置引脚复用"
+
+#: ../../source/build_config/build_system_architecture.md:1738
+msgid "**Operation**: Runs the pinmux configuration tool directly"
+msgstr "**操作**：直接运行 pinmux 配置工具"
+
+#: ../../source/build_config/build_system_architecture.md:1740
+msgid "`$(PYTHON)`: Path to the Python executable"
+msgstr "`$(PYTHON)`：Python 可执行文件的路径"
+
+#: ../../source/build_config/build_system_architecture.md:1741
+msgid "`$(PINMUX_SCRIPT)`: Pinmux script module"
+msgstr "`$(PINMUX_SCRIPT)`：Pinmux 脚本模块"
+
+#: ../../source/build_config/build_system_architecture.md:1743
+msgid "6. Compilation Generation Flow"
+msgstr "6. 编译生成流程"
+
+#: ../../source/build_config/build_system_architecture.md:1745
+msgid "6.1 Complete Build Flow"
+msgstr "6.1 完整构建流程"
+
+#: ../../source/build_config/build_system_architecture.md:1747
+msgid ""
+"**Environment Validation**: Check toolchain, Python environment, and "
+"dependencies"
+msgstr "**环境验证**：检查工具链、Python 环境和依赖"
+
+#: ../../source/build_config/build_system_architecture.md:1748
+msgid ""
+"**CMake Configuration**: Generate build system and Makefiles, load CMake "
+"modules"
+msgstr "**CMake 配置**：生成构建系统和 Makefile，加载 CMake 模块"
+
+#: ../../source/build_config/build_system_architecture.md:1749
+msgid ""
+"**Configuration Generation**: Generate configuration files through "
+"Kconfig as CMake targets"
+msgstr "**配置生成**：通过 Kconfig 作为 CMake 目标生成配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1750
+msgid "**Source Compilation**: Compile C/C++ source code"
+msgstr "**源码编译**：编译 C/C++ 源代码"
+
+#: ../../source/build_config/build_system_architecture.md:1751
+msgid "**Linking**: Link object files into executable files"
+msgstr "**链接**：将目标文件链接为可执行文件"
+
+#: ../../source/build_config/build_system_architecture.md:1752
+msgid "**Firmware Generation**: Generate final firmware binary files"
+msgstr "**固件生成**：生成最终的固件二进制文件"
+
+#: ../../source/build_config/build_system_architecture.md:1754
+msgid "6.1.1 Complete Build Flow Diagram"
+msgstr "6.1.1 完整构建流程图"
+
+#: ../../source/build_config/build_system_architecture.md:1756
+msgid ""
+"The following diagram illustrates the complete build flow from start to "
+"finish:"
+msgstr "下图说明了从开始到结束的完整构建流程："
+
+#: ../../source/build_config/build_system_architecture.md:1801
+msgid "6.2 Configuration File Generation Flow"
+msgstr "6.2 配置文件生成流程"
+
+#: ../../source/build_config/build_system_architecture.md:1803
+msgid "**Default Configuration**: Load chip default configuration"
+msgstr "**默认配置**：加载芯片默认配置"
+
+#: ../../source/build_config/build_system_architecture.md:1804
+msgid "**User Configuration**: Apply user-defined configuration"
+msgstr "**用户配置**：应用用户定义的配置"
+
+#: ../../source/build_config/build_system_architecture.md:1805
+msgid "**Configuration Merging**: Merge configuration files through `kconfig.py`"
+msgstr "**配置合并**：通过 `kconfig.py` 合并配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1806
+msgid "**Header File Generation**: Generate `autoconf.h` and `capabilities.h`"
+msgstr "**头文件生成**：生成 `autoconf.h` 和 `capabilities.h`"
+
+#: ../../source/build_config/build_system_architecture.md:1808
+msgid "6.3 Build File Generation"
+msgstr "6.3 构建文件生成"
+
+#: ../../source/build_config/build_system_architecture.md:1810
+msgid ""
+"**Compilation Commands**: Generate compilation commands for each source "
+"file"
+msgstr "**编译命令**：为每个源文件生成编译命令"
+
+#: ../../source/build_config/build_system_architecture.md:1811
+msgid "**Dependency Information**: Generate source file dependency relationships"
+msgstr "**依赖信息**：生成源文件依赖关系"
+
+#: ../../source/build_config/build_system_architecture.md:1812
+msgid "**Linker Scripts**: Process and generate linker scripts"
+msgstr "**链接脚本**：处理和生成链接脚本"
+
+#: ../../source/build_config/build_system_architecture.md:1813
+msgid "**Firmware Files**: Generate final binary and flashing files"
+msgstr "**固件文件**：生成最终二进制和烧录文件"
+
+#: ../../source/build_config/build_system_architecture.md:1815
+msgid "7. Files and Scripts Composition"
+msgstr "7. 文件和脚本组成"
+
+#: ../../source/build_config/build_system_architecture.md:1817
+msgid "7.1 Core Configuration Files"
+msgstr "7.1 核心配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "File"
+msgstr "文件"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Location"
+msgstr "位置"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Function"
+msgstr "功能"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "CMakeLists.txt"
+msgstr "CMakeLists.txt"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Root directory"
+msgstr "根目录"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Main CMake configuration entry"
+msgstr "CMake 主配置入口"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Makefile"
+msgstr "Makefile"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Make command interface"
+msgstr "Make 命令接口"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "west.yml"
+msgstr "west.yml"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "West workspace configuration"
+msgstr "West 工作空间配置"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Kconfig.chip"
+msgstr "Kconfig.chip"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Defines available SoC options and their configurations"
+msgstr "定义可用的 SoC 选项及其配置"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Kconfig.build"
+msgstr "Kconfig.build"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Defines build-time options and features"
+msgstr "定义构建时的选项和功能"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "chip.config"
+msgstr "chip.config"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generated SoC-specific configuration"
+msgstr "生成的 SoC 特定配置"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "build.config"
+msgstr "build.config"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generated build-specific configuration"
+msgstr "生成的构建特定配置"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid ".config"
+msgstr ".config"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Merged configuration file used for the build"
+msgstr "用于构建的合并配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "capabilities.h"
+msgstr "capabilities.h"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generated header with SoC capabilities based on selected chip"
+msgstr "基于所选芯片生成的包含 SoC 能力的头文件"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "autoconf.h"
+msgstr "autoconf.h"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generated header with all configuration options as C defines"
+msgstr "包含所有配置选项作为 C 定义的生成头文件"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "pinmux.h"
+msgstr "pinmux.h"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generated header with pin multiplexing configuration"
+msgstr "包含引脚复用配置的生成头文件"
+
+#: ../../source/build_config/build_system_architecture.md:1833
+msgid "7.2 CMake Files and Modules"
+msgstr "7.2 CMake 文件和模块"
+
+#: ../../source/build_config/build_system_architecture.md:1835
+msgid "7.2.1 Core CMake Files"
+msgstr "7.2.1 核心 CMake 文件"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Main Function"
+msgstr "主要功能"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid ""
+"Main CMake entry point, sets up project structure and includes "
+"subdirectories"
+msgstr "CMake 主入口，设置项目结构并包含子目录"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "TelinkConfig.cmake"
+msgstr "TelinkConfig.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "cmake/"
+msgstr "cmake/"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid ""
+"Telink package configuration, provides include_boilerplate macro and "
+"loads default modules"
+msgstr "Telink 包配置，提供 include_boilerplate 宏并加载默认模块"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Application directories"
+msgstr "应用目录"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid ""
+"Application-specific CMake configuration, creates executable targets and "
+"adds sources"
+msgstr "应用特定 CMake 配置，创建可执行目标并添加源文件"
+
+#: ../../source/build_config/build_system_architecture.md:1843
+msgid "7.2.2 CMake Module Files"
+msgstr "7.2.2 CMake 模块文件"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Module"
+msgstr "模块"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "compiler.cmake"
+msgstr "compiler.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "cmake/modules/"
+msgstr "cmake/modules/"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Compiler configuration and compilation options"
+msgstr "编译器配置和编译选项"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "linker.cmake"
+msgstr "linker.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Linker configuration and linker scripts"
+msgstr "链接器配置和链接脚本"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "kconfig.cmake"
+msgstr "kconfig.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Kconfig integration and configuration processing"
+msgstr "Kconfig 集成和配置处理"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "west.cmake"
+msgstr "west.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "West tool integration"
+msgstr "West 工具集成"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "pinmux.cmake"
+msgstr "pinmux.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Pin multiplexing configuration"
+msgstr "引脚复用配置"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "extensions.cmake"
+msgstr "extensions.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "CMake extension functions"
+msgstr "CMake 扩展函数"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "python.cmake"
+msgstr "python.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Python environment configuration"
+msgstr "Python 环境配置"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "telink_default.cmake"
+msgstr "telink_default.cmake"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Module loading and default configuration"
+msgstr "模块加载和默认配置"
+
+#: ../../source/build_config/build_system_architecture.md:1857
+msgid "7.3 Build Scripts"
+msgstr "7.3 构建脚本"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Script"
+msgstr "脚本"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "build.py"
+msgstr "build.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "scripts/west_commands/"
+msgstr "scripts/west_commands/"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Implement west tl-build command"
+msgstr "实现 west tl-build 命令"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "config.py"
+msgstr "config.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Implement west tl-config command"
+msgstr "实现 west tl-config 命令"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "boards.py"
+msgstr "boards.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Display supported development boards"
+msgstr "显示支持的开发板"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "socs.py"
+msgstr "socs.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Display supported chips"
+msgstr "显示支持的芯片"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "kconfig.py"
+msgstr "kconfig.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "scripts/"
+msgstr "scripts/"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Process Kconfig configuration files"
+msgstr "处理 Kconfig 配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "menuconfig.py"
+msgstr "menuconfig.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Interactive configuration interface"
+msgstr "交互式配置界面"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "preprocess_kconfig.py"
+msgstr "preprocess_kconfig.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Kconfig preprocessing"
+msgstr "Kconfig 预处理"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "kconfig_parser.py"
+msgstr "kconfig_parser.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Kconfig parsing and validation utilities"
+msgstr "Kconfig 解析和验证工具"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "soc_board_setter.py"
+msgstr "soc_board_setter.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "SOC/BOARD configuration and validation"
+msgstr "SOC/BOARD 配置和验证"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "pinmux_gen.py"
+msgstr "pinmux_gen.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "scripts/preprocess/"
+msgstr "scripts/preprocess/"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Generate pinmux header from .pinmux file"
+msgstr "从 .pinmux 文件生成 pinmux 头文件"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "config_parser.py"
+msgstr "config_parser.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "scripts/parsers/"
+msgstr "scripts/parsers/"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Configuration file parsing utilities"
+msgstr "配置文件解析工具"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "yaml_parser.py"
+msgstr "yaml_parser.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "YAML file parsing utilities"
+msgstr "YAML 文件解析工具"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "pinmux_update_check.py"
+msgstr "pinmux_update_check.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "scripts/checks/"
+msgstr "scripts/checks/"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Check if pinmux needs updating"
+msgstr "检查 pinmux 是否需要更新"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "tlk_check_fw.py"
+msgstr "tlk_check_fw.py"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Firmware validation script"
+msgstr "固件验证脚本"
+
+#: ../../source/build_config/build_system_architecture.md:1876
+msgid "7.3.1 SOC/BOARD Related Scripts"
+msgstr "7.3.1 SOC/BOARD 相关脚本"
+
+#: ../../source/build_config/build_system_architecture.md:1878
+msgid "**soc_board_setter.py**"
+msgstr "**soc_board_setter.py**"
+
+#: ../../source/build_config/build_system_architecture.md:1879
+msgid ""
+"**Purpose**: Handles SOC and BOARD configuration with proper dependency "
+"resolution"
+msgstr "**用途**：处理 SOC 和 BOARD 配置，具有正确的依赖解析"
+
+#: ../../source/build_config/build_system_architecture.md:1880
+#: ../../source/build_config/build_system_architecture.md:1899
+#: ../../source/build_config/build_system_architecture.md:1914
+#: ../../source/build_config/build_system_architecture.md:1923
+#: ../../source/build_config/build_system_architecture.md:1932
+#: ../../source/build_config/build_system_architecture.md:1943
+msgid "**Key Features**:"
+msgstr "**主要特性**："
+
+#: ../../source/build_config/build_system_architecture.md:1881
+msgid "Validates SOC/BOARD combinations using Kconfig dependencies"
+msgstr "使用 Kconfig 依赖验证 SOC/BOARD 组合"
+
+#: ../../source/build_config/build_system_architecture.md:1882
+msgid "Automatically resolves and sets required dependencies"
+msgstr "自动解析和设置所需的依赖"
+
+#: ../../source/build_config/build_system_architecture.md:1883
+msgid "Supports individual SOC or BOARD setting, or combined setting"
+msgstr "支持单独的 SOC 或 BOARD 设置，或组合设置"
+
+#: ../../source/build_config/build_system_architecture.md:1884
+msgid "Provides both programmatic API and command-line interface"
+msgstr "提供编程 API 和命令行接口"
+
+#: ../../source/build_config/build_system_architecture.md:1885
+msgid "**Usage Examples**:"
+msgstr "**使用示例**："
+
+#: ../../source/build_config/build_system_architecture.md:1897
+msgid "**kconfig_parser.py**"
+msgstr "**kconfig_parser.py**"
+
+#: ../../source/build_config/build_system_architecture.md:1898
+msgid ""
+"**Purpose**: Provides Kconfig parsing and validation utilities for "
+"SOC/BOARD management"
+msgstr "**用途**：为 SOC/BOARD 管理提供 Kconfig 解析和验证工具"
+
+#: ../../source/build_config/build_system_architecture.md:1900
+msgid "Parses Kconfig.chip to extract available SOCs and boards"
+msgstr "解析 Kconfig.chip 以提取可用的 SOC 和板卡"
+
+#: ../../source/build_config/build_system_architecture.md:1901
+msgid "Validates SOC/BOARD combinations based on dependencies"
+msgstr "基于依赖关系验证 SOC/BOARD 组合"
+
+#: ../../source/build_config/build_system_architecture.md:1902
+msgid "Provides methods to query supported boards for each SOC and vice versa"
+msgstr "提供查询每个 SOC 支持的板卡的方法，反之亦然"
+
+#: ../../source/build_config/build_system_architecture.md:1903
+msgid "Used by both West commands and CMake configuration system"
+msgstr "被 West 命令和 CMake 配置系统使用"
+
+#: ../../source/build_config/build_system_architecture.md:1904
+msgid "**Integration Points**:"
+msgstr "**集成点**："
+
+#: ../../source/build_config/build_system_architecture.md:1905
+msgid "Used by `boards.py` and `socs.py` West commands"
+msgstr "被 `boards.py` 和 `socs.py` West 命令使用"
+
+#: ../../source/build_config/build_system_architecture.md:1906
+msgid "Called by `kconfig.cmake` for validation during configuration"
+msgstr "被 `kconfig.cmake` 调用用于配置期间的验证"
+
+#: ../../source/build_config/build_system_architecture.md:1907
+msgid "Supports dependency resolution and compatibility checking"
+msgstr "支持依赖解析和兼容性检查"
+
+#: ../../source/build_config/build_system_architecture.md:1909
+msgid "7.3.2 Utility Scripts"
+msgstr "7.3.2 工具脚本"
+
+#: ../../source/build_config/build_system_architecture.md:1911
+msgid "**pinmux_gen.py**"
+msgstr "**pinmux_gen.py**"
+
+#: ../../source/build_config/build_system_architecture.md:1912
+msgid "**Purpose**: Generate pinmux header file from .pinmux configuration"
+msgstr "**用途**：从 .pinmux 配置生成 pinmux 头文件"
+
+#: ../../source/build_config/build_system_architecture.md:1913
+msgid "**Location**: `scripts/preprocess/`"
+msgstr "**位置**：`scripts/preprocess/`"
+
+#: ../../source/build_config/build_system_architecture.md:1915
+msgid "Reads .pinmux file from build directory"
+msgstr "从构建目录读取 .pinmux 文件"
+
+#: ../../source/build_config/build_system_architecture.md:1916
+msgid "Converts CONFIG_ format definitions to C preprocessor macros"
+msgstr "将 CONFIG_ 格式定义转换为 C 预处理器宏"
+
+#: ../../source/build_config/build_system_architecture.md:1917
+msgid "Generates pinmux.h header for inclusion in source code"
+msgstr "生成 pinmux.h 头文件供源代码包含"
+
+#: ../../source/build_config/build_system_architecture.md:1918
+msgid ""
+"**Integration**: Used by CMake build system during pinmux configuration "
+"generation"
+msgstr "**集成**：在 pinmux 配置生成期间由 CMake 构建系统使用"
+
+#: ../../source/build_config/build_system_architecture.md:1920
+msgid "**config_parser.py**"
+msgstr "**config_parser.py**"
+
+#: ../../source/build_config/build_system_architecture.md:1921
+msgid "**Purpose**: Configuration file parsing utilities"
+msgstr "**用途**：配置文件解析工具"
+
+#: ../../source/build_config/build_system_architecture.md:1922
+#: ../../source/build_config/build_system_architecture.md:1931
+msgid "**Location**: `scripts/parsers/`"
+msgstr "**位置**：`scripts/parsers/`"
+
+#: ../../source/build_config/build_system_architecture.md:1924
+msgid "Parse .config files for specific configuration values"
+msgstr "解析 .config 文件以获取特定配置值"
+
+#: ../../source/build_config/build_system_architecture.md:1925
+msgid "Extract pinmux configurations from config files"
+msgstr "从配置文件中提取 pinmux 配置"
+
+#: ../../source/build_config/build_system_architecture.md:1926
+msgid "Provides consistent interface for config file operations"
+msgstr "为配置文件操作提供一致的接口"
+
+#: ../../source/build_config/build_system_architecture.md:1927
+msgid "**Usage**: Used by various scripts for config file access and validation"
+msgstr "**用途**：被各种脚本用于配置文件访问和验证"
+
+#: ../../source/build_config/build_system_architecture.md:1929
+msgid "**yaml_parser.py**"
+msgstr "**yaml_parser.py**"
+
+#: ../../source/build_config/build_system_architecture.md:1930
+msgid "**Purpose**: YAML file parsing utilities"
+msgstr "**用途**：YAML 文件解析工具"
+
+#: ../../source/build_config/build_system_architecture.md:1933
+msgid "Load and parse YAML configuration files"
+msgstr "加载和解析 YAML 配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1934
+msgid "Handle errors gracefully with informative messages"
+msgstr "优雅地处理错误并显示信息性消息"
+
+#: ../../source/build_config/build_system_architecture.md:1935
+msgid "Return dictionary structure for programmatic access"
+msgstr "返回字典结构以供编程访问"
+
+#: ../../source/build_config/build_system_architecture.md:1936
+msgid "**Usage**: Used for parsing pinmux YAML files and other configuration data"
+msgstr "**用途**：用于解析 pinmux YAML 文件和其他配置数据"
+
+#: ../../source/build_config/build_system_architecture.md:1938
+msgid "7.3.3 Validation Scripts"
+msgstr "7.3.3 验证脚本"
+
+#: ../../source/build_config/build_system_architecture.md:1940
+msgid "**pinmux_update_check.py**"
+msgstr "**pinmux_update_check.py**"
+
+#: ../../source/build_config/build_system_architecture.md:1941
+msgid "**Purpose**: Check if pinmux configuration needs updating"
+msgstr "**用途**：检查 pinmux 配置是否需要更新"
+
+#: ../../source/build_config/build_system_architecture.md:1942
+msgid "**Location**: `scripts/checks/`"
+msgstr "**位置**：`scripts/checks/`"
+
+#: ../../source/build_config/build_system_architecture.md:1944
+msgid "Validate existence of .config file"
+msgstr "验证 .config 文件的存在"
+
+#: ../../source/build_config/build_system_architecture.md:1945
+msgid "Check GPIO driver enable status"
+msgstr "检查 GPIO 驱动启用状态"
+
+#: ../../source/build_config/build_system_architecture.md:1946
+msgid "Compare TLK_SOC_SERIES between .config and .pinmux"
+msgstr "比较 .config 和 .pinmux 中的 TLK_SOC_SERIES"
+
+#: ../../source/build_config/build_system_architecture.md:1947
+msgid "Validate required functions are present in .pinmux"
+msgstr "验证所需功能在 .pinmux 中存在"
+
+#: ../../source/build_config/build_system_architecture.md:1948
+msgid "Check enabled ports consistency"
+msgstr "检查启用端口的一致性"
+
+#: ../../source/build_config/build_system_architecture.md:1949
+msgid "**Integration**: Used by pre-build checks to ensure pinmux is up-to-date"
+msgstr "**集成**：由预构建检查使用以确保 pinmux 是最新的"
+
+#: ../../source/build_config/build_system_architecture.md:1951
+msgid "| pre_build_check.py | scripts/ | Pre-build environment checks |"
+msgstr "| pre_build_check.py | scripts/ | 预构建环境检查 |"
+
+#: ../../source/build_config/build_system_architecture.md:1953
+msgid "7.4 Kconfig Files"
+msgstr "7.4 Kconfig 文件"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "core/Kconfig"
+msgstr "core/Kconfig"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "core/"
+msgstr "core/"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Core feature configuration"
+msgstr "核心功能配置"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "soc/Kconfig"
+msgstr "soc/Kconfig"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "soc/"
+msgstr "soc/"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Chip series selection"
+msgstr "芯片系列选择"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "boards/Kconfig"
+msgstr "boards/Kconfig"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "boards/"
+msgstr "boards/"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "Development board selection"
+msgstr "开发板选择"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "api/Kconfig"
+msgstr "api/Kconfig"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "api/"
+msgstr "api/"
+
+#: ../../source/build_config/build_system_architecture.md:1758
+msgid "API feature configuration"
+msgstr "API 功能配置"
+
+#: ../../source/build_config/build_system_architecture.md:1962
+msgid "8. Build System Working Principles"
+msgstr "8. 构建系统工作原理"
+
+#: ../../source/build_config/build_system_architecture.md:1964
+msgid "8.1 Configuration and Build Separation"
+msgstr "8.1 配置与构建分离"
+
+#: ../../source/build_config/build_system_architecture.md:1966
+msgid ""
+"The UniSDK build system clearly separates the configuration process from "
+"the build process:"
+msgstr "UniSDK 构建系统明确将配置过程与构建过程分离："
+
+#: ../../source/build_config/build_system_architecture.md:1968
+msgid "**Configuration Phase**: Generate configuration files through Kconfig"
+msgstr "**配置阶段**：通过 Kconfig 生成配置文件"
+
+#: ../../source/build_config/build_system_architecture.md:1969
+msgid ""
+"**Generation Phase**: CMake uses configuration files to generate the "
+"build system"
+msgstr "**生成阶段**：CMake 使用配置文件生成构建系统"
+
+#: ../../source/build_config/build_system_architecture.md:1970
+msgid "**Build Phase**: Ninja executes actual compilation and linking tasks"
+msgstr "**构建阶段**：Ninja 执行实际的编译和链接任务"
+
+#: ../../source/build_config/build_system_architecture.md:1972
+msgid "8.2 Modular Design"
+msgstr "8.2 模块化设计"
+
+#: ../../source/build_config/build_system_architecture.md:1974
+msgid ""
+"The system adopts a highly modular design, with each module responsible "
+"for specific functionality:"
+msgstr "系统采用高度模块化设计，每个模块负责特定的功能："
+
+#: ../../source/build_config/build_system_architecture.md:1976
+msgid "Modules interact through clear interfaces"
+msgstr "模块通过清晰的接口进行交互"
+
+#: ../../source/build_config/build_system_architecture.md:1977
+msgid "Configuration information is passed through variables and properties"
+msgstr "配置信息通过变量和属性传递"
+
+#: ../../source/build_config/build_system_architecture.md:1978
+msgid "Supports conditional loading and replacement of modules"
+msgstr "支持条件加载和替换模块"
+
+#: ../../source/build_config/build_system_architecture.md:1980
+msgid "8.3 Multiple Build Method Support"
+msgstr "8.3 多种构建方式支持"
+
+#: ../../source/build_config/build_system_architecture.md:1982
+msgid ""
+"The system simultaneously supports multiple build methods to meet "
+"different usage scenarios:"
+msgstr "系统同时支持多种构建方式以满足不同使用场景："
+
+#: ../../source/build_config/build_system_architecture.md:1984
+msgid "**West Commands**: Provide simplified command-line interfaces"
+msgstr "**West 命令**：提供简化的命令行接口"
+
+#: ../../source/build_config/build_system_architecture.md:1985
+msgid "**Direct CMake Calls**: Provide complete configuration control"
+msgstr "**直接 CMake 调用**：提供完整的配置控制"
+
+#: ../../source/build_config/build_system_architecture.md:1986
+msgid "**Make Commands**: Compatible with traditional build habits"
+msgstr "**Make 命令**：兼容传统构建习惯"
+
+#: ../../source/build_config/build_system_architecture.md:1988
+msgid "9. Extension and Customization"
+msgstr "9. 扩展与定制"
+
+#: ../../source/build_config/build_system_architecture.md:1990
+msgid "9.1 West Extension Commands Behavior"
+msgstr "9.1 West 扩展命令行为"
+
+#: ../../source/build_config/build_system_architecture.md:1992
+msgid "West Command Behavior in Different Directories"
+msgstr "不同目录下的 West 命令行为"
+
+#: ../../source/build_config/build_system_architecture.md:1994
+msgid ""
+"The west tool's output varies depending on the current working directory "
+"due to its extension command mechanism:"
+msgstr "由于扩展命令机制，west 工具的输出因当前工作目录而异："
+
+#: ../../source/build_config/build_system_architecture.md:1996
+msgid ""
+"**Extension Command Discovery**: West searches for `.west/config` "
+"configuration files in the current directory and its parent directories "
+"to locate the workspace."
+msgstr "**扩展命令发现**：West 在当前目录及其父目录中搜索 `.west/config` 配置文件以定位工作空间。"
+
+#: ../../source/build_config/build_system_architecture.md:1998
+msgid ""
+"**Project Manifest Loading**: When a workspace is found, west loads the "
+"`west.yml` manifest file which defines project-specific extension "
+"commands through the `west-commands` field."
+msgstr "**项目清单加载**：找到工作空间后，west 加载 `west.yml` 清单文件，该文件通过 `west-commands` 字段定义项目特定的扩展命令。"
+
+#: ../../source/build_config/build_system_architecture.md:2000
+msgid "**Command Availability**:"
+msgstr "**命令可用性**："
+
+#: ../../source/build_config/build_system_architecture.md:2001
+msgid ""
+"Inside a configured workspace, west loads unisdk project extensions and "
+"displays custom commands like `tl-build`, `tl-boards`, and `tl-socs`"
+msgstr "在已配置的工作空间内，west 加载 unisdk 项目扩展并显示自定义命令，如 `tl-build`、`tl-boards` 和 `tl-socs`"
+
+#: ../../source/build_config/build_system_architecture.md:2002
+msgid ""
+"Outside any workspace, west only shows built-in commands since no "
+"project-specific extensions are available"
+msgstr "在任何工作空间外，west 仅显示内置命令，因为没有项目特定的扩展可用"
+
+#: ../../source/build_config/build_system_architecture.md:2004
+msgid ""
+"**UniSDK Extension Commands**: The unisdk project defines three custom "
+"extensions in `scripts/west-commands.yml`:"
+msgstr "**UniSDK 扩展命令**：unisdk 项目在 `scripts/west-commands.yml` 中定义了三个自定义扩展："
+
+#: ../../source/build_config/build_system_architecture.md:2005
+msgid "`tl-build`: Compile a Telink application"
+msgstr "`tl-build`：编译 Telink 应用"
+
+#: ../../source/build_config/build_system_architecture.md:2006
+msgid "`tl-boards`: Display information about supported Telink boards"
+msgstr "`tl-boards`：显示支持的 Telink 板卡信息"
+
+#: ../../source/build_config/build_system_architecture.md:2007
+msgid "`tl-socs`: Display information about supported Telink SOCs"
+msgstr "`tl-socs`：显示支持的 Telink SOC 信息"
+
+#: ../../source/build_config/build_system_architecture.md:2009
+msgid ""
+"This behavior allows west to provide context-aware tooling based on the "
+"current project workspace while maintaining consistency across different "
+"development environments."
+msgstr "这种行为使 west 能够基于当前项目工作空间提供上下文感知的工具，同时在不同开发环境之间保持一致性。"
+
+#: ../../source/build_config/build_system_architecture.md:2011
+msgid "9.2 Adding New Build Modules"
+msgstr "9.2 添加新的构建模块"
+
+#: ../../source/build_config/build_system_architecture.md:2013
+msgid "To add a new build module:"
+msgstr "要添加新的构建模块："
+
+#: ../../source/build_config/build_system_architecture.md:2015
+msgid "Create a new `.cmake` file in the `cmake/modules/` directory"
+msgstr "在 `cmake/modules/` 目录中创建一个新的 `.cmake` 文件"
+
+#: ../../source/build_config/build_system_architecture.md:2016
+msgid "Add the module to the loading list in `telink_default.cmake`"
+msgstr "将该模块添加到 `telink_default.cmake` 的加载列表中"
+
+#: ../../source/build_config/build_system_architecture.md:2017
+msgid "Implement the module's configuration and functionality"
+msgstr "实现模块的配置和功能"
+
+#: ../../source/build_config/build_system_architecture.md:2019
+msgid "9.3 Extending West Commands"
+msgstr "9.3 扩展 West 命令"
+
+#: ../../source/build_config/build_system_architecture.md:2021
+msgid "To add a new West command:"
+msgstr "要添加新的 West 命令："
+
+#: ../../source/build_config/build_system_architecture.md:2023
+msgid ""
+"Create a command implementation file in the `scripts/west_commands/` "
+"directory"
+msgstr "在 `scripts/west_commands/` 目录中创建命令实现文件"

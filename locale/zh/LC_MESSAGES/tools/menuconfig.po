@@ -1,0 +1,318 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tools/menuconfig.md:6
+msgid "Menuconfig Configuration Interface"
+msgstr "Menuconfig 配置界面"
+
+#: ../../source/tools/menuconfig.md:8
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/tools/menuconfig.md:10
+msgid ""
+"Menuconfig is UniSDK's terminal-based interactive system configuration "
+"tool, providing visual menu navigation to set all Kconfig configuration "
+"options."
+msgstr ""
+"Menuconfig 是 UniSDK 的基于终端的交互式系统配置工具，提供可视化菜单导航以设置所有 Kconfig 配置选项。"
+
+#: ../../source/tools/menuconfig.md:12
+msgid "**Key Features:**"
+msgstr "**主要特性：**"
+
+#: ../../source/tools/menuconfig.md:14
+msgid ""
+"Dual-phase configuration: Chip configuration and Build configuration are "
+"separated"
+msgstr "双阶段配置：芯片配置和构建配置相互分离"
+
+#: ../../source/tools/menuconfig.md:15
+msgid "Terminal graphical interface with arrow key navigation"
+msgstr "终端图形界面，支持方向键导航"
+
+#: ../../source/tools/menuconfig.md:16
+msgid "Search function (press `/` key)"
+msgstr "搜索功能（按 `/` 键）"
+
+#: ../../source/tools/menuconfig.md:17
+msgid "Help system (press `?` key to view option descriptions)"
+msgstr "帮助系统（按 `?` 键查看选项说明）"
+
+#: ../../source/tools/menuconfig.md:18
+msgid ""
+"Automatic dependency management (unavailable options are automatically "
+"hidden)"
+msgstr "自动依赖管理（不可用的选项自动隐藏）"
+
+#: ../../source/tools/menuconfig.md:19
+msgid ""
+"Merged output: Automatically merges hardware and software configurations "
+"into `.config`"
+msgstr "合并输出：自动将硬件和软件配置合并到 `.config`"
+
+#: ../../source/tools/menuconfig.md:21
+msgid "Launch Methods"
+msgstr "启动方式"
+
+#: ../../source/tools/menuconfig.md:38
+msgid ""
+"!!! note \"First-time Use\"     `make config` will open the interface "
+"twice in sequence: first the chip configuration (Kconfig.chip), then the "
+"peripheral build configuration (Kconfig.build)."
+msgstr ""
+"!!! note \"首次使用\"     `make config` 将依次打开两次界面：首先是芯片配置（Kconfig.chip），然后是外设构建配置（Kconfig.build）。"
+
+#: ../../source/tools/menuconfig.md:41
+msgid "Navigation and Operations"
+msgstr "导航与操作"
+
+#: ../../source/tools/menuconfig.md
+msgid "Operation"
+msgstr "操作"
+
+#: ../../source/tools/menuconfig.md
+msgid "Key"
+msgstr "按键"
+
+#: ../../source/tools/menuconfig.md
+msgid "Move up/down"
+msgstr "上/下移动"
+
+#: ../../source/tools/menuconfig.md
+msgid "`↑` `↓` or `j` `k`"
+msgstr "`↑` `↓` 或 `j` `k`"
+
+#: ../../source/tools/menuconfig.md
+msgid "Enter submenu"
+msgstr "进入子菜单"
+
+#: ../../source/tools/menuconfig.md
+msgid "`Enter` or `→`"
+msgstr "`Enter` 或 `→`"
+
+#: ../../source/tools/menuconfig.md
+msgid "Return to parent"
+msgstr "返回上级"
+
+#: ../../source/tools/menuconfig.md
+msgid "`ESC` or `←`"
+msgstr "`ESC` 或 `←`"
+
+#: ../../source/tools/menuconfig.md
+msgid "Toggle option"
+msgstr "切换选项"
+
+#: ../../source/tools/menuconfig.md
+msgid "`Space`"
+msgstr "`Space`"
+
+#: ../../source/tools/menuconfig.md
+msgid "Search"
+msgstr "搜索"
+
+#: ../../source/tools/menuconfig.md
+msgid "`/`"
+msgstr "`/`"
+
+#: ../../source/tools/menuconfig.md
+msgid "View help"
+msgstr "查看帮助"
+
+#: ../../source/tools/menuconfig.md
+msgid "`?`"
+msgstr "`?`"
+
+#: ../../source/tools/menuconfig.md
+msgid "Save and exit"
+msgstr "保存并退出"
+
+#: ../../source/tools/menuconfig.md
+msgid "Select `< Save >` then `< Exit >`"
+msgstr "选择 `< Save >` 然后选择 `< Exit >`"
+
+#: ../../source/tools/menuconfig.md:53
+msgid "![Chip configuration screen](pics/menuconfig_1.png)"
+msgstr "![芯片配置界面](pics/menuconfig_1.png)"
+
+#: ../../source/tools/menuconfig.md:53
+msgid "Chip configuration screen"
+msgstr "芯片配置界面"
+
+#: ../../source/tools/menuconfig.md:55
+msgid "*Figure 1. Chip configuration screen — select target SoC and board*"
+msgstr "*图 1. 芯片配置界面 — 选择目标 SoC 和开发板*"
+
+#: ../../source/tools/menuconfig.md:57
+msgid "![Build configuration screen](pics/menuconfig_2.png)"
+msgstr "![构建配置界面](pics/menuconfig_2.png)"
+
+#: ../../source/tools/menuconfig.md:57
+msgid "Build configuration screen"
+msgstr "构建配置界面"
+
+#: ../../source/tools/menuconfig.md:59
+msgid ""
+"*Figure 2. Build configuration screen — configure software drivers and "
+"settings*"
+msgstr "*图 2. 构建配置界面 — 配置软件驱动和设置*"
+
+#: ../../source/tools/menuconfig.md:61
+msgid "Dual-Phase Configuration"
+msgstr "双阶段配置"
+
+#: ../../source/tools/menuconfig.md:63
+msgid "Phase 1: Chip Configuration (chip.config)"
+msgstr "阶段 1：芯片配置（chip.config）"
+
+#: ../../source/tools/menuconfig.md:65
+msgid "When the tool opens for the first time, you are configuring the hardware."
+msgstr "当工具首次打开时，您正在配置硬件。"
+
+#: ../../source/tools/menuconfig.md:67
+msgid "**What you see:** Options related to SoC Series, SoC, and Board"
+msgstr "**您看到的内容：** 与 SoC 系列、SoC 和开发板相关的选项"
+
+#: ../../source/tools/menuconfig.md:68
+msgid ""
+"**Action:** Select your target SoC and enable required chip peripherals "
+"(GPIO ports, UART instances, etc.)"
+msgstr ""
+"**操作：** 选择目标 SoC 并启用所需的芯片外设（GPIO 端口、UART 实例等）"
+
+#: ../../source/tools/menuconfig.md:69
+msgid "**Exit:** Select `< Save >` and `< Exit >` to close the window"
+msgstr "**退出：** 选择 `< Save >` 和 `< Exit >` 关闭窗口"
+
+#: ../../source/tools/menuconfig.md:71
+msgid "Phase 2: Build Configuration (build.config)"
+msgstr "阶段 2：构建配置（build.config）"
+
+#: ../../source/tools/menuconfig.md:73
+msgid ""
+"Immediately after the first window closes, the tool opens again for "
+"software configuration."
+msgstr "第一个窗口关闭后，工具会再次打开以进行软件配置。"
+
+#: ../../source/tools/menuconfig.md:75
+msgid ""
+"**What you see:** Options filtered based on chip capabilities "
+"(`capabilities.h`), including API configurations, driver selections, and "
+"feature switches"
+msgstr ""
+"**您看到的内容：** 根据芯片能力（`capabilities.h`）筛选后的选项，包括 API 配置、驱动选择和功能开关"
+
+#: ../../source/tools/menuconfig.md:76
+msgid ""
+"**Action:** Configure feature switches, parameters, examples, and "
+"debugging options"
+msgstr "**操作：** 配置功能开关、参数、示例和调试选项"
+
+#: ../../source/tools/menuconfig.md:77
+msgid "**Exit:** Select `< Save >` and `< Exit >` to finish the process"
+msgstr "**退出：** 选择 `< Save >` 和 `< Exit >` 完成配置"
+
+#: ../../source/tools/menuconfig.md:79
+msgid "Results"
+msgstr "结果"
+
+#: ../../source/tools/menuconfig.md:81
+msgid "After configuration completes, the following files are generated:"
+msgstr "配置完成后，将生成以下文件："
+
+#: ../../source/tools/menuconfig.md
+msgid "Generated Configuration Files"
+msgstr "生成的文件"
+
+#: ../../source/tools/menuconfig.md:97
+msgid "Internal Execution Flow"
+msgstr "内部执行流程"
+
+#: ../../source/tools/menuconfig.md:99
+msgid "Stage 1: Chip Configuration"
+msgstr "阶段 1：芯片配置"
+
+#: ../../source/tools/menuconfig.md:100
+msgid "The system reads `Kconfig.chip` — defines all hardware-related options"
+msgstr "系统读取 `Kconfig.chip` — 定义所有硬件相关选项"
+
+#: ../../source/tools/menuconfig.md:101 ../../source/tools/menuconfig.md:109
+msgid "The user selects settings in the UI"
+msgstr "用户在界面中选择设置"
+
+#: ../../source/tools/menuconfig.md:102
+msgid "Output is saved to a temporary `chip.config` file"
+msgstr "输出保存到临时 `chip.config` 文件"
+
+#: ../../source/tools/menuconfig.md:104
+msgid "Stage 2: Pre-processing"
+msgstr "阶段 2：预处理"
+
+#: ../../source/tools/menuconfig.md:105
+msgid ""
+"Between the two windows, `preprocess_kconfig.py` runs automatically to "
+"prepare the build configuration stage."
+msgstr "在两个窗口之间，`preprocess_kconfig.py` 自动运行以准备构建配置阶段。"
+
+#: ../../source/tools/menuconfig.md:107
+msgid "Stage 3: Build Configuration"
+msgstr "阶段 3：构建配置"
+
+#: ../../source/tools/menuconfig.md:108
+msgid "The system reads `Kconfig.build` — defines software and project settings"
+msgstr "系统读取 `Kconfig.build` — 定义软件和项目设置"
+
+#: ../../source/tools/menuconfig.md:110
+msgid "Output is saved to a temporary `build.config` file"
+msgstr "输出保存到临时 `build.config` 文件"
+
+#: ../../source/tools/menuconfig.md:112
+msgid "Stage 4: Merging"
+msgstr "阶段 4：合并"
+
+#: ../../source/tools/menuconfig.md:113
+msgid "Both stages are combined into the final `.config`:"
+msgstr "两个阶段合并为最终的 `.config`："
+
+#: ../../source/tools/menuconfig.md:119
+msgid ""
+"This merged file contains the complete system configuration (both "
+"hardware and software) and is used by the compiler and the Pinmux tool."
+msgstr "此合并文件包含完整的系统配置（硬件和软件），供编译器和 Pinmux 工具使用。"
+
+#: ../../source/tools/menuconfig.md:121
+msgid "FAQ"
+msgstr "常见问题"
+
+#: ../../source/tools/menuconfig.md:123
+msgid "Arrow Keys Not Working in Windows PowerShell / VS Code"
+msgstr "Windows PowerShell / VS Code 中方向键无法使用"
+
+#: ../../source/tools/menuconfig.md:125
+msgid "Use letter keys instead (`j`/`k` for up/down movement)"
+msgstr "改用字母键（`j`/`k` 上下移动）"
+
+#: ../../source/tools/menuconfig.md:126
+msgid "Use Windows 11"
+msgstr "使用 Windows 11"
+
+#: ../../source/tools/menuconfig.md:127
+msgid "Use CMD instead of PowerShell"
+msgstr "使用 CMD 替代 PowerShell"

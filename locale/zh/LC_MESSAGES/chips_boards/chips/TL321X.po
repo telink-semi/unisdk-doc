@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/chips_boards/chips/TL321X.md:6
+msgid "TL321X Chip Series"
+msgstr "TL321X 芯片系列"
+
+#: ../../source/chips_boards/chips/TL321X.md:8
+msgid ""
+"!!! note \"Document Status: DRAFT — Detailed specifications to be added. "
+"The information below is based on SDK metadata and is subject to "
+"update.\""
+msgstr "!!! note \"文档状态：草稿 — 详细规格待补充。以下信息基于 SDK 元数据，可能会更新。\""
+
+#: ../../source/chips_boards/chips/TL321X.md:10
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/chips_boards/chips/TL321X.md:12
+msgid ""
+"The TL321X is a RISC-V microcontroller series from Telink, designed for "
+"general IoT application scenarios."
+msgstr "TL321X 是 Telink 推出的 RISC-V 微控制器系列，专为通用物联网应用场景而设计。"
+
+#: ../../source/chips_boards/chips/TL321X.md:14
+msgid "Core Parameters"
+msgstr "核心参数"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "Value"
+msgstr "值"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "Core"
+msgstr "内核"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "RISC-V (32-bit)"
+msgstr "RISC-V（32 位）"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "Supported Protocols"
+msgstr "支持的协议"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "BLE"
+msgstr "BLE"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "Toolchain"
+msgstr "工具链"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "`andes-riscv32-v5-gcc14.2` (TL32 ELF MCULIB V5 GCC14.2)"
+msgstr "`andes-riscv32-v5-gcc14.2`（TL32 ELF MCULIB V5 GCC14.2）"
+
+#: ../../source/chips_boards/chips/TL321X.md:22
+msgid "Memory"
+msgstr "存储器"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "Region"
+msgstr "区域"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "Size"
+msgstr "大小"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "Start Address"
+msgstr "起始地址"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "ROM"
+msgstr "ROM"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "2048 KB"
+msgstr "2048 KB"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "0x20000000"
+msgstr "0x20000000"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "IRAM"
+msgstr "IRAM"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "96 KB"
+msgstr "96 KB"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "0x00068000"
+msgstr "0x00068000"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "DRAM"
+msgstr "DRAM"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "32 KB"
+msgstr "32 KB"
+
+#: ../../source/chips_boards/chips/TL321X.md
+msgid "0x00080000"
+msgstr "0x00080000"
+
+#: ../../source/chips_boards/chips/TL321X.md:30
+msgid "Peripheral List"
+msgstr "外设列表"
+
+#: ../../source/chips_boards/chips/TL321X.md:32
+msgid "Standard Peripherals"
+msgstr "标准外设"
+
+#: ../../source/chips_boards/chips/TL321X.md:33
+msgid "GPIO"
+msgstr "GPIO"
+
+#: ../../source/chips_boards/chips/TL321X.md:34
+msgid "UART"
+msgstr "UART"
+
+#: ../../source/chips_boards/chips/TL321X.md:35
+msgid "I2C"
+msgstr "I2C"
+
+#: ../../source/chips_boards/chips/TL321X.md:36
+msgid "SPI"
+msgstr "SPI"
+
+#: ../../source/chips_boards/chips/TL321X.md:37
+msgid "ADC"
+msgstr "ADC"
+
+#: ../../source/chips_boards/chips/TL321X.md:38
+msgid "DMA"
+msgstr "DMA"
+
+#: ../../source/chips_boards/chips/TL321X.md:39
+msgid "USB"
+msgstr "USB"
+
+#: ../../source/chips_boards/chips/TL321X.md:41
+msgid "System & Control"
+msgstr "系统与控制"
+
+#: ../../source/chips_boards/chips/TL321X.md:42
+msgid "PLIC (Platform-Level Interrupt Controller)"
+msgstr "PLIC（平台级中断控制器）"
+
+#: ../../source/chips_boards/chips/TL321X.md:43
+msgid "PM (Power Management: Suspend, Deep Sleep, Deep Retention)"
+msgstr "PM（电源管理：挂起、深度睡眠、深度保持）"
+
+#: ../../source/chips_boards/chips/TL321X.md:44
+msgid "PMP (Physical Memory Protection)"
+msgstr "PMP（物理内存保护）"
+
+#: ../../source/chips_boards/chips/TL321X.md:45
+msgid "STIMER (System Timer)"
+msgstr "STIMER（系统定时器）"
+
+#: ../../source/chips_boards/chips/TL321X.md:46
+msgid "MTIMER (Machine Timer)"
+msgstr "MTIMER（机器定时器）"
+
+#: ../../source/chips_boards/chips/TL321X.md:47
+msgid "PWM"
+msgstr "PWM"
+
+#: ../../source/chips_boards/chips/TL321X.md:48
+msgid "QDEC (Quadrature Decoder)"
+msgstr "QDEC（正交解码器）"
+
+#: ../../source/chips_boards/chips/TL321X.md:49
+msgid "MSPI"
+msgstr "MSPI"
+
+#: ../../source/chips_boards/chips/TL321X.md:51
+msgid "Security & Crypto"
+msgstr "安全与加密"
+
+#: ../../source/chips_boards/chips/TL321X.md:52
+msgid "PKE (Public Key Engine)"
+msgstr "PKE（公钥引擎）"
+
+#: ../../source/chips_boards/chips/TL321X.md:53
+msgid "SKE (Symmetric Key Engine)"
+msgstr "SKE（对称密钥引擎）"
+
+#: ../../source/chips_boards/chips/TL321X.md:54
+msgid "HASH"
+msgstr "HASH"
+
+#: ../../source/chips_boards/chips/TL321X.md:55
+msgid "IR (Infrared)"
+msgstr "IR（红外）"
+
+#: ../../source/chips_boards/chips/TL321X.md:57
+msgid "Debug & Misc"
+msgstr "调试与杂项"
+
+#: ../../source/chips_boards/chips/TL321X.md:58
+msgid "SWIRE (Single Wire Interface)"
+msgstr "SWIRE（单线接口）"
+
+#: ../../source/chips_boards/chips/TL321X.md:59
+msgid "JTAG"
+msgstr "JTAG"
+
+#: ../../source/chips_boards/chips/TL321X.md:60
+msgid "TRAP"
+msgstr "TRAP"
+
+#: ../../source/chips_boards/chips/TL321X.md:62
+msgid "Supported Package Options"
+msgstr "支持的封装选项"
+
+#: ../../source/chips_boards/chips/TL321X.md:64
+msgid "QFN28, QFN32, QFN38, QFN48, QFN52, QFN64"
+msgstr "QFN28、QFN32、QFN38、QFN48、QFN52、QFN64"
+
+#: ../../source/chips_boards/chips/TL321X.md:65
+msgid "LGA42"
+msgstr "LGA42"
+
+#: ../../source/chips_boards/chips/TL321X.md:67
+msgid "Supported Boards"
+msgstr "支持的开发板"
+
+#: ../../source/chips_boards/chips/TL321X.md:69
+msgid "[TL3218X_EVK](../boards/TL3218X_EVK.md)"
+msgstr "[TL3218X_EVK](../boards/TL3218X_EVK.md)"

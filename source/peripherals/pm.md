@@ -1,0 +1,173 @@
+---
+title: Power Management (PM)
+status: STABLE
+---
+
+# Power Management (PM) Driver
+
+## Overview
+
+The PM (Power Management) driver provides an interface for controlling microcontroller power states. It supports the system entering various low-power modes to save energy, and defines system wakeup mechanisms. The driver also manages retention memory and sleep duration validation.
+
+**Key Features:**
+
+- Multiple sleep modes (Suspend, Deep Sleep, Deep Retention)
+- Wakeup source management (GPIO Pad, Timer, Core, Comparator)
+- Configurable sleep duration limits (minimum time)
+- Retention memory size configuration
+- Error handling for invalid sleep requests
+
+## Sleep Modes
+
+`enum tlk_pm_sleep_mode`
+
+| Mode | Power | Wakeup Speed | Description |
+|------|------|---------|------|
+| `TLK_PM_SLEEP_MODE_SUSPEND` | Medium | Fast | SRAM retained, peripherals partially powered |
+| `TLK_PM_SLEEP_MODE_DEEP_SLEEP` | Very low | Slow | SRAM not retained, most peripherals powered off |
+| `TLK_PM_SLEEP_MODE_DEEP_RETENTION` | Low | Medium | SRAM partially retained |
+
+## Wakeup Sources
+
+`enum tlk_pm_wakeup_source` (bitmask)
+
+| Value | Description |
+|---|------|
+| `TLK_PM_WAKEUP_SOURCE_PAD` | GPIO pin wakeup |
+| `TLK_PM_WAKEUP_SOURCE_TIMER` | System timer wakeup |
+| `TLK_PM_WAKEUP_SOURCE_CORE` | Core event wakeup |
+| `TLK_PM_WAKEUP_SOURCE_COMPARATOR` | Comparator wakeup |
+
+## GPIO Wakeup Level
+
+`enum tlk_pm_gpio_wakeup_level`
+
+Defines the logic level required on a GPIO pin to trigger a wakeup.
+
+| Value | Description |
+|---|------|
+| `TLK_PM_GPIO_WAKEUP_LEVEL_LOW` | Wake up when the pin is Low (0) |
+| `TLK_PM_GPIO_WAKEUP_LEVEL_HIGH` | Wake up when the pin is High (1) |
+
+## Driver API
+
+### `tlk_pm_sleep`
+
+Requests the system to enter a low-power mode.
+
+```c
+enum tlk_pm_sleep_status tlk_pm_sleep(enum tlk_pm_sleep_mode mode,
+                                      uint32_t duration_us);
+```
+
+Return values:
+
+| Value | Description |
+|---|------|
+| `TLK_PM_SLEEP_OK` | Successfully entered and exited sleep |
+| `TLK_PM_SLEEP_UNSUPPORTED` | The requested sleep mode is not supported by the hardware |
+| `TLK_PM_SLEEP_TOO_SHORT` | Requested duration is less than the configured minimum |
+| `TLK_PM_SLEEP_TOO_LONG` | The requested duration exceeded the hardware timer limits |
+| `TLK_PM_SLEEP_NO_WAKEUP_SOURCES` | Sleep was aborted because no wakeup sources were configured |
+| `TLK_PM_SLEEP_DENIED` | Sleep denied (e.g., blocked by a peripheral) |
+
+### `tlk_pm_set_gpio_wakeup`
+
+*This API is available only if `CONFIG_TLK_GPIO` is enabled.*
+
+Configures a GPIO pin as a wakeup source. The system will exit sleep mode when the selected pin detects the configured wakeup polarity.
+
+```c
+enum tlk_pm_sleep_status tlk_pm_set_gpio_wakeup(
+    enum tlk_gpio_port port, enum tlk_gpio_pin pin,
+    enum tlk_pm_gpio_wakeup_level polarity);
+```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|------|
+| `port` | `enum tlk_gpio_port` | GPIO port |
+| `pin` | `enum tlk_gpio_pin` | GPIO pin |
+| `polarity` | `enum tlk_pm_gpio_wakeup_level` | The logic level that triggers wakeup |
+
+**Return Value:**
+
+`enum tlk_pm_sleep_status`: `TLK_PM_SLEEP_OK` if successful, or `TLK_PM_SLEEP_UNSUPPORTED` if the pin cannot be used as a wakeup source.
+
+### `tlk_pm_get_wakeup_reason`
+
+Gets the last wakeup reason.
+
+```c
+enum tlk_pm_wakeup_source tlk_pm_get_wakeup_reason(void);
+```
+
+### `tlk_pm_clear_wakeup_sources`
+
+Clears wakeup source flags in preparation for the next sleep.
+
+```c
+void tlk_pm_clear_wakeup_sources(void);
+```
+
+## Typical Usage
+
+```c
+#include <tlk_api.h>
+
+void sleep_example(void) {
+    // Set GPIO A0 high level wakeup
+    tlk_pm_set_gpio_wakeup(GPIO_PORT_A, GPIO_PIN_0,
+                           TLK_PM_GPIO_WAKEUP_LEVEL_HIGH);
+
+    // Enter Deep Sleep for 5 seconds
+    enum tlk_pm_sleep_status status =
+        tlk_pm_sleep(TLK_PM_SLEEP_MODE_DEEP_SLEEP, 5000000);
+
+    if (status == TLK_PM_SLEEP_OK) {
+        // Check wakeup reason
+        enum tlk_pm_wakeup_source src = tlk_pm_get_wakeup_reason();
+        if (src & TLK_PM_WAKEUP_SOURCE_PAD) {
+            // GPIO wakeup
+        }
+        tlk_pm_clear_wakeup_sources();
+    }
+}
+```
+
+## Kconfig Configuration
+
+:::{dropdown} PM Kconfig Options
+:summary: Click to expand/collapse
+
+```text
+TLK_PM_SUSPEND_MIN_DURATION_MS
+│   Defines the minimum allowed duration for Suspend mode (in milliseconds).
+│   If `tlk_pm_sleep` is called with a time shorter than this, it returns `TLK_PM_SLEEP_TOO_SHORT`.
+│   Default: 2 ms
+│
+TLK_PM_DEEP_SLEEP_MIN_DURATION_MS
+│   Defines the minimum allowed duration for Deep Sleep mode (in milliseconds).
+│   Default: 3 ms
+│
+TLK_PM_DEEP_RETENTION_MIN_DURATION_MS
+│   Defines the minimum allowed duration for Deep Retention mode (in milliseconds).
+│   Default: 3 ms
+│
+TLK_PM_RETENTION_MEMORY_SIZE
+│   Selects the size of the RAM to be retained during Deep Retention mode.
+│   The available options (e.g., 16K, 32K) depend on the specific SoC capabilities.
+```
+:::
+
+### Menuconfig View
+
+![alt text](pics/pm_1.png)
+
+![alt text](pics/pm_2.png)
+*Figure 1-2. PM driver configurations*
+
+## Related Resources
+
+- [PM Samples](../samples/pm.md)

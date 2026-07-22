@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/system_services/index.md:6
+msgid "System Services"
+msgstr "系统服务"
+
+#: ../../source/system_services/index.md:8
+msgid ""
+"!!! note \"Document Status: PLANNED — Content for this module has not yet"
+" been written\""
+msgstr ""
+"!!! note \"文档状态：PLANNED — 此模块的内容尚未编写\""
+
+#: ../../source/system_services/index.md:10
+msgid ""
+"The System Services module will cover the high-level system service "
+"components provided by UniSDK, including:"
+msgstr "系统服务模块将涵盖 UniSDK 提供的高级系统服务组件，包括："
+
+#: ../../source/system_services/index.md:12
+msgid "Task scheduling and event handling"
+msgstr "任务调度和事件处理"
+
+#: ../../source/system_services/index.md:13
+msgid "Memory management"
+msgstr "内存管理"
+
+#: ../../source/system_services/index.md:14
+msgid "Logging system (Debug Print)"
+msgstr "日志系统（Debug Print）"
+
+#: ../../source/system_services/index.md:15
+msgid "System initialization framework"
+msgstr "系统初始化框架"
+
+#: ../../source/system_services/index.md:17
+msgid "Currently Available Components"
+msgstr "当前可用组件"
+
+#: ../../source/system_services/index.md
+msgid "Component"
+msgstr "组件"
+
+#: ../../source/system_services/index.md
+msgid "API"
+msgstr "API"
+
+#: ../../source/system_services/index.md
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/system_services/index.md
+msgid "System Initialization"
+msgstr "系统初始化"
+
+#: ../../source/system_services/index.md
+msgid "`tlk_init.h`"
+msgstr "`tlk_init.h`"
+
+#: ../../source/system_services/index.md
+msgid "Modular initialization framework"
+msgstr "模块化初始化框架"
+
+#: ../../source/system_services/index.md
+msgid "Main Loop"
+msgstr "主循环"
+
+#: ../../source/system_services/index.md
+msgid "`tlk_loop.h`"
+msgstr "`tlk_loop.h`"
+
+#: ../../source/system_services/index.md
+msgid "Event-driven main loop"
+msgstr "事件驱动的主循环"
+
+#: ../../source/system_services/index.md
+msgid "Delay/Sleep"
+msgstr "延时/睡眠"
+
+#: ../../source/system_services/index.md
+msgid "`tlk_sleep.h`"
+msgstr "`tlk_sleep.h`"
+
+#: ../../source/system_services/index.md
+msgid "`tlk_sleep_ms()` / `tlk_sleep_us()`"
+msgstr "`tlk_sleep_ms()` / `tlk_sleep_us()`"
+
+#: ../../source/system_services/index.md
+msgid "Time Management"
+msgstr "时间管理"
+
+#: ../../source/system_services/index.md
+msgid "`tlk_time.h`"
+msgstr "`tlk_time.h`"
+
+#: ../../source/system_services/index.md
+msgid "Timestamps and timers"
+msgstr "时间戳和定时器"
+
+#: ../../source/system_services/index.md:26
+msgid "Detailed documentation will be added later. PR contributions are welcome."
+msgstr "详细文档将在后续添加。欢迎提交 PR 贡献。"

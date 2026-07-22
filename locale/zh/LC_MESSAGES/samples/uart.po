@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/samples/uart.md:6
+msgid "UART Sample"
+msgstr "UART 示例"
+
+#: ../../source/samples/uart.md:8
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/samples/uart.md:10
+msgid ""
+"The `uart_demo` sample demonstrates the UART driver's echo functionality:"
+" receiving data and sending it back as-is."
+msgstr "`uart_demo` 示例演示了 UART 驱动的回显功能：接收数据并将其原样发送回去。"
+
+#: ../../source/samples/uart.md:12
+msgid "Features Demonstrated"
+msgstr "功能演示"
+
+#: ../../source/samples/uart.md:14
+msgid ""
+"Manual UART configuration using `tlk_uart_configure` and "
+"`tlk_uart_configure_pinmux` (when `CONFIG_TLK_UART_USED_AUTO_CONFIG` is "
+"disabled)"
+msgstr "使用 `tlk_uart_configure` 和 `tlk_uart_configure_pinmux` 手动配置 UART（当 `CONFIG_TLK_UART_USED_AUTO_CONFIG` 禁用时）"
+
+#: ../../source/samples/uart.md:15
+msgid ""
+"Manual UART flow control configuration using "
+"`tlk_uart_configure_flow_control` and "
+"`tlk_uart_configure_flow_control_pinmux` if "
+"`CONFIG_TLK_UART1_FLOW_CONTROL` is enabled"
+msgstr "如果启用了 `CONFIG_TLK_UART1_FLOW_CONTROL`，使用 `tlk_uart_configure_flow_control` 和 `tlk_uart_configure_flow_control_pinmux` 手动配置 UART 流控制"
+
+#: ../../source/samples/uart.md:16
+msgid "Callback-based data reception (`tlk_uart_receive_bytes`)"
+msgstr "基于回调的数据接收（`tlk_uart_receive_bytes`）"
+
+#: ../../source/samples/uart.md:17
+msgid "Data transmission (`tlk_uart_send_bytes`)"
+msgstr "数据传输（`tlk_uart_send_bytes`）"
+
+#: ../../source/samples/uart.md:18
+msgid "Power management and sleep prevention (optional)"
+msgstr "电源管理和睡眠防止（可选）"
+
+#: ../../source/samples/uart.md:20
+msgid "How It Works"
+msgstr "工作原理"
+
+#: ../../source/samples/uart.md:22
+msgid "Initialization"
+msgstr "初始化"
+
+#: ../../source/samples/uart.md:24
+msgid ""
+"**Manual Configuration** — If `CONFIG_TLK_UART_USED_AUTO_CONFIG` is "
+"disabled, manually configure UART1 parameters using `tlk_uart_configure` "
+"and `tlk_uart_configure_pinmux`. If `CONFIG_TLK_UART1_FLOW_CONTROL` is "
+"enabled, also configure flow control using "
+"`tlk_uart_configure_flow_control` and "
+"`tlk_uart_configure_flow_control_pinmux`."
+msgstr ""
+"**手动配置** — 如果禁用了 `CONFIG_TLK_UART_USED_AUTO_CONFIG`，使用 `tlk_uart_configure` 和 `tlk_uart_configure_pinmux` 手动配置 UART1 参数。如果启用了 `CONFIG_TLK_UART1_FLOW_CONTROL`，还需使用 `tlk_uart_configure_flow_control` 和 `tlk_uart_configure_flow_control_pinmux` 配置流控制。"
+
+#: ../../source/samples/uart.md:25
+msgid ""
+"**Power Management Test** — If `CONFIG_TLK_UART_DEMO_SLEEP` is enabled, "
+"first print \"Before sleep\", sleep for 2 seconds, then print \"After "
+"sleep\" upon wake-up"
+msgstr "**电源管理测试** — 如果启用了 `CONFIG_TLK_UART_DEMO_SLEEP`，先打印 \"Before sleep\"，睡眠 2 秒，唤醒后打印 \"After sleep\""
+
+#: ../../source/samples/uart.md:26
+msgid ""
+"**Interrupt Enable** — Call `tlk_core_interrupt_enable()` to enable "
+"asynchronous callbacks"
+msgstr "**中断启用** — 调用 `tlk_core_interrupt_enable()` 启用异步回调"
+
+#: ../../source/samples/uart.md:28
+msgid "Main Loop (Echo Flow)"
+msgstr "主循环（回显流程）"
+
+#: ../../source/samples/uart.md:30
+msgid "Call `tlk_uart_receive_bytes` to listen for data"
+msgstr "调用 `tlk_uart_receive_bytes` 监听数据"
+
+#: ../../source/samples/uart.md:31
+msgid "Wait for the `rx_handler` callback to set the `rx_done` flag"
+msgstr "等待 `rx_handler` 回调设置 `rx_done` 标志"
+
+#: ../../source/samples/uart.md:32
+msgid "Send received data back to the serial port (`tlk_uart_send_bytes`)"
+msgstr "将接收到的数据发送回串口（`tlk_uart_send_bytes`）"
+
+#: ../../source/samples/uart.md:33
+msgid "Reset the flag and repeat"
+msgstr "重置标志并重复"
+
+#: ../../source/samples/uart.md:35
+msgid "Sleep Prevention Test"
+msgstr "睡眠防止测试"
+
+#: ../../source/samples/uart.md:37
+msgid ""
+"When `CONFIG_TLK_UART_DEMO_PREVENT` is enabled, the sample attempts to "
+"sleep during reception to verify that `tlk_pm_sleep` returns "
+"`TLK_PM_SLEEP_DENIED`."
+msgstr "当启用 `CONFIG_TLK_UART_DEMO_PREVENT` 时，示例尝试在接收期间睡眠，以验证 `tlk_pm_sleep` 返回 `TLK_PM_SLEEP_DENIED`。"
+
+#: ../../source/samples/uart.md:39
+msgid "Configuration Options"
+msgstr "配置选项"
+
+#: ../../source/samples/uart.md
+msgid "Option"
+msgstr "选项"
+
+#: ../../source/samples/uart.md
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/samples/uart.md
+msgid "`CONFIG_TLK_UART_DEMO_SLEEP`"
+msgstr "`CONFIG_TLK_UART_DEMO_SLEEP`"
+
+#: ../../source/samples/uart.md
+msgid "Test whether UART works correctly after wake-up"
+msgstr "测试唤醒后 UART 是否正常工作"
+
+#: ../../source/samples/uart.md
+msgid "`CONFIG_TLK_UART_DEMO_PREVENT`"
+msgstr "`CONFIG_TLK_UART_DEMO_PREVENT`"
+
+#: ../../source/samples/uart.md
+msgid "Test whether sleep is correctly prevented during reception"
+msgstr "测试接收期间是否正确防止了睡眠"
+
+#: ../../source/samples/uart.md:46
+msgid "Build & Run"
+msgstr "构建与运行"

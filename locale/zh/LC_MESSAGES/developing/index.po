@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/index.md:6
+msgid "Development Guide"
+msgstr "开发指南"
+
+#: ../../source/developing/index.md:8
+msgid ""
+"This chapter is aimed at developers who have started using UniSDK and "
+"introduces the complete development workflow and best practices."
+msgstr ""
+"本章面向已开始使用 UniSDK 的开发者，介绍完整的开发工作流程和最佳实践。"
+
+#: ../../source/developing/index.md:10
+msgid "Content Navigation"
+msgstr "内容导航"
+
+#: ../../source/developing/index.md
+msgid "Chapter"
+msgstr "章节"
+
+#: ../../source/developing/index.md
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/developing/index.md
+msgid "Status"
+msgstr "状态"
+
+#: ../../source/developing/index.md
+msgid "[Environment Setup](setup_linux.md)"
+msgstr "[环境搭建](setup_linux.md)"
+
+#: ../../source/developing/index.md
+msgid "Platform-specific setup guides (Linux / Windows / macOS)"
+msgstr "各平台的搭建指南（Linux / Windows / macOS）"
+
+#: ../../source/developing/index.md
+msgid "STABLE"
+msgstr "稳定"
+
+#: ../../source/developing/index.md
+msgid "[First Example: Blinky](blinky.md)"
+msgstr "[首个示例：Blinky](blinky.md)"
+
+#: ../../source/developing/index.md
+msgid "Detailed step-by-step breakdown of the gpio_demo example"
+msgstr "gpio_demo 示例的详细分步说明"
+
+#: ../../source/developing/index.md
+msgid "[SDK Directory Structure](directory_structure.md)"
+msgstr "[SDK 目录结构](directory_structure.md)"
+
+#: ../../source/developing/index.md
+msgid "Code organization conventions, responsibilities of each directory"
+msgstr "代码组织规范及各目录职责"
+
+#: ../../source/developing/index.md
+msgid "[Project Creation & Management](project_management.md)"
+msgstr "[项目创建与管理](project_management.md)"
+
+#: ../../source/developing/index.md
+msgid "Creating new projects, CMakeLists.txt configuration"
+msgstr "创建新项目、CMakeLists.txt 配置"
+
+#: ../../source/developing/index.md
+msgid "[Core Architecture](core_architecture.md)"
+msgstr "[核心架构](core_architecture.md)"
+
+#: ../../source/developing/index.md
+msgid ""
+"Startup flow, exception handling, interrupt management, low-power "
+"mechanisms"
+msgstr "启动流程、异常处理、中断管理、低功耗机制"
+
+#: ../../source/developing/index.md
+msgid "[Debugging & Testing](debugging.md)"
+msgstr "[调试与测试](debugging.md)"
+
+#: ../../source/developing/index.md
+msgid "Hardware debugging, logging system, shell interaction"
+msgstr "硬件调试、日志系统、Shell 交互"
+
+#: ../../source/developing/index.md
+msgid "[IDE Integration](ide_integration.md)"
+msgstr "[IDE 集成](ide_integration.md)"
+
+#: ../../source/developing/index.md
+msgid "VS Code clangd configuration, Eclipse, Segger Embedded Studio"
+msgstr "VS Code clangd 配置、Eclipse、Segger Embedded Studio"
+
+#: ../../source/developing/index.md:22
+msgid "Quick Start for a New Project"
+msgstr "新项目快速入门"
+
+#: ../../source/developing/index.md:53
+msgid "Development Workflow Overview"
+msgstr "开发工作流程概览"
+
+#: ../../source/developing/index.md:65
+msgid "Next Steps"
+msgstr "下一步"
+
+#: ../../source/developing/index.md:67
+msgid ""
+"[Build & Configuration](../build_config/index.md) — Deep dive into the "
+"CMake and Kconfig build system"
+msgstr ""
+"[构建与配置](../build_config/index.md) — 深入了解 CMake 和 Kconfig 构建系统"
+
+#: ../../source/developing/index.md:68
+msgid ""
+"[Peripherals & Drivers](../peripherals/index.md) — Use GPIO, UART, I2C "
+"and other peripheral drivers"
+msgstr ""
+"[外设与驱动](../peripherals/index.md) — 使用 GPIO、UART、I2C 等外设驱动"
+
+#: ../../source/developing/index.md:69
+msgid ""
+"[Samples & Demos](../samples/index.md) — Reference ready-to-run example "
+"code"
+msgstr ""
+"[示例与演示](../samples/index.md) — 参考可直接运行的示例代码"

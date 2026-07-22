@@ -1,0 +1,284 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/introduction/index.md:6
+msgid "UniSDK Introduction"
+msgstr "UniSDK 简介"
+
+#: ../../source/introduction/index.md:8
+msgid "Telink Semiconductor"
+msgstr "泰凌微电子（Telink Semiconductor）"
+
+#: ../../source/introduction/index.md:10
+msgid ""
+"Telink Semiconductor is a company focused on designing low-power wireless"
+" connectivity chips, providing complete chip solutions covering protocols"
+" such as BLE, Zigbee, Thread, and Matter. Telink chips are widely used in"
+" smart homes, wearable devices, IoT sensors, and other scenarios."
+msgstr ""
+"泰凌微电子是一家专注于设计低功耗无线连接芯片的公司，提供涵盖 BLE、Zigbee、"
+"Thread 和 Matter 等协议的完整芯片解决方案。泰凌芯片广泛应用于智能家居、可穿戴设备、"
+"物联网传感器等场景。"
+
+#: ../../source/introduction/index.md:12
+msgid "UniSDK Core Features and Advantages"
+msgstr "UniSDK 核心功能与优势"
+
+#: ../../source/introduction/index.md:14
+msgid ""
+"UniSDK (Unified Software Development Kit) provides a unified software "
+"development platform for the full range of Telink chips. The core "
+"advantages include:"
+msgstr ""
+"UniSDK（统一软件开发套件）为泰凌全系列芯片提供统一的软件开发平台。"
+"其核心优势包括："
+
+#: ../../source/introduction/index.md:16
+msgid "Unified Development Experience"
+msgstr "统一的开发体验"
+
+#: ../../source/introduction/index.md:18
+msgid ""
+"**One Codebase, Multi-Chip Adaptation**: Based on a unified API layer and"
+" HAL abstraction, application code can seamlessly migrate between "
+"different Telink chips"
+msgstr ""
+"**一套代码，多芯片适配**：基于统一的 API 层和 HAL 抽象层，应用程序代码可"
+"在不同泰凌芯片之间无缝迁移"
+
+#: ../../source/introduction/index.md:19
+msgid ""
+"**Unified Build System**: All chip families share the same CMake + "
+"Kconfig build infrastructure"
+msgstr ""
+"**统一构建系统**：所有芯片系列共用同一套 CMake + Kconfig 构建基础设施"
+
+#: ../../source/introduction/index.md:21
+msgid "Modern Build System"
+msgstr "现代化构建系统"
+
+#: ../../source/introduction/index.md:23
+msgid "UniSDK integrates industry-proven build toolchains:"
+msgstr "UniSDK 集成了业界成熟的构建工具链："
+
+#: ../../source/introduction/index.md
+msgid "Component"
+msgstr "组件"
+
+#: ../../source/introduction/index.md
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/introduction/index.md
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/introduction/index.md
+msgid "**CMake**"
+msgstr "**CMake**"
+
+#: ../../source/introduction/index.md
+msgid "Build system core"
+msgstr "构建系统核心"
+
+#: ../../source/introduction/index.md
+msgid "Project configuration, dependency management, build rule generation"
+msgstr "项目配置、依赖管理、构建规则生成"
+
+#: ../../source/introduction/index.md
+msgid "**Ninja**"
+msgstr "**Ninja**"
+
+#: ../../source/introduction/index.md
+msgid "Build execution engine"
+msgstr "构建执行引擎"
+
+#: ../../source/introduction/index.md
+msgid "High-performance parallel compilation"
+msgstr "高性能并行编译"
+
+#: ../../source/introduction/index.md
+msgid "**West**"
+msgstr "**West**"
+
+#: ../../source/introduction/index.md
+msgid "Project management tool"
+msgstr "项目管理工具"
+
+#: ../../source/introduction/index.md
+msgid "Zephyr community-standard project management workflow"
+msgstr "Zephyr 社区标准的项目管理工作流"
+
+#: ../../source/introduction/index.md
+msgid "**Kconfig**"
+msgstr "**Kconfig**"
+
+#: ../../source/introduction/index.md
+msgid "Configuration management system"
+msgstr "配置管理系统"
+
+#: ../../source/introduction/index.md
+msgid "Hierarchical management of compile-time configuration options"
+msgstr "分层管理编译时配置选项"
+
+#: ../../source/introduction/index.md
+msgid "**Make**"
+msgstr "**Make**"
+
+#: ../../source/introduction/index.md
+msgid "Legacy interface"
+msgstr "传统接口"
+
+#: ../../source/introduction/index.md
+msgid "Frontend interface compatible with traditional Make usage habits"
+msgstr "兼容传统 Make 使用习惯的前端接口"
+
+#: ../../source/introduction/index.md:33
+msgid "Rich Peripheral Drivers"
+msgstr "丰富的外设驱动"
+
+#: ../../source/introduction/index.md:35
+msgid ""
+"Provides GPIO, UART, I2C, SPI, ADC, DMA, Watchdog, Timer, and other full-"
+"range peripheral drivers, encapsulating underlying hardware differences "
+"with a unified API."
+msgstr ""
+"提供 GPIO、UART、I2C、SPI、ADC、DMA、Watchdog、Timer 等全系列外设驱动，"
+"通过统一 API 封装底层硬件差异。"
+
+#: ../../source/introduction/index.md:37
+msgid "Low-Power Design"
+msgstr "低功耗设计"
+
+#: ../../source/introduction/index.md:39
+msgid ""
+"A comprehensive power management framework supporting multiple low-power "
+"modes, delivering excellent energy efficiency for battery-powered "
+"devices."
+msgstr ""
+"全面的电源管理框架，支持多种低功耗模式，为电池供电设备提供卓越的能效表现。"
+
+#: ../../source/introduction/index.md:41
+msgid "Architecture Overview"
+msgstr "架构概述"
+
+#: ../../source/introduction/index.md:73
+msgid "Supported Chip Families"
+msgstr "支持的芯片系列"
+
+#: ../../source/introduction/index.md:43
+msgid "Chip Family"
+msgstr "芯片系列"
+
+#: ../../source/introduction/index.md:43
+msgid "Core"
+msgstr "内核"
+
+#: ../../source/introduction/index.md:43
+msgid "Key Features"
+msgstr "主要特性"
+
+#: ../../source/introduction/index.md:43
+msgid "Typical Applications"
+msgstr "典型应用"
+
+#: ../../source/introduction/index.md:43
+msgid "**TL321X**"
+msgstr "**TL321X**"
+
+#: ../../source/introduction/index.md:43
+msgid "RISC-V"
+msgstr "RISC-V"
+
+#: ../../source/introduction/index.md:43
+msgid "BLE, GPIO, UART, I2C, SPI, ADC, DMA"
+msgstr "BLE、GPIO、UART、I2C、SPI、ADC、DMA"
+
+#: ../../source/introduction/index.md:43
+msgid "General IoT"
+msgstr "通用物联网"
+
+#: ../../source/introduction/index.md:43
+msgid "**TL721X**"
+msgstr "**TL721X**"
+
+#: ../../source/introduction/index.md:43
+msgid "BLE, GPIO, UART, I2C, SPI, ADC, DMA, USB"
+msgstr "BLE、GPIO、UART、I2C、SPI、ADC、DMA、USB"
+
+#: ../../source/introduction/index.md:43
+msgid "**TLSR922X**"
+msgstr "**TLSR922X**"
+
+#: ../../source/introduction/index.md:43
+msgid "BLE, GPIO, UART, I2C, SPI, ADC"
+msgstr "BLE、GPIO、UART、I2C、SPI、ADC"
+
+#: ../../source/introduction/index.md:43
+msgid "**TLSR952X**"
+msgstr "**TLSR952X**"
+
+#: ../../source/introduction/index.md:82
+msgid "License"
+msgstr "许可证"
+
+#: ../../source/introduction/index.md:84
+msgid ""
+"UniSDK is licensed under the [Apache License "
+"2.0](https://www.apache.org/licenses/LICENSE-2.0)."
+msgstr ""
+"UniSDK 采用 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) 许可证。"
+
+#: ../../source/introduction/index.md:86
+msgid "Community Resources"
+msgstr "社区资源"
+
+#: ../../source/introduction/index.md:88
+msgid ""
+"Official Website: [https://www.telink-semi.com](https://www.telink-"
+"semi.com)"
+msgstr ""
+"官方网站：[https://www.telink-semi.com](https://www.telink-semi.com)"
+
+#: ../../source/introduction/index.md:89
+msgid "Technical Forum: [Telink Developer Forum](https://forum.telink-semi.cn)"
+msgstr "技术论坛：[泰凌开发者论坛](https://forum.telink-semi.cn)"
+
+#: ../../source/introduction/index.md:91
+msgid "Next Steps"
+msgstr "下一步"
+
+#: ../../source/introduction/index.md:93
+msgid ""
+"[Getting Started](../getting_started/index.md) — Set up the development "
+"environment"
+msgstr ""
+"[快速开始](../getting_started/index.md) — 搭建开发环境"
+
+#: ../../source/introduction/index.md:94
+msgid ""
+"[Development Guide](../developing/index.md) — Deep dive into the SDK "
+"development workflow"
+msgstr ""
+"[开发指南](../developing/index.md) — 深入了解 SDK 开发工作流"
+
+#: ../../source/introduction/index.md:95
+msgid "[Samples & Demos](../samples/index.md) — Run code examples directly"
+msgstr "[示例和演示](../samples/index.md) — 直接运行代码示例"

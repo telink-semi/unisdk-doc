@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/peripherals/wdt.md:6
+msgid "Watchdog Driver"
+msgstr "看门狗驱动"
+
+#: ../../source/peripherals/wdt.md:8
+msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
+msgstr "!!! note \"文档状态：草稿 — 内容正在最终确定中\""
+
+#: ../../source/peripherals/wdt.md:10
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/peripherals/wdt.md:12
+msgid ""
+"The Watchdog driver provides watchdog timer functionality for system "
+"error recovery."
+msgstr ""
+"看门狗驱动提供看门狗定时器功能，用于系统错误恢复。"
+
+#: ../../source/peripherals/wdt.md:14
+msgid "Samples"
+msgstr "示例"
+
+#: ../../source/peripherals/wdt.md:16
+msgid "See [Watchdog Samples](../samples/wdt.md)."
+msgstr "请参见[看门狗示例](../samples/wdt.md)。"

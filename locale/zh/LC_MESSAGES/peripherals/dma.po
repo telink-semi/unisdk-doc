@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/peripherals/dma.md:6
+msgid "DMA Driver"
+msgstr "DMA 驱动"
+
+#: ../../source/peripherals/dma.md:8
+msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
+msgstr "!!! note \"文档状态：草稿 — 内容正在最终确定中\""
+
+#: ../../source/peripherals/dma.md:10
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/peripherals/dma.md:12
+msgid ""
+"The DMA driver provides direct memory access functionality, supporting "
+"efficient data transfer from peripheral to memory and memory to "
+"peripheral."
+msgstr ""
+"DMA 驱动提供直接内存访问功能，支持从外设到内存以及从内存到外设的高效数据传输。"
+
+#: ../../source/peripherals/dma.md:14
+msgid "Samples"
+msgstr "示例"
+
+#: ../../source/peripherals/dma.md:16
+msgid "See [DMA Samples](../samples/dma.md)."
+msgstr "请参见 [DMA 示例](../samples/dma.md)。"

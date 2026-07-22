@@ -1,0 +1,222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/about/index.md:1
+msgid "About Telink Semiconductor"
+msgstr "关于 Telink Semiconductor"
+
+#: ../../source/about/index.md:3
+msgid ""
+"**Telink Semiconductor** is a leading fabless semiconductor company "
+"dedicated to the design and development of low-power, high-performance "
+"wireless connectivity System-on-Chip (SoC) solutions. Founded in 2010 and"
+" headquartered in Shanghai, China, Telink has grown to become a global "
+"player in the IoT connectivity space."
+msgstr ""
+"**Telink Semiconductor** 是一家领先的无晶圆半导体公司，致力于设计和开发低功耗、高性能的无线连接片上系统（SoC）解决方案。泰凌微电子成立于 2010 年，总部位于中国上海，已发展成为物联网连接领域的全球参与者。"
+
+#: ../../source/about/index.md:10
+msgid "Our Mission"
+msgstr "我们的使命"
+
+#: ../../source/about/index.md:12
+msgid ""
+"To provide best-in-class wireless connectivity solutions that power the "
+"next generation of IoT devices — enabling smarter, more connected, and "
+"more energy-efficient products across consumer, industrial, and "
+"automotive markets."
+msgstr ""
+"提供一流的无线连接解决方案，赋能下一代物联网设备——在消费、工业和汽车市场中实现更智能、更互联、更节能的产品。"
+
+#: ../../source/about/index.md:18
+msgid "Technology Leadership"
+msgstr "技术领先"
+
+#: ../../source/about/index.md:20
+msgid ""
+"Telink's SoCs integrate a rich set of wireless protocols, offering true "
+"multi-protocol support on a single chip:"
+msgstr "Telink 的 SoC 集成了丰富的无线协议，在单芯片上提供真正的多协议支持："
+
+#: ../../source/about/index.md
+msgid "Protocol"
+msgstr "协议"
+
+#: ../../source/about/index.md
+msgid "Certification"
+msgstr "认证"
+
+#: ../../source/about/index.md
+msgid "Key Applications"
+msgstr "主要应用"
+
+#: ../../source/about/index.md
+msgid "Bluetooth LE"
+msgstr "Bluetooth LE"
+
+#: ../../source/about/index.md
+msgid "Bluetooth SIG Board Member"
+msgstr "Bluetooth SIG 董事会成员"
+
+#: ../../source/about/index.md
+msgid "IoT, wearables, beacons"
+msgstr "物联网、可穿戴设备、信标"
+
+#: ../../source/about/index.md
+msgid "Bluetooth Mesh"
+msgstr "Bluetooth Mesh"
+
+#: ../../source/about/index.md
+msgid "Bluetooth SIG"
+msgstr "Bluetooth SIG"
+
+#: ../../source/about/index.md
+msgid "Smart lighting, building automation"
+msgstr "智能照明、楼宇自动化"
+
+#: ../../source/about/index.md
+msgid "Zigbee"
+msgstr "Zigbee"
+
+#: ../../source/about/index.md
+msgid "CSA Member"
+msgstr "CSA 成员"
+
+#: ../../source/about/index.md
+msgid "Smart home, industrial control"
+msgstr "智能家居、工业控制"
+
+#: ../../source/about/index.md
+msgid "Thread"
+msgstr "Thread"
+
+#: ../../source/about/index.md
+msgid "Thread Group Contributor"
+msgstr "Thread Group 贡献者"
+
+#: ../../source/about/index.md
+msgid "Matter over Thread"
+msgstr "Matter over Thread"
+
+#: ../../source/about/index.md
+msgid "Matter"
+msgstr "Matter"
+
+#: ../../source/about/index.md
+msgid "Smart home interoperability"
+msgstr "智能家居互操作性"
+
+#: ../../source/about/index.md
+msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+#: ../../source/about/index.md
+msgid "-"
+msgstr "-"
+
+#: ../../source/about/index.md
+msgid "High-bandwidth IoT"
+msgstr "高带宽物联网"
+
+#: ../../source/about/index.md
+msgid "2.4GHz Proprietary"
+msgstr "2.4GHz 专有协议"
+
+#: ../../source/about/index.md
+msgid "Gaming, HID devices"
+msgstr "游戏、HID 设备"
+
+#: ../../source/about/index.md:35
+msgid "Global Presence"
+msgstr "全球布局"
+
+#: ../../source/about/index.md:37
+msgid "**Headquarters:** Shanghai, China (Zhangjiang Hi-Tech Park)"
+msgstr "**总部：** 中国上海（张江高科技园区）"
+
+#: ../../source/about/index.md:38
+msgid "**R&D Centers:** Shanghai, Taipei, Ningbo, Shenzhen"
+msgstr "**研发中心：** 上海、台北、宁波、深圳"
+
+#: ../../source/about/index.md:39
+msgid "**Sales & Support:** China, Taiwan, North America, Europe, Ukraine"
+msgstr "**销售与支持：** 中国大陆、中国台湾、北美、欧洲、乌克兰"
+
+#: ../../source/about/index.md:40
+msgid "**Employees:** 500+ worldwide"
+msgstr "**员工：** 全球 500 余人"
+
+#: ../../source/about/index.md:44
+msgid "Why Telink?"
+msgstr "为什么选择 Telink？"
+
+#: ../../source/about/index.md:46
+msgid ""
+"**Proven Technology:** Billions of devices powered by Telink SoCs "
+"worldwide"
+msgstr "**成熟技术：** 全球数十亿台设备采用 Telink SoC"
+
+#: ../../source/about/index.md:47
+msgid ""
+"**Comprehensive SDK:** UniSDK provides a unified development experience "
+"across all chip series"
+msgstr "**全面的 SDK：** UniSDK 在所有芯片系列上提供统一的开发体验"
+
+#: ../../source/about/index.md:48
+msgid ""
+"**Low Power Leadership:** Industry-leading power consumption for battery-"
+"constrained devices"
+msgstr "**低功耗领先：** 针对电池受限设备的行业领先功耗"
+
+#: ../../source/about/index.md:49
+msgid ""
+"**Rich Ecosystem:** Complete toolchain including IDE, debugger, and "
+"visualization tools"
+msgstr "**丰富的生态系统：** 完整的工具链，包括 IDE、调试器和可视化工具"
+
+#: ../../source/about/index.md:50
+msgid ""
+"**Global Support:** FAE teams across the globe for timely technical "
+"assistance"
+msgstr "**全球支持：** 遍布全球的 FAE 团队，提供及时的技术支持"
+
+#: ../../source/about/index.md:54
+msgid "Learn More"
+msgstr "了解更多"
+
+#: ../../source/about/index.md:56
+msgid "[Official Website](https://www.telink-semi.cn/)"
+msgstr "[官方网站](https://www.telink-semi.cn/)"
+
+#: ../../source/about/index.md:57
+msgid "[Product Selector](https://products.telink-semi.cn/)"
+msgstr "[产品选型](https://products.telink-semi.cn/)"
+
+#: ../../source/about/index.md:58
+msgid "[Technical Forum](https://forum.telink-semi.cn/)"
+msgstr "[技术论坛](https://forum.telink-semi.cn/)"
+
+#: ../../source/about/index.md:59
+msgid "[Documentation Center](https://doc.telink-semi.cn/)"
+msgstr "[文档中心](https://doc.telink-semi.cn/)"
+
+#: ../../source/about/index.md:60
+msgid "[GitHub](https://github.com/telink-semi)"
+msgstr "[GitHub](https://github.com/telink-semi)"

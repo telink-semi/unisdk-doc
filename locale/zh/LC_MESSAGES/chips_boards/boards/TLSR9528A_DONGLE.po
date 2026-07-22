@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/chips_boards/boards/TLSR9528A_DONGLE.md:6
+msgid "TLSR9528A_DONGLE"
+msgstr "TLSR9528A_DONGLE"
+
+#: ../../source/chips_boards/boards/TLSR9528A_DONGLE.md:8
+msgid "!!! note \"Document Status: DRAFT — Detailed specifications to be added\""
+msgstr "!!! note \"文档状态：草稿 — 详细规格待补充\""
+
+#: ../../source/chips_boards/boards/TLSR9528A_DONGLE.md:10
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/chips_boards/boards/TLSR9528A_DONGLE.md:12
+msgid ""
+"The TLSR9528A_DONGLE is the USB Dongle form factor for the TLSR952X chip "
+"series."
+msgstr "TLSR9528A_DONGLE 是 TLSR952X 芯片系列的 USB 适配器形态。"
+
+#: ../../source/chips_boards/boards/TLSR9528A_DONGLE.md:14
+msgid "Building"
+msgstr "构建"

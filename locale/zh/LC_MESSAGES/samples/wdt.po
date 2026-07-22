@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/samples/wdt.md:6
+msgid "Watchdog Sample"
+msgstr "看门狗示例"
+
+#: ../../source/samples/wdt.md:8
+msgid "!!! note \"Document Status: DRAFT — Content is being finalized\""
+msgstr "!!! note \"文档状态：草稿 — 内容正在完善中\""
+
+#: ../../source/samples/wdt.md:10
+msgid "The `wdt_demo` sample demonstrates the usage of the watchdog timer."
+msgstr "`wdt_demo` 示例演示了看门狗定时器的使用方法。"
+
+#: ../../source/samples/wdt.md:12
+msgid "Build & Run"
+msgstr "构建与运行"

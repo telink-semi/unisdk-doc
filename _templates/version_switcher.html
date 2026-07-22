@@ -1,0 +1,8 @@
+<div class="version-selector">
+  <label for="version-select" style="font-size: 0.85rem; margin-right: 0.3rem;">Version:</label>
+  <select id="version-select" onchange="switchVersion(this.value)">
+    <option value="">Loading...</option>
+  </select>
+</div>
+
+<script src="{{ pathto('_static/version_switcher.js', 1) }}"></script>

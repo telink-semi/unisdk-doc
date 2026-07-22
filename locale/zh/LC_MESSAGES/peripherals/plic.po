@@ -1,0 +1,416 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/peripherals/plic.md:6
+msgid "PLIC Interrupt Controller"
+msgstr "PLIC 中断控制器"
+
+#: ../../source/peripherals/plic.md:8
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/peripherals/plic.md:10
+msgid ""
+"The PLIC (Platform-Level Interrupt Controller) driver provides a system "
+"interrupt management interface. It allows developers to configure "
+"interrupt priorities, enable or disable specific interrupt sources, and "
+"manage interrupt preemption (nesting)."
+msgstr ""
+"PLIC（平台级中断控制器）驱动提供系统中断管理接口。它允许开发者配置"
+"中断优先级、启用或禁用特定中断源，以及管理中断抢占（嵌套）。"
+
+#: ../../source/peripherals/plic.md:12
+msgid ""
+"The interrupt handling mode (General vs. Vector) is determined at compile"
+" time via system configuration (`.config`)."
+msgstr ""
+"中断处理模式（常规模式 vs. 向量模式）在编译时通过系统配置（`.config`）确定。"
+
+#: ../../source/peripherals/plic.md:14
+msgid "**Key Features:**"
+msgstr "**主要特性：**"
+
+#: ../../source/peripherals/plic.md:16
+msgid "Compile-time selection of global interrupt mode (General / Vector)"
+msgstr "编译时选择全局中断模式（常规 / 向量）"
+
+#: ../../source/peripherals/plic.md:17
+msgid "Interrupt priority and threshold management"
+msgstr "中断优先级和阈值管理"
+
+#: ../../source/peripherals/plic.md:18
+msgid "Interrupt source enable/disable"
+msgstr "中断源启用/禁用"
+
+#: ../../source/peripherals/plic.md:19
+msgid "Interrupt nesting support"
+msgstr "中断嵌套支持"
+
+#: ../../source/peripherals/plic.md:20
+msgid "Optional software interrupt support (Trigger, Enable, Disable)"
+msgstr "可选的软件中断支持（触发、启用、禁用）"
+
+#: ../../source/peripherals/plic.md:22
+msgid "Data Types and Enums"
+msgstr "数据类型和枚举"
+
+#: ../../source/peripherals/plic.md:24
+msgid "Interrupt Priorities"
+msgstr "中断优先级"
+
+#: ../../source/peripherals/plic.md:26
+msgid "`enum tlk_irq_priority`"
+msgstr "`enum tlk_irq_priority`"
+
+#: ../../source/peripherals/plic.md
+msgid "Value"
+msgstr "值"
+
+#: ../../source/peripherals/plic.md
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/peripherals/plic.md
+msgid "`TLK_IRQ_PRI_LEV0`"
+msgstr "`TLK_IRQ_PRI_LEV0`"
+
+#: ../../source/peripherals/plic.md
+msgid "Priority 0 — no interrupt generated (effectively disabled)"
+msgstr "优先级 0 — 不产生中断（实际禁用）"
+
+#: ../../source/peripherals/plic.md
+msgid "`TLK_IRQ_PRI_LEV1`"
+msgstr "`TLK_IRQ_PRI_LEV1`"
+
+#: ../../source/peripherals/plic.md
+msgid "Priority Level 1 (Lowest)"
+msgstr "优先级级别 1（最低）"
+
+#: ../../source/peripherals/plic.md
+msgid "`TLK_IRQ_PRI_LEV2`"
+msgstr "`TLK_IRQ_PRI_LEV2`"
+
+#: ../../source/peripherals/plic.md
+msgid "Priority Level 2"
+msgstr "优先级级别 2"
+
+#: ../../source/peripherals/plic.md
+msgid "`TLK_IRQ_PRI_LEV3`"
+msgstr "`TLK_IRQ_PRI_LEV3`"
+
+#: ../../source/peripherals/plic.md
+msgid "Priority Level 3 (Highest)"
+msgstr "优先级级别 3（最高）"
+
+#: ../../source/peripherals/plic.md:35
+msgid "API Reference"
+msgstr "API 参考"
+
+#: ../../source/peripherals/plic.md:37
+msgid "`TLK_PLIC_ISR_REGISTER` (Macro)"
+msgstr "`TLK_PLIC_ISR_REGISTER`（宏）"
+
+#: ../../source/peripherals/plic.md:39
+msgid ""
+"A helper macro to define and register an Interrupt Service Routine (ISR) "
+"for a specific interrupt number. It automatically generates the correct "
+"function attributes for Vector or General mode."
+msgstr ""
+"一个辅助宏，用于为特定中断号定义和注册中断服务例程（ISR）。"
+"它会自动为向量模式或常规模式生成正确的函数属性。"
+
+#: ../../source/peripherals/plic.md
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../source/peripherals/plic.md
+msgid "`isr`"
+msgstr "`isr`"
+
+#: ../../source/peripherals/plic.md
+msgid "The C function name to be called as the handler"
+msgstr "作为处理函数调用的 C 函数名称"
+
+#: ../../source/peripherals/plic.md
+msgid "`irq_num`"
+msgstr "`irq_num`"
+
+#: ../../source/peripherals/plic.md
+msgid "The interrupt number (e.g., `IRQ_UART0`)"
+msgstr "中断号（例如 `IRQ_UART0`）"
+
+#: ../../source/peripherals/plic.md:50
+msgid "`tlk_plic_interrupt_enable`"
+msgstr "`tlk_plic_interrupt_enable`"
+
+#: ../../source/peripherals/plic.md:52
+msgid "Enables a specific interrupt source."
+msgstr "启用特定的中断源。"
+
+#: ../../source/peripherals/plic.md:58
+msgid "`tlk_plic_interrupt_disable`"
+msgstr "`tlk_plic_interrupt_disable`"
+
+#: ../../source/peripherals/plic.md:60
+msgid "Disables a specific interrupt source."
+msgstr "禁用特定的中断源。"
+
+#: ../../source/peripherals/plic.md:66
+msgid "`tlk_plic_set_priority`"
+msgstr "`tlk_plic_set_priority`"
+
+#: ../../source/peripherals/plic.md:68
+msgid "Sets the priority level for a specific interrupt source."
+msgstr "设置特定中断源的优先级级别。"
+
+#: ../../source/peripherals/plic.md:74
+msgid "`tlk_plic_set_threshold`"
+msgstr "`tlk_plic_set_threshold`"
+
+#: ../../source/peripherals/plic.md:76
+msgid ""
+"Sets the global interrupt threshold. Only interrupts with a priority "
+"strictly higher than this threshold will be serviced."
+msgstr ""
+"设置全局中断阈值。只有优先级严格高于此阈值的中断才会被处理。"
+
+#: ../../source/peripherals/plic.md:82
+msgid "`tlk_plic_set_pending`"
+msgstr "`tlk_plic_set_pending`"
+
+#: ../../source/peripherals/plic.md:84
+msgid "Manually sets an interrupt source as pending."
+msgstr "手动将中断源设置为挂起状态。"
+
+#: ../../source/peripherals/plic.md:90
+msgid "`tlk_plic_clr_all_request`"
+msgstr "`tlk_plic_clr_all_request`"
+
+#: ../../source/peripherals/plic.md:92
+msgid "Clears all pending interrupt requests."
+msgstr "清除所有挂起的中断请求。"
+
+#: ../../source/peripherals/plic.md:98
+msgid "`tlk_plic_preempt_enable`"
+msgstr "`tlk_plic_preempt_enable`"
+
+#: ../../source/peripherals/plic.md:100
+msgid ""
+"Enables interrupt preemption (nested interrupts) for priorities higher "
+"than the specified level."
+msgstr ""
+"为高于指定级别的优先级启用中断抢占（嵌套中断）。"
+
+#: ../../source/peripherals/plic.md:106
+msgid "`tlk_plic_preempt_disable`"
+msgstr "`tlk_plic_preempt_disable`"
+
+#: ../../source/peripherals/plic.md:108
+msgid "Disables interrupt preemption."
+msgstr "禁用中断抢占。"
+
+#: ../../source/peripherals/plic.md:114
+msgid "`tlk_plic_irqs_preprocess_for_wfi`"
+msgstr "`tlk_plic_irqs_preprocess_for_wfi`"
+
+#: ../../source/peripherals/plic.md:116
+msgid ""
+"Prepares the PLIC controller before the system enters a \"Wait For "
+"Interrupt\" (WFI) or sleep state."
+msgstr ""
+"在系统进入\"等待中断\"（WFI）或休眠状态前准备 PLIC 控制器。"
+
+#: ../../source/peripherals/plic.md:122
+msgid "`tlk_plic_irqs_postprocess_for_wfi`"
+msgstr "`tlk_plic_irqs_postprocess_for_wfi`"
+
+#: ../../source/peripherals/plic.md:124
+msgid "Restores the PLIC state after the system wakes up from WFI or sleep."
+msgstr "在系统从 WFI 或休眠状态唤醒后恢复 PLIC 状态。"
+
+#: ../../source/peripherals/plic.md:130
+msgid "Software Interrupt APIs"
+msgstr "软件中断 API"
+
+#: ../../source/peripherals/plic.md:132
+msgid "!!! info \"Requires `CONFIG_TLK_PLIC_SW` enabled\""
+msgstr "!!! info \"需要启用 `CONFIG_TLK_PLIC_SW`\""
+
+#: ../../source/peripherals/plic.md
+msgid "Function"
+msgstr "函数"
+
+#: ../../source/peripherals/plic.md
+msgid "`tlk_plic_sw_set_pending()`"
+msgstr "`tlk_plic_sw_set_pending()`"
+
+#: ../../source/peripherals/plic.md
+msgid "Manually triggers a software interrupt"
+msgstr "手动触发软件中断"
+
+#: ../../source/peripherals/plic.md
+msgid "`tlk_plic_sw_interrupt_enable()`"
+msgstr "`tlk_plic_sw_interrupt_enable()`"
+
+#: ../../source/peripherals/plic.md
+msgid "Enables the software interrupt source"
+msgstr "启用软件中断源"
+
+#: ../../source/peripherals/plic.md
+msgid "`tlk_plic_sw_interrupt_disable()`"
+msgstr "`tlk_plic_sw_interrupt_disable()`"
+
+#: ../../source/peripherals/plic.md
+msgid "Disables the software interrupt source"
+msgstr "禁用软件中断源"
+
+#: ../../source/peripherals/plic.md
+msgid "`tlk_plic_sw_interrupt_claim()`"
+msgstr "`tlk_plic_sw_interrupt_claim()`"
+
+#: ../../source/peripherals/plic.md
+msgid "Claims the software interrupt source (typically used inside the ISR)"
+msgstr "获取软件中断源（通常在 ISR 内部使用）"
+
+#: ../../source/peripherals/plic.md
+msgid "`tlk_plic_sw_interrupt_complete()`"
+msgstr "`tlk_plic_sw_interrupt_complete()`"
+
+#: ../../source/peripherals/plic.md
+msgid "Completes the software interrupt, allowing new requests to be processed"
+msgstr "完成软件中断，允许处理新的请求"
+
+#: ../../source/peripherals/plic.md:142
+msgid "PLIC Configuration"
+msgstr "PLIC 配置"
+
+#: ../../source/peripherals/plic.md:144
+msgid ""
+"This section describes the PLIC configuration options available in "
+"Kconfig."
+msgstr ""
+"本节描述 Kconfig 中可用的 PLIC 配置选项。"
+
+#: ../../source/peripherals/plic.md
+msgid "Config"
+msgstr "配置"
+
+#: ../../source/peripherals/plic.md
+msgid "Default"
+msgstr "默认值"
+
+#: ../../source/peripherals/plic.md
+msgid "`TLK_PLIC_VECTOR_MODE`"
+msgstr "`TLK_PLIC_VECTOR_MODE`"
+
+#: ../../source/peripherals/plic.md
+msgid "`y`"
+msgstr "`y`"
+
+#: ../../source/peripherals/plic.md
+msgid ""
+"Selects the global interrupt handling mode. If enabled, Vector Mode is "
+"used (interrupts jump directly to their vector address). If disabled, "
+"General Mode is used (all interrupts share a common handler)."
+msgstr ""
+"选择全局中断处理模式。启用时使用向量模式（中断直接跳转到其向量地址）。"
+"禁用时使用常规模式（所有中断共享一个公共处理函数）。"
+
+#: ../../source/peripherals/plic.md
+msgid "`PLIC_SW` (or `CONFIG_TLK_PLIC_SW`)"
+msgstr "`PLIC_SW`（或 `CONFIG_TLK_PLIC_SW`）"
+
+#: ../../source/peripherals/plic.md
+msgid "`n`"
+msgstr "`n`"
+
+#: ../../source/peripherals/plic.md
+msgid ""
+"Enables support for Software Interrupts. If enabled, APIs like "
+"`tlk_plic_sw_set_pending()` become available."
+msgstr ""
+"启用软件中断支持。启用后，`tlk_plic_sw_set_pending()` 等 API 将可用。"
+
+#: ../../source/peripherals/plic.md:151
+msgid "Interrupt Handling Modes"
+msgstr "中断处理模式"
+
+#: ../../source/peripherals/plic.md
+msgid "Mode"
+msgstr "模式"
+
+#: ../../source/peripherals/plic.md
+msgid "**General**"
+msgstr "**常规模式**"
+
+#: ../../source/peripherals/plic.md
+msgid ""
+"All interrupts share a single entry point; query the interrupt source in "
+"the ISR"
+msgstr ""
+"所有中断共享一个入口点；在 ISR 中查询中断源"
+
+#: ../../source/peripherals/plic.md
+msgid "**Vector**"
+msgstr "**向量模式**"
+
+#: ../../source/peripherals/plic.md
+msgid "Each interrupt source has an independent vector address; direct jump"
+msgstr "每个中断源具有独立的向量地址；直接跳转"
+
+#: ../../source/peripherals/plic.md:158
+msgid "Interrupt Nesting"
+msgstr "中断嵌套"
+
+#: ../../source/peripherals/plic.md:160
+msgid "PLIC supports priority-based interrupt preemption:"
+msgstr "PLIC 支持基于优先级的中断抢占："
+
+#: ../../source/peripherals/plic.md:162
+msgid "High-priority interrupts can preempt low-priority interrupts"
+msgstr "高优先级中断可以抢占低优先级中断"
+
+#: ../../source/peripherals/plic.md:163
+msgid "Control the minimum response priority via `tlk_plic_set_threshold`"
+msgstr "通过 `tlk_plic_set_threshold` 控制最小响应优先级"
+
+#: ../../source/peripherals/plic.md:165
+msgid "Integration with GPIO Interrupts"
+msgstr "与 GPIO 中断的集成"
+
+#: ../../source/peripherals/plic.md:167
+msgid "GPIO interrupts are routed through PLIC. Configuration steps:"
+msgstr "GPIO 中断通过 PLIC 路由。配置步骤："
+
+#: ../../source/peripherals/plic.md:169
+msgid "Configure PLIC interrupt priority"
+msgstr "配置 PLIC 中断优先级"
+
+#: ../../source/peripherals/plic.md:170
+msgid "Configure GPIO interrupt trigger condition (`tlk_gpio_irq_configure`)"
+msgstr "配置 GPIO 中断触发条件（`tlk_gpio_irq_configure`）"
+
+#: ../../source/peripherals/plic.md:171
+msgid "Register GPIO interrupt callback (`tlk_gpio_irq_add_callback`)"
+msgstr "注册 GPIO 中断回调函数（`tlk_gpio_irq_add_callback`）"
+
+#: ../../source/peripherals/plic.md:172
+msgid "Enable global interrupts (`tlk_core_interrupt_enable`)"
+msgstr "启用全局中断（`tlk_core_interrupt_enable`）"

@@ -1,0 +1,567 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/reference.md:6
+msgid "File & Script Reference"
+msgstr "文件与脚本参考"
+
+#: ../../source/build_config/reference.md:8
+msgid "Core Configuration Files"
+msgstr "核心配置文件"
+
+#: ../../source/build_config/reference.md
+msgid "File"
+msgstr "文件"
+
+#: ../../source/build_config/reference.md
+msgid "Location"
+msgstr "位置"
+
+#: ../../source/build_config/reference.md
+msgid "Function"
+msgstr "功能"
+
+#: ../../source/build_config/reference.md
+msgid "`CMakeLists.txt`"
+msgstr "`CMakeLists.txt`"
+
+#: ../../source/build_config/reference.md
+msgid "Repository root"
+msgstr "仓库根目录"
+
+#: ../../source/build_config/reference.md
+msgid "CMake main entry point"
+msgstr "CMake 主入口"
+
+#: ../../source/build_config/reference.md
+msgid "`Makefile`"
+msgstr "`Makefile`"
+
+#: ../../source/build_config/reference.md
+msgid "Make command interface"
+msgstr "Make 命令接口"
+
+#: ../../source/build_config/reference.md
+msgid "`west.yml`"
+msgstr "`west.yml`"
+
+#: ../../source/build_config/reference.md
+msgid "West workspace configuration"
+msgstr "West 工作空间配置"
+
+#: ../../source/build_config/reference.md
+msgid "`Kconfig.chip`"
+msgstr "`Kconfig.chip`"
+
+#: ../../source/build_config/reference.md
+msgid "Chip Kconfig entry point"
+msgstr "芯片 Kconfig 入口"
+
+#: ../../source/build_config/reference.md
+msgid "`Kconfig.build`"
+msgstr "`Kconfig.build`"
+
+#: ../../source/build_config/reference.md
+msgid "Build Kconfig entry point"
+msgstr "构建 Kconfig 入口"
+
+#: ../../source/build_config/reference.md:18
+msgid "Build Artifacts (build/ Directory)"
+msgstr "构建产物（build/ 目录）"
+
+#: ../../source/build_config/reference.md
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/build_config/reference.md
+msgid "`.config`"
+msgstr "`.config`"
+
+#: ../../source/build_config/reference.md
+msgid "Final merged configuration"
+msgstr "最终合并配置"
+
+#: ../../source/build_config/reference.md
+msgid "`chip.config`"
+msgstr "`chip.config`"
+
+#: ../../source/build_config/reference.md
+msgid "Chip configuration"
+msgstr "芯片配置"
+
+#: ../../source/build_config/reference.md
+msgid "`build.config`"
+msgstr "`build.config`"
+
+#: ../../source/build_config/reference.md
+msgid "Build configuration"
+msgstr "构建配置"
+
+#: ../../source/build_config/reference.md
+msgid "`autoconf.h`"
+msgstr "`autoconf.h`"
+
+#: ../../source/build_config/reference.md
+msgid "C configuration macro definitions"
+msgstr "C 配置宏定义"
+
+#: ../../source/build_config/reference.md
+msgid "`capabilities.h`"
+msgstr "`capabilities.h`"
+
+#: ../../source/build_config/reference.md
+msgid "Chip capability declarations"
+msgstr "芯片能力声明"
+
+#: ../../source/build_config/reference.md
+msgid "`pinmux.h`"
+msgstr "`pinmux.h`"
+
+#: ../../source/build_config/reference.md
+msgid "Pin multiplexing configuration"
+msgstr "引脚复用配置"
+
+#: ../../source/build_config/reference.md:29
+msgid "CMake Files"
+msgstr "CMake 文件"
+
+#: ../../source/build_config/reference.md:31
+msgid "Core Files"
+msgstr "核心文件"
+
+#: ../../source/build_config/reference.md
+msgid "`TelinkConfig.cmake`"
+msgstr "`TelinkConfig.cmake`"
+
+#: ../../source/build_config/reference.md
+msgid "`cmake/`"
+msgstr "`cmake/`"
+
+#: ../../source/build_config/reference.md
+msgid "Telink package configuration"
+msgstr "Telink 包配置"
+
+#: ../../source/build_config/reference.md
+msgid "`telink_default.cmake`"
+msgstr "`telink_default.cmake`"
+
+#: ../../source/build_config/reference.md
+msgid "`cmake/modules/`"
+msgstr "`cmake/modules/`"
+
+#: ../../source/build_config/reference.md
+msgid "Module loading and default configuration"
+msgstr "模块加载和默认配置"
+
+#: ../../source/build_config/reference.md:39
+msgid "CMake Modules (cmake/modules/)"
+msgstr "CMake 模块（cmake/modules/）"
+
+#: ../../source/build_config/reference.md
+msgid "Module"
+msgstr "模块"
+
+#: ../../source/build_config/reference.md
+msgid "`compiler.cmake`"
+msgstr "`compiler.cmake`"
+
+#: ../../source/build_config/reference.md
+msgid "RISC-V compiler configuration"
+msgstr "RISC-V 编译器配置"
+
+#: ../../source/build_config/reference.md
+msgid "`extensions.cmake`"
+msgstr "`extensions.cmake`"
+
+#: ../../source/build_config/reference.md
+msgid "CMake extension functions"
+msgstr "CMake 扩展函数"
+
+#: ../../source/build_config/reference.md
+msgid "`kconfig.cmake`"
+msgstr "`kconfig.cmake`"
+
+#: ../../source/build_config/reference.md
+msgid "Kconfig integration"
+msgstr "Kconfig 集成"
+
+#: ../../source/build_config/reference.md
+msgid "`linker.cmake`"
+msgstr "`linker.cmake`"
+
+#: ../../source/build_config/reference.md
+msgid "Linker configuration"
+msgstr "链接器配置"
+
+#: ../../source/build_config/reference.md
+msgid "`pinmux.cmake`"
+msgstr "`pinmux.cmake`"
+
+#: ../../source/build_config/reference.md
+msgid "Pinmux integration"
+msgstr "Pinmux 集成"
+
+#: ../../source/build_config/reference.md
+msgid "`python.cmake`"
+msgstr "`python.cmake`"
+
+#: ../../source/build_config/reference.md
+msgid "Python environment configuration"
+msgstr "Python 环境配置"
+
+#: ../../source/build_config/reference.md
+msgid "`west.cmake`"
+msgstr "`west.cmake`"
+
+#: ../../source/build_config/reference.md
+msgid "West tool integration"
+msgstr "West 工具集成"
+
+#: ../../source/build_config/reference.md
+msgid "`library.cmake`"
+msgstr "`library.cmake`"
+
+#: ../../source/build_config/reference.md
+msgid "Library build module"
+msgstr "库构建模块"
+
+#: ../../source/build_config/reference.md
+msgid "`headers_gen.cmake`"
+msgstr "`headers_gen.cmake`"
+
+#: ../../source/build_config/reference.md
+msgid "Header file generation"
+msgstr "头文件生成"
+
+#: ../../source/build_config/reference.md:53
+msgid "Build Scripts (scripts/)"
+msgstr "构建脚本（scripts/）"
+
+#: ../../source/build_config/reference.md
+msgid "Script"
+msgstr "脚本"
+
+#: ../../source/build_config/reference.md
+msgid "`kconfig.py`"
+msgstr "`kconfig.py`"
+
+#: ../../source/build_config/reference.md
+msgid "Non-interactive Kconfig processing"
+msgstr "非交互式 Kconfig 处理"
+
+#: ../../source/build_config/reference.md
+msgid "`menuconfig.py`"
+msgstr "`menuconfig.py`"
+
+#: ../../source/build_config/reference.md
+msgid "Interactive configuration interface"
+msgstr "交互式配置界面"
+
+#: ../../source/build_config/reference.md
+msgid "`preprocess_kconfig.py`"
+msgstr "`preprocess_kconfig.py`"
+
+#: ../../source/build_config/reference.md
+msgid "Kconfig preprocessing"
+msgstr "Kconfig 预处理"
+
+#: ../../source/build_config/reference.md
+msgid "`kconfig_parser.py`"
+msgstr "`kconfig_parser.py`"
+
+#: ../../source/build_config/reference.md
+msgid "Kconfig parsing and validation"
+msgstr "Kconfig 解析与验证"
+
+#: ../../source/build_config/reference.md
+msgid "`soc_board_setter.py`"
+msgstr "`soc_board_setter.py`"
+
+#: ../../source/build_config/reference.md
+msgid "SOC/BOARD configuration"
+msgstr "SOC/BOARD 配置"
+
+#: ../../source/build_config/reference.md
+msgid "`tl_check_fw.sh`"
+msgstr "`tl_check_fw.sh`"
+
+#: ../../source/build_config/reference.md
+msgid "Firmware verification"
+msgstr "固件验证"
+
+#: ../../source/build_config/reference.md
+msgid "`set_telink_base.sh`"
+msgstr "`set_telink_base.sh`"
+
+#: ../../source/build_config/reference.md
+msgid "Set TELINK_BASE (Linux/Mac)"
+msgstr "设置 TELINK_BASE（Linux/Mac）"
+
+#: ../../source/build_config/reference.md
+msgid "`set_telink_base.cmd`"
+msgstr "`set_telink_base.cmd`"
+
+#: ../../source/build_config/reference.md
+msgid "Set TELINK_BASE (Windows CMD)"
+msgstr "设置 TELINK_BASE（Windows CMD）"
+
+#: ../../source/build_config/reference.md
+msgid "`set_telink_base.ps1`"
+msgstr "`set_telink_base.ps1`"
+
+#: ../../source/build_config/reference.md
+msgid "Set TELINK_BASE (Windows PowerShell)"
+msgstr "设置 TELINK_BASE（Windows PowerShell）"
+
+#: ../../source/build_config/reference.md
+msgid "`windows_setup.ps1`"
+msgstr "`windows_setup.ps1`"
+
+#: ../../source/build_config/reference.md
+msgid "Windows automated environment setup"
+msgstr "Windows 自动环境设置"
+
+#: ../../source/build_config/reference.md
+msgid "`sdk_exporter.sh`"
+msgstr "`sdk_exporter.sh`"
+
+#: ../../source/build_config/reference.md
+msgid "SDK export script"
+msgstr "SDK 导出脚本"
+
+#: ../../source/build_config/reference.md:69
+msgid "West Command Implementations (scripts/west_commands/)"
+msgstr "West 命令实现（scripts/west_commands/）"
+
+#: ../../source/build_config/reference.md
+msgid "Corresponding Command"
+msgstr "对应命令"
+
+#: ../../source/build_config/reference.md
+msgid "`build.py`"
+msgstr "`build.py`"
+
+#: ../../source/build_config/reference.md
+msgid "`west tl-build`"
+msgstr "`west tl-build`"
+
+#: ../../source/build_config/reference.md
+msgid "`config.py`"
+msgstr "`config.py`"
+
+#: ../../source/build_config/reference.md
+msgid "`west tl-config`"
+msgstr "`west tl-config`"
+
+#: ../../source/build_config/reference.md
+msgid "`bdt.py`"
+msgstr "`bdt.py`"
+
+#: ../../source/build_config/reference.md
+msgid "`west tl-bdt`"
+msgstr "`west tl-bdt`"
+
+#: ../../source/build_config/reference.md
+msgid "`boards.py`"
+msgstr "`boards.py`"
+
+#: ../../source/build_config/reference.md
+msgid "`west tl-boards`"
+msgstr "`west tl-boards`"
+
+#: ../../source/build_config/reference.md
+msgid "`socs.py`"
+msgstr "`socs.py`"
+
+#: ../../source/build_config/reference.md
+msgid "`west tl-socs`"
+msgstr "`west tl-socs`"
+
+#: ../../source/build_config/reference.md
+msgid "`zcmake.py`"
+msgstr "`zcmake.py`"
+
+#: ../../source/build_config/reference.md
+msgid "CMake helper"
+msgstr "CMake 辅助工具"
+
+#: ../../source/build_config/reference.md:80
+msgid "Pinmux Tools (scripts/pinmux/)"
+msgstr "Pinmux 工具（scripts/pinmux/）"
+
+#: ../../source/build_config/reference.md
+msgid "`app.py`"
+msgstr "`app.py`"
+
+#: ../../source/build_config/reference.md
+msgid "Pinmux application core"
+msgstr "Pinmux 应用核心"
+
+#: ../../source/build_config/reference.md
+msgid "`__main__.py`"
+msgstr "`__main__.py`"
+
+#: ../../source/build_config/reference.md
+msgid "CLI entry point"
+msgstr "CLI 入口"
+
+#: ../../source/build_config/reference.md
+msgid "`data/`"
+msgstr "`data/`"
+
+#: ../../source/build_config/reference.md
+msgid "Data processing modules"
+msgstr "数据处理模块"
+
+#: ../../source/build_config/reference.md
+msgid "`ui/`"
+msgstr "`ui/`"
+
+#: ../../source/build_config/reference.md
+msgid "Terminal UI components"
+msgstr "终端 UI 组件"
+
+#: ../../source/build_config/reference.md
+msgid "`styles.tcss`"
+msgstr "`styles.tcss`"
+
+#: ../../source/build_config/reference.md
+msgid "UI stylesheet"
+msgstr "UI 样式表"
+
+#: ../../source/build_config/reference.md:90
+msgid "CI Scripts (scripts/ci/)"
+msgstr "CI 脚本（scripts/ci/）"
+
+#: ../../source/build_config/reference.md
+msgid "`ci_build.sh`"
+msgstr "`ci_build.sh`"
+
+#: ../../source/build_config/reference.md
+msgid "Single project CI build"
+msgstr "单个项目 CI 构建"
+
+#: ../../source/build_config/reference.md
+msgid "`ci_build_all.sh`"
+msgstr "`ci_build_all.sh`"
+
+#: ../../source/build_config/reference.md
+msgid "All projects CI build"
+msgstr "所有项目 CI 构建"
+
+#: ../../source/build_config/reference.md
+msgid "`ci_prepare.sh`"
+msgstr "`ci_prepare.sh`"
+
+#: ../../source/build_config/reference.md
+msgid "CI preparation"
+msgstr "CI 准备工作"
+
+#: ../../source/build_config/reference.md
+msgid "`defconfig_to_dotconfig.py`"
+msgstr "`defconfig_to_dotconfig.py`"
+
+#: ../../source/build_config/reference.md
+msgid "defconfig to .config conversion"
+msgstr "defconfig 到 .config 转换"
+
+#: ../../source/build_config/reference.md
+msgid "`dotconfig_to_defconfig.py`"
+msgstr "`dotconfig_to_defconfig.py`"
+
+#: ../../source/build_config/reference.md
+msgid ".config to defconfig conversion"
+msgstr ".config 到 defconfig 转换"
+
+#: ../../source/build_config/reference.md:100
+msgid "Kconfig Files"
+msgstr "Kconfig 文件"
+
+#: ../../source/build_config/reference.md
+msgid "`core/Kconfig`"
+msgstr "`core/Kconfig`"
+
+#: ../../source/build_config/reference.md
+msgid "`core/`"
+msgstr "`core/`"
+
+#: ../../source/build_config/reference.md
+msgid "Core configuration"
+msgstr "核心配置"
+
+#: ../../source/build_config/reference.md
+msgid "`core/configs/Kconfig`"
+msgstr "`core/configs/Kconfig`"
+
+#: ../../source/build_config/reference.md
+msgid "`core/configs/`"
+msgstr "`core/configs/`"
+
+#: ../../source/build_config/reference.md
+msgid "Core feature configuration"
+msgstr "核心功能配置"
+
+#: ../../source/build_config/reference.md
+msgid "`soc/Kconfig`"
+msgstr "`soc/Kconfig`"
+
+#: ../../source/build_config/reference.md
+msgid "`soc/`"
+msgstr "`soc/`"
+
+#: ../../source/build_config/reference.md
+msgid "Chip series configuration"
+msgstr "芯片系列配置"
+
+#: ../../source/build_config/reference.md
+msgid "`boards/Kconfig`"
+msgstr "`boards/Kconfig`"
+
+#: ../../source/build_config/reference.md
+msgid "`boards/`"
+msgstr "`boards/`"
+
+#: ../../source/build_config/reference.md
+msgid "Development board configuration"
+msgstr "开发板配置"
+
+#: ../../source/build_config/reference.md
+msgid "`api/Kconfig`"
+msgstr "`api/Kconfig`"
+
+#: ../../source/build_config/reference.md
+msgid "`api/`"
+msgstr "`api/`"
+
+#: ../../source/build_config/reference.md
+msgid "API configuration"
+msgstr "API 配置"
+
+#: ../../source/build_config/reference.md
+msgid "`samples/Kconfig`"
+msgstr "`samples/Kconfig`"
+
+#: ../../source/build_config/reference.md
+msgid "`samples/`"
+msgstr "`samples/`"
+
+#: ../../source/build_config/reference.md
+msgid "Sample configuration"
+msgstr "示例配置"

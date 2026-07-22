@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/chips_boards/index.md:6
+msgid "Chips and Boards"
+msgstr "芯片与开发板"
+
+#: ../../source/chips_boards/index.md:8
+msgid "Chip Series Overview"
+msgstr "芯片系列概览"
+
+#: ../../source/chips_boards/index.md:10
+msgid "UniSDK supports the following Telink chip series:"
+msgstr "UniSDK 支持以下 Telink 芯片系列："
+
+#: ../../source/chips_boards/index.md
+msgid "Chip Series"
+msgstr "芯片系列"
+
+#: ../../source/chips_boards/index.md
+msgid "Core"
+msgstr "内核"
+
+#: ../../source/chips_boards/index.md
+msgid "Flash"
+msgstr "Flash"
+
+#: ../../source/chips_boards/index.md
+msgid "SRAM"
+msgstr "SRAM"
+
+#: ../../source/chips_boards/index.md
+msgid "Key Peripherals"
+msgstr "关键外设"
+
+#: ../../source/chips_boards/index.md
+msgid "Typical Application"
+msgstr "典型应用"
+
+#: ../../source/chips_boards/index.md
+msgid "[TL321X](chips/TL321X.md)"
+msgstr "[TL321X](chips/TL321X.md)"
+
+#: ../../source/chips_boards/index.md
+msgid "RISC-V"
+msgstr "RISC-V"
+
+#: ../../source/chips_boards/index.md
+msgid "—"
+msgstr "—"
+
+#: ../../source/chips_boards/index.md
+msgid "BLE, GPIO, UART, I2C, SPI, ADC, DMA"
+msgstr "BLE、GPIO、UART、I2C、SPI、ADC、DMA"
+
+#: ../../source/chips_boards/index.md
+msgid "General IoT"
+msgstr "通用物联网"
+
+#: ../../source/chips_boards/index.md
+msgid "[TL721X](chips/TL721X.md)"
+msgstr "[TL721X](chips/TL721X.md)"
+
+#: ../../source/chips_boards/index.md
+msgid "BLE, GPIO, UART, I2C, SPI, ADC, DMA, USB"
+msgstr "BLE、GPIO、UART、I2C、SPI、ADC、DMA、USB"
+
+#: ../../source/chips_boards/index.md
+msgid "[TLSR922X](chips/TLSR922X.md)"
+msgstr "[TLSR922X](chips/TLSR922X.md)"
+
+#: ../../source/chips_boards/index.md
+msgid "BLE, GPIO, UART, I2C, SPI, ADC"
+msgstr "BLE、GPIO、UART、I2C、SPI、ADC"
+
+#: ../../source/chips_boards/index.md
+msgid "[TLSR952X](chips/TLSR952X.md)"
+msgstr "[TLSR952X](chips/TLSR952X.md)"
+
+#: ../../source/chips_boards/index.md:19
+msgid "Selecting a Chip"
+msgstr "选择芯片"
+
+#: ../../source/chips_boards/index.md:29
+msgid "Board List"
+msgstr "开发板列表"
+
+#: ../../source/chips_boards/index.md
+msgid "Board"
+msgstr "开发板"
+
+#: ../../source/chips_boards/index.md
+msgid "Chip"
+msgstr "芯片"
+
+#: ../../source/chips_boards/index.md
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/chips_boards/index.md
+msgid "[TL3218X_EVK](boards/TL3218X_EVK.md)"
+msgstr "[TL3218X_EVK](boards/TL3218X_EVK.md)"
+
+#: ../../source/chips_boards/index.md
+msgid "TL321X"
+msgstr "TL321X"
+
+#: ../../source/chips_boards/index.md
+msgid "TL321X Evaluation Kit"
+msgstr "TL321X 评估套件"
+
+#: ../../source/chips_boards/index.md
+msgid "[TL7218X_EVK](boards/TL7218X_EVK.md)"
+msgstr "[TL7218X_EVK](boards/TL7218X_EVK.md)"
+
+#: ../../source/chips_boards/index.md
+msgid "TL721X"
+msgstr "TL721X"
+
+#: ../../source/chips_boards/index.md
+msgid "TL721X Evaluation Kit"
+msgstr "TL721X 评估套件"
+
+#: ../../source/chips_boards/index.md
+msgid "[TLSR9228A_EVK](boards/TLSR9228A_EVK.md)"
+msgstr "[TLSR9228A_EVK](boards/TLSR9228A_EVK.md)"
+
+#: ../../source/chips_boards/index.md
+msgid "TLSR922X"
+msgstr "TLSR922X"
+
+#: ../../source/chips_boards/index.md
+msgid "TLSR922X Evaluation Kit"
+msgstr "TLSR922X 评估套件"
+
+#: ../../source/chips_boards/index.md
+msgid "[TLSR9528A_EVK](boards/TLSR9528A_EVK.md)"
+msgstr "[TLSR9528A_EVK](boards/TLSR9528A_EVK.md)"
+
+#: ../../source/chips_boards/index.md
+msgid "TLSR952X"
+msgstr "TLSR952X"
+
+#: ../../source/chips_boards/index.md
+msgid "TLSR952X Evaluation Kit"
+msgstr "TLSR952X 评估套件"
+
+#: ../../source/chips_boards/index.md
+msgid "[TLSR9528A_DONGLE](boards/TLSR9528A_DONGLE.md)"
+msgstr "[TLSR9528A_DONGLE](boards/TLSR9528A_DONGLE.md)"
+
+#: ../../source/chips_boards/index.md
+msgid "TLSR952X USB Dongle"
+msgstr "TLSR952X USB 适配器"
+
+#: ../../source/chips_boards/index.md:50
+msgid "Chip and Board Pair Validation"
+msgstr "芯片与开发板配对验证"
+
+#: ../../source/chips_boards/index.md:57
+msgid "Specifying at Build Time"
+msgstr "构建时指定"

@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/public_api.md:6
+msgid "API Documentation"
+msgstr "API 文档"
+
+#: ../../source/developing/public_api.md:8
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/developing/public_api.md:9
+msgid ""
+"The API module provides a high-level abstraction layer for essential "
+"system utilities. It consolidates system timing, power management (sleep "
+"modes), and debug printing into a unified interface. The Print module "
+"acts as a lightweight, formatted output utility that directs debug "
+"messages to a configured UART instance."
+msgstr ""
+"API 模块为基本的系统工具提供了高级抽象层。它将系统计时、电源管理（睡眠模式）和调试打印整合到统一的接口中。Print 模块作为一个轻量级的格式化输出工具，将调试消息定向到已配置的 UART 实例。"
+
+#: ../../source/developing/public_api.md:11
+msgid "**Key Features:**"
+msgstr "**主要特性：**"
+
+#: ../../source/developing/public_api.md:13
+msgid "**System Timing:** Microsecond-precision timestamp generation."
+msgstr "**系统计时：** 微秒级精度的时间戳生成。"
+
+#: ../../source/developing/public_api.md:14
+msgid ""
+"**Power Management:** Unified sleep function with configurable power "
+"modes (Suspend, Deep Sleep, Retention)."
+msgstr ""
+"**电源管理：** 统一的睡眠功能，支持可配置的电源模式（挂起、深度睡眠、保留）。"
+
+#: ../../source/developing/public_api.md:15
+msgid "**Debug Output:** `printf`-like formatting capability."
+msgstr "**调试输出：** 类 `printf` 的格式化能力。"
+
+#: ../../source/developing/public_api.md:16
+msgid ""
+"**UART Integration:** Directs debug output to a specific, user-"
+"configurable UART hardware instance."
+msgstr ""
+"**UART 集成：** 将调试输出定向到用户可配置的特定 UART 硬件实例。"
+
+#: ../../source/developing/public_api.md:18
+msgid "API Reference"
+msgstr "API 参考"
+
+#: ../../source/developing/public_api.md:19
+msgid ""
+"This section describes the functions available in the API and Print "
+"modules."
+msgstr "本节描述 API 和 Print 模块中可用的函数。"
+
+#: ../../source/developing/public_api.md:21
+msgid "1. `tlk_api_micros`"
+msgstr "1. `tlk_api_micros`"
+
+#: ../../source/developing/public_api.md:22
+msgid ""
+"Returns the current system up-time in microseconds. This function "
+"utilizes the system timer (`stimer`) to calculate the tick count."
+msgstr ""
+"返回当前系统运行时间的微秒数。该函数使用系统定时器（`stimer`）计算计时器计数值。"
+
+#: ../../source/developing/public_api.md:24
+#: ../../source/developing/public_api.md:43
+#: ../../source/developing/public_api.md:61
+#: ../../source/developing/public_api.md:81
+msgid "**Prototype:**"
+msgstr "**原型：**"
+
+#: ../../source/developing/public_api.md:30
+msgid "**Parameters:** None"
+msgstr "**参数：** 无"
+
+#: ../../source/developing/public_api.md:33
+msgid ""
+"**Return Value:** `uint32_t`: The number of microseconds passed since the"
+" system started."
+msgstr ""
+"**返回值：** `uint32_t`：自系统启动以来经过的微秒数。"
+
+#: ../../source/developing/public_api.md:36
+msgid "2. `tlk_api_sleep`"
+msgstr "2. `tlk_api_sleep`"
+
+#: ../../source/developing/public_api.md:37
+msgid "*This API is available only if `CONFIG_TLK_API_SLEEP` is enabled.*"
+msgstr "*此 API 仅在启用 `CONFIG_TLK_API_SLEEP` 时可用。*"
+
+#: ../../source/developing/public_api.md:39
+msgid ""
+"Checks duration; if zero — returns. If `CONFIG_TLK_PM` is enabled, it "
+"calls `tlk_pm_sleep` with `TLK_PM_SLEEP_MAX_LEVEL-1` parameter. If "
+"`CONFIG_TLK_PM` is disabled, or `tlk_pm_sleep` returned err, it programs "
+"the timer for the requested delay, enables timer interrupt, and waits "
+"using WFI."
+msgstr ""
+"检查延时时间，如果为零则直接返回。如果启用了 `CONFIG_TLK_PM`，则调用参数为 `TLK_PM_SLEEP_MAX_LEVEL-1` 的 `tlk_pm_sleep`。如果 `CONFIG_TLK_PM` 未启用，或 `tlk_pm_sleep` 返回错误，则编程定时器以请求延时，使能定时器中断，并通过 WFI 指令等待。"
+
+#: ../../source/developing/public_api.md:49
+#: ../../source/developing/public_api.md:67
+#: ../../source/developing/public_api.md:87
+msgid "**Parameters:**"
+msgstr "**参数：**"
+
+#: ../../source/developing/public_api.md
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../source/developing/public_api.md
+msgid "Type"
+msgstr "类型"
+
+#: ../../source/developing/public_api.md
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/developing/public_api.md
+msgid "`duration_ms`"
+msgstr "`duration_ms`"
+
+#: ../../source/developing/public_api.md
+msgid "`uint32_t`"
+msgstr "`uint32_t`"
+
+#: ../../source/developing/public_api.md
+msgid "The duration to sleep in milliseconds."
+msgstr "睡眠持续时间，单位为毫秒。"
+
+#: ../../source/developing/public_api.md:55
+#: ../../source/developing/public_api.md:73
+msgid "**Return Value:** None"
+msgstr "**返回值：** 无"
+
+#: ../../source/developing/public_api.md:58
+msgid "3. `tlk_api_delay`"
+msgstr "3. `tlk_api_delay`"
+
+#: ../../source/developing/public_api.md:59
+msgid "Blocking delay function"
+msgstr "阻塞延时函数"
+
+#: ../../source/developing/public_api.md
+msgid "`duration_us`"
+msgstr "`duration_us`"
+
+#: ../../source/developing/public_api.md
+msgid "The duration to wait in microseconds."
+msgstr "等待持续时间，单位为微秒。"
+
+#: ../../source/developing/public_api.md:76
+msgid "4. `tlk_api_print`"
+msgstr "4. `tlk_api_print`"
+
+#: ../../source/developing/public_api.md:77
+msgid "*This API is available only if `CONFIG_TLK_DEBUG_PRINT` is enabled.*"
+msgstr "*此 API 仅在启用 `CONFIG_TLK_DEBUG_PRINT` 时可用。*"
+
+#: ../../source/developing/public_api.md:79
+msgid ""
+"A formatted output function similar to the standard C `printf`. It "
+"formats the string and transmits it via the configured UART interface."
+msgstr ""
+"一个类似于标准 C `printf` 的格式化输出函数。它格式化字符串并通过已配置的 UART 接口传输。"
+
+#: ../../source/developing/public_api.md
+msgid "`format`"
+msgstr "`format`"
+
+#: ../../source/developing/public_api.md
+msgid "`const char *`"
+msgstr "`const char *`"
+
+#: ../../source/developing/public_api.md
+#, python-format
+msgid "The format string (e.g., \"Value: %d\\n\")."
+msgstr "格式字符串（例如：\"Value: %d\\n\"）。"
+
+#: ../../source/developing/public_api.md
+msgid "`...`"
+msgstr "`...`"
+
+#: ../../source/developing/public_api.md
+msgid "`varargs`"
+msgstr "`varargs`"
+
+#: ../../source/developing/public_api.md
+msgid "Variable arguments corresponding to the format specifiers."
+msgstr "与格式说明符对应的可变参数。"
+
+#: ../../source/developing/public_api.md:94
+msgid ""
+"**Return Value:** `int`: The number of characters written to the output "
+"buffer."
+msgstr ""
+"**返回值：** `int`：写入输出缓冲区的字符数。"
+
+#: ../../source/developing/public_api.md:97
+msgid ""
+"**Note:** This function uses an internal static buffer defined by "
+"`CONFIG_TLK_DEBUG_PRINT_BUFFER_SIZE`. Ensure your formatted message does "
+"not exceed this limit. This function is used internally by the SDK and "
+"may not have a public declaration in API headers."
+msgstr ""
+"**注意：** 此函数使用由 `CONFIG_TLK_DEBUG_PRINT_BUFFER_SIZE` 定义的内部静态缓冲区。请确保格式化的消息不超过此限制。此函数由 SDK 内部使用，可能在 API 头文件中没有公开声明。"

@@ -1,0 +1,721 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/contribute/index.md:6
+msgid "Contribution Guide"
+msgstr "贡献指南"
+
+#: ../../source/contribute/index.md:8
+msgid ""
+"Community developers and contributors are welcome to contribute code, "
+"documentation, examples, and issue reports to the UniSDK project."
+msgstr ""
+"欢迎社区开发者和贡献者为 UniSDK 项目贡献代码、文档、示例和问题报告。"
+
+#: ../../source/contribute/index.md:10
+msgid ""
+"**Note on SDK code contributions**: This guide focuses on the **unisdk-"
+"doc** documentation repository. For SDK code contributions (unisdk), "
+"please refer to the [unisdk repository](https://github.com/telink-"
+"semi/unisdk)."
+msgstr ""
+"**关于 SDK 代码贡献的说明**：本指南主要针对 **unisdk-doc** 文档仓库。有关 SDK 代码贡献（unisdk），"
+"请参考 [unisdk 仓库](https://github.com/telink-semi/unisdk)。"
+
+#: ../../source/contribute/index.md:14
+msgid "Documentation Repository: unisdk-doc"
+msgstr "文档仓库：unisdk-doc"
+
+#: ../../source/contribute/index.md:16
+msgid ""
+"The documentation repository ([unisdk-doc](https://github.com/telink-semi"
+"/unisdk-doc)) follows the same branch model as the SDK code repository."
+msgstr ""
+"文档仓库（[unisdk-doc](https://github.com/telink-semi/unisdk-doc)）采用与 SDK 代码仓库相同的分支模型。"
+
+#: ../../source/contribute/index.md:18
+msgid "Branch Model"
+msgstr "分支模型"
+
+#: ../../source/contribute/index.md
+msgid "Branch"
+msgstr "分支"
+
+#: ../../source/contribute/index.md
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/contribute/index.md
+msgid "CI/CD Deployment"
+msgstr "CI/CD 部署"
+
+#: ../../source/contribute/index.md
+msgid "`main`"
+msgstr "`main`"
+
+#: ../../source/contribute/index.md
+msgid "Stable branch. Only updated when a release is finalized."
+msgstr "稳定分支。仅在发布定稿时更新。"
+
+#: ../../source/contribute/index.md
+msgid "Pushes deploy to `/en/latest/`"
+msgstr "推送部署到 `/en/latest/`"
+
+#: ../../source/contribute/index.md
+msgid "`develop`"
+msgstr "`develop`"
+
+#: ../../source/contribute/index.md
+msgid "Active development branch. All documentation changes land here first."
+msgstr "活跃开发分支。所有文档变更首先合并到此分支。"
+
+#: ../../source/contribute/index.md
+msgid "Pushes deploy to `/en/dev/`"
+msgstr "推送部署到 `/en/dev/`"
+
+#: ../../source/contribute/index.md
+msgid "`release-v*.*.*`"
+msgstr "`release-v*.*.*`"
+
+#: ../../source/contribute/index.md
+msgid "Release preparation branch. Created from `develop` before tagging."
+msgstr "发布准备分支。在打标签前从 `develop` 创建。"
+
+#: ../../source/contribute/index.md
+msgid "Tag pushes deploy to `/en/v*.*.*/`"
+msgstr "标签推送部署到 `/en/v*.*.*/`"
+
+#: ../../source/contribute/index.md
+msgid "`doc/*`"
+msgstr "`doc/*`"
+
+#: ../../source/contribute/index.md
+msgid "Feature branches for documentation changes."
+msgstr "用于文档变更的特性分支。"
+
+#: ../../source/contribute/index.md
+msgid "No deployment"
+msgstr "无部署"
+
+#: ../../source/contribute/index.md
+msgid "`fix/*`"
+msgstr "`fix/*`"
+
+#: ../../source/contribute/index.md
+msgid "Feature branches for documentation fixes."
+msgstr "用于文档修复的特性分支。"
+
+#: ../../source/contribute/index.md:38
+msgid "Lifecycle"
+msgstr "生命周期"
+
+#: ../../source/contribute/index.md:40
+msgid ""
+"**Development**: Create a feature branch from `develop` -> make changes "
+"-> open PR -> merge into `develop`"
+msgstr ""
+"**开发阶段**：从 `develop` 创建特性分支 -> 进行修改 -> 提交 PR -> 合并到 `develop`"
+
+#: ../../source/contribute/index.md:41
+msgid ""
+"**Release**: When ready, create `release-v*.*.*` from `develop` -> "
+"finalize -> tag -> CI builds the tag"
+msgstr ""
+"**发布阶段**：准备就绪后，从 `develop` 创建 `release-v*.*.*` -> 定稿 -> 打标签 -> CI 构建标签"
+
+#: ../../source/contribute/index.md:42
+msgid ""
+"**Stable**: Merge the release branch into `main`, updating the stable "
+"documentation"
+msgstr ""
+"**稳定阶段**：将发布分支合并到 `main`，更新稳定版文档"
+
+#: ../../source/contribute/index.md:46
+msgid "Document Version vs SDK Version"
+msgstr "文档版本与 SDK 版本"
+
+#: ../../source/contribute/index.md:48
+msgid ""
+"Document versions are **aligned with SDK versions without extra tags** "
+"for doc-only fixes:"
+msgstr ""
+"文档版本**与 SDK 版本保持一致**，纯文档修复不额外打标签："
+
+#: ../../source/contribute/index.md
+msgid "Scenario"
+msgstr "场景"
+
+#: ../../source/contribute/index.md
+msgid "Doc Tag"
+msgstr "文档标签"
+
+#: ../../source/contribute/index.md
+msgid "Description"
+msgstr "说明"
+
+#: ../../source/contribute/index.md
+msgid "SDK release"
+msgstr "SDK 发布"
+
+#: ../../source/contribute/index.md
+msgid "`v<SDK version>` (e.g. `v0.2.0`)"
+msgstr "`v<SDK 版本>`（例如 `v0.2.0`）"
+
+#: ../../source/contribute/index.md
+msgid "One-to-one mapping, doc and SDK released together"
+msgstr "一对一映射，文档与 SDK 一同发布"
+
+#: ../../source/contribute/index.md
+msgid "Doc-only fix"
+msgstr "纯文档修复"
+
+#: ../../source/contribute/index.md
+msgid "**No tag**"
+msgstr "**不打标签**"
+
+#: ../../source/contribute/index.md
+msgid "Merge directly to `main`, `latest` auto-updates"
+msgstr "直接合并到 `main`，`latest` 自动更新"
+
+#: ../../source/contribute/index.md
+msgid "Dev preview"
+msgstr "开发预览"
+
+#: ../../source/contribute/index.md
+msgid "No tag (develop -> `dev`)"
+msgstr "无标签（develop -> `dev`）"
+
+#: ../../source/contribute/index.md
+msgid "CI deploys to `/en/dev/`"
+msgstr "CI 部署到 `/en/dev/`"
+
+#: ../../source/contribute/index.md
+msgid "Stable placeholder"
+msgstr "稳定版占位"
+
+#: ../../source/contribute/index.md
+msgid "No tag (main -> `latest`)"
+msgstr "无标签（main -> `latest`）"
+
+#: ../../source/contribute/index.md
+msgid "CI deploys to `/en/latest/`"
+msgstr "CI 部署到 `/en/latest/`"
+
+#: ../../source/contribute/index.md:57
+msgid "**Core principles**:"
+msgstr "**核心原则**："
+
+#: ../../source/contribute/index.md:58
+msgid "Doc tags are one-to-one with SDK tags: at most one doc tag per SDK release"
+msgstr "文档标签与 SDK 标签一一对应：每个 SDK 发布最多只有一个文档标签"
+
+#: ../../source/contribute/index.md:59
+msgid "Doc-only fixes do not create new tags; merge to `main` updates `latest`"
+msgstr "纯文档修复不创建新标签；合并到 `main` 即更新 `latest`"
+
+#: ../../source/contribute/index.md:60
+msgid ""
+"Published historical versions (e.g. `v0.2.0`) are not retroactively "
+"updated"
+msgstr ""
+"已发布的历史版本（例如 `v0.2.0`）不会追溯更新"
+
+#: ../../source/contribute/index.md:64
+msgid "Release Process"
+msgstr "发布流程"
+
+#: ../../source/contribute/index.md:77
+msgid "**Create a release branch** from `develop`:"
+msgstr "**从 `develop` 创建发布分支**："
+
+#: ../../source/contribute/index.md:83
+msgid "**Finalize**: Make last-minute fixes on the release branch, run QA."
+msgstr "**定稿**：在发布分支上进行最后的修复，运行 QA。"
+
+#: ../../source/contribute/index.md:85
+msgid "**Tag the release**:"
+msgstr "**为发布打标签**："
+
+#: ../../source/contribute/index.md:90
+msgid "CI builds and deploys the tag to `/en/v0.x.x/`."
+msgstr "CI 构建并将标签部署到 `/en/v0.x.x/`。"
+
+#: ../../source/contribute/index.md:92
+msgid "**Merge to main**:"
+msgstr "**合并到 main**："
+
+#: ../../source/contribute/index.md:98
+msgid "CI builds and deploys to `/en/latest/`."
+msgstr "CI 构建并部署到 `/en/latest/`。"
+
+#: ../../source/contribute/index.md:102
+msgid "Multi-Version Maintenance"
+msgstr "多版本维护"
+
+#: ../../source/contribute/index.md:117
+msgid "Only the **latest minor version** receives regular maintenance"
+msgstr "只有**最新的次版本**接收常规维护"
+
+#: ../../source/contribute/index.md:118
+msgid ""
+"The **previous minor version** accepts only security fixes and critical "
+"bug fixes (via cherry-pick)"
+msgstr ""
+"**上一个次版本**只接受安全修复和关键错误修复（通过 cherry-pick 方式）"
+
+#: ../../source/contribute/index.md:119
+msgid "**Older versions** are not maintained; mark as `DEPRECATED` in docs"
+msgstr "**更早的版本**不再维护；在文档中标记为 `DEPRECATED`"
+
+#: ../../source/contribute/index.md:120
+msgid "Each minor version gets a `release-v*.*.x` maintenance branch"
+msgstr "每个次版本都有一个 `release-v*.*.x` 维护分支"
+
+#: ../../source/contribute/index.md:124
+msgid "CI/CD Behavior"
+msgstr "CI/CD 行为"
+
+#: ../../source/contribute/index.md
+msgid "Trigger"
+msgstr "触发条件"
+
+#: ../../source/contribute/index.md
+msgid "Source Checked Out"
+msgstr "检出源"
+
+#: ../../source/contribute/index.md
+msgid "Deploy Path"
+msgstr "部署路径"
+
+#: ../../source/contribute/index.md
+msgid "Push to `develop`"
+msgstr "推送到 `develop`"
+
+#: ../../source/contribute/index.md
+msgid "`develop` branch"
+msgstr "`develop` 分支"
+
+#: ../../source/contribute/index.md
+msgid "`/en/dev/`"
+msgstr "`/en/dev/`"
+
+#: ../../source/contribute/index.md
+msgid "Push to `main`"
+msgstr "推送到 `main`"
+
+#: ../../source/contribute/index.md
+msgid "`develop` branch (snapshot)"
+msgstr "`develop` 分支（快照）"
+
+#: ../../source/contribute/index.md
+msgid "`/en/latest/`"
+msgstr "`/en/latest/`"
+
+#: ../../source/contribute/index.md
+msgid "Push tag `v*.*.*`"
+msgstr "推送标签 `v*.*.*`"
+
+#: ../../source/contribute/index.md
+msgid "Tagged commit"
+msgstr "已打标签的提交"
+
+#: ../../source/contribute/index.md
+msgid "`/en/v*.*.*/`"
+msgstr "`/en/v*.*.*/`"
+
+#: ../../source/contribute/index.md:132
+msgid ""
+"All versions are built and deployed to the `gh-pages` branch, which "
+"serves the documentation via GitHub Pages."
+msgstr ""
+"所有版本均构建并部署到 `gh-pages` 分支，通过 GitHub Pages 提供文档服务。"
+
+#: ../../source/contribute/index.md:136
+msgid "Document Structure Standards"
+msgstr "文档结构标准"
+
+#: ../../source/contribute/index.md:138
+msgid "Directory Naming"
+msgstr "目录命名"
+
+#: ../../source/contribute/index.md
+msgid "Rule"
+msgstr "规则"
+
+#: ../../source/contribute/index.md
+msgid "Example"
+msgstr "示例"
+
+#: ../../source/contribute/index.md
+msgid "Snake case"
+msgstr "蛇形命名法"
+
+#: ../../source/contribute/index.md
+msgid "Lowercase letters + underscores"
+msgstr "小写字母 + 下划线"
+
+#: ../../source/contribute/index.md
+msgid "`getting_started/`, `chips_boards/`"
+msgstr "`getting_started/`、`chips_boards/`"
+
+#: ../../source/contribute/index.md
+msgid "Singular form"
+msgstr "单数形式"
+
+#: ../../source/contribute/index.md
+msgid "Directory names use singular"
+msgstr "目录名称使用单数形式"
+
+#: ../../source/contribute/index.md
+msgid "`peripherals/` (already singular)"
+msgstr "`peripherals/`（本身已是单数）"
+
+#: ../../source/contribute/index.md
+msgid "Index entry"
+msgstr "索引入口"
+
+#: ../../source/contribute/index.md
+msgid "Every directory must have `index.md` or `index.rst`"
+msgstr "每个目录必须包含 `index.md` 或 `index.rst`"
+
+#: ../../source/contribute/index.md
+msgid "—"
+msgstr "—"
+
+#: ../../source/contribute/index.md
+msgid "Images"
+msgstr "图片"
+
+#: ../../source/contribute/index.md
+msgid "Place images in `_images/` subdirectory"
+msgstr "将图片放在 `_images/` 子目录中"
+
+#: ../../source/contribute/index.md
+msgid "`peripherals/_images/gpio_1.png`"
+msgstr "`peripherals/_images/gpio_1.png`"
+
+#: ../../source/contribute/index.md:147
+msgid "Images currently in `pics/` should be migrated to `_images/` over time."
+msgstr "当前位于 `pics/` 中的图片应逐步迁移到 `_images/`。"
+
+#: ../../source/contribute/index.md:149
+msgid "Frontmatter Metadata"
+msgstr "前置元数据"
+
+#: ../../source/contribute/index.md:151
+msgid "Every documentation page must include a frontmatter block:"
+msgstr "每个文档页面必须包含一个前置元数据块："
+
+#: ../../source/contribute/index.md:164
+msgid "**Status values**:"
+msgstr "**状态值**："
+
+#: ../../source/contribute/index.md
+msgid "Status"
+msgstr "状态"
+
+#: ../../source/contribute/index.md
+msgid "Meaning"
+msgstr "含义"
+
+#: ../../source/contribute/index.md
+msgid "`STABLE`"
+msgstr "`STABLE`"
+
+#: ../../source/contribute/index.md
+msgid "Content is complete, reviewed, and ready for production use"
+msgstr "内容完整、已审阅，可供生产环境使用"
+
+#: ../../source/contribute/index.md
+msgid "`DRAFT`"
+msgstr "`DRAFT`"
+
+#: ../../source/contribute/index.md
+msgid "Content is under development, may be incomplete or unreviewed"
+msgstr "内容正在开发中，可能不完整或未经审阅"
+
+#: ../../source/contribute/index.md
+msgid "`DEPRECATED`"
+msgstr "`DEPRECATED`"
+
+#: ../../source/contribute/index.md
+msgid "Content is outdated and should not be used for new designs"
+msgstr "内容已过时，不应用于新设计"
+
+#: ../../source/contribute/index.md
+msgid "`PLANNED`"
+msgstr "`PLANNED`"
+
+#: ../../source/contribute/index.md
+msgid "Content is planned but not yet written"
+msgstr "内容已规划但尚未编写"
+
+#: ../../source/contribute/index.md:173
+msgid "Version Difference Markers"
+msgstr "版本差异标记"
+
+#: ../../source/contribute/index.md:175
+msgid "Use frontmatter fields to track version history:"
+msgstr "使用前置元数据字段追踪版本历史："
+
+#: ../../source/contribute/index.md:186
+msgid "In document body, use Sphinx directives for per-element version tracking:"
+msgstr "在文档正文中，使用 Sphinx 指令进行逐元素的版本追踪："
+
+#: ../../source/contribute/index.md:196
+msgid "File Format Guidelines"
+msgstr "文件格式指南"
+
+#: ../../source/contribute/index.md
+msgid "Recommended Format"
+msgstr "推荐格式"
+
+#: ../../source/contribute/index.md
+msgid "Reason"
+msgstr "原因"
+
+#: ../../source/contribute/index.md
+msgid "TOC files"
+msgstr "目录文件"
+
+#: ../../source/contribute/index.md
+msgid "`.rst`"
+msgstr "`.rst`"
+
+#: ../../source/contribute/index.md
+msgid "Needs toctree directive"
+msgstr "需要使用 toctree 指令"
+
+#: ../../source/contribute/index.md
+msgid "Content pages"
+msgstr "内容页面"
+
+#: ../../source/contribute/index.md
+msgid "`.md` (MyST)"
+msgstr "`.md`（MyST）"
+
+#: ../../source/contribute/index.md
+msgid "Easier to read and write"
+msgstr "更易于读写"
+
+#: ../../source/contribute/index.md
+msgid "API reference"
+msgstr "API 参考"
+
+#: ../../source/contribute/index.md
+msgid "`.rst` (auto-generated)"
+msgstr "`.rst`（自动生成）"
+
+#: ../../source/contribute/index.md
+msgid "Produced by `gen_api_rst.py`"
+msgstr "由 `gen_api_rst.py` 生成"
+
+#: ../../source/contribute/index.md
+msgid "Table-heavy pages"
+msgstr "表格较多的页面"
+
+#: ../../source/contribute/index.md
+msgid "RST table syntax is more powerful"
+msgstr "RST 表格语法更强大"
+
+#: ../../source/contribute/index.md:205
+msgid "**Markdown conventions**:"
+msgstr "**Markdown 约定**："
+
+#: ../../source/contribute/index.md:206
+msgid "Heading levels: `#` -> `##` -> `###` -> `####` (max 4 levels)"
+msgstr "标题层级：`#` -> `##` -> `###` -> `####`（最多 4 级）"
+
+#: ../../source/contribute/index.md:207
+msgid "Code blocks: annotate language (`` ```c `` , `` ```bash ``)"
+msgstr "代码块：标注语言（`` ```c ``、`` ```bash ``）"
+
+#: ../../source/contribute/index.md:208
+msgid "Images: use `![alt](path)` with optional `:width:` directive"
+msgstr "图片：使用 `![alt](path)`，可选 `:width:` 指令"
+
+#: ../../source/contribute/index.md:209
+#, python-brace-format
+msgid ""
+"Admonitions: use MyST directives like ````{note}`, ````{warning}`, "
+"````{tip}`"
+msgstr ""
+"提示块：使用 MyST 指令，例如 ````{note}`、````{warning}`、````{tip}`"
+
+#: ../../source/contribute/index.md:210
+#, python-brace-format
+msgid "Links: use MyST `{ref}` and `{doc}` for cross-references"
+msgstr "链接：使用 MyST `{ref}` 和 `{doc}` 进行交叉引用"
+
+#: ../../source/contribute/index.md:212
+msgid "**RST conventions**:"
+msgstr "**RST 约定**："
+
+#: ../../source/contribute/index.md:213
+msgid "Use `.. code-block:: c` instead of `::` + indentation"
+msgstr "使用 `.. code-block:: c` 代替 `::` + 缩进"
+
+#: ../../source/contribute/index.md:214
+msgid "Use `:ref:` and `:doc:` for cross-references"
+msgstr "使用 `:ref:` 和 `:doc:` 进行交叉引用"
+
+#: ../../source/contribute/index.md:215
+msgid "Use `.. versionadded::` / `.. deprecated::` for version tracking"
+msgstr "使用 `.. versionadded::` / `.. deprecated::` 进行版本追踪"
+
+#: ../../source/contribute/index.md:217
+msgid "Cross-Reference Conventions"
+msgstr "交叉引用约定"
+
+#: ../../source/contribute/index.md
+msgid "Reference Type"
+msgstr "引用类型"
+
+#: ../../source/contribute/index.md
+msgid "Syntax"
+msgstr "语法"
+
+#: ../../source/contribute/index.md
+msgid "Document link"
+msgstr "文档链接"
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`{doc}` / `:doc:`"
+msgstr "`{doc}` / `:doc:`"
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`` {doc}`getting_started/index` ``"
+msgstr "`` {doc}`getting_started/index` ``"
+
+#: ../../source/contribute/index.md
+msgid "Section link"
+msgstr "章节链接"
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`{ref}` / `:ref:`"
+msgstr "`{ref}` / `:ref:`"
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`` {ref}`my-section-label` ``"
+msgstr "`` {ref}`my-section-label` ``"
+
+#: ../../source/contribute/index.md
+msgid "External link"
+msgstr "外部链接"
+
+#: ../../source/contribute/index.md
+msgid "Markdown link"
+msgstr "Markdown 链接"
+
+#: ../../source/contribute/index.md
+msgid "`[text](url)`"
+msgstr "`[text](url)`"
+
+#: ../../source/contribute/index.md
+msgid "API function"
+msgstr "API 函数"
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`{c:func}` / `:c:func:`"
+msgstr "`{c:func}` / `:c:func:`"
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`` {c:func}`tlk_gpio_init` ``"
+msgstr "`` {c:func}`tlk_gpio_init` ``"
+
+#: ../../source/contribute/index.md
+msgid "API type"
+msgstr "API 类型"
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`{c:type}` / `:c:type:`"
+msgstr "`{c:type}` / `:c:type:`"
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`` {c:type}`tlk_gpio_config_t` ``"
+msgstr "`` {c:type}`tlk_gpio_config_t` ``"
+
+#: ../../source/contribute/index.md
+msgid "Term reference"
+msgstr "术语引用"
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`{term}` / `:term:`"
+msgstr "`{term}` / `:term:`"
+
+#: ../../source/contribute/index.md
+#, python-brace-format
+msgid "`` {term}`GPIO` ``"
+msgstr "`` {term}`GPIO` ``"
+
+#: ../../source/contribute/index.md:228
+msgid "**Label naming convention**:"
+msgstr "**标签命名约定**："
+
+#: ../../source/contribute/index.md:235
+msgid "Submitting Issues"
+msgstr "提交 Issue"
+
+#: ../../source/contribute/index.md:237
+msgid ""
+"Use [GitHub Issues](https://github.com/telink-semi/unisdk-doc/issues) to "
+"report documentation bugs or request improvements"
+msgstr ""
+"使用 [GitHub Issues](https://github.com/telink-semi/unisdk-doc/issues) 报告文档错误或提出改进建议"
+
+#: ../../source/contribute/index.md:238
+msgid "Provide the page URL and describe what is incorrect or missing"
+msgstr "提供页面 URL 并描述哪些内容不正确或缺少"
+
+#: ../../source/contribute/index.md:239
+msgid "Attach screenshots or error logs if applicable"
+msgstr "如适用，请附上截图或错误日志"
+
+#: ../../source/contribute/index.md:243
+msgid "Code Standards (SDK Contributions)"
+msgstr "代码规范（SDK 贡献）"
+
+#: ../../source/contribute/index.md:245
+msgid "For contributions to the SDK codebase (unisdk):"
+msgstr "对于 SDK 代码库（unisdk）的贡献："
+
+#: ../../source/contribute/index.md:247
+msgid "C code should follow the format defined in `.clang-format`"
+msgstr "C 代码应遵循 `.clang-format` 中定义的格式"
+
+#: ../../source/contribute/index.md:248
+msgid "Run `pre-commit` checks before submitting"
+msgstr "提交前运行 `pre-commit` 检查"
+
+#: ../../source/contribute/index.md:249
+msgid ""
+"See the [unisdk repository](https://github.com/telink-semi/unisdk) for "
+"detailed guidelines"
+msgstr ""
+"详细指南请参见 [unisdk 仓库](https://github.com/telink-semi/unisdk)"

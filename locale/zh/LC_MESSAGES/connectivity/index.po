@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/connectivity/index.md:6
+msgid "Connectivity"
+msgstr "连接性"
+
+#: ../../source/connectivity/index.md:8
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/connectivity/index.md:10
+msgid ""
+"UniSDK integrates BLE (Bluetooth Low Energy) Controller (Link Layer), "
+"providing fundamental wireless connectivity for BLE application "
+"development."
+msgstr "UniSDK 集成了 BLE（低功耗蓝牙）控制器（链路层），为 BLE 应用开发提供基础的无线连接能力。"
+
+#: ../../source/connectivity/index.md:12
+msgid "Code Location"
+msgstr "代码位置"
+
+#: ../../source/connectivity/index.md
+msgid "BLE Controller Directory"
+msgstr "BLE 控制器目录"
+
+#: ../../source/connectivity/index.md:27
+msgid "Coding Standards"
+msgstr "编码规范"
+
+#: ../../source/connectivity/index.md:29
+msgid ""
+"The BLE Controller follows strict coding standards to ensure performance "
+"and reliability:"
+msgstr "BLE 控制器遵循严格的编码规范，以确保性能和可靠性："
+
+#: ../../source/connectivity/index.md:31
+msgid "File Naming"
+msgstr "文件命名"
+
+#: ../../source/connectivity/index.md:33
+msgid ""
+"Source files use lowercase letters and underscores, e.g., "
+"`tlk_ble_ll_acl.c`"
+msgstr "源文件使用小写字母和下划线，例如 `tlk_ble_ll_acl.c`"
+
+#: ../../source/connectivity/index.md:35
+msgid "Function Naming"
+msgstr "函数命名"
+
+#: ../../source/connectivity/index.md:37
+msgid "Public functions use the `tlk_ble_` prefix"
+msgstr "公共函数使用 `tlk_ble_` 前缀"
+
+#: ../../source/connectivity/index.md:38
+msgid "Internal functions use the `_` prefix"
+msgstr "内部函数使用 `_` 前缀"
+
+#: ../../source/connectivity/index.md:40
+msgid "Interrupt Functions"
+msgstr "中断函数"
+
+#: ../../source/connectivity/index.md:42
+msgid "Interrupt handler functions have specific naming and modifier requirements"
+msgstr "中断处理函数有特定的命名和修饰符要求"
+
+#: ../../source/connectivity/index.md:43
+msgid ""
+"Interrupt functions should be as short as possible, avoiding complex "
+"operations"
+msgstr "中断函数应尽可能简短，避免复杂操作"
+
+#: ../../source/connectivity/index.md:45
+msgid "Kconfig Configuration"
+msgstr "Kconfig 配置"
+
+#: ../../source/connectivity/index.md:51
+msgid "Examples"
+msgstr "示例"
+
+#: ../../source/connectivity/index.md:53
+msgid "[BLE Example](../samples/ble.md) — BLE advertising and connection demo"
+msgstr "[BLE 示例](../samples/ble.md) — BLE 广播和连接演示"
+
+#: ../../source/connectivity/index.md:55
+msgid "Planned"
+msgstr "规划中"
+
+#: ../../source/connectivity/index.md:57
+msgid "The following protocol stack features are under planning:"
+msgstr "以下协议栈功能正在规划中："
+
+#: ../../source/connectivity/index.md:59
+msgid "BLE Host Layer (GAP, GATT, SM)"
+msgstr "BLE 主机层（GAP、GATT、SM）"
+
+#: ../../source/connectivity/index.md:60
+msgid "Zigbee"
+msgstr "Zigbee"
+
+#: ../../source/connectivity/index.md:61
+msgid "Thread"
+msgstr "Thread"
+
+#: ../../source/connectivity/index.md:62
+msgid "Matter"
+msgstr "Matter"
+
+#: ../../source/connectivity/index.md:64
+msgid "For more details, please contact the Telink team for the latest updates."
+msgstr "如需了解更多详情，请联系 Telink 团队获取最新信息。"

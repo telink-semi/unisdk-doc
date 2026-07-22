@@ -1,0 +1,312 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/init_hooks.md:6
+msgid "Init hooks documentation"
+msgstr "初始化钩子文档"
+
+#: ../../source/developing/init_hooks.md:8
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/developing/init_hooks.md:10
+msgid ""
+"This document describes the init and power-state hook mechanism provided "
+"by the `common/include/tlk_init.h` and `common/tlk_init.c` pair."
+msgstr ""
+"本文档描述了由 `common/include/tlk_init.h` 和 `common/tlk_init.c` 提供的初始化和电源状态钩子机制。"
+
+#: ../../source/developing/init_hooks.md:12
+msgid ""
+"The system exposes several hook types that components can register. Hooks"
+" are collected into dedicated linker sections by registration macros and "
+"invoked by the runtime using the functions implemented in `tlk_init.c`."
+msgstr ""
+"系统公开了几种组件可以注册的钩子类型。钩子通过注册宏收集到专用的链接器段中，并由运行时使用 `tlk_init.c` 中实现的函数进行调用。"
+
+#: ../../source/developing/init_hooks.md:14
+msgid "**Primary goals:**"
+msgstr "**主要目标：**"
+
+#: ../../source/developing/init_hooks.md:15
+msgid ""
+"Provide ordered initialization hooks (pre-init) for system, driver and "
+"application code."
+msgstr "为系统、驱动和应用代码提供有序的初始化钩子（pre-init）。"
+
+#: ../../source/developing/init_hooks.md:16
+msgid "Provide lifecycle hooks for suspend/sleep transitions (before/after)."
+msgstr "为挂起/睡眠转换提供生命周期钩子（之前/之后）。"
+
+#: ../../source/developing/init_hooks.md:17
+msgid "Allow components to prevent suspend/sleep via boolean callbacks."
+msgstr "允许组件通过布尔回调阻止挂起/睡眠。"
+
+#: ../../source/developing/init_hooks.md:19
+msgid "Concepts"
+msgstr "概念"
+
+#: ../../source/developing/init_hooks.md:21
+msgid ""
+"**Registration by linker sections:** Registration macros place function "
+"pointers into named linker sections (for example, "
+"`.pre_init_array_<level>_<priority>`). The build/linker is expected to "
+"place these sections in an order that respects level and priority so the "
+"runtime sees callbacks in the intended sequence."
+msgstr ""
+"**通过链接器段注册：** 注册宏将函数指针放入命名的链接器段中（例如 `.pre_init_array_<level>_<priority>`）。构建/链接器应按级别和优先级的顺序放置这些段，以便运行时按预期的顺序处理回调。"
+
+#: ../../source/developing/init_hooks.md:22
+msgid ""
+"**Invocation:** Each public `tlk_*` function in `tlk_init.c` iterates "
+"from a linker-provided `__*_start` to `__*_end` range and calls every "
+"non-NULL function pointer it finds."
+msgstr ""
+"**调用：** `tlk_init.c` 中的每个公共 `tlk_*` 函数从链接器提供的 `__*_start` 到 `__*_end` 范围内迭代，并调用找到的每个非 NULL 函数指针。"
+
+#: ../../source/developing/init_hooks.md:23
+msgid ""
+"**Ordering convention:** Lower numeric values indicate earlier/higher "
+"priority. The headers define named level and priority constants (e.g. "
+"`TLK_INIT_LEVEL_SYSTEM`/`TLK_INIT_PRIORITY_HIGH`). The final ordering "
+"depends on the linker script that arranges the sections, but the numeric "
+"convention should be used when registering callbacks."
+msgstr ""
+"**排序约定：** 数值越小表示优先级越早/越高。头文件定义了命名的级别和优先级常量（例如 `TLK_INIT_LEVEL_SYSTEM`/`TLK_INIT_PRIORITY_HIGH`）。最终顺序取决于排列段的链接器脚本，但在注册回调时应使用数值约定。"
+
+#: ../../source/developing/init_hooks.md:25
+msgid "Levels & Priorities"
+msgstr "级别与优先级"
+
+#: ../../source/developing/init_hooks.md:27
+msgid "**Levels (examples):**"
+msgstr "**级别（示例）：**"
+
+#: ../../source/developing/init_hooks.md:28
+msgid "`TLK_INIT_LEVEL_SYSTEM` = 2"
+msgstr "`TLK_INIT_LEVEL_SYSTEM` = 2"
+
+#: ../../source/developing/init_hooks.md:29
+msgid "`TLK_INIT_LEVEL_DRIVER` = 5"
+msgstr "`TLK_INIT_LEVEL_DRIVER` = 5"
+
+#: ../../source/developing/init_hooks.md:30
+msgid "`TLK_INIT_LEVEL_APPLICATION` = 8"
+msgstr "`TLK_INIT_LEVEL_APPLICATION` = 8"
+
+#: ../../source/developing/init_hooks.md:31
+msgid "**Priorities (examples):**"
+msgstr "**优先级（示例）：**"
+
+#: ../../source/developing/init_hooks.md:32
+msgid "`TLK_INIT_PRIORITY_HIGH` = 2"
+msgstr "`TLK_INIT_PRIORITY_HIGH` = 2"
+
+#: ../../source/developing/init_hooks.md:33
+msgid "`TLK_INIT_PRIORITY_NORMAL` = 5"
+msgstr "`TLK_INIT_PRIORITY_NORMAL` = 5"
+
+#: ../../source/developing/init_hooks.md:34
+msgid "`TLK_INIT_PRIORITY_LOW` = 8"
+msgstr "`TLK_INIT_PRIORITY_LOW` = 8"
+
+#: ../../source/developing/init_hooks.md:36
+msgid ""
+"Use the level to group callbacks by broad stage "
+"(system/driver/application) and use priority to fine-tune ordering inside"
+" that stage. Smaller numbers mean higher precedence. Additional levels or"
+" priorities are expected to be added in the future."
+msgstr ""
+"使用级别按大阶段（系统/驱动/应用）对回调进行分组，并使用优先级在该阶段内微调顺序。数值越小优先级越高。未来预计会添加更多级别或优先级。"
+
+#: ../../source/developing/init_hooks.md:38
+msgid "API reference"
+msgstr "API 参考"
+
+#: ../../source/developing/init_hooks.md:40
+msgid "Initialization hooks (pre-init)"
+msgstr "初始化钩子（pre-init）"
+
+#: ../../source/developing/init_hooks.md:42
+msgid "**Type:** `typedef void (*tlk_pre_init_func_t)(void)`"
+msgstr "**类型：** `typedef void (*tlk_pre_init_func_t)(void)`"
+
+#: ../../source/developing/init_hooks.md:43
+msgid ""
+"**Registration macro:** `TLK_REGISTER_PRE_INIT(fn, level, priority)` — "
+"places the function pointer in `.pre_init_array_<level>_<priority>` and "
+"marks it `used` so the linker doesn't discard it."
+msgstr ""
+"**注册宏：** `TLK_REGISTER_PRE_INIT(fn, level, priority)` — 将函数指针放入 `.pre_init_array_<level>_<priority>` 中，并标记为 `used`，以便链接器不会丢弃它。"
+
+#: ../../source/developing/init_hooks.md:44
+msgid ""
+"**Invoker:** `void tlk_pre_init(void)` — iterates from `__pre_init_start`"
+" to `__pre_init_end` and calls each registered function."
+msgstr ""
+"**调用器：** `void tlk_pre_init(void)` — 从 `__pre_init_start` 到 `__pre_init_end` 迭代，并调用每个注册的函数。"
+
+#: ../../source/developing/init_hooks.md:46
+#: ../../source/developing/init_hooks.md:68
+#: ../../source/developing/init_hooks.md:88
+#: ../../source/developing/init_hooks.md:108
+msgid "Usage example:"
+msgstr "使用示例："
+
+#: ../../source/developing/init_hooks.md:56
+msgid "Suspend hooks (before / after)"
+msgstr "挂起钩子（之前/之后）"
+
+#: ../../source/developing/init_hooks.md:58
+#: ../../source/developing/init_hooks.md:78
+#: ../../source/developing/init_hooks.md:98
+msgid "**Types:**"
+msgstr "**类型：**"
+
+#: ../../source/developing/init_hooks.md:59
+msgid "`typedef void (*tlk_before_suspend_func_t)(void)`"
+msgstr "`typedef void (*tlk_before_suspend_func_t)(void)`"
+
+#: ../../source/developing/init_hooks.md:60
+msgid "`typedef void (*tlk_after_suspend_func_t)(void)`"
+msgstr "`typedef void (*tlk_after_suspend_func_t)(void)`"
+
+#: ../../source/developing/init_hooks.md:61
+#: ../../source/developing/init_hooks.md:81
+#: ../../source/developing/init_hooks.md:101
+msgid "**Registration macros:**"
+msgstr "**注册宏：**"
+
+#: ../../source/developing/init_hooks.md:62
+msgid ""
+"`TLK_REGISTER_BEFORE_SUSPEND(fn, level, priority)` → section "
+"`.before_suspend_array_<level>_<priority>`"
+msgstr ""
+"`TLK_REGISTER_BEFORE_SUSPEND(fn, level, priority)` → 段 `.before_suspend_array_<level>_<priority>`"
+
+#: ../../source/developing/init_hooks.md:63
+msgid ""
+"`TLK_REGISTER_AFTER_SUSPEND(fn, level, priority)` → section "
+"`.after_suspend_array_<level>_<priority>`"
+msgstr ""
+"`TLK_REGISTER_AFTER_SUSPEND(fn, level, priority)` → 段 `.after_suspend_array_<level>_<priority>`"
+
+#: ../../source/developing/init_hooks.md:64
+#: ../../source/developing/init_hooks.md:84
+msgid "**Invokers:**"
+msgstr "**调用器：**"
+
+#: ../../source/developing/init_hooks.md:65
+msgid ""
+"`void tlk_before_suspend(void)` — calls all registered before-suspend "
+"callbacks."
+msgstr ""
+"`void tlk_before_suspend(void)` — 调用所有已注册的挂起前回调。"
+
+#: ../../source/developing/init_hooks.md:66
+msgid ""
+"`void tlk_after_suspend(void)` — calls all registered after-suspend "
+"callbacks."
+msgstr ""
+"`void tlk_after_suspend(void)` — 调用所有已注册的挂起后回调。"
+
+#: ../../source/developing/init_hooks.md:76
+msgid "Sleep hooks (before / after)"
+msgstr "睡眠钩子（之前/之后）"
+
+#: ../../source/developing/init_hooks.md:79
+msgid "`typedef void (*tlk_before_sleep_func_t)(void)`"
+msgstr "`typedef void (*tlk_before_sleep_func_t)(void)`"
+
+#: ../../source/developing/init_hooks.md:80
+msgid "`typedef void (*tlk_after_sleep_func_t)(void)`"
+msgstr "`typedef void (*tlk_after_sleep_func_t)(void)`"
+
+#: ../../source/developing/init_hooks.md:82
+msgid ""
+"`TLK_REGISTER_BEFORE_SLEEP(fn, level, priority)` → section "
+"`.before_sleep_array_<level>_<priority>`"
+msgstr ""
+"`TLK_REGISTER_BEFORE_SLEEP(fn, level, priority)` → 段 `.before_sleep_array_<level>_<priority>`"
+
+#: ../../source/developing/init_hooks.md:83
+msgid ""
+"`TLK_REGISTER_AFTER_SLEEP(fn, level, priority)` → section "
+"`.after_sleep_array_<level>_<priority>`"
+msgstr ""
+"`TLK_REGISTER_AFTER_SLEEP(fn, level, priority)` → 段 `.after_sleep_array_<level>_<priority>`"
+
+#: ../../source/developing/init_hooks.md:85
+msgid "`void tlk_before_sleep(void)`"
+msgstr "`void tlk_before_sleep(void)`"
+
+#: ../../source/developing/init_hooks.md:86
+msgid "`void tlk_after_sleep(void)`"
+msgstr "`void tlk_after_sleep(void)`"
+
+#: ../../source/developing/init_hooks.md:96
+msgid "Prevent-suspend / prevent-sleep callbacks"
+msgstr "阻止挂起/阻止睡眠回调"
+
+#: ../../source/developing/init_hooks.md:99
+msgid "`typedef bool (*tlk_prevent_suspend_func_t)(void)`"
+msgstr "`typedef bool (*tlk_prevent_suspend_func_t)(void)`"
+
+#: ../../source/developing/init_hooks.md:100
+msgid "`typedef bool (*tlk_prevent_sleep_func_t)(void)`"
+msgstr "`typedef bool (*tlk_prevent_sleep_func_t)(void)`"
+
+#: ../../source/developing/init_hooks.md:102
+msgid "`TLK_REGISTER_PREVENT_SUSPEND(fn)` → section `.prevent_suspend_array`"
+msgstr "`TLK_REGISTER_PREVENT_SUSPEND(fn)` → 段 `.prevent_suspend_array`"
+
+#: ../../source/developing/init_hooks.md:103
+msgid "`TLK_REGISTER_PREVENT_SLEEP(fn)` → section `.prevent_sleep_array`"
+msgstr "`TLK_REGISTER_PREVENT_SLEEP(fn)` → 段 `.prevent_sleep_array`"
+
+#: ../../source/developing/init_hooks.md:104
+msgid "**Invokers and semantics:**"
+msgstr "**调用器与语义：**"
+
+#: ../../source/developing/init_hooks.md:105
+msgid ""
+"`bool tlk_prevent_suspend(void)` — returns `true` as soon as any "
+"registered `tlk_prevent_suspend_func_t` returns `true`; otherwise returns"
+" `false`."
+msgstr ""
+"`bool tlk_prevent_suspend(void)` — 当任何已注册的 `tlk_prevent_suspend_func_t` 返回 `true` 时立即返回 `true`；否则返回 `false`。"
+
+#: ../../source/developing/init_hooks.md:106
+msgid ""
+"`bool tlk_prevent_sleep(void)` — returns `true` as soon as any registered"
+" `tlk_prevent_sleep_func_t` returns `true`; otherwise returns `false`."
+msgstr ""
+"`bool tlk_prevent_sleep(void)` — 当任何已注册的 `tlk_prevent_sleep_func_t` 返回 `true` 时立即返回 `true`；否则返回 `false`。"
+
+#: ../../source/developing/init_hooks.md:118
+msgid "Additional Notes"
+msgstr "补充说明"
+
+#: ../../source/developing/init_hooks.md:120
+msgid ""
+"The functions provided by this API **should not** be invoked by the user."
+" They are called automatically on the corresponding lifecycle stages."
+msgstr ""
+"此 API 提供的函数**不应**由用户调用。它们会在相应的生命周期阶段被自动调用。"

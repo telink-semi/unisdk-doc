@@ -101,7 +101,6 @@ jobs:
 
       - name: Checkout source branch for checks and API generation
         run: git checkout "$SOURCE_REF"
-
       - name: Check toctree coverage (all .md/.rst files must be listed in index.rst)
         run: bash scripts/check_doc_coverage.sh
 
@@ -166,7 +165,6 @@ jobs:
 
           # Switch back to SOURCE_REF for PDF and landing page generation
           git checkout "$SOURCE_REF"
-
           python scripts/generate_landing.py "$OUTPUT_DIR" "$OUTPUT_DIR"
           cp -r _static "$OUTPUT_DIR/_static"
 

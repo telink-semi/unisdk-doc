@@ -18,7 +18,7 @@ import json
 
 
 def generate_landing_page(build_dir, output_dir):
-    """Generate index.html landing page."""
+    """Generate index.html landing page with language and version selector."""
     landing_html = r"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +64,12 @@ def generate_landing_page(build_dir, output_dir):
       <div class="card">
         <h2>English</h2>
         <p>Complete documentation including getting started guides, API references, peripheral drivers, and more.</p>
-        <a class="btn" href="./en/main/">Browse English Docs</a>
+        <a class="btn" href="./en/latest/">Browse English Docs</a>
+      </div>
+      <div class="card">
+        <h2>中文</h2>
+        <p>完整的文档，包含快速入门指南、API 参考、外设驱动等内容。</p>
+        <a class="btn" href="./zh/latest/">浏览中文文档</a>
       </div>
     </div>
     <div class="version-section">
@@ -108,8 +113,8 @@ def generate_versions_json(build_dir, output_dir):
     """Scan build directory and generate versions.json."""
     versions = []
 
-    # Scan for language directories
-    for lang in ['en']:
+    # Scan for language directories (dynamically detect from build output)
+    for lang in sorted(os.listdir(build_dir)):
         lang_dir = os.path.join(build_dir, lang)
         if not os.path.isdir(lang_dir):
             continue
@@ -134,7 +139,7 @@ def generate_versions_json(build_dir, output_dir):
             })
 
     # Also add language-specific main versions as top-level entries
-    for lang in ['en']:
+    for lang in sorted(os.listdir(build_dir)):
         main_dir = os.path.join(build_dir, lang, 'main')
         if os.path.isdir(main_dir):
             # Add a clean latest entry

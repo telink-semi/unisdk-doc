@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/samples/pmp.md:6
+msgid "PMP Driver Sample"
+msgstr "PMP 驱动示例"
+
+#: ../../source/samples/pmp.md:8
+msgid "Overview"
+msgstr "概述"
+
+#: ../../source/samples/pmp.md:10
+msgid ""
+"A sample application demonstrating the usage of the TLK PMP API. It "
+"protects the upper half of a 16-element array against all access, then "
+"attempts to read or write the full array, triggering a PMP violation trap"
+" on the protected region."
+msgstr ""
+"一个示例应用程序，演示了 TLK PMP API 的使用。它将一个包含 16 个元素的数组的上半部分保护起来，禁止所有访问，然后尝试读写整个数组，从而在被保护区域触发 PMP 违规异常。"
+
+#: ../../source/samples/pmp.md:14
+msgid "How It Works"
+msgstr "工作原理"
+
+#: ../../source/samples/pmp.md:16
+msgid "On startup the sample:"
+msgstr "启动时，该示例："
+
+#: ../../source/samples/pmp.md:18
+msgid ""
+"*(Optional)* Configures PMP protection on `demo_array[8..15]` using the "
+"selected address matching scheme. All permissions are disabled and the "
+"entry is locked (`l = 1`)."
+msgstr ""
+"*(可选)* 使用选定的地址匹配方案在 `demo_array[8..15]` 上配置 PMP 保护。所有权限都被禁用，并且条目被锁定（`l = 1`）。"
+
+#: ../../source/samples/pmp.md:20
+msgid ""
+"*(Optional)* If `CONFIG_TLK_PMP_DEMO_SLEEP` is set, enters sleep for 500 "
+"ms and wakes up, demonstrating that PMP state is correctly saved and "
+"restored across the sleep."
+msgstr ""
+"*(可选)* 如果设置了 `CONFIG_TLK_PMP_DEMO_SLEEP`，则进入睡眠 500 毫秒并唤醒，演示 PMP 状态在睡眠过程中正确保存和恢复。"
+
+#: ../../source/samples/pmp.md:22
+msgid "Iterates over all 16 elements of `demo_array`:"
+msgstr "遍历 `demo_array` 的所有 16 个元素："
+
+#: ../../source/samples/pmp.md:23
+msgid "With `CONFIG_TLK_PMP_DEMO_READ` — reads and logs each value."
+msgstr "启用 `CONFIG_TLK_PMP_DEMO_READ` — 读取并记录每个值。"
+
+#: ../../source/samples/pmp.md:24
+msgid "With `CONFIG_TLK_PMP_DEMO_WRITE` — writes and logs each value."
+msgstr "启用 `CONFIG_TLK_PMP_DEMO_WRITE` — 写入并记录每个值。"
+
+#: ../../source/samples/pmp.md:26
+msgid ""
+"Elements `[0..7]` complete successfully. On the first access to "
+"`demo_array[8]` a PMP violation trap is raised."
+msgstr ""
+"元素 `[0..7]` 访问成功。当首次访问 `demo_array[8]` 时，会触发 PMP 违规异常。"
+
+#: ../../source/samples/pmp.md:29
+msgid "Configuration"
+msgstr "配置"
+
+#: ../../source/samples/pmp.md:31
+msgid "All options are exposed via **Kconfig** under *PMP Demo Configuration*."
+msgstr "所有选项都通过 **Kconfig** 中的 *PMP Demo Configuration* 提供。"
+
+#: ../../source/samples/pmp.md
+msgid "Symbol"
+msgstr "符号"
+
+#: ../../source/samples/pmp.md
+msgid "Type"
+msgstr "类型"
+
+#: ../../source/samples/pmp.md
+msgid "Default"
+msgstr "默认值"
+
+#: ../../source/samples/pmp.md
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/samples/pmp.md
+msgid "`TLK_PMP_DEMO_TOR`"
+msgstr "`TLK_PMP_DEMO_TOR`"
+
+#: ../../source/samples/pmp.md
+msgid "`bool`"
+msgstr "`bool`"
+
+#: ../../source/samples/pmp.md
+msgid "`n`"
+msgstr "`n`"
+
+#: ../../source/samples/pmp.md
+msgid ""
+"Protect `demo_array[8..15]` using TOR address matching. Entry 0 holds the"
+" lower bound; Entry 1 holds the upper bound."
+msgstr "使用 TOR 地址匹配保护 `demo_array[8..15]`。条目 0 保存下限；条目 1 保存上限。"
+
+#: ../../source/samples/pmp.md
+msgid "`TLK_PMP_DEMO_NAPOT`"
+msgstr "`TLK_PMP_DEMO_NAPOT`"
+
+#: ../../source/samples/pmp.md
+msgid "Protect `demo_array[8..15]` using NAPOT address matching."
+msgstr "使用 NAPOT 地址匹配保护 `demo_array[8..15]`。"
+
+#: ../../source/samples/pmp.md
+msgid "`TLK_PMP_DEMO_READ`"
+msgstr "`TLK_PMP_DEMO_READ`"
+
+#: ../../source/samples/pmp.md
+msgid "Access the array by reading."
+msgstr "通过读取操作访问数组。"
+
+#: ../../source/samples/pmp.md
+msgid "`TLK_PMP_DEMO_WRITE`"
+msgstr "`TLK_PMP_DEMO_WRITE`"
+
+#: ../../source/samples/pmp.md
+msgid "Access the array by writing."
+msgstr "通过写入操作访问数组。"
+
+#: ../../source/samples/pmp.md
+msgid "`TLK_PMP_DEMO_SLEEP`"
+msgstr "`TLK_PMP_DEMO_SLEEP`"
+
+#: ../../source/samples/pmp.md
+msgid ""
+"Enter the sleep between PMP configuration and array access. Demonstrates "
+"PMP state retention across sleep."
+msgstr "在 PMP 配置和数组访问之间进入睡眠。演示 PMP 状态在睡眠期间的保持能力。"
+
+#: ../../source/samples/pmp.md:41
+msgid ""
+"**Note:** If neither `TLK_PMP_DEMO_TOR` nor `TLK_PMP_DEMO_NAPOT` is set, "
+"no protection is configured and all 16 elements are accessible without a "
+"fault."
+msgstr ""
+"**注意：** 如果既未设置 `TLK_PMP_DEMO_TOR` 也未设置 `TLK_PMP_DEMO_NAPOT`，则不配置任何保护，所有 16 个元素均可正常访问，不会触发异常。"

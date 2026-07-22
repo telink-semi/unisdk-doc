@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/blinky.md:6
+msgid "First Example: Blinky (LED Blinking)"
+msgstr "首个示例：Blinky（LED 闪烁）"
+
+#: ../../source/developing/blinky.md:8
+msgid ""
+"This document details how to compile, flash, and run the first UniSDK "
+"example program — the GPIO demo (Blinky LED blinking)."
+msgstr ""
+"本文档详细介绍如何编译、烧录并运行第一个 UniSDK 示例程序——GPIO 演示（Blinky LED 闪烁）。"
+
+#: ../../source/developing/blinky.md:10
+msgid "Prerequisites"
+msgstr "前提条件"
+
+#: ../../source/developing/blinky.md:12
+msgid "[Environment setup](../getting_started/index.md) is complete"
+msgstr "[环境搭建](../getting_started/index.md)已完成"
+
+#: ../../source/developing/blinky.md:13
+msgid "Toolchain `TELINK_TOOLCHAIN_PATH` is configured"
+msgstr "工具链 `TELINK_TOOLCHAIN_PATH` 已配置"
+
+#: ../../source/developing/blinky.md:14
+msgid ""
+"You have a Telink development board on hand (this example uses "
+"TLSR9528A_EVK)"
+msgstr "手头有一块 Telink 开发板（本示例使用 TLSR9528A_EVK）"
+
+#: ../../source/developing/blinky.md:16
+msgid "Example Overview"
+msgstr "示例概述"
+
+#: ../../source/developing/blinky.md:18
+msgid ""
+"The `gpio_demo` example demonstrates basic GPIO input/output "
+"functionality and interrupt handling:"
+msgstr ""
+"`gpio_demo` 示例演示了基本的 GPIO 输入/输出功能和中断处理："
+
+#: ../../source/developing/blinky.md:20
+msgid ""
+"Configures a GPIO pin as output mode, periodically toggling to achieve "
+"LED blinking"
+msgstr "将 GPIO 引脚配置为输出模式，周期性翻转以实现 LED 闪烁"
+
+#: ../../source/developing/blinky.md:21
+msgid "Configures interrupt handling to respond to button input"
+msgstr "配置中断处理以响应按键输入"
+
+#: ../../source/developing/blinky.md:22
+msgid "Demonstrates the use of sleep APIs"
+msgstr "演示睡眠 API 的使用"
+
+#: ../../source/developing/blinky.md:24
+msgid "Source code location: `samples/gpio_demo/main.c`"
+msgstr "源代码位置：`samples/gpio_demo/main.c`"
+
+#: ../../source/developing/blinky.md:26
+msgid "Step 1: Configure Chip Type"
+msgstr "步骤 1：配置芯片类型"
+
+#: ../../source/developing/blinky.md:36
+msgid ""
+"!!! tip \"Available Chips and Boards\"     List all supported options:"
+"     ```bash     west tl-socs      # View all chips     west tl-boards"
+"    # View all boards     ```"
+msgstr ""
+"!!! tip \"可用芯片与开发板\"     列出所有支持的选项：     ```bash     west tl-socs      # 查看所有芯片     west tl-boards    "
+" # 查看所有开发板     ```"
+
+#: ../../source/developing/blinky.md:43
+msgid "Step 2: Compilation"
+msgstr "步骤 2：编译"
+
+#: ../../source/developing/blinky.md:53
+msgid ""
+"After a successful build, the output files are located in the `build/` "
+"directory:"
+msgstr "构建成功后，输出文件位于 `build/` 目录中："
+
+#: ../../source/developing/blinky.md
+msgid "Build Output Files"
+msgstr "构建输出文件"
+
+#: ../../source/developing/blinky.md:66
+msgid "Step 3: Flashing"
+msgstr "步骤 3：烧录"
+
+#: ../../source/developing/blinky.md:76
+msgid "Step 4: Verification"
+msgstr "步骤 4：验证"
+
+#: ../../source/developing/blinky.md:78
+msgid ""
+"After flashing is complete, the LED on the development board will blink "
+"at a fixed frequency, indicating that the program is running normally."
+msgstr "烧录完成后，开发板上的 LED 将以固定频率闪烁，表示程序正常运行。"
+
+#: ../../source/developing/blinky.md:80
+msgid "Custom Modifications"
+msgstr "自定义修改"
+
+#: ../../source/developing/blinky.md:82
+msgid ""
+"Open `samples/gpio_demo/main.c` to modify parameters such as the LED "
+"blinking frequency:"
+msgstr "打开 `samples/gpio_demo/main.c` 修改参数，例如 LED 闪烁频率："
+
+#: ../../source/developing/blinky.md:89
+msgid "After making changes, recompile and flash:"
+msgstr "修改后，重新编译并烧录："
+
+#: ../../source/developing/blinky.md:96
+msgid "Next Steps"
+msgstr "下一步"
+
+#: ../../source/developing/blinky.md:98
+msgid "[GPIO Driver Documentation](../peripherals/gpio.md)"
+msgstr "[GPIO 驱动文档](../peripherals/gpio.md)"
+
+#: ../../source/developing/blinky.md:99
+msgid "[Build System Details](../build_config/index.md)"
+msgstr "[构建系统详情](../build_config/index.md)"
+
+#: ../../source/developing/blinky.md:100
+msgid "[More Examples](../samples/index.md)"
+msgstr "[更多示例](../samples/index.md)"

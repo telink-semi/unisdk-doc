@@ -1,0 +1,53 @@
+<footer class="telink-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Telink Semiconductor</h5>
+        <p style="font-size: 0.85rem; opacity: 0.8;">
+          Leading provider of low-power, high-performance wireless connectivity
+          SoC solutions for IoT, industrial, and automotive applications.
+        </p>
+      </div>
+      <div class="col-md-2">
+        <h5>Resources</h5>
+        <ul class="footer-links">
+          <li><a href="https://www.telink-semi.cn/" target="_blank">Official Website</a></li>
+          <li><a href="https://doc.telink-semi.cn/" target="_blank">Documentation Center</a></li>
+          <li><a href="https://forum.telink-semi.cn/" target="_blank">Technical Forum</a></li>
+          <li><a href="https://products.telink-semi.cn/" target="_blank">Product Selector</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Developers</h5>
+        <ul class="footer-links">
+          <li><a href="https://github.com/telink-semi/unisdk" target="_blank">UniSDK on GitHub</a></li>
+          <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank">Docs Repository</a></li>
+          <li><a href="https://gitee.com/telink-semi" target="_blank">Gitee Repository</a></li>
+          <li><a href="https://www.telink-semi.cn/development-tools" target="_blank">Development Tools</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="{{ pathto('support/index', 1) }}">Contact Support</a></li>
+          <li><a href="https://www.telink-semi.cn/applications" target="_blank">Applications</a></li>
+          <li><a href="{{ pathto('about/index', 1) }}">About Telink</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Connect</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:telinksales@telink-semi.com">Sales Inquiry</a></li>
+          <li><a href="https://www.telink-semi.cn/news" target="_blank">News & Events</a></li>
+          <li><a href="https://www.telink-semi.cn/careers" target="_blank">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; {{ copyright }}. All rights reserved.
+      {% if current_version and current_version != "main" %}
+      <span class="version-badge">{{ current_version }}</span>
+      {% endif %}
+    </div>
+  </div>
+</footer>

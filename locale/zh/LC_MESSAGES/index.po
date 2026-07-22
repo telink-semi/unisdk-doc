@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/index.rst:37
+msgid "Getting Started"
+msgstr "入门指南"
+
+#: ../../source/index.rst:48
+msgid "Development Guide"
+msgstr "开发指南"
+
+#: ../../source/index.rst:62
+msgid "Chips & Boards"
+msgstr "芯片与开发板"
+
+#: ../../source/index.rst:77
+msgid "Peripherals & Drivers"
+msgstr "外设与驱动"
+
+#: ../../source/index.rst:95
+msgid "Connectivity"
+msgstr "连接性"
+
+#: ../../source/index.rst:102
+msgid "System Services"
+msgstr "系统服务"
+
+#: ../../source/index.rst:108
+msgid "Build & Configuration"
+msgstr "构建与配置"
+
+#: ../../source/index.rst:122
+msgid "Development Tools"
+msgstr "开发工具"
+
+#: ../../source/index.rst:131
+msgid "Security"
+msgstr "安全"
+
+#: ../../source/index.rst:137
+msgid "Production Guide"
+msgstr "生产指南"
+
+#: ../../source/index.rst:143
+msgid "Samples & Demos"
+msgstr "示例与演示"
+
+#: ../../source/index.rst:163
+msgid "API Reference"
+msgstr "API 参考"
+
+#: ../../source/index.rst:169
+msgid "Reference"
+msgstr "参考"
+
+#: ../../source/index.rst:176
+msgid "Community"
+msgstr "社区"
+
+#: ../../source/index.rst:5
+msgid "UniSDK — Telink Unified Software Development Kit"
+msgstr "UniSDK — Telink 统一软件开发套件"
+
+#: ../../source/index.rst:11
+msgid ""
+"UniSDK is Telink's unified software development platform, providing "
+"consistent development experience across all Telink chip series. SDK "
+"adopts modular, extensible architecture, integrating modern build tools "
+"like CMake, Ninja, West, and Kconfig, forming a complete compilation and "
+"build workflow. This documentation includes all user manuals, API "
+"references, and technical guides."
+msgstr ""
+"UniSDK 是 Telink 的统一软件开发平台，在所有 Telink 芯片系列上提供一致的开发体验。SDK 采用模块化、可扩展的架构，集成了 CMake、Ninja、West 和 Kconfig 等现代构建工具，形成完整的编译和构建工作流。本文档包含所有用户手册、API 参考和技术指南。"
+
+#: ../../source/index.rst:16
+msgid ""
+"**Document Status**: ``STABLE`` indicates content is complete and ready "
+"for use; ``DRAFT`` indicates content is under development. Issues and PRs"
+" are welcome to help improve documentation."
+msgstr ""
+"**文档状态**：``STABLE`` 表示内容已完成并可供使用；``DRAFT`` 表示内容正在开发中。欢迎提交 Issue 和 PR 以帮助改进文档。"
+
+#: ../../source/index.rst:24
+msgid ""
+":octicon:`cpu` **Multi-Chip Unified Platform** — One codebase, one build "
+"system, covering TL321X / TL721X / TLSR922X / TLSR952X full chip series"
+msgstr ""
+":octicon:`cpu` **多芯片统一平台** — 一套代码库，一个构建系统，覆盖 TL321X / TL721X / TLSR922X / TLSR952X 全系列芯片"
+
+#: ../../source/index.rst:25
+msgid ""
+":octicon:`gear` **Modular Build System** — Flexible configuration based "
+"on CMake + Kconfig, supporting three build entry points: West / Make / "
+"CMake"
+msgstr ""
+":octicon:`gear` **模块化构建系统** — 基于 CMake + Kconfig 的灵活配置，支持三种构建入口：West / Make / CMake"
+
+#: ../../source/index.rst:26
+msgid ""
+":octicon:`pulse` **Rich Peripheral Drivers** — Unified API layer "
+"providing full series peripheral drivers: GPIO, UART, I2C, SPI, ADC, DMA,"
+" USB, etc."
+msgstr ""
+":octicon:`pulse` **丰富的外设驱动** — 统一 API 层提供全系列外设驱动：GPIO、UART、I2C、SPI、ADC、DMA、USB 等"
+
+#: ../../source/index.rst:27
+msgid ""
+":octicon:`broadcast` **BLE Protocol Stack** — Integrated BLE Controller, "
+"supporting flexible wireless connectivity applications"
+msgstr ""
+":octicon:`broadcast` **BLE 协议栈** — 集成 BLE Controller，支持灵活的无线连接应用"
+
+#: ../../source/index.rst:28
+msgid ""
+":octicon:`sun` **Low Power Management** — Comprehensive power management "
+"framework, supporting multiple low power modes: Suspend / Retention, etc."
+msgstr ""
+":octicon:`sun` **低功耗管理** — 全面的电源管理框架，支持多种低功耗模式：Suspend / Retention 等"
+
+#: ../../source/index.rst:29
+msgid ""
+":octicon:`graph` **Pinmux Visualization Tool** — Graphical pin "
+"multiplexing configuration, simplifying hardware design"
+msgstr ""
+":octicon:`graph` **Pinmux 可视化工具** — 图形化引脚复用配置，简化硬件设计"
+
+#: ../../source/index.rst:30
+msgid ""
+":octicon:`flame` **BDT Programming & Debugging** — One-click Flash "
+"programming, reading, erasing via ``west tl-bdt``"
+msgstr ""
+":octicon:`flame` **BDT 烧录与调试** — 通过 ``west tl-bdt`` 一键 Flash 烧录、读取、擦除"
+
+#: ../../source/index.rst:32
+msgid "</details> <br>"
+msgstr "</details> <br>"
+
+#: ../../source/index.rst:190
+msgid ""
+"This documentation was built with **Sphinx**. The previous MkDocs-based "
+"build system has been replaced. See :doc:`contribute/index` for "
+"documentation contribution guidelines."
+msgstr ""
+"本文档使用 **Sphinx** 构建。先前基于 MkDocs 的构建系统已被替换。有关文档贡献指南，请参阅 :doc:`contribute/index`。"

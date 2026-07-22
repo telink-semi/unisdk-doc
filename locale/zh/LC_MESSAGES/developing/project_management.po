@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/project_management.md:6
+msgid "Project Creation & Management"
+msgstr "项目创建与管理"
+
+#: ../../source/developing/project_management.md:8
+msgid "Application Project Location"
+msgstr "应用程序项目位置"
+
+#: ../../source/developing/project_management.md:10
+msgid ""
+"UniSDK application projects **can be located in any directory**, not "
+"limited to the `samples/` directory. Each application project needs to "
+"provide its own `CMakeLists.txt` and source code."
+msgstr ""
+"UniSDK 应用程序项目**可以放在任何目录中**，不限于 `samples/` 目录。每个应用程序项目需要提供自己的 `CMakeLists.txt` 和源代码。"
+
+#: ../../source/developing/project_management.md:12
+msgid "Creating a New Project"
+msgstr "创建新项目"
+
+#: ../../source/developing/project_management.md
+#: ../../source/developing/project_management.md:14
+msgid "Minimum Project Structure"
+msgstr "最小项目结构"
+
+#: ../../source/developing/project_management.md:27
+msgid "CMakeLists.txt Template"
+msgstr "CMakeLists.txt 模板"
+
+#: ../../source/developing/project_management.md:51
+msgid "Key Notes"
+msgstr "关键说明"
+
+#: ../../source/developing/project_management.md:53
+msgid ""
+"**`find_package(Telink)`** — Locates the SDK path via the `TELINK_BASE` "
+"environment variable"
+msgstr ""
+"**`find_package(Telink)`** — 通过 `TELINK_BASE` 环境变量定位 SDK 路径"
+
+#: ../../source/developing/project_management.md:54
+msgid ""
+"**`project()`** — The project name will be used as the output firmware "
+"name"
+msgstr ""
+"**`project()`** — 项目名称将用作输出的固件名称"
+
+#: ../../source/developing/project_management.md:55
+msgid ""
+"**`target_sources(Telink ...)`** — Application source files are added to "
+"the SDK's main target `Telink`"
+msgstr ""
+"**`target_sources(Telink ...)`** — 应用程序源文件被添加到 SDK 的主目标 `Telink` 中"
+
+#: ../../source/developing/project_management.md:56
+msgid ""
+"**`CONFIG_TLK_ALLOW_CPP_WRAPPERS`** — Checks whether C++ wrappers are "
+"enabled"
+msgstr ""
+"**`CONFIG_TLK_ALLOW_CPP_WRAPPERS`** — 检查是否启用了 C++ 包装器"
+
+#: ../../source/developing/project_management.md:58
+msgid "Building the Project"
+msgstr "构建项目"
+
+#: ../../source/developing/project_management.md:60
+msgid "West Command (Recommended)"
+msgstr "West 命令（推荐）"
+
+#: ../../source/developing/project_management.md:70
+msgid "CMake Command"
+msgstr "CMake 命令"
+
+#: ../../source/developing/project_management.md:80
+msgid "Make Command"
+msgstr "Make 命令"
+
+#: ../../source/developing/project_management.md:86
+msgid "Configuration Management"
+msgstr "配置管理"
+
+#: ../../source/developing/project_management.md:88
+msgid "Using Project Kconfig"
+msgstr "使用项目 Kconfig"
+
+#: ../../source/developing/project_management.md:90
+msgid ""
+"Create a `Kconfig` file in the project directory to define project-"
+"specific configuration options:"
+msgstr ""
+"在项目目录中创建 `Kconfig` 文件，定义项目特定的配置选项："
+
+#: ../../source/developing/project_management.md:104
+msgid ""
+"The `Kconfig` file is automatically integrated into the build system via "
+"`KCONFIG_APPLICATION_DIR` in `kconfig.cmake`."
+msgstr ""
+"`Kconfig` 文件通过 `kconfig.cmake` 中的 `KCONFIG_APPLICATION_DIR` 自动集成到构建系统中。"
+
+#: ../../source/developing/project_management.md:106
+msgid "Interactive Configuration"
+msgstr "交互式配置"
+
+#: ../../source/developing/project_management.md:112
+msgid "Cleaning"
+msgstr "清理"
+
+#: ../../source/developing/project_management.md:122
+msgid "Development Workflow Recommendations"
+msgstr "开发工作流程建议"
+
+#: ../../source/developing/project_management.md:124
+msgid ""
+"**Start from a sample** — Copy the most similar `samples/` example as a "
+"starting point"
+msgstr ""
+"**从示例开始** — 复制最相似的 `samples/` 示例作为起点"
+
+#: ../../source/developing/project_management.md:125
+msgid ""
+"**Kconfig isolation** — Place project-specific configuration in the "
+"project-level `Kconfig`"
+msgstr ""
+"**Kconfig 隔离** — 将项目特定的配置放在项目级别的 `Kconfig` 中"
+
+#: ../../source/developing/project_management.md:126
+msgid ""
+"**Version management** — Manage application projects and the SDK "
+"separately, linking them via `TELINK_BASE`"
+msgstr ""
+"**版本管理** — 将应用程序项目和 SDK 分开管理，通过 `TELINK_BASE` 链接它们"

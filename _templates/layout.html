@@ -1,0 +1,36 @@
+{% extends "sphinx_book_theme/layout.html" %}
+
+{% block extrahead %}
+{{ super() }}
+<link rel="stylesheet" href="{{ pathto('_static/extra.css', 1) }}" />
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<div style="text-align: right; margin-top: 1rem; padding: 0.5rem 1rem; border-top: 1px solid #eee;">
+  <a href="{{ pathto('_downloads/unisdk-doc.pdf', 1) }}" style="font-size: 0.85rem; color: #0a2d72; text-decoration: none;">
+    &#128196; Download PDF
+  </a>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "telink-footer.html" %}
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% if current_version and current_version != "main" %}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var versionBadge = document.createElement("span");
+    versionBadge.className = "version-badge";
+    versionBadge.textContent = "{{ current_version }}";
+    var footer = document.querySelector(".telink-footer .footer-copyright");
+    if (footer) {
+      footer.appendChild(versionBadge);
+    }
+  });
+</script>
+{% endif %}
+{% endblock %}

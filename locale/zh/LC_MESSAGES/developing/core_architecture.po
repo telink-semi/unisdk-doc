@@ -1,0 +1,320 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/developing/core_architecture.md:6
+msgid "Core Architecture"
+msgstr "核心架构"
+
+#: ../../source/developing/core_architecture.md:8
+msgid ""
+"This document introduces the core operating mechanisms of UniSDK, "
+"including the startup flow, interrupt management, exception handling, and"
+" low-power framework."
+msgstr ""
+"本文档介绍 UniSDK 的核心运行机制，包括启动流程、中断管理、异常处理和低功耗框架。"
+
+#: ../../source/developing/core_architecture.md:10
+msgid "System Startup Flow"
+msgstr "系统启动流程"
+
+#: ../../source/developing/core_architecture.md:12
+msgid ""
+"The startup process of UniSDK begins from hardware reset and goes through"
+" the following stages:"
+msgstr ""
+"UniSDK 的启动过程从硬件复位开始，经过以下阶段："
+
+#: ../../source/developing/core_architecture.md:25
+msgid "Stage Descriptions"
+msgstr "阶段说明"
+
+#: ../../source/developing/core_architecture.md:27
+msgid ""
+"**`cstartup_flash.S`** — Assembly startup code, sets up the stack, copies"
+" the data segment, zeros BSS, jumps to the C entry point"
+msgstr ""
+"**`cstartup_flash.S`** — 汇编启动代码，设置堆栈、复制数据段、清零 BSS、跳转到 C 语言入口点"
+
+#: ../../source/developing/core_architecture.md:28
+msgid ""
+"**`tlk_init()`** — SDK initialization function, initializes each "
+"subsystem in sequence"
+msgstr ""
+"**`tlk_init()`** — SDK 初始化函数，按顺序初始化各个子系统"
+
+#: ../../source/developing/core_architecture.md:29
+msgid "**`tlk_loop()`** — Main event loop, handles BLE events, timers, etc."
+msgstr ""
+"**`tlk_loop()`** — 主事件循环，处理 BLE 事件、定时器等"
+
+#: ../../source/developing/core_architecture.md:31
+msgid "Initialization System"
+msgstr "初始化系统"
+
+#: ../../source/developing/core_architecture.md:33
+msgid "init Framework"
+msgstr "init 框架"
+
+#: ../../source/developing/core_architecture.md:35
+msgid ""
+"UniSDK uses a modular initialization framework, implemented through "
+"macros defined in `tlk_init.h`:"
+msgstr ""
+"UniSDK 使用模块化初始化框架，通过 `tlk_init.h` 中定义的宏实现："
+
+#: ../../source/developing/core_architecture.md:42
+msgid "Initialization Priority Hierarchy:"
+msgstr "初始化优先级层次："
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Priority"
+msgstr "优先级"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Typical Modules"
+msgstr "典型模块"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Earliest"
+msgstr "最早"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Clock, Memory"
+msgstr "时钟、内存"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "System foundational capabilities"
+msgstr "系统基础能力"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Early"
+msgstr "早期"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "GPIO, PLIC"
+msgstr "GPIO、PLIC"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Peripheral infrastructure"
+msgstr "外设基础设施"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Middle"
+msgstr "中期"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "UART, I2C, SPI"
+msgstr "UART、I2C、SPI"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Communication peripherals"
+msgstr "通信外设"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Late"
+msgstr "后期"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "BLE"
+msgstr "BLE"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Protocol stack"
+msgstr "协议栈"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Latest"
+msgstr "最晚"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Application Callback"
+msgstr "应用回调"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "User application initialization"
+msgstr "用户应用程序初始化"
+
+#: ../../source/developing/core_architecture.md:52
+msgid "Interrupt Management"
+msgstr "中断管理"
+
+#: ../../source/developing/core_architecture.md:54
+msgid "PLIC (Platform-Level Interrupt Controller)"
+msgstr "PLIC（平台级中断控制器）"
+
+#: ../../source/developing/core_architecture.md:56
+msgid "RISC-V platforms use PLIC to manage peripheral interrupts:"
+msgstr "RISC-V 平台使用 PLIC 管理外设中断："
+
+#: ../../source/developing/core_architecture.md:58
+msgid ""
+"**Interrupt Sources** — Each peripheral (GPIO, UART, I2C, etc.) has a "
+"dedicated PLIC interrupt number"
+msgstr ""
+"**中断源** — 每个外设（GPIO、UART、I2C 等）都有专用的 PLIC 中断号"
+
+#: ../../source/developing/core_architecture.md:59
+msgid "**Priority** — PLIC supports multiple interrupt priority levels"
+msgstr "**优先级** — PLIC 支持多个中断优先级"
+
+#: ../../source/developing/core_architecture.md:60
+msgid "**Interrupt Nesting** — Supports interrupt nesting through preemption"
+msgstr "**中断嵌套** — 通过抢占支持中断嵌套"
+
+#: ../../source/developing/core_architecture.md:70
+msgid "GPIO Interrupt Example"
+msgstr "GPIO 中断示例"
+
+#: ../../source/developing/core_architecture.md:83
+msgid "Low-Power Management"
+msgstr "低功耗管理"
+
+#: ../../source/developing/core_architecture.md:85
+msgid "UniSDK supports multiple low-power modes:"
+msgstr "UniSDK 支持多种低功耗模式："
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Mode"
+msgstr "模式"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Power Draw"
+msgstr "功耗"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Wake-Up Speed"
+msgstr "唤醒速度"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Retained Content"
+msgstr "保留内容"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Use Case"
+msgstr "使用场景"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "**Suspend**"
+msgstr "**挂起**"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Medium"
+msgstr "中等"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Fast (< 1ms)"
+msgstr "快速（< 1ms）"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Most context"
+msgstr "大部分上下文"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Brief idle periods"
+msgstr "短暂空闲"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "**Deep Retention**"
+msgstr "**深度保留**"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Low"
+msgstr "低"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Slow (~ms)"
+msgstr "慢速（~ms）"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Partial SRAM retention"
+msgstr "部分 SRAM 保留"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Long idle, state must be retained"
+msgstr "长时间空闲，需保持状态"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "**Deep Sleep**"
+msgstr "**深度睡眠**"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Very Low"
+msgstr "极低"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Slow"
+msgstr "慢速"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "SRAM not retained"
+msgstr "SRAM 不保留"
+
+#: ../../source/developing/core_architecture.md:14
+msgid "Extended hibernation"
+msgstr "长时间休眠"
+
+#: ../../source/developing/core_architecture.md:93
+msgid "Typical Usage"
+msgstr "典型用法"
+
+#: ../../source/developing/core_architecture.md:111
+msgid "Context Switch (tl_context.S)"
+msgstr "上下文切换 (tl_context.S)"
+
+#: ../../source/developing/core_architecture.md:113
+msgid ""
+"`tl_context.S` implements light-weight context saving and restoring, used"
+" for:"
+msgstr ""
+"`tl_context.S` 实现轻量级的上下文保存和恢复，用于："
+
+#: ../../source/developing/core_architecture.md:115
+msgid "Register saving on interrupt entry/exit"
+msgstr "中断进入/退出时的寄存器保存"
+
+#: ../../source/developing/core_architecture.md:116
+msgid "State restoration after waking from low-power modes"
+msgstr "从低功耗模式唤醒后的状态恢复"
+
+#: ../../source/developing/core_architecture.md:118
+msgid "Clock System"
+msgstr "时钟系统"
+
+#: ../../source/developing/core_architecture.md:120
+msgid "**System Timer (STIMER)** — High-precision system timer"
+msgstr "**系统定时器 (STIMER)** — 高精度系统定时器"
+
+#: ../../source/developing/core_architecture.md:121
+msgid ""
+"**Machine Timer (MTIMER)** — RISC-V standard timer, used for scheduling "
+"and delays"
+msgstr ""
+"**机器定时器 (MTIMER)** — RISC-V 标准定时器，用于调度和延时"
+
+#: ../../source/developing/core_architecture.md:122
+msgid ""
+"**Peripheral Clocks** — Independent clock source configuration for each "
+"peripheral"
+msgstr ""
+"**外设时钟** — 每个外设的独立时钟源配置"

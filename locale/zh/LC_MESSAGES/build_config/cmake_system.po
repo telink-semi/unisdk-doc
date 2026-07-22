@@ -1,0 +1,261 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Telink Semiconductor
+# This file is distributed under the same license as the UniSDK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UniSDK main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 14:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/build_config/cmake_system.md:6
+msgid "CMake Build System"
+msgstr "CMake 构建系统"
+
+#: ../../source/build_config/cmake_system.md:8
+msgid ""
+"CMake is the core of the UniSDK build system, responsible for project "
+"configuration, dependency resolution, and build rule generation."
+msgstr "CMake 是 UniSDK 构建系统的核心，负责项目配置、依赖解析和构建规则生成。"
+
+#: ../../source/build_config/cmake_system.md:10
+msgid "Entry Point Modes"
+msgstr "入口模式"
+
+#: ../../source/build_config/cmake_system.md:12
+msgid "UniSDK supports two CMake entry point modes:"
+msgstr "UniSDK 支持两种 CMake 入口模式："
+
+#: ../../source/build_config/cmake_system.md
+msgid "Mode"
+msgstr "模式"
+
+#: ../../source/build_config/cmake_system.md
+msgid "Entry"
+msgstr "入口"
+
+#: ../../source/build_config/cmake_system.md
+#: ../../source/build_config/cmake_system.md:92
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../source/build_config/cmake_system.md
+msgid "Command Example"
+msgstr "命令示例"
+
+#: ../../source/build_config/cmake_system.md
+msgid "**Root entry**"
+msgstr "**根入口**"
+
+#: ../../source/build_config/cmake_system.md
+msgid "`CMakeLists.txt` (repo root)"
+msgstr "`CMakeLists.txt`（仓库根目录）"
+
+#: ../../source/build_config/cmake_system.md
+msgid "SDK development/testing"
+msgstr "SDK 开发/测试"
+
+#: ../../source/build_config/cmake_system.md
+msgid "`cmake -B build -G Ninja .`"
+msgstr "`cmake -B build -G Ninja .`"
+
+#: ../../source/build_config/cmake_system.md
+msgid "**Application entry**"
+msgstr "**应用入口**"
+
+#: ../../source/build_config/cmake_system.md
+msgid "App's `CMakeLists.txt`"
+msgstr "应用的 `CMakeLists.txt`"
+
+#: ../../source/build_config/cmake_system.md
+msgid "Build specific application"
+msgstr "构建特定应用"
+
+#: ../../source/build_config/cmake_system.md
+msgid "`cmake -B build -G Ninja samples/gpio_demo`"
+msgstr "`cmake -B build -G Ninja samples/gpio_demo`"
+
+#: ../../source/build_config/cmake_system.md:19
+msgid "Application-Level CMakeLists.txt"
+msgstr "应用级 CMakeLists.txt"
+
+#: ../../source/build_config/cmake_system.md:35
+msgid "Module Loading Order"
+msgstr "模块加载顺序"
+
+#: ../../source/build_config/cmake_system.md:37
+msgid "`telink_default.cmake` loads CMake modules in the following order:"
+msgstr "`telink_default.cmake` 按以下顺序加载 CMake 模块："
+
+#: ../../source/build_config/cmake_system.md:39
+msgid "**`python.cmake`** — Python environment detection (Python 3.10+)"
+msgstr "**`python.cmake`** — Python 环境检测（Python 3.10+）"
+
+#: ../../source/build_config/cmake_system.md:40
+msgid ""
+"**`extensions.cmake`** — CMake extension functions (conditional "
+"variables, JSON processing)"
+msgstr "**`extensions.cmake`** — CMake 扩展函数（条件变量、JSON 处理）"
+
+#: ../../source/build_config/cmake_system.md:41
+msgid "**`version.cmake`** — Version information processing"
+msgstr "**`version.cmake`** — 版本信息处理"
+
+#: ../../source/build_config/cmake_system.md:42
+msgid "**`west.cmake`** — West tool integration (version >= 0.14.0)"
+msgstr "**`west.cmake`** — West 工具集成（版本 >= 0.14.0）"
+
+#: ../../source/build_config/cmake_system.md:43
+msgid "**`compiler.cmake`** — RISC-V compiler configuration"
+msgstr "**`compiler.cmake`** — RISC-V 编译器配置"
+
+#: ../../source/build_config/cmake_system.md:44
+msgid "**`kconfig.cmake`** — Kconfig configuration integration"
+msgstr "**`kconfig.cmake`** — Kconfig 配置集成"
+
+#: ../../source/build_config/cmake_system.md:45
+msgid "**`pinmux.cmake`** — Pin multiplexing configuration generation"
+msgstr "**`pinmux.cmake`** — 引脚复用配置生成"
+
+#: ../../source/build_config/cmake_system.md:46
+msgid "**`linker.cmake`** — Linker script processing"
+msgstr "**`linker.cmake`** — 链接脚本处理"
+
+#: ../../source/build_config/cmake_system.md:48
+msgid "Core Module Details"
+msgstr "核心模块详情"
+
+#: ../../source/build_config/cmake_system.md:50
+msgid "compiler.cmake"
+msgstr "compiler.cmake"
+
+#: ../../source/build_config/cmake_system.md:52
+msgid "Detects the `TELINK_TOOLCHAIN_PATH` environment variable"
+msgstr "检测 `TELINK_TOOLCHAIN_PATH` 环境变量"
+
+#: ../../source/build_config/cmake_system.md:53
+msgid "Configures the RISC-V GCC cross-compilation toolchain"
+msgstr "配置 RISC-V GCC 交叉编译工具链"
+
+#: ../../source/build_config/cmake_system.md:54
+msgid "Provides the `telink_apply_compiler_options()` function"
+msgstr "提供 `telink_apply_compiler_options()` 函数"
+
+#: ../../source/build_config/cmake_system.md:55
+msgid "Dynamically loads compilation options from `build_settings.json`"
+msgstr "从 `build_settings.json` 动态加载编译选项"
+
+#: ../../source/build_config/cmake_system.md:57
+msgid "linker.cmake"
+msgstr "linker.cmake"
+
+#: ../../source/build_config/cmake_system.md:59
+msgid "Sets the RISC-V link command template"
+msgstr "设置 RISC-V 链接命令模板"
+
+#: ../../source/build_config/cmake_system.md:60
+msgid "Reads linker options from `build_settings.json`"
+msgstr "从 `build_settings.json` 读取链接器选项"
+
+#: ../../source/build_config/cmake_system.md:61
+msgid "Preprocesses linker scripts (`flash_boot.link` → `flash_boot.ld`)"
+msgstr "预处理链接脚本（`flash_boot.link` → `flash_boot.ld`）"
+
+#: ../../source/build_config/cmake_system.md:62
+msgid "Post-processing: generates `.bin` + `.map` + firmware verification"
+msgstr "后处理：生成 `.bin` + `.map` + 固件验证"
+
+#: ../../source/build_config/cmake_system.md:64
+msgid "kconfig.cmake"
+msgstr "kconfig.cmake"
+
+#: ../../source/build_config/cmake_system.md:66
+msgid "Manages the generation flow of `chip.config` → `build.config` → `.config`"
+msgstr "管理 `chip.config` → `build.config` → `.config` 的生成流程"
+
+#: ../../source/build_config/cmake_system.md:67
+msgid "Generates `capabilities.h` and `autoconf.h`"
+msgstr "生成 `capabilities.h` 和 `autoconf.h`"
+
+#: ../../source/build_config/cmake_system.md:68
+msgid "Defines CMake targets such as `config` / `parse_config`"
+msgstr "定义 CMake 目标，如 `config` / `parse_config`"
+
+#: ../../source/build_config/cmake_system.md:69
+msgid "SOC/BOARD parameter processing and combination validation"
+msgstr "SOC/BOARD 参数处理与组合验证"
+
+#: ../../source/build_config/cmake_system.md:71
+msgid "pinmux.cmake"
+msgstr "pinmux.cmake"
+
+#: ../../source/build_config/cmake_system.md:73
+msgid "Generates `.pinmux` and `pinmux.h`"
+msgstr "生成 `.pinmux` 和 `pinmux.h`"
+
+#: ../../source/build_config/cmake_system.md:74
+msgid "Depends on the `.config` file"
+msgstr "依赖于 `.config` 文件"
+
+#: ../../source/build_config/cmake_system.md:75
+msgid "Build directory is automatically added to the include path"
+msgstr "构建目录会自动添加到包含路径中"
+
+#: ../../source/build_config/cmake_system.md:77
+msgid "extensions.cmake"
+msgstr "extensions.cmake"
+
+#: ../../source/build_config/cmake_system.md:90
+msgid "Configuration Flow"
+msgstr "配置流程"
+
+#: ../../source/build_config/cmake_system.md:106
+msgid "Include Guard Mechanism"
+msgstr "包含保护机制"
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "Guard"
+msgstr "保护标志"
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "Set Location"
+msgstr "设置位置"
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "`TELINK_ROOT_INCLUDED`"
+msgstr "`TELINK_ROOT_INCLUDED`"
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "Root `CMakeLists.txt`"
+msgstr "根 `CMakeLists.txt`"
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "Prevent duplicate root inclusion"
+msgstr "防止重复包含根目录"
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "`TELINK_PACKAGE_INCLUDED`"
+msgstr "`TELINK_PACKAGE_INCLUDED`"
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "`TelinkConfig.cmake`"
+msgstr "`TelinkConfig.cmake`"
+
+#: ../../source/build_config/cmake_system.md:92
+msgid "Prevent duplicate package loading"
+msgstr "防止重复加载包"
+
+#: ../../source/build_config/cmake_system.md
+#: ../../source/build_config/cmake_system.md:113
+msgid "Build Directory Structure"
+msgstr "构建目录结构"
