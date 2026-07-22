@@ -141,11 +141,19 @@ breathe_domain_by_extension = {'h': 'c'}
 
 # -- LaTeX (PDF) output configuration ----------------------------------------
 # Used when building with xelatex (set via -D latex_engine=xelatex)
+# Font strategy:
+#   English text: DejaVu (Serif for body, Sans for headings, Mono for code)
+#   Chinese text: Noto CJK SC (Serif for body, Sans for headings, Mono for code)
+# xeCJK auto-selects the right font based on character range.
 latex_elements = {
-    'preamble': r'''
+    'fontpkg': r'''
 \setmainfont{DejaVu Serif}
 \setsansfont{DejaVu Sans}
 \setmonofont{DejaVu Sans Mono}
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
 ''',
 }
 
