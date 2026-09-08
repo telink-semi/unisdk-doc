@@ -24,6 +24,7 @@ Current version information is defined in `common/include/tlk_sdk_version.h`.
 | SDK Version | TL321X | TL721X | TLSR922X | TLSR952X | Notes |
 |---------|--------|--------|----------|----------|------|
 | 0.2.0 | ✅ | ✅ | ✅ | ✅ | Initial version |
+| 0.3.0 | ✅ | ✅ | ✅ | ✅ | Adds BLE Host v2, MCUboot, TL321X i2s |
 
 ### Toolchain Versions
 
@@ -36,6 +37,10 @@ Current version information is defined in `common/include/tlk_sdk_version.h`.
 | RISC-V GCC | V5.4.1+ |
 
 ## Version History
+
+### v0.3.0
+
+- [v0.3.0 Release Notes](0.3.0/Unified_SDK_Release_Note.md)
 
 ### v0.2.0
 

@@ -53,5 +53,5 @@ When `CONFIG_TLK_PM_DEMO_ENABLE_GPIO_INPUT` is enabled:
 
 ```bash
 west tl-build samples/pm_demo --board TLSR9528A_EVK
-west tl-bdt download --chip TLSR9528A -i build/pm_demo.bin
+west tl-bdt download --chip TLSR9528A -i build/Telink.bin
 ```

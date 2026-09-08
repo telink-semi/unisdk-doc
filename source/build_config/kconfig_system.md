@@ -108,7 +108,9 @@ west tl-build --soc TLSR9528A
 west tl-build --board TLSR9528A_EVK
 ```
 
-The Kconfig system automatically validates the SOC/BOARD combination compatibility (via `kconfig_parser.py`).
+`SOC`/`BOARD` passed this way only take effect the **first time** `chip.config` is generated for a build directory (as of UniSDK v0.3.0) — CMake seeds the choice into the non-interactive Kconfig pass so it comes out selected, instead of requiring the interactive `menuconfig` UI. If `chip.config` already exists (e.g. a build directory reused across configure runs), these flags are ignored; delete `chip.config` or edit it directly to change SOC/BOARD.
+
+`kconfig_parser.py`/`soc_board_setter.py` provide standalone SOC/BOARD dependency resolution and combination validation, but are not currently invoked automatically as part of this flow.
 
 ## Key Scripts
 

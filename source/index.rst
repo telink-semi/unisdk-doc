@@ -159,11 +159,21 @@ UniSDK — Telink Unified Software Development Kit
    samples/dma
    samples/i2c
    samples/spi
+   samples/i2s
    samples/ble
+   samples/ble_host
+   samples/rf
    samples/irq_nesting
    samples/stimer
    samples/wdt
    samples/usb_cdc
+   samples/random
+   samples/nv_storage
+   samples/system_log
+   samples/task_planner
+   samples/audio
+   samples/mbedtls
+   samples/mcuboot
 
 .. toctree::
    :maxdepth: 2
@@ -184,6 +194,7 @@ UniSDK — Telink Unified Software Development Kit
 
    releases/index
    releases/0.2.0/Unified_SDK_Release_Note
+   releases/0.3.0/Unified_SDK_Release_Note
    contribute/index
    support/index
    terminology
