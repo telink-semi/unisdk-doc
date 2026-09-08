@@ -1,0 +1,28 @@
+{
+  "versions": [
+    {
+      "name": "v0.2.0",
+      "url": "en/v0.2.0/",
+      "label": "v0.2.0 (en)",
+      "lang": "en"
+    },
+    {
+      "name": "0.3.0",
+      "url": "en/0.3.0/",
+      "label": "0.3.0 (en)",
+      "lang": "en"
+    },
+    {
+      "name": "v0.2.0",
+      "url": "zh/v0.2.0/",
+      "label": "v0.2.0 (zh)",
+      "lang": "zh"
+    },
+    {
+      "name": "0.3.0",
+      "url": "zh/0.3.0/",
+      "label": "0.3.0 (zh)",
+      "lang": "zh"
+    }
+  ]
+}

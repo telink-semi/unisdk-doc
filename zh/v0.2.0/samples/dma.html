@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DMA 示例 &#8212; UniSDK v0.2.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=3aef283f" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../_static/documentation_options.js?v=dcecb372"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'samples/dma';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/favicon.svg"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="I2C 示例" href="i2c.html" />
+    <link rel="prev" title="ADC 示例" href="adc.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh"/>
+  <meta name="docsearch:version" content="v0.2.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<link rel="stylesheet" href="../_static/extra.css" />
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="当前页面">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="UniSDK v0.2.0 文档 - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="UniSDK v0.2.0 文档 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    UniSDK — Telink 统一软件开发套件
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">UniSDK 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/environment_setup.html">搭建开发环境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/get_sdk.html">获取和导入 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/first_example.html">Compile, Flash and Run Your First Example (VS Code)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/troubleshooting.html">故障排除</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">开发指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developing/index.html">开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_linux.html">Linux 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_macos.html">macOS 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_windows.html">Windows 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/blinky.html">First Example: Blinky (CLI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/directory_structure.html">SDK 目录结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project_management.html">项目创建与管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/core_architecture.html">核心架构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/init_hooks.html">初始化钩子文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/public_api.html">API 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/debugging.html">调试与测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/ide_integration.html">IDE 集成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/clangd.html">VSCode 的 clangd 设置指南</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">芯片与开发板</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/index.html">芯片与开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TL321X.html">TL321X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TL721X.html">TL721X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TLSR922X.html">TLSR922X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TLSR952X.html">TLSR952X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TL3218X_EVK.html">TL3218X_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TL7218X_EVK.html">TL7218X_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9228A_EVK.html">TLSR9228A_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9528A_EVK.html">TLSR9528A_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9528A_DONGLE.html">TLSR9528A_DONGLE</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外设与驱动</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/index.html">外设与驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/gpio.html">GPIO 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/uart.html">UART 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/pm.html">Power Management (PM) Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/analog.html">模拟驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/plic.html">PLIC 中断控制器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/i2c.html">I2C 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/spi.html">SPI 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/adc.html">ADC 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/dma.html">DMA 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/wdt.html">看门狗驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/timer.html">定时器驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/usb.html">USB 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/pmp.html">PMP 驱动</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">连接性</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../connectivity/index.html">连接性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../connectivity/ble/controller.html">BLE 控制器编码规范</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">系统服务</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../system_services/index.html">系统服务</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">构建与配置</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../build_config/index.html">构建与配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/cmake_system.html">CMake 构建系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/kconfig_system.html">Kconfig 配置系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/west_commands.html">West 命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/make_support.html">Make 支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/build_flow.html">构建流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/build_system_architecture.html">UniSDK 构建系统架构文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/extensions.html">扩展与定制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/reference.html">文件与脚本参考</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">开发工具</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">开发工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/bdt.html">BDT 烧录和调试工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/pinmux.html">Pinmux 引脚配置工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/menuconfig.html">Menuconfig 配置界面</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">安全</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">安全</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">生产指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../productization/index.html">生产指南</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">示例与演示</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">示例与演示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpio.html">GPIO 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">UART 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pm.html">PM 电源管理示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pmp.html">PMP 驱动示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="umode.html">U-mode 驱动示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adc.html">ADC 示例</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">DMA 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="i2c.html">I2C 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spi.html">SPI 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble.html">BLE 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="irq_nesting.html">IRQ 嵌套示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stimer.html">STIMER 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wdt.html">看门狗示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usb_cdc.html">USB CDC 示例</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API 参考</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api_reference/index.html">API 参考</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../kconfig_reference/index.html">Kconfig 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../yaml_reference/index.html">YAML 描述参考</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">社区</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">发布版本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/0.2.0/Unified_SDK_Release_Note.html">V0.2.0(FR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">技术支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../terminology.html">UniSDK 术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">关于 Telink Semiconductor</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="源码库"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/edit/main/samples/dma.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/issues/new?title=Issue%20on%20page%20%2Fsamples/dma.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="创建议题"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/samples/dma.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="亮色"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="暗色"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>亮色</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>暗色</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>DMA 示例</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-run">构建与运行</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="dma-sample">
+<h1>DMA 示例<a class="headerlink" href="#dma-sample" title="链接到此标题。">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>Document Status: DRAFT — Content is being finalized</p>
+</div>
+<p>DMA 示例（<code class="docutils literal notranslate"><span class="pre">samples/dma_demo</span></code>）演示了直接内存访问的使用方法。</p>
+<section id="build-run">
+<h2>构建与运行<a class="headerlink" href="#build-run" title="链接到此标题。">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>west<span class="w"> </span>tl-build<span class="w"> </span>samples/dma_demo<span class="w"> </span>--board<span class="w"> </span>TLSR9528A_EVK
+west<span class="w"> </span>tl-bdt<span class="w"> </span>download<span class="w"> </span>--chip<span class="w"> </span>TLSR9528A<span class="w"> </span>-i<span class="w"> </span>build/dma_demo.bin
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="adc.html"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">ADC 示例</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="i2c.html"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">I2C 示例</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-run">构建与运行</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： Telink Semiconductor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Telink Semiconductor.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+<div style="text-align: right; margin-top: 1rem; padding: 0.5rem 1rem; border-top: 1px solid #eee;">
+  <a href="../_downloads/unisdk-doc.pdf" style="font-size: 0.85rem; color: #0a2d72; text-decoration: none;">
+    &#128196; Download PDF
+  </a>
+</div>
+<script>
+var currentVersion = "v0.2.0";
+var currentLang = "zh";
+</script>
+<script>
+(function() {
+  'use strict';
+  function injectSwitchers() {
+    var navbarEnd = document.querySelector(".navbar-header-items__end");
+    if (!navbarEnd) return;
+
+    var langHtml = [
+      '<div class="navbar-item">',
+      '  <div class="language-selector">',
+      '    <select id="language-select" onchange="switchLanguage(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="en"' + (currentLang === "en" ? " selected" : "") + '>English</option>',
+      '      <option value="zh"' + (currentLang === "zh" ? " selected" : "") + '>中文</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", langHtml);
+
+    var verHtml = [
+      '<div class="navbar-item">',
+      '  <div class="version-selector">',
+      '    <select id="version-select" onchange="switchVersion(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="">Loading...</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", verHtml);
+
+    var script = document.createElement("script");
+    script.src = "../_static/version_switcher.js";
+    document.body.appendChild(script);
+  }
+
+  function switchLanguage(lang) {
+    var currentPath = window.location.pathname;
+    var newPath = currentPath.replace(/\/[a-z]{2}\//, "/" + lang + "/");
+    if (newPath !== currentPath) {
+      window.location.href = newPath;
+    }
+  }
+
+  window.switchVersion = function(url) {
+    if (url) {
+      window.location.href = url;
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", injectSwitchers);
+  } else {
+    injectSwitchers();
+  }
+})();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var versionBadge = document.createElement("span");
+    versionBadge.className = "version-badge";
+    versionBadge.textContent = "v0.2.0";
+    var footer = document.querySelector(".telink-footer .footer-copyright");
+    if (footer) {
+      footer.appendChild(versionBadge);
+    }
+  });
+</script>
+
+
+<footer class="telink-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Telink Semiconductor</h5>
+        <p style="font-size: 0.85rem; opacity: 0.8;">
+          Leading provider of low-power, high-performance wireless connectivity
+          SoC solutions for IoT, industrial, and automotive applications.
+        </p>
+      </div>
+      <div class="col-md-2">
+        <h5>Resources</h5>
+        <ul class="footer-links">
+          <li><a href="https://www.telink-semi.cn/" target="_blank">Official Website</a></li>
+          <li><a href="https://doc.telink-semi.cn/" target="_blank">Documentation Center</a></li>
+          <li><a href="https://forum.telink-semi.cn/" target="_blank">Technical Forum</a></li>
+          <li><a href="https://products.telink-semi.cn/" target="_blank">Product Selector</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Developers</h5>
+        <ul class="footer-links">
+          <li><a href="https://github.com/telink-semi/unisdk" target="_blank">UniSDK on GitHub</a></li>
+          <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank">Docs Repository</a></li>
+          <li><a href="https://gitee.com/telink-semi" target="_blank">Gitee Repository</a></li>
+          <li><a href="https://www.telink-semi.cn/development-tools" target="_blank">Development Tools</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="../support/index">Contact Support</a></li>
+          <li><a href="https://www.telink-semi.cn/applications" target="_blank">Applications</a></li>
+          <li><a href="../about/index">About Telink</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Connect</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:telinksales@telink-semi.com">Sales Inquiry</a></li>
+          <li><a href="https://www.telink-semi.cn/news" target="_blank">News & Events</a></li>
+          <li><a href="https://www.telink-semi.cn/careers" target="_blank">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; Telink Semiconductor. All rights reserved.
+      
+      <span class="version-badge">v0.2.0</span>
+      
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

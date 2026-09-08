@@ -1,0 +1,1605 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>UniSDK — Telink 统一软件开发套件 &#8212; UniSDK 0.3.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/extra.css?v=3aef283f" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="_static/documentation_options.js?v=5520cb33"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="_static/favicon.svg"/>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="UniSDK 简介" href="introduction/index.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh"/>
+  <meta name="docsearch:version" content="0.3.0" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+<link rel="stylesheet" href="_static/extra.css" />
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="UniSDK 0.3.0 文档 - Home"/>
+    <img src="_static/logo.svg" class="logo__image only-dark pst-js-only" alt="UniSDK 0.3.0 文档 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    UniSDK — Telink 统一软件开发套件
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction/index.html">UniSDK 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/environment_setup.html">搭建开发环境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/get_sdk.html">获取和导入 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/first_example.html">Compile, Flash and Run Your First Example (VS Code)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/troubleshooting.html">故障排除</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">开发指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="developing/index.html">开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_linux.html">Linux 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_macos.html">macOS 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_windows.html">Windows 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/blinky.html">First Example: Blinky (CLI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/directory_structure.html">SDK 目录结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/project_management.html">项目创建与管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/core_architecture.html">核心架构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/init_hooks.html">初始化钩子文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/public_api.html">API 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/debugging.html">调试与测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/ide_integration.html">IDE 集成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/clangd.html">VSCode 的 clangd 设置指南</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">芯片与开发板</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/index.html">芯片与开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TL321X.html">TL321X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TL721X.html">TL721X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TLSR922X.html">TLSR922X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TLSR952X.html">TLSR952X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TL3218X_EVK.html">TL3218X_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TL7218X_EVK.html">TL7218X_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9228A_EVK.html">TLSR9228A_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9528A_EVK.html">TLSR9528A_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9528A_DONGLE.html">TLSR9528A_DONGLE</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外设与驱动</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="peripherals/index.html">外设与驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/gpio.html">GPIO 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/uart.html">UART 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/pm.html">Power Management (PM) Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/analog.html">模拟驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/plic.html">PLIC 中断控制器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/i2c.html">I2C 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/spi.html">SPI 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/adc.html">ADC 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/dma.html">DMA 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/wdt.html">看门狗驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/timer.html">定时器驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/usb.html">USB 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/pmp.html">PMP 驱动</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">连接性</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="connectivity/index.html">连接性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity/ble/controller.html">BLE 控制器编码规范</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">系统服务</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="system_services/index.html">系统服务</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">构建与配置</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="build_config/index.html">构建与配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/cmake_system.html">CMake 构建系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/kconfig_system.html">Kconfig 配置系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/west_commands.html">West 命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/make_support.html">Make 支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/build_flow.html">构建流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/build_system_architecture.html">UniSDK 构建系统架构文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/extensions.html">扩展与定制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/reference.html">文件与脚本参考</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">开发工具</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tools/index.html">开发工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/bdt.html">BDT 烧录和调试工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/pinmux.html">Pinmux 引脚配置工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/menuconfig.html">Menuconfig 配置界面</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">安全</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="security/index.html">安全</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">生产指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="productization/index.html">生产指南</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">示例与演示</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="samples/index.html">示例与演示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/gpio.html">GPIO 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/uart.html">UART 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/pm.html">PM 电源管理示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/pmp.html">PMP 驱动示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/umode.html">U-mode 驱动示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/adc.html">ADC 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/dma.html">DMA 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/i2c.html">I2C 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/spi.html">SPI 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/i2s.html">I2S Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/ble.html">BLE 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/ble_host.html">BLE Host Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/rf.html">RF Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/irq_nesting.html">IRQ 嵌套示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/stimer.html">STIMER 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/wdt.html">看门狗示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/usb_cdc.html">USB CDC 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/random.html">Random Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/nv_storage.html">NV Storage Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/system_log.html">System Log Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/task_planner.html">Task Planner Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/audio.html">Audio Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/mbedtls.html">mbedTLS Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/mcuboot.html">MCUboot Bootloader Sample</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API 参考</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="api_reference/index.html">API 参考</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="kconfig_reference/index.html">Kconfig 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yaml_reference/index.html">YAML 描述参考</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">社区</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="releases/index.html">发布版本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases/0.2.0/Unified_SDK_Release_Note.html">V0.2.0(FR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html">V0.3.0(FR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute/index.html">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support/index.html">技术支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">UniSDK 术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about/index.html">关于 Telink Semiconductor</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="源码库"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/edit/main/index.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="创建议题"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="亮色"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="暗色"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>亮色</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>暗色</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>UniSDK — Telink 统一软件开发套件</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="unisdk-telink-unified-software-development-kit">
+<span id="unisdk-documentation"></span><h1>UniSDK — Telink 统一软件开发套件<a class="headerlink" href="#unisdk-telink-unified-software-development-kit" title="链接到此标题。">#</a></h1>
+<p class="lead">UniSDK 是 Telink 的统一软件开发平台，在所有 Telink 芯片系列上提供一致的开发体验。SDK 采用模块化、可扩展的架构，集成了 CMake、Ninja、West 和 Kconfig 等现代构建工具，形成完整的编译和构建工作流。本文档包含所有用户手册、API 参考和技术指南。</p>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p><strong>文档状态</strong>：<code class="docutils literal notranslate"><span class="pre">STABLE</span></code> 表示内容已完成并可供使用；<code class="docutils literal notranslate"><span class="pre">DRAFT</span></code> 表示内容正在开发中。欢迎提交 Issue 和 PR 以帮助改进文档。</p>
+</div>
+<details>
+<summary><b>📚 Core Features (Click to expand)</b></summary><ul>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-cpu" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5.75V2h3V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75V5h1.25a.75.75 0 0 1 0 1.5H14v3h1.25a.75.75 0 0 1 0 1.5H14v1.25A1.75 1.75 0 0 1 12.25 14H11v1.25a.75.75 0 0 1-1.5 0V14h-3v1.25a.75.75 0 0 1-1.5 0V14H3.75A1.75 1.75 0 0 1 2 12.25V11H.75a.75.75 0 0 1 0-1.5H2v-3H.75a.75.75 0 0 1 0-1.5H2V3.75C2 2.784 2.784 2 3.75 2H5V.75a.75.75 0 0 1 1.5 0Zm5.75 11.75a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25ZM5.75 5h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5A.75.75 0 0 1 5.75 5Zm.75 4.5h3v-3h-3Z"></path></svg> <strong>多芯片统一平台</strong> — 一套代码库，一个构建系统，覆盖 TL321X / TL721X / TLSR922X / TLSR952X 全系列芯片</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-gear" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8.2 8.2 0 0 1 .701.031C9.444.095 9.99.645 10.16 1.29l.288 1.107c.018.066.079.158.212.224.231.114.454.243.668.386.123.082.233.09.299.071l1.103-.303c.644-.176 1.392.021 1.82.63.27.385.506.792.704 1.218.315.675.111 1.422-.364 1.891l-.814.806c-.049.048-.098.147-.088.294.016.257.016.515 0 .772-.01.147.038.246.088.294l.814.806c.475.469.679 1.216.364 1.891a7.977 7.977 0 0 1-.704 1.217c-.428.61-1.176.807-1.82.63l-1.102-.302c-.067-.019-.177-.011-.3.071a5.909 5.909 0 0 1-.668.386c-.133.066-.194.158-.211.224l-.29 1.106c-.168.646-.715 1.196-1.458 1.26a8.006 8.006 0 0 1-1.402 0c-.743-.064-1.289-.614-1.458-1.26l-.289-1.106c-.018-.066-.079-.158-.212-.224a5.738 5.738 0 0 1-.668-.386c-.123-.082-.233-.09-.299-.071l-1.103.303c-.644.176-1.392-.021-1.82-.63a8.12 8.12 0 0 1-.704-1.218c-.315-.675-.111-1.422.363-1.891l.815-.806c.05-.048.098-.147.088-.294a6.214 6.214 0 0 1 0-.772c.01-.147-.038-.246-.088-.294l-.815-.806C.635 6.045.431 5.298.746 4.623a7.92 7.92 0 0 1 .704-1.217c.428-.61 1.176-.807 1.82-.63l1.102.302c.067.019.177.011.3-.071.214-.143.437-.272.668-.386.133-.066.194-.158.211-.224l.29-1.106C6.009.645 6.556.095 7.299.03 7.53.01 7.764 0 8 0Zm-.571 1.525c-.036.003-.108.036-.137.146l-.289 1.105c-.147.561-.549.967-.998 1.189-.173.086-.34.183-.5.29-.417.278-.97.423-1.529.27l-1.103-.303c-.109-.03-.175.016-.195.045-.22.312-.412.644-.573.99-.014.031-.021.11.059.19l.815.806c.411.406.562.957.53 1.456a4.709 4.709 0 0 0 0 .582c.032.499-.119 1.05-.53 1.456l-.815.806c-.081.08-.073.159-.059.19.162.346.353.677.573.989.02.03.085.076.195.046l1.102-.303c.56-.153 1.113-.008 1.53.27.161.107.328.204.501.29.447.222.85.629.997 1.189l.289 1.105c.029.109.101.143.137.146a6.6 6.6 0 0 0 1.142 0c.036-.003.108-.036.137-.146l.289-1.105c.147-.561.549-.967.998-1.189.173-.086.34-.183.5-.29.417-.278.97-.423 1.529-.27l1.103.303c.109.029.175-.016.195-.045.22-.313.411-.644.573-.99.014-.031.021-.11-.059-.19l-.815-.806c-.411-.406-.562-.957-.53-1.456a4.709 4.709 0 0 0 0-.582c-.032-.499.119-1.05.53-1.456l.815-.806c.081-.08.073-.159.059-.19a6.464 6.464 0 0 0-.573-.989c-.02-.03-.085-.076-.195-.046l-1.102.303c-.56.153-1.113.008-1.53-.27a4.44 4.44 0 0 0-.501-.29c-.447-.222-.85-.629-.997-1.189l-.289-1.105c-.029-.11-.101-.143-.137-.146a6.6 6.6 0 0 0-1.142 0ZM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM9.5 8a1.5 1.5 0 1 0-3.001.001A1.5 1.5 0 0 0 9.5 8Z"></path></svg> <strong>模块化构建系统</strong> — 基于 CMake + Kconfig 的灵活配置，支持三种构建入口：West / Make / CMake</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-pulse" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 2c.306 0 .582.187.696.471L10 10.731l1.304-3.26A.751.751 0 0 1 12 7h3.25a.75.75 0 0 1 0 1.5h-2.742l-1.812 4.528a.751.751 0 0 1-1.392 0L6 4.77 4.696 8.03A.75.75 0 0 1 4 8.5H.75a.75.75 0 0 1 0-1.5h2.742l1.812-4.529A.751.751 0 0 1 6 2Z"></path></svg> <strong>丰富的外设驱动</strong> — 统一 API 层提供全系列外设驱动：GPIO、UART、I2C、SPI、ADC、DMA、USB 等</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-broadcast" viewBox="0 0 16 16" aria-hidden="true"><path d="M8.75 8.582v5.668a.75.75 0 0 1-1.5 0V8.582a1.75 1.75 0 1 1 1.5 0Zm3.983-7.125a.75.75 0 0 1 1.06.026A7.976 7.976 0 0 1 16 7c0 2.139-.84 4.083-2.207 5.517a.75.75 0 1 1-1.086-1.034A6.474 6.474 0 0 0 14.5 7a6.474 6.474 0 0 0-1.793-4.483.75.75 0 0 1 .026-1.06Zm-9.466 0c.3.286.312.76.026 1.06A6.474 6.474 0 0 0 1.5 7a6.47 6.47 0 0 0 1.793 4.483.75.75 0 0 1-1.086 1.034A7.973 7.973 0 0 1 0 7c0-2.139.84-4.083 2.207-5.517a.75.75 0 0 1 1.06-.026Zm8.556 2.321A4.988 4.988 0 0 1 13 7a4.988 4.988 0 0 1-1.177 3.222.75.75 0 1 1-1.146-.967A3.487 3.487 0 0 0 11.5 7c0-.86-.309-1.645-.823-2.255a.75.75 0 0 1 1.146-.967Zm-6.492.958A3.48 3.48 0 0 0 4.5 7a3.48 3.48 0 0 0 .823 2.255.75.75 0 0 1-1.146.967A4.981 4.981 0 0 1 3 7a4.982 4.982 0 0 1 1.188-3.236.75.75 0 1 1 1.143.972Z"></path></svg> <strong>BLE 协议栈</strong> — 集成 BLE Controller，支持灵活的无线连接应用</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-sun" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0ZM3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8Zm13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8Zm-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13Zm3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"></path></svg> <strong>低功耗管理</strong> — 全面的电源管理框架，支持多种低功耗模式：Suspend / Retention 等</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-graph" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.75V13.5h13.75a.75.75 0 0 1 0 1.5H.75a.75.75 0 0 1-.75-.75V1.75a.75.75 0 0 1 1.5 0Zm14.28 2.53-5.25 5.25a.75.75 0 0 1-1.06 0L7 7.06 4.28 9.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.25-3.25a.75.75 0 0 1 1.06 0L10 7.94l4.72-4.72a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"></path></svg> <strong>Pinmux 可视化工具</strong> — 图形化引脚复用配置，简化硬件设计</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-flame" viewBox="0 0 16 16" aria-hidden="true"><path d="M9.533.753V.752c.217 2.385 1.463 3.626 2.653 4.81C13.37 6.74 14.498 7.863 14.498 10c0 3.5-3 6-6.5 6S1.5 13.512 1.5 10c0-1.298.536-2.56 1.425-3.286.376-.308.862 0 1.035.454C4.46 8.487 5.581 8.419 6 8c.282-.282.341-.811-.003-1.5C4.34 3.187 7.035.75 8.77.146c.39-.137.726.194.763.607ZM7.998 14.5c2.832 0 5-1.98 5-4.5 0-1.463-.68-2.19-1.879-3.383l-.036-.037c-1.013-1.008-2.3-2.29-2.834-4.434-.322.256-.63.579-.864.953-.432.696-.621 1.58-.046 2.73.473.947.67 2.284-.278 3.232-.61.61-1.545.84-2.403.633a2.79 2.79 0 0 1-1.436-.874A3.198 3.198 0 0 0 3 10c0 2.53 2.164 4.5 4.998 4.5Z"></path></svg> <strong>BDT 烧录与调试</strong> — 通过 <code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-bdt</span></code> 一键 Flash 烧录、读取、擦除</p>
+<blockquote>
+<div><p>&lt;/details&gt;
+&lt;br&gt;</p>
+</div></blockquote>
+</li>
+</ul>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction/index.html">UniSDK 简介</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#telink-semiconductor">泰凌微电子（Telink Semiconductor）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#unisdk-core-features-and-advantages">UniSDK 核心功能与优势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#architecture-overview">架构概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#supported-chip-families">支持的芯片系列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#license">许可证</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#community-resources">社区资源</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">概述</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/index.html#about-this-document">关于本文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/index.html#scope">适用范围</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/index.html#hardware-and-software-requirements">硬件和软件要求</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/index.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/environment_setup.html">搭建开发环境</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/environment_setup.html#vs-code-extension-recommended">VS Code 扩展（推荐）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/environment_setup.html#cli-setup-alternative">CLI 方式搭建（备选）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/environment_setup.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/get_sdk.html">获取和导入 SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/get_sdk.html#get-the-sdk">获取 SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/get_sdk.html#sdk-directory-structure">SDK 目录结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/get_sdk.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/first_example.html">Compile, Flash and Run Your First Example (VS Code)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/first_example.html#select-the-first-example">选择第一个示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/first_example.html#build-the-project">构建项目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/first_example.html#flash-the-firmware">烧录固件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/first_example.html#verify-the-result">验证结果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/first_example.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/troubleshooting.html">故障排除</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/troubleshooting.html#environment-issues">环境问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/troubleshooting.html#build-issues">构建问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/troubleshooting.html#menuconfig-issues">Menuconfig 问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/troubleshooting.html#getting-help">获取帮助</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">开发指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developing/index.html">开发指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/index.html#content-navigation">内容导航</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/index.html#quick-start-for-a-new-project">新项目快速入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/index.html#development-workflow-overview">开发工作流程概览</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/index.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_linux.html">Linux 环境搭建</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#system-requirements">系统要求</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#install-system-dependencies">安装系统依赖</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#set-up-python-virtual-environment">搭建 Python 虚拟环境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#initialize-west">初始化 West</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#configure-toolchain">配置工具链</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#configure-bdt-tool-optional">配置 BDT 工具（可选）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#verify-environment">验证环境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_macos.html">macOS 环境搭建</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#system-requirements">系统要求</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#install-system-dependencies">安装系统依赖</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#set-up-python-virtual-environment">搭建 Python 虚拟环境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#initialize-west">初始化 West</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#configure-toolchain">配置工具链</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#verify-environment">验证环境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_windows.html">Windows 环境搭建</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#system-requirements">系统要求</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#installation-methods">安装方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#configure-bdt-tool-optional">配置 BDT 工具（可选）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#verify-environment">验证环境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#common-issues">常见问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#notes">注意事项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/blinky.html">First Example: Blinky (CLI)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#prerequisites">前提条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#example-overview">示例概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#step-1-configure-chip-type">步骤 1：配置芯片类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#step-2-compilation">步骤 2：编译</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#step-3-flashing">步骤 3：烧录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#step-4-verification">步骤 4：验证</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#custom-modifications">自定义修改</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/directory_structure.html">SDK 目录结构</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/directory_structure.html#overall-structure">整体结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/directory_structure.html#key-directory-responsibilities">关键目录职责</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/directory_structure.html#code-organization-principles">代码组织原则</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/project_management.html">项目创建与管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#application-project-location">应用程序项目位置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#creating-a-new-project">创建新项目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#building-the-project">构建项目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#configuration-management">配置管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#cleaning">清理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#development-workflow-recommendations">开发工作流程建议</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/core_architecture.html">核心架构</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#system-startup-flow">系统启动流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#initialization-system">初始化系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#interrupt-management">中断管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#low-power-management">低功耗管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#context-switch-tl-context-s">上下文切换 (tl_context.S)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#clock-system">时钟系统</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/init_hooks.html">初始化钩子文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/init_hooks.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/init_hooks.html#concepts">概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/init_hooks.html#levels-priorities">级别与优先级</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/init_hooks.html#api-reference">API 参考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/init_hooks.html#additional-notes">补充说明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/public_api.html">API 文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/public_api.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/public_api.html#api-reference">API 参考</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/debugging.html">调试与测试</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#hardware-debugging">硬件调试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#software-debugging">软件调试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#performance-analysis">性能分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#debugging-with-gdb">使用 GDB 调试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#common-debugging-tips">常用调试技巧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/ide_integration.html">IDE 集成</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/ide_integration.html#vs-code-configuration-recommended">VS Code 配置（推荐）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/ide_integration.html#eclipse-configuration">Eclipse 配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/ide_integration.html#segger-embedded-studio">Segger Embedded Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/ide_integration.html#next-steps">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/clangd.html">VSCode 的 clangd 设置指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/clangd.html#what-is-clangd">什么是 clangd？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/clangd.html#why-use-clangd">为什么使用 clangd？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/clangd.html#key-files">关键文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/clangd.html#installing-and-setup">安装与设置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/clangd.html#troubleshooting">故障排除</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">芯片与开发板</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/index.html">芯片与开发板</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/index.html#chip-series-overview">芯片系列概览</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/index.html#selecting-a-chip">选择芯片</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/index.html#board-list">开发板列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/index.html#chip-and-board-pair-validation">芯片与开发板配对验证</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/index.html#specifying-at-build-time">构建时指定</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TL321X.html">TL321X 芯片系列</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL321X.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL321X.html#core-parameters">核心参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL321X.html#memory">存储器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL321X.html#peripheral-list">外设列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL321X.html#supported-boards">支持的开发板</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TL721X.html">TL721X 芯片系列</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL721X.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL721X.html#core-parameters">核心参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL721X.html#memory">存储器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL721X.html#peripheral-list">外设列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL721X.html#supported-boards">支持的开发板</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TLSR922X.html">TLSR922X 芯片系列</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR922X.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR922X.html#core-parameters">核心参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR922X.html#memory">存储器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR922X.html#peripheral-list">外设列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR922X.html#supported-boards">支持的开发板</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TLSR952X.html">TLSR952X 芯片系列</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR952X.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR952X.html#core-parameters">核心参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR952X.html#memory">存储器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR952X.html#peripheral-list">外设列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR952X.html#supported-boards">支持的开发板</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TL3218X_EVK.html">TL3218X_EVK 开发板</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TL3218X_EVK.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TL3218X_EVK.html#building">构建</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TL7218X_EVK.html">TL7218X_EVK 开发板</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TL7218X_EVK.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TL7218X_EVK.html#building">构建</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9228A_EVK.html">TLSR9228A_EVK 开发板</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9228A_EVK.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9228A_EVK.html#building">构建</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9528A_EVK.html">TLSR9528A_EVK 开发板</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9528A_EVK.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9528A_EVK.html#building">构建</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9528A_DONGLE.html">TLSR9528A_DONGLE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9528A_DONGLE.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9528A_DONGLE.html#building">构建</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外设与驱动</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/index.html">外设与驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/index.html#driver-overview">驱动概览</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/index.html#driver-programming-model">驱动编程模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/index.html#kconfig-configuration">Kconfig 配置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/gpio.html">GPIO 驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/gpio.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/gpio.html#data-types-and-enums">数据类型与枚举</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/gpio.html#driver-api">驱动 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/gpio.html#kconfig-configuration">Kconfig 配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/gpio.html#related-resources">相关资源</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/uart.html">UART 驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#data-types-and-enums">数据类型与枚举</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#driver-api">驱动 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#transfer-modes">传输模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#kconfig-configuration">Kconfig 配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#related-resources">相关资源</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/pm.html">Power Management (PM) Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#sleep-modes">Sleep Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#wakeup-sources">Wakeup Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#gpio-wakeup-level">GPIO Wakeup Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#driver-api">Driver API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#typical-usage">Typical Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#kconfig-configuration">Kconfig Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#related-resources">Related Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/analog.html">模拟驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/analog.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/analog.html#api-reference">API 参考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/analog.html#register-definitions">寄存器定义</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/plic.html">PLIC 中断控制器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#data-types-and-enums">数据类型和枚举</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#api-reference">API 参考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#plic-configuration">PLIC 配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#interrupt-handling-modes">中断处理模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#interrupt-nesting">中断嵌套</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#integration-with-gpio-interrupts">与 GPIO 中断的集成</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/i2c.html">I2C 驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/i2c.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/i2c.html#api-reference">API 参考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/i2c.html#samples">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/spi.html">SPI 驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/spi.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/spi.html#api-reference">API 参考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/spi.html#samples">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/adc.html">ADC 驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/adc.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/adc.html#samples">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/dma.html">DMA 驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/dma.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/dma.html#samples">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/wdt.html">看门狗驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/wdt.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/wdt.html#samples">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/timer.html">定时器驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/timer.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/timer.html#samples">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/usb.html">USB 驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/usb.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/usb.html#samples">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/pmp.html">PMP 驱动</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#address-matching-modes">地址匹配模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#permissions">权限</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#lock">锁定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#configuration">配置</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">连接性</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="connectivity/index.html">连接性</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#code-location">代码位置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#coding-standards">编码规范</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#kconfig-configuration">Kconfig 配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#examples">示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#planned">规划中</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity/ble/controller.html">BLE 控制器编码规范</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/ble/controller.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/ble/controller.html#file-naming">文件命名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/ble/controller.html#function-naming">函数命名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/ble/controller.html#variable-naming">变量命名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/ble/controller.html#interrupt-functions">中断函数</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">系统服务</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="system_services/index.html">系统服务</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="system_services/index.html#currently-available-components">当前可用组件</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">构建与配置</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build_config/index.html">构建与配置</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/index.html#core-components">核心组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/index.html#three-build-methods">三种构建方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/index.html#documentation-navigation">文档导航</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/index.html#build-system-architecture">构建系统架构</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/cmake_system.html">CMake 构建系统</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#entry-point-modes">入口模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#module-loading-order">模块加载顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#core-module-details">核心模块详情</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#configuration-flow">配置流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#include-guard-mechanism">包含保护机制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#build-directory-structure">构建目录结构</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/kconfig_system.html">Kconfig 配置系统</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/kconfig_system.html#architecture">架构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/kconfig_system.html#configuration-generation-flow">配置生成流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/kconfig_system.html#key-scripts">关键脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/kconfig_system.html#menuconfig-trigger-methods">Menuconfig 触发方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/kconfig_system.html#configuration-option-examples">配置选项示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/west_commands.html">West 命令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#command-registration">命令注册</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#west-tl-build-build"><code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-build</span></code> — 构建</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#west-tl-config-configuration"><code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-config</span></code> — 配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#west-tl-bdt-burning-debugging"><code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-bdt</span></code> — 烧录与调试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#west-tl-boards-board-information"><code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-boards</span></code> — 板卡信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#west-tl-socs-chip-information"><code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-socs</span></code> — 芯片信息</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/make_support.html">Make 支持</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/make_support.html#makefile-targets">Makefile 目标</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/make_support.html#makefile-variables">Makefile 变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/make_support.html#usage-examples">使用示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/make_support.html#build-flow-make-build">构建流程（make build）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/make_support.html#soc-board-parameter-forwarding">SOC/BOARD 参数转发</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/build_flow.html">构建流程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#complete-build-flow">完整构建流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#getting-started-guide">入门指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#six-phases">六个阶段</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#configuration-commands">配置命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#basic-build-commands">基本构建命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#configuration-file-generation-logic">配置文件生成逻辑</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#build-results">构建结果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#building-without-west">不使用 West 构建</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#troubleshooting">故障排除</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/build_system_architecture.html">UniSDK 构建系统架构文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#overall-architecture-overview">1. Overall Architecture Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#cmake-build-system">2. CMake Build System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#kconfig-configuration-system">3. Kconfig Configuration System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#west-compilation-support">4. West Compilation Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#make-support">5. Make Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#compilation-generation-flow">6. Compilation Generation Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#files-and-scripts-composition">7. Files and Scripts Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#build-system-working-principles">8. Build System Working Principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#extension-and-customization">9. Extension and Customization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/extensions.html">扩展与定制</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/extensions.html#adding-new-cmake-modules">添加新的 CMake 模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/extensions.html#extending-west-commands">扩展 West 命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/extensions.html#adding-kconfig-configuration">添加 Kconfig 配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/extensions.html#adding-new-applications">添加新的应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/extensions.html#west-command-behavior-notes">West 命令行为说明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/reference.html">文件与脚本参考</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/reference.html#core-configuration-files">核心配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/reference.html#build-artifacts-build-directory">构建产物（build/ 目录）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/reference.html#cmake-files">CMake 文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/reference.html#build-scripts-scripts">构建脚本（scripts/）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/reference.html#kconfig-files">Kconfig 文件</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">开发工具</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tools/index.html">开发工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/index.html#tool-overview">工具概览</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/bdt.html">BDT 烧录和调试工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#supported-operations">支持的操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#quick-start">快速开始</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#flash-operations">Flash 操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#bdt-path-configuration">BDT 路径配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#cross-platform-notes">跨平台说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#faq">常见问题</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/pinmux.html">Pinmux 引脚配置工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#launch-methods">启动方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#main-view">主视图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#selecting-a-function">选择功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#shortcuts">快捷键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#saving">保存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#file-format">文件格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#overriding-mechanism">覆盖机制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#internal-execution-flow">内部执行流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#configuration-file-locations">配置文件位置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#build-integration">构建集成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#ci">CI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/menuconfig.html">Menuconfig 配置界面</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#launch-methods">启动方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#navigation-and-operations">导航与操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#dual-phase-configuration">双阶段配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#results">结果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#internal-execution-flow">内部执行流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#faq">常见问题</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">安全</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security/index.html">安全</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">生产指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="productization/index.html">生产指南</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">示例与演示</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="samples/index.html">示例与演示</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/index.html#sample-list">示例列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/index.html#building-samples">构建示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/gpio.html">GPIO 示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/gpio.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/gpio.html#features-demonstrated">功能演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/gpio.html#how-it-works">工作原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/gpio.html#configuration-options">配置选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/gpio.html#build-run">构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/uart.html">UART 示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/uart.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/uart.html#features-demonstrated">功能演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/uart.html#how-it-works">工作原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/uart.html#configuration-options">配置选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/uart.html#build-run">构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/pm.html">PM 电源管理示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/pm.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pm.html#features-demonstrated">功能演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pm.html#how-it-works">工作原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pm.html#configuration-options">配置选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pm.html#build-run">构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/pmp.html">PMP 驱动示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/pmp.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pmp.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pmp.html#how-it-works">工作原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pmp.html#configuration">配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pmp.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/umode.html">U-mode 驱动示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/umode.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/umode.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/umode.html#how-it-works">工作原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/umode.html#configuration">配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/umode.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/adc.html">ADC 示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/adc.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/adc.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/adc.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/adc.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/adc.html#build-run">构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/dma.html">DMA 示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/dma.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/dma.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/dma.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/dma.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/dma.html#build-run">构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/i2c.html">I2C 示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2c.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2c.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2c.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2c.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2c.html#build-run">构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/spi.html">SPI 示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/spi.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/spi.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/spi.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/spi.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/spi.html#build-run">构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/i2s.html">I2S Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2s.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2s.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2s.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2s.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2s.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/ble.html">BLE 示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#build-run">构建与运行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#related-resources">相关资源</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/ble_host.html">BLE Host Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble_host.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble_host.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble_host.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble_host.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble_host.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/rf.html">RF Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/rf.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/rf.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/rf.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/rf.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/rf.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/irq_nesting.html">IRQ 嵌套示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/irq_nesting.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/irq_nesting.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/irq_nesting.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/irq_nesting.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/irq_nesting.html#build-run">构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/stimer.html">STIMER 示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/stimer.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/stimer.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/stimer.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/stimer.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/stimer.html#build-run">构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/wdt.html">看门狗示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/wdt.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/wdt.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/wdt.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/wdt.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/wdt.html#build-run">构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/usb_cdc.html">USB CDC 示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/usb_cdc.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/usb_cdc.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/usb_cdc.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/usb_cdc.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/usb_cdc.html#build-run">构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/random.html">Random Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/random.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/random.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/random.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/random.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/random.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/nv_storage.html">NV Storage Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/nv_storage.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/nv_storage.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/nv_storage.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/nv_storage.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/nv_storage.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/system_log.html">System Log Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/system_log.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/system_log.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/system_log.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/system_log.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/system_log.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/task_planner.html">Task Planner Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/task_planner.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/task_planner.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/task_planner.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/task_planner.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/task_planner.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/audio.html">Audio Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/audio.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/audio.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/audio.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/audio.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/audio.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/mbedtls.html">mbedTLS Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/mbedtls.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mbedtls.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mbedtls.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mbedtls.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mbedtls.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/mcuboot.html">MCUboot Bootloader Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/mcuboot.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mcuboot.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mcuboot.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mcuboot.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mcuboot.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API 参考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/index.html">API 参考</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/index.html#auto-generation-notes">自动生成说明</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kconfig_reference/index.html">Kconfig 参考</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kconfig_reference/index.html#planned-content">计划内容</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kconfig_reference/index.html#implementation-plan">实现计划</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="yaml_reference/index.html">YAML 描述参考</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="yaml_reference/index.html#planned-content">计划内容</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml_reference/index.html#implementation-plan">实现计划</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">社区</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="releases/index.html">发布版本</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="releases/index.html#version-naming-convention">版本命名规范</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/index.html#current-version">当前版本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/index.html#version-compatibility">版本兼容性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/index.html#version-history">版本历史</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/index.html#upgrade-guide">升级指南</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="releases/0.2.0/Unified_SDK_Release_Note.html">V0.2.0(FR)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.2.0/Unified_SDK_Release_Note.html#version">版本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.2.0/Unified_SDK_Release_Note.html#codesize">代码大小</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html">V0.3.0(FR)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#version">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#bug-fixes">Bug Fixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#breaking-changes">BREAKING CHANGES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#note">Note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#royalty-fee-for-certain-audio-codec">Royalty fee for certain Audio Codec:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#codesize">CodeSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribute/index.html">贡献指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#documentation-repository-unisdk-doc">文档仓库：unisdk-doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#document-version-vs-sdk-version">文档版本与 SDK 版本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#release-process">发布流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#multi-version-maintenance">多版本维护</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#ci-cd-behavior">CI/CD 行为</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#document-structure-standards">文档结构标准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#submitting-issues">提交 Issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#code-standards-sdk-contributions">代码规范（SDK 贡献）</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="support/index.html">技术支持</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="support/index.html#contact-us">联系我们</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support/index.html#submitting-issues">提交问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support/index.html#community-resources">社区资源</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support/index.html#faq">常见问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support/index.html#resource-links">资源链接</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">UniSDK 术语表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#build-system">构建系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#west-tool">West 工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#hardware-abstraction">硬件抽象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#kconfig-configuration">Kconfig 配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#peripherals-drivers">外设与驱动</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#document-status-markers">文档状态标记</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="about/index.html">关于 Telink Semiconductor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about/index.html#our-mission">我们的使命</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/index.html#technology-leadership">技术领先</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/index.html#global-presence">全球布局</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/index.html#why-telink">为什么选择 Telink？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/index.html#learn-more">了解更多</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>本文档使用 <strong>Sphinx</strong> 构建。先前基于 MkDocs 的构建系统已被替换。有关文档贡献指南，请参阅 <a class="reference internal" href="contribute/index.html"><span class="doc">贡献指南</span></a>。</p>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="introduction/index.html"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">UniSDK 简介</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： Telink Semiconductor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Telink Semiconductor.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+<div style="text-align: right; margin-top: 1rem; padding: 0.5rem 1rem; border-top: 1px solid #eee;">
+  <a href="_downloads/unisdk-doc.pdf" style="font-size: 0.85rem; color: #0a2d72; text-decoration: none;">
+    &#128196; Download PDF
+  </a>
+</div>
+<script>
+var currentVersion = "0.3.0";
+var currentLang = "zh";
+</script>
+<script>
+(function() {
+  'use strict';
+  function injectSwitchers() {
+    var navbarEnd = document.querySelector(".navbar-header-items__end");
+    if (!navbarEnd) return;
+
+    var langHtml = [
+      '<div class="navbar-item">',
+      '  <div class="language-selector">',
+      '    <select id="language-select" onchange="switchLanguage(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="en"' + (currentLang === "en" ? " selected" : "") + '>English</option>',
+      '      <option value="zh"' + (currentLang === "zh" ? " selected" : "") + '>中文</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", langHtml);
+
+    var verHtml = [
+      '<div class="navbar-item">',
+      '  <div class="version-selector">',
+      '    <select id="version-select" onchange="switchVersion(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="">Loading...</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", verHtml);
+
+    var script = document.createElement("script");
+    script.src = "_static/version_switcher.js";
+    document.body.appendChild(script);
+  }
+
+  function switchLanguage(lang) {
+    var currentPath = window.location.pathname;
+    var newPath = currentPath.replace(/\/[a-z]{2}\//, "/" + lang + "/");
+    if (newPath !== currentPath) {
+      window.location.href = newPath;
+    }
+  }
+
+  window.switchVersion = function(url) {
+    if (url) {
+      window.location.href = url;
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", injectSwitchers);
+  } else {
+    injectSwitchers();
+  }
+})();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var versionBadge = document.createElement("span");
+    versionBadge.className = "version-badge";
+    versionBadge.textContent = "0.3.0";
+    var footer = document.querySelector(".telink-footer .footer-copyright");
+    if (footer) {
+      footer.appendChild(versionBadge);
+    }
+  });
+</script>
+
+
+<footer class="telink-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Telink Semiconductor</h5>
+        <p style="font-size: 0.85rem; opacity: 0.8;">
+          Leading provider of low-power, high-performance wireless connectivity
+          SoC solutions for IoT, industrial, and automotive applications.
+        </p>
+      </div>
+      <div class="col-md-2">
+        <h5>Resources</h5>
+        <ul class="footer-links">
+          <li><a href="https://www.telink-semi.cn/" target="_blank">Official Website</a></li>
+          <li><a href="https://doc.telink-semi.cn/" target="_blank">Documentation Center</a></li>
+          <li><a href="https://forum.telink-semi.cn/" target="_blank">Technical Forum</a></li>
+          <li><a href="https://products.telink-semi.cn/" target="_blank">Product Selector</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Developers</h5>
+        <ul class="footer-links">
+          <li><a href="https://github.com/telink-semi/unisdk" target="_blank">UniSDK on GitHub</a></li>
+          <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank">Docs Repository</a></li>
+          <li><a href="https://gitee.com/telink-semi" target="_blank">Gitee Repository</a></li>
+          <li><a href="https://www.telink-semi.cn/development-tools" target="_blank">Development Tools</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="support/index">Contact Support</a></li>
+          <li><a href="https://www.telink-semi.cn/applications" target="_blank">Applications</a></li>
+          <li><a href="about/index">About Telink</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Connect</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:telinksales@telink-semi.com">Sales Inquiry</a></li>
+          <li><a href="https://www.telink-semi.cn/news" target="_blank">News & Events</a></li>
+          <li><a href="https://www.telink-semi.cn/careers" target="_blank">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; Telink Semiconductor. All rights reserved.
+      
+      <span class="version-badge">0.3.0</span>
+      
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

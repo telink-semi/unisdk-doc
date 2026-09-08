@@ -1,0 +1,1055 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pinmux 引脚配置工具 &#8212; UniSDK 0.3.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=3aef283f" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../_static/documentation_options.js?v=5520cb33"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tools/pinmux';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/favicon.svg"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Menuconfig 配置界面" href="menuconfig.html" />
+    <link rel="prev" title="BDT 烧录和调试工具" href="bdt.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh"/>
+  <meta name="docsearch:version" content="0.3.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<link rel="stylesheet" href="../_static/extra.css" />
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="当前页面">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="UniSDK 0.3.0 文档 - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="UniSDK 0.3.0 文档 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    UniSDK — Telink 统一软件开发套件
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">UniSDK 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/environment_setup.html">搭建开发环境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/get_sdk.html">获取和导入 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/first_example.html">Compile, Flash and Run Your First Example (VS Code)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/troubleshooting.html">故障排除</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">开发指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developing/index.html">开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_linux.html">Linux 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_macos.html">macOS 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_windows.html">Windows 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/blinky.html">First Example: Blinky (CLI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/directory_structure.html">SDK 目录结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project_management.html">项目创建与管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/core_architecture.html">核心架构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/init_hooks.html">初始化钩子文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/public_api.html">API 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/debugging.html">调试与测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/ide_integration.html">IDE 集成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/clangd.html">VSCode 的 clangd 设置指南</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">芯片与开发板</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/index.html">芯片与开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TL321X.html">TL321X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TL721X.html">TL721X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TLSR922X.html">TLSR922X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TLSR952X.html">TLSR952X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TL3218X_EVK.html">TL3218X_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TL7218X_EVK.html">TL7218X_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9228A_EVK.html">TLSR9228A_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9528A_EVK.html">TLSR9528A_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9528A_DONGLE.html">TLSR9528A_DONGLE</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外设与驱动</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/index.html">外设与驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/gpio.html">GPIO 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/uart.html">UART 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/pm.html">Power Management (PM) Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/analog.html">模拟驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/plic.html">PLIC 中断控制器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/i2c.html">I2C 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/spi.html">SPI 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/adc.html">ADC 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/dma.html">DMA 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/wdt.html">看门狗驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/timer.html">定时器驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/usb.html">USB 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/pmp.html">PMP 驱动</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">连接性</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../connectivity/index.html">连接性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../connectivity/ble/controller.html">BLE 控制器编码规范</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">系统服务</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../system_services/index.html">系统服务</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">构建与配置</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../build_config/index.html">构建与配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/cmake_system.html">CMake 构建系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/kconfig_system.html">Kconfig 配置系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/west_commands.html">West 命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/make_support.html">Make 支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/build_flow.html">构建流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/build_system_architecture.html">UniSDK 构建系统架构文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/extensions.html">扩展与定制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/reference.html">文件与脚本参考</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">开发工具</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">开发工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdt.html">BDT 烧录和调试工具</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pinmux 引脚配置工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menuconfig.html">Menuconfig 配置界面</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">安全</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">安全</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">生产指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../productization/index.html">生产指南</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">示例与演示</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../samples/index.html">示例与演示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/gpio.html">GPIO 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/uart.html">UART 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/pm.html">PM 电源管理示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/pmp.html">PMP 驱动示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/umode.html">U-mode 驱动示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/adc.html">ADC 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/dma.html">DMA 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/i2c.html">I2C 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/spi.html">SPI 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/i2s.html">I2S Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/ble.html">BLE 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/ble_host.html">BLE Host Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/rf.html">RF Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/irq_nesting.html">IRQ 嵌套示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/stimer.html">STIMER 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/wdt.html">看门狗示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/usb_cdc.html">USB CDC 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/random.html">Random Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/nv_storage.html">NV Storage Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/system_log.html">System Log Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/task_planner.html">Task Planner Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/audio.html">Audio Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/mbedtls.html">mbedTLS Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/mcuboot.html">MCUboot Bootloader Sample</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API 参考</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api_reference/index.html">API 参考</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../kconfig_reference/index.html">Kconfig 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../yaml_reference/index.html">YAML 描述参考</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">社区</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">发布版本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/0.2.0/Unified_SDK_Release_Note.html">V0.2.0(FR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/0.3.0/Unified_SDK_Release_Note.html">V0.3.0(FR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">技术支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../terminology.html">UniSDK 术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">关于 Telink Semiconductor</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="源码库"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/edit/main/tools/pinmux.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/issues/new?title=Issue%20on%20page%20%2Ftools/pinmux.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="创建议题"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tools/pinmux.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="亮色"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="暗色"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>亮色</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>暗色</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pinmux 引脚配置工具</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">概述</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-methods">启动方式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-view">主视图</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-a-function">选择功能</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcuts">快捷键</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving">保存</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-format">文件格式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overriding-mechanism">覆盖机制</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-execution-flow">内部执行流程</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading-synchronization">数据加载与同步</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-a-pin-function">更改引脚功能</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-saving-process">保存过程</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-pinmux-h">生成 pinmux.h</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file-locations">配置文件位置</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-integration">构建集成</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci">CI</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pinmux-pin-configuration-tool">
+<h1>Pinmux 引脚配置工具<a class="headerlink" href="#pinmux-pin-configuration-tool" title="链接到此标题。">#</a></h1>
+<section id="overview">
+<h2>概述<a class="headerlink" href="#overview" title="链接到此标题。">#</a></h2>
+<p>Pinmux（引脚复用）工具是 UniSDK 提供的图形化引脚配置工具，帮助开发者在终端中可视化配置芯片引脚复用功能。</p>
+<p><strong>主要特性：</strong></p>
+<ul class="simple">
+<li><p>图形化终端界面（基于 Textual 框架）</p></li>
+<li><p>通过交互式弹出菜单可视化选择引脚功能</p></li>
+<li><p>引脚配置冲突检测</p></li>
+<li><p>需求验证（确保所有必需功能已分配）</p></li>
+<li><p>支持多种芯片封装变体</p></li>
+<li><p>与 Kconfig 配置系统集成</p></li>
+<li><p>自动生成 <code class="docutils literal notranslate"><span class="pre">pinmux.h</span></code> 头文件</p></li>
+</ul>
+</section>
+<section id="launch-methods">
+<h2>启动方式<a class="headerlink" href="#launch-methods" title="链接到此标题。">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Method 1: Via CMake target</span>
+make<span class="w"> </span>pinmux
+
+<span class="c1"># Method 2: Direct Python module invocation</span>
+python<span class="w"> </span>-m<span class="w"> </span>scripts.pinmux
+
+<span class="c1"># Method 3: Skip GUI, generate default configuration</span>
+python<span class="w"> </span>-m<span class="w"> </span>scripts.pinmux<span class="w"> </span>--skip-gui
+</pre></div>
+</div>
+</section>
+<section id="main-view">
+<h2>主视图<a class="headerlink" href="#main-view" title="链接到此标题。">#</a></h2>
+<p>打开后，您将看到主仪表板：</p>
+<ul class="simple">
+<li><p><strong>端口：</strong> 所有 GPIO 口的可滚动垂直列表（例如 PORT A、PORT B）</p></li>
+<li><p><strong>引脚：</strong> 在每个端口部分内，各个引脚显示为交互式按钮，显示引脚名称及其当前分配的功能</p></li>
+</ul>
+<p><img alt="Pinmux 界面概览" src="../_images/pinmux_1.png" /> <em>图 1. Pinmux 界面概览，显示 GPIO 端口、引脚和已分配的功能。</em></p>
+</section>
+<section id="selecting-a-function">
+<h2>选择功能<a class="headerlink" href="#selecting-a-function" title="链接到此标题。">#</a></h2>
+<ol class="arabic simple">
+<li><p>点击引脚（或导航到该引脚并按 <strong>Enter</strong>）</p></li>
+<li><p>将弹出一个标题为 <strong>Function Select</strong> 的窗口</p></li>
+<li><p>列表显示该特定引脚支持的所有硬件功能</p></li>
+<li><p>选择所需功能（例如 <code class="docutils literal notranslate"><span class="pre">UART0_RX</span></code>）或选择 <strong>NONE</strong> 禁用引脚</p></li>
+<li><p>按 <strong>Enter</strong> 确认</p></li>
+</ol>
+<p><img alt="功能选择界面" src="../_images/pinmux_2.png" /> <em>图 2. GPIO 引脚的功能选择界面。</em></p>
+</section>
+<section id="shortcuts">
+<h2>快捷键<a class="headerlink" href="#shortcuts" title="链接到此标题。">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>按键</p></th>
+<th class="head"><p>操作</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>s</strong>（保存）</p></td>
+<td><p>验证配置 — 检查冲突和缺失功能。如果有效，保存并退出。如果无效，显示错误通知</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>q</strong>（退出）</p></td>
+<td><p>退出应用程序。如果有未保存的修改，将显示确认对话框</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>验证错误发生在以下情况：</p>
+<ul class="simple">
+<li><p>必需功能未分配给引脚（例如 UART0 已启用但 UART0_TX 未分配）</p></li>
+<li><p>存在引脚冲突（例如 UART0_TX 同时分配给 PC3 和 PC4）</p></li>
+</ul>
+<p><img alt="退出界面" src="../_images/pinmux_3.png" /> <em>图 3. 退出界面。</em></p>
+</section>
+<section id="saving">
+<h2>保存<a class="headerlink" href="#saving" title="链接到此标题。">#</a></h2>
+<p>配置将保存到名为 <code class="docutils literal notranslate"><span class="pre">&lt;SoC</span> <span class="pre">or</span> <span class="pre">board</span> <span class="pre">name&gt;.&lt;soc</span> <span class="pre">or</span> <span class="pre">board&gt;.pinmux</span></code> 的文件中。例如，为 TL3218X_EVK 构建将生成 <code class="docutils literal notranslate"><span class="pre">TL3218X_EVK.board.pinmux</span></code>。</p>
+<p>此 <code class="docutils literal notranslate"><span class="pre">.pinmux</span></code> 文件包含人类可读格式的引脚到功能映射，并在再次调用工具时用于恢复先前的引脚设置。</p>
+<p>此外，根据保存的设置，在构建文件夹中生成 <code class="docutils literal notranslate"><span class="pre">pinmux.h</span></code>，其中包含固件代码可用的 C 预处理器定义。</p>
+<p><code class="docutils literal notranslate"><span class="pre">.pinmux</span></code> 文件会持续存在直到项目切换，允许在切换芯片时恢复先前的引脚设置。</p>
+</section>
+<section id="file-format">
+<h2>文件格式<a class="headerlink" href="#file-format" title="链接到此标题。">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">.pinmux</span></code> 文件使用简单的键值格式：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PC4</span><span class="o">=</span><span class="n">UART0_TX</span>
+<span class="n">PB2</span><span class="o">=</span><span class="n">UART0_RX</span>
+<span class="n">PA0</span><span class="o">=</span><span class="n">GPIO_OUTPUT</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>每行代表一个引脚分配</p></li>
+<li><p>所有字母均为大写</p></li>
+<li><p>格式：<code class="docutils literal notranslate"><span class="pre">&lt;引脚名称&gt;=&lt;功能名称&gt;</span></code></p></li>
+<li><p>引脚名称由字母 <strong>P</strong>、端口字母和引脚编号组成</p></li>
+</ul>
+<p>解析过程中，以下行将被忽略：</p>
+<ul class="simple">
+<li><p>不符合格式的无效数据</p></li>
+<li><p>引用不存在的引脚或功能的有效数据</p></li>
+<li><p>分配给当前配置中禁用的端口上的引脚</p></li>
+<li><p>分配给当前配置中未启用的功能</p></li>
+</ul>
+</section>
+<section id="overriding-mechanism">
+<h2>覆盖机制<a class="headerlink" href="#overriding-mechanism" title="链接到此标题。">#</a></h2>
+<p>每次调用 pinmux 时，数据按以下顺序加载（每个覆盖前一个）：</p>
+<ol class="arabic simple">
+<li><p><strong>SoC 默认值</strong> — 来自 <code class="docutils literal notranslate"><span class="pre">soc/&lt;soc&gt;/pinmux/function.yaml</span></code>（用于开发）</p></li>
+<li><p><strong>项目 <code class="docutils literal notranslate"><span class="pre">.pinmux</span></code></strong> — 在项目目录中（为任意芯片设置自定义默认值）</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;identifier&gt;.pinmux</span></code></strong> — 在项目目录中（芯片特定覆盖）</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;identifier&gt;.pinmux</span></code></strong> — 在构建目录中（上次实际用户引脚设置）</p></li>
+</ol>
+<p>这使得项目可以拥有开箱即用的引脚设置，同时仍允许自定义。</p>
+</section>
+<section id="internal-execution-flow">
+<h2>内部执行流程<a class="headerlink" href="#internal-execution-flow" title="链接到此标题。">#</a></h2>
+<section id="data-loading-synchronization">
+<h3>数据加载与同步<a class="headerlink" href="#data-loading-synchronization" title="链接到此标题。">#</a></h3>
+<p>当应用程序启动时，它会合并多个数据源：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">soc/&lt;soc&gt;/pinmux/function.yaml</span></code> — &quot;功能定义&quot;：描述芯片的所有可用功能</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">soc/&lt;soc&gt;/pinmux/pinmux.yaml</span></code> — &quot;字典&quot;：列出每个物理引脚及其支持的功能。每个端口可以有一个 <code class="docutils literal notranslate"><span class="pre">exclude</span></code> 属性，描述其引脚不支持哪些功能。单个引脚也可以使用 <code class="docutils literal notranslate"><span class="pre">exclude</span></code> 和 <code class="docutils literal notranslate"><span class="pre">include</span></code> 属性。限制按以下顺序应用：端口的 exclude → 引脚的 exclude → 引脚的 include。为简化起见，<code class="docutils literal notranslate"><span class="pre">all</span></code> 关键字表示所有功能。对于功能组，可以使用组名称（例如 <code class="docutils literal notranslate"><span class="pre">uart0</span></code> 代表 <code class="docutils literal notranslate"><span class="pre">uart0_tx</span></code>、<code class="docutils literal notranslate"><span class="pre">uart0_rx</span></code>、<code class="docutils literal notranslate"><span class="pre">uart0_cts</span></code> 和 <code class="docutils literal notranslate"><span class="pre">uart0_rts</span></code>；<code class="docutils literal notranslate"><span class="pre">uart</span></code> 涵盖 <code class="docutils literal notranslate"><span class="pre">uart0</span></code>、<code class="docutils literal notranslate"><span class="pre">uart1</span></code> 等）。如果某个引脚仅支持一个确切功能，请使用 <code class="docutils literal notranslate"><span class="pre">exclude:</span> <span class="pre">all</span></code> 配合 <code class="docutils literal notranslate"><span class="pre">include:</span> <span class="pre">your_function</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">soc/&lt;soc&gt;/pinmux/pinmux_&lt;case&gt;.yaml</span></code> — &quot;限制&quot;：通过分配 <code class="docutils literal notranslate"><span class="pre">delete</span></code> 关键字覆盖 <code class="docutils literal notranslate"><span class="pre">pinmux.yaml</span></code>，以移除特定芯片封装的引脚或端口</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.config</span></code> — &quot;需求&quot;：告知应用程序哪些驱动已启用（例如 &quot;UART0 已启用，因此我们需要 TX 和 RX 的引脚&quot;）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.pinmux</span></code> 文件 — 之前的用户配置（参见覆盖机制）</p></li>
+</ul>
+<p><strong>加载顺序：</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.config</span></code> 文件，包含当前配置并标识当前芯片。</p></li>
+<li><p>来自 <code class="docutils literal notranslate"><span class="pre">function.yaml</span></code> 的功能描述，跳过配置中禁用的功能。</p></li>
+<li><p>来自选定芯片的 <code class="docutils literal notranslate"><span class="pre">pinmux.yaml</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pinmux_&lt;case&gt;.yaml</span></code> 的端口和引脚描述。</p></li>
+<li><p>按照<a class="reference internal" href="#overriding-mechanism">覆盖机制</a>部分描述的顺序加载 <code class="docutils literal notranslate"><span class="pre">.pinmux</span></code> 文件。</p></li>
+</ol>
+</section>
+<section id="changing-a-pin-function">
+<h3>更改引脚功能<a class="headerlink" href="#changing-a-pin-function" title="链接到此标题。">#</a></h3>
+<p>当一个引脚选择新功能时，将立即发生以下操作：</p>
+<ul class="simple">
+<li><p><strong>冲突检查：</strong> 系统扫描所有其他引脚。如果您尝试将唯一功能（如 <code class="docutils literal notranslate"><span class="pre">UART0_TX</span></code>）分配给 PC0，但 PB2 已拥有该功能，系统会标记 <strong>冲突</strong>。</p></li>
+<li><p><strong>观察者更新：</strong> 应用程序使用&quot;观察者模式&quot;。</p>
+<ul>
+<li><p>引脚数据发生更改。</p></li>
+<li><p>UI 小部件收到通知并重新绘制自身（更新文本和颜色）。</p></li>
+<li><p>下一次在 <code class="docutils literal notranslate"><span class="pre">PinmuxManager</span></code> 中访问 <code class="docutils literal notranslate"><span class="pre">is_modified</span></code> 属性将返回 <code class="docutils literal notranslate"><span class="pre">True</span></code>，直到触发保存操作。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="the-saving-process">
+<h3>保存过程<a class="headerlink" href="#the-saving-process" title="链接到此标题。">#</a></h3>
+<p>当您按下保存（<code class="docutils literal notranslate"><span class="pre">s</span></code>）时，应用程序在写入磁盘前执行严格验证。</p>
+<p><strong>第 1 步：验证</strong></p>
+<ul class="simple">
+<li><p><strong>检查冲突：</strong> 是否有两个引脚分配到同一个不可重复的功能？如果是 → 报错。</p></li>
+<li><p><strong>检查需求：</strong> 配置所需的所有功能是否已分配给有效的引脚？如果否 → 报错。</p></li>
+</ul>
+<p><strong>第 2 步：写入</strong></p>
+<ul class="simple">
+<li><p>如果没有错误，引脚映射将使用简单的键值格式保存到 <code class="docutils literal notranslate"><span class="pre">&lt;identifier&gt;.pinmux</span></code> 文件中。</p></li>
+</ul>
+</section>
+<section id="generating-pinmux-h">
+<h3>生成 pinmux.h<a class="headerlink" href="#generating-pinmux-h" title="链接到此标题。">#</a></h3>
+<p>保存后，<code class="docutils literal notranslate"><span class="pre">pinmux.h</span></code> 将自动生成 C 预处理器定义：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define PINMUX_UART0_TX_PORT TLK_GPIO_PORT_C</span>
+<span class="cp">#define PINMUX_UART0_TX_PIN TLK_GPIO_PIN_4</span>
+<span class="cp">#define PINMUX_UART0_RX_PORT TLK_GPIO_PORT_B</span>
+<span class="cp">#define PINMUX_UART0_RX_PIN TLK_GPIO_PIN_2</span>
+<span class="cp">#define PINMUX_GPIO_OUTPUT_0_PORT TLK_GPIO_PORT_A</span>
+<span class="cp">#define PINMUX_GPIO_OUTPUT_0_PIN TLK_GPIO_PIN_0</span>
+<span class="cp">#define PINMUX_GPIO_OUTPUT_COUNT 1</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="configuration-file-locations">
+<h2>配置文件位置<a class="headerlink" href="#configuration-file-locations" title="链接到此标题。">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Pinmux 配置文件</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>soc/&lt;chip&gt;/pinmux/
+├── function.yaml          # Pin function definitions
+├── pinmux.yaml            # Pin multiplexing configuration
+├── pinmux_qfn48.yaml      # QFN48 package
+├── pinmux_qfn88.yaml      # QFN88 package
+└── ...
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="build-integration">
+<h2>构建集成<a class="headerlink" href="#build-integration" title="链接到此标题。">#</a></h2>
+<p>Pinmux 配置深度集成到构建系统中：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">generate_pinmux</span></code> CMake 目标在编译前自动执行</p></li>
+<li><p>预构建检查自动检测 <code class="docutils literal notranslate"><span class="pre">pinmux.h</span></code> 是否需要更新</p></li>
+<li><p>生成的 <code class="docutils literal notranslate"><span class="pre">pinmux.h</span></code> 放置在 <code class="docutils literal notranslate"><span class="pre">build/</span></code> 目录中，并自动添加到包含路径</p></li>
+</ul>
+</section>
+<section id="ci">
+<h2>CI<a class="headerlink" href="#ci" title="链接到此标题。">#</a></h2>
+<p>CI 在所有示例中使用单一配置。这是可行的，因为未使用的分配会被跳过，因此您只需考虑此文件中所有示例的引脚使用情况。在构建之前，CI 将此文件复制到构建目录。由于构建设置会在覆盖过程中最后应用，因此最终配置与文件中描述的配置一致 — 所有先前的设置均被覆盖。</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="bdt.html"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">BDT 烧录和调试工具</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="menuconfig.html"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">Menuconfig 配置界面</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">概述</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-methods">启动方式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-view">主视图</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-a-function">选择功能</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcuts">快捷键</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving">保存</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-format">文件格式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overriding-mechanism">覆盖机制</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-execution-flow">内部执行流程</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading-synchronization">数据加载与同步</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-a-pin-function">更改引脚功能</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-saving-process">保存过程</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-pinmux-h">生成 pinmux.h</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file-locations">配置文件位置</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-integration">构建集成</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci">CI</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： Telink Semiconductor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Telink Semiconductor.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+<div style="text-align: right; margin-top: 1rem; padding: 0.5rem 1rem; border-top: 1px solid #eee;">
+  <a href="../_downloads/unisdk-doc.pdf" style="font-size: 0.85rem; color: #0a2d72; text-decoration: none;">
+    &#128196; Download PDF
+  </a>
+</div>
+<script>
+var currentVersion = "0.3.0";
+var currentLang = "zh";
+</script>
+<script>
+(function() {
+  'use strict';
+  function injectSwitchers() {
+    var navbarEnd = document.querySelector(".navbar-header-items__end");
+    if (!navbarEnd) return;
+
+    var langHtml = [
+      '<div class="navbar-item">',
+      '  <div class="language-selector">',
+      '    <select id="language-select" onchange="switchLanguage(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="en"' + (currentLang === "en" ? " selected" : "") + '>English</option>',
+      '      <option value="zh"' + (currentLang === "zh" ? " selected" : "") + '>中文</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", langHtml);
+
+    var verHtml = [
+      '<div class="navbar-item">',
+      '  <div class="version-selector">',
+      '    <select id="version-select" onchange="switchVersion(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="">Loading...</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", verHtml);
+
+    var script = document.createElement("script");
+    script.src = "../_static/version_switcher.js";
+    document.body.appendChild(script);
+  }
+
+  function switchLanguage(lang) {
+    var currentPath = window.location.pathname;
+    var newPath = currentPath.replace(/\/[a-z]{2}\//, "/" + lang + "/");
+    if (newPath !== currentPath) {
+      window.location.href = newPath;
+    }
+  }
+
+  window.switchVersion = function(url) {
+    if (url) {
+      window.location.href = url;
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", injectSwitchers);
+  } else {
+    injectSwitchers();
+  }
+})();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var versionBadge = document.createElement("span");
+    versionBadge.className = "version-badge";
+    versionBadge.textContent = "0.3.0";
+    var footer = document.querySelector(".telink-footer .footer-copyright");
+    if (footer) {
+      footer.appendChild(versionBadge);
+    }
+  });
+</script>
+
+
+<footer class="telink-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Telink Semiconductor</h5>
+        <p style="font-size: 0.85rem; opacity: 0.8;">
+          Leading provider of low-power, high-performance wireless connectivity
+          SoC solutions for IoT, industrial, and automotive applications.
+        </p>
+      </div>
+      <div class="col-md-2">
+        <h5>Resources</h5>
+        <ul class="footer-links">
+          <li><a href="https://www.telink-semi.cn/" target="_blank">Official Website</a></li>
+          <li><a href="https://doc.telink-semi.cn/" target="_blank">Documentation Center</a></li>
+          <li><a href="https://forum.telink-semi.cn/" target="_blank">Technical Forum</a></li>
+          <li><a href="https://products.telink-semi.cn/" target="_blank">Product Selector</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Developers</h5>
+        <ul class="footer-links">
+          <li><a href="https://github.com/telink-semi/unisdk" target="_blank">UniSDK on GitHub</a></li>
+          <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank">Docs Repository</a></li>
+          <li><a href="https://gitee.com/telink-semi" target="_blank">Gitee Repository</a></li>
+          <li><a href="https://www.telink-semi.cn/development-tools" target="_blank">Development Tools</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="../support/index">Contact Support</a></li>
+          <li><a href="https://www.telink-semi.cn/applications" target="_blank">Applications</a></li>
+          <li><a href="../about/index">About Telink</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Connect</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:telinksales@telink-semi.com">Sales Inquiry</a></li>
+          <li><a href="https://www.telink-semi.cn/news" target="_blank">News & Events</a></li>
+          <li><a href="https://www.telink-semi.cn/careers" target="_blank">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; Telink Semiconductor. All rights reserved.
+      
+      <span class="version-badge">0.3.0</span>
+      
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

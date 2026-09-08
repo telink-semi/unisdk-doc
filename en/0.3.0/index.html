@@ -1,0 +1,1610 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>UniSDK — Telink Unified Software Development Kit &#8212; UniSDK 0.3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/extra.css?v=3aef283f" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="_static/documentation_options.js?v=83a61292"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="_static/favicon.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="UniSDK Introduction" href="introduction/index.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.3.0" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+<link rel="stylesheet" href="_static/extra.css" />
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="UniSDK 0.3.0 documentation - Home"/>
+    <img src="_static/logo.svg" class="logo__image only-dark pst-js-only" alt="UniSDK 0.3.0 documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    UniSDK — Telink Unified Software Development Kit
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction/index.html">UniSDK Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/environment_setup.html">Development Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/get_sdk.html">Get and Import the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/first_example.html">Compile, Flash and Run Your First Example (VS Code)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="developing/index.html">Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_linux.html">Linux Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_macos.html">macOS Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_windows.html">Windows Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/blinky.html">First Example: Blinky (CLI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/directory_structure.html">SDK Directory Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/project_management.html">Project Creation &amp; Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/core_architecture.html">Core Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/init_hooks.html">Init hooks documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/public_api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/debugging.html">Debugging &amp; Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/ide_integration.html">IDE Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing/clangd.html">clangd Setup Guide for VSCode</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chips &amp; Boards</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/index.html">Chips and Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TL321X.html">TL321X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TL721X.html">TL721X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TLSR922X.html">TLSR922X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TLSR952X.html">TLSR952X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TL3218X_EVK.html">TL3218X_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TL7218X_EVK.html">TL7218X_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9228A_EVK.html">TLSR9228A_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9528A_EVK.html">TLSR9528A_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9528A_DONGLE.html">TLSR9528A_DONGLE</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Peripherals &amp; Drivers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="peripherals/index.html">Peripherals and Drivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/gpio.html">GPIO Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/uart.html">UART Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/pm.html">Power Management (PM) Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/analog.html">Analog Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/plic.html">PLIC Interrupt Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/i2c.html">I2C Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/spi.html">SPI Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/adc.html">ADC Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/dma.html">DMA Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/wdt.html">Watchdog Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/timer.html">Timer Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/usb.html">USB Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/pmp.html">PMP Driver</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Connectivity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="connectivity/index.html">Connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity/ble/controller.html">BLE Controller Coding Standards</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">System Services</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="system_services/index.html">System Services</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Build &amp; Configuration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="build_config/index.html">Build &amp; Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/cmake_system.html">CMake Build System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/kconfig_system.html">Kconfig Configuration System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/west_commands.html">West Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/make_support.html">Make Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/build_flow.html">Build Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/build_system_architecture.html">UniSDK Build System Architecture Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/extensions.html">Extensions &amp; Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/reference.html">File &amp; Script Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tools/index.html">Development Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/bdt.html">BDT Burning and Debugging Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/pinmux.html">Pinmux Pin Configuration Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/menuconfig.html">Menuconfig Configuration Interface</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Security</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="security/index.html">Security</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Production Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="productization/index.html">Production Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Samples &amp; Demos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="samples/index.html">Samples &amp; Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/gpio.html">GPIO Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/uart.html">UART Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/pm.html">PM Power Management Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/pmp.html">PMP Driver Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/umode.html">U-mode Driver Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/adc.html">ADC Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/dma.html">DMA Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/i2c.html">I2C Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/spi.html">SPI Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/i2s.html">I2S Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/ble.html">BLE Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/ble_host.html">BLE Host Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/rf.html">RF Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/irq_nesting.html">IRQ Nesting Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/stimer.html">STIMER Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/wdt.html">Watchdog Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/usb_cdc.html">USB CDC Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/random.html">Random Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/nv_storage.html">NV Storage Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/system_log.html">System Log Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/task_planner.html">Task Planner Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/audio.html">Audio Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/mbedtls.html">mbedTLS Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/mcuboot.html">MCUboot Bootloader Sample</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="api_reference/index.html">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="kconfig_reference/index.html">Kconfig Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yaml_reference/index.html">YAML Description Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="releases/index.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases/0.2.0/Unified_SDK_Release_Note.html">V0.2.0(FR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html">V0.3.0(FR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute/index.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support/index.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">UniSDK Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about/index.html">About Telink Semiconductor</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/edit/main/index.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>UniSDK — Telink Unified Software Development Kit</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="unisdk-telink-unified-software-development-kit">
+<span id="unisdk-documentation"></span><h1>UniSDK — Telink Unified Software Development Kit<a class="headerlink" href="#unisdk-telink-unified-software-development-kit" title="Link to this heading">#</a></h1>
+<p class="lead">UniSDK is Telink’s unified software development platform, providing consistent development experience across all Telink chip series.
+SDK adopts modular, extensible architecture, integrating modern build tools like CMake, Ninja, West, and Kconfig,
+forming a complete compilation and build workflow. This documentation includes all user manuals, API references, and technical guides.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Document Status</strong>: <code class="docutils literal notranslate"><span class="pre">STABLE</span></code> indicates content is complete and ready for use; <code class="docutils literal notranslate"><span class="pre">DRAFT</span></code> indicates content is under development.
+Issues and PRs are welcome to help improve documentation.</p>
+</div>
+<details>
+<summary><b>📚 Core Features (Click to expand)</b></summary><ul>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-cpu" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5.75V2h3V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75V5h1.25a.75.75 0 0 1 0 1.5H14v3h1.25a.75.75 0 0 1 0 1.5H14v1.25A1.75 1.75 0 0 1 12.25 14H11v1.25a.75.75 0 0 1-1.5 0V14h-3v1.25a.75.75 0 0 1-1.5 0V14H3.75A1.75 1.75 0 0 1 2 12.25V11H.75a.75.75 0 0 1 0-1.5H2v-3H.75a.75.75 0 0 1 0-1.5H2V3.75C2 2.784 2.784 2 3.75 2H5V.75a.75.75 0 0 1 1.5 0Zm5.75 11.75a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25ZM5.75 5h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5A.75.75 0 0 1 5.75 5Zm.75 4.5h3v-3h-3Z"></path></svg> <strong>Multi-Chip Unified Platform</strong> — One codebase, one build system, covering TL321X / TL721X / TLSR922X / TLSR952X full chip series</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-gear" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8.2 8.2 0 0 1 .701.031C9.444.095 9.99.645 10.16 1.29l.288 1.107c.018.066.079.158.212.224.231.114.454.243.668.386.123.082.233.09.299.071l1.103-.303c.644-.176 1.392.021 1.82.63.27.385.506.792.704 1.218.315.675.111 1.422-.364 1.891l-.814.806c-.049.048-.098.147-.088.294.016.257.016.515 0 .772-.01.147.038.246.088.294l.814.806c.475.469.679 1.216.364 1.891a7.977 7.977 0 0 1-.704 1.217c-.428.61-1.176.807-1.82.63l-1.102-.302c-.067-.019-.177-.011-.3.071a5.909 5.909 0 0 1-.668.386c-.133.066-.194.158-.211.224l-.29 1.106c-.168.646-.715 1.196-1.458 1.26a8.006 8.006 0 0 1-1.402 0c-.743-.064-1.289-.614-1.458-1.26l-.289-1.106c-.018-.066-.079-.158-.212-.224a5.738 5.738 0 0 1-.668-.386c-.123-.082-.233-.09-.299-.071l-1.103.303c-.644.176-1.392-.021-1.82-.63a8.12 8.12 0 0 1-.704-1.218c-.315-.675-.111-1.422.363-1.891l.815-.806c.05-.048.098-.147.088-.294a6.214 6.214 0 0 1 0-.772c.01-.147-.038-.246-.088-.294l-.815-.806C.635 6.045.431 5.298.746 4.623a7.92 7.92 0 0 1 .704-1.217c.428-.61 1.176-.807 1.82-.63l1.102.302c.067.019.177.011.3-.071.214-.143.437-.272.668-.386.133-.066.194-.158.211-.224l.29-1.106C6.009.645 6.556.095 7.299.03 7.53.01 7.764 0 8 0Zm-.571 1.525c-.036.003-.108.036-.137.146l-.289 1.105c-.147.561-.549.967-.998 1.189-.173.086-.34.183-.5.29-.417.278-.97.423-1.529.27l-1.103-.303c-.109-.03-.175.016-.195.045-.22.312-.412.644-.573.99-.014.031-.021.11.059.19l.815.806c.411.406.562.957.53 1.456a4.709 4.709 0 0 0 0 .582c.032.499-.119 1.05-.53 1.456l-.815.806c-.081.08-.073.159-.059.19.162.346.353.677.573.989.02.03.085.076.195.046l1.102-.303c.56-.153 1.113-.008 1.53.27.161.107.328.204.501.29.447.222.85.629.997 1.189l.289 1.105c.029.109.101.143.137.146a6.6 6.6 0 0 0 1.142 0c.036-.003.108-.036.137-.146l.289-1.105c.147-.561.549-.967.998-1.189.173-.086.34-.183.5-.29.417-.278.97-.423 1.529-.27l1.103.303c.109.029.175-.016.195-.045.22-.313.411-.644.573-.99.014-.031.021-.11-.059-.19l-.815-.806c-.411-.406-.562-.957-.53-1.456a4.709 4.709 0 0 0 0-.582c-.032-.499.119-1.05.53-1.456l.815-.806c.081-.08.073-.159.059-.19a6.464 6.464 0 0 0-.573-.989c-.02-.03-.085-.076-.195-.046l-1.102.303c-.56.153-1.113.008-1.53-.27a4.44 4.44 0 0 0-.501-.29c-.447-.222-.85-.629-.997-1.189l-.289-1.105c-.029-.11-.101-.143-.137-.146a6.6 6.6 0 0 0-1.142 0ZM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM9.5 8a1.5 1.5 0 1 0-3.001.001A1.5 1.5 0 0 0 9.5 8Z"></path></svg> <strong>Modular Build System</strong> — Flexible configuration based on CMake + Kconfig, supporting three build entry points: West / Make / CMake</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-pulse" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 2c.306 0 .582.187.696.471L10 10.731l1.304-3.26A.751.751 0 0 1 12 7h3.25a.75.75 0 0 1 0 1.5h-2.742l-1.812 4.528a.751.751 0 0 1-1.392 0L6 4.77 4.696 8.03A.75.75 0 0 1 4 8.5H.75a.75.75 0 0 1 0-1.5h2.742l1.812-4.529A.751.751 0 0 1 6 2Z"></path></svg> <strong>Rich Peripheral Drivers</strong> — Unified API layer providing full series peripheral drivers: GPIO, UART, I2C, SPI, ADC, DMA, USB, etc.</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-broadcast" viewBox="0 0 16 16" aria-hidden="true"><path d="M8.75 8.582v5.668a.75.75 0 0 1-1.5 0V8.582a1.75 1.75 0 1 1 1.5 0Zm3.983-7.125a.75.75 0 0 1 1.06.026A7.976 7.976 0 0 1 16 7c0 2.139-.84 4.083-2.207 5.517a.75.75 0 1 1-1.086-1.034A6.474 6.474 0 0 0 14.5 7a6.474 6.474 0 0 0-1.793-4.483.75.75 0 0 1 .026-1.06Zm-9.466 0c.3.286.312.76.026 1.06A6.474 6.474 0 0 0 1.5 7a6.47 6.47 0 0 0 1.793 4.483.75.75 0 0 1-1.086 1.034A7.973 7.973 0 0 1 0 7c0-2.139.84-4.083 2.207-5.517a.75.75 0 0 1 1.06-.026Zm8.556 2.321A4.988 4.988 0 0 1 13 7a4.988 4.988 0 0 1-1.177 3.222.75.75 0 1 1-1.146-.967A3.487 3.487 0 0 0 11.5 7c0-.86-.309-1.645-.823-2.255a.75.75 0 0 1 1.146-.967Zm-6.492.958A3.48 3.48 0 0 0 4.5 7a3.48 3.48 0 0 0 .823 2.255.75.75 0 0 1-1.146.967A4.981 4.981 0 0 1 3 7a4.982 4.982 0 0 1 1.188-3.236.75.75 0 1 1 1.143.972Z"></path></svg> <strong>BLE Protocol Stack</strong> — Integrated BLE Controller, supporting flexible wireless connectivity applications</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-sun" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0ZM3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8Zm13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8Zm-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13Zm3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"></path></svg> <strong>Low Power Management</strong> — Comprehensive power management framework, supporting multiple low power modes: Suspend / Retention, etc.</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-graph" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.75V13.5h13.75a.75.75 0 0 1 0 1.5H.75a.75.75 0 0 1-.75-.75V1.75a.75.75 0 0 1 1.5 0Zm14.28 2.53-5.25 5.25a.75.75 0 0 1-1.06 0L7 7.06 4.28 9.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.25-3.25a.75.75 0 0 1 1.06 0L10 7.94l4.72-4.72a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"></path></svg> <strong>Pinmux Visualization Tool</strong> — Graphical pin multiplexing configuration, simplifying hardware design</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-flame" viewBox="0 0 16 16" aria-hidden="true"><path d="M9.533.753V.752c.217 2.385 1.463 3.626 2.653 4.81C13.37 6.74 14.498 7.863 14.498 10c0 3.5-3 6-6.5 6S1.5 13.512 1.5 10c0-1.298.536-2.56 1.425-3.286.376-.308.862 0 1.035.454C4.46 8.487 5.581 8.419 6 8c.282-.282.341-.811-.003-1.5C4.34 3.187 7.035.75 8.77.146c.39-.137.726.194.763.607ZM7.998 14.5c2.832 0 5-1.98 5-4.5 0-1.463-.68-2.19-1.879-3.383l-.036-.037c-1.013-1.008-2.3-2.29-2.834-4.434-.322.256-.63.579-.864.953-.432.696-.621 1.58-.046 2.73.473.947.67 2.284-.278 3.232-.61.61-1.545.84-2.403.633a2.79 2.79 0 0 1-1.436-.874A3.198 3.198 0 0 0 3 10c0 2.53 2.164 4.5 4.998 4.5Z"></path></svg> <strong>BDT Programming &amp; Debugging</strong> — One-click Flash programming, reading, erasing via <code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-bdt</span></code></p>
+<blockquote>
+<div><p>&lt;/details&gt;
+&lt;br&gt;</p>
+</div></blockquote>
+</li>
+</ul>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction/index.html">UniSDK Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#telink-semiconductor">Telink Semiconductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#unisdk-core-features-and-advantages">UniSDK Core Features and Advantages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#architecture-overview">Architecture Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#supported-chip-families">Supported Chip Families</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#community-resources">Community Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction/index.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/index.html#about-this-document">About This Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/index.html#scope">Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/index.html#hardware-and-software-requirements">Hardware and Software Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/index.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/environment_setup.html">Development Environment Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/environment_setup.html#vs-code-extension-recommended">VS Code Extension (Recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/environment_setup.html#cli-setup-alternative">CLI Setup (Alternative)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/environment_setup.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/get_sdk.html">Get and Import the SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/get_sdk.html#get-the-sdk">Get the SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/get_sdk.html#sdk-directory-structure">SDK Directory Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/get_sdk.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/first_example.html">Compile, Flash and Run Your First Example (VS Code)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/first_example.html#select-the-first-example">Select the First Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/first_example.html#build-the-project">Build the Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/first_example.html#flash-the-firmware">Flash the Firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/first_example.html#verify-the-result">Verify the Result</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/first_example.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/troubleshooting.html#environment-issues">Environment Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/troubleshooting.html#build-issues">Build Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/troubleshooting.html#menuconfig-issues">Menuconfig Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/troubleshooting.html#getting-help">Getting Help</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developing/index.html">Development Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/index.html#content-navigation">Content Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/index.html#quick-start-for-a-new-project">Quick Start for a New Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/index.html#development-workflow-overview">Development Workflow Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/index.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_linux.html">Linux Environment Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#install-system-dependencies">Install System Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#set-up-python-virtual-environment">Set Up Python Virtual Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#initialize-west">Initialize West</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#configure-toolchain">Configure Toolchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#configure-bdt-tool-optional">Configure BDT Tool (Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#verify-environment">Verify Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_linux.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_macos.html">macOS Environment Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#install-system-dependencies">Install System Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#set-up-python-virtual-environment">Set Up Python Virtual Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#initialize-west">Initialize West</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#configure-toolchain">Configure Toolchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#verify-environment">Verify Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_macos.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/setup_windows.html">Windows Environment Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#installation-methods">Installation Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#configure-bdt-tool-optional">Configure BDT Tool (Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#verify-environment">Verify Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#common-issues">Common Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#notes">Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/setup_windows.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/blinky.html">First Example: Blinky (CLI)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#example-overview">Example Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#step-1-configure-chip-type">Step 1: Configure Chip Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#step-2-compilation">Step 2: Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#step-3-flashing">Step 3: Flashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#step-4-verification">Step 4: Verification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#custom-modifications">Custom Modifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/blinky.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/directory_structure.html">SDK Directory Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/directory_structure.html#overall-structure">Overall Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/directory_structure.html#key-directory-responsibilities">Key Directory Responsibilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/directory_structure.html#code-organization-principles">Code Organization Principles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/project_management.html">Project Creation &amp; Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#application-project-location">Application Project Location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#creating-a-new-project">Creating a New Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#building-the-project">Building the Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#configuration-management">Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#cleaning">Cleaning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/project_management.html#development-workflow-recommendations">Development Workflow Recommendations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/core_architecture.html">Core Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#system-startup-flow">System Startup Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#initialization-system">Initialization System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#interrupt-management">Interrupt Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#low-power-management">Low-Power Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#context-switch-tl-context-s">Context Switch (tl_context.S)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/core_architecture.html#clock-system">Clock System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/init_hooks.html">Init hooks documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/init_hooks.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/init_hooks.html#concepts">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/init_hooks.html#levels-priorities">Levels &amp; Priorities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/init_hooks.html#api-reference">API reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/init_hooks.html#additional-notes">Additional Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/public_api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/public_api.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/public_api.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/debugging.html">Debugging &amp; Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#hardware-debugging">Hardware Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#software-debugging">Software Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#performance-analysis">Performance Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#debugging-with-gdb">Debugging with GDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#common-debugging-tips">Common Debugging Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/debugging.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/ide_integration.html">IDE Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/ide_integration.html#vs-code-configuration-recommended">VS Code Configuration (Recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/ide_integration.html#eclipse-configuration">Eclipse Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/ide_integration.html#segger-embedded-studio">Segger Embedded Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/ide_integration.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing/clangd.html">clangd Setup Guide for VSCode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing/clangd.html#what-is-clangd">What is clangd?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/clangd.html#why-use-clangd">Why use clangd?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/clangd.html#key-files">Key Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/clangd.html#installing-and-setup">Installing and setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing/clangd.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chips &amp; Boards</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/index.html">Chips and Boards</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/index.html#chip-series-overview">Chip Series Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/index.html#selecting-a-chip">Selecting a Chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/index.html#board-list">Board List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/index.html#chip-and-board-pair-validation">Chip and Board Pair Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/index.html#specifying-at-build-time">Specifying at Build Time</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TL321X.html">TL321X Chip Series</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL321X.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL321X.html#core-parameters">Core Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL321X.html#memory">Memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL321X.html#peripheral-list">Peripheral List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL321X.html#supported-boards">Supported Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TL721X.html">TL721X Chip Series</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL721X.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL721X.html#core-parameters">Core Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL721X.html#memory">Memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL721X.html#peripheral-list">Peripheral List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TL721X.html#supported-boards">Supported Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TLSR922X.html">TLSR922X Chip Series</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR922X.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR922X.html#core-parameters">Core Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR922X.html#memory">Memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR922X.html#peripheral-list">Peripheral List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR922X.html#supported-boards">Supported Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/chips/TLSR952X.html">TLSR952X Chip Series</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR952X.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR952X.html#core-parameters">Core Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR952X.html#memory">Memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR952X.html#peripheral-list">Peripheral List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/chips/TLSR952X.html#supported-boards">Supported Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TL3218X_EVK.html">TL3218X_EVK Board</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TL3218X_EVK.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TL3218X_EVK.html#building">Building</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TL7218X_EVK.html">TL7218X_EVK Board</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TL7218X_EVK.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TL7218X_EVK.html#building">Building</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9228A_EVK.html">TLSR9228A_EVK Board</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9228A_EVK.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9228A_EVK.html#building">Building</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9528A_EVK.html">TLSR9528A_EVK Board</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9528A_EVK.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9528A_EVK.html#building">Building</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chips_boards/boards/TLSR9528A_DONGLE.html">TLSR9528A_DONGLE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9528A_DONGLE.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips_boards/boards/TLSR9528A_DONGLE.html#building">Building</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Peripherals &amp; Drivers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/index.html">Peripherals and Drivers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/index.html#driver-overview">Driver Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/index.html#driver-programming-model">Driver Programming Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/index.html#kconfig-configuration">Kconfig Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/gpio.html">GPIO Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/gpio.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/gpio.html#data-types-and-enums">Data Types and Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/gpio.html#driver-api">Driver API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/gpio.html#kconfig-configuration">Kconfig Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/gpio.html#related-resources">Related Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/uart.html">UART Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#data-types-and-enums">Data Types and Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#driver-api">Driver API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#transfer-modes">Transfer Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#kconfig-configuration">Kconfig Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/uart.html#related-resources">Related Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/pm.html">Power Management (PM) Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#sleep-modes">Sleep Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#wakeup-sources">Wakeup Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#gpio-wakeup-level">GPIO Wakeup Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#driver-api">Driver API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#typical-usage">Typical Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#kconfig-configuration">Kconfig Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pm.html#related-resources">Related Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/analog.html">Analog Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/analog.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/analog.html#api-reference">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/analog.html#register-definitions">Register Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/plic.html">PLIC Interrupt Controller</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#data-types-and-enums">Data Types and Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#api-reference">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#plic-configuration">PLIC Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#interrupt-handling-modes">Interrupt Handling Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#interrupt-nesting">Interrupt Nesting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/plic.html#integration-with-gpio-interrupts">Integration with GPIO Interrupts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/i2c.html">I2C Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/i2c.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/i2c.html#api-reference">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/i2c.html#samples">Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/spi.html">SPI Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/spi.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/spi.html#api-reference">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/spi.html#samples">Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/adc.html">ADC Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/adc.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/adc.html#samples">Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/dma.html">DMA Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/dma.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/dma.html#samples">Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/wdt.html">Watchdog Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/wdt.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/wdt.html#samples">Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/timer.html">Timer Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/timer.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/timer.html#samples">Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/usb.html">USB Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/usb.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/usb.html#samples">Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peripherals/pmp.html">PMP Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#address-matching-modes">Address Matching Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#permissions">Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#lock">Lock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peripherals/pmp.html#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Connectivity</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="connectivity/index.html">Connectivity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#code-location">Code Location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#coding-standards">Coding Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#kconfig-configuration">Kconfig Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/index.html#planned">Planned</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity/ble/controller.html">BLE Controller Coding Standards</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/ble/controller.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/ble/controller.html#file-naming">File Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/ble/controller.html#function-naming">Function Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/ble/controller.html#variable-naming">Variable Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivity/ble/controller.html#interrupt-functions">Interrupt Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">System Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="system_services/index.html">System Services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="system_services/index.html#currently-available-components">Currently Available Components</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Build &amp; Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build_config/index.html">Build &amp; Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/index.html#core-components">Core Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/index.html#three-build-methods">Three Build Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/index.html#documentation-navigation">Documentation Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/index.html#build-system-architecture">Build System Architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/cmake_system.html">CMake Build System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#entry-point-modes">Entry Point Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#module-loading-order">Module Loading Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#core-module-details">Core Module Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#configuration-flow">Configuration Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#include-guard-mechanism">Include Guard Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/cmake_system.html#build-directory-structure">Build Directory Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/kconfig_system.html">Kconfig Configuration System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/kconfig_system.html#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/kconfig_system.html#configuration-generation-flow">Configuration Generation Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/kconfig_system.html#key-scripts">Key Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/kconfig_system.html#menuconfig-trigger-methods">Menuconfig Trigger Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/kconfig_system.html#configuration-option-examples">Configuration Option Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/west_commands.html">West Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#command-registration">Command Registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#west-tl-build-build"><code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-build</span></code> — Build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#west-tl-config-configuration"><code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-config</span></code> — Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#west-tl-bdt-burning-debugging"><code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-bdt</span></code> — Burning &amp; Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#west-tl-boards-board-information"><code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-boards</span></code> — Board Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/west_commands.html#west-tl-socs-chip-information"><code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">tl-socs</span></code> — Chip Information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/make_support.html">Make Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/make_support.html#makefile-targets">Makefile Targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/make_support.html#makefile-variables">Makefile Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/make_support.html#usage-examples">Usage Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/make_support.html#build-flow-make-build">Build Flow (make build)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/make_support.html#soc-board-parameter-forwarding">SOC/BOARD Parameter Forwarding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/build_flow.html">Build Flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#complete-build-flow">Complete Build Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#getting-started-guide">Getting Started Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#six-phases">Six Phases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#configuration-commands">Configuration Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#basic-build-commands">Basic Build Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#configuration-file-generation-logic">Configuration File Generation Logic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#build-results">Build Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#building-without-west">Building Without West</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_flow.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/build_system_architecture.html">UniSDK Build System Architecture Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#overall-architecture-overview">1. Overall Architecture Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#cmake-build-system">2. CMake Build System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#kconfig-configuration-system">3. Kconfig Configuration System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#west-compilation-support">4. West Compilation Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#make-support">5. Make Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#compilation-generation-flow">6. Compilation Generation Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#files-and-scripts-composition">7. Files and Scripts Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#build-system-working-principles">8. Build System Working Principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/build_system_architecture.html#extension-and-customization">9. Extension and Customization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/extensions.html">Extensions &amp; Customization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/extensions.html#adding-new-cmake-modules">Adding New CMake Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/extensions.html#extending-west-commands">Extending West Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/extensions.html#adding-kconfig-configuration">Adding Kconfig Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/extensions.html#adding-new-applications">Adding New Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/extensions.html#west-command-behavior-notes">West Command Behavior Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_config/reference.html">File &amp; Script Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_config/reference.html#core-configuration-files">Core Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/reference.html#build-artifacts-build-directory">Build Artifacts (build/ Directory)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/reference.html#cmake-files">CMake Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/reference.html#build-scripts-scripts">Build Scripts (scripts/)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_config/reference.html#kconfig-files">Kconfig Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tools/index.html">Development Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/index.html#tool-overview">Tool Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/bdt.html">BDT Burning and Debugging Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#supported-operations">Supported Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#flash-operations">Flash Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#bdt-path-configuration">BDT Path Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#cross-platform-notes">Cross-Platform Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/bdt.html#faq">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/pinmux.html">Pinmux Pin Configuration Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#launch-methods">Launch Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#main-view">Main View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#selecting-a-function">Selecting a Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#shortcuts">Shortcuts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#saving">Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#file-format">File Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#overriding-mechanism">Overriding Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#internal-execution-flow">Internal Execution Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#configuration-file-locations">Configuration File Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#build-integration">Build Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/pinmux.html#ci">CI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/menuconfig.html">Menuconfig Configuration Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#launch-methods">Launch Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#navigation-and-operations">Navigation and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#dual-phase-configuration">Dual-Phase Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#results">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#internal-execution-flow">Internal Execution Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/menuconfig.html#faq">FAQ</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Security</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security/index.html">Security</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Production Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="productization/index.html">Production Guide</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Samples &amp; Demos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="samples/index.html">Samples &amp; Demos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/index.html#sample-list">Sample List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/index.html#building-samples">Building Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/gpio.html">GPIO Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/gpio.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/gpio.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/gpio.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/gpio.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/gpio.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/uart.html">UART Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/uart.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/uart.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/uart.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/uart.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/uart.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/pm.html">PM Power Management Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/pm.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pm.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pm.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pm.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pm.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/pmp.html">PMP Driver Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/pmp.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pmp.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pmp.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pmp.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/pmp.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/umode.html">U-mode Driver Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/umode.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/umode.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/umode.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/umode.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/umode.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/adc.html">ADC Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/adc.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/adc.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/adc.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/adc.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/adc.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/dma.html">DMA Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/dma.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/dma.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/dma.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/dma.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/dma.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/i2c.html">I2C Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2c.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2c.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2c.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2c.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2c.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/spi.html">SPI Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/spi.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/spi.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/spi.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/spi.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/spi.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/i2s.html">I2S Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2s.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2s.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2s.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2s.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/i2s.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/ble.html">BLE Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#build-run">Build &amp; Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble.html#related-resources">Related Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/ble_host.html">BLE Host Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble_host.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble_host.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble_host.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble_host.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/ble_host.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/rf.html">RF Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/rf.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/rf.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/rf.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/rf.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/rf.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/irq_nesting.html">IRQ Nesting Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/irq_nesting.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/irq_nesting.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/irq_nesting.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/irq_nesting.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/irq_nesting.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/stimer.html">STIMER Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/stimer.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/stimer.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/stimer.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/stimer.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/stimer.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/wdt.html">Watchdog Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/wdt.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/wdt.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/wdt.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/wdt.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/wdt.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/usb_cdc.html">USB CDC Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/usb_cdc.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/usb_cdc.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/usb_cdc.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/usb_cdc.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/usb_cdc.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/random.html">Random Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/random.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/random.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/random.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/random.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/random.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/nv_storage.html">NV Storage Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/nv_storage.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/nv_storage.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/nv_storage.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/nv_storage.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/nv_storage.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/system_log.html">System Log Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/system_log.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/system_log.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/system_log.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/system_log.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/system_log.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/task_planner.html">Task Planner Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/task_planner.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/task_planner.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/task_planner.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/task_planner.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/task_planner.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/audio.html">Audio Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/audio.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/audio.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/audio.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/audio.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/audio.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/mbedtls.html">mbedTLS Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/mbedtls.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mbedtls.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mbedtls.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mbedtls.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mbedtls.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples/mcuboot.html">MCUboot Bootloader Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples/mcuboot.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mcuboot.html#features-demonstrated">Features Demonstrated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mcuboot.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mcuboot.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples/mcuboot.html#build-run">Build &amp; Run</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/index.html#auto-generation-notes">Auto-Generation Notes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kconfig_reference/index.html">Kconfig Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kconfig_reference/index.html#planned-content">Planned Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kconfig_reference/index.html#implementation-plan">Implementation Plan</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="yaml_reference/index.html">YAML Description Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="yaml_reference/index.html#planned-content">Planned Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml_reference/index.html#implementation-plan">Implementation Plan</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="releases/index.html">Releases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="releases/index.html#version-naming-convention">Version Naming Convention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/index.html#current-version">Current Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/index.html#version-compatibility">Version Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/index.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/index.html#upgrade-guide">Upgrade Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="releases/0.2.0/Unified_SDK_Release_Note.html">V0.2.0(FR)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.2.0/Unified_SDK_Release_Note.html#version">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.2.0/Unified_SDK_Release_Note.html#codesize">CodeSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html">V0.3.0(FR)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#version">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#bug-fixes">Bug Fixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#breaking-changes">BREAKING CHANGES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#note">Note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#royalty-fee-for-certain-audio-codec">Royalty fee for certain Audio Codec:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/0.3.0/Unified_SDK_Release_Note.html#codesize">CodeSize</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribute/index.html">Contribution Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#documentation-repository-unisdk-doc">Documentation Repository: unisdk-doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#document-version-vs-sdk-version">Document Version vs SDK Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#release-process">Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#multi-version-maintenance">Multi-Version Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#ci-cd-behavior">CI/CD Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#document-structure-standards">Document Structure Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#submitting-issues">Submitting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute/index.html#code-standards-sdk-contributions">Code Standards (SDK Contributions)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="support/index.html">Technical Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="support/index.html#contact-us">Contact Us</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support/index.html#submitting-issues">Submitting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support/index.html#community-resources">Community Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support/index.html#faq">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support/index.html#resource-links">Resource Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">UniSDK Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#build-system">Build System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#west-tool">West Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#hardware-abstraction">Hardware Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#kconfig-configuration">Kconfig Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#peripherals-drivers">Peripherals &amp; Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#document-status-markers">Document Status Markers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="about/index.html">About Telink Semiconductor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about/index.html#our-mission">Our Mission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/index.html#technology-leadership">Technology Leadership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/index.html#global-presence">Global Presence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/index.html#why-telink">Why Telink?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/index.html#learn-more">Learn More</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This documentation was built with <strong>Sphinx</strong>.
+The previous MkDocs-based build system has been replaced.
+See <a class="reference internal" href="contribute/index.html"><span class="doc">Contribution Guide</span></a> for documentation contribution guidelines.</p>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="introduction/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">UniSDK Introduction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Telink Semiconductor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Telink Semiconductor.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+<div style="text-align: right; margin-top: 1rem; padding: 0.5rem 1rem; border-top: 1px solid #eee;">
+  <a href="_downloads/unisdk-doc.pdf" style="font-size: 0.85rem; color: #0a2d72; text-decoration: none;">
+    &#128196; Download PDF
+  </a>
+</div>
+<script>
+var currentVersion = "0.3.0";
+var currentLang = "en";
+</script>
+<script>
+(function() {
+  'use strict';
+  function injectSwitchers() {
+    var navbarEnd = document.querySelector(".navbar-header-items__end");
+    if (!navbarEnd) return;
+
+    var langHtml = [
+      '<div class="navbar-item">',
+      '  <div class="language-selector">',
+      '    <select id="language-select" onchange="switchLanguage(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="en"' + (currentLang === "en" ? " selected" : "") + '>English</option>',
+      '      <option value="zh"' + (currentLang === "zh" ? " selected" : "") + '>中文</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", langHtml);
+
+    var verHtml = [
+      '<div class="navbar-item">',
+      '  <div class="version-selector">',
+      '    <select id="version-select" onchange="switchVersion(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="">Loading...</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", verHtml);
+
+    var script = document.createElement("script");
+    script.src = "_static/version_switcher.js";
+    document.body.appendChild(script);
+  }
+
+  function switchLanguage(lang) {
+    var currentPath = window.location.pathname;
+    var newPath = currentPath.replace(/\/[a-z]{2}\//, "/" + lang + "/");
+    if (newPath !== currentPath) {
+      window.location.href = newPath;
+    }
+  }
+
+  window.switchVersion = function(url) {
+    if (url) {
+      window.location.href = url;
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", injectSwitchers);
+  } else {
+    injectSwitchers();
+  }
+})();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var versionBadge = document.createElement("span");
+    versionBadge.className = "version-badge";
+    versionBadge.textContent = "0.3.0";
+    var footer = document.querySelector(".telink-footer .footer-copyright");
+    if (footer) {
+      footer.appendChild(versionBadge);
+    }
+  });
+</script>
+
+
+<footer class="telink-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Telink Semiconductor</h5>
+        <p style="font-size: 0.85rem; opacity: 0.8;">
+          Leading provider of low-power, high-performance wireless connectivity
+          SoC solutions for IoT, industrial, and automotive applications.
+        </p>
+      </div>
+      <div class="col-md-2">
+        <h5>Resources</h5>
+        <ul class="footer-links">
+          <li><a href="https://www.telink-semi.cn/" target="_blank">Official Website</a></li>
+          <li><a href="https://doc.telink-semi.cn/" target="_blank">Documentation Center</a></li>
+          <li><a href="https://forum.telink-semi.cn/" target="_blank">Technical Forum</a></li>
+          <li><a href="https://products.telink-semi.cn/" target="_blank">Product Selector</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Developers</h5>
+        <ul class="footer-links">
+          <li><a href="https://github.com/telink-semi/unisdk" target="_blank">UniSDK on GitHub</a></li>
+          <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank">Docs Repository</a></li>
+          <li><a href="https://gitee.com/telink-semi" target="_blank">Gitee Repository</a></li>
+          <li><a href="https://www.telink-semi.cn/development-tools" target="_blank">Development Tools</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="support/index">Contact Support</a></li>
+          <li><a href="https://www.telink-semi.cn/applications" target="_blank">Applications</a></li>
+          <li><a href="about/index">About Telink</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Connect</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:telinksales@telink-semi.com">Sales Inquiry</a></li>
+          <li><a href="https://www.telink-semi.cn/news" target="_blank">News & Events</a></li>
+          <li><a href="https://www.telink-semi.cn/careers" target="_blank">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; Telink Semiconductor. All rights reserved.
+      
+      <span class="version-badge">0.3.0</span>
+      
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
