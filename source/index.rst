@@ -195,6 +195,7 @@ UniSDK — Telink Unified Software Development Kit
    releases/index
    releases/0.2.0/Unified_SDK_Release_Note
    releases/0.3.0/Unified_SDK_Release_Note
+   releases/0.4.0/Unified_SDK_Release_Note
    contribute/index
    support/index
    terminology

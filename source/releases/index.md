@@ -25,6 +25,7 @@ Current version information is defined in `common/include/tlk_sdk_version.h`.
 |---------|--------|--------|----------|----------|------|
 | 0.2.0 | ✅ | ✅ | ✅ | ✅ | Initial version |
 | 0.3.0 | ✅ | ✅ | ✅ | ✅ | Adds BLE Host v2, MCUboot, TL321X i2s |
+| 0.4.0 | ✅ | ✅ | ✅ | ✅ | Modular SDK: TLKPKG packages, registry server, git fallback |
 
 ### Toolchain Versions
 
@@ -37,6 +38,10 @@ Current version information is defined in `common/include/tlk_sdk_version.h`.
 | RISC-V GCC | V5.4.1+ |
 
 ## Version History
+
+### v0.4.0
+
+- [v0.4.0 Release Notes](0.4.0/Unified_SDK_Release_Note.md)
 
 ### v0.3.0
 
