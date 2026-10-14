@@ -1,0 +1,1252 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>V0.4.0(FR) &#8212; UniSDK 0.4.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css?v=3aef283f" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../../_static/documentation_options.js?v=183391d5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'releases/0.4.0/Unified_SDK_Release_Note';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/favicon.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contribution Guide" href="../../contribute/index.html" />
+    <link rel="prev" title="V0.3.0(FR)" href="../0.3.0/Unified_SDK_Release_Note.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.4.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+<link rel="stylesheet" href="../../_static/extra.css" />
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="UniSDK 0.4.0 documentation - Home"/>
+    <img src="../../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="UniSDK 0.4.0 documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    UniSDK — Telink Unified Software Development Kit
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">UniSDK Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/environment_setup.html">Development Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/get_sdk.html">Get and Import the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/first_example.html">Compile, Flash and Run Your First Example (VS Code)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../developing/index.html">Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/setup_linux.html">Linux Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/setup_macos.html">macOS Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/setup_windows.html">Windows Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/blinky.html">First Example: Blinky (CLI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/directory_structure.html">SDK Directory Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/project_management.html">Project Creation &amp; Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/core_architecture.html">Core Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/init_hooks.html">Init hooks documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/public_api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/debugging.html">Debugging &amp; Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/ide_integration.html">IDE Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing/clangd.html">clangd Setup Guide for VSCode</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chips &amp; Boards</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chips_boards/index.html">Chips and Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chips_boards/chips/TL321X.html">TL321X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chips_boards/chips/TL721X.html">TL721X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chips_boards/chips/TLSR922X.html">TLSR922X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chips_boards/chips/TLSR952X.html">TLSR952X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chips_boards/boards/TL3218X_EVK.html">TL3218X_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chips_boards/boards/TL7218X_EVK.html">TL7218X_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chips_boards/boards/TLSR9228A_EVK.html">TLSR9228A_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chips_boards/boards/TLSR9528A_EVK.html">TLSR9528A_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chips_boards/boards/TLSR9528A_DONGLE.html">TLSR9528A_DONGLE</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Peripherals &amp; Drivers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/index.html">Peripherals and Drivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/gpio.html">GPIO Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/uart.html">UART Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/pm.html">Power Management (PM) Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/analog.html">Analog Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/plic.html">PLIC Interrupt Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/i2c.html">I2C Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/spi.html">SPI Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/adc.html">ADC Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/dma.html">DMA Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/wdt.html">Watchdog Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/timer.html">Timer Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/usb.html">USB Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peripherals/pmp.html">PMP Driver</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Connectivity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../connectivity/index.html">Connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../connectivity/ble/controller.html">BLE Controller Coding Standards</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">System Services</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../system_services/index.html">System Services</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Build &amp; Configuration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../build_config/index.html">Build &amp; Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build_config/cmake_system.html">CMake Build System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build_config/kconfig_system.html">Kconfig Configuration System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build_config/west_commands.html">West Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build_config/make_support.html">Make Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build_config/build_flow.html">Build Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build_config/build_system_architecture.html">UniSDK Build System Architecture Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build_config/extensions.html">Extensions &amp; Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build_config/reference.html">File &amp; Script Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Development Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/bdt.html">BDT Burning and Debugging Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/pinmux.html">Pinmux Pin Configuration Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/menuconfig.html">Menuconfig Configuration Interface</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Security</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Production Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../productization/index.html">Production Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Samples &amp; Demos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../samples/index.html">Samples &amp; Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/gpio.html">GPIO Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/uart.html">UART Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/pm.html">PM Power Management Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/pmp.html">PMP Driver Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/umode.html">U-mode Driver Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/adc.html">ADC Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/dma.html">DMA Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/i2c.html">I2C Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/spi.html">SPI Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/i2s.html">I2S Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/ble.html">BLE Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/ble_host.html">BLE Host Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/rf.html">RF Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/irq_nesting.html">IRQ Nesting Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/stimer.html">STIMER Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/wdt.html">Watchdog Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/usb_cdc.html">USB CDC Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/random.html">Random Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/nv_storage.html">NV Storage Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/system_log.html">System Log Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/task_planner.html">Task Planner Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/audio.html">Audio Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/mbedtls.html">mbedTLS Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../samples/mcuboot.html">MCUboot Bootloader Sample</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api_reference/index.html">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../kconfig_reference/index.html">Kconfig Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../yaml_reference/index.html">YAML Description Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0.2.0/Unified_SDK_Release_Note.html">V0.2.0(FR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0.3.0/Unified_SDK_Release_Note.html">V0.3.0(FR)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">V0.4.0(FR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../terminology.html">UniSDK Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About Telink Semiconductor</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/edit/main/releases/0.4.0/Unified_SDK_Release_Note.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/issues/new?title=Issue%20on%20page%20%2Freleases/0.4.0/Unified_SDK_Release_Note.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/releases/0.4.0/Unified_SDK_Release_Note.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>V0.4.0(FR)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version">Version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-fixes">Bug Fixes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breaking-changes">BREAKING CHANGES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codesize">CodeSize</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="v0-4-0-fr">
+<h1>V0.4.0(FR)<a class="headerlink" href="#v0-4-0-fr" title="Link to this heading">#</a></h1>
+<section id="version">
+<h2>Version<a class="headerlink" href="#version" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>SDK Version: unisdk V0.4.0</p></li>
+<li><p>Package Versions</p>
+<ul>
+<li><p>MCU packages: B92 (TLSR922X/TLSR952X) 0.1.1, TL321X 0.1.1, TL721X 0.1.1</p></li>
+<li><p>Modules: flashdb 0.1.1, mbedtls 0.1.1, tinyusb 0.1.1</p></li>
+<li><p>All packages declare <code class="docutils literal notranslate"><span class="pre">sdk:</span> <span class="pre">&quot;^0.4.0&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p>Chip Version</p>
+<ul>
+<li><p>TLSR952x</p></li>
+<li><p>TL721x A2</p></li>
+<li><p>TL321x A0/A1</p></li>
+</ul>
+</li>
+<li><p>Hardware EVK Version</p>
+<ul>
+<li><p>TLSR952x: C1T266A20</p></li>
+<li><p>TL721x: C1T314A20</p></li>
+<li><p>TL321x: C1T331A20/C1T335A20</p></li>
+</ul>
+</li>
+<li><p>Toolchain Version</p>
+<ul>
+<li><p>TL321X: TL32 ELF MCULIB V5 GCC14.2 (andes-riscv32-v5-gcc14.2)</p></li>
+<li><p>TL721X/TLSR952X/TLSR922X: TL32 ELF MCULIB V5F GCC14.2 (andes-riscv32-v5f-gcc14.2)</p></li>
+<li><p>Zephyr build (all series): Zephyr RISC-V64 SDK v0.17.0</p></li>
+</ul>
+</li>
+</ul>
+<hr style="border-bottom:2.5px solid rgb(146, 240, 161)">
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>[Modular SDK / TLKPKG]</p>
+<ul>
+<li><p>Introduced TLKPKG, the UniSDK package manager. The SDK is now split into a small core plus independently versioned packages: MCU packages (<code class="docutils literal notranslate"><span class="pre">packages/B92</span></code>, <code class="docutils literal notranslate"><span class="pre">packages/TL321X</span></code>, <code class="docutils literal notranslate"><span class="pre">packages/TL721X</span></code>) and modules (<code class="docutils literal notranslate"><span class="pre">modules/FlashDB</span></code>, <code class="docutils literal notranslate"><span class="pre">modules/mbedtls</span></code>, <code class="docutils literal notranslate"><span class="pre">modules/tinyUSB</span></code>).</p></li>
+<li><p>MCU sources and the tinyUSB, Mbed TLS and FlashDB modules moved to their own repositories and are pulled in as submodules.</p></li>
+<li><p>Added package versioning: the SDK version is defined in <code class="docutils literal notranslate"><span class="pre">version.yaml</span></code>, and each package declares its own version and the SDK range it is compatible with in <code class="docutils literal notranslate"><span class="pre">tlkpkg.yaml</span></code>.</p></li>
+<li><p>Added package integrity checks on installation.</p></li>
+<li><p>Added module autodiscovery: installed modules are found and added to the build automatically.</p></li>
+<li><p>Module dependencies are now declared in each module’s <code class="docutils literal notranslate"><span class="pre">dependency.yaml</span></code> instead of the West manifest.</p></li>
+<li><p>Added per-package exporters (<code class="docutils literal notranslate"><span class="pre">export-all</span></code> command), packing of the Python scripts into the SDK, and the SDK/SRC split of exported trees.</p></li>
+</ul>
+</li>
+<li><p>[Package Registry Server]</p>
+<ul>
+<li><p>Added the package registry server with a sample registry, used to publish, list and download packages.</p></li>
+</ul>
+</li>
+<li><p>[Git Publishing and Fallback]</p>
+<ul>
+<li><p>Added publishing and fetching of packages through git: each package can be released as a tag in its own git repository.</p></li>
+<li><p>Added a git fallback: when the TLKPKG server is unavailable, packages are installed directly from their git repositories. The VS Code extension uses the same fallback.</p></li>
+</ul>
+</li>
+<li><p>[VS Code Extension]</p>
+<ul>
+<li><p>Updated the UniSDK VS Code extension and prepared it for publishing: SDK management (several SDK installations, stored in a file instead of VS Code storage), separate SDK and SRC modes, package install and refresh from the sidebar, and a status refresh button.</p></li>
+<li><p>Added the new project wizard: a new project is created outside the SDK from a sample, with its own Makefile and <code class="docutils literal notranslate"><span class="pre">.clangd</span></code> file.</p></li>
+</ul>
+</li>
+<li><p>[Pinmux]</p>
+<ul>
+<li><p>Added the pinmux GUI, including the board view and pin generation for a bare SoC when no board is selected.</p></li>
+</ul>
+</li>
+<li><p>[Build System / Kconfig]</p>
+<ul>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">prj.conf</span></code> support: each sample and project sets its Kconfig options in its own <code class="docutils literal notranslate"><span class="pre">prj.conf</span></code>.</p></li>
+<li><p>External projects can now be built with <code class="docutils literal notranslate"><span class="pre">make</span></code>, outside the SDK tree.</p></li>
+<li><p>Added the <code class="docutils literal notranslate"><span class="pre">GEN_ALL_BOARD_PROPERTIES</span></code> CMake option, which generates the properties of all boards of the selected SoC at build time.</p></li>
+<li><p>Headers of disabled drivers are now checked: including a header whose driver is disabled in Kconfig reports an error.</p></li>
+<li><p>On Windows, the Makefile now runs all configuration steps instead of CMake.</p></li>
+</ul>
+</li>
+<li><p>[Toolchain]</p>
+<ul>
+<li><p>Toolchain discovery now verifies the installed GCC version against the version required for the SoC series in <code class="docutils literal notranslate"><span class="pre">soc.yaml</span></code>.</p></li>
+</ul>
+</li>
+<li><p>[MCUboot]</p>
+<ul>
+<li><p>Added a recovery request through a RAM flag, so the application can ask the bootloader to enter recovery mode.</p></li>
+<li><p>Updated the MCUboot bootloader sample and its README.</p></li>
+</ul>
+</li>
+<li><p>[FlashDB]</p>
+<ul>
+<li><p>Introduced the FlashDB module and the <code class="docutils literal notranslate"><span class="pre">flashdb_demo</span></code> sample.</p></li>
+</ul>
+</li>
+<li><p>[Audio / USB]</p>
+<ul>
+<li><p>Added a USB audio sample with microphone and speaker.</p></li>
+</ul>
+</li>
+<li><p>[TLSR922X]</p>
+<ul>
+<li><p>Updated the TLSR922X support in the B92 package.</p></li>
+</ul>
+</li>
+<li><p>[CI]</p>
+<ul>
+<li><p>The CI script now discovers all chips, samples and configs, and can be limited to specific SoC series or samples.</p></li>
+<li><p>Added CI configs for most of the samples and refactored the memory report generator.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="bug-fixes">
+<h2>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Critical Bugs：</p>
+<ul>
+<li><p>[Build System]</p>
+<ul>
+<li><p>Fixed the configure flow (<code class="docutils literal notranslate"><span class="pre">kconfig.cmake</span></code>) and the SDK exporter.</p>
+<ul>
+<li><p>Impact Scope: Projects configured from an exported SDK tree.</p></li>
+<li><p>Update Recommendation: Mandatory update for anyone exporting or building from an exported SDK.</p></li>
+</ul>
+</li>
+<li><p>Fixed a race condition in CMake that made CI builds fail.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>General Bugs：</p>
+<ul>
+<li><p>[Kconfig]</p>
+<ul>
+<li><p>Fixed the board selection, and the case where an empty board is selected.</p></li>
+<li><p>Added Kconfig files missing from the default core installation.</p></li>
+</ul>
+</li>
+<li><p>[Registers]</p>
+<ul>
+<li><p>Fixed the generation of the enum arrays in the register generator.</p></li>
+</ul>
+</li>
+<li><p>[Drivers]</p>
+<ul>
+<li><p>Global variables that were exposed by the drivers are no longer visible outside their source files.</p></li>
+</ul>
+</li>
+<li><p>[Pinmux]</p>
+<ul>
+<li><p>Fixed the pin selector, the pin layout and the pinmux dependencies.</p></li>
+</ul>
+</li>
+<li><p>[TLKPKG]</p>
+<ul>
+<li><p>Application modules are now installed exactly into the <code class="docutils literal notranslate"><span class="pre">modules</span></code> folder.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">ci_config</span></code> folder is no longer included when packing a package.</p></li>
+<li><p>Fixed the package installers, the publish code and the missing installation directive for MCU packages.</p></li>
+<li><p>Fixed the display of installed modules in SDK and SRC trees.</p></li>
+</ul>
+</li>
+<li><p>[Export]</p>
+<ul>
+<li><p>Fixed the packing of the sources and the crypto library, the MCU export and the module export flow.</p></li>
+</ul>
+</li>
+<li><p>[New Project]</p>
+<ul>
+<li><p>Fixed the Makefile of new projects.</p></li>
+</ul>
+</li>
+<li><p>[VS Code Extension]</p>
+<ul>
+<li><p>Fixed the MCU package path, the Kconfig UI flow and the message shown when no MCU package is installed.</p></li>
+<li><p>The sidebar is now refreshed after a package install or an SDK switch.</p></li>
+</ul>
+</li>
+<li><p>[CI]</p>
+<ul>
+<li><p>Fixed the CI scripts for the new submodules and the samples build, and removed a broken pre-commit cache.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="breaking-changes">
+<h2>BREAKING CHANGES<a class="headerlink" href="#breaking-changes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Change Description: The SDK is now modular. MCU sources (<code class="docutils literal notranslate"><span class="pre">core/&lt;CHIP&gt;</span></code>) are no longer part of the main repository; they are installed as MCU packages under <code class="docutils literal notranslate"><span class="pre">packages/</span></code>. tinyUSB, Mbed TLS and FlashDB are installed as modules under <code class="docutils literal notranslate"><span class="pre">modules/</span></code>.</p>
+<ul>
+<li><p>Impact Scope: Any project or script that references the old in-tree MCU or module paths, or that expects every chip to be present in the SDK.</p></li>
+<li><p>Update Recommendation: Install the MCU packages and modules your project needs (VS Code extension or TLKPKG), and update path references to <code class="docutils literal notranslate"><span class="pre">packages/&lt;CHIP&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">modules/&lt;MODULE&gt;</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Change Description: Kconfig option names were standardized (<code class="docutils literal notranslate"><span class="pre">review(configs):</span> <span class="pre">Standardize</span> <span class="pre">config</span> <span class="pre">names</span></code>). Examples:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">TLK_UART0_ENABLED</span></code> → <code class="docutils literal notranslate"><span class="pre">TLK_UART0</span></code>, <code class="docutils literal notranslate"><span class="pre">TLK_GPIO_PORT_A_ENABLED</span></code> → <code class="docutils literal notranslate"><span class="pre">TLK_GPIO_PORTA</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TLK_SYSTEM_TIMER_*</span></code> → <code class="docutils literal notranslate"><span class="pre">TLK_STIMER_*</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">TLK_SYSTEM_TIMER_IRQ_ENABLE</span></code> → <code class="docutils literal notranslate"><span class="pre">TLK_STIMER_IRQ</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TLK_CRITICAL_PRINTOUT</span></code> → <code class="docutils literal notranslate"><span class="pre">TLK_CRITICAL_PRINT</span></code>, <code class="docutils literal notranslate"><span class="pre">TLK_CRITICAL_UART*</span></code> → <code class="docutils literal notranslate"><span class="pre">TLK_CRITICAL_PRINT_UART*</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TLK_DMA_IRQ_HANDLER</span></code> → <code class="docutils literal notranslate"><span class="pre">TLK_DMA_IRQ</span></code>, <code class="docutils literal notranslate"><span class="pre">TLK_CRYPTO_DMA_SUPPORT</span></code> → <code class="docutils literal notranslate"><span class="pre">TLK_CRYPTO_DMA</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*_HAS_ENABLED_DEVICE</span></code> → <code class="docutils literal notranslate"><span class="pre">*_USE_DEVICE</span></code>, <code class="docutils literal notranslate"><span class="pre">*_AUTO_CONFIG</span></code> → <code class="docutils literal notranslate"><span class="pre">*_USE_AUTO_CONFIG</span></code>, <code class="docutils literal notranslate"><span class="pre">TLK_I2C_DMA</span></code> → <code class="docutils literal notranslate"><span class="pre">TLK_I2C_USE_DMA</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*_NEST_SELECTED</span></code> → <code class="docutils literal notranslate"><span class="pre">*_USE_NEST</span></code>, <code class="docutils literal notranslate"><span class="pre">TLK_RANDOM_USED_PRNG/TRNG</span></code> → <code class="docutils literal notranslate"><span class="pre">TLK_RANDOM_USE_PRNG/TRNG</span></code>, <code class="docutils literal notranslate"><span class="pre">TLK_TRAP_ECALL_NESTING</span></code> → <code class="docutils literal notranslate"><span class="pre">TLK_TRAP_ECALL_NEST</span></code></p></li>
+<li><p>Impact Scope: Any <code class="docutils literal notranslate"><span class="pre">prj.conf</span></code>, defconfig, <code class="docutils literal notranslate"><span class="pre">build.config</span></code> or source code that uses the old option names.</p></li>
+<li><p>Update Recommendation: Rename the options in your configuration files and in <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">CONFIG_...</span></code> checks.</p></li>
+</ul>
+</li>
+<li><p>Change Description: Sample and project Kconfig options moved to <code class="docutils literal notranslate"><span class="pre">prj.conf</span></code>.</p>
+<ul>
+<li><p>Impact Scope: Projects that set their options in other config files.</p></li>
+<li><p>Update Recommendation: Move project options into the project’s <code class="docutils literal notranslate"><span class="pre">prj.conf</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Change Description: The West manifest is no longer used for module dependencies; dependencies are declared in each module’s <code class="docutils literal notranslate"><span class="pre">dependency.yaml</span></code>.</p>
+<ul>
+<li><p>Impact Scope: Projects that pin module versions through the West manifest.</p></li>
+<li><p>Update Recommendation: Use the module versions installed through TLKPKG.</p></li>
+</ul>
+</li>
+<li><p>Change Description: Samples can no longer be built directly inside an installed SDK.</p>
+<ul>
+<li><p>Impact Scope: Workflows that build samples in the SDK folder.</p></li>
+<li><p>Update Recommendation: Create a project from the sample with the new project wizard and build it outside the SDK.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="note">
+<h2>Note<a class="headerlink" href="#note" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Development Note: A package can only be installed into an SDK whose version matches the <code class="docutils literal notranslate"><span class="pre">sdk</span></code> range in the package’s <code class="docutils literal notranslate"><span class="pre">tlkpkg.yaml</span></code> (<code class="docutils literal notranslate"><span class="pre">^0.4.0</span></code> for all packages in this release).</p></li>
+<li><p>Development Note: When the TLKPKG server is not reachable, packages are fetched from their git repositories. Git access to the package repositories is then required.</p></li>
+</ul>
+</section>
+<section id="codesize">
+<h2>CodeSize<a class="headerlink" href="#codesize" title="Link to this heading">#</a></h2>
+<p>Full CI memory report for all samples and configs built in this release (sizes in bytes): <a class="reference download internal" download="" href="../../_downloads/abc3074ebe7afc044ba57d6833454515/memory_report.log"><code class="xref download docutils literal notranslate"><span class="pre">memory_report.log</span></code></a></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SOC         Sample                                    Config             Flash         RAM        Text        Code      Rodata        Data         BSS         Dec         Hex
+----------  ----------------------------------------  ------------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------
+TL321X      adc_demo                                  def                19331        4625       19242       18118        1124          89        4536       23867        5d3b
+TL321X      adc_demo                                  max                20291        4653       20198       19110        1088          93        4560       24851        6113
+TL321X      adv_demo                                  def                18409       16937       18236       18072         164         173       16764       35173        8965
+TL321X      audio_demo                                def                26513       10913       26264       24876        1388         249       10664       37177        9139
+TL321X      ble_controller_demo                       def                91428       25236       90536       90128         408         892       24344      115772       1c43c
+TL321X      ble_host_demo                             def               160280       24180      158976      143180       15796        1304       22876      183156       2cb74
+TL321X      dma_demo                                  def                18979        5173       18890       17646        1244          89        5084       24063        5dff
+TL321X      dma_demo                                  max                24789        5413       24692       23300        1392          97        5316       30105        7599
+TL321X      flashdb_demo                              def                30356        9773       30140       27724        2416         216        9557       39913        9be9
+TL321X      gpio_demo                                 def                 7622        4181        7594        7430         164          28        4153       11775        2dff
+TL321X      gpio_demo                                 max                 9102        4265        9054        8890         164          48        4217       13319        3407
+TL321X      i2c_demo/ds1307                           def                20538        4588       20422       19274        1148         116        4472       25010        61b2
+TL321X      i2c_demo/ping_pong                        master             19574        4588       19466       18250        1216         108        4480       24054        5df6
+TL321X      i2c_demo/ping_pong                        max                19858        4600       19750       18530        1220         108        4492       24350        5f1e
+TL321X      i2c_demo/ping_pong                        slave              19034        4612       18926       17742        1184         108        4504       23538        5bf2
+TL321X      i2s_demo                                  master             21798        8696       19626       18530        1096        2172        6524       28322        6ea2
+TL321X      i2s_demo                                  slave              21770        8696       19598       18506        1092        2172        6524       28294        6e86
+TL321X      irq_demo                                  def                17576        5320       17488       16504         984          88        5232       22808        5918
+TL321X      irq_demo                                  max                18084        5328       17996       16928        1068          88        5240       23324        5b1c
+TL321X      mbedtls_demo                              def               195606        5460      195314      179582       15732         292        5168      200774       31046
+TL321X      mcuboot_bootloader_demo                   def               233550       18248      232806      215374       17432         744       17504      251054       3d4ae
+TL321X      mcuboot_bootloader_demo                   max               281772       20972      281004      260812       20192         768       20204      301976       49b98
+TL321X      nv_storage_demo                           def                21149        9737       21004       19548        1456         145        9592       30741        7815
+TL321X      pm_demo                                   def                14884        4877       14824       14360         464          60        4817       19701        4cf5
+TL321X      pm_demo                                   max                15100        4877       15040       14576         464          60        4817       19917        4dcd
+TL321X      pmp_demo                                  def                18142        4584       18030       16886        1144         112        4472       22614        5856
+TL321X      pmp_demo                                  max                18390        4596       18278       17098        1180         112        4484       22874        595a
+TL321X      random_demo                               def                17867        4569       17770       16666        1104          97        4472       22339        5743
+TL321X      random_demo                               max                18127        4581       18030       16922        1108          97        4484       22611        5853
+TL321X      rf_demo                                   brx                28828       17570       28602       27458        1144         226       17344       46172        b45c
+TL321X      rf_demo                                   btx                29272       17582       29046       27778        1268         226       17356       46628        b624
+TL321X      rf_demo                                   mrx                28900       17574       28674       27530        1144         226       17348       46248        b4a8
+TL321X      rf_demo                                   mrx_fs             30892       17574       30662       29502        1160         230       17344       48236        bc6c
+TL321X      rf_demo                                   mtx                29340       17586       29114       27846        1268         226       17360       46700        b66c
+TL321X      rf_demo                                   mtx_fs             31328       17586       31098       29814        1284         230       17356       48684        be2c
+TL321X      rf_demo                                   prx                29320       17570       29094       27938        1156         226       17344       46664        b648
+TL321X      rf_demo                                   ptx                29796       17582       29570       28290        1280         226       17356       47152        b830
+TL321X      rf_demo                                   srt                28836       17570       28610       27466        1144         226       17344       46180        b464
+TL321X      rf_demo                                   srx                28884       17570       28658       27514        1144         226       17344       46228        b494
+TL321X      rf_demo                                   str                29272       17582       29046       27778        1268         226       17356       46628        b624
+TL321X      rf_demo                                   stx                29312       17582       29086       27818        1268         226       17356       46668        b64c
+TL321X      spi_demo                                  master             20526        4588       20426       19342        1084         100        4488       25014        61b6
+TL321X      spi_demo                                  slave              19558        4588       19458       18406        1052         100        4488       24046        5dee
+TL321X      stimer_demo                               def                 8878        4269        8826        8662         164          52        4217       13095        3327
+TL321X      system_demo/log_demo                      def                12258        4440       12230       11150        1080          28        4412       16670        411e
+TL321X      system_demo/log_demo                      loop               12338        4440       12310       11210        1100          28        4412       16750        416e
+TL321X      system_demo/log_demo                      scheduler          12634        4460       12586       11534        1052          48        4412       17046        4296
+TL321X      system_demo/task_planner_demo             loop               17775        4561       17686       16626        1060          89        4472       22247        56e7
+TL321X      system_demo/task_planner_demo             scheduler          18206        4612       18070       17014        1056         136        4476       22682        589a
+TL321X      system_demo/task_planner_demo             timers             18462        4620       18318       17254        1064         144        4476       22938        599a
+TL321X      tinyusb_demos/usb_device/cdc_demo         def                31650        5440       31514       29814        1700         136        5304       36954        905a
+TL321X      tinyusb_demos/usb_device/mic_demo         def                35768        6000       35624       33784        1840         144        5856       41624        a298
+TL321X      tinyusb_demos/usb_device/spk_demo         def                34124        6060       33900       32060        1840         224        5836       39960        9c18
+TL321X      uart_demo                                 def                13025        4315       12937       12700         237          88        4227       17252        4364
+TL321X      uart_demo                                 max                18658        4451       18562       17934         628          96        4355       23013        59e5
+TL321X      umode_demo                                def                13418        4316       13330       13056         274          88        4228       17646        44ee
+TL321X      umode_demo                                max                13482        4316       13394       13092         302          88        4228       17710        452e
+TL321X      wdt_demo                                  def                18241        4569       18148       17020        1128          93        4476       22717        58bd
+TL321X      wdt_demo                                  max                22549        4697       22452       21280        1172          97        4600       27149        6a0d
+TL721X      adc_demo                                  def                22339        4637       22246       21114        1132          93        4544       26883        6903
+TL721X      adc_demo                                  max                23323        4665       23226       22130        1096          97        4568       27891        6cf3
+TL721X      adv_demo                                  def                20883        4621       20714       20542         172         169        4452       25335        62f7
+TL721X      audio_demo                                def                29601       10925       29348       27956        1392         253       10672       40273        9d51
+TL721X      ble_controller_demo                       def                94078       12744       93190       92806         384         888       11856      105934       19dce
+TL721X      ble_host_demo                             def               162948       11688      161648      145880       15768        1300       10388      173336       2a518
+TL721X      dma_demo                                  def                22035        5185       21942       20690        1252          93        5092       27127        69f7
+TL721X      dma_demo                                  max                27785        5429       27684       26284        1400         101        5328       33113        8159
+TL721X      flashdb_demo                              def                33404        9785       33184       30760        2424         220        9565       42969        a7d9
+TL721X      gpio_demo                                 def                10490        4181       10462       10290         172          28        4153       14643        3933
+TL721X      gpio_demo                                 max                12066        4277       12014       11842         172          52        4225       16291        3fa3
+TL721X      i2c_demo/ds1307                           def                23682        4600       23562       22406        1156         120        4480       28162        6e02
+TL721X      i2c_demo/ping_pong                        master             22718        4600       22606       21382        1224         112        4488       27206        6a46
+TL721X      i2c_demo/ping_pong                        max                23002        4612       22890       21662        1228         112        4500       27502        6b6e
+TL721X      i2c_demo/ping_pong                        slave              22182        4624       22070       20878        1192         112        4512       26694        6846
+TL721X      i2s_demo                                  master             25234        8728       23038       21934        1104        2196        6532       31766        7c16
+TL721X      i2s_demo                                  slave              25206        8728       23010       21910        1100        2196        6532       31738        7bfa
+TL721X      irq_demo                                  def                20814        5332       20722       19730         992          92        5240       26054        65c6
+TL721X      irq_demo                                  max                21322        5340       21230       20154        1076          92        5248       26570        67ca
+TL721X      mbedtls_demo                              def               199030        5476      198734      182994       15740         296        5180      204210       31db2
+TL721X      mcuboot_bootloader_demo                   def               237774      110296      237026      219574       17452         748      109548      347322       54cba
+TL721X      mcuboot_bootloader_demo                   max               286024      113020      285252      265040       20212         772      112248      398272       613c0
+TL721X      nv_storage_demo                           def                24201        9749       24052       22588        1464         149        9600       33801        8409
+TL721X      pm_demo                                   def                18040        4897       17976       17504         472          64        4833       22873        5959
+TL721X      pm_demo                                   max                18256        4897       18192       17720         472          64        4833       23089        5a31
+TL721X      pmp_demo                                  def                21190        4592       21078       19926        1152         112        4480       25670        6446
+TL721X      pmp_demo                                  max                21434        4604       21322       20134        1188         112        4492       25926        6546
+TL721X      random_demo                               def                20919        4581       20818       19706        1112         101        4480       25399        6337
+TL721X      random_demo                               max                21179        4593       21078       19962        1116         101        4492       25671        6447
+TL721X      rf_demo                                   brx                31388        5254       31166       30014        1152         222        5032       36420        8e44
+TL721X      rf_demo                                   btx                31828        5266       31606       30330        1276         222        5044       36872        9008
+TL721X      rf_demo                                   mrx                31460        5258       31238       30086        1152         222        5036       36496        8e90
+TL721X      rf_demo                                   mrx_fs             33400        5258       33174       32006        1168         226        5032       38432        9620
+TL721X      rf_demo                                   mtx                31900        5270       31678       30402        1276         222        5048       36948        9054
+TL721X      rf_demo                                   mtx_fs             33836        5270       33610       32318        1292         226        5044       38880        97e0
+TL721X      rf_demo                                   prx                31884        5254       31662       30498        1164         222        5032       36916        9034
+TL721X      rf_demo                                   ptx                32344        5266       32122       30834        1288         222        5044       37388        920c
+TL721X      rf_demo                                   srt                31396        5254       31174       30022        1152         222        5032       36428        8e4c
+TL721X      rf_demo                                   srx                31448        5254       31226       30074        1152         222        5032       36480        8e80
+TL721X      rf_demo                                   str                31828        5266       31606       30330        1276         222        5044       36872        9008
+TL721X      rf_demo                                   stx                31876        5266       31654       30378        1276         222        5044       36920        9038
+TL721X      spi_demo                                  master             24786        4608       24674       23582        1092         112        4496       29282        7262
+TL721X      spi_demo                                  slave              23918        4608       23806       22746        1060         112        4496       28414        6efe
+TL721X      stimer_demo                               def                11938        4281       11882       11710         172          56        4225       16163        3f23
+TL721X      system_demo/log_demo                      def                15154        4440       15126       14038        1088          28        4412       19566        4c6e
+TL721X      system_demo/log_demo                      loop               15234        4440       15206       14098        1108          28        4412       19646        4cbe
+TL721X      system_demo/log_demo                      scheduler          15530        4460       15482       14422        1060          48        4412       19942        4de6
+TL721X      system_demo/task_planner_demo             loop               20827        4573       20734       19666        1068          93        4480       25307        62db
+TL721X      system_demo/task_planner_demo             scheduler          21254        4620       21118       20054        1064         136        4484       25738        648a
+TL721X      system_demo/task_planner_demo             timers             21510        4628       21366       20294        1072         144        4484       25994        658a
+TL721X      tinyusb_demos/usb_device/cdc_demo         def                35282        5452       35142       33434        1708         140        5312       40594        9e92
+TL721X      tinyusb_demos/usb_device/mic_demo         def                39432        6012       39284       37436        1848         148        5864       45296        b0f0
+TL721X      tinyusb_demos/usb_device/spk_demo         def                37820        6072       37592       35744        1848         228        5844       43664        aa90
+TL721X      uart_demo                                 def                16077        4327       15985       15740         245          92        4235       20312        4f58
+TL721X      uart_demo                                 max                21582        4467       21482       20846         636         100        4367       25949        655d
+TL721X      umode_demo                                def                16466        4328       16374       16092         282          92        4236       20702        50de
+TL721X      umode_demo                                max                16530        4328       16438       16128         310          92        4236       20766        511e
+TL721X      wdt_demo                                  def                21293        4581       21196       20060        1136          97        4484       25777        64b1
+TL721X      wdt_demo                                  max                25473        4713       25372       24192        1180         101        4612       30085        7585
+TLSR952X    adc_demo                                  def                19159        4637       19058       17930        1128         101        4536       23695        5c8f
+TLSR952X    adc_demo                                  max                20207        4665       20102       19010        1092         105        4560       24767        60bf
+TLSR952X    adv_demo                                  def                16263        4555       16134       15966         168         129        4426       20689        50d1
+TLSR952X    audio_demo                                def                26805       10841       26632       25280        1352         173       10668       37473        9261
+TLSR952X    ble_controller_demo                       def                86646       12868       85802       85438         364         844       12024       98670       1816e
+TLSR952X    ble_host_demo                             def               155488       11812      154232      138480       15752        1256       10556      166044       2889c
+TLSR952X    dma_demo                                  def                19127        5189       19026       17778        1248         101        5088       24215        5e97
+TLSR952X    dma_demo                                  max                25453        5441       25340       23944        1396         113        5328       30781        783d
+TLSR952X    flashdb_demo                              def                30352        9789       30124       27704        2420         228        9561       39913        9be9
+TLSR952X    gpio_demo                                 def                 7974        4188        7938        7770         168          36        4152       12126        2f5e
+TLSR952X    gpio_demo                                 max                 9566        4284        9506        9338         168          60        4224       13790        35de
+TLSR952X    i2c_demo/ds1307                           def                20726        4604       20598       19446        1152         128        4476       25202        6272
+TLSR952X    i2c_demo/ping_pong                        master             19750        4604       19630       18410        1220         120        4484       24234        5eaa
+TLSR952X    i2c_demo/ping_pong                        max                20034        4616       19914       18690        1224         120        4496       24530        5fd2
+TLSR952X    i2c_demo/ping_pong                        slave              19218        4628       19098       17910        1188         120        4508       23726        5cae
+TLSR952X    i2s_demo                                  master             21826        8724       19630       18530        1100        2196        6528       28354        6ec2
+TLSR952X    i2s_demo                                  slave              21798        8724       19602       18506        1096        2196        6528       28326        6ea6
+TLSR952X    irq_demo                                  def                17846        5336       17746       16758         988         100        5236       23082        5a2a
+TLSR952X    irq_demo                                  max                18354        5344       18254       17182        1072         100        5244       23598        5c2e
+TLSR952X    mbedtls_demo                              def               195958        5768      195654      179918       15736         304        5464      201422       312ce
+TLSR952X    mcuboot_bootloader_demo                   def               235070      110588      234314      216870       17444         756      109832      344902       54346
+TLSR952X    mcuboot_bootloader_demo                   max               282976      113256      282196      261992       20204         780      112476      395452       608bc
+TLSR952X    nv_storage_demo                           def                21149        9753       20992       19532        1460         157        9596       30745        7819
+TLSR952X    pm_demo                                   def                15892        4905       15816       15348         468          76        4829       20721        50f1
+TLSR952X    pm_demo                                   max                16108        4905       16032       15564         468          76        4829       20937        51c9
+TLSR952X    pmp_demo                                  def                18222        4596       18102       16954        1148         120        4476       22698        58aa
+TLSR952X    pmp_demo                                  max                18466        4608       18346       17162        1184         120        4488       22954        59aa
+TLSR952X    random_demo                               def                17951        4585       17842       16734        1108         109        4476       22427        579b
+TLSR952X    random_demo                               max                18211        4597       18102       16990        1112         109        4488       22699        58ab
+TLSR952X    rf_demo                                   brx                26336        5190       26154       25006        1148         182        5008       31344        7a70
+TLSR952X    rf_demo                                   btx                26780        5202       26598       25326        1272         182        5020       31800        7c38
+TLSR952X    rf_demo                                   mrx                26476        5194       26294       25146        1148         182        5012       31488        7b00
+TLSR952X    rf_demo                                   mrx_fs             27464        5194       27278       26130        1148         186        5008       32472        7ed8
+TLSR952X    rf_demo                                   mtx                26920        5206       26738       25466        1272         182        5024       31944        7cc8
+TLSR952X    rf_demo                                   mtx_fs             27904        5206       27718       26446        1272         186        5020       32924        809c
+TLSR952X    rf_demo                                   prx                26804        5190       26622       25462        1160         182        5008       31812        7c44
+TLSR952X    rf_demo                                   ptx                27288        5202       27106       25822        1284         182        5020       32308        7e34
+TLSR952X    rf_demo                                   srt                26344        5190       26162       25014        1148         182        5008       31352        7a78
+TLSR952X    rf_demo                                   srx                26396        5190       26214       25066        1148         182        5008       31404        7aac
+TLSR952X    rf_demo                                   str                26780        5202       26598       25326        1272         182        5020       31800        7c38
+TLSR952X    rf_demo                                   stx                26828        5202       26646       25374        1272         182        5020       31848        7c68
+TLSR952X    spi_demo                                  master             21886        4612       21766       20678        1088         120        4492       26378        670a
+TLSR952X    spi_demo                                  slave              20826        4612       20706       19650        1056         120        4492       25318        62e6
+TLSR952X    stimer_demo                               def                 9422        4288        9358        9190         168          64        4224       13646        354e
+TLSR952X    system_demo/log_demo                      def                12618        4444       12582       11498        1084          36        4408       17026        4282
+TLSR952X    system_demo/log_demo                      loop               12698        4444       12662       11558        1104          36        4408       17106        42d2
+TLSR952X    system_demo/log_demo                      scheduler          12994        4464       12938       11882        1056          56        4408       17402        43fa
+TLSR952X    system_demo/task_planner_demo             loop               17863        4577       17762       16698        1064         101        4476       22339        5743
+TLSR952X    system_demo/task_planner_demo             scheduler          18290        4624       18146       17086        1060         144        4480       22770        58f2
+TLSR952X    system_demo/task_planner_demo             timers             18550        4632       18398       17330        1068         152        4480       23030        59f6
+TLSR952X    tinyusb_demos/usb_device/cdc_demo         def                31858        5400       31710       30094        1616         148        5252       37110        90f6
+TLSR952X    tinyusb_demos/usb_device/mic_demo         def                36504        5956       36352       34600        1752         152        5804       42308        a544
+TLSR952X    tinyusb_demos/usb_device/spk_demo         def                34296        5936       34144       32408        1736         152        5784       40080        9c90
+TLSR952X    uart_demo                                 def                13125        4331       13025       12784         241         100        4231       17356        43cc
+TLSR952X    uart_demo                                 max                19182        4479       19070       18438         632         112        4367       23549        5bfd
+TLSR952X    umode_demo                                def                13498        4332       13398       13120         278         100        4232       17730        4542
+TLSR952X    umode_demo                                max                13562        4332       13462       13156         306         100        4232       17794        4582
+TLSR952X    wdt_demo                                  def                18325        4585       18220       17088        1132         105        4480       22805        5915
+TLSR952X    wdt_demo                                  max                23029        4725       22916       21740        1176         113        4612       27641        6bf9
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../0.3.0/Unified_SDK_Release_Note.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">V0.3.0(FR)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../contribute/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contribution Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version">Version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-fixes">Bug Fixes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breaking-changes">BREAKING CHANGES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codesize">CodeSize</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Telink Semiconductor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Telink Semiconductor.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+<div style="text-align: right; margin-top: 1rem; padding: 0.5rem 1rem; border-top: 1px solid #eee;">
+  <a href="../../_downloads/unisdk-doc.pdf" style="font-size: 0.85rem; color: #0a2d72; text-decoration: none;">
+    &#128196; Download PDF
+  </a>
+</div>
+<script>
+var currentVersion = "0.4.0";
+var currentLang = "en";
+</script>
+<script>
+(function() {
+  'use strict';
+  function injectSwitchers() {
+    var navbarEnd = document.querySelector(".navbar-header-items__end");
+    if (!navbarEnd) return;
+
+    var langHtml = [
+      '<div class="navbar-item">',
+      '  <div class="language-selector">',
+      '    <select id="language-select" onchange="switchLanguage(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="en"' + (currentLang === "en" ? " selected" : "") + '>English</option>',
+      '      <option value="zh"' + (currentLang === "zh" ? " selected" : "") + '>中文</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", langHtml);
+
+    var verHtml = [
+      '<div class="navbar-item">',
+      '  <div class="version-selector">',
+      '    <select id="version-select" onchange="switchVersion(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="">Loading...</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", verHtml);
+
+    var script = document.createElement("script");
+    script.src = "../../_static/version_switcher.js";
+    document.body.appendChild(script);
+  }
+
+  function switchLanguage(lang) {
+    var currentPath = window.location.pathname;
+    var newPath = currentPath.replace(/\/[a-z]{2}\//, "/" + lang + "/");
+    if (newPath !== currentPath) {
+      window.location.href = newPath;
+    }
+  }
+
+  window.switchVersion = function(url) {
+    if (url) {
+      window.location.href = url;
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", injectSwitchers);
+  } else {
+    injectSwitchers();
+  }
+})();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var versionBadge = document.createElement("span");
+    versionBadge.className = "version-badge";
+    versionBadge.textContent = "0.4.0";
+    var footer = document.querySelector(".telink-footer .footer-copyright");
+    if (footer) {
+      footer.appendChild(versionBadge);
+    }
+  });
+</script>
+
+
+<footer class="telink-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Telink Semiconductor</h5>
+        <p style="font-size: 0.85rem; opacity: 0.8;">
+          Leading provider of low-power, high-performance wireless connectivity
+          SoC solutions for IoT, industrial, and automotive applications.
+        </p>
+      </div>
+      <div class="col-md-2">
+        <h5>Resources</h5>
+        <ul class="footer-links">
+          <li><a href="https://www.telink-semi.cn/" target="_blank">Official Website</a></li>
+          <li><a href="https://doc.telink-semi.cn/" target="_blank">Documentation Center</a></li>
+          <li><a href="https://forum.telink-semi.cn/" target="_blank">Technical Forum</a></li>
+          <li><a href="https://products.telink-semi.cn/" target="_blank">Product Selector</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Developers</h5>
+        <ul class="footer-links">
+          <li><a href="https://github.com/telink-semi/unisdk" target="_blank">UniSDK on GitHub</a></li>
+          <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank">Docs Repository</a></li>
+          <li><a href="https://gitee.com/telink-semi" target="_blank">Gitee Repository</a></li>
+          <li><a href="https://www.telink-semi.cn/development-tools" target="_blank">Development Tools</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="../../support/index">Contact Support</a></li>
+          <li><a href="https://www.telink-semi.cn/applications" target="_blank">Applications</a></li>
+          <li><a href="../../about/index">About Telink</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Connect</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:telinksales@telink-semi.com">Sales Inquiry</a></li>
+          <li><a href="https://www.telink-semi.cn/news" target="_blank">News & Events</a></li>
+          <li><a href="https://www.telink-semi.cn/careers" target="_blank">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; Telink Semiconductor. All rights reserved.
+      
+      <span class="version-badge">0.4.0</span>
+      
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

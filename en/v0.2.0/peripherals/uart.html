@@ -1,0 +1,1752 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>UART Driver &#8212; UniSDK v0.2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=3aef283f" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../_static/documentation_options.js?v=0a6a6ad3"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = "pre.mermaid {\n    /* Same as .mermaid-container > pre */\n    display: block;\n    width: 100%;\n}\n\npre.mermaid > svg {\n    /* Same as .mermaid-container > pre > svg */\n    height: 500px;\n    width: 100%;\n    max-width: 100% !important;\n}";
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = ".mermaid-container {\n    position: relative;\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n}\n\n.mermaid-container > pre {\n    display: block;\n    width: 100%;\n}\n\n.mermaid-container > pre > svg {\n    height: 500px;\n    width: 100%;\n    max-width: 100% !important;\n}\n\n.mermaid-fullscreen-btn {\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    background: rgba(255, 255, 255, 0.95);\n    border: 1px solid rgba(0, 0, 0, 0.3);\n    border-radius: 4px;\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    transition: all 0.2s;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);\n    font-size: 14px;\n    line-height: 1;\n    padding: 0;\n    color: #333;\n}\n\n.mermaid-fullscreen-btn:hover {\n    opacity: 100% !important;\n    background: rgba(255, 255, 255, 1);\n    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);\n    transform: scale(1.1);\n}\n\n.mermaid-fullscreen-btn.dark-theme {\n    background: rgba(50, 50, 50, 0.95);\n    border: 1px solid rgba(255, 255, 255, 0.3);\n    color: #e0e0e0;\n}\n\n.mermaid-fullscreen-btn.dark-theme:hover {\n    background: rgba(60, 60, 60, 1);\n    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);\n}\n\n.mermaid-fullscreen-modal {\n    display: none;\n    position: fixed !important;\n    top: 0 !important;\n    left: 0 !important;\n    width: 95vw;\n    height: 100vh;\n    background: rgba(255, 255, 255, 0.98);\n    z-index: 9999;\n    padding: 20px;\n    overflow: auto;\n}\n\n.mermaid-fullscreen-modal.dark-theme {\n    background: rgba(0, 0, 0, 0.98);\n}\n\n.mermaid-fullscreen-modal.active {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen {\n    position: relative;\n    width: 95vw;\n    height: 90vh;\n    max-width: 95vw;\n    max-height: 90vh;\n    background: white;\n    border-radius: 8px;\n    padding: 20px;\n    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);\n    overflow: auto;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen.dark-theme {\n    background: #1a1a1a;\n    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);\n}\n\n.mermaid-container-fullscreen pre.mermaid {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen .mermaid svg {\n    height: 100% !important;\n    width: 100% !important;\n    cursor: grab;\n}\n\n.mermaid-fullscreen-close {\n    position: fixed !important;\n    top: 20px !important;\n    right: 20px !important;\n    width: 40px;\n    height: 40px;\n    background: rgba(255, 255, 255, 0.95);\n    border: 1px solid rgba(0, 0, 0, 0.2);\n    border-radius: 50%;\n    cursor: pointer;\n    z-index: 10000;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);\n    transition: all 0.2s;\n    font-size: 24px;\n    line-height: 1;\n    color: #333;\n}\n\n.mermaid-fullscreen-close:hover {\n    background: white;\n    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);\n    transform: scale(1.1);\n}\n\n.mermaid-fullscreen-close.dark-theme {\n    background: rgba(50, 50, 50, 0.95);\n    border: 1px solid rgba(255, 255, 255, 0.2);\n    color: #e0e0e0;\n}\n\n.mermaid-fullscreen-close.dark-theme:hover {\n    background: rgba(60, 60, 60, 1);\n    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);\n}\n\n.mermaid-fullscreen-modal .mermaid-fullscreen-btn {\n    display: none !important;\n}";
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+let _lazyObserver = null;
+let _renderQueue = Promise.resolve();
+let closeModal = () => {};
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('active')) {
+        closeModal();
+    }
+});
+
+// Apply d3 zoom to each SVG. Idempotent: an SVG already wrapped is skipped,
+// so this is safe to call both for the initial batch and for diagrams that
+// render lazily once they become visible.
+const addZoomToSvgs = (svgs) => {
+    svgs.each(function() {
+        if (this.getAttribute('data-zoom-applied') === 'true') return;
+        var svg = d3.select(this);
+        svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+        var inner = svg.select("g");
+        var zoom = d3.zoom().on("zoom", function(event) {
+            inner.attr("transform", event.transform);
+        });
+        svg.call(zoom);
+        this.setAttribute('data-zoom-applied', 'true');
+    });
+};
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        // Disconnect any previous lazy rendering observer
+        if (_lazyObserver) {
+            _lazyObserver.disconnect();
+            _lazyObserver = null;
+        }
+
+        all_mermaids.forEach((el) => {
+            el.removeAttribute('data-mermaid-deferred');
+            el.removeAttribute('data-mermaid-render-failed');
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+
+        // Separate visible and hidden elements. Mermaid's layout engine measures
+        // text dimensions via the DOM, which fails for elements hidden by a parent
+        // (e.g., Reveal.js non-active slides, sphinx-design unopened tabs),
+        // producing broken SVGs. Render visible elements now, defer hidden ones.
+        const visible = [];
+        const hidden = [];
+        all_mermaids.forEach((el) => {
+            // offsetParent is null for display:none ancestors.
+            // getClientRects().length > 0 catches position:fixed elements
+            // (which also have null offsetParent but are still visible).
+            if (el.offsetParent !== null || el.getClientRects().length > 0) {
+                visible.push(el);
+            } else {
+                hidden.push(el);
+                el.setAttribute('data-mermaid-deferred', 'true');
+            }
+        });
+
+        if (visible.length > 0) {
+            try {
+                await mermaid.run({ nodes: visible });
+            } catch (e) {
+                console.error("Mermaid rendering failed:", e);
+            }
+        }
+
+        // Lazily render hidden elements when they become visible.
+        // Uses a promise chain (_renderQueue) to serialize rendering,
+        // since IntersectionObserver may report multiple entries at once
+        // and mermaid.run() is not safe to call concurrently.
+        if (hidden.length > 0) {
+            if (typeof IntersectionObserver === 'undefined') {
+                console.warn("IntersectionObserver not available; hidden mermaid diagrams will not render.");
+            } else {
+                _renderQueue = Promise.resolve();
+                _lazyObserver = new IntersectionObserver((entries) => {
+                    for (const entry of entries) {
+                        if (entry.isIntersecting && entry.target.getAttribute("data-processed") !== "true") {
+                            _lazyObserver.unobserve(entry.target);
+                            const el = entry.target;
+                            _renderQueue = _renderQueue.then(async () => {
+                                try {
+                                    await mermaid.run({ nodes: [el] });
+                                    el.removeAttribute('data-mermaid-deferred');
+                                    // Apply zoom to the now-rendered diagram, matching
+                                    // the decoration visible diagrams receive.
+                                    if (false) {
+                                        addZoomToSvgs(d3.selectAll("").select(function() {
+                                            return this.querySelector("svg");
+                                        }));
+                                    }
+                                } catch (e) {
+                                    console.error("Mermaid deferred rendering failed:", e);
+                                    el.removeAttribute('data-mermaid-deferred');
+                                    el.setAttribute('data-mermaid-render-failed', 'true');
+                                }
+                            });
+                        }
+                    }
+                });
+                hidden.forEach((el) => _lazyObserver.observe(el));
+            }
+        }
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    // Exclude deferred (hidden) and render-failed elements from completion checks
+    const mermaids_active = document.querySelectorAll(".mermaid:not([data-mermaid-deferred]):not([data-mermaid-render-failed])");
+    const mermaids_processed = document.querySelectorAll(".mermaid:not([data-mermaid-deferred]):not([data-mermaid-render-failed])[data-processed='true']");
+
+    if (false) {
+        const mermaids_to_add_zoom = 0 === -1 ? mermaids_active.length : 0;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("").select(function() {
+                return this.querySelector("svg");
+            });
+            // Wait until every active (visible) diagram has rendered. Deferred
+            // diagrams are excluded, so a fixed d3_node_count that counts a
+            // hidden diagram no longer loops forever waiting for its SVG.
+            if(mermaids_active.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            }
+            addZoomToSvgs(svgs);
+        }
+    } else if(mermaids_active.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if (!true) return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = "\u26f6";
+        fullscreenBtn.style.opacity = "50%";
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scrollX, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.display = 'block';
+
+                if (false) {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+
+
+const load = async () => {
+    initStyles();
+
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...{"startOnLoad": false},
+                ...{ darkMode: darkTheme, theme: darkTheme ? "dark" : "default" },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...{"startOnLoad": false},
+    ...{ darkMode: darkTheme, theme: darkTheme ? "dark" : "default" },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'peripherals/uart';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/favicon.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Power Management (PM) Driver" href="pm.html" />
+    <link rel="prev" title="GPIO Driver" href="gpio.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="v0.2.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<link rel="stylesheet" href="../_static/extra.css" />
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="UniSDK v0.2.0 documentation - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="UniSDK v0.2.0 documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    UniSDK — Telink Unified Software Development Kit
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">UniSDK Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/environment_setup.html">Development Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/get_sdk.html">Get and Import the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/first_example.html">Compile, Flash and Run Your First Example (VS Code)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developing/index.html">Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_linux.html">Linux Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_macos.html">macOS Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_windows.html">Windows Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/blinky.html">First Example: Blinky (CLI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/directory_structure.html">SDK Directory Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project_management.html">Project Creation &amp; Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/core_architecture.html">Core Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/init_hooks.html">Init hooks documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/public_api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/debugging.html">Debugging &amp; Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/ide_integration.html">IDE Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/clangd.html">clangd Setup Guide for VSCode</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chips &amp; Boards</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/index.html">Chips and Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TL321X.html">TL321X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TL721X.html">TL721X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TLSR922X.html">TLSR922X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TLSR952X.html">TLSR952X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TL3218X_EVK.html">TL3218X_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TL7218X_EVK.html">TL7218X_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9228A_EVK.html">TLSR9228A_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9528A_EVK.html">TLSR9528A_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9528A_DONGLE.html">TLSR9528A_DONGLE</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Peripherals &amp; Drivers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Peripherals and Drivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpio.html">GPIO Driver</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">UART Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pm.html">Power Management (PM) Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analog.html">Analog Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plic.html">PLIC Interrupt Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="i2c.html">I2C Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spi.html">SPI Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adc.html">ADC Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dma.html">DMA Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wdt.html">Watchdog Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer.html">Timer Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usb.html">USB Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pmp.html">PMP Driver</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Connectivity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../connectivity/index.html">Connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../connectivity/ble/controller.html">BLE Controller Coding Standards</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">System Services</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../system_services/index.html">System Services</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Build &amp; Configuration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../build_config/index.html">Build &amp; Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/cmake_system.html">CMake Build System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/kconfig_system.html">Kconfig Configuration System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/west_commands.html">West Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/make_support.html">Make Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/build_flow.html">Build Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/build_system_architecture.html">UniSDK Build System Architecture Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/extensions.html">Extensions &amp; Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/reference.html">File &amp; Script Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Development Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/bdt.html">BDT Burning and Debugging Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/pinmux.html">Pinmux Pin Configuration Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/menuconfig.html">Menuconfig Configuration Interface</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Security</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Production Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../productization/index.html">Production Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Samples &amp; Demos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../samples/index.html">Samples &amp; Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/gpio.html">GPIO Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/uart.html">UART Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/pm.html">PM Power Management Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/pmp.html">PMP Driver Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/umode.html">U-mode Driver Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/adc.html">ADC Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/dma.html">DMA Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/i2c.html">I2C Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/spi.html">SPI Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/ble.html">BLE Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/irq_nesting.html">IRQ Nesting Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/stimer.html">STIMER Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/wdt.html">Watchdog Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/usb_cdc.html">USB CDC Sample</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api_reference/index.html">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../kconfig_reference/index.html">Kconfig Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../yaml_reference/index.html">YAML Description Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/0.2.0/Unified_SDK_Release_Note.html">V0.2.0(FR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../terminology.html">UniSDK Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About Telink Semiconductor</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/edit/main/peripherals/uart.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/issues/new?title=Issue%20on%20page%20%2Fperipherals/uart.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/peripherals/uart.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>UART Driver</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-and-enums">Data Types and Enums</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uart-module-identifiers">UART Module Identifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parity">Parity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-bits">Stop Bits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rx-timeout-multiplier">RX Timeout Multiplier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uart-configuration-structure">UART Configuration Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-status">Operation Status</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-modes">Flow Control Modes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-polarity">Flow Control Polarity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-configuration-structure">Flow Control Configuration Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transmit-handler-type">Transmit Handler Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#receive-handler-type">Receive Handler Type</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driver-api">Driver API</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-configure"><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-configure-pinmux"><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_pinmux</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-send-bytes"><code class="docutils literal notranslate"><span class="pre">tlk_uart_send_bytes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-receive-bytes"><code class="docutils literal notranslate"><span class="pre">tlk_uart_receive_bytes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-configure-flow-control"><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_flow_control</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-configure-flow-control-pinmux"><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_flow_control_pinmux</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-modes">Transfer Modes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kconfig-configuration">Kconfig Configuration</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-options">Global options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-instance-configuration">Per-instance Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-in-the-menuconfig">View in the menuconfig</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-resources">Related Resources</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="uart-driver">
+<h1>UART Driver<a class="headerlink" href="#uart-driver" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>The UART driver provides an interface for configuring and using asynchronous serial ports. It supports communication parameter configuration (baud rate, parity, stop bits), pin multiplexing (Pinmux), data transmission (blocking mode), and data reception (blocking and non-blocking interrupt modes). It also supports hardware flow control (RTS/CTS).</p>
+<p><strong>Key Features:</strong></p>
+<ul class="simple">
+<li><p>UART parameter configuration (baud rate, parity, stop bits)</p></li>
+<li><p>TX/RX and RTS/CTS pin multiplexing</p></li>
+<li><p>Data transmission (Blocking / PLIC / DMA modes)</p></li>
+<li><p>Data reception (Blocking / PLIC / DMA modes + callback)</p></li>
+<li><p>Hardware flow control (RTS/CTS)</p></li>
+</ul>
+</section>
+<section id="data-types-and-enums">
+<h2>Data Types and Enums<a class="headerlink" href="#data-types-and-enums" title="Link to this heading">#</a></h2>
+<section id="uart-module-identifiers">
+<h3>UART Module Identifiers<a class="headerlink" href="#uart-module-identifiers" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_module</span></code> — Automatically generated based on <code class="docutils literal notranslate"><span class="pre">UNISDK_UART_COUNT</span></code> and enabled instances. Values include <code class="docutils literal notranslate"><span class="pre">UART0</span></code>, <code class="docutils literal notranslate"><span class="pre">UART1</span></code>, etc.</p>
+</section>
+<section id="parity">
+<h3>Parity<a class="headerlink" href="#parity" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_parity</span></code></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_PARITY_NONE</span></code></p></td>
+<td><p>No parity</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_PARITY_EVEN</span></code></p></td>
+<td><p>Even parity</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_PARITY_ODD</span></code></p></td>
+<td><p>Odd parity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="stop-bits">
+<h3>Stop Bits<a class="headerlink" href="#stop-bits" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_stop_bit</span></code></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_STOP_BIT_ONE</span></code></p></td>
+<td><p>1 stop bit</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_STOP_BIT_ONE_DOT_FIVE</span></code></p></td>
+<td><p>1.5 stop bits</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_STOP_BIT_TWO</span></code></p></td>
+<td><p>2 stop bits</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="rx-timeout-multiplier">
+<h3>RX Timeout Multiplier<a class="headerlink" href="#rx-timeout-multiplier" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_rx_timeout_mul</span></code></p>
+<p>Multiplier for RX timeout duration. The total RX timeout = (one UART frame duration) × multiplier.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_RX_TIMEOUT_MUL_1</span></code></p></td>
+<td><p>1× frame duration</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_RX_TIMEOUT_MUL_2</span></code></p></td>
+<td><p>2× frame duration</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_RX_TIMEOUT_MUL_3</span></code></p></td>
+<td><p>3× frame duration</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_RX_TIMEOUT_MUL_4</span></code></p></td>
+<td><p>4× frame duration</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="uart-configuration-structure">
+<h3>UART Configuration Structure<a class="headerlink" href="#uart-configuration-structure" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">tlk_uart_config</span></code></p>
+<p>A structure containing all configuration parameters for initializing a UART module. Used with <code class="docutils literal notranslate"><span class="pre">tlk_uart_configure</span></code> and <code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_pinmux</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">baudrate</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint32_t</span></code></p></td>
+<td><p>Communication speed in baud</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">parity</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_parity</span></code></p></td>
+<td><p>Parity check mode</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">stop_bit</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_stop_bit</span></code></p></td>
+<td><p>Number of stop bits</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rx_timeout_mul</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_rx_timeout_mul</span></code></p></td>
+<td><p>RX timeout multiplier</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tx_port_pin</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">tlk_gpio_port_pin</span></code></p></td>
+<td><p>TX port and pin</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rx_port_pin</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">tlk_gpio_port_pin</span></code></p></td>
+<td><p>RX port and pin</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="operation-status">
+<h3>Operation Status<a class="headerlink" href="#operation-status" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_status</span></code></p>
+<p>Return codes used by driver functions to indicate the result of an operation.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_OK</span></code></p></td>
+<td><p>Operation completed successfully.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_TIMEOUT</span></code></p></td>
+<td><p>Operation timed out.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_ERROR</span></code></p></td>
+<td><p>General execution error.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="flow-control-modes">
+<h3>Flow Control Modes<a class="headerlink" href="#flow-control-modes" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_flow_control</span></code></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_FLOW_NONE</span></code></p></td>
+<td><p>Flow control disabled.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_FLOW_RTS</span></code></p></td>
+<td><p>RTS signal only.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_FLOW_CTS</span></code></p></td>
+<td><p>CTS signal only.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_FLOW_RTS_CTS</span></code></p></td>
+<td><p>Full RTS/CTS flow control.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="flow-control-polarity">
+<h3>Flow Control Polarity<a class="headerlink" href="#flow-control-polarity" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_flow_polarity</span></code></p>
+<p>Defines the active level logic for RTS and CTS signals.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_ACTIVE_LOW</span></code></p></td>
+<td><p><strong>Active Low.</strong> UART stops sending when CTS is low, and sets RTS low to stop receiving.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_ACTIVE_HIGH</span></code></p></td>
+<td><p><strong>Active High.</strong> UART stops sending when CTS is high, and sets RTS high to stop receiving.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="flow-control-configuration-structure">
+<h3>Flow Control Configuration Structure<a class="headerlink" href="#flow-control-configuration-structure" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">tlk_uart_flow_control_config</span></code></p>
+<p>A structure containing all configuration parameters for UART hardware flow control. Used with <code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_flow_control</span></code> and <code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_flow_control_pinmux</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">flow_control</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_flow_control</span></code></p></td>
+<td><p>Flow control mode (RTS/CTS)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">flow_polarity</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_flow_polarity</span></code></p></td>
+<td><p>Active level for RTS/CTS signals</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rts_port_pin</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">tlk_gpio_port_pin</span></code></p></td>
+<td><p>RTS port and pin</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cts_port_pin</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">tlk_gpio_port_pin</span></code></p></td>
+<td><p>CTS port and pin</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="transmit-handler-type">
+<h3>Transmit Handler Type<a class="headerlink" href="#transmit-handler-type" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">tlk_uart_tx_handler_t</span></code></p>
+<p>A function pointer type for the callback invoked when data transmission is complete in interrupt and DMA modes.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">tlk_uart_tx_handler_t</span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="receive-handler-type">
+<h3>Receive Handler Type<a class="headerlink" href="#receive-handler-type" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">tlk_uart_rx_handler_t</span></code></p>
+<p>A function pointer type for the callback invoked when data reception is complete in interrupt and DMA modes.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">tlk_uart_rx_handler_t</span><span class="p">)(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">rx_count</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="driver-api">
+<h2>Driver API<a class="headerlink" href="#driver-api" title="Link to this heading">#</a></h2>
+<section id="tlk-uart-configure">
+<h3><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure</span></code><a class="headerlink" href="#tlk-uart-configure" title="Link to this heading">#</a></h3>
+<p>Initializes the UART module with the provided configuration.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">tlk_uart_configure</span><span class="p">(</span><span class="k">enum</span><span class="w"> </span><span class="n">tlk_uart_module</span><span class="w"> </span><span class="n">uart_num</span><span class="p">,</span>
+<span class="w">                        </span><span class="k">struct</span><span class="w"> </span><span class="nc">tlk_uart_config</span><span class="w"> </span><span class="o">*</span><span class="n">config</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">uart_num</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_module</span></code></p></td>
+<td><p>UART module index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">config</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">tlk_uart_config</span> <span class="pre">*</span></code></p></td>
+<td><p>Pointer to the configuration structure containing baudrate, parity, stop bits, and pin assignments.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Return value:</strong> None</p>
+</section>
+<section id="tlk-uart-configure-pinmux">
+<h3><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_pinmux</span></code><a class="headerlink" href="#tlk-uart-configure-pinmux" title="Link to this heading">#</a></h3>
+<p>Configures UART TX/RX pin multiplexing.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">tlk_uart_configure_pinmux</span><span class="p">(</span><span class="k">enum</span><span class="w"> </span><span class="n">tlk_uart_module</span><span class="w"> </span><span class="n">uart_num</span><span class="p">,</span>
+<span class="w">                               </span><span class="k">struct</span><span class="w"> </span><span class="nc">tlk_uart_config</span><span class="w"> </span><span class="o">*</span><span class="n">config</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">uart_num</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_module</span></code></p></td>
+<td><p>UART module index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">config</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">tlk_uart_config</span> <span class="pre">*</span></code></p></td>
+<td><p>Pointer to the configuration structure containing TX and RX pin assignments.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Return value:</strong> None</p>
+</section>
+<section id="tlk-uart-send-bytes">
+<h3><code class="docutils literal notranslate"><span class="pre">tlk_uart_send_bytes</span></code><a class="headerlink" href="#tlk-uart-send-bytes" title="Link to this heading">#</a></h3>
+<p>Sends a data buffer.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">tlk_uart_status</span><span class="w"> </span><span class="nf">tlk_uart_send_bytes</span><span class="p">(</span><span class="k">enum</span><span class="w"> </span><span class="n">tlk_uart_module</span><span class="w"> </span><span class="n">uart_num</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">buff</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">buff_size</span><span class="p">,</span>
+<span class="w">    </span><span class="n">tlk_uart_tx_handler_t</span><span class="w"> </span><span class="n">tx_handler</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timeout_us</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="tlk-uart-receive-bytes">
+<h3><code class="docutils literal notranslate"><span class="pre">tlk_uart_receive_bytes</span></code><a class="headerlink" href="#tlk-uart-receive-bytes" title="Link to this heading">#</a></h3>
+<p>Receives a data buffer. The provided handler is called when reception is complete.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">tlk_uart_status</span><span class="w"> </span><span class="nf">tlk_uart_receive_bytes</span><span class="p">(</span><span class="k">enum</span><span class="w"> </span><span class="n">tlk_uart_module</span><span class="w"> </span><span class="n">uart_num</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">buff</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">buff_size</span><span class="p">,</span>
+<span class="w">    </span><span class="n">tlk_uart_rx_handler_t</span><span class="w"> </span><span class="n">rx_handler</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">uart_num</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_module</span></code></p></td>
+<td><p>UART module index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">buff</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint8_t</span> <span class="pre">*</span></code></p></td>
+<td><p>Pointer to the receive buffer.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">buff_size</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint32_t</span></code></p></td>
+<td><p>Number of bytes to receive.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rx_handler</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tlk_uart_rx_handler_t</span></code></p></td>
+<td><p>Callback function invoked after reception completes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Return value:</strong> <code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_status</span></code> — Returns <code class="docutils literal notranslate"><span class="pre">TLK_UART_OK</span></code>.</p>
+</section>
+<section id="tlk-uart-configure-flow-control">
+<h3><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_flow_control</span></code><a class="headerlink" href="#tlk-uart-configure-flow-control" title="Link to this heading">#</a></h3>
+<p>Configure the flow control for the specified UART module. Disabled by default. Should be called after <code class="docutils literal notranslate"><span class="pre">tlk_uart_configure</span></code>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">tlk_uart_configure_flow_control</span><span class="p">(</span><span class="k">enum</span><span class="w"> </span><span class="n">tlk_uart_module</span><span class="w"> </span><span class="n">uart_num</span><span class="p">,</span>
+<span class="w">                         </span><span class="k">struct</span><span class="w"> </span><span class="nc">tlk_uart_flow_control_config</span><span class="w"> </span><span class="o">*</span><span class="n">config</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">uart_num</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_module</span></code></p></td>
+<td><p>UART module index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">config</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">tlk_uart_flow_control_config</span> <span class="pre">*</span></code></p></td>
+<td><p>Pointer to the flow control configuration structure.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Return value:</strong> None</p>
+</section>
+<section id="tlk-uart-configure-flow-control-pinmux">
+<h3><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_flow_control_pinmux</span></code><a class="headerlink" href="#tlk-uart-configure-flow-control-pinmux" title="Link to this heading">#</a></h3>
+<p>Configure UART RTS and CTS pin multiplexing.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">tlk_uart_configure_flow_control_pinmux</span><span class="p">(</span><span class="k">enum</span><span class="w"> </span><span class="n">tlk_uart_module</span><span class="w"> </span><span class="n">uart_num</span><span class="p">,</span>
+<span class="w">                                </span><span class="k">struct</span><span class="w"> </span><span class="nc">tlk_uart_flow_control_config</span><span class="w"> </span><span class="o">*</span><span class="n">config</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">uart_num</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">tlk_uart_module</span></code></p></td>
+<td><p>UART module index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">config</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">tlk_uart_flow_control_config</span> <span class="pre">*</span></code></p></td>
+<td><p>Pointer to the flow control configuration structure containing RTS and CTS pin assignments.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Return value:</strong> None</p>
+</section>
+</section>
+<section id="transfer-modes">
+<h2>Transfer Modes<a class="headerlink" href="#transfer-modes" title="Link to this heading">#</a></h2>
+<p>Each UART instance can independently configure its transfer mode:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Kconfig Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Blocking</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_XFER_BLOCKING</span></code></p></td>
+<td><p>Synchronous wait, with timeout</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interrupt</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_XFER_PLIC</span></code></p></td>
+<td><p>Interrupt-driven, auto-fill FIFO</p></td>
+</tr>
+<tr class="row-even"><td><p>DMA</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TLK_UART_XFER_DMA</span></code></p></td>
+<td><p>DMA driven, zero CPU load</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="kconfig-configuration">
+<h2>Kconfig Configuration<a class="headerlink" href="#kconfig-configuration" title="Link to this heading">#</a></h2>
+<section id="global-options">
+<h3>Global options<a class="headerlink" href="#global-options" title="Link to this heading">#</a></h3>
+<p>**<code class="docutils literal notranslate"><span class="pre">TLK_UART_SELECTED**</span>&#160;&#160; <span class="pre">Indicates</span> <span class="pre">that</span> <span class="pre">at</span> <span class="pre">least</span> <span class="pre">one</span> <span class="pre">UART</span> <span class="pre">instance</span> <span class="pre">is</span> <span class="pre">enabled</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">system.</span> <span class="pre">This</span> <span class="pre">option</span> <span class="pre">is</span> <span class="pre">automatically</span> <span class="pre">selected</span> <span class="pre">when</span> <span class="pre">any</span> </code>UART{i}_ENABLED` option is enabled.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">TLK_UART_USED_AUTO_CONFIG</span></code></strong><br />
+Indicates that automatic UART configuration is enabled in the system. This option is automatically selected when <code class="docutils literal notranslate"><span class="pre">UART{i}_AUTO_CONFIG</span></code> is enabled for any UART instance.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">TLK_UART_USED_IRQ</span></code></strong><br />
+Indicates that at least one UART instance needs a PLIC functionality. This option is automatically selected when <code class="docutils literal notranslate"><span class="pre">UART{i}_USED_IRQ</span></code> or <code class="docutils literal notranslate"><span class="pre">UART{i}_USED_DMA</span></code> are enabled for any UART instance.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">TLK_UART_USED_DMA</span></code></strong><br />
+Indicates that at least one UART instance needs a DMA functionality. This option is automatically selected when <code class="docutils literal notranslate"><span class="pre">UART{i}_USED_DMA</span></code> is enabled for any UART instance.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">TLK_UART_USED_PM_DEVICE</span></code></strong><br />
+Indicates that UART power management support is enabled in the system. This option is automatically selected when <code class="docutils literal notranslate"><span class="pre">UART{i}_PM_DEVICE</span></code> is enabled for any UART instance.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">TLK_UART_USED_FLOW_CONTROL</span></code></strong><br />
+Indicates that hardware flow control (RTS/CTS) is enabled in the system. This option is automatically selected when <code class="docutils literal notranslate"><span class="pre">UART{i}_FLOW_CONTROL</span></code> is enabled for any UART instance.</p>
+</section>
+<section id="per-instance-configuration">
+<h3>Per-instance Configuration<a class="headerlink" href="#per-instance-configuration" title="Link to this heading">#</a></h3>
+<p>Each UART instance (i = 0, 1, 2…) supports the following hierarchical configuration:</p>
+<pre  class="mermaid">
+        graph TD
+    UART[&quot;UART{i}_ENABLED&lt;br/&gt;Enables UART module&quot;] --&gt; AUTO[&quot;UART{i}_AUTO_CONFIG&lt;br/&gt;Auto configuration&quot;]
+    UART --&gt; TX[&quot;UART{i}_TX_MODE&lt;br/&gt;Transmission mode&quot;]
+    UART --&gt; RX[&quot;UART{i}_RX_MODE&lt;br/&gt;Reception mode&quot;]
+    UART --&gt; PM[&quot;UART{i}_PM_DEVICE&lt;br/&gt;Power management support&quot;]
+    UART --&gt; SLEEP[&quot;UART{i}_PREVENT_SLEEP&lt;br/&gt;Prevent sleep during RX&quot;]
+    UART --&gt; DEBUG[&quot;TLK_DEBUG_PRINT&lt;br/&gt;Debug output&quot;]
+
+    AUTO --&gt; BAUD[&quot;UART{i}_BAUDRATE&lt;br/&gt;Default: 115200&quot;]
+    AUTO --&gt; PARITY[&quot;UART{i}_PARITY&lt;br/&gt;Parity mode&quot;]
+    AUTO --&gt; STOP[&quot;UART{i}_STOP_BIT&lt;br/&gt;Stop bits&quot;]
+    AUTO --&gt; FLOW[&quot;UART{i}_FLOW_CONTROL_TYPE&lt;br/&gt;Flow control&quot;]
+    AUTO --&gt; FPOL[&quot;UART{i}_FLOW_POLARITY&lt;br/&gt;Flow polarity&quot;]
+
+    PARITY --&gt; NONE[&quot;TLK_UART_PARITY_NONE&quot;]
+    PARITY --&gt; EVEN[&quot;TLK_UART_PARITY_EVEN&quot;]
+    PARITY --&gt; ODD[&quot;TLK_UART_PARITY_ODD&quot;]
+
+    STOP --&gt; SB1[&quot;TLK_UART_STOP_BIT_ONE&quot;]
+    STOP --&gt; SB15[&quot;TLK_UART_STOP_BIT_ONE_DOT_FIVE&quot;]
+    STOP --&gt; SB2[&quot;TLK_UART_STOP_BIT_TWO&quot;]
+
+    FLOW --&gt; FNONE[&quot;TLK_UART_FLOW_NONE&quot;]
+    FLOW --&gt; FRTS[&quot;TLK_UART_FLOW_RTS&quot;]
+    FLOW --&gt; FCTS[&quot;TLK_UART_FLOW_CTS&quot;]
+    FLOW --&gt; FRTSCTS[&quot;TLK_UART_FLOW_RTS_CTS&quot;]
+
+    FPOL --&gt; ALOW[&quot;TLK_UART_ACTIVE_LOW (Default)&quot;]
+    FPOL --&gt; AHIGH[&quot;TLK_UART_ACTIVE_HIGH&quot;]
+
+    TX --&gt; TXB[&quot;TLK_UART_XFER_BLOCKING&quot;]
+    TX --&gt; TXI[&quot;TLK_UART_XFER_IRQ&quot;]
+    TX --&gt; TXD[&quot;TLK_UART_XFER_DMA&quot;]
+
+    RX --&gt; RXB[&quot;TLK_UART_XFER_BLOCKING&quot;]
+    RX --&gt; RXI[&quot;TLK_UART_XFER_IRQ&quot;]
+    RX --&gt; RXD[&quot;TLK_UART_XFER_DMA&quot;]
+
+    DEBUG --&gt; DBG_UART[&quot;TLK_DEBUG_PRINT_UART&lt;br/&gt;Which UART instances&quot;]
+    DEBUG --&gt; DBG_BUF[&quot;TLK_DEBUG_PRINT_BUFFER_SIZE&lt;br/&gt;Default: 256 bytes&quot;]
+    </pre></section>
+<section id="view-in-the-menuconfig">
+<h3>View in the menuconfig<a class="headerlink" href="#view-in-the-menuconfig" title="Link to this heading">#</a></h3>
+<p><img alt="alt text" src="../_images/uart_1.png" />
+<em>Figure 1. UART driver configurations</em></p>
+<p><img alt="alt text" src="../_images/uart_2.png" />
+<em>Figure 2. UART instance configurations</em></p>
+<p><img alt="alt text" src="../_images/uart_3.png" />
+<em>Figure 3. UART instance auto-config options</em></p>
+<p><img alt="alt text" src="../_images/uart_4.png" />
+<em>Figure 4. UART debug configurations</em></p>
+</section>
+</section>
+<section id="related-resources">
+<h2>Related Resources<a class="headerlink" href="#related-resources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../samples/uart.html"><span class="std std-doc">UART Samples</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="gpio.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">GPIO Driver</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pm.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Power Management (PM) Driver</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-and-enums">Data Types and Enums</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uart-module-identifiers">UART Module Identifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parity">Parity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-bits">Stop Bits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rx-timeout-multiplier">RX Timeout Multiplier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uart-configuration-structure">UART Configuration Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-status">Operation Status</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-modes">Flow Control Modes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-polarity">Flow Control Polarity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-configuration-structure">Flow Control Configuration Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transmit-handler-type">Transmit Handler Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#receive-handler-type">Receive Handler Type</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driver-api">Driver API</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-configure"><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-configure-pinmux"><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_pinmux</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-send-bytes"><code class="docutils literal notranslate"><span class="pre">tlk_uart_send_bytes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-receive-bytes"><code class="docutils literal notranslate"><span class="pre">tlk_uart_receive_bytes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-configure-flow-control"><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_flow_control</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlk-uart-configure-flow-control-pinmux"><code class="docutils literal notranslate"><span class="pre">tlk_uart_configure_flow_control_pinmux</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-modes">Transfer Modes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kconfig-configuration">Kconfig Configuration</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-options">Global options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-instance-configuration">Per-instance Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-in-the-menuconfig">View in the menuconfig</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-resources">Related Resources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Telink Semiconductor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Telink Semiconductor.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+<div style="text-align: right; margin-top: 1rem; padding: 0.5rem 1rem; border-top: 1px solid #eee;">
+  <a href="../_downloads/unisdk-doc.pdf" style="font-size: 0.85rem; color: #0a2d72; text-decoration: none;">
+    &#128196; Download PDF
+  </a>
+</div>
+<script>
+var currentVersion = "v0.2.0";
+var currentLang = "en";
+</script>
+<script>
+(function() {
+  'use strict';
+  function injectSwitchers() {
+    var navbarEnd = document.querySelector(".navbar-header-items__end");
+    if (!navbarEnd) return;
+
+    var langHtml = [
+      '<div class="navbar-item">',
+      '  <div class="language-selector">',
+      '    <select id="language-select" onchange="switchLanguage(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="en"' + (currentLang === "en" ? " selected" : "") + '>English</option>',
+      '      <option value="zh"' + (currentLang === "zh" ? " selected" : "") + '>中文</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", langHtml);
+
+    var verHtml = [
+      '<div class="navbar-item">',
+      '  <div class="version-selector">',
+      '    <select id="version-select" onchange="switchVersion(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="">Loading...</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", verHtml);
+
+    var script = document.createElement("script");
+    script.src = "../_static/version_switcher.js";
+    document.body.appendChild(script);
+  }
+
+  function switchLanguage(lang) {
+    var currentPath = window.location.pathname;
+    var newPath = currentPath.replace(/\/[a-z]{2}\//, "/" + lang + "/");
+    if (newPath !== currentPath) {
+      window.location.href = newPath;
+    }
+  }
+
+  window.switchVersion = function(url) {
+    if (url) {
+      window.location.href = url;
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", injectSwitchers);
+  } else {
+    injectSwitchers();
+  }
+})();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var versionBadge = document.createElement("span");
+    versionBadge.className = "version-badge";
+    versionBadge.textContent = "v0.2.0";
+    var footer = document.querySelector(".telink-footer .footer-copyright");
+    if (footer) {
+      footer.appendChild(versionBadge);
+    }
+  });
+</script>
+
+
+<footer class="telink-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Telink Semiconductor</h5>
+        <p style="font-size: 0.85rem; opacity: 0.8;">
+          Leading provider of low-power, high-performance wireless connectivity
+          SoC solutions for IoT, industrial, and automotive applications.
+        </p>
+      </div>
+      <div class="col-md-2">
+        <h5>Resources</h5>
+        <ul class="footer-links">
+          <li><a href="https://www.telink-semi.cn/" target="_blank">Official Website</a></li>
+          <li><a href="https://doc.telink-semi.cn/" target="_blank">Documentation Center</a></li>
+          <li><a href="https://forum.telink-semi.cn/" target="_blank">Technical Forum</a></li>
+          <li><a href="https://products.telink-semi.cn/" target="_blank">Product Selector</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Developers</h5>
+        <ul class="footer-links">
+          <li><a href="https://github.com/telink-semi/unisdk" target="_blank">UniSDK on GitHub</a></li>
+          <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank">Docs Repository</a></li>
+          <li><a href="https://gitee.com/telink-semi" target="_blank">Gitee Repository</a></li>
+          <li><a href="https://www.telink-semi.cn/development-tools" target="_blank">Development Tools</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="../support/index">Contact Support</a></li>
+          <li><a href="https://www.telink-semi.cn/applications" target="_blank">Applications</a></li>
+          <li><a href="../about/index">About Telink</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Connect</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:telinksales@telink-semi.com">Sales Inquiry</a></li>
+          <li><a href="https://www.telink-semi.cn/news" target="_blank">News & Events</a></li>
+          <li><a href="https://www.telink-semi.cn/careers" target="_blank">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; Telink Semiconductor. All rights reserved.
+      
+      <span class="version-badge">v0.2.0</span>
+      
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

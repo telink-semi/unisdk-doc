@@ -1,0 +1,1228 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>贡献指南 &#8212; UniSDK v0.2.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=3aef283f" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../_static/documentation_options.js?v=dcecb372"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contribute/index';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/favicon.svg"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="技术支持" href="../support/index.html" />
+    <link rel="prev" title="V0.2.0(FR)" href="../releases/0.2.0/Unified_SDK_Release_Note.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh"/>
+  <meta name="docsearch:version" content="v0.2.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<link rel="stylesheet" href="../_static/extra.css" />
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="当前页面">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="UniSDK v0.2.0 文档 - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="UniSDK v0.2.0 文档 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    UniSDK — Telink 统一软件开发套件
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">UniSDK 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/environment_setup.html">搭建开发环境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/get_sdk.html">获取和导入 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/first_example.html">Compile, Flash and Run Your First Example (VS Code)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/troubleshooting.html">故障排除</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">开发指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developing/index.html">开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_linux.html">Linux 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_macos.html">macOS 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_windows.html">Windows 环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/blinky.html">First Example: Blinky (CLI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/directory_structure.html">SDK 目录结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project_management.html">项目创建与管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/core_architecture.html">核心架构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/init_hooks.html">初始化钩子文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/public_api.html">API 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/debugging.html">调试与测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/ide_integration.html">IDE 集成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/clangd.html">VSCode 的 clangd 设置指南</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">芯片与开发板</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/index.html">芯片与开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TL321X.html">TL321X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TL721X.html">TL721X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TLSR922X.html">TLSR922X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TLSR952X.html">TLSR952X 芯片系列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TL3218X_EVK.html">TL3218X_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TL7218X_EVK.html">TL7218X_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9228A_EVK.html">TLSR9228A_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9528A_EVK.html">TLSR9528A_EVK 开发板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9528A_DONGLE.html">TLSR9528A_DONGLE</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外设与驱动</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/index.html">外设与驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/gpio.html">GPIO 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/uart.html">UART 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/pm.html">Power Management (PM) Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/analog.html">模拟驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/plic.html">PLIC 中断控制器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/i2c.html">I2C 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/spi.html">SPI 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/adc.html">ADC 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/dma.html">DMA 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/wdt.html">看门狗驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/timer.html">定时器驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/usb.html">USB 驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/pmp.html">PMP 驱动</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">连接性</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../connectivity/index.html">连接性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../connectivity/ble/controller.html">BLE 控制器编码规范</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">系统服务</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../system_services/index.html">系统服务</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">构建与配置</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../build_config/index.html">构建与配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/cmake_system.html">CMake 构建系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/kconfig_system.html">Kconfig 配置系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/west_commands.html">West 命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/make_support.html">Make 支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/build_flow.html">构建流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/build_system_architecture.html">UniSDK 构建系统架构文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/extensions.html">扩展与定制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/reference.html">文件与脚本参考</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">开发工具</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">开发工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/bdt.html">BDT 烧录和调试工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/pinmux.html">Pinmux 引脚配置工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/menuconfig.html">Menuconfig 配置界面</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">安全</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">安全</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">生产指南</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../productization/index.html">生产指南</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">示例与演示</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../samples/index.html">示例与演示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/gpio.html">GPIO 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/uart.html">UART 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/pm.html">PM 电源管理示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/pmp.html">PMP 驱动示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/umode.html">U-mode 驱动示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/adc.html">ADC 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/dma.html">DMA 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/i2c.html">I2C 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/spi.html">SPI 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/ble.html">BLE 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/irq_nesting.html">IRQ 嵌套示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/stimer.html">STIMER 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/wdt.html">看门狗示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/usb_cdc.html">USB CDC 示例</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API 参考</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api_reference/index.html">API 参考</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../kconfig_reference/index.html">Kconfig 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../yaml_reference/index.html">YAML 描述参考</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">社区</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">发布版本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/0.2.0/Unified_SDK_Release_Note.html">V0.2.0(FR)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">技术支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../terminology.html">UniSDK 术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">关于 Telink Semiconductor</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="源码库"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/edit/main/contribute/index.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/issues/new?title=Issue%20on%20page%20%2Fcontribute/index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="创建议题"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/contribute/index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="亮色"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="暗色"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>亮色</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>暗色</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>贡献指南</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-repository-unisdk-doc">文档仓库：unisdk-doc</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-model">分支模型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lifecycle">生命周期</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-version-vs-sdk-version">文档版本与 SDK 版本</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-process">发布流程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-version-maintenance">多版本维护</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-cd-behavior">CI/CD 行为</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-structure-standards">文档结构标准</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-naming">目录命名</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frontmatter-metadata">前置元数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-difference-markers">版本差异标记</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-format-guidelines">文件格式指南</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-reference-conventions">交叉引用约定</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-issues">提交 Issue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-standards-sdk-contributions">代码规范（SDK 贡献）</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="contribution-guide">
+<h1>贡献指南<a class="headerlink" href="#contribution-guide" title="链接到此标题。">#</a></h1>
+<p>欢迎社区开发者和贡献者为 UniSDK 项目贡献代码、文档、示例和问题报告。</p>
+<blockquote>
+<div><p><strong>关于 SDK 代码贡献的说明</strong>：本指南主要针对 <strong>unisdk-doc</strong> 文档仓库。有关 SDK 代码贡献（unisdk），请参考 <a class="reference external" href="https://github.com/telink-semi/unisdk">unisdk 仓库</a>。</p>
+</div></blockquote>
+<hr class="docutils" />
+<section id="documentation-repository-unisdk-doc">
+<h2>文档仓库：unisdk-doc<a class="headerlink" href="#documentation-repository-unisdk-doc" title="链接到此标题。">#</a></h2>
+<p>文档仓库（<a class="reference external" href="https://github.com/telink-semi/unisdk-doc">unisdk-doc</a>）采用与 SDK 代码仓库相同的分支模型。</p>
+<section id="branch-model">
+<h3>分支模型<a class="headerlink" href="#branch-model" title="链接到此标题。">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main</span>                                        <span class="o">&lt;-</span> <span class="n">Stable</span> <span class="p">(</span><span class="n">latest</span> <span class="n">release</span><span class="p">)</span>
+  <span class="o">^</span> <span class="n">merge</span>
+<span class="n">release</span><span class="o">-</span><span class="n">v</span><span class="o">*.*.*</span>                              <span class="o">&lt;-</span> <span class="n">Release</span> <span class="n">branches</span>
+  <span class="o">^</span> <span class="n">merge</span>
+<span class="n">develop</span>                                     <span class="o">&lt;-</span> <span class="n">Active</span> <span class="n">development</span>
+  <span class="o">^</span> <span class="n">merge</span>
+<span class="n">doc</span><span class="o">/&lt;</span><span class="n">topic</span><span class="o">&gt;</span>  <span class="n">fix</span><span class="o">/&lt;</span><span class="n">topic</span><span class="o">&gt;</span>  <span class="n">feat</span><span class="o">/&lt;</span><span class="n">topic</span><span class="o">&gt;</span>      <span class="o">&lt;-</span> <span class="n">Feature</span> <span class="o">/</span> <span class="n">fix</span> <span class="n">branches</span>
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>分支</p></th>
+<th class="head"><p>用途</p></th>
+<th class="head"><p>CI/CD 部署</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">main</span></code></p></td>
+<td><p>稳定分支。仅在发布定稿时更新。</p></td>
+<td><p>推送部署到 <code class="docutils literal notranslate"><span class="pre">/en/latest/</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">develop</span></code></p></td>
+<td><p>活跃开发分支。所有文档变更首先合并到此分支。</p></td>
+<td><p>推送部署到 <code class="docutils literal notranslate"><span class="pre">/en/dev/</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">release-v*.*.*</span></code></p></td>
+<td><p>发布准备分支。在打标签前从 <code class="docutils literal notranslate"><span class="pre">develop</span></code> 创建。</p></td>
+<td><p>标签推送部署到 <code class="docutils literal notranslate"><span class="pre">/en/v*.*.*/</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">doc/*</span></code></p></td>
+<td><p>用于文档变更的特性分支。</p></td>
+<td><p>无部署</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fix/*</span></code></p></td>
+<td><p>用于文档修复的特性分支。</p></td>
+<td><p>无部署</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="lifecycle">
+<h3>生命周期<a class="headerlink" href="#lifecycle" title="链接到此标题。">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>开发阶段</strong>：从 <code class="docutils literal notranslate"><span class="pre">develop</span></code> 创建特性分支 -&gt; 进行修改 -&gt; 提交 PR -&gt; 合并到 <code class="docutils literal notranslate"><span class="pre">develop</span></code></p></li>
+<li><p><strong>发布阶段</strong>：准备就绪后，从 <code class="docutils literal notranslate"><span class="pre">develop</span></code> 创建 <code class="docutils literal notranslate"><span class="pre">release-v*.*.*</span></code> -&gt; 定稿 -&gt; 打标签 -&gt; CI 构建标签</p></li>
+<li><p><strong>稳定阶段</strong>：将发布分支合并到 <code class="docutils literal notranslate"><span class="pre">main</span></code>，更新稳定版文档</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="document-version-vs-sdk-version">
+<h2>文档版本与 SDK 版本<a class="headerlink" href="#document-version-vs-sdk-version" title="链接到此标题。">#</a></h2>
+<p>文档版本<strong>与 SDK 版本保持一致</strong>，纯文档修复不额外打标签：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>场景</p></th>
+<th class="head"><p>文档标签</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SDK 发布</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v&lt;SDK</span> <span class="pre">版本&gt;</span></code>（例如 <code class="docutils literal notranslate"><span class="pre">v0.2.0</span></code>）</p></td>
+<td><p>一对一映射，文档与 SDK 一同发布</p></td>
+</tr>
+<tr class="row-odd"><td><p>纯文档修复</p></td>
+<td><p><strong>不打标签</strong></p></td>
+<td><p>直接合并到 <code class="docutils literal notranslate"><span class="pre">main</span></code>，<code class="docutils literal notranslate"><span class="pre">latest</span></code> 自动更新</p></td>
+</tr>
+<tr class="row-even"><td><p>开发预览</p></td>
+<td><p>无标签（develop -&gt; <code class="docutils literal notranslate"><span class="pre">dev</span></code>）</p></td>
+<td><p>CI 部署到 <code class="docutils literal notranslate"><span class="pre">/en/dev/</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>稳定版占位</p></td>
+<td><p>无标签（main -&gt; <code class="docutils literal notranslate"><span class="pre">latest</span></code>）</p></td>
+<td><p>CI 部署到 <code class="docutils literal notranslate"><span class="pre">/en/latest/</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>核心原则</strong>：</p>
+<ol class="arabic simple">
+<li><p>文档标签与 SDK 标签一一对应：每个 SDK 发布最多只有一个文档标签</p></li>
+<li><p>纯文档修复不创建新标签；合并到 <code class="docutils literal notranslate"><span class="pre">main</span></code> 即更新 <code class="docutils literal notranslate"><span class="pre">latest</span></code></p></li>
+<li><p>已发布的历史版本（例如 <code class="docutils literal notranslate"><span class="pre">v0.2.0</span></code>）不会追溯更新</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="release-process">
+<h2>发布流程<a class="headerlink" href="#release-process" title="链接到此标题。">#</a></h2>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph LR
+    A[develop] --&gt;|PR reviewed| B[release-v*.*.*]
+    B --&gt;|QA testing| C{Pass?}
+    C --&gt;|Yes| D[Tag &amp; release]
+    C --&gt;|No| B
+    D --&gt; E[Merge to main]
+    D --&gt; F[Deploy to /en/v*.*.*/]
+    E --&gt; G[Deploy to /en/latest/]
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p><strong>从 <code class="docutils literal notranslate"><span class="pre">develop</span></code> 创建发布分支</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>develop
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>release-v0.x.x
+</pre></div>
+</div>
+</li>
+<li><p><strong>定稿</strong>：在发布分支上进行最后的修复，运行 QA。</p></li>
+<li><p><strong>为发布打标签</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>v0.x.x
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v0.x.x
+</pre></div>
+</div>
+<p>CI 构建并将标签部署到 <code class="docutils literal notranslate"><span class="pre">/en/v0.x.x/</span></code>。</p>
+</li>
+<li><p><strong>合并到 main</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>merge<span class="w"> </span>release-v0.x.x
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<p>CI 构建并部署到 <code class="docutils literal notranslate"><span class="pre">/en/latest/</span></code>。</p>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="multi-version-maintenance">
+<h2>多版本维护<a class="headerlink" href="#multi-version-maintenance" title="链接到此标题。">#</a></h2>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph TB
+    A[develop] --&gt;|create| B[release-v0.3.0]
+    B --&gt;|fix| B
+    B --&gt;|tag| C[v0.3.0]
+    B --&gt;|merge to| D[main]
+    C --&gt;|deploy| E[/en/v0.3.0/]
+
+    A --&gt;|cherry-pick critical fixes| F[v0.2.x maintenance]
+    F --&gt;|tag| G[v0.2.1]
+    G --&gt;|deploy| H[/en/v0.2.1/]
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>只有<strong>最新的次版本</strong>接收常规维护</p></li>
+<li><p><strong>上一个次版本</strong>只接受安全修复和关键错误修复（通过 cherry-pick 方式）</p></li>
+<li><p><strong>更早的版本</strong>不再维护；在文档中标记为 <code class="docutils literal notranslate"><span class="pre">DEPRECATED</span></code></p></li>
+<li><p>每个次版本都有一个 <code class="docutils literal notranslate"><span class="pre">release-v*.*.x</span></code> 维护分支</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="ci-cd-behavior">
+<h2>CI/CD 行为<a class="headerlink" href="#ci-cd-behavior" title="链接到此标题。">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>触发条件</p></th>
+<th class="head"><p>检出源</p></th>
+<th class="head"><p>部署路径</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>推送到 <code class="docutils literal notranslate"><span class="pre">develop</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">develop</span></code> 分支</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/en/dev/</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>推送到 <code class="docutils literal notranslate"><span class="pre">main</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">develop</span></code> 分支（快照）</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/en/latest/</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>推送标签 <code class="docutils literal notranslate"><span class="pre">v*.*.*</span></code></p></td>
+<td><p>已打标签的提交</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/en/v*.*.*/</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>所有版本均构建并部署到 <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> 分支，通过 GitHub Pages 提供文档服务。</p>
+</section>
+<hr class="docutils" />
+<section id="document-structure-standards">
+<h2>文档结构标准<a class="headerlink" href="#document-structure-standards" title="链接到此标题。">#</a></h2>
+<section id="directory-naming">
+<h3>目录命名<a class="headerlink" href="#directory-naming" title="链接到此标题。">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>规则</p></th>
+<th class="head"><p>说明</p></th>
+<th class="head"><p>示例</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>蛇形命名法</p></td>
+<td><p>小写字母 + 下划线</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">getting_started/</span></code>、<code class="docutils literal notranslate"><span class="pre">chips_boards/</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>单数形式</p></td>
+<td><p>目录名称使用单数形式</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">peripherals/</span></code>（本身已是单数）</p></td>
+</tr>
+<tr class="row-even"><td><p>索引入口</p></td>
+<td><p>每个目录必须包含 <code class="docutils literal notranslate"><span class="pre">index.md</span></code> 或 <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>图片</p></td>
+<td><p>将图片放在 <code class="docutils literal notranslate"><span class="pre">_images/</span></code> 子目录中</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">peripherals/_images/gpio_1.png</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>当前位于 <code class="docutils literal notranslate"><span class="pre">pics/</span></code> 中的图片应逐步迁移到 <code class="docutils literal notranslate"><span class="pre">_images/</span></code>。</p>
+</section>
+<section id="frontmatter-metadata">
+<h3>前置元数据<a class="headerlink" href="#frontmatter-metadata" title="链接到此标题。">#</a></h3>
+<p>每个文档页面必须包含一个前置元数据块：</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Document Title</span><span class="w">        </span><span class="c1"># Required: display title</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DRAFT</span><span class="w">                </span><span class="c1"># Required: STABLE/DRAFT/DEPRECATED/PLANNED</span>
+<span class="nt">since</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v0.1.0</span><span class="w">                </span><span class="c1"># Optional: version first introduced</span>
+<span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v0.2.0</span><span class="w">              </span><span class="c1"># Optional: version last updated</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Short summary</span><span class="w">   </span><span class="c1"># Optional: for search and indexing</span>
+<span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">gpio</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">peripheral</span><span class="p p-Indicator">]</span><span class="w">     </span><span class="c1"># Optional: categorization tags</span>
+<span class="nn">---</span>
+</pre></div>
+</div>
+<p><strong>状态值</strong>：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>状态</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">STABLE</span></code></p></td>
+<td><p>内容完整、已审阅，可供生产环境使用</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DRAFT</span></code></p></td>
+<td><p>内容正在开发中，可能不完整或未经审阅</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DEPRECATED</span></code></p></td>
+<td><p>内容已过时，不应用于新设计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PLANNED</span></code></p></td>
+<td><p>内容已规划但尚未编写</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="version-difference-markers">
+<h3>版本差异标记<a class="headerlink" href="#version-difference-markers" title="链接到此标题。">#</a></h3>
+<p>使用前置元数据字段追踪版本历史：</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPIO Driver Guide</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STABLE</span>
+<span class="nt">since</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v0.1.0</span>
+<span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v0.2.0</span>
+<span class="nn">---</span>
+</pre></div>
+</div>
+<p>在文档正文中，使用 Sphinx 指令进行逐元素的版本追踪：</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">versionadded</span><span class="p">::</span> v0.2.0
+   Added DMA transfer mode support
+
+<span class="p">..</span> <span class="ow">deprecated</span><span class="p">::</span> v0.1.0
+   <span class="s">``legacy_api()``</span> is deprecated, use <span class="s">``new_api()``</span> instead
+</pre></div>
+</div>
+</section>
+<section id="file-format-guidelines">
+<h3>文件格式指南<a class="headerlink" href="#file-format-guidelines" title="链接到此标题。">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>场景</p></th>
+<th class="head"><p>推荐格式</p></th>
+<th class="head"><p>原因</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>目录文件</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.rst</span></code></p></td>
+<td><p>需要使用 toctree 指令</p></td>
+</tr>
+<tr class="row-odd"><td><p>内容页面</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.md</span></code>（MyST）</p></td>
+<td><p>更易于读写</p></td>
+</tr>
+<tr class="row-even"><td><p>API 参考</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.rst</span></code>（自动生成）</p></td>
+<td><p>由 <code class="docutils literal notranslate"><span class="pre">gen_api_rst.py</span></code> 生成</p></td>
+</tr>
+<tr class="row-odd"><td><p>表格较多的页面</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.rst</span></code></p></td>
+<td><p>RST 表格语法更强大</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Markdown 约定</strong>：</p>
+<ul class="simple">
+<li><p>标题层级：<code class="docutils literal notranslate"><span class="pre">#</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">##</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">###</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">####</span></code>（最多 4 级）</p></li>
+<li><p>代码块：标注语言（<code class="docutils literal notranslate"><span class="pre">```c</span></code>、<code class="docutils literal notranslate"><span class="pre">```bash</span></code>）</p></li>
+<li><p>图片：使用 <code class="docutils literal notranslate"><span class="pre">![alt](path)</span></code>，可选 <code class="docutils literal notranslate"><span class="pre">:width:</span></code> 指令</p></li>
+<li><p>提示块：使用 MyST 指令，例如 <code class="docutils literal notranslate"><span class="pre">{note}`、</span></code>```{tip}`</p></li>
+<li><p>链接：使用 MyST <code class="docutils literal notranslate"><span class="pre">{ref}</span></code> 和 <code class="docutils literal notranslate"><span class="pre">{doc}</span></code> 进行交叉引用</p></li>
+</ul>
+<p><strong>RST 约定</strong>：</p>
+<ul class="simple">
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">code-block::</span> <span class="pre">c</span></code> 代替 <code class="docutils literal notranslate"><span class="pre">::</span></code> + 缩进</p></li>
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">:ref:</span></code> 和 <code class="docutils literal notranslate"><span class="pre">:doc:</span></code> 进行交叉引用</p></li>
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">versionadded::</span></code> / <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">deprecated::</span></code> 进行版本追踪</p></li>
+</ul>
+</section>
+<section id="cross-reference-conventions">
+<h3>交叉引用约定<a class="headerlink" href="#cross-reference-conventions" title="链接到此标题。">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>引用类型</p></th>
+<th class="head"><p>语法</p></th>
+<th class="head"><p>示例</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>文档链接</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{doc}</span></code> / <code class="docutils literal notranslate"><span class="pre">:doc:</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{doc}`getting_started/index`</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>章节链接</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{ref}</span></code> / <code class="docutils literal notranslate"><span class="pre">:ref:</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{ref}`my-section-label`</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>外部链接</p></td>
+<td><p>Markdown 链接</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[text](url)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>API 函数</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{c:func}</span></code> / <code class="docutils literal notranslate"><span class="pre">:c:func:</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{c:func}`tlk_gpio_init`</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>API 类型</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{c:type}</span></code> / <code class="docutils literal notranslate"><span class="pre">:c:type:</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{c:type}`tlk_gpio_config_t`</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>术语引用</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{term}</span></code> / <code class="docutils literal notranslate"><span class="pre">:term:</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{term}`GPIO`</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>标签命名约定</strong>：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;-&lt;</span><span class="n">section</span><span class="o">&gt;</span>    <span class="n">Examples</span><span class="p">:</span> <span class="n">gpio</span><span class="o">-</span><span class="n">introduction</span><span class="p">,</span> <span class="n">uart</span><span class="o">-</span><span class="n">dma</span><span class="o">-</span><span class="n">mode</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="submitting-issues">
+<h2>提交 Issue<a class="headerlink" href="#submitting-issues" title="链接到此标题。">#</a></h2>
+<ul class="simple">
+<li><p>使用 <a class="reference external" href="https://github.com/telink-semi/unisdk-doc/issues">GitHub Issues</a> 报告文档错误或提出改进建议</p></li>
+<li><p>提供页面 URL 并描述哪些内容不正确或缺少</p></li>
+<li><p>如适用，请附上截图或错误日志</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="code-standards-sdk-contributions">
+<h2>代码规范（SDK 贡献）<a class="headerlink" href="#code-standards-sdk-contributions" title="链接到此标题。">#</a></h2>
+<p>对于 SDK 代码库（unisdk）的贡献：</p>
+<ul class="simple">
+<li><p>C 代码应遵循 <code class="docutils literal notranslate"><span class="pre">.clang-format</span></code> 中定义的格式</p></li>
+<li><p>提交前运行 <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 检查</p></li>
+<li><p>详细指南请参见 <a class="reference external" href="https://github.com/telink-semi/unisdk">unisdk 仓库</a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../releases/0.2.0/Unified_SDK_Release_Note.html"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">V0.2.0(FR)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../support/index.html"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">技术支持</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-repository-unisdk-doc">文档仓库：unisdk-doc</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-model">分支模型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lifecycle">生命周期</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-version-vs-sdk-version">文档版本与 SDK 版本</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-process">发布流程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-version-maintenance">多版本维护</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-cd-behavior">CI/CD 行为</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-structure-standards">文档结构标准</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-naming">目录命名</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frontmatter-metadata">前置元数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-difference-markers">版本差异标记</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-format-guidelines">文件格式指南</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-reference-conventions">交叉引用约定</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-issues">提交 Issue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-standards-sdk-contributions">代码规范（SDK 贡献）</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： Telink Semiconductor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Telink Semiconductor.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+<div style="text-align: right; margin-top: 1rem; padding: 0.5rem 1rem; border-top: 1px solid #eee;">
+  <a href="../_downloads/unisdk-doc.pdf" style="font-size: 0.85rem; color: #0a2d72; text-decoration: none;">
+    &#128196; Download PDF
+  </a>
+</div>
+<script>
+var currentVersion = "v0.2.0";
+var currentLang = "zh";
+</script>
+<script>
+(function() {
+  'use strict';
+  function injectSwitchers() {
+    var navbarEnd = document.querySelector(".navbar-header-items__end");
+    if (!navbarEnd) return;
+
+    var langHtml = [
+      '<div class="navbar-item">',
+      '  <div class="language-selector">',
+      '    <select id="language-select" onchange="switchLanguage(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="en"' + (currentLang === "en" ? " selected" : "") + '>English</option>',
+      '      <option value="zh"' + (currentLang === "zh" ? " selected" : "") + '>中文</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", langHtml);
+
+    var verHtml = [
+      '<div class="navbar-item">',
+      '  <div class="version-selector">',
+      '    <select id="version-select" onchange="switchVersion(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="">Loading...</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", verHtml);
+
+    var script = document.createElement("script");
+    script.src = "../_static/version_switcher.js";
+    document.body.appendChild(script);
+  }
+
+  function switchLanguage(lang) {
+    var currentPath = window.location.pathname;
+    var newPath = currentPath.replace(/\/[a-z]{2}\//, "/" + lang + "/");
+    if (newPath !== currentPath) {
+      window.location.href = newPath;
+    }
+  }
+
+  window.switchVersion = function(url) {
+    if (url) {
+      window.location.href = url;
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", injectSwitchers);
+  } else {
+    injectSwitchers();
+  }
+})();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var versionBadge = document.createElement("span");
+    versionBadge.className = "version-badge";
+    versionBadge.textContent = "v0.2.0";
+    var footer = document.querySelector(".telink-footer .footer-copyright");
+    if (footer) {
+      footer.appendChild(versionBadge);
+    }
+  });
+</script>
+
+
+<footer class="telink-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Telink Semiconductor</h5>
+        <p style="font-size: 0.85rem; opacity: 0.8;">
+          Leading provider of low-power, high-performance wireless connectivity
+          SoC solutions for IoT, industrial, and automotive applications.
+        </p>
+      </div>
+      <div class="col-md-2">
+        <h5>Resources</h5>
+        <ul class="footer-links">
+          <li><a href="https://www.telink-semi.cn/" target="_blank">Official Website</a></li>
+          <li><a href="https://doc.telink-semi.cn/" target="_blank">Documentation Center</a></li>
+          <li><a href="https://forum.telink-semi.cn/" target="_blank">Technical Forum</a></li>
+          <li><a href="https://products.telink-semi.cn/" target="_blank">Product Selector</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Developers</h5>
+        <ul class="footer-links">
+          <li><a href="https://github.com/telink-semi/unisdk" target="_blank">UniSDK on GitHub</a></li>
+          <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank">Docs Repository</a></li>
+          <li><a href="https://gitee.com/telink-semi" target="_blank">Gitee Repository</a></li>
+          <li><a href="https://www.telink-semi.cn/development-tools" target="_blank">Development Tools</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="../support/index">Contact Support</a></li>
+          <li><a href="https://www.telink-semi.cn/applications" target="_blank">Applications</a></li>
+          <li><a href="../about/index">About Telink</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Connect</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:telinksales@telink-semi.com">Sales Inquiry</a></li>
+          <li><a href="https://www.telink-semi.cn/news" target="_blank">News & Events</a></li>
+          <li><a href="https://www.telink-semi.cn/careers" target="_blank">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; Telink Semiconductor. All rights reserved.
+      
+      <span class="version-badge">v0.2.0</span>
+      
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

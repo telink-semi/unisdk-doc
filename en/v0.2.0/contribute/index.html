@@ -1,0 +1,1228 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contribution Guide &#8212; UniSDK v0.2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=3aef283f" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../_static/documentation_options.js?v=0a6a6ad3"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contribute/index';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/favicon.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Technical Support" href="../support/index.html" />
+    <link rel="prev" title="V0.2.0(FR)" href="../releases/0.2.0/Unified_SDK_Release_Note.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="v0.2.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<link rel="stylesheet" href="../_static/extra.css" />
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="UniSDK v0.2.0 documentation - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="UniSDK v0.2.0 documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    UniSDK — Telink Unified Software Development Kit
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">UniSDK Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/environment_setup.html">Development Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/get_sdk.html">Get and Import the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/first_example.html">Compile, Flash and Run Your First Example (VS Code)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developing/index.html">Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_linux.html">Linux Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_macos.html">macOS Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/setup_windows.html">Windows Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/blinky.html">First Example: Blinky (CLI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/directory_structure.html">SDK Directory Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project_management.html">Project Creation &amp; Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/core_architecture.html">Core Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/init_hooks.html">Init hooks documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/public_api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/debugging.html">Debugging &amp; Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/ide_integration.html">IDE Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/clangd.html">clangd Setup Guide for VSCode</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chips &amp; Boards</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/index.html">Chips and Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TL321X.html">TL321X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TL721X.html">TL721X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TLSR922X.html">TLSR922X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/chips/TLSR952X.html">TLSR952X Chip Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TL3218X_EVK.html">TL3218X_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TL7218X_EVK.html">TL7218X_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9228A_EVK.html">TLSR9228A_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9528A_EVK.html">TLSR9528A_EVK Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chips_boards/boards/TLSR9528A_DONGLE.html">TLSR9528A_DONGLE</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Peripherals &amp; Drivers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/index.html">Peripherals and Drivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/gpio.html">GPIO Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/uart.html">UART Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/pm.html">Power Management (PM) Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/analog.html">Analog Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/plic.html">PLIC Interrupt Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/i2c.html">I2C Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/spi.html">SPI Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/adc.html">ADC Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/dma.html">DMA Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/wdt.html">Watchdog Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/timer.html">Timer Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/usb.html">USB Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peripherals/pmp.html">PMP Driver</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Connectivity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../connectivity/index.html">Connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../connectivity/ble/controller.html">BLE Controller Coding Standards</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">System Services</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../system_services/index.html">System Services</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Build &amp; Configuration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../build_config/index.html">Build &amp; Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/cmake_system.html">CMake Build System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/kconfig_system.html">Kconfig Configuration System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/west_commands.html">West Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/make_support.html">Make Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/build_flow.html">Build Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/build_system_architecture.html">UniSDK Build System Architecture Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/extensions.html">Extensions &amp; Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_config/reference.html">File &amp; Script Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Development Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/bdt.html">BDT Burning and Debugging Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/pinmux.html">Pinmux Pin Configuration Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/menuconfig.html">Menuconfig Configuration Interface</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Security</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Production Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../productization/index.html">Production Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Samples &amp; Demos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../samples/index.html">Samples &amp; Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/gpio.html">GPIO Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/uart.html">UART Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/pm.html">PM Power Management Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/pmp.html">PMP Driver Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/umode.html">U-mode Driver Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/adc.html">ADC Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/dma.html">DMA Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/i2c.html">I2C Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/spi.html">SPI Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/ble.html">BLE Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/irq_nesting.html">IRQ Nesting Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/stimer.html">STIMER Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/wdt.html">Watchdog Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/usb_cdc.html">USB CDC Sample</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api_reference/index.html">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../kconfig_reference/index.html">Kconfig Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../yaml_reference/index.html">YAML Description Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/0.2.0/Unified_SDK_Release_Note.html">V0.2.0(FR)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../terminology.html">UniSDK Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About Telink Semiconductor</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/edit/main/contribute/index.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/telink-semi/unisdk-doc/issues/new?title=Issue%20on%20page%20%2Fcontribute/index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/contribute/index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Contribution Guide</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-repository-unisdk-doc">Documentation Repository: unisdk-doc</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-model">Branch Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lifecycle">Lifecycle</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-version-vs-sdk-version">Document Version vs SDK Version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-process">Release Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-version-maintenance">Multi-Version Maintenance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-cd-behavior">CI/CD Behavior</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-structure-standards">Document Structure Standards</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-naming">Directory Naming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frontmatter-metadata">Frontmatter Metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-difference-markers">Version Difference Markers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-format-guidelines">File Format Guidelines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-reference-conventions">Cross-Reference Conventions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-issues">Submitting Issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-standards-sdk-contributions">Code Standards (SDK Contributions)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="contribution-guide">
+<h1>Contribution Guide<a class="headerlink" href="#contribution-guide" title="Link to this heading">#</a></h1>
+<p>Community developers and contributors are welcome to contribute code, documentation, examples, and issue reports to the UniSDK project.</p>
+<blockquote>
+<div><p><strong>Note on SDK code contributions</strong>: This guide focuses on the <strong>unisdk-doc</strong> documentation repository. For SDK code contributions (unisdk), please refer to the <a class="reference external" href="https://github.com/telink-semi/unisdk">unisdk repository</a>.</p>
+</div></blockquote>
+<hr class="docutils" />
+<section id="documentation-repository-unisdk-doc">
+<h2>Documentation Repository: unisdk-doc<a class="headerlink" href="#documentation-repository-unisdk-doc" title="Link to this heading">#</a></h2>
+<p>The documentation repository (<a class="reference external" href="https://github.com/telink-semi/unisdk-doc">unisdk-doc</a>) follows the same branch model as the SDK code repository.</p>
+<section id="branch-model">
+<h3>Branch Model<a class="headerlink" href="#branch-model" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main</span>                                        <span class="o">&lt;-</span> <span class="n">Stable</span> <span class="p">(</span><span class="n">latest</span> <span class="n">release</span><span class="p">)</span>
+  <span class="o">^</span> <span class="n">merge</span>
+<span class="n">release</span><span class="o">-</span><span class="n">v</span><span class="o">*.*.*</span>                              <span class="o">&lt;-</span> <span class="n">Release</span> <span class="n">branches</span>
+  <span class="o">^</span> <span class="n">merge</span>
+<span class="n">develop</span>                                     <span class="o">&lt;-</span> <span class="n">Active</span> <span class="n">development</span>
+  <span class="o">^</span> <span class="n">merge</span>
+<span class="n">doc</span><span class="o">/&lt;</span><span class="n">topic</span><span class="o">&gt;</span>  <span class="n">fix</span><span class="o">/&lt;</span><span class="n">topic</span><span class="o">&gt;</span>  <span class="n">feat</span><span class="o">/&lt;</span><span class="n">topic</span><span class="o">&gt;</span>      <span class="o">&lt;-</span> <span class="n">Feature</span> <span class="o">/</span> <span class="n">fix</span> <span class="n">branches</span>
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Branch</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>CI/CD Deployment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">main</span></code></p></td>
+<td><p>Stable branch. Only updated when a release is finalized.</p></td>
+<td><p>Pushes deploy to <code class="docutils literal notranslate"><span class="pre">/en/latest/</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">develop</span></code></p></td>
+<td><p>Active development branch. All documentation changes land here first.</p></td>
+<td><p>Pushes deploy to <code class="docutils literal notranslate"><span class="pre">/en/dev/</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">release-v*.*.*</span></code></p></td>
+<td><p>Release preparation branch. Created from <code class="docutils literal notranslate"><span class="pre">develop</span></code> before tagging.</p></td>
+<td><p>Tag pushes deploy to <code class="docutils literal notranslate"><span class="pre">/en/v*.*.*/</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">doc/*</span></code></p></td>
+<td><p>Feature branches for documentation changes.</p></td>
+<td><p>No deployment</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fix/*</span></code></p></td>
+<td><p>Feature branches for documentation fixes.</p></td>
+<td><p>No deployment</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="lifecycle">
+<h3>Lifecycle<a class="headerlink" href="#lifecycle" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Development</strong>: Create a feature branch from <code class="docutils literal notranslate"><span class="pre">develop</span></code> -&gt; make changes -&gt; open PR -&gt; merge into <code class="docutils literal notranslate"><span class="pre">develop</span></code></p></li>
+<li><p><strong>Release</strong>: When ready, create <code class="docutils literal notranslate"><span class="pre">release-v*.*.*</span></code> from <code class="docutils literal notranslate"><span class="pre">develop</span></code> -&gt; finalize -&gt; tag -&gt; CI builds the tag</p></li>
+<li><p><strong>Stable</strong>: Merge the release branch into <code class="docutils literal notranslate"><span class="pre">main</span></code>, updating the stable documentation</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="document-version-vs-sdk-version">
+<h2>Document Version vs SDK Version<a class="headerlink" href="#document-version-vs-sdk-version" title="Link to this heading">#</a></h2>
+<p>Document versions are <strong>aligned with SDK versions without extra tags</strong> for doc-only fixes:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Doc Tag</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SDK release</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v&lt;SDK</span> <span class="pre">version&gt;</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">v0.2.0</span></code>)</p></td>
+<td><p>One-to-one mapping, doc and SDK released together</p></td>
+</tr>
+<tr class="row-odd"><td><p>Doc-only fix</p></td>
+<td><p><strong>No tag</strong></p></td>
+<td><p>Merge directly to <code class="docutils literal notranslate"><span class="pre">main</span></code>, <code class="docutils literal notranslate"><span class="pre">latest</span></code> auto-updates</p></td>
+</tr>
+<tr class="row-even"><td><p>Dev preview</p></td>
+<td><p>No tag (develop -&gt; <code class="docutils literal notranslate"><span class="pre">dev</span></code>)</p></td>
+<td><p>CI deploys to <code class="docutils literal notranslate"><span class="pre">/en/dev/</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Stable placeholder</p></td>
+<td><p>No tag (main -&gt; <code class="docutils literal notranslate"><span class="pre">latest</span></code>)</p></td>
+<td><p>CI deploys to <code class="docutils literal notranslate"><span class="pre">/en/latest/</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Core principles</strong>:</p>
+<ol class="arabic simple">
+<li><p>Doc tags are one-to-one with SDK tags: at most one doc tag per SDK release</p></li>
+<li><p>Doc-only fixes do not create new tags; merge to <code class="docutils literal notranslate"><span class="pre">main</span></code> updates <code class="docutils literal notranslate"><span class="pre">latest</span></code></p></li>
+<li><p>Published historical versions (e.g. <code class="docutils literal notranslate"><span class="pre">v0.2.0</span></code>) are not retroactively updated</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="release-process">
+<h2>Release Process<a class="headerlink" href="#release-process" title="Link to this heading">#</a></h2>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph LR
+    A[develop] --&gt;|PR reviewed| B[release-v*.*.*]
+    B --&gt;|QA testing| C{Pass?}
+    C --&gt;|Yes| D[Tag &amp; release]
+    C --&gt;|No| B
+    D --&gt; E[Merge to main]
+    D --&gt; F[Deploy to /en/v*.*.*/]
+    E --&gt; G[Deploy to /en/latest/]
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p><strong>Create a release branch</strong> from <code class="docutils literal notranslate"><span class="pre">develop</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>develop
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>release-v0.x.x
+</pre></div>
+</div>
+</li>
+<li><p><strong>Finalize</strong>: Make last-minute fixes on the release branch, run QA.</p></li>
+<li><p><strong>Tag the release</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>v0.x.x
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v0.x.x
+</pre></div>
+</div>
+<p>CI builds and deploys the tag to <code class="docutils literal notranslate"><span class="pre">/en/v0.x.x/</span></code>.</p>
+</li>
+<li><p><strong>Merge to main</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>merge<span class="w"> </span>release-v0.x.x
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<p>CI builds and deploys to <code class="docutils literal notranslate"><span class="pre">/en/latest/</span></code>.</p>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="multi-version-maintenance">
+<h2>Multi-Version Maintenance<a class="headerlink" href="#multi-version-maintenance" title="Link to this heading">#</a></h2>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph TB
+    A[develop] --&gt;|create| B[release-v0.3.0]
+    B --&gt;|fix| B
+    B --&gt;|tag| C[v0.3.0]
+    B --&gt;|merge to| D[main]
+    C --&gt;|deploy| E[/en/v0.3.0/]
+
+    A --&gt;|cherry-pick critical fixes| F[v0.2.x maintenance]
+    F --&gt;|tag| G[v0.2.1]
+    G --&gt;|deploy| H[/en/v0.2.1/]
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Only the <strong>latest minor version</strong> receives regular maintenance</p></li>
+<li><p>The <strong>previous minor version</strong> accepts only security fixes and critical bug fixes (via cherry-pick)</p></li>
+<li><p><strong>Older versions</strong> are not maintained; mark as <code class="docutils literal notranslate"><span class="pre">DEPRECATED</span></code> in docs</p></li>
+<li><p>Each minor version gets a <code class="docutils literal notranslate"><span class="pre">release-v*.*.x</span></code> maintenance branch</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="ci-cd-behavior">
+<h2>CI/CD Behavior<a class="headerlink" href="#ci-cd-behavior" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Trigger</p></th>
+<th class="head"><p>Source Checked Out</p></th>
+<th class="head"><p>Deploy Path</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Push to <code class="docutils literal notranslate"><span class="pre">develop</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">develop</span></code> branch</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/en/dev/</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Push to <code class="docutils literal notranslate"><span class="pre">main</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">develop</span></code> branch (snapshot)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/en/latest/</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Push tag <code class="docutils literal notranslate"><span class="pre">v*.*.*</span></code></p></td>
+<td><p>Tagged commit</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/en/v*.*.*/</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>All versions are built and deployed to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch, which serves the documentation via GitHub Pages.</p>
+</section>
+<hr class="docutils" />
+<section id="document-structure-standards">
+<h2>Document Structure Standards<a class="headerlink" href="#document-structure-standards" title="Link to this heading">#</a></h2>
+<section id="directory-naming">
+<h3>Directory Naming<a class="headerlink" href="#directory-naming" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Rule</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Snake case</p></td>
+<td><p>Lowercase letters + underscores</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">getting_started/</span></code>, <code class="docutils literal notranslate"><span class="pre">chips_boards/</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Singular form</p></td>
+<td><p>Directory names use singular</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">peripherals/</span></code> (already singular)</p></td>
+</tr>
+<tr class="row-even"><td><p>Index entry</p></td>
+<td><p>Every directory must have <code class="docutils literal notranslate"><span class="pre">index.md</span></code> or <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>Images</p></td>
+<td><p>Place images in <code class="docutils literal notranslate"><span class="pre">_images/</span></code> subdirectory</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">peripherals/_images/gpio_1.png</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Images currently in <code class="docutils literal notranslate"><span class="pre">pics/</span></code> should be migrated to <code class="docutils literal notranslate"><span class="pre">_images/</span></code> over time.</p>
+</section>
+<section id="frontmatter-metadata">
+<h3>Frontmatter Metadata<a class="headerlink" href="#frontmatter-metadata" title="Link to this heading">#</a></h3>
+<p>Every documentation page must include a frontmatter block:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Document Title</span><span class="w">        </span><span class="c1"># Required: display title</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DRAFT</span><span class="w">                </span><span class="c1"># Required: STABLE/DRAFT/DEPRECATED/PLANNED</span>
+<span class="nt">since</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v0.1.0</span><span class="w">                </span><span class="c1"># Optional: version first introduced</span>
+<span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v0.2.0</span><span class="w">              </span><span class="c1"># Optional: version last updated</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Short summary</span><span class="w">   </span><span class="c1"># Optional: for search and indexing</span>
+<span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">gpio</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">peripheral</span><span class="p p-Indicator">]</span><span class="w">     </span><span class="c1"># Optional: categorization tags</span>
+<span class="nn">---</span>
+</pre></div>
+</div>
+<p><strong>Status values</strong>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Status</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">STABLE</span></code></p></td>
+<td><p>Content is complete, reviewed, and ready for production use</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DRAFT</span></code></p></td>
+<td><p>Content is under development, may be incomplete or unreviewed</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DEPRECATED</span></code></p></td>
+<td><p>Content is outdated and should not be used for new designs</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PLANNED</span></code></p></td>
+<td><p>Content is planned but not yet written</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="version-difference-markers">
+<h3>Version Difference Markers<a class="headerlink" href="#version-difference-markers" title="Link to this heading">#</a></h3>
+<p>Use frontmatter fields to track version history:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPIO Driver Guide</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STABLE</span>
+<span class="nt">since</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v0.1.0</span>
+<span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v0.2.0</span>
+<span class="nn">---</span>
+</pre></div>
+</div>
+<p>In document body, use Sphinx directives for per-element version tracking:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">versionadded</span><span class="p">::</span> v0.2.0
+   Added DMA transfer mode support
+
+<span class="p">..</span> <span class="ow">deprecated</span><span class="p">::</span> v0.1.0
+   <span class="s">``legacy_api()``</span> is deprecated, use <span class="s">``new_api()``</span> instead
+</pre></div>
+</div>
+</section>
+<section id="file-format-guidelines">
+<h3>File Format Guidelines<a class="headerlink" href="#file-format-guidelines" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Recommended Format</p></th>
+<th class="head"><p>Reason</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TOC files</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.rst</span></code></p></td>
+<td><p>Needs toctree directive</p></td>
+</tr>
+<tr class="row-odd"><td><p>Content pages</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.md</span></code> (MyST)</p></td>
+<td><p>Easier to read and write</p></td>
+</tr>
+<tr class="row-even"><td><p>API reference</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.rst</span></code> (auto-generated)</p></td>
+<td><p>Produced by <code class="docutils literal notranslate"><span class="pre">gen_api_rst.py</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Table-heavy pages</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.rst</span></code></p></td>
+<td><p>RST table syntax is more powerful</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Markdown conventions</strong>:</p>
+<ul class="simple">
+<li><p>Heading levels: <code class="docutils literal notranslate"><span class="pre">#</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">##</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">###</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">####</span></code> (max 4 levels)</p></li>
+<li><p>Code blocks: annotate language (<code class="docutils literal notranslate"><span class="pre">```c</span></code> , <code class="docutils literal notranslate"><span class="pre">```bash</span></code>)</p></li>
+<li><p>Images: use <code class="docutils literal notranslate"><span class="pre">![alt](path)</span></code> with optional <code class="docutils literal notranslate"><span class="pre">:width:</span></code> directive</p></li>
+<li><p>Admonitions: use MyST directives like <code class="docutils literal notranslate"><span class="pre">{note}`,</span> </code>```{tip}`</p></li>
+<li><p>Links: use MyST <code class="docutils literal notranslate"><span class="pre">{ref}</span></code> and <code class="docutils literal notranslate"><span class="pre">{doc}</span></code> for cross-references</p></li>
+</ul>
+<p><strong>RST conventions</strong>:</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">code-block::</span> <span class="pre">c</span></code> instead of <code class="docutils literal notranslate"><span class="pre">::</span></code> + indentation</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">:ref:</span></code> and <code class="docutils literal notranslate"><span class="pre">:doc:</span></code> for cross-references</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">versionadded::</span></code> / <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">deprecated::</span></code> for version tracking</p></li>
+</ul>
+</section>
+<section id="cross-reference-conventions">
+<h3>Cross-Reference Conventions<a class="headerlink" href="#cross-reference-conventions" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Reference Type</p></th>
+<th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Document link</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{doc}</span></code> / <code class="docutils literal notranslate"><span class="pre">:doc:</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{doc}`getting_started/index`</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Section link</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{ref}</span></code> / <code class="docutils literal notranslate"><span class="pre">:ref:</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{ref}`my-section-label`</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>External link</p></td>
+<td><p>Markdown link</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[text](url)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>API function</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{c:func}</span></code> / <code class="docutils literal notranslate"><span class="pre">:c:func:</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{c:func}`tlk_gpio_init`</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>API type</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{c:type}</span></code> / <code class="docutils literal notranslate"><span class="pre">:c:type:</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{c:type}`tlk_gpio_config_t`</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Term reference</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{term}</span></code> / <code class="docutils literal notranslate"><span class="pre">:term:</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{term}`GPIO`</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Label naming convention</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;-&lt;</span><span class="n">section</span><span class="o">&gt;</span>    <span class="n">Examples</span><span class="p">:</span> <span class="n">gpio</span><span class="o">-</span><span class="n">introduction</span><span class="p">,</span> <span class="n">uart</span><span class="o">-</span><span class="n">dma</span><span class="o">-</span><span class="n">mode</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="submitting-issues">
+<h2>Submitting Issues<a class="headerlink" href="#submitting-issues" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use <a class="reference external" href="https://github.com/telink-semi/unisdk-doc/issues">GitHub Issues</a> to report documentation bugs or request improvements</p></li>
+<li><p>Provide the page URL and describe what is incorrect or missing</p></li>
+<li><p>Attach screenshots or error logs if applicable</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="code-standards-sdk-contributions">
+<h2>Code Standards (SDK Contributions)<a class="headerlink" href="#code-standards-sdk-contributions" title="Link to this heading">#</a></h2>
+<p>For contributions to the SDK codebase (unisdk):</p>
+<ul class="simple">
+<li><p>C code should follow the format defined in <code class="docutils literal notranslate"><span class="pre">.clang-format</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> checks before submitting</p></li>
+<li><p>See the <a class="reference external" href="https://github.com/telink-semi/unisdk">unisdk repository</a> for detailed guidelines</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../releases/0.2.0/Unified_SDK_Release_Note.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">V0.2.0(FR)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../support/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Technical Support</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-repository-unisdk-doc">Documentation Repository: unisdk-doc</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-model">Branch Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lifecycle">Lifecycle</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-version-vs-sdk-version">Document Version vs SDK Version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-process">Release Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-version-maintenance">Multi-Version Maintenance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-cd-behavior">CI/CD Behavior</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-structure-standards">Document Structure Standards</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-naming">Directory Naming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frontmatter-metadata">Frontmatter Metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-difference-markers">Version Difference Markers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-format-guidelines">File Format Guidelines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-reference-conventions">Cross-Reference Conventions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-issues">Submitting Issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-standards-sdk-contributions">Code Standards (SDK Contributions)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Telink Semiconductor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Telink Semiconductor.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+<div style="text-align: right; margin-top: 1rem; padding: 0.5rem 1rem; border-top: 1px solid #eee;">
+  <a href="../_downloads/unisdk-doc.pdf" style="font-size: 0.85rem; color: #0a2d72; text-decoration: none;">
+    &#128196; Download PDF
+  </a>
+</div>
+<script>
+var currentVersion = "v0.2.0";
+var currentLang = "en";
+</script>
+<script>
+(function() {
+  'use strict';
+  function injectSwitchers() {
+    var navbarEnd = document.querySelector(".navbar-header-items__end");
+    if (!navbarEnd) return;
+
+    var langHtml = [
+      '<div class="navbar-item">',
+      '  <div class="language-selector">',
+      '    <select id="language-select" onchange="switchLanguage(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="en"' + (currentLang === "en" ? " selected" : "") + '>English</option>',
+      '      <option value="zh"' + (currentLang === "zh" ? " selected" : "") + '>中文</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", langHtml);
+
+    var verHtml = [
+      '<div class="navbar-item">',
+      '  <div class="version-selector">',
+      '    <select id="version-select" onchange="switchVersion(this.value)" style="appearance:auto;background:#F5F7FA;border:1px solid #ccc;border-radius:4px;padding:0.25rem 0.5rem;font-size:0.85rem;cursor:pointer;">',
+      '      <option value="">Loading...</option>',
+      '    </select>',
+      '  </div>',
+      '</div>'
+    ].join("");
+    navbarEnd.insertAdjacentHTML("beforeend", verHtml);
+
+    var script = document.createElement("script");
+    script.src = "../_static/version_switcher.js";
+    document.body.appendChild(script);
+  }
+
+  function switchLanguage(lang) {
+    var currentPath = window.location.pathname;
+    var newPath = currentPath.replace(/\/[a-z]{2}\//, "/" + lang + "/");
+    if (newPath !== currentPath) {
+      window.location.href = newPath;
+    }
+  }
+
+  window.switchVersion = function(url) {
+    if (url) {
+      window.location.href = url;
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", injectSwitchers);
+  } else {
+    injectSwitchers();
+  }
+})();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var versionBadge = document.createElement("span");
+    versionBadge.className = "version-badge";
+    versionBadge.textContent = "v0.2.0";
+    var footer = document.querySelector(".telink-footer .footer-copyright");
+    if (footer) {
+      footer.appendChild(versionBadge);
+    }
+  });
+</script>
+
+
+<footer class="telink-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Telink Semiconductor</h5>
+        <p style="font-size: 0.85rem; opacity: 0.8;">
+          Leading provider of low-power, high-performance wireless connectivity
+          SoC solutions for IoT, industrial, and automotive applications.
+        </p>
+      </div>
+      <div class="col-md-2">
+        <h5>Resources</h5>
+        <ul class="footer-links">
+          <li><a href="https://www.telink-semi.cn/" target="_blank">Official Website</a></li>
+          <li><a href="https://doc.telink-semi.cn/" target="_blank">Documentation Center</a></li>
+          <li><a href="https://forum.telink-semi.cn/" target="_blank">Technical Forum</a></li>
+          <li><a href="https://products.telink-semi.cn/" target="_blank">Product Selector</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Developers</h5>
+        <ul class="footer-links">
+          <li><a href="https://github.com/telink-semi/unisdk" target="_blank">UniSDK on GitHub</a></li>
+          <li><a href="https://github.com/telink-semi/unisdk-doc" target="_blank">Docs Repository</a></li>
+          <li><a href="https://gitee.com/telink-semi" target="_blank">Gitee Repository</a></li>
+          <li><a href="https://www.telink-semi.cn/development-tools" target="_blank">Development Tools</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="../support/index">Contact Support</a></li>
+          <li><a href="https://www.telink-semi.cn/applications" target="_blank">Applications</a></li>
+          <li><a href="../about/index">About Telink</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h5>Connect</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:telinksales@telink-semi.com">Sales Inquiry</a></li>
+          <li><a href="https://www.telink-semi.cn/news" target="_blank">News & Events</a></li>
+          <li><a href="https://www.telink-semi.cn/careers" target="_blank">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; Telink Semiconductor. All rights reserved.
+      
+      <span class="version-badge">v0.2.0</span>
+      
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
